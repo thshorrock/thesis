@@ -62,11 +62,6 @@ misc/table_list,
 misc/abstract,
 misc/dedication,
 misc/preface,
-%
-%introduction
-%part1,
-%nucleation,
-%Maxwell_analogy,
 part_intro/part_intro,
 part_intro/introduction/introduction,
 part_intro/part_maths,
@@ -83,21 +78,11 @@ part_experimental/part_experimental,
 part_experimental/rationale/rationale,
 part_experimental/DPR500_protocol/DPR500_protocol,
 part_experimental/characterisation/characterisation,
-% experimental_method,
-% high_frequency_experiments,
-%water_cavitation_experiments,
-%water_cavitation_characterisation,
-%water_cavitation_results,
-%oil_cavitation_experiments,
-%%
-%
-%part3,
-%discussion,
-%
-%
-%partAppendix,
-%nucleation_classical_appendix,
-%nucleation_DFT_appendix
+part_discussion/part_discussion,
+part_discussion/discussion/discussion,
+part_appendix/part_appendix,
+part_appendix/nucleation_classical_appendix,
+part_appendix/nucleation_DFT_appendix
 %
 %%
 %
@@ -147,10 +132,7 @@ part_experimental/characterisation/characterisation,
 
 
 
-%\title{Imaging acoustically generated microbubbles with ultrasound}
-
-
-% \listoftodos
+\listoftodos
 
 \author{Tom H. Shorrock }
 
@@ -218,15 +200,15 @@ part_experimental/characterisation/characterisation,
 \include{part_experimental/DPR500_protocol/DPR500_protocol}
 \include{part_experimental/characterisation/characterisation}
 %\include{experimental_method}
-\include{high_frequency_experiments}
+%\include{part_experimental/high_frequency_experiments}
 %\include{water_cavitation_experiments}
 %\include{water_cavitation_characterisation}
 %\include{water_cavitation_results}
-\include{oil_cavitation_experiments}
+%\include{part_experimental/oil_cavitation_experiments}
 %\include{phase_shift}
 %\include{high_frequency_imaging}
-\include{part_discussion}
-\include{discussion}
+\include{part_discussion/part_discussion}
+\include{part_discussion/discussion/discussion}
 %\include{notes/church}
 %\include{model_building}
 %\include{Newtonian_bubble}
@@ -241,9 +223,9 @@ part_experimental/characterisation/characterisation,
 %\include{notes/spin}
 %\include{basic_bubble_model}
 %\include{partAppendix}
-%\appendix
-\include{nucleation_classical_appendix}
-\include{nucleation_DFT_appendix}
+\include{part_appendix/part_appendix}
+\include{part_appendix/nucleation_classical_appendix}
+\include{part_appendix/nucleation_DFT_appendix}
 %\include{program}
 %\include{fragments}
 %\include{appendix_Lie}

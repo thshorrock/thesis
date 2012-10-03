@@ -1,0 +1,841 @@
+\chapter{Density Functional Theory theory}\label{app:DFT}
+
+
+\subsection{Introduction}
+
+\Dft\ relaxes the capillary approximation used in \cnt.
+The density of the nucleated bubble is not assumed to be that of the bulk,
+and the interface is not assumed to be macroscopic and plainer\cite{Oxtoby1992, Oxtoby1998}.
+\Dft\ therefore does a much better job at modelling the interface than \cnt.
+Rather than it being a sudden boundary,
+there is a finite interval over which the density varies from that of the fluid to that of the vapour
+and the bubble is modelled for what it is -  a fluctuation in density - 
+rather than a vapour entrapped in  flexible boundary.
+
+If  spherical symmetry is assumed then 
+the bubble boundary is defined by its radius.
+The critical radius is such that\cite{Oxtoby1992,Oxtoby1998}
+\begin{align}
+  \frac{d \Omega}{d a} =0,\quad\text{at $a = \astar$} \label{eqn:DFT:astarR}
+\end{align}
+where $\Omega$ is the {\em grand potential}.
+
+
+The grand potential in \eqnref{DFT:astar} is difficult to evaluate, however,
+as it is a functional of the 
+phase space positions of all $N$ molecules in the system.
+Specifically,  
+\begin{align}
+  \Omega = -\beta^{-1}\ln \Xi.
+\end{align}
+where $\Xi$ is the grand partition function
+\begin{align}
+  \Xi = \Tr \exp\lr{-\beta \lr{H_N - \mu N}}. \label{eqn:nuc:GPF}
+\end{align}
+ $\Tr$ denotes the trace operator
+\begin{align}
+  \Tr \equiv \sum_{N=0}^\infty \frac{1}{h^{3N}N!} \iint d\cx_1 d\cp_1
+\end{align}
+and we have compacted the integral by writing 
+\begin{align}
+d\cx_n &\equiv dr_n dr_{n+1}\ldots dr_N, &&\quad\text{and}&
+d\cp_n &\equiv  dp_n dp_{n+1}\ldots dp_N.
+\label{eqn:dshorthand}
+\end{align}
+In \eqnref{nuc:GPF} $\mu$ denotes the chemical potential and $\H$ denotes the Hamiltonian of the molecules.
+
+The difficulty in evaluating $\Omega$ comes from the interactions between the  molecules.
+In order to consider the couplings explicitly we split $\H$ into 
+\sub{
+\begin{align}
+%  \begin{array}{ll}
+  \KE &= \sum_i^N \frac{p_i^2}{2m}, && \text{which is the kinetic energy,}\label{eqn:nuc:Kinetic}\\
+  \UE &= \UE(\cx_1), && \text{ the internal energy and}\\
+  \VE &= \sum_i^N V_\ext(r_i) && \text{the external potential.}
+%  \end{array}
+\end{align}
+}
+so that the overall Hamiltonian can be written %in terms of the intrinsic potentials, $\H_\in$ and external potential, $\H_\ext$,
+\begin{align}
+  \H =  %\H_\in + \H_\ext = 
+\KE + \UE + \VE.
+\end{align}
+Here were have extended the shorthand  employed in  \eqnref{dshorthand} so that 
+\begin{align}
+\cx_n \equiv r_n,r_{n+1},\ldots,r_N,  \quad\text{and}\quad
+\cp_n \equiv  p_n,p_{n+1},\ldots, p_N.
+\end{align}
+%The coupled terms are therefore the internal energy,  $\UE$.
+Separating the Hamiltonian in this way lets us split the grand partition function
+\begin{align}
+  \Xi = \Tr e^{-\beta (\KE -\mu N)}e^{-\beta(\UE +\VE)}=  \frac{1}{N!}Z_\KE Z_{\UE+\VE}, \label{eqn:XiSeparate}
+\end{align}
+with the second equality following because $\KE$ is a function of only the particle momentums,
+and $\UE$ and $\VE$ are functions of positions.
+%At equilibrium the joint probability density of the distribution is the Boltzmann distribution 
+%\begin{align}
+%  p_0(\cx_1, \cp_1) = \Xi^{-1} \exp\lr{-\beta \lr{H_N - \mu N}}.
+%\end{align}
+%which can be derived with the Maximum entropy principle\cite{}, for example.
+%Here were have extended our shorthand  of \eqnref{dshorthand} so that 
+%\begin{align}
+%\cx_n \equiv r_n,r_{n+1},\ldots,r_N,  \quad\text{and}\quad
+%\cp_n \equiv  p_n,p_{n+1},\ldots, p_N.
+%\end{align}
+The two functions on the right of in \eqnref{XiSeparate}  can be considered separately:
+\nlist{
+\item The momentum integrals in \eqnref{XiSeparate} form the partition function of an ideal gas,
+with 
+\begin{align}
+  Z_\KE = \int d \cp_1 e^{-\beta \lr{\sum_i^N \frac{p_i^2}{2m}-\mu N}} = \lr{\frac{m}{2\pi\hbar^2 \beta}}^{3N/2} \equiv n_Q^N.
+\end{align}
+The term $n_Q$ is sometimes known as the {\em quantum concentration} and is related to the {\em thermal de Broglie wavelength}, $\lambda_T$ by $n_Q = 1/\lambda_T$.
+We demote the derivation of this standard result  to \appref{DFT}.
+\item
+  The remaining $\frac{1}{N! Z_{\UE+\VE}}$ is the  partition function to the joint probability distribution of the  molecular positions,
+  \begin{align}
+    p_0(\cx) = \frac{1}{N!Z_{\UE+\VE} } e^{-\beta\lr{\UE+\VE}}
+  \end{align}
+  To make progress  we must  approximate the coupled interaction term, $\UE$.
+%so that \eqnref{XiSeparate} can be solved.
+Here we assume that only the two particle interactions are important
+and write
+\begin{align}
+  \UE(\cx) \approx \Phi(\cx) =  \sum_{j>i} \sum_i^N \phi(\vr_i, \vr_j),
+\end{align}
+where $\phi(\vr_i, \vr_j)$ is the two particle potential between a particle at $r_i$ and $r_j$.
+%At equilibrium the true joint probability density is the Boltzmann distribution 
+%\begin{align}
+%  p_0(\cx_1, \cp_1) &= \Xi^{-1} \exp\lr{-\beta \lr{\H_N - \mu N}} 
+%\end{align}
+%
+The approximate Hamiltonian is then $H \equiv \KE + \Phi + \VE$,
+and is described by the approximate  probability density, $p$,
+  \begin{align}
+    p(\cx) = \frac{1}{N!Z_{\UE+\VE} } e^{-\beta\sum_{j>i} \sum_i^N \phi(\vr_i, \vr_j) -\beta\sum_i^N V_\ext(\vr_i)} \label{eqn:pspatial}
+  \end{align}
+  Marginalising equation \eqnref{pspatial} for the  1-particle distribution gives
+  \begin{align}
+    p^{(1)}(\vr_1) = \frac{N}{N! Z_{\UE+\VE}} \int e^{-\beta\sum_i^N V_\ext(\vr_i)} d\cx_2. \label{eqn:ponespatial}
+  \end{align}
+  The 2-particle density is 
+  \begin{align}
+    p^{(2)}(\vr_1, \vr_2) = \frac{N(N-1)}{N!Z_{\UE+\VE}}\int e^{-\beta\sum_{j>i} \sum_i^N \phi(\vr_i, \vr_j)-\beta\sum_i^N V_\ext(\vr_i)} d\cx_3.
+  \end{align}
+  The approximate number density, $\rho(\vr)$, is a such that
+  \begin{align}
+    \int \rho_0(\vr) d\vr = N .
+  \end{align}
+  It follows that
+  \begin{align}
+    \rho(\vr) = N!  p^{(1)}(\vr_1). \label{eqn:rhoone}
+  \end{align}
+  From \eqnref{rhoone} and \eqnref{ponespatial} we find that the {\em density is functional of the external potential.}
+}
+
+ The converse is also true:
+ {\em the external potential is uniquely determined by the density},
+ a result known as the Hohenberg-Kohn theorem.
+ The probability density is then determined by the external potential,
+ from which it follows that the probability density is a unique functional of the density.
+ We outline a proof of the Hohenberg-Kohn theorem in \appref{Hohenberg_Kohn}.
+ 
+
+It is thereby permissible to work with the mass density rather than the probability density when considering the thermodynamics of the bubble.
+Since the density is the term of interest bubble nucleation, the density functional approach is much more direct.
+
+
+
+%Re-expressing the grand potential as a functional of mass density rather than probability density
+%does not get us any closer to being able to evaluate $\Omega$, however.
+%So far the argument is standard from statistical physics.
+%To make progress  we must  approximate the coupled interaction term, $\UE$.
+%so that \eqnref{XiSeparate} can be solved.
+%Here we assume that only the two particle interactions are important
+%and write
+%\begin{align}
+%%  \UE(\cx) \approx \Phi(\cx) =  \sum_{j>i} \sum_i^N \phi(\vr_i, \vr_j),
+%\end{align}
+%where $\phi(\vr_i, \vr_j)$ is the two particle potential between a particle at $r_i$ and $r_j$.
+%At equilibrium the true joint probability density is the Boltzmann distribution 
+%\begin{align}
+%  p_0(\cx_1, \cp_1) &= \Xi^{-1} \exp\lr{-\beta \lr{\H_N - \mu N}} 
+%\end{align}
+%
+%The approximate Hamiltonian is then $H \equiv \KE + \Phi + \VE$,
+%and is described by the approximate  probability density, $p$.
+The approximate density function is $\rho$, which defines an approximate grand potential $\Omega_V\lrs{\rho}$.
+The task is then to find the distribution $\rho$ that comes closest to approximating $\rho_0$.
+
+The {\em relative entropy } or {\em Kullback-Leibler divergance} gives the amount of information lost 
+when using the approximate distribution  $p$ rather than the correct distribution $p_0$,
+and is defined
+\begin{align}
+  \KLD{p}{p_0} = \Tr p \log \frac{p}{p_0} \label{eqn:nuc:KLD}
+\end{align}
+$\KLD{p}{p_0} \ge 0$, which follows from Gibbs inequality, and only if $p=p_0$ does $\KLD{p}{p_0} = 0$.
+We may therefore define
+\begin{align}
+ \Omega_V\lrs{\rho} \equiv \beta^{-1}\KLD{p}{p_0}+   \Omega\lrs{\rho_0}, 
+\end{align}
+The approximate  grand potential approaches the true value when 
+it vanishes  with respect to $\rho$.
+ $\Omega_V\lrs{\rho} $ will then be at thermodynamic equilibrium
+which occurs at the critical radius.
+Therefore,
+condition \eqnref{}
+may be expressed\cite{Oxtoby1992}
+\begin{align}
+  \frac{\delta \Omega_V}{\delta \rho} =0,\quad\text{at $\rho = \rhostar$.} \label{eqn:DFT:astar}
+\end{align}
+
+More generally, from \eqnref{} we have
+\begin{align}
+  \Omega_V\lrs{p} &= \beta^{-1} \Tr p \log \frac{p}{p_0}  - \beta^{-1}\ln \Xi \\
+  &= \beta^{-1} \Tr p \log \frac{p}{e^{-\beta\lr{\H - \mu N}}}\\
+%  &= T S +    \Tr p \lr{H_N - \mu N} \\
+  &= - T S_p + \H_p - \mu N_p \\
+  &= F_p - \mu N_p\\
+ &= \F + \int V_\ext d\rho - \int \mu d \rho.
+\end{align}
+where the subscript $p$ indicates an average with respect to the distribution $p$ so that  $S_p$ is the entropy with respect to $p$,
+\begin{align}
+ \F\lrs {\rho_0} = \Tr p \log\frac{p}{e^{-\beta H_\in}} = \KE + \Phi - TS_p
+\end{align}
+and the labels `$\in$' and `$ext$' indicates the intrinsic and external parts of the  Hamiltonian.
+
+The energy $\Phi$ at when  $\rho = \rhostar$ (thermodynamic equilibrium)
+may be evaluated from by minimising $\Phi\lrs{\phi}$,
+\begin{align}
+\frac{\delta \Phi}{\delta \phi(r_i, r_j) } &= - \beta^{-1} \frac{\delta \ln Z_{\Phi+\VE}}{\delta \phi(r_i, r_j)} \\
+&= \frac{N(N-1)}{2 Z_{\Phi+\VE}}\int d\cx_1 \phi(\vr_1,\vr_2) e^{-\beta\sum_{j>i} \sum_i^N \phi(\vr_i, \vr_j)-\beta\sum_i^N V_\ext(\vr_i)} \\
+&= \half \iint d\vr_1 \dr_2 \phi p^{(2)}(\vr_1,\vr_2)
+\end{align}
+%\begin{align}
+%  &= \frac{1}{N!}\frac{e^{-\beta (\KE -\mu N)}}{Z_\KE}\frac{e^{-\beta(\UE +\VE)}}{Z_{\UE+\VE}}  \label{eqn:Jointpzero} %\equiv p_\KE p_{\lr{\UE + VE}}
+%\end{align}
+
+
+%and introduce radial distribution function
+%\begin{align}
+%  g(r_{12}) = \frac{V^2}{N^2} P_2(r_1, r_2)
+%\end{align}
+
+
+%Since $\UE$ is a measured quantity, it is averaged equilibrium joint probability distribution, $p_0$,
+%where $p_0$ is a Boltzmann distribution,
+%\begin{align}
+% p_0(\cx_1, \cp_1) = \Xi^{-1} \exp\lr{-\beta \lr{H_N - \mu N}}. \label{nuc:pzero}
+%\end{align}
+%Decoupling the interactions in $\H$ implies that the approximate Hamiltonian, $H$, is described by some likewise decoupled approximate probability distribution, $p$.
+%The task is then to vary $p$ so that it matches $p_0$ as closely as possible. %, given its new structure, so that $H$ approaches $\H$.
+%From \eqnref{nuc:pzero} $p_0$ is explicitly a function of $\V$.
+
+
+% This is the 
+%  When considering the thermodynamics of the bubble
+
+% The density functional approach is entirely analogous to this next step  but works directly with an approximate mass density, $\rho$, rather than the approximate probability density, $p$.
+% The mass density is then varied directly to find the functional form that best matches the equilibrium density, $\rho_0$, and whence the equilibrium Hamiltonian, $\H$.
+% Since the density is the term of interest bubble nucleation, the density functional approach is much more direct.
+% \Dft\ works at all because
+% \nlist{
+%   \item 
+%     The mass density is a functional of the probability density, $\rho = \rho[p]$.
+%     This follows almost trivially from the fact that the equilibrium density is a measured quantity,
+%     and therefore an average over $p_0$.
+%     Denoting the average
+%     \begin{align}
+%       \rho\lrs{p} =  \scalar{\rho(\cx_1, \cp_1) }_{p} \equiv \Tr p(\cx_1, \cp_1) \rho(\cx_1, \cp_1), 
+%     \end{align}
+%     we find that $\rho\lrs{p_0} = \scalar{\rho(\cx_1, \cp_1) }_{p_0}  = \rho_0$.
+
+%     Since the density is a functional of $p_0$, which is in turn a function of $\VE$,
+%     it follows that the {\em density is functional of the external potential.}
+%   \item
+%     The converse is also true:
+%     the external potential is uniquely determined by the density,
+%     a result known as the Hohenberg-Kohn theorem.
+%     The probability density is then determined by the external potential,
+%     from which it follows that the probability density is a unique functional of the density.
+%     We outline a proof of the Hohenberg-Kohn theorem in \appref{Hohenberg_Kohn}.
+%     %It is deferred to the appendix because the proof is not constructive.
+%   }
+% While many approximations can be made to the internal energy,
+% we here consider only  
+
+% A number of approximat
+
+% The approximate Hamiltonian we there
+
+%which we denote
+%\begin{align}
+%  \UE = \scalar{U(\cx)}_{\rho_0} \equiv Tr  p_0(\cx_1, \cp_1) \rho_0(\cx_1, \cp_1)
+%\end{align}
+%over the full joint distribution of 
+
+\subsection{Bubble Nucleation}
+
+
+
+
+But density $\rho(r)$ should not be constrained other than to require that it approach the bulk vapor density at large distance.
+Then 
+\begin{align}
+  \frac{\delta \Omega_V}{\delta \rho(r)} = 0
+\end{align}
+at $\rho(r) = \rho^\ast(r)$.
+The mulitdimensainal free energy has a minium at the uniform vapor pressure,
+and a second lower minimum at the  uniform liquid density. Between these saddle point sound by setting the funciional deriate to zero.
+The matirx of second deriatives containes a negative eigenvalue correspionding to deirection of motion over the barrier.
+
+For equilibrium gas-liquid interface similar except zero eigenvalue not negative. 
+
+sadle point in fucntional space refs in \cite{shen2003}
+
+Density in bubble sufiently far from coexistence differs appreciably from that of stable vapor,
+at least order of magnitude ref 28 in \cite{Shen2003}
+Agrees well with energy brarrier in vicinity of phase coexistance but does vanish at spinodal.
+
+Nucleation theorem ref 74 in \cite{shen2003}
+
+Have
+\begin{align}
+\Omega_V = F - \mu N = F - \mu \int dr \rho(r).
+\end{align}
+Then \begin{align}
+\frac{\delta F}{\delta \rho(r)} = \mu
+\end{align}
+at $\rho(r) = \rho^\ast(r)$.
+
+
+To make further progress we need to write the grand potential $\Omega$ as a function of the density.
+
+\subsection{Background}
+To do so we consider Hamiltonians that are separated in terms of their intrinsic and external contributions
+\begin{align}
+  \H =  \H_\in + \H_\ext = \lr{\KE + \UE} + \VE
+\end{align}
+where 
+\sub{
+\begin{align}
+%  \begin{array}{ll}
+  \KE &= \sum_i^N \frac{p_i^2}{2m} && \text{is the kinetic energy,}\label{eqn:nuc:Kinetic}\\
+  \UE &= U(\cx) && \text{is the internal energy, and}\\
+  \VE &= \sum_i^N V_\ext(r_i) && \text{is the external potential.}
+%  \end{array}
+\end{align}
+}
+The internal energy depends upon the  locations of the particles, which are denoted  with
+\sub{
+\begin{align}
+\cx_n &\equiv r_n,r_{n+1},\ldots,r_N,  \quad\text{the set of $N-n+1$ particle spatial positions.}
+\intertext{Similarly, the momentums of the particles are denoted}
+\cp_n &\equiv  p_n,p_{n+1},\ldots, p_N.
+\end{align}
+}
+This notation is usefully extended by defining 
+\sub{
+\begin{align}
+d\cx_n &\equiv dr_n dr_{n+1}\ldots dr_N, &&\quad\text{and}&
+d\cp_n &\equiv  dp_n dp_{n+1}\ldots dp_N.
+\end{align}
+}
+
+Both the energy, $\H$ and the equilibrium  density $\rho_0$ are measured quantities
+and as such, both  averaged over the probability of the phase space locations of the $N$ particles $p_0 = p_0(\cx,\cp)$.
+The average with respect to $p_0$ is defined
+\begin{align}
+  \rho_0 =  \scalar{\rho_0(\cx_1, \cp_1) }_{p_0} \equiv \Tr p_0(\cx_1, \cp_1) \rho_0(\cx_1, \cp_1) 
+\end{align}
+where $\Tr$ denotes the trace operator
+\begin{align}
+  \Tr \equiv \sum_{N=0}^\infty \frac{1}{h^{3N}N!} \iint d\cx_1 d\cp_1.
+\end{align}
+The average energy is defined similarly.
+The the equilibrium 
+joint 
+ probability density  is  the Boltzmann distribution 
+\begin{align}
+  p_0(\cx_1, \cp_1) = \Xi^{-1} \exp\lr{-\beta \lr{H_N - \mu N}}.
+\end{align}
+where 
+\begin{align}
+  \Xi = \Tr \exp\lr{-\beta \lr{H_N - \mu N}}. \label{eqn:nuc:GPF}
+\end{align}
+is called the {\em grand partition function}.
+The grand potential then follows according to 
+\begin{align}
+  \Omega = -\beta^{-1}\ln \Xi.
+\end{align}
+
+We may eliminate the momentum terms from the grand partition function, equation \eqnref{nuc:GPF} immediately
+\begin{align}
+  \Xi = \frac{n_Q^N}{N!} Z_U Z_V Z_N
+\end{align}
+where $n_Q = \lr{\frac{m}{2\pi\hbar^2 \beta}}^{3/2}$ is the {\em quantum concentration}.
+and 
+\begin{align}
+  Z_U Z_V Z_N = 
+\end{align}
+
+
+
+
+
+Since the density is a functional of $p_0$, which is in turn a function of $V_\ext$,
+it follows that the density is functional of the external potential.
+The converse is also true:
+the external potential is uniquely determined by the density,
+a result known as the Hohenberg-Kohn theorem.
+The probability density is then determined by the external potential,
+from which it follows that the probability density is a unique functional of the density.
+We outline a proof of the Hohenberg-Kohn theorem in \appref{Hohenberg_Kohn}.
+It is deferred to the appendix because the proof is not constructive.
+
+The approximate  grand potential  can therefore be expressed as a unique functional of the density,
+\begin{align}
+  \Omega_V\lrs{\rho_0} &=  F - \mu N \\
+  &= \lr{\KE + \UE - TS} + \int d\rho\lr{ V_\ext -\mu }\\
+  &= \F + \int d\rho\lr{ V_\ext -\mu }\\
+\end{align}
+where $\F$ is the intrinsic Helmholtz free energy.
+
+
+
+The grand potential, through $U$, is a function of $p_0(\cx)$, the  probability describing the locations of all $N$ particles.
+This associated multi-particle interactions are complicated and difficult to model.
+We decouple these interactions by introducing the approximate probability distribution  $ p = p(\vr_i, \vr_j)$ 
+- dependent now only on two particle interactions - 
+to evaluate our thermodynamic variables.
+This in turn reduces $U$ to two particle interactions, 
+\begin{align}
+  \Phi = \sum_{i\ne j} \sum_i^N \phi(\vr_i, \vr_j).
+\end{align}
+Furthermore, we assume that the external potential $\VE$ influences each particle equally.
+Therefore, our approximate Hamiltonin is
+\begin{align}
+\H = \KE + \Phi + NV_\ext.
+\end{align}
+
+
+The {\em relative entropy } or {\em Kullback-Leibler divergance} gives the amount of information lost 
+when using the approximate distribution  $p$ rather than the correct distribution $p_0$,
+and is defined
+\begin{align}
+  \KLD{p}{p_0} = \Tr p \log \frac{p}{p_0} \label{eqn:nuc:KLD}
+\end{align}
+$\KLD{p}{p_0} \ge 0$, which follows from Gibbs inequality with equality if and only if $p=p_0$.
+
+It is convenient for $p$ to be evaluated via a variational principle and so we defined $p_0$ according to 
+\begin{align}
+ \Omega_V\lrs{\rho} = \beta^{-1}\KLD{p}{p_0}+   \Omega, 
+\end{align}
+so that the approximate grand potential approaches the true value on application of a variational principle.
+It then follows that 
+\begin{align}
+  \Omega_V\lrs{\rho} &= \beta^{-1} \Tr p \log \frac{p}{p_0}  - \beta^{-1}\ln \Xi \\
+  &= \beta^{-1} \Tr p \log \frac{p}{e^{-\beta\lr{\H - \mu N}}}\\
+%  &= T S +    \Tr p \lr{H_N - \mu N} \\
+  &= - T S_p + \H_p - \mu N_p \\
+  &= F_p - \mu N_p\\
+  &= \F + \int V_\ext d\rho - \int \mu d \rho.
+\end{align}
+where 
+\begin{align}
+ \F\lrs \rho_0 = \Tr p \log\frac{p}{e^{-\beta\H_\in}} = \KE + \UE - TS_p
+\end{align}
+and
+where the subscript indicates that the thermodynamic quantities are evaluated with the approximate $p$ rather than $p_0$.
+
+
+
+
+Have 
+\begin{align}
+F = \int dr \rho_0 V_\ext + \F\lrs{\rho_0}
+\end{align}
+and 
+\begin{align}
+  V_\ext + \mu_\in\lrs{\rho_0} = \mu
+\end{align}
+where
+\begin{align}
+  \mu_\in \equiv \deltarho \F.
+\end{align}
+
+
+Integration of interaction potential.
+
+
+
+We may eliminate the momentum terms from the grand partition function, equation \eqnref{nuc:GPF} immediately
+\begin{align}
+  \Xi = \frac{n_Q^N}{N!} Z_{U+V} 
+\end{align}
+where $n_Q = \lr{\frac{m}{2\pi\hbar^2 \beta}}^{3/2}$ is the {\em quantum concentration}.
+We therefore concentrate on $Z_{U+V}$,
+the contribution from the potentials.
+
+
+
+
+
+The joint probability distribution can be marginalised to obtain the single particle density,
+\begin{align}
+\rho(r_1) = \int p_0(\cx_1) d\cx_2,
+\end{align}
+where 
+\begin{align}
+  d\cx_n &\equiv dr_ndr_{n+1}\ldots dr_N \quad \text{so that}
+\end{align}
+\begin{align}
+  \int \rho(r) dr = N.
+\end{align}
+Likewise the 2-particle density
+\begin{align}
+ \rho^{(2)}(r_1, r_2) = \frac{N(N-1)}{Z_\phi}\int e^{-\beta \sum_{j>i} \phi(r_{ij})}dr_3 \ldots dr_N
+\end{align},
+and introduce radial distribution function
+\begin{align}
+  g(r_{12}) = \frac{V^2}{N^2} P_2(r_1, r_2)
+\end{align}
+
+
+\begin{align}
+\frac{  \delta}{\delta \phi(r_i, r_j) } = - \beta^{-1} \frac{\delta \ln \Xi}{\delta \phi(r_i, r_j)} = \frac{N(N-1)}{Z_\phi} = \half \rho^{(2)}(\vr_1,\vr_2)
+\end{align}
+Integrated by choosing
+\begin{align}
+  \phi_\alpha \equiv \phi(r_1,r_2;\alpha) = \phi_r + \alpha \lr{\phi - \phi_r}
+\end{align}
+to 
+\begin{align}
+  \F\lrs{\rho_0} = \F_r \lrs \rho_0 + \half \int_0^1d\alpha \int dr_1dr_2 \rho^{(2)}\lr{\phi-\phi_r}
+\end{align}
+
+If $\phi_r = 0$ then $\F_r = \F_\ideal$ and
+\begin{align}
+\F\lrs{\rho_0} = \F_\ideal + \half \int_0^1d\alpha \int dr_1dr_2 \rho^{(2)}\phi_\alpha \phi.
+\end{align}
+
+Split potential into reference and perturbation
+\begin{align}
+  \phi(r) = \phir + \phip
+\end{align}
+
+Then 
+\begin{align}
+c^{(2)} - c_r^{(2)} = \given{\frac{\beta \delta^2}{2\delta \rho(r_1) \delta \rho(r_2)} \int d\alpha int dr_1 dr_2 \rho^{(2)} \phip}{\rho(r) = \rho}.
+\end{align}
+
+Simplest random phase approximation 
+\begin{align}
+  \phi^{(2)}  = \phi(r_1) \phi (r_2)
+\end{align}
+so that
+\begin{align}
+c^{(2)} - c_r^{(2)}(r) = -\beta \phip
+\end{align}
+
+Next expand to lowest order in $\phip$
+so that need to evaluate
+\begin{align}
+  \int dr_1 dr_2 \rhor^{(2)} \phi_p
+\end{align}
+
+This can be done by expanding 
+\begin{align}
+  \rhor^{(2)} = \rhor^{(2)} + \half \lr{\rho(r_1)  + \rho(r_2) - 2\rho } \frac{\d \rhor^{(2)}}{\d\rho} + \ldots + \half \lr{\rho(r_1)  + \rho(r_2) - 2\rho } \frac{\d^2 \rhor^{(2)}}{\d^2\rho}
+\end{align}
+with $\rhor^{(2)}=\rho^2 g_r(r)$
+Then
+\begin{align}
+  c^{(2)} - c_r^{(2)}(r) = -\frac{\beta}{2} \phip \frac{\d^2 \rhor^{(2)}}{\d\rho^2}
+\end{align}
+which is the mean density approxmition.
+
+
+average energy 
+\begin{align}
+  U &= - \frac{\d}{\d\beta} \ln Z = \frac{3}{2}N\kB T -  \frac{\d}{\d\beta}\ln Z_\phi
+\end{align}
+where
+\begin{align}
+   \frac{\d}{\d\beta}\ln Z_\phi &= \frac{1}{Z_\phi} \int \sum_{j>i} \phi(r_{ij})e^{-\beta \sum_{j>i} \phi(r_{ij})} d\cx\\
+   &= \frac{N(N-1)}{2 Z_\phi} \int \phi(r_{12}) e^{-\beta \sum_{j>i} \phi(r_{ij})} d\cx\\
+   &= \frac{1}{2} \int \phi(r_{12}) P_2 d\cx\\
+   &= \frac{N^2}{2V^2} \int \phi(r)g(r)4\pi r^2 dr.
+\end{align}
+
+
+%consider
+\begin{align}
+  \Omega\lrs p = \Tr_{cl} f\lr{H_N - \mu N + \beta^{-1} \ln f}.
+\end{align}
+%Have
+%\begin{align}
+%  \Omega\lrsquare{p_0} = -\beta^{-1}\ln \Xi \equiv \Omega,
+%\end{align}
+%the grand potential.
+%Then 
+%\begin{align}
+%  \Omega[p] = \Omega[p_0] + \beta^{-1} \lr{Tr_\cl p\ln \lr{p/p_0}   }
+%\end{align}
+
+
+Correlation functions,
+\begin{align}
+  \F\lrs{\rho} = \F_\ideal\lrs{\rho} - \Phi\lrs{\rho}
+\end{align}
+so that
+\begin{align}
+  \beta \mu_\in \lrs{\rho;r} = ln \lr{\lambda^3 \rho} - c
+\end{align}
+where
+\begin{align}
+  c \lrs{\rho;r} \equiv \beta \deltarho Phi.
+\end{align}
+Equilibrium density is then
+\begin{align}
+  \rho = z \exp \lr{-\beta V_\ext + c}
+\end{align}
+
+\subsection{Approach}
+Capillary approximation removed by varying density.
+
+Eg Random phase approximation to give pair distribtuion function\cite{Ruckensteirn2005}.
+\begin{align}
+\rho^{(2)} (r, r^\prime, \phi_\alpha^{(2)}) \approx \phi(r) \phi(r^\prime)
+\end{align}
+Next need free energy of reference.
+Use hard sphere\cite{Ruckensteirn2005}
+\begin{align}
+F_1\lrs{\rho(\vr)} = \int d\vr \fh \lr{\rho(\vr)}.
+\end{align}
+which is a local density approximation good for weakly inhomoenous system - no solid interface\cite{Ruckensteirn2005}.
+Then 
+\begin{align}
+  \Omega\lrs{\rho\lr{\vr}} = F\lrs{\rho} - \mu \int dr \rho
+\end{align}
+minimise to get\cite{Ruckensteirn2005}
+\begin{align}
+  \mu = \mu_h + \int dr^\prime \phi^\two \rho(r^\prime)
+\end{align}
+In homogenous limit get \cite{Ruckensteirn2005}
+\begin{align}
+  f(\rho) = \fh(\rho) - \half \alpha \rho^2
+\end{align}
+where \cite{Ruckensteirn2005}
+\begin{align}
+  \alpha = -\int dr^\prime \phi^\two(r^\prime)
+\end{align}
+
+Pressure and chemical potential from free energy\cite{Ruckensteirn2005}
+\begin{align}
+  p = p_h - \half \alpha \rho^2
+\end{align}
+\begin{align}
+  \mu = \mu_h - \alpha \rho
+\end{align}
+
+Hard sphere pressure from Carnaham Starling from\cite{Ruckensteirn2005}
+\begin{align}
+  p_h = \frac{kT\lr{1 + \theta + \theta^2 - \theta^3}}{\lr{1 - \theta}^2}
+\end{align}
+and chemical potential \cite{Ruckensteirn2005}
+\begin{align}
+  \frac{\d p_h}{\d \rho} = \rho \frac{\d \mu_h}{\d \rho}
+\end{align}
+
+For pertabation method need  WCA scheme\cite{Ruckensteirn2005}
+to give repulsive.
+then
+\begin{align}
+  \mu = \mu_h + \int dr^\prime \phi^\two2_\WCA \rho(r^\prime)
+\end{align}
+
+\subsection{Applications to liquid surfaces}
+
+
+For plainar surface
+\begin{align}
+\gamma = \given{\frac{\d F}{\d A}}{T, V, N}
+\end{align}
+or 
+\begin{align}
+\gamma = \given{\frac{\d \Omega}{\d A}}{T, V, \mu}
+\end{align}
+where
+\begin{align}
+  \Omega = -pV + \gamma A
+\end{align}
+Also
+\begin{align}
+  \gamma = \int_{-L/2}^{L/2} dz \lr{\sigma_N(z) - \sigma_T(z)}
+\end{align}
+
+
+Also have
+
+\begin{align}
+  \rho^{(m)} = \Xi^{-1} \sum_{N\ge }^\infty \frac{z^N}{N-m} \int d r_{m+1} dr_N exp\lr{\beta(V + U)}
+\end{align}
+so $\rho^{(1)} \equiv \rho_0$
+and 
+\begin{align}
+  \scalar{\hat \rho(r) \hat \rho(r^\prime)} =\scalar{\sum_{i\ne j} \delta(r-r_i) \delta(r^\prime - r_j)} + \scalar{\sum_{i} \delta(r-r_i) \delta(r^\prime - r_j)}
+= \rho^{(2)} + \rho_0\delta{\rho- \rho^\prime}
+\end{align}
+Now for pairwise potential
+\begin{align}
+ \Xi = \sum_0 ^\infty \frac{\lambda^{-3N}}{N!} \int dr_1 \ldots d r_N \exp\lr{\beta \int \dr u \hat \rho - \beta/2 \int dr dr^\prime \hat I (r,r^\prime)\phi(r,r^\prime)}
+\end{align}
+where $\hat I = \sum_{i\ne j} \delta(r - r_i)\delta(r^\prime - r_j)$.
+Then
+\begin{align}
+  \frac{\delta \Omega}{\delta \phi(r,r^\prime)} = -\beta^{-1} \frac{\delta \ln \Xi}{\delta \phi(r, r^\prime)} = \half \scalar{\hat I} = \half \rho^{(2)}(r,r^\prime).
+\end{align}
+
+
+In \cnt\ density at centre assumed equal to bulk liquid density, 
+and shape of and free energy of surface taken to be a planar interface.
+Critical nucleus then found by setting 
+\begin{align}
+\frac{d \Omega}{d R} =0
+\end{align}
+at $r = R^\ast$.
+
+But density $\rho(r)$ should not be constrained other than to require that it approach the bulk vapor density at large distance.
+Then 
+\begin{align}
+\frac{\delta \Omega_V}{\delta \rho(r)} = 0
+\end{align}
+at $\rho(r) = \rho^\ast(r)$.
+The mulitdimensainal free energy has a minium at the uniform vapor pressure,
+and a second lower minimum at the  uniform liquid density. Between these saddle point sound by setting the funciional deriate to zero.
+The matirx of second deriatives containes a negative eigenvalue correspionding to deirection of motion over the barrier.
+
+For equilibrium gas-liquid interface similar except zero eigenvalue not negative. 
+
+Have
+\begin{align}
+\Omega_V = F - \mu N = F - \mu \int dr \rho(r).
+\end{align}
+Then \begin{align}
+\frac{\delta F}{\delta \rho(r)} = \mu
+\end{align}
+at $\rho(r) = \rho^\ast(r)$.
+
+Cahn and Hilliard in 1959 first,
+used
+\begin{align}
+F[\rho(r)] = \int dr \lrsquare{f_u (\rho(r)) + K(\del \rho(r))^2}
+\end{align}
+where $f_u$ is Helhotz free energy per unit volume of a uniform system withe density $\\rho$ everywhere.
+
+Functional derivateive finds
+\begin{align}
+\frac{\d f_u}{\d \rho} - 2K \del^2 \rho - \frac{\d K}{\d \rho}\lr{\del^2 \rho}^2 = \mu.
+\end{align}
+Near the spinodal critical nucleus is large but small in amplitude.
+Near spinodal examind by Unger and Klein. 
+
+Oxtoby and evans investigatesd when $J$ is near 1 cm cubed per second. 
+Used hard sphere sluid and Yukawa attractive tail,
+\begin{align}
+\phi_{att}(r) = \frac{\alpha \lambda^3 \exp(-lambda r)}{4\pi \lambda r}.
+\end{align}
+Free energy functional then
+\begin{align}
+F\lrsquare{\rho(r)} = \int d r f_h(\rho(r)) + \frac{1}{2}\int \int dr dr^\prime \rho(r) \rho(r^\prime) \phi_{att}\lr{\abs{r-r^\prime}}
+\end{align}
+where $f_h$ is free energy of uniform hard sphere fluid, treated locally.
+
+Attrractive pottentioanl not treated not in square gradient approach of Cahn and Hilliard.
+Then functional derivative gives
+\begin{align}
+\mu_h\lrsquare{\rho(r)} = \mu - \int d r^\prime \rho(r^\prime) \phi_{att} \lr{\abs{r-r^\prime}}
+\end{align}
+Integral equation solved by iteration having some inital guess of radius.
+Equilibrium is unstable however (saddle point).
+If $R_0$ is too large tends to blow up, if too small tends to shrink into nothing,
+if ``correct'' forms nearly converges then shinks or blows up at one side or other of saddle point
+
+In Oxtoby and Evans 1988 cavitation studied, not just condensation as here.
+Used Becker-Doring prexponetial to find rates. 
+
+\subsection{General Notes}
+
+
+
+
+To simplify these, we
+consider  only pair-wise interactions,
+\begin{align}
+%  \UE(\cx) \approx \sum_{j>i} \sum_i^N 
+\Phi(\cx) = \half \iint d \vr_i d\vr_j \phi(\vr_i, \vr_j)\rho(\vr_i, \vr_j) 
+ =  \half \iint d \vr_i d\vr_j \phi(\vr_i, \vr_j)\rho(\vr_i)\rho(\vr_j) 
+\label{eqn:nuc:two_interactions}
+\end{align}
+where $\phi(\vr_i, \vr_j)$ is the two particle potential between a particle at $\vr_i$ and $\vr_j$,
+and $\rho(\vr_i, \vr_j) $ is the two particle density function.
+In the second equality in \eqnref{}
+it has been specified  that
+$\rho(\vr_i, \vr_j)= \rho(\vr_i)\rho(\vr_j)$.
+This is the simplest possible two particle density function.
+It assumes that the densities are uncorrelated - an assumption known as the {\em random phase approximation}.
+The approximation has been found to be accurate in the absence of rapid \todo{get this sentence right} \cite.
+If the oil droplet is sufficiently large then this approximation should hold.
+The random phase appromxation may well need to be refined for very small droplets, however, 
+where the oil-water interface cannot be ignored.
+
+
+The integral in \eqnref{nuc:two_interactions} is still too difficult to solve directly.
+However, the interactions of most fluids are dominated  by volume exclusion effects (van der Waal type interactions).
+Longer range interactions are, in general, only of secondary importance.
+The interaction term $\phi$ can therefore be split 
+by considering {\em hard sphere} volume exclusion, $\phi_\hs$ and  an attractive perturbation $\phi_\attr$.
+
+To do so we first eliminate everything but the interaction by differentiating with respect to $\phi(\vr_i, \vr_j)$,
+\begin{align}
+  \frac{\delta \Omega_V}{\delta \rho(\vr_i, \vr_j)} = \frac{\delta F}{\delta \rho(\vr_i, \vr_j)} = \frac{1}{2}\rho(\vr_i, \vr_j). \label{eqn:deltaOmega_pert}
+\end{align}
+Equation \eqnref{deltaOmega_pert} is then integrated from the  hard-sphere reference, $F_\hs$
+to full potential along the path parameterised by $\alpha$, 
+\begin{align}
+  F\lrs{\rho} = F_\hs\lrs{\rho} +\half \int d\alpha  \iint d \vr_i d\vr_j \phi_a( \vr_i, \vr_j)\rho(\phi_\alpha;\vr_i, \vr_j), \label{eqn:nuc:two_interactions}
+\end{align}
+where 
+\begin{align}
+  \phi_\alpha(\vr_i, \vr_j) = \phi_\hs(\vr_i, \vr_j) + \alpha \phi_a (\vr_i, \vr_j)\quad\text{and}\quad 0\le\alpha\le 1.
+\end{align}
+The potential is  gradually `turned on' along the integration path 
+and the full potential, $\phi$, is recovered on the boundary located at $\alpha=1$.
+
+
+By assuming that the contribution to the hard sphere energy is entirely local
+the total free energy of the reference can be written
+\begin{align}
+  F_\hs\lrs{\rho} \approx \int d\vr f_\hs(\rho(\vr))
+\end{align}
+where $f_\hs(\rho(\vr))$ is the potential of a uniform  hard-sphere fluid\cite{OxtobyBook}.
+This is the local-density approximation.
+
+
+
+
+
+
+
+
+
+For binary mixture 
+\begin{align}
+  F = \int d\vr \fh \lrs{\rho(\vr_1), \rho(\vr_2)} + \half \int
+\end{align}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "tshorrock_thesis"
+%%% End: 
