@@ -50,7 +50,9 @@ tshorrock_thesis.pdf
 *.el
 *.blg
 *.bbl
- 
+*.lot
+*.lof
+*.toc
 
 
 

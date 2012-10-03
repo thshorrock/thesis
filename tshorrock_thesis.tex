@@ -54,14 +54,14 @@
 \newcommand{\thesis}{thesis}
 
 \includeonly{
-% title,
-toc,
-%figure_list,
-%table_list,
-% decl,
-% abstract,
-%dedication,
-%preface,
+misc/title,
+misc/toc,
+misc/figure_list,
+misc/table_list,
+% misc/decl,
+misc/abstract,
+misc/dedication,
+misc/preface,
 %
 %introduction
 %part1,
@@ -190,15 +190,15 @@ part_experimental/characterisation/characterisation,
 
 %\maketitle
 
-\include{title}
-\include{decl}
+\include{misc/title}
+\include{misc/decl}
 \pagenumbering{roman}
-\include{dedication}
-\include{abstract}
-\include{toc}
-\include{figure_list}
-\include{table_list}
-\include{preface}
+\include{misc/dedication}
+\include{misc/abstract}
+\include{misc/toc}
+\include{misc/figure_list}
+\include{misc/table_list}
+\include{misc/preface}
 \pagenumbering{arabic}
 \include{part_intro/part_intro}
 \include{part_intro/introduction/introduction}
