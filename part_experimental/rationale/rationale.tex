@@ -1,0 +1,1136 @@
+
+\chapter{Experimental Design 50\%}\label{ch:rationale}
+
+% \todo[inline]{The image here is probably my best water cavitation of water image showing rare events on the threshold of cavitation.
+% Greater snowstorms can be found for higher pressure but this illustrates the threshold fairly nicely - see emulsion chapter. This is 70db on the amplifier. 
+% I have recorded the beam plot for this power but have yet to process this into an image that overlays the plot.
+% }
+% \todo[inline]{I still have a sense of so-what with these images. 
+% They seem only interesting as a stepping stone as indicated in intro to ch. 6.}
+
+
+\section{Introduction}
+
+%optimal acoustic parameters used to generate a bubble are poor for imaging:
+%the low frequencies and long pulses that are best for generating a bubble lead to poor reso%lution
+%when used for imaging;
+%the size of the generated bubble is, in general,
+%such that its resonance frequency is a poor match to the generating wave,
+%which means that the bubble's response is sub-optimal.
+
+\Chapref{mechanisms} found that a low frequency wave may be used to tune a 
+bubble's size to best match the characteristics of the imaging wave.
+The imaging frequency can then be chosen with greater regard for the application
+rather than being constrained by the resonance frequency,
+and therefore the size, of the bubble.
+The constraints of resolution and imaging depth  already make for difficult trade-offs,
+and so decoupling the bubble size from the imaging frequency makes for a powerful enhancement to contrast imaging.
+
+The acoustic control of a bubble's size is  particularly important when a bubble contrast agent is 
+required to work extravascularly.
+%In this case the constraints on the size of such a bubble are so much more severe.
+As was discussed in  \chapref{introduction}, \todo{check location of this}
+extra-vascular bubbles cannot be much larger than  \unit{300}\nano\metre,
+even if the bubble is generated outside the vasculature by vapourising a liquid droplet. 
+If controlling the size of the bubble with the low frequency wave were not possible,
+the resonance frequencies of extra-vascular bubbles
+would be above ..\todo{get this number},
+and therefore have a maximum penetration of ...\todo{get number} in tissue.
+This would  curtail their  usefulness.
+
+In this chapter an outline the principle experimental design decisions are outlined.
+
+
+%In this chapter we outline an experiment to test whether the predicted influence of 
+%the low frequency wave can be detected experimentally.
+%In the next, \chapref{water_cavitation_char}, we characterise the bubbly medium
+%and in \chapref{water_cavitation_results} we analyse the experimental results.
+
+%Generating a bubble and imaging a bubble re
+%In \chapref{mechanisms} it was shown, with a computational model,
+%that a low frequency wave can alter the response of a bubble to a higher frequency pulse.
+%The lower frequency wave, the cavitating wave,
+%pulsates the bubble and induces transitory changes to its resonance frequency.
+%The scattering of the higher frequency pulse, the imaging pulse,
+%is increased if it is timed to be incident upon the bubble when the bubble's  size  is such
+%that it  better matches the imaging frequency.
+%
+
+
+
+%\section{Methodology}\label{sec:WE:methodology}
+
+
+
+%\subsection{The generation of the two pulses}
+
+
+
+\section{Alignment of the two pulses}
+
+% \begin{figure}[p]
+%      \centering
+%      \subfloat[The radius of the bubble is changed by the low
+%      frequency wave.  This will alter the bubble's resonance frequency.]{
+%           \label{fig:change_radius}
+%           \includegraphics[width=0.8\textwidth]{change_radius.png}}
+%      \hspace{1cm}
+%      \subfloat[By timing a high frequency wave to meet the bubble
+%      while it is under the influence of the low-frequency wave, the
+%      bubble can be induced to resonate at higher than usual
+%      frequencies. This is because the bubble will transiently be
+%      smaller (when it is compressed) and because it will experience a
+%      Doppler shifted imaging wave. ]{
+%           \label{fig:both_waves}
+%           \includegraphics[width=0.8\textwidth]{both_waves.png}}
+%      \caption{Low and high frequency pulses emitted.
+%      }
+%      \label{fig:general_idea}
+% \end{figure}
+
+% \begin{figure}[h]
+%      \centering
+%           \includegraphics[width=0.8\textwidth]{pulses.pdf}
+%      \caption{
+%        The incident pressure wave resulting from the superposition of
+%        the low frequency and imaging waves as a function of sample
+%        depth.
+%        Negative depths are closer to the imaging transducer.
+%      }
+%      \label{fig:pulses}
+% \end{figure}
+
+% \begin{figure}[h]
+%      \centering
+%           \includegraphics[width=1.0\textwidth]{radxs.pdf}
+%      \caption{Normalised scattering cross section of a bubble as a
+%        function of depth,
+%        plotting with the corresponding radial response for the pulses
+%        as drawn in \figref{pulses}.
+%      }
+%      \label{fig:xs}
+% \end{figure}
+
+
+\begin{figure}[h]
+     \centering
+     \subfloat[]{
+     \missingfigure{The sketch of the arrangement}\label{fig:pressure_pulses:a}
+   }\\
+     \subfloat[]{
+     \missingfigure{The incident pressures}\label{fig:pressure_pulses:b}
+}\\
+     \subfloat[]{
+     \missingfigure{The generated response}\label{fig:pressure_pulses:c}
+   }
+     \caption{
+       When the transducers face each the phase relationship between the two pulses will be sampled as a function of depth.
+       \subref{fig:pressure_pulses:a} shows the arrangement of the transducers.
+       \subref{fig:pressure_pulses:b} shows the pulses pass through each other as a function of depth and time.
+       The acoustic response of a bubble at each depth is illustrated in \subref{fig:pressure_pulses:c}.
+     }
+     \label{fig:pressure_pulses}
+\end{figure}
+
+In this thesis two separate ultrasound transducers are used to generate the cavitating and imaging waves.
+This brings the advantage of flexibility:
+the characteristics of the cavitating and imaging waves are completely decoupled.
+The  frequency, pulse-duration, focal depth and duty-cycle of each pulse can be chosen and interchanged independently,
+and without  compromise with regard to a crystal's bandwidth or curvature.
+%that  arises when generating the pulses from a single crystal or a set of interleaved crystals.
+%Additionally, by separating the driving and imaging waves
+%the properties of the driving or imaging wave can be easily switched.
+
+To investigate the phase-relationship between the driving and imaging pulses
+when incident upon a bubble,
+the two waves must pass simultaneously through a bubbly fluid situated at the common focus.
+This is most easily achieved by  having the two transducer's facing
+each other. %, as illustrated by the cartoon of \figref{general_idea}.
+If the bubbly mixture is both dense and homogeneous,
+so that it may be considered a continuous medium,
+then at every position within the sample a different phase relationship
+between the two waves is interrogated.
+This is illustrated in \figref{pressure_pulses:a}.
+Bubbles that are close to the imaging transducer will backscatter sound
+before the driving wave arrives.  This is seen in the top left of \figref{pressure_pulses:b}.
+The forward scatter contributed by these bubbles from the driving wave arrives later, as seen in the top right of \figref{pressure_pulses:b}.
+Bubbles that are a little further away will be driven by the driving  and  imaging waves simultaneously.
+Still further from the imaging wave, the driving wave will arrive first, followed by the imaging wave.
+%Further from the away still, theThe first few oscillations will be due to the driving wave alone,
+%before the  imaging wave arrives at a given phase of the driving wave.
+
+Alternative arrangements for the two transducers are of course possible.
+In principle, the two transducers could be at any angle, $\phi$, with respect to each other.
+However, having the transducers co-axial (where $\phi = 0\degree,180\degree$) is optimal because
+the sampling precision in the axial direction is vastly superior than in the orthogonal directions.
+This is because the sampling rate in the axial direction is determined by the rate at which samples can be digitalised.
+In the orthogonal direction sampling precision  is determined by the beam width of the ultrasound transducer.
+Any arrangement other than co-axial will therefore deteriorate the sampling precision by a factor of $\sin(\phi)$.
+
+The two co-axial arrangements both have their pros and cons.
+The advantage of having the two transducers facing each other ($\phi = 180\degree$) 
+is that all phase relationships between the two pulses are explored in a single shot.
+The disadvantage is that the driving pulse is incident upon the imaging transducer even if no scattering occurs.
+This directly transmitted signal is not generally dominant, however, so long as the  band-widths of the driving and imaging crystals do not greatly overlap.
+If the two crystals are intermeshed into the same transducer ($\phi = 0\degree$) then the two pulses traverse with each other.  
+There is no problem with either signal being directly transmitted.
+However, each phase relation of the two pulses needs to be carried out individually
+and it is difficult to maintain micron-sized bubbles in a consistent state for any length of time.
+A further problem is that the phase relationship between the two pulses changes as a function of depth;
+a high frequency pulse {\em surfing} on a compression of a lower-frequency pulse travels at a greater speed than when timed with a rarefaction.
+This effect is measurable.  It is the basis of {\surf}-imaging\cite{Anderson}\todo{get citations}.
+Finally, inter-meshing two crystals into the same transducer generally requires bespoke transducers
+and comes at a considerable cost.
+For these reasons, the angle $\phi = 180\degree$ is chosen in this thesis.
+
+
+\section{The source of bubbles}\label{sec:WE:why_water}
+
+\begin{figure}[t]%
+  \centering
+    \input{figs/water_cav_design/sonovue_sizes.tex}
+  \caption{
+    \Sonovue\ distribution at various times after manufacture (in minutes).
+  }
+  \label{fig:sonovue_sizes}
+\end{figure}
+
+
+There are a number of microbubble sources that could be used to test the influence of the low frequency wave 
+on the imaging wave.
+
+%\subsection{A bubble generated from a perflurocarbon emulsion}
+
+
+%Each of these methods have their respective advantages.
+\desc{
+\item[A bubble generated from a perflurocarbon emulsion:]\hfill \\
+  It seems likely that perfluorocarbon droplets will 
+  eventually be able to leave the blood and be vapourised in situ to generate a contrast agent (see \chapref{introduction}).
+  Testing two wave imaging using a bubble perfluorcarbon emulsion would
+  therefore represent a natural end to this research project:
+  the technique tested in the domain in which it is most useful,
+  a cavitating wave acting upon a sub-micron bubble.
+  Perfluorocarbon emulsions do not, however, represent a natural beginning.
+
+  The technology in developing such contrast agents is still young.
+  Most of the success so far has been with larger droplet sizes (greater than \unit{400}\nano\metre\todo{cite})
+  while manufacturing smaller droplet sizes, required for producing an extravacularised bubble of less than \unit{400}\nano\metre\todo{radius or diameter},
+  has remained troublesome\todo{cite} (although see \todo{cite}).
+  The pressures that have hitherto been used to generate the bubbles are above ...\todo{get this number}, far in excess of those used in diagnostic applications,
+  with cavitating pulse lengths of ...\todo{get number} cycle.
+  Such pressures require the emulsion to be prepared in exceptionally clean water
+  to be sure that the bubbles generated by the driving wave are not simply from heterogeneous nucleation of the water.
+  Furthermore, any surfactant used to stabilise the emulsion must be known not to also stabilise
+  any bubble formed in the manufacturing process, or to itself form a nucleating centre.
+  Research is being carried out reduce the pressure required for to cavitate a perlfuorocarbon droplet,
+  which ideally would be possible with a diagnostic transducer,
+  but this research has not yet come to fruition \todo{cite}.
+  
+
+
+%\subsection{Commercially available microbubbles}
+\item[Commercially available microbubbles:]\hfill \\
+  The difficulties resulting from the novelty of perfluorocarbon  emulsions 
+  are resolved by using commercial available microbubbles.
+  Microbubble contrast agents have been licensed since ,\todo{get date and bubble}
+  and \Sonovue\ (Bracco) is currently licenced for clinical use in the EU \todo{cite}.
+  Both its size distribution (...\todo{get numbers and cite}) 
+  and its resonances \todo{cite}  are well characterised.
+
+  However, the size distribution of commercial microbubbles causes problems in this experiment.
+  Firstly, the mean radius of the bubbles is greater than a micron.
+  This means that the bubbles float, albeit slowly, making a distribution of bubbles
+  that is homogeneous both spatially and temporally difficult to achieve.
+  Even if the bubbles are circulated, the larger bubbles are gradually lost in the experiment.
+  The results of a preliminary experiment showing the size distribution of \Sonovue\ circulating 
+   through a Mastersizer is shown in \figref{sonovue_sizes},
+  and other studies show similar results\todo{cite}.
+  Since microbubbles are highly attenuating to ultrasound \todo{cite}
+  the pressure field in the sample changes as the distribution changes,
+  meaning that the response becomes a complicated function of depth.
+  The large size of commercial bubbles also means that they are more fragile to larger pressures.
+  \todo[inline]{Comment about curvature to back this up}
+  The use of microbubbles forces the experiment away from the domain where a submicron bubbles is generated  with a high pressure wave.
+  
+
+
+  Secondly, commercial microbubbles have a fairly broad distribution of sizes.
+  This causes problems because the phase offset between the bubble's pulsations and  cavitating wave 
+  is a function of the bubble's size (see \chapref{computations}).
+  The scale of this problem can be understood from \figref{phase_radial} on page \pageref{fig:phase_radial}.
+  Not only would we be trying to find the excess scattering cross-section of  a bubble in the complicated region
+  corresponding to large bubble radii, we would be trying to perform a weighted average over that region.
+
+  %Finally, the degree to which the samples are free from nucleation centres is uncertain with commercial bubbles.
+  %The bubbles are designed to be sterile, and come packaged with a dry surfactant and a solution into which the bubbles are to be formed.
+  %Making a control solution to test that you are actually imaging the commercial bubble and , free from the comertial 
+  %Most bubbles are formed from by injecting 
+  %so need to use a control.
+  %setting up a control is difficult.
+  %This is particulaly the case for contrast agents such as levovist 
+  %that often has undisovled honeycomb left in the sample.
+  %Distinguishing between microbubble bubble and heterogenous nucleation difficult.
+
+
+%\subsection{Heterogeneous nucleation of tap water}
+
+
+\item[Heterogeneous nucleation of tap water:]\hfill \\
+  The heterogeneous nucleation of tap water is perhaps the simplest method of generating a bubble.
+  Indeed, it makes a good control method to the more elaborate techniques above.
+  It is also the method that most closely matches the ideal parameters for cavitating an extravascular contrast agent.
+  With relatively short pulses (less than 10 cycles) at pressures that are achievable with diagnostic ultrasound transducers 
+  (less than approximately \unit{1}\mega\pascal\ peak-negative pressure)
+  gas entrapped in stabilised microbubbles and motes can be released\todo{cite}.
+  %(An example is shown if \figref{av:108:1000_ex} and is discussed in \secref{WE:motivating_ex}).
+  
+  The critical radius, $R$, of the resulting bubble can be estimated from the Laplace pressure
+  \eq
+  {
+    R = \frac{2\sigma}{P}
+  }
+  where $\sigma$ is the surface tension between air and water,
+  and $P$ is the applied pressure. 
+  If $P = \unit{1}\mega\pascal$ diameter of the bubble is approximately $300\nano\metre$.
+  This is the size that would be expected for extravascular contrast agent,
+  achieved with a pressure that would be desirable for an extravascular contrast agent.
+  %It therefore makes an excellent mode
+  %Should such bubbles exist in the tap water,
+  %then submicron bubbles can be elicited at diagnostic pressures.
+  Furthermore, tap water is homogeneous and is stable indefinitely once it has reached a stable equilibrium,
+  at least up until the sample has been pulsed with an ultrasound wave.
+  
+  %It is for this reason that tap water is troublesome when cavitation within the sample is not desired - neither.
+  Tap water provides a very good source of bubbles for testing the use of a cavitating wave in controlling the scattering of an imaging wave.
+}  
+This chapter uses tap water as a source of bubbles.
+The bubbles in the medium are therefore generated by heterogeneous nucleation of the water.
+At diagnostic ultrasound pressures, 
+this implies type III and type IV nucleation (see  \chapref{nucleation}).
+%Motivation for using bubbles obtained from tap water
+%rather than from other sources
+%is given in \secref{WE:why_water}.
+The characterisation of the water medium adds 
+requirements to the experimental method
+that are additional to those needed to test the influence of the cavitating wave on scattering of the imaging wave.
+A full list of the experimental objectives is given in  \secref{WE:objectives}
+and the experimental methodology designed to meet these objectives is given in \secref{WE:methodology}.
+
+\section{Characterisation of the bubbly fluid}
+  
+The characterisation of the nucleation sources within the water can be achieved indirectly
+using a method discussed in \secref{WE:characterisation}.  
+
+\subsection{Density of Impurities and threshold}
+Argument from Herbert\cite{Herbert2006}.
+
+Let $dn/dP$ be distribution of impurities with threshold $P$.
+I.e. concentration of impurities with threshold between $P$ and $P+dP$ is $(dn/dP)dP$
+Cavititation probability when pressure reaches $\Pmin$ at the focus,
+\begin{align}
+  \sum\lr{\Pmin} = 1- \exp\lr{-\int_Vdr \int_{P(r)}^\Psat dP \frac{dn}{dP} }
+\end{align}
+$V$ is volume of the focal region
+
+Simplest distribution assumes all have the same threshold 
+\begin{align}
+  \frac{dn}{dP} = n_0 \delta(P-P_0)
+\end{align}
+Then 
+\begin{align}
+  \sum\lr{\Pmin} = 1- \exp\lr{-n_0 V(P<P_0|\Pmin)}
+\end{align}
+If spherical distribution so that 
+\begin{align}
+  P(r) = \Pmin \frac{\sin(kr)}{kr}
+\end{align}
+then
+\begin{align}
+  \sum\lr{\Pmin} = 1- \exp\lr{-n_0 4\pi r^3 /3}
+\end{align}
+which can be expressed in terms of power series of $\epsilon \equiv 1-P_0/\Pmin$.
+But this provides bad fit
+Herbert tries distribution:
+\begin{align}
+\frac{dn}{dP} = \frac{\alpha n_0}{\lr{P_2-P_1}^{\alpha}}\lr{P_2-P}^{\alpha-1}
+\end{align}
+which can be fit well.
+
+\subsection{Distribution of bubbles}
+
+Diffusion vs buyancy.
+
+\subsection{Boolean model}
+From Stoyan Stochastic geometry and its applications.
+
+Constructed with {\em germs} $x_n$ and the {\em primary grains}, $\Xi_n$, such that
+\begin{align}
+  \Xi = \bigcup_{n=1}^\infty \lr{\Xi_n + x_n} = \lr{\Xi_1 + x_1} \cup \lr{\Xi_2 + x_2} \cup\ldots .
+\end{align}
+With condtion that 
+\begin{align}
+  E(\nu_d(\Xi_0 \oplus K)) < \infty \text{ for all compact k}
+\end{align}
+$\Xi_0$ denotes a further random compact set of same distribution of $\Xi_n$ but independent of both of them and of the germ process $\Phi$.
+$\Xi$ is a {\em boolean model with primary grain } $\Xi_o$.
+
+Condition ensures finitely many of the grains $\Xi_n+x_n$ meet any given compact set,
+ensuring property of beiing a closed set is inherited by $\Xi$ from the primiary grains.
+A simpler but more restrictive condition is that 
+\begin{align}
+  E(R^d) < \infty
+\end{align}
+where $R$ is the radius of the ball circumscribing $\Xi_n$.
+
+The primary grains are here spheres of random radius, drawn from a distribution, $M$,
+the {\em mark distribution}.
+They are therefore convex.
+
+Not assumed to be much overlap,
+therefore considered as a point process, the Neyman-scott point process
+
+\subsubsection{Capacity Functional}
+Determined uniquely by the {\em capacity functional}, $T_\Xi$.
+
+\begin{align}
+T_\Xi (K) &= P(\Xi \cap K \text{ is not empty}) \\
+&= P(\Xi \cap K \ne 0)
+\end{align}
+for any compact K.
+
+From the Poisson assuption, 
+\begin{align}
+  T_\Xi (K) = 1 - \exp\lr{-\lambda E(\nu_d(\check{\Xi}_0 \oplus K))}
+\end{align}
+or 
+\begin{align}
+  T_\Xi (K) = 1 - \exp\lr{-\lambda E(\nu_d({\Xi}_0 \oplus\check K))}
+\end{align}
+and the proof is in Stoyan.
+
+Useful to intodcue 
+\begin{align}
+  \psi(K) = 0 \ln P(\Xi \cap K = \absurdity).
+\end{align}
+so that
+\begin{align}
+  \psi(K) = \lambda E(\nu_d(\Xi_0 \oplus \check K))
+\end{align}
+
+\subsection{Neyman-Scott Point Process}
+
+
+\subsubsection{Contact Distribution functions}
+{\em Contact distribution function} or {\em hit distrubution function}
+for a stationary random closed set $\Xi$ is defined by using a specified test set or structuring element $B$,
+a convex body of $R^d$ containing the origin $o$.
+Then the contact distribution function is defined as
+\begin{align}
+  H_B(r) = 1 - \frac{P(\Xi\cap rB = \absurdity)}{1-p}
+\end{align}
+for $r\ge 0$ and where $p$ is the volume fraction of $\Xi$.
+Since $B$ contains the origin, $\Xi\cap rB$ being empty implies that $\Xi$ does not conatin the origin. So the value of $H_B(r)$ is the conditional probablity that the parallele set of distance $r$ of $B$ makes contact with $\Xi$, conditional on $\Xi$ nt containing $o$.
+
+The sphecica contact ditribution may be interpreted as the distrubtion functionof distance from a point chosen randomly outside $\Xi$,
+measured to the nearest point $Xi$.  Hence, $H_s$ is the law of first contact.
+
+In general we have
+\begin{align}
+  H_B(r) = 1- \exp\lr{-\lambda\lr{E\lr{\nu_d \lr{\check \Xi_0 \oplus r B}}- E\lr{\nu_d{\Xi_0}}}}
+\end{align}
+for $r\ge 0$.
+
+ Let $\Xi_\ast$ be a primary grain chosen at random, the ``typical'' grain.
+ Let $x_\ast$ be the corresponding germ of the typical grain, $\Xi_\ast$ and let
+ \begin{align}
+   \Xi^\prime = \bigcup\left\{\Xi_i + x_i : x_i \ne x_\ast \right\}
+ \end{align}
+ be the union of the ramaining grains, then the following are of interest,
+ \begin{align}
+   p_o &= P(x_\ast \text{ is covered by $\Xi^\prime$}\\
+   p_G &= P(\Xi_\ast + x_\ast \text{ intersects $\Xi^\prime$}),\\
+   p_s &= \text{fraction of boundary of $\Xi_\ast$ which is covered by $Xi^\prime$}
+ \end{align}
+ Probabities satisfy
+ \begin{align}
+   p_0 &= p\\
+   p_G &= 1 - E\lr{\exp\lr{-\psi\lr{\Xi_0}}}\\
+   p_s &= p
+ \end{align}
+ for proofs see Stoyon.
+
+The number of isolated grains with germ pointst in a given compact set $K$ is 
+\begin{align}
+  \lambda \lr{1-p_G}\nu_d(K)
+\end{align}
+
+\subsubsection{Convex Grains}
+If $\Xi_0$ is isotropic and convex then $\psi(K)$ can be calculatd for convex $K$ by the generalised Steiner Formula,
+\begin{align}
+  \psi(K) = \lambda E(\nu_d(\Xi_0 \oplus \check K)) = \frac{\lambda}{b_d}\sum_{k=0}^d \twovec{d}{k}\bar W_k W_{d-k}(K)
+\end{align}
+Where $\bar W_k$ denotes the mean of the $k$th Mindowski function of $\Xi_0$,
+\begin{align}
+  \bar W_k = E(W_k(\Xi_0)) \text{ for $k = 1, \ldots, d$}
+\end{align}
+and $b_d$ is the volume of the $d$-dimensional unit ball.
+
+E.g. let $X_0$ be a sphere, $b(o,R)$ of random radius $R$ with $E(R^d) <\infty$.
+Then 
+\begin{align}
+  \psi(K)= \lambda(A(K) + U(K)E(R) + \pi E(R^2))
+\end{align}
+and if $d=3$ then
+\begin{align}
+  \psi(K) = \lambda\lr{  V(K) + S(K)E(R) + 2\pi \bar b(K) E(R^2) + \frac{4}{3} \pi E(R^3) }
+\end{align}
+
+\subsubsection{Contact Distribution Function}
+For convex structure We have
+\begin{align}
+  H_B(r) = 1 - \exp\lr{ -\frac{\lambda}{b_d}\sum_{k=1}^d\twovec{d}{k}r^k \bar W_k W_{d-k}(B)}
+\end{align}
+for $r\ge 0$.
+The $k=0$ term cancels with $-\lambda \bar W_0$ or $-\lambda E(\nu_d(\Xi_0))$ terms.
+
+If $d=3$ then
+\begin{align}
+  H_B(r) &= 1 - \exp\lr{-\lambda \lr{\frac{\bar S M(B)}{4\pi}r + \frac{\bar M S(B)}{4 \pi}r^2 + V(B) r^3 } }\\
+  &= 1 - \exp\lr{ -\frac{1}{1-V_V} \lr{ \frac{S_V M(B) }{4\pi}r + \frac{M_V^+S(B)}{4\pi}r^2 + N_V^+V(B)r^3  } }
+\end{align}
+for $r\ge 0$.
+N.B. The physical dimensionality of the $H_B(r)$ has to be noted.  See the book.
+
+Spherical Contact Distribution
+\begin{align}
+  H_s(r) = 1-\exp\lr{-\lambda \sum_{k=1}^d\twovec{d}{k} \bar W_kr^k}
+\end{align}
+for $r\ge0$.
+It is the distance to the nearest sphere from a point chosen at random but from outside one of the spheres.
+It is 
+\begin{align}
+   H_s(r) = 1-\exp\lr{-\frac{4}{3}\pi\lambda r\lr{3E(R^2) + 3r E(R) + r^2}}
+\end{align}
+
+Special cases
+Primary grains are random balls with radius $R$ and distribution function $F_R$ with
+\begin{align}
+  p = 1- \exp\lr{-\frac{4}{3}\lambda \pi E(R^3)}
+\end{align}
+\begin{align}
+  \lambda_1^{(3)} = \lambda \pi E(R^2)
+\end{align}
+\begin{align}
+  H_s(r) = 1 - \exp\lr{ -\lambda \pi r \lr{ 4 r E(R) + \frac{4r^2}{3} }  }
+\end{align}
+\begin{align}
+  C(r) = 2p - 1 + \lr{1-p}^2 \exp \lr{ \lambda \frac{4}{3}\pi \int_{r/2}^\infty x^3\lr{1-\frac{3r}{4x}+\frac{r^2}{16x^3}} dF_R(x)}
+\end{align}
+
+\subsection{Proximity of Bubbles}
+Are they likely to be interacting
+
+\subsection{Probability of a bubble in the imaging field of view}
+
+\subsection{Probability of a bubble in the Driving field of view}
+
+
+
+% First, however, we motivate the use of tap water with a few examples of the nucleation images that can be generated.
+
+%}
+
+
+
+
+
+
+
+% \subsection{Generation of the two pulses}
+% \subsubsection{Imaging wave}
+% The imaging wave is generated from a custom ordered Panemetrics \unit{20}\mega\hertz\
+% transducer.
+% The pulse/receive electronics is controlled 
+% with a \JsrUltrasonics \DPR500 dual pulser-receiver
+% with a \RPL2 pulser-receiver.
+% The imaging voltage was \unit{300}\volt\ and the combined imaging gain 
+% of the pre-amplifier and \DPR500 was \unit{50}dB.
+% To help reduce the contribution of the direct transmit/forward scatter of
+% the driving wave, a high pass filter (-\unit{3}dB at \unit{7.5}\mega\hertz)
+% was used.
+
+% \subsubsection{Driving wave}
+% The driving wave was generated from an  Analogic 2045 arbitrary waveform generator.
+% The input voltage was a sinusoid of frequency \unit{0.5}\mega\hertz\ 
+% truncated to be 10 cycles in duration. 
+% The output of Analogic was input into a Tomco power-generator (gain of \unit{50}dB)
+% which drove a \unit{0.5}\mega\hertz\ ... transducer.
+
+% \subsubsection{Controlling the timing of the two waves}
+% An Agilent  33220A is controlled by LAN connection.  Its role is trigged by the computer to produce a sine burst of 10 cycles.  The gate to the tomco and the analogic is conneted to the sync out.  The output is connected to the RF in on the Tomco
+
+% The analogic is to provide a delayed pulse for the \DPR500.  The reason this pulser is used rather than the Thandars or the agilent is because it has a much faster clock.  The other generators are not usable because the gitter is of order 50ns  ruining the averages.  The gitter from the analogic is nearer 5-10ns.  Its output goes to trigger the scope and to the sunc of the \DPR500.  The scope is triggered from this input so that the time recorded is genuinly a pulse-echo-time.
+
+
+% The \DPR500 is controlled via serial connection.  It controls the imaging spike.
+
+% The scope is controlled by LAN. Waveforms are grabbed directly from the scope.
+
+
+% %When imaged by the high-frequency wave the phase of the low frequency
+% %wave will manifest itself as a function of depth.
+
+
+
+% %The two pulses transducers need to have a common focus and we wish to
+% %interrogate all phase relationships between the two waves.
+% %This is most easily achieved by
+% %In this experimental arrangement the firing of the two pulses is co-ordinated so that the waves meet at
+% %their common focus at the same time.
+% %As they pass through each other at twice the speed of sound the two waves will pass through all
+% %possible phases.
+% %When imaged by the high-frequency wave the phase of the low frequency
+% %wave will manifest itself as a
+% %function of depth.
+% %(If this is not clear then \figref{pulses} in \secref{computational}
+% %may help.) 
+
+
+
+% %The limited bandwidth of the high-frequency transducer is relied upon
+% %to filter out the direct transmit of the low-frequency wave.
+
+
+% \subsection{The Experimental container}
+% The experiment is carried out with a experimental chamber built by Mr Craig ...
+% The dimensions are drawn in \figref{chamber_drawing}
+% and a photo is seen in \figref{chamber_photo}.
+% A water bath is provided for both the driving and imaging transducers,
+% both such that the geometric focus is coincident in the middle of central,
+% reaction chamber.
+% the central chamber can be closed with a plastic acoustic medium.
+% However,
+% in this experiment no such division was made.
+
+
+% \subsection{Summary of arrangement}
+% The full arrangement is given in \figref{arrangement}.
+
+
+
+% %\subsection{The characterisation of the nucleated bubbles}\label{sec:WE:characterisation}
+
+
+% \subsection{The experimental volume}
+
+% Beamplot goes here.
+
+% \subsubsection{Generation of Bubbles}
+
+% \subsubsection{Assumptions made}
+
+
+
+
+
+%When I high frequency wave - the imaging wave -
+%is incident 
+%It does so indirectly.
+%First, the 
+%It was shown that when a bubble is shrunk, 
+%even temporarily, 
+%that the resonance frequency of the bubble increases.
+%The bubble's response to a high frequency imaging wave can be tuned by varying the phase of% the bubble's cycle at which the bubble is incident.
+%The phase of the bubble, in turn,
+%may be controlled by a second, lower frequency wave.
+%When the phase of the low frequency wave - the driving wave - 
+%is such that the bubble is temporarily shrunk,
+%the resonance frequency of the bubble temporarily increases.
+%If a short high frequency pulse is incident on the b
+%The bubble's response to a second, high frequency imaging wave can be tuned by varying the phase relationship between the two waves.
+
+
+
+
+% \section{A motivating  example}\label{sec:WE:motivating_ex}
+
+% \begin{figure}[t]%
+%   \centering
+%   \subfloat[1st pulse - 100]{
+%     \label{fig:av:108:100_ex:first}
+%     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means1_large.tex}}
+%  \quad
+%   \subfloat[2nd pulse - 100]{
+%     \label{fig:av:108:100_ex:second}
+%     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means2_large.tex}}\\
+%  \subfloat[1st pulse - 12000]{
+%     \label{fig:av:108:12000_ex:first}
+%     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_12000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_12000_no_imaging_av_with_sd_means1_large.tex}}
+%  \quad
+%   \subfloat[2nd pulse - 12000]{
+%     \label{fig:av:108:12000_ex:second}
+%     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_12000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_12000_no_imaging_av_with_sd_means2_large.tex}}\\
+%   \subfloat[2nd pulse - 12000]{
+%     \label{fig:av:108:12000_ex:sub}
+%     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_12000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_12000_no_imaging_av_with_sd_means_sub_large.tex}}\\
+%   \caption{
+%     The pressure received  by the imaging transducer when the driving wave is on but the imaging wave is off (receive-only).
+%     The second pulse \subref{fig:av:108:100:second} is received \unit{100}\micro\second\ after the first \subref{fig:av:108:100:first}.
+%     Each image is the average of 49 images, the first standard-deviation error bars are indicated.
+%   }
+%   \label{fig:av:108:100_ex}
+% \end{figure}
+
+
+
+% %\Figref{av:108:1000_ex:first} illustrates 
+
+% To motivate the use of water as a the cavitating medium, 
+% we illustrate a preliminary experiment that demonstrates the signal recieved by the high frequency transducer.
+% \Figref{av:108:1000} shows the pressure received by the imaging transducer when the driving wave pressure is 0.108V at the focus.
+
+% That a bubble is actually created is illustrated in 
+
+% Need to demonstrate bubble.
+% need to demonstrate nucleation threshold.
+% need to demonstrate 
+
+% %
+% %Is it a bubble?
+% %
+% %Qualitatively the image is similar to those generated by the computer model.
+% %A more detailed comparison on these lines will happen in \chapref{infer_model}.
+
+
+
+% \nlist{
+%   \item A bubble is transiently created at the bright regions and dissolves in the dark regions (a very short lived bubble).
+% \item A bubble is created and lives for the entire A-line and then dissolves/returns to its mote before being generated again in the next A-line (i.e. The lifetime of the bubble is less than the time between adjacent A-lines).
+% \item A bubble is created and lives for a while (see it for many A-lines).  
+% }
+% If the third of these were true then it must be explained  why the bubble cannot be seen when the driving wave is off (for example, the bubble is small).
+
+% To give an interpretation I think the following question must be answered:
+
+% \begin{sidetext}{}{Important Question}
+%   Is the signal backscatter from the imaging wave or forward scatter from the driving transducer or a mixture of the two?
+% \end{sidetext}
+% If the signal is just forward scatter then we are simply doing passive cavitation detection,
+% via an overly complicated harmonic imaging setup.
+% There is then no relation to the computational work done.
+% There is no new technology at work.
+% It should also be said that if this is the case then we are also using the word cavitation in its loosest sense.
+% We could not claim to be generating a bubble - the bubble probably does exist, but is just not visible at the pressures and frequencies used in the imaging setup.
+% The result would then be ``If you use a sufficiently high pressure you can pulsate a small bubble  to generate higher-frequency harmonics''.
+% I do not feel that this is a novel contribution.
+
+
+% If the signal is just back-scatter then we have a very interesting result.
+% It could be that the bubble is very short lived, or that the driving wave has influenced the backscatter of the imaging wave.
+% The second of these is the result that we are looking for, but a very short lived bubble would be interesting too.
+
+% If the signal is a combination of forward-scatter and backscatter then we need a way of separating out `interesting' backscatter from the dull forward scatter.
+% This issue was discussed at length in \chapref{mechanisms}.
+% The way to do this is to subtract an image generated when only the driving wave is present (providing the forward scatter and direct transmit)
+% from an image containing both waves.
+% Then you are left with the contribution from the imaging wave.
+
+% If the bubble is the same in both images then the forward transmit will be subtracted away.
+% If all the signal is removed in the subtraction then we have simply been doing harmonic imaging and therefore contributed nothing.
+% (I.e. pulse inversion without inverting the pulse).
+% If a portion of the signal is obliterated then we have the imaging wave interacting with the driving wave (the most interesting result).
+% The beginning of the resultant signal indicates where the bubble is located (see \chapref{mechanisms}).
+% If the signals are in no way obliterated then it indicates that the bubble was not the same from one pulse to the next:
+% it indicates that we are destroying/creating the bubbles with the driving wave.
+
+% \todo[inline]{%
+% The problem, therefore,  is that I cannot distinguish an interesting result (the driving wave and imaging wave interacting, or very short lived bubbles)
+% from a result that contributes very little (harmonic imaging).
+% To resolve this problem the imaging transducer needs to be able to be turned off.
+% However, this is not easy to do with the Cortex.
+% To answer these questions I need a pulse-receive system that lets me choose which transducer is off/on at any given time.
+% With such a system the experiment can be repeated in an afternoon - and the answer to this central question obtained.
+% }
+
+% \nlist{
+% \item homogeneity of bubble motes
+% }
+
+
+
+\section{Experimental Objectives} \label{sec:WE:objectives}
+
+
+
+In line with the goal of imaging an extravascular bubble,
+we focus in this chapter on imaging sub-micron bubbles 
+that have been pulled into solution with a low-frequency cavitating wave.
+This forces the experimental proceedure to 
+examine the major practical difficulty encountered when imaging with two ultrasound waves:
+the removal of the  bubble's high frequency response to the cavitating wave.
+As was shown in \chapref{mechanisms},
+if the driving wave is of sufficient pressure \todo{make this more precise}
+it will cause bubble to undergo an callapse with every cycle,
+each of which  can be detected by the imaging trasducer.
+This destroys the spatitial resolution of the image,
+for the bubble's temporal resolution is equal to the  duration of the low-frequeny pulse,
+rather than that of the much shorter imaging pulse.
+A method of overcoming this problem is to repeat the driving pulse,
+but this time without the imaging wave.
+By subtracting the response to the driving pulse alone,
+from the response when both waves are present,
+then the influence of the imagaging wave can be determined.
+This method propted the definition of {\em excess scattering cross section},
+given by \eqnref{excessI} on page \pageref{eqn:excessI}.
+This double-pulse method is explored in \secref{WE:method}.
+
+
+
+%For a contrast agent to leave th
+%In \chapref{introduction} \todo{check location of this} it was seen
+%that if a contrast agent is to leave the blood,
+%then its size is constrained to be smaller than approximatley 
+%that even if a bubble contrast agent  that bubbles that are generated from a contrast agent that are able to leave the blood
+
+
+
+%Generating a bubble with an acoustic pulse enables
+%a bubble to be created and then imaged within a microsecond timeframe.
+%This solves a major difficulty in the generation of small microbubbles:
+%their ...\todo{get this number} lifespace.
+
+%Reintroduce problem to solve,
+%imaging a cavitated bubble
+
+
+
+
+
+%\Chapref{mechanisms} investigated, with a computational model,
+%how two ultrasound waves may be used 
+The generation and the imaging of a bubble places different requirements on an ultrasound pulse.
+
+%\ilist{
+%  \item the low frequencies and long pulses required for generating a bubble lead to poor resolution 
+%when used for imaging;
+%\item the size of the generated bubble is, in general,
+%such that its resonance frequency is a poor match to the generating wave,
+%which means that the bubble's response is sub-optimal,
+%\item the 
+%}
+the low frequencies and long pulses required for generating a bubble lead to poor resolution 
+when used for imaging;
+the size of the generated bubble is, in general,
+such that its resonance frequency is a poor match to the generating wave,
+which means that the bubble's response is sub-optimal;
+the high pressures used in the generating wave 
+
+
+The prediction of \chapref{mechanisms} requires two waves
+
+that the scattering of a bubble in response a high frequency wave
+can be modulated by the pulsations induced in the model with a second wave.
+
+When the driving wave shrinks the bubble, the resonance frequency temporarily increases.
+If the new resonance frequency is closer to that of the imaging wave, then the scattering increases.
+Otherwise it decreases.
+
+
+The principle difficulty in doing this is separating the influence of the imaging wave from 
+the scatter generated from the driving wave alone.
+To do so, as was discussed in \chapref{mechanisms},
+two pulses need to be taken, one with and one without the imaging wave.
+
+
+This chapter analyses the results of the experiment outlined int  whether the driving  wave influences the back-scatter from an imaging wave in the predicted manner.
+
+
+To determine the influence of the high frequency wave 
+on a bubble pulsating to a dual frequency wave,
+the influence 
+
+\Chapref{mechanisms} described a method of determining whether the scattering of a high frequency wave
+can be altered by the pulsations induced by  a lower frequency wave.
+Two pulses were required, 
+one comprising of low frequency and high frequency components,
+the other comprising of just low frequency components.
+In this way the unperturbed-forward scatter from the low frequency wave could be subtracted out, 
+leaving behind the scatter that is caused by the high frequency wave.
+
+However, using two pulses causes its own problems,
+for it is difficult to guarenee that the pulses are independant of one-another.
+A pulsating bubble can grow (rectified diffusion),
+can dissolve away or can burst into many smaller bubbles. 
+%Additionally,
+%even if 
+%To generate a bubble, low frequencies and high pressures are required,
+%parameters that are poor for imaging.
+
+
+%There are two regimes where the tuning of the 
+%is no
+%The ability to tune the bubble's resonance frequency is not the only 
+%use of theThe influence of the the low frequency wave is not only interesting because
+%it allows the resonance frequency of the bubble to be tuned.
+
+
+
+%To carry out such an experiment, however,
+%requires a source of bubbles.
+
+
+%Small bubbles. High pressures.
+
+
+
+\section{Discussion} \label{sec:WE:discussion}
+
+
+
+
+This chapter gives two representative images at two different pressures for the cavitation of water.
+The issues in interpreting these images are then discussed.
+Without an interpretation, I do not believe we can say whether the images presented are novel or not, 
+even in terms of a balance of evidence.
+
+The images are Hilbert transformed data from the Cortex scanner.
+I have informally called these B-mode images - but in reality I have done nothing other than  Hilbert transform the RF data along A-lines.
+
+
+% \todo[inline]{The following text has been taken from previous reports.
+% The summary of this introduction has mostly been written in the introduction of \chapref{experimental_method},
+% so this introduction can be skipped.
+% I keep it here for the time being in case the structure enabled by \chapref{experimental_method} is not used,
+% in which case this introduction will probably be required.
+% }
+
+
+% The main experimental parameters that are 
+% subject to our control are:
+% \nlist{
+%   \item
+%     The relative phase between the low-frequency and imaging wave.
+%   \item
+%     The pressures of the two waves.
+%   \item
+%     The frequencies of the two waves.
+%   \item
+%     The pulse-length of the two waves.
+% }
+% All variables other than the pulse length were investigated computationally in  \chapref{mechanisms}
+
+
+% The first of these is well sampled by  virtue of the experimental
+% setup.
+% The two waves pass through each-other and so in {\em every} image {\em
+%   all}
+% phases between the two waves will be sampled.
+
+% Sampling the pressure of the low-frequency wave is also
+% straight-forward.
+% A wide range of driving pulses are chosen to vary the peak pressure
+% at the focus.
+% In addition, since an 2D image is formed, 
+% the spatially varying pressure field of the low frequency wave 
+% will be imaged in  {\em every } image.
+% The pressure of the imaging wave is much harder to control,
+% for it is controlled internally by the scanner.
+% %Indeed, it would be helpful to turn the imaging wave off altogether.
+% %This cannot be achieved without modifying the scanner, however.
+% The pressure ranges experimented with range from 0 through to $>1$ MPa
+% peak-negative.
+
+% Likewise, by choosing different  transducer, a range of
+% frequencies  can be used for the two waves.
+% Although our choice is not completely free.
+% The high frequency pulse ideally should last for only a small fraction
+% of the period of the low frequency wave.
+% In addition, 
+% when the difference in frequency between the low and high frequency transducers
+% becomes small the direct transmission of sound between the transducer's
+% becomes a problem for the anti-parallel setup of the transducers.
+% Imaging frequencies of between 7.5 and 20 MHz have been tried, 
+% along with low-frequency waves of between 0.5 and 2 MHz.
+% The results presented here were used a 0.5 MHz low frequency wave and
+% a 20 MHz imaging wave, unless otherwise stated.
+
+% The pulse length of the imaging wave should be short, 
+% although when imaging is achieved with a scanner, such as the cortex,
+% then this parameter cannot be changed.
+% The pulse length of the low frequency transducer is readily set.
+% To avoid bubbles growing (by rectified diffusion), fusing (by Bjerknes
+% forces) and collapsing (by instabilities in the oscillations) the low-frequency
+% pulse should also be short.
+% However, to reduce forward transmission the  frequency output of the
+% low frequency wave should not be 
+% too broad-band.
+% 10 cycles is used in these experiments.
+
+% The size of the bubbles/droplets is not simple to control.
+% In general a fairly broad-range of sizes is present, even for the
+% commercial agents,
+% although one of the advantages of using commercially available
+% contrast agents are that their size have been well studied.
+% It is not possible to directly size the bubbles formed in cavitation,
+% even though this is of interest.
+% This is because the bubbles are too short lived.
+% Finally, 
+% sizing the perfluoropentane emulsion is also hard.
+% This is because perfluoropentane is a transparent fluid with
+% essentially the same refractive index as water,
+% and so optical sizing becomes hard.
+% The best that can be done so far is to bound the size distributions by
+% passing the emulsion though a filter.
+% For other reasons it is desirable to attach a fluorescent
+% marker to the emulsion, but as a bonus this should help size the
+% droplets.
+
+
+
+
+% \subsection{Cavitated Water}\label{sec:water_vapourisation}
+
+% I have done cavitation experiments for lots of different driving pressures.
+% These pressures are recorded in my notes in terms of the number of decibels that the electric signal to the amplifier was suppressed.
+% Since the number of pressures tried was great, and since beam plots takes a long time,
+% I have only done axial  beamplots for 4 of the pressures tried.
+
+% \Figref{water_cavitation_70} indicates the cavitation events recorded at 30db suppression.
+% I have the (geometric) axial beam plot for this pressure.
+% I have the code to process the beamplot data (to indicate the pressure at each location in th image, 
+% although this code is untested and I haven't done the final step to actually draw it on the data.
+% This final step - all being well- shouldn't take long. 
+% It is my task, I think, for as soon as this document is finished.
+
+% In this document I give images for two pressures - the 30db suppression (\figref{water_cavitation_70}) and 15db suppression (\figref{water_cavitation_85}).
+% I have images for pressures in between and either side, but the figures indicate what can and can't be done with the data, I think.
+
+
+% \begin{figure}[h]
+%      \centering
+%           \includegraphics[width=0.8\textwidth]{rotterdam_02_water.png}
+%      \caption{30db}
+%    \label{fig:water_cavitation_70}
+% \end{figure}
+
+% \subsection{\Figref{water_cavitation_70}}
+% \subsubsection{General discussion of the image}
+% \Figref{water_cavitation_70} shows two plots.
+% Above is the B-mode for when both the driving wave and the imaging wave is on.
+% The two lines are the front and rear of the sample holder.
+% The lower plot is the same sample but when just the imaging wave is on.
+
+% In the top plot you can see banded specks that indicate the passage of the driving wave.  
+% %These are cavitation signals - you cannot make out the direct transmit in the image.
+% These signals are not present when the driving wave is off. % indicating that the signals are short lived (i.e. less than a few milliseconds - the time between adjacent A-lines).
+
+% At 30db suppression  such signals are fairly common but by no mean ubiquitous.
+% Often you get such signals only on a few A-lines (grouped together, as above) - sometimes only on 1 A-line - and often no signal at all.
+% At greater suppression (i.e 32 db) you get such signals but with much lesser frequency, maybe signal on some A-lines once in every 5 or 6 frames.
+% At lesser suppression they become more common.
+% The 30db signal has the property that you see  the bubbles at gains that  do not pick up the direct transmit.
+% This gives the images its `clean' appearance.
+
+% \subsubsection{Interpretation of the results}
+
+% \subsubsection{Quantifying Results}
+% A question that has not already been discussed could be  ``at what pressure does the cavitation signal manifest''.
+
+% The probabilistic nature of a cavitation is commonly overcome by asking for the pressure at which you 
+% generate a cavitation event in  50\% of the A-lines.
+% This approach was taken by Herbert\cite{Herbert2006} for the homogeneous nucleation of water.
+% Indeed, Herbert generated the probability density as a function of pressure.
+
+% However, it must be remembered that I am not doing homogeneous nucleation - 
+% the probability of a cavitation event is not a function of the water, 
+% but a function of its cleanliness and the degree to which the water is degassed.
+% So while I could plot a graph such as Herbert's, and quote a `threshold', I am not sure what this threshold would tell me?
+% Furthermore - since I am not {\em generating} a bubble (I am making an existing pocket of gas visible) - 
+% two separate A-lines are not independent. 
+% This invalidates the approach, and so any threshold I quote (of uncertain meaning) would be of dubious validity.
+
+% \todo[inline]{I cannot think of other relevant questions that I could ask of my data?}
+
+
+% \begin{figure}[h]
+%      \centering
+%           \includegraphics[width=0.8\textwidth]{C3water8500003.png}
+%      \caption{15db}
+%    \label{fig:water_cavitation_85}
+% \end{figure}
+
+
+% \subsection{\Figref{water_cavitation_85}}
+% \subsubsection{General discussion of the image}
+% The driving wave to \Figref{water_cavitation_85} has an applied voltage that is 15db greater than in \Figref{water_cavitation_70}.
+% You can clearly see the forward transmit, and various cavitation events throughout the B-mode image.
+
+% \subsubsection{The long tail of the image}
+% The problems in with the interpretation of this image are similar to the previous image (with the same solutions).
+% However, I include this image as I would like to draw your attention to what is in this image which is not in the previous.
+% In \figref{water_cavitation_85} I can count 16 bands in the signal, whereas in \figref{water_cavitation_70} I can count 10, possibly 11.
+% In both cases the signals were generated with a 10 electronic cycles. 
+% The difference between the two is presumably the degree of ringing in the driving transducer after the power has been turned off.
+% I have not done a beamplot for this pressure (John became a bit nervous about the cavitation events on the hydrophone).
+% However, the fact that you can see banding well after the signal finished suggests 
+% that you may see a response from the bubble even when the pressures from the driving transducer
+% are much reduced.
+
+% In these images, therefore, an addition interpretation is possible: that during the high pressure cycles 
+% the driving wave induces destructive cavitation of the bubbles - the bubbles grow and shrink and break with each cycle
+% (the stochastic nature of the images would support this, and at the high pressures such a result would not be a surprise)
+% but then in the  `ringing tail' periodic oscillation of a single stable bubble takes place. 
+% The test for the interaction between the two waves on a stable bubble would then be in the low pressure tail region.
+% This possibility was discussed in \chapref{mechanisms} and \chapref{experimental_method}.
+% The fact that periodic signals can be seen in this region is encouraging.
+% However, as before, without turning the imaging signal off it is impossible to say whether this result is actually interesting.
+
+
+% \section{Conclusion}
+% The problem that I have with the water cavitation experiments is that with the Cortex it is impossible to tell the mechanism  by which the cavitation event occurred.
+% If I am simply doing a passive detection of harmonic imaging then I don't believe my results contribute anything novel.
+% If it is more than harmonic imaging then my results, I believe, are interesting.
+% However, without turning off the imaging transducer it is impossible to answer this question.
+
+% This question cannot even be answered on the balance of probabilities.
+% This is because it would be very surprising if there was not any harmonic imaging present in the images.
+% It is therefore incumbent upon me, I believe, to demonstrate that there is not {\em just} harmonic imaging present.
+% The only way I can think of doing this is by subtracting away the contribution of the  driving wave. % (that is, pulse-inversion of the driving wave without the inversion).
+% This is difficult to do with the Cortex.
+% However, I believe it would be straight-forward in M-mode with the pulse-receive system that we now have available.
+
+
+
+
+%\begin{figure}[h]
+%     \centering
+%          \includegraphics[width=0.8\textwidth]{emulsion_cavitation_signal.png}
+%     \caption{Typical cavitation signal seen in bubbly water.
+%     The two long vertical lines are the reflections of the sample
+%     holder.
+%     The imaging transducer is to the left,
+%     the low-frequency transducer is to the right.}
+%   \label{fig:cavitation}
+%\end{figure}
+
+
+%\begin{figure}[h]
+%     \centering
+%          \includegraphics[width=0.8\textwidth]{pure90dbsmall41.png}
+%     \caption{Typical cavitation signal seen in bubbly water.
+%     The two long vertical lines are the reflections of the sample
+%     holder.
+%     The imaging transducer is to the left,
+%     the low-frequency transducer is to the right.}
+%   \label{fig:cavitation}
+%\end{figure}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../tshorrock_thesis"
+%%% End: 
+
+%  LocalWords:  Perfluorocarbon extravascularly
