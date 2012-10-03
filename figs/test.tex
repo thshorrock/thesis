@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{graphicx}
+ 
+\usepackage{graphicx}
+\usepackage{ifpdf}
+
+\ifpdf
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+\usepackage{subfigure}
+
+\begin{document}
+
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[f]{
+          \label{fig:ellipse_a}
+          \includegraphics{spacetime.0}}
+     \hspace{3cm}
+     \subfigure[]{
+          \label{fig:ellipse_b}
+          \includegraphics{spacetime.1}}
+    
+     \caption{caption}
+     \label{fig:ellipse}
+\end{figure}
+
+
+\begin{figure}%[htp]
+ \centering
+ \includegraphics{spacetime.2}
+ \caption{caption}
+ \label{fig:ObsEuclid}
+\end{figure}
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[]{
+          \label{fig:ObsA}
+          \includegraphics{spacetime.3}}
+     \hspace{1cm}
+     \subfigure[]{
+          \label{fig:ObsB}
+          \includegraphics{spacetime.4}}
+     \caption{caption}
+     \label{fig:Obs}
+\end{figure}
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[]{
+          \label{fig:ObsA}
+          \includegraphics{spacetime.5}}
+     \hspace{1cm}
+     \subfigure[]{
+          \label{fig:ObsB}
+          \includegraphics{spacetime.6}}
+     \caption{caption}
+     \label{fig:Obs}
+\end{figure}
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[]{
+          \label{fig:ObsA}
+          \includegraphics{spacetime.7}}
+     \hspace{1cm}
+     \subfigure[]{
+          \label{fig:ObsB}
+          \includegraphics{spacetime.8}}
+     \caption{caption}
+     \label{fig:Obs}
+\end{figure}
+%\includegraphics{lattice.3}
+%\includegraphics{lattice.4}
+%\includegraphics{lattice.5}
+
+\end{document}

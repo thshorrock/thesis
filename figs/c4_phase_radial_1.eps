@@ -1,0 +1,807 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: c4_phase_radial_1.tex
+%%Creator: gnuplot 4.2 patchlevel 6 
+%%CreationDate: Sat Aug 28 16:07:58 2010
+%%DocumentFonts: 
+%%BoundingBox: 50 50 410 302
+%%EndComments
+%%BeginProlog
+/gnudict 256 dict def
+gnudict begin
+%
+% The following 6 true/false flags may be edited by hand if required
+% The unit line width may also be changed
+%
+/Color false def
+/Blacktext true def
+/Solid false def
+/Dashlength 1 def
+/Landscape false def
+/Level1 false def
+/Rounded false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+%
+/vshift -73 def
+/dl1 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+Level1 {} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (c4_phase_radial_1.tex)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 4.2 patchlevel 6 )
+  /Author (cluster user,,,,)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Sat Aug 28 16:07:58 2010)
+  /DOCINFO pdfmark
+end
+} ifelse
+%
+% Gnuplot Prolog Version 4.2 (August 2006)
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+% Default Line colors
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default Line Types
+/LTw {PL [] 1 setgray} def
+/LTb {BL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [4 dl1 2 dl2] LC1 DL} def
+/LT2 {PL [2 dl1 3 dl2] LC2 DL} def
+/LT3 {PL [1 dl1 1.5 dl2] LC3 DL} def
+/LT4 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC5 DL} def
+/LT6 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 4 dl2] LC8 DL} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto gsave closepath fill grestore} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  gsave 1 setgray fill grestore clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+ 2 lt
+	{/InterpretLevel1 true def}
+	{/InterpretLevel1 Level1 def}
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+end
+%%EndProlog
+gnudict begin
+gsave
+50 50 translate
+0.050 0.050 scale
+0 setgray
+newpath
+gsave % colour palette begin
+/maxcolors 0 def
+/HSV2RGB {  exch dup 0.0 eq {pop exch pop dup dup} % achromatic gray
+  { /HSVs exch def /HSVv exch def 6.0 mul dup floor dup 3 1 roll sub
+     /HSVf exch def /HSVi exch cvi def /HSVp HSVv 1.0 HSVs sub mul def
+	 /HSVq HSVv 1.0 HSVs HSVf mul sub mul def 
+	 /HSVt HSVv 1.0 HSVs 1.0 HSVf sub mul sub mul def
+	 /HSVi HSVi 6 mod def 0 HSVi eq {HSVv HSVt HSVp}
+	 {1 HSVi eq {HSVq HSVv HSVp}{2 HSVi eq {HSVp HSVv HSVt}
+	 {3 HSVi eq {HSVp HSVq HSVv}{4 HSVi eq {HSVt HSVp HSVv}
+	 {HSVv HSVp HSVq} ifelse} ifelse} ifelse} ifelse} ifelse
+  } ifelse} def
+/Constrain {
+  dup 0 lt {0 exch pop}{dup 1 gt {1 exch pop} if} ifelse} def
+/YIQ2RGB {
+  3 copy -1.702 mul exch -1.105 mul add add Constrain 4 1 roll
+  3 copy -0.647 mul exch -0.272 mul add add Constrain 5 1 roll
+  0.621 mul exch -0.956 mul add add Constrain 3 1 roll } def
+/CMY2RGB {  1 exch sub exch 1 exch sub 3 2 roll 1 exch sub 3 1 roll exch } def
+/XYZ2RGB {  3 copy -0.9017 mul exch -0.1187 mul add exch 0.0585 mul exch add
+  Constrain 4 1 roll 3 copy -0.0279 mul exch 1.999 mul add exch
+  -0.9844 mul add Constrain 5 1 roll -0.2891 mul exch -0.5338 mul add
+  exch 1.91 mul exch add Constrain 3 1 roll} def
+/SelectSpace {ColorSpace (HSV) eq {HSV2RGB}{ColorSpace (XYZ) eq {
+  XYZ2RGB}{ColorSpace (CMY) eq {CMY2RGB}{ColorSpace (YIQ) eq {YIQ2RGB}
+  if} ifelse} ifelse} ifelse} def
+/InterpolatedColor false def
+/pm3dround {maxcolors 0 gt {dup 1 ge
+	{pop 1} {maxcolors mul floor maxcolors 1 sub div} ifelse} if} def
+/pm3dGamma 1.0 1.5 div def
+/ColorSpace (RGB) def
+false { % COLOUR vs. GRAY map
+  InterpolatedColor { %% Interpolation vs. RGB-Formula
+    /g {stroke pm3dround /grayv exch def interpolate
+        SelectSpace setrgbcolor} bind def
+  }{
+  /g {stroke pm3dround dup cF7 Constrain exch dup cF5 Constrain exch cF15 Constrain 
+       SelectSpace setrgbcolor} bind def
+  } ifelse
+}{
+  /g {stroke pm3dround pm3dGamma exp setgray} bind def
+} ifelse
+1.000 UL
+LTb
+1.000 UP
+1.000 UL
+LT0
+LTb
+%%%%BeginImage
+gsave 1169 1085 N 1169 4174 L 6030 4174 L 6030 1085 L Z clip
+InterpretLevel1 {
+  %% Construct a box instead of image
+  LTb
+  1091 4160 M
+  5003 0 V
+  0 -3092 V
+  -5003 0 V
+  1091 4160 L
+  40 -110 R
+  (PS level 2 image) Lshow
+  % Read data but ignore it
+  /imagebuf 5762 string def
+  currentfile imagebuf readstring
+} {
+  gsave
+  {pm3dGamma exp} settransfer
+  1091 4160 translate
+  5003 -3092 scale
+  50 91 8
+  [ 50 0 0 91 0 0 ]
+  currentfile /ASCII85Decode filter
+  image
+} ifelse
+!$4[B@#BeoJ:2ciGBItIEH#l8Df0H1D/F-,D/F-,D/F-,D/=$)Ci!p(Ci!p(Chs(m87c.cM1gD-H[0
+gXF)l8>E,TZ4DJj<.D/F-,D/F-,D/F**Ci!p(Ci!p(Ci!s*!$4[C@?-+rJ:2ciGB@nHEH#l8Df0H1D
+/F-,D/F-,D/F-,Ci!p(D/=$)Ci!p(Chs(n8S;XtKS4i'H[0dVEcH)<Df9N2DJa6-D/F-,D/F-,D/=$
+)Ci!p(Ci!p(Ci!s)!$=dFCl<t!IscTfG'%bEE,]`6DJj?/D/F-,D/F-,D/F**Ci!p)D/=$)Ci!p(Ch
+s(n8S;duKS+c%H['^UEcH)<Df9N2DJa6-D/F-,D/F-,Ci!s)Ci!p(Ci!p(Ci!p(!$4XA?\aJkJ:2ci
+GBItIEH#l8Df0H1D/F-,D/F-,D/F-+Ci!s*D/=$)Ci!p*D/B7m6X!]@L5U\6I=$6_FE;JBE,]`6DJj
+?0D/F-,D/F-,D/F-+Ci!p)D/F-,Ci!p(!#e$s?@dcbKn4]#H?aUTF)l8>E,TZ5DJj?0DJa6-D/F-,D
+/F-+Ci!p)Ci!s.Ec(jq5#5L:KntJ8IscQeG'%eGEH,r:Df9N2DJj?/D/F-,D/F-,D/X</D/=$*CiaW
+5!$"C3>()BhKReJtG]n1MEcH&;Df9N2DJj<.D/F-,D/F-+Ci!p(Ci+$+D/='*I;Am+88!C%MM$D+H?
+XLQEcH&;Df0H1D/F-,D/F-,D/F-,Ci+!*Ci!p(Ci!p)Cl!ja!$OR-G_(EoH[0dUEcH&:DJj<.D/F-,
+Ci!p(Ci!p(Ci!p(Ci!p)D/='*Ci!pKNGee@6rK,%H[:!^FE2A?Df0E/D/F-+Ci!p(Ci!p(Ci!p(Ci!
+p(Ci4-,DJX-*Clsir!$OR1F+]!jH[0gWEcH&:DJj<.D/F-,D/F**Ci!p(Ci!p(Ci!p)D/=$)Ci!p2F
+)1gt7qQ4bL4Xl%H[0gXF)l8>E,TZ4DJj<.D/F-,D/F-,Ci!s)D/=$)Ci+!,CiF?0!#R[c@X*opMM$G
+-H[9p[FE;JBEH#l8Df9N2Df0E/DJsH0Ci!p6F`)5=DJs?BD.N\^0M#Y_JVfAEL4Xo'H[0gXFE;JBEH
+#l8DfBZ6D/F33DfKZ2DK9c3Chn<=Dk*Gu!#74Y@q:+GNJiRDIscQeG'.kHEcH)<DfK]9D/F--Fa%P8
+J9,CpQ_9;-NgtNpZ-!%b5#,I;Ko1_@JUVrjG'%eGEH,r9DfBW7E,9B.E--&;E,TlLI&3L=Of=>ADoT
+ZE!$F[@J:`]3IXHEaFE;JBE,TW2D/F0.DJsH/EGoiOKR]2aWf<"R]>LkgZ,E0`c0>9U<*jj$I=$3]F
+)l5;D/F-+Ci!p(Ci!s+E-$ARJWc.SS#`ZXQbU8WZc0;iUY3lQ!%M]2KR%igG&qYBDJa6-Ci!p(Ci!p
+)DK0cDJV&ZAP`_H:Y*tfi^<*b$ZG<<jbhrIG795D$G^4RYFE2A>Df0E/D/F-,Ci!p(Ci!p(GBdtKTS
+\eRN5:+bQbfi0VQZWK!$=aDB9.UpI=$9bG'%bEE,]`6DJj?/D/F-,D/F-,Df9KTP^R_N[^E#rY.9V9
+cdi(42Fh4tM3!RJJ:2fkG]n1MEcH)<E,TZ5Df0K3DJa9.LjsVkD4@/SPbG:JMSR*J!#.%W?XnhPPDt
+?MJ:2ciGBS(LEcQ/>E,]`6E,]`4DJk2KG&qVtK8+WB\"Jr+aM\&m01]M]K8bqQLkL;,H[0gXFE;JCE
+H,r9EGoo8D/O3/L67X9BVDqrXF.XYT?5F$!#[jk@>Bi%MhZe3H[0dWF)l;@EH#i7E,Tc9DJj?9GB7l
+#N.lt`TTbt(XJhB0bf]u/7V@F*NJ)e0H?OCOEcH&:Df0E/D/O6/EH,f7EeT-qPcC@PS\`=P^o5;`\B
+iLH!$tHDGCk6jH$+1KE,TW2D/F**Ci!p(D/O94H[LL3P`D]JXK8;:_SX.'dCR!9d*D\ABmkSYH$ORS
+EH#f4D/=$)Ci!p(Ci+'0FErIiMO9`nW335&Wk$*d_SO@%][u/l!$b$8J:VrjH$47KE,TW3D/F-,D/=
+$)Ci!p)D/F]PFFL9]DN0Ic`LUqcc+SbY]\!3+87ZXpJU`&oH?aRREcH&;Df0H1D/F-,D/F-,D/XN:D
+4-HZRWcZh_6q"8Y27j[!#R[d@<dfnM1^;+H[9p[FE;JBEH#l8Df9Q3DJsH1Df(MPJpVaJN4?ElS;Wq
+cd,=s=/kKG\KoM4SLP(,*H[0gXFE;JCEH#l9E,KZ7EG]T1Kn4Z;MmK1*^8I`lVSCI;!#.(X?t4kMPE
+(HPJ:2ciGBJ"KEcQ/>EGof9EH>r5DJb)gQ]dGrYf+;dVjsK[R)f7F3_<e5P`^r\Jq&/nGBJ"KEcH)=
+E,KT6Df]`4Dg-MMO*-h,DkaJ/_PE9LWQs5P!$FjIJ:<E2JUVohF`VSCEH#i6D/F-,DJsE4E+s?BJ:!
+KYWh5Qna3_oQZbE^$lJ2Fc92g.iI=$6_F)l8=DJa6-D/=$)Ci!p)DfL)MK9VX\Y-YC7Vom</a3DK=Z
+/jiu!%M]3JU)NdG&qYBDJa6,Ci!p(Ci!p)DK0cDJV&fIR$"VZY,nVF`66$>_8EV>g"QKP9NZOhG^4R
+XF)c/;DJa6-D/F**Ci!p(Ci401Jr>27Z)4RmVTPXZ`l>d3Zu=4D!$Fd@GCG9qH[9s]F`VPBE,TZ4DJ
+j<.D/F-,D/F-2H#mknY+CZ__m$G<^;dG<jkKhR3D!Y.OGemGIXHKfGBJ"JEcH&;Df9Q3Df0E0E,BN1
+KlM$WFN:2i`35<(T\J/P!#.(X@:OtLO,SjGIslZhGBJ"KEcQ/=E,]c6DfK`5DJa<LP*g[/YFi.II)M
+Z%g>N#G01fP]KohOZLkL;-H[0gXFE;JCEH,u;DfK]9EGf]3D1@b7JVC@m`+ca![DCVQ!#R[cA:9`.O
+,/F=I<p*[FE;JBEH,r9DK'T5G&2)>H$5R$Ner80a.A$NN2X8Egs5sB8SN1"LPCA/H['[TF)l8>E,TW
+2D/F-.E,KlCC4CPRN2<&=R)R4O_j8Hj^?+G9!$b$3J;AZ$H?OCNEH#f5D/F-,Ci!p(Ci+'0H$Y(,P`
+E&V\?N$]b.#Ktc.9hokhlFjBn(SWH$ORSEH#f4D/=$)Ci!p(Ci+'0FEi@gMO9cp['dBGZHUS%aL04B
+cgL)Z!$tHIGCOg^G]e%HE,TW2D/F-+Ci!p(Ci!s-F`iJ)Mi>'MT;e@*d"TKMaN`Q-iSsn\7ULRiL4"
+>oH$=@NEH#l8DJj?/D/F-,D/F-,D0C;PEhAK!VT@*)]WAffc+rT!!#[jk@"O5iKn4]#H[0dWF)l8?E
+,]`6Df0H1D/F94DJaoJI?]6,YfO_dTXh><m+_RT01fS^Jr>YIL4Xo'H[0gXFE;JBEH#l9E,TW4Ecc/
+8H%_6SPIJ9L]s>&aXm,!'!#.%W?XnhRP`CQQJ:;ijGBS(LEcQ/>E,ff7F)Q/;E,L/eMQ)le[*Q@^UV
++Fll.l=V2b%>#NKfK[KReJsG]n1MEcQ/>EH#f5EH6&BCNO]<R$3`6S&L9+^9kDaf"^))!$=dGAs8%*
+Jq&/nG'%eGEH#l8Df0E/D/F33CiXoBHZXq5URd:bbgFPI]>VqAm-"Eo78Ji"IXHKdFE;G@Df0E/D/F
+-+Ci!p)DK'iFJWc7T['R$FYL(hJcc*fBhoY3G!%M]2K6hfgG&qYBDJa6,Ci!p(Ci!p)DK0cCJ:WTDR
+#\Y_YI(O[`m`5W`kpWZkh?(a<FU-$GBnFUEcH#8DJa6-D/=$)Ci!p)D0(#KMO9Th\@/`NZ-LVEd_36
+(f@oE@!$Oa8I!gNmH?sgZFE2A?Df9N2D/F-,D/F-,D/F-4Ir]af\#PqE[^=<)bJr)^k2QF[4\f@8KS
+5#/I=-?cG'%eGEH#l8Df9N2DJj?/E-6#7OD^/EQ-dLmVn'dc[_0r4!#71Y@UjtHN/E=?IXHHeGBJ"K
+EcH)<E,]c8DJjN<Df(,EUS*jhHaCc(b/i&FlK8-]/kTJ\L6Ij^LkL;-H[0jZFE;JCEH,u<E,KW9E-Q
+5:M0"EAMpg.t]<STYg"YlQ!#IL^A8d9cNerF>I=$6_F`VSDEH,r;Df'B4EH-5;G''"(USja2Q,UALb
+DG-,gt;ZK8S)7iN/3.:I!U!YF)l8?E,]`6D/F-,D/aW8G(FOVK8,MTT?OO<a1ogBh:_/X!$Xd,P)"O
+7H['[SEcH#8DJa6-D/F**Ci!s-FF&OoPErVL^9tQ#f"fYUcHb/$n)aU"BRPV]H$ORSEH#f4D/=$)Ci
+!p(Ci+'/FEi4dN/a0p\t?^EZI.:DdEKb[lL3rp!%1r^GCFd^G][tFDf0E/D/F**Ci!p(Ci+*4H\.0:
+R\%*c^ULZ!fuhF\bfo;>jlZUe6<\VdJ9lNfG]e(IE,]`5DJj<.D/F-,D/F--DfTuGMhltEHcE1mN4@
+!NdD!WW!#n.#?%%9YK7A;rH?aRSEcH)<E,TZ4DJj?0DJj?0DJj?0FGbFKH'3DtQ'@6@i8akQ1.PhcJ
+;/o:KReN!H?aUTF)l;@E,]c7Df9Q4Df0H2I!^'bDnha2GG)I_^nTK@!#.+X@:OqIOH#$JIslZhGBJ"
+KEcH)<E,]`6Df0K3Df0fFFDl#eO-OsVYHk^.fAciJ2b.D$NKfHZK7A;qG]n1MEcQ/>E,]`6DJj?0DJ
+j?0EcGu:DP<2SDQpsoa0aae!$+R>>_J8sKR\DrGBItIEcH&;Df0H1DJa6-D/F-,D/F--D/X<YD/a?<
+F+V*Hh;&&S5@&DmK7A8pGB@nHEH#i6DJa6-D/F-,Ci!p(Ci+!*G&;VmG0.))NP3NYd[K4X!$Xd.OGA
+40H?XIOEH#i6D/F-,D/=$)Ci!p(Ci!p(D/X?@Eg;p2W5kg%bKAPfi91.b5ZW,XI=$9bG&qYBE,TW3D
+/F-,D/F**Ci!p(Ci!s)Ec5lUD8N3+O0,+TcI([X!$Fa?IXHs#I!^-_FE2A?E,TZ4DJa6-D/F-,D/F-
+,D/=*,DKp!6OER1mD5+etf\6BH7:0;HNei78I!U$\FE2A@E,]`6DJj?0D/F-,D/F-,D/F-/D5)AqJr
+tVa_SDr4!#e$t?@d`aKn4]#H?aUTF)l8>E,TZ5DJj?0D/F-,D/F-,D/F--F*2>MFb%'?aNso*5#5O;
+KntJ8IscQeG'%eGEH,r:Df9N2DJj<.D/F-,D/F-,D2W7SFDuhLXLl[(!$"=->C)!^Kn+SuH$4:NEcH
+)<Df9Q3DJj?/D/F-,D/F-,D/F-6EGg#?Ll$#fbGYC^7q>q\NJ<"5I!U!ZF)l8>E,TZ4DJj<.D/F-,D
+/F-,D/F-,D234PGC"q#LUYd\!$=dFBodq#IscTfG'%bEEH#i7DJj?/D/F-,D/F-,D/F-+Ci+!MEH62
+LMNE;-aj:#08S;muKS+`$H['^UEcH&;Df9N2DJa6-D/F-,D/F-,Ci!p)Clr[WF`iFdXhM!m!$=dFB9
+@k"IscTgG'%bEEH#i7DJj?/D/F-,D/F-,D/F-+Ci+!GDK'W8KQ4<<SBh0V87l=kL4k)*H[0dVF)l8>
+E,TZ4DJj<.D/F-,D/F-,D/F**CkZ_FE,U,@Yctji!$4[B@#BeoJ:2ciGBItIEH#l8Df0H1D/F-,D/F
+-,D/F-,D/=$8Ci=30HYfjg^qTjj87c1dM1gD-H[0gXF)l8>E,TZ4DJj<.D/F-,D/F-,D/F-,CiF61D
+/ON5Wh.8D!#7e/>DRu_GB.Y@D/*cuB4baeA7T1[@U`eU@U`bS@:<SQ@:<SQ@V&tZE+,`._RB~>
+InterpretLevel1 not {
+  grestore
+} if
+grestore
+%%%%EndImage
+1.000 UL
+LTb
+1169 4174 N
+0 -3089 V
+4861 0 V
+0 3089 V
+-4861 0 V
+Z stroke
+1.000 UL
+LTb
+1425 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+1937 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+2449 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+2961 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+3473 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+3983 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+4495 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+5007 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+5519 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+6030 1086 M
+0 82 V
+0 3006 R
+0 -82 V
+1170 1086 M
+81 0 V
+4779 0 R
+-81 0 V
+1170 1704 M
+81 0 V
+4779 0 R
+-81 0 V
+1170 2322 M
+81 0 V
+4779 0 R
+-81 0 V
+1170 2938 M
+81 0 V
+4779 0 R
+-81 0 V
+1170 3556 M
+81 0 V
+4779 0 R
+-81 0 V
+1170 4174 M
+81 0 V
+4779 0 R
+-81 0 V
+stroke
+1169 4174 N
+0 -3089 V
+4861 0 V
+0 3089 V
+-4861 0 V
+Z stroke
+stroke gsave	%% draw gray scale smooth box
+maxcolors 0 gt {/imax maxcolors def} {/imax 1024 def} ifelse
+6152 1085 translate 243 3089 scale 0 setlinewidth
+/ystep 1 imax div def /y0 0 def /ii 0 def
+{ y0 g 0 y0 N 1 0 V 0 ystep V -1 0 f
+/y0 y0 ystep add def /ii ii 1 add def
+ii imax ge {exit} if } loop
+grestore 0 setgray
+1.000 UL
+LTb
+6152 1085 N
+243 0 V
+0 3089 V
+-243 0 V
+0 -3089 V
+Z stroke
+1.000 UL
+LTb
+1.000 UL
+LTb
+6395 1085 M
+-63 0 V
+-180 0 R
+63 0 V
+180 132 R
+-31 0 V
+-212 0 R
+31 0 V
+212 176 R
+-31 0 V
+-212 0 R
+31 0 V
+212 90 R
+-31 0 V
+-212 0 R
+31 0 V
+212 43 R
+-63 0 V
+-180 0 R
+63 0 V
+180 133 R
+-31 0 V
+-212 0 R
+31 0 V
+212 175 R
+-31 0 V
+-212 0 R
+31 0 V
+212 90 R
+-31 0 V
+-212 0 R
+31 0 V
+212 43 R
+-63 0 V
+-180 0 R
+63 0 V
+180 133 R
+-31 0 V
+-212 0 R
+31 0 V
+212 176 R
+-31 0 V
+-212 0 R
+31 0 V
+212 90 R
+-31 0 V
+-212 0 R
+31 0 V
+212 42 R
+-63 0 V
+-180 0 R
+63 0 V
+180 133 R
+-31 0 V
+-212 0 R
+31 0 V
+212 176 R
+-31 0 V
+-212 0 R
+31 0 V
+212 90 R
+-31 0 V
+-212 0 R
+31 0 V
+212 43 R
+-63 0 V
+-180 0 R
+63 0 V
+180 132 R
+-31 0 V
+-212 0 R
+31 0 V
+212 176 R
+-31 0 V
+-212 0 R
+31 0 V
+212 90 R
+-31 0 V
+-212 0 R
+31 0 V
+212 43 R
+-63 0 V
+-180 0 R
+63 0 V
+180 133 R
+-31 0 V
+-212 0 R
+31 0 V
+212 175 R
+-31 0 V
+-212 0 R
+31 0 V
+212 90 R
+-31 0 V
+-212 0 R
+31 0 V
+212 43 R
+-63 0 V
+-180 0 R
+63 0 V
+180 133 R
+-31 0 V
+-212 0 R
+31 0 V
+212 176 R
+-31 0 V
+stroke 6364 4041 M
+-212 0 R
+31 0 V
+212 90 R
+-31 0 V
+-212 0 R
+31 0 V
+212 43 R
+-63 0 V
+-180 0 R
+63 0 V
+1.000 UP
+stroke
+grestore % colour palette end
+stroke
+grestore
+end
+showpage
+%%Trailer

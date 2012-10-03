@@ -1,0 +1,120 @@
+
+
+\newcommand{\EMFluid}{\textsf{T}}
+\newcommand{\enthalpy}{\textsf{H}}
+
+\newcommand{\Energy}{\textsf{U}}
+\newcommand{\energy}{\Energy}
+\newcommand{\Entropy}{\textsf{S}}
+\newcommand{\entropy}{\Entropy}
+\newcommand{\Volume}{\textsf{V}}
+\newcommand{\volume}{\Volume}
+\newcommand{\Moles}{\textsf{N}}
+\newcommand{\moles}{\Moles}
+\newcommand{\Mass}{\textsf{M}}
+\newcommand{\velocity}{v}
+
+\newcommand{\PerMole}[1]{\MakeUppercase{#1}}
+\newcommand{\PerVolume}[1]{\MakeLowercase{#1}}
+\newcommand{\PerMass}[1]{{#1_{\textrm sp}}}
+\newcommand{\Covected}[1]{{{#1}^\prime}}
+\newcommand{\lab}[1]{{{#1}_l}}
+\newcommand{\relativistic}[1]{{\tilde{#1}}}
+
+%Intensive Qnatities
+\newcommand{\Pressure}{P}
+\newcommand{\pressure}{\Pressure}
+\newcommand{\Temperature}{T}
+\newcommand{\temperature}{\Temperature}
+\newcommand{\ChemPot}{\mu}
+
+
+%Molar Quantities
+\newcommand{\mEnthalpy}{H}
+\newcommand{\mREnthalpy}{\relativistic{H}}
+\newcommand{\mEntropy}{S}
+\newcommand{\mEnergy}{U}
+\newcommand{\mREnergy}{{\relativistic{U}} }
+\newcommand{\mGibbsEnergy}{G}
+\newcommand{\mVolume}{V}
+\newcommand{\mMoles}{1} % =1
+\newcommand{\mMass}{M}
+\newcommand{\mKMomentum}{{K}}
+\newcommand{\mPiMomentum}{{\Pi}}
+\newcommand{\mMomentum}{{J}}
+\newcommand{\mFlux}{I}  % = \mMoles\times\velocity
+
+
+
+%volume quantities
+\newcommand{\vVolume}{1}
+\newcommand{\vMoles}{n}%\PerVolume{\mMoles}}
+\newcommand{\vEnthalpy}{\PerVolume{\mEnthalpy}}
+\newcommand{\vREnthalpy}{\relativistic{\PerVolume{\mEnthalpy}}}
+\newcommand{\vEntropy}{\PerVolume{\mEntropy}}
+\newcommand{\vEnergy}{\PerVolume{\mEnergy}}
+\newcommand{\vREnergy}{{\relativistic{\PerVolume{\mEnergy}}}}
+\newcommand{\vGibbsEnergy}{\PerVolume{\mGibbsEnergy}}
+\newcommand{\vMass}{\PerVolume{\mMass}}
+\renewcommand{\vMass}{\rho}
+\newcommand{\vKMomentum}{\PerVolume{\mKMomentum}}
+\newcommand{\vMomentum}{\PerVolume{\mMomentum}}
+\newcommand{\vPiMomentum}{\pi} %{\PerVolume{\mPiMomentum}}
+\newcommand{\vFlux}{\PerVolume{\mFlux}}
+
+
+%specific quantities
+\newcommand{\spVolume}{\PerMass{\mVolume}}
+\newcommand{\spMoles}{\PerMass{\mMoles}}
+\newcommand{\spEnthalpy}{\PerMass{\mEnthalpy}}
+\newcommand{\spREnthalpy}{{\PerMass{\relativistic{\mEnthalpy}}}}
+\newcommand{\spEntropy}{\PerMass{\mEntropy}}
+\newcommand{\spEnergy}{\PerMass{\mEnergy}}
+\newcommand{\spREnergy}{{\PerMass{\relativistic{\mEnergy}}}}
+\newcommand{\spGibbsEnergy}{\PerMass{\mGibbsEnergy}}
+\newcommand{\spMass}{\PerMass{\mMass}}
+\newcommand{\spKMomentum}{\PerMass{\mKMomentum}}
+
+
+%lab quantities
+\newcommand{\mLVolume}{\lab{\mVolume}}
+\newcommand{\LVolume}{\lab{\Volume}}
+%\newcommand{\mLVolume}{\Convected{\mVolume}}
+\newcommand{\vLMoles}{\lab{\vMoles}}
+\newcommand{\vLEnergy}{\lab{\vEnergy}}
+\newcommand{\vLREnergy}{\lab{\vREnergy}}
+\newcommand{\vLEntropy}{\lab{\vEntropy}}
+\newcommand{\vLMass}{\lab{\vMass}}
+\newcommand{\vLKMomentum}{\lab{\vKMomentum}}
+
+%covected quantities
+\newcommand{\Jacobian}{J_B}
+\newcommand{\mCVolume}{\Covected{\mVolume}}
+\newcommand{\CVolume}{\Covected{\Volume}}
+%\newcommand{\mCVolume}{\Convected{\mVolume}}
+\newcommand{\vCMoles}{\Covected{\vMoles}}
+\newcommand{\vCEnergy}{\Covected{\vEnergy}}
+\newcommand{\vCREnergy}{\Covected{\vREnergy}}
+\newcommand{\vCEntropy}{\Covected{\vEntropy}}
+\newcommand{\vCMass}{\Covected{\vMass}}
+\newcommand{\vCKMomentum}{\Covected{\vKMomentum}}
+
+\newcommand{\HeatPerVolume}{w}
+\newcommand{\EntropyPerVolume}{\vEntropy}
+%\newcommand{\SpEnthalpy}{\underline{\HeatPerVolume}}
+%\newcommand{\SpEntropy}{\underline{\EntropyPerVolume}}
+%I think this is right
+\newcommand{\SpEnthalpy}{\spEnthalpy}
+\newcommand{\SpEntropy}{\spEntropy}
+
+%Take the place of rho, I think this is right
+%\newcommand{\vMass}{\vMoles} 
+\newcommand{\NoDensity}{\vMoles}
+\renewcommand{\v}{\vect{v}}
+\newcommand{\gac}{g}
+\newcommand{\FluidMomentum}{\pi}
+\newcommand{\pdel}{\del}
+\newcommand{\edel}{\del_\perp}
+\newcommand{\vorticity}{\omega}
+
+

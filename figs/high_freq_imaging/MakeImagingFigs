@@ -1,0 +1,16 @@
+#!/bin/sh
+
+g++ FreqRatio.cpp -o FreqRatio
+./FreqRatio
+
+gnuplot "./FreqRatioMaxError.gp" 
+mpost FreqRatioContourMaxError.mp
+cp FreqRatioContourMaxError.0 ../
+
+mpost FreqRatioContour1.mp
+cp FreqRatioContour1.* ../
+
+
+mpost FreqRatioContour3.mp
+cp FreqRatioContour3.* ../
+

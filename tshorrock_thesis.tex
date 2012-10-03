@@ -1,0 +1,250 @@
+
+\listfiles
+\documentclass[10pt, fleqn,final,showtrims,oldfontcommands]{mythesis} %twoside,%\documentclass[10pt, astron]{article} %when have admin rights,astron
+
+
+\usepackage[sort&compress,square, super]{natbib}
+\usepackage[nonumber,index]{cuisine}
+\RecipeWidths{.95\textwidth}{0.5cm}{3cm}{2.75cm}{.75cm}{.75cm}
+
+\input{./latex/input/packages.tex}
+
+\usepackage{epstopdf}
+\usepackage{emp,ifpdf}
+
+%\usepackage[T1]{fontenc}
+%\usepackage{textcomp}
+%\usepackage[minionint,mathlf]{MinionPro}
+
+
+%\usepackage[charter]{mathdesign}%incompatable with minion pro
+
+%\usepackage[T1]{fontenc}
+%\usepackage{textcomp}
+%\usepackage[minionint,mathlf]{MinionPro}
+%\usepackage[protrusion=true,expansion=true]{microtype}
+%\renewcommand{\sfdefault}{Myriad-LF}
+%\usepackage{cmbright}
+%\usepackage{mathpple}
+
+%\usepackage{ccfonts}
+%\usepackage[T1]{fontenc}
+%\usepackage[math]{anttor}
+\usepackage[eulergreek]{sansmath}
+%\usepackage{listings}
+%\usepackage{bbm}
+
+\ifpdf
+ \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+\usepackage[greek, english]{babel}
+%\usepackage[pdftex]{color,graphicx}
+\input{latex/input/comms.tex}
+\input{latex/input/GCcomms.tex}
+\input{latex/input/thermodynamics.tex}
+\input{latex/input/thesis_extra.tex}
+
+% \usepackage{setspace}
+%\onehalfspacing
+
+%\DeclareFontFamily{OT1}{pzc}{}
+%\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [0.900] pzcmi7t}{}
+%\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\newcommand{\thesis}{thesis}
+
+\includeonly{
+% title,
+toc,
+%figure_list,
+%table_list,
+% decl,
+% abstract,
+%dedication,
+%preface,
+%
+%introduction
+%part1,
+%nucleation,
+%part_theoretical/acoustic_relativity/acoustic_relativity,
+%measurement,
+%computations,
+%Maxwell_analogy,
+%part_intro/part_intro,
+part_intro/introduction/introduction,
+%part_intro/geometric_algebra/gc,
+%part_intro/inference/variational_methods,
+%part_theory,
+%part_theoretical/nucleation/nucleation,
+%part_theoretical/bubble_interactions/bubble_interactions,
+%part_experimental/part_experimental,
+%part_experimental/rationale/rationale,
+%part_experimental/DPR500_protocol/DPR500_protocol,
+%part_experimental/characterisation/characterisation,
+% experimental_method,
+% high_frequency_experiments,
+%water_cavitation_experiments,
+%water_cavitation_characterisation,
+%water_cavitation_results,
+%oil_cavitation_experiments,
+%%
+%
+%part3,
+%discussion,
+%
+%
+%partAppendix,
+%nucleation_classical_appendix,
+%nucleation_DFT_appendix
+%
+%%
+%
+%
+% %appendix_Lie
+% %program,
+% %fragments
+% %
+% %mechanisms
+%phase_shift,
+% %high_frequency_imaging,
+% %
+% %
+% %notes/church,
+% %program
+% %model_building,
+%measurement
+% %notes/elasticity,
+% %otes/stream_function
+% %notes/spin
+% %gc
+}
+
+
+\begin{document}
+%\lstset{language=c++}
+
+%\renewcommand{\partpageend}{%
+%  \afterpartskip
+%  \if@mnopartnewpage%
+%  set by \(no)partblankpage
+%  \else%
+%  default finish off
+%  \if@twoside
+%  \if@openright%
+%  output blank page
+%  \null
+%  \thispagestyle{afterpart}%
+%  \newpage
+%  \fi
+%  \fi
+%  \fi
+%  \if@tempswa%
+%  true if twocolumn was being used
+%  \twocolumn
+%  \fi}
+
+
+
+%\title{Imaging acoustically generated microbubbles with ultrasound}
+
+
+% \listoftodos
+
+\author{Tom H. Shorrock }
+
+\graphicspath{ %
+  {part_theoretical/nucleation/figs/} %
+  {figs/} %
+  {figs/acoustic_relativity/} %
+  {figs/water_cav_design/} %
+  {figs/water_cav_results/voltage_0.088/imaging_2nd/} %
+  {figs/water_cav_results/voltage_0.088/imaging_2nd/} %
+  {figs/water_cav_results/voltage_0.108/imaging_2nd/} %
+  {figs/water_cav_results/voltage_0.132/imaging_2nd/} %
+  {figs/water_cav_results/voltage_0.088/no_imaging/} %
+  {figs/water_cav_results/voltage_0.108/no_imaging/} %
+  {figs/water_cav_results/voltage_0.132/no_imaging/} %
+  {figs/water_cav_results/voltage_0.108/imaging_1st_cmp_none/} %
+  {figs/water_cav_results/voltage_0.108/imaging_2nd_cmp_none/} %
+  {figs/water_cav_results/voltage_0.108/imaging_1st_cmp_none_fft/} %
+  {figs/water_cav_results/voltage_0.108/imaging_2nd_cmp_none_fft/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_500/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_1000/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_2000/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_5000/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_7500/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_10000/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_12000/no_imaging_av_with_sd/} %
+} 
+\setlength{\headheight}{22.55pt}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{2mm} 
+
+
+%\maketitle
+
+\include{title}
+\include{decl}
+\pagenumbering{roman}
+\include{dedication}
+\include{abstract}
+\include{toc}
+\include{figure_list}
+\include{table_list}
+\include{preface}
+\pagenumbering{arabic}
+\include{part_intro/part_intro}
+\include{part_intro/introduction/introduction}
+\include{part_intro/part_maths}
+\include{part_intro/inference/variational_methods}
+\include{part_intro/geometric_algebra/gc}
+\include{part_theory}
+\include{part_theoretical/nucleation/nucleation}
+\include{part_theoretical/acoustic_relativity/acoustic_relativity}
+\include{part_theoretical/measurement/measurement}
+%\include{Maxwell_analogy}
+\include{part_theoretical/bubble_interactions/bubble_interactions}
+\include{part_theoretical/computations}
+\include{mechanisms}
+\include{part_experimental/part_experimental}
+\include{part_experimental/rationale/rationale}
+\include{part_experimental/DPR500_protocol/DPR500_protocol}
+\include{part_experimental/characterisation/characterisation}
+%\include{experimental_method}
+\include{high_frequency_experiments}
+%\include{water_cavitation_experiments}
+%\include{water_cavitation_characterisation}
+%\include{water_cavitation_results}
+\include{oil_cavitation_experiments}
+%\include{phase_shift}
+%\include{high_frequency_imaging}
+\include{part_discussion}
+\include{discussion}
+%\include{notes/church}
+%\include{model_building}
+%\include{Newtonian_bubble}
+%\include{measurement}
+%\include{acoustic_bubble_computations}
+%\include{acoustic_bubble}
+%\include{phase_shift}
+%\include{high_frequency_imaging}
+%\include{phase_shift_combo}
+%\include{notes/elasticity}
+%\include{notes/stream_function}
+%\include{notes/spin}
+%\include{basic_bubble_model}
+%\include{partAppendix}
+%\appendix
+\include{nucleation_classical_appendix}
+\include{nucleation_DFT_appendix}
+%\include{program}
+%\include{fragments}
+%\include{appendix_Lie}
+\bibliographystyle{plainnat} % apa	
+\bibliography{bib/tshorrock}
+
+\end{document}

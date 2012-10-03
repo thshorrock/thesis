@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{graphicx}
+ 
+\usepackage{graphicx}
+\usepackage{ifpdf}
+
+\ifpdf
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+\usepackage{subfigure}
+
+\begin{document}
+
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[f]{
+          \label{fig:ellipse_a}
+          \includegraphics{ds_figs.0}}
+     \hspace{3cm}
+     \subfigure[]{
+          \label{fig:ellipse_b}
+          \includegraphics{ds_figs.1}}
+    
+     \caption{caption}
+     \label{fig:ellipse}
+\end{figure}
+
+
+\begin{figure}%[htp]
+ \centering
+ \includegraphics{ds_figs.2}
+ \caption{caption}
+ \label{fig:ObsEuclid}
+\end{figure}
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[]{
+          \label{fig:ObsA}
+          \includegraphics{ds_figs.3}}
+     \hspace{1cm}
+     \subfigure[]{
+          \label{fig:ObsB}
+          \includegraphics{ds_figs.4}}
+     \caption{caption}
+     \label{fig:Obs}
+\end{figure}
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[]{
+          \label{fig:ObsA}
+          \includegraphics{ds_figs.5}}
+     \hspace{1cm}
+     \subfigure[]{
+          \label{fig:ObsB}
+          \includegraphics{ds_figs.6}}
+     \caption{caption}
+     \label{fig:Obs}
+\end{figure}
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[]{
+          \label{fig:ObsA}
+          \includegraphics{ds_figs.7}}
+     \hspace{1cm}
+     \subfigure[]{
+          \label{fig:ObsB}
+          \includegraphics{ds_figs.8}}
+     \caption{caption}
+     \label{fig:Obs}
+\end{figure}
+
+\begin{figure}%[htp]
+     \centering
+     \subfigure[]{
+          \label{fig:ObsA}
+          \includegraphics{ds_figs.9}}
+     \hspace{1cm}
+     \subfigure[]{
+          \label{fig:ObsB}
+          \includegraphics{ds_figs.10}}
+     \caption{caption}
+     \label{fig:Obs}
+\end{figure}
+
+%\includegraphics{lattice.3}
+%\includegraphics{lattice.4}
+%\includegraphics{lattice.5}
+
+\end{document}

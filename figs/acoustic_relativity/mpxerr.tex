@@ -1,0 +1,47 @@
+\documentclass[10]{memoir}
+\begin{document}
+\footnotesize%
+\gdef\mpxshipout{\shipout\hbox\bgroup%
+  \setbox0=\hbox\bgroup}%
+\gdef\stopmpxshipout{\egroup  \dimen0=\ht0 \advance\dimen0\dp0
+  \dimen1=\ht0 \dimen2=\dp0
+  \setbox0=\hbox\bgroup
+    \box0
+    \ifnum\dimen0>0 \vrule width1sp height\dimen1 depth\dimen2 
+    \else \vrule width1sp height1sp depth0sp\relax
+    \fi\egroup
+  \ht0=0pt \dp0=0pt \box0 \egroup}
+\mpxshipout% line 156 ./Michelson.mp
+{\tinyOutward  pulse }%
+\stopmpxshipout
+\mpxshipout% line 157 ./Michelson.mp
+{\tinyReturning  pulse}%
+\stopmpxshipout
+\mpxshipout% line 160 ./Michelson.mp
+$l$%
+\stopmpxshipout
+\mpxshipout% line 163 ./Michelson.mp
+$l$%
+\stopmpxshipout
+\mpxshipout% line 165 ./Michelson.mp
+{\tiny transducer}%
+\stopmpxshipout
+\mpxshipout% line 166 ./Michelson.mp
+{\tiny acoustic reflector}%
+\stopmpxshipout
+\mpxshipout% line 167 ./Michelson.mp
+{\tiny partial reflector}%
+\stopmpxshipout
+\mpxshipout% line 214 ./Michelson.mp
+$l$%
+\stopmpxshipout
+\mpxshipout% line 217 ./Michelson.mp
+$l$%
+\stopmpxshipout
+\mpxshipout% line 221 ./Michelson.mp
+$vt$%
+\stopmpxshipout
+\mpxshipout% line 226 ./Michelson.mp
+laminar flow of speed $v$%
+\stopmpxshipout
+\end{document}

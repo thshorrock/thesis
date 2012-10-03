@@ -1,0 +1,152 @@
+
+%\documentclass[10pt, astron]{article} %when have admin rights
+
+
+
+\author{Tom Shorrock\\
+{\small Institute of Cancer Research}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%USEFUL COMMANDS AND SHORT-CUTS%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\leftheader}{
+  {\tiny
+  %  \begin{center}
+      \begin{tabbing}
+	version: \> \version
+	date:    \> \updated
+      \end{tabbing}
+  %  \end{center}  %  \end{center}
+  }
+}
+
+
+ \newcommand{\eq}[1]{\begin{equation}#1\end{equation}}
+ \newcommand{\eql}[2]{\begin{equation}#1\label{eqn:#2}\end{equation}}
+ \newcommand{\eqa}[1]{\begin{align}#1\end{align}}
+ \newcommand{\eqal}[2]{\begin{align}#1\label{eqn:#2}\end{align}}
+ \newcommand{\sub}[1]{\begin{subequations}#1\end{subequations}}
+ \newcommand{\subl}[2]{\begin{subequations}\label{eqn:#2}#1\end{subequations}}
+\newcommand{\fig}[2]
+	   {
+	     \begin{figure} 
+	       \centering
+	       \includegraphics[width=4.0cm]{#1}
+	       \caption{#2} 
+	     \end{figure}
+	   }
+
+
+
+\newcommand{\figl}[3]
+	   {
+	     \begin{figure} 
+	       \centering
+	       \includegraphics[width=4.0cm]{#1}
+	       \caption{#2} 
+	       \label{#3}
+	     \end{figure}
+	   }
+
+\newcommand{\desc}[1]{  \begin{description}#1\end{description} }
+\newcommand{\ilist}[1]
+	   {  
+	     \begin{itemize}
+	       #1
+	     \end{itemize} 
+	   }
+\newcommand{\nlist}[1]
+	   {  
+	     \begin{enumerate}
+	       #1
+	     \end{enumerate} 
+	   }
+\newcommand{\chapref}[1]{chapter \ref{ch:#1}}
+\newcommand{\Chapref}[1]{Chapter \ref{ch:#1}}
+\newcommand{\secref}[1]{section \ref{sec:#1}}
+\newcommand{\Secref}[1]{Section \ref{sec:#1}}
+\newcommand{\eqnref}[1]{(\ref{eqn:#1})}
+\newcommand{\Eqnref}[1]{Equation \ref{eqn:#1}}
+\newcommand{\figref}[1]{Figure \ref{fig:#1}}
+\newcommand{\Figref}[1]{Figure \ref{fig:#1}}
+\newcommand{\tabref}[1]{Table \ref{table:#1}}
+\newcommand{\Tabref}[1]{Table \ref{table:#1}}
+\newcommand{\appref}[1]{Appendix \ref{app:#1}}
+\newcommand{\Appref}[1]{Appendix \ref{app:#1}}
+
+
+\newenvironment{sidetext}[2]{\begin{center} \rotatebox[origin=|c|]{90}{#1} \vrule width 2pt \begin{minipage}[c]{0.85\linewidth} {\em #2}\begin{flushright} \begin{minipage}[c]{0.975\linewidth}} { \end{minipage}\end{flushright}\end{minipage}\end{center}}
+
+
+\renewcommand{\v}[1]{ \mbox{\boldmath $#1$} }
+\newcommand{\vb}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\C}[1]{{\cal #1}}
+
+\newcommand{\epsillon}{\epsilon}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\DeclareMathOperator{\gdot}{\pmb{\cdot}}
+
+\DeclareMathOperator{\order}{\cal{O}}
+
+\newcommand{\vv}{\textbf{v}}
+\newcommand{\vu}{\textbf{u}}
+\newcommand{\vm}{\textbf{m}}
+\newcommand{\vr}{\textbf{r}}
+\newcommand{\vA}{\textbf{A}}
+\renewcommand{\H}{{\cal H}}
+\newcommand{\vrhat}{ \hat{{\textbf r}} }
+\newcommand{\rh}{\vrhat}
+\newcommand{\cross}{\mbox{\boldmath $\times$}}
+\newcommand{\vtimes}{\cross}
+\newcommand{\widebar}[1]{\overline{#1}}
+
+\newcommand{\near}{\text{near}}
+\newcommand{\far}{\text{far}}
+\newcommand{\real}{\text{re }}
+\newcommand{\surface}{\text{surface}}
+\newcommand{\dyne}{\text{dyne}}
+\newcommand{\del}{\nabla}
+\newcommand{\vdel}{ \mbox{\boldmath $\del$}}
+\newcommand{\dt}[1]{\frac{d #1}{dt}}
+
+\newcommand{\pt}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\pr}[1]{\frac{\partial #1}{\partial r}}
+\newcommand{\ptTwo}[1]{\frac{\partial^2 #1}{\partial^2 t}}
+\newcommand{\px}[1]{\frac{\partial #1}{\partial x}}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\given}[2]{ \left.{#1}\right|_{#2}  }
+
+\newcommand{\lr}[1]{\left( #1 \right)}
+\newcommand{\lrsquare}[1]{\left[ #1 \right]}
+\newcommand{\dprime}{{\prime\prime}}
+
+\renewcommand{\d}[1]{d{#1}}
+
+\newcommand{\pp}{{p^\prime}}
+\newcommand{\rhop}{{\rho^\prime}}
+\newcommand{\Rp}{{R^\prime}}
+
+\newcommand{\twovec}[2]{
+ \left(
+ %\begin{math}
+ \begin{array}{c}
+ #1 \\ #2
+ \end{array}
+ %\end{math}
+ \right)
+}
+
+\newtheorem*{definition}{Definition}
+
+%\newcolumntype{+}{>{\global \let \currentrowstyle\relax }}
+%\newcolumntype{^}{>{\currentrowstyle }}
+%\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1} %
+%     #1\ignorespaces
+%     }
+%\newcolumntype{K}{>{\centering \arraybackslash$}X<{$}}
+%\newcolumntype{Z}{>{\centering\arraybackslash}X}
+%\newcommand{\pp}{p^\prime}
+%\newcommand{\rhop}{\rho^\prime}
+%\newcommand{\Rp}{R^\prime}

@@ -1,0 +1,115 @@
+%!PS
+%%BoundingBox: -171 -29 397 114 
+%%HiResBoundingBox: -170.07843 -28.3464 396.84967 113.38562 
+%%Creator: MetaPost 0.993
+%%CreationDate: 2009.12.10:1002
+%%Pages: 1
+%*Font: MinionPro-Regular-Base-aa 17.21544 10.95891 61:b80e780000000004
+%*Font: MinionPro-Regular-Base-aa 11.9552 10.95891 d4:80000002
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+ 0 0 0 setrgbcolor 0 0.29887 dtransform truncate idtransform setlinewidth pop
+ [] 0 setdash 1 setlinejoin 10 setmiterlimit
+newpath 22.67712 48.18889 moveto
+56.69281 48.18889 lineto
+56.69281 65.19673 lineto
+22.67712 65.19673 lineto
+ closepath stroke
+ 0.29887 0 dtransform exch truncate exch idtransform pop setlinewidth
+ 1 setlinecap
+newpath 49.88977 48.18889 moveto
+49.88977 65.19673 lineto stroke
+ 0 0.29887 dtransform truncate idtransform setlinewidth pop
+newpath 198.42484 85.03922 moveto
+204.09412 79.36993 lineto stroke
+newpath 198.42484 79.36993 moveto
+204.09412 73.70065 lineto stroke
+newpath 198.42484 73.70065 moveto
+204.09412 68.03137 lineto stroke
+newpath 198.42484 68.03137 moveto
+204.09412 62.36209 lineto stroke
+newpath 198.42484 62.36209 moveto
+204.09412 56.69281 lineto stroke
+newpath 198.42484 56.69281 moveto
+204.09412 51.02353 lineto stroke
+newpath 198.42484 51.02353 moveto
+204.09412 45.35425 lineto stroke
+newpath 198.42484 45.35425 moveto
+204.09412 39.68497 lineto stroke
+newpath 198.42484 39.68497 moveto
+204.09412 34.01569 lineto stroke
+newpath 198.42484 34.01569 moveto
+204.09412 28.3464 lineto stroke
+newpath 198.42484 28.3464 moveto
+204.09412 22.67712 lineto stroke
+ 0.29887 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 198.42484 85.03922 moveto
+198.42484 28.3464 lineto stroke
+ 1 0 0 setrgbcolor 0 0.29887 dtransform truncate idtransform setlinewidth pop
+newpath 56.69281 53.85817 moveto
+103.9361 53.85817 lineto stroke
+newpath 100.2405 52.32736 moveto
+103.9361 53.85817 lineto
+100.2405 55.38898 lineto
+ closepath
+gsave fill grestore stroke
+newpath 103.9361 53.85817 moveto
+198.42484 53.85817 lineto stroke
+newpath 198.42484 59.52745 moveto
+151.18155 59.52745 lineto stroke
+newpath 154.87715 61.05826 moveto
+151.18155 59.52745 lineto
+154.87715 57.99664 lineto
+ closepath
+gsave fill grestore stroke
+newpath 151.18155 59.52745 moveto
+56.69281 59.52745 lineto stroke
+ 0 0 0 setrgbcolor
+newpath 56.69281 14.1732 moveto
+198.42484 14.1732 lineto stroke
+newpath 194.7285 12.64209 moveto
+198.42484 14.1732 lineto
+194.7285 15.70432 lineto
+ closepath
+gsave fill grestore stroke
+newpath 60.38914 15.70432 moveto
+56.69281 14.1732 lineto
+60.38914 12.64209 lineto
+ closepath
+gsave fill grestore stroke
+-53.29427 75.93834 moveto
+(t) MinionPro-Regular-Base-aa 17.21544 fshow
+-47.95746 75.93834 moveto
+(ra) MinionPro-Regular-Base-aa 17.21544 fshow
+-34.16797 75.93834 moveto
+(n) MinionPro-Regular-Base-aa 17.21544 fshow
+-24.88887 75.93834 moveto
+(s) MinionPro-Regular-Base-aa 17.21544 fshow
+-18.43306 75.93834 moveto
+(d) MinionPro-Regular-Base-aa 17.21544 fshow
+-9.54987 75.93834 moveto
+(ucer) MinionPro-Regular-Base-aa 17.21544 fshow
+206.1941 87.2769 moveto
+(r) MinionPro-Regular-Base-aa 17.21544 fshow
+212.35721 87.2769 moveto
+(e\236e) MinionPro-Regular-Base-aa 17.21544 fshow
+236.25221 87.2769 moveto
+(c) MinionPro-Regular-Base-aa 17.21544 fshow
+243.6549 87.2769 moveto
+(t) MinionPro-Regular-Base-aa 17.21544 fshow
+248.8023 87.2769 moveto
+(o) MinionPro-Regular-Base-aa 17.21544 fshow
+257.37561 87.2769 moveto
+(r) MinionPro-Regular-Base-aa 17.21544 fshow
+118.48871 3.5339 moveto
+(\324) MinionPro-Regular-Base-aa 11.9552 fshow
+ 0 0.7743 dtransform truncate idtransform setlinewidth pop 0 setlinecap
+newpath 117.7295 1.1753 moveto
+123.28871 1.1753 lineto stroke
+117.7295 -8.844 moveto
+(\362) MinionPro-Regular-Base-aa 11.9552 fshow
+124.4842 -3.2146 moveto
+(m) MinionPro-Regular-Base-aa 17.21544 fshow
+showpage
+%%EOF

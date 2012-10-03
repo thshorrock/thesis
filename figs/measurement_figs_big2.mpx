@@ -1,0 +1,1534 @@
+% Written by DVItoMP, Version 0.992/color (Web2C 7.5.6)
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("o",_n1,1.57091,0.0000,0.0000,);
+_s("p",_n1,1.57091,8.5905,0.0000,);
+_s("t",_n1,1.57091,17.4220,0.0000,);
+_s("ic",_n1,1.57091,22.7588,0.0000,);
+_s("a",_n1,1.57091,34.7063,0.0000,);
+_s("l-s",_n1,1.57091,42.3499,0.0000,);
+_s("p",_n1,1.57091,59.0661,0.0000,);
+_s("ace",_n1,1.57091,68.1731,0.0000,);
+setbounds _p to (0,-4.0284)--(90.3293,-4.0284)--
+ (90.3293,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("c",_n12,1.57091,0.3443,0.0000,);
+_n17="MnSymbolC12";
+_s(char21,_n17,1.44000,7.6092,0.0000,);
+_n1="MinionPro-Regular-Base-aa";
+_s("o",_n1,1.57091,17.7027,0.0000,);
+_s("p",_n1,1.57091,26.2932,0.0000,);
+_s("t",_n1,1.57091,35.1247,0.0000,);
+_s("ic",_n1,1.57091,40.4615,0.0000,);
+_s("a",_n1,1.57091,52.4090,0.0000,);
+_s("l-t",_n1,1.57091,60.0526,0.0000,);
+_s("im",_n1,1.57091,75.8736,0.0000,);
+_s("e",_n1,1.57091,94.5179,0.0000,);
+setbounds _p to (0,-4.0284)--(101.8344,-4.0284)--
+ (101.8344,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+setbounds _p to (0,-0.1377)--(73.8714,-0.1377)--
+ (73.8714,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("e"&char158&"e",_n1,1.57091,6.1631,0.0000,);
+_s("c",_n1,1.57091,30.0581,0.0000,);
+_s("t",_n1,1.57091,37.4608,0.0000,);
+_s("o",_n1,1.57091,42.6082,0.0000,);
+_s("r",_n1,1.57091,51.1815,0.0000,);
+setbounds _p to (0,-0.1377)--(57.5684,-0.1377)--
+ (57.5684,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s(char212,_n1,1.09091,1.9547,6.7485,);
+interim linecap:=0;
+vardef _r(expr _a,_w)(text _t) =
+  addto _p doublepath _a withpen pencircle scaled _w _t enddef;
+_r((1.1955,4.3899)..(6.7547,4.3899), 0.7743,);
+_s(char242,_n1,1.09091,1.1955,-5.6294,);
+_s("m",_n1,1.57091,7.9502,0.0000,);
+setbounds _p to (0,-5.6294)--(22.0496,-5.6294)--
+ (22.0496,14.3878)--(0,14.3878)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("v",_n12,1.57091,-0.1721,0.0000,);
+setbounds _p to (0,-0.2927)--(8.3839,-0.2927)--
+ (8.3839,8.1687)--(0,8.1687)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+setbounds _p to (0,-0.1377)--(73.8714,-0.1377)--
+ (73.8714,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("e"&char158&"e",_n1,1.57091,6.1631,0.0000,);
+_s("c",_n1,1.57091,30.0581,0.0000,);
+_s("t",_n1,1.57091,37.4608,0.0000,);
+_s("o",_n1,1.57091,42.6082,0.0000,);
+_s("r",_n1,1.57091,51.1815,0.0000,);
+setbounds _p to (0,-0.1377)--(57.5684,-0.1377)--
+ (57.5684,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s(char212,_n1,1.09091,1.9547,6.7485,);
+interim linecap:=0;
+vardef _r(expr _a,_w)(text _t) =
+  addto _p doublepath _a withpen pencircle scaled _w _t enddef;
+_r((1.1955,4.3899)..(6.7547,4.3899), 0.7743,);
+_s(char242,_n1,1.09091,1.1955,-5.6294,);
+_s("m",_n1,1.57091,7.9502,0.0000,);
+setbounds _p to (0,-5.6294)--(22.0496,-5.6294)--
+ (22.0496,14.3878)--(0,14.3878)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+setbounds _p to (0,-0.2927)--(9.5373,-0.2927)--
+ (9.5373,8.1687)--(0,8.1687)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+setbounds _p to (0,-0.1377)--(73.8714,-0.1377)--
+ (73.8714,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("e"&char158&"e",_n1,1.57091,6.1631,0.0000,);
+_s("c",_n1,1.57091,30.0581,0.0000,);
+_s("t",_n1,1.57091,37.4608,0.0000,);
+_s("o",_n1,1.57091,42.6082,0.0000,);
+_s("r",_n1,1.57091,51.1815,0.0000,);
+setbounds _p to (0,-0.1377)--(57.5684,-0.1377)--
+ (57.5684,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("-",_n16,1.57091,0.5165,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,9.2447,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,17.0963,0.0000,);
+_s(char141,_n20,1.44000,26.2721,0.0000,);
+_n21="MnSymbolD12";
+_s(char0,_n21,1.44000,37.9226,0.0000,);
+_n1="MinionPro-Regular-Base-aa";
+_s(char212,_n1,1.09091,53.2382,6.7485,);
+interim linecap:=0;
+vardef _r(expr _a,_w)(text _t) =
+  addto _p doublepath _a withpen pencircle scaled _w _t enddef;
+_r((52.4790,4.3899)..(58.0382,4.3899), 0.7743,);
+_s(char242,_n1,1.09091,52.4790,-5.6294,);
+_s("m",_n1,1.57091,59.2337,0.0000,);
+setbounds _p to (0,-5.6294)--(73.3332,-5.6294)--
+ (73.3332,14.3878)--(0,14.3878)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_s(char141,_n20,1.44000,25.4630,0.0000,);
+setbounds _p to (0,-4.2231)--(32.9531,-4.2231)--
+ (32.9531,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,9.5373,5.2507,);
+setbounds _p to (0,-0.2927)--(13.6115,-0.2927)--
+ (13.6115,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156&char16,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(19.5190,-0.2927)--
+ (19.5190,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156&char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(19.5190,-0.2927)--
+ (19.5190,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+setbounds _p to (0,-0.1377)--(73.8714,-0.1377)--
+ (73.8714,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("u",_n1,1.57091,6.5591,0.0000,);
+_s("ler",_n1,1.57091,15.7865,0.0000,);
+setbounds _p to (0,-0.1377)--(33.8455,-0.1377)--
+ (33.8455,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s(char212,_n1,1.09091,1.9547,6.7485,);
+interim linecap:=0;
+vardef _r(expr _a,_w)(text _t) =
+  addto _p doublepath _a withpen pencircle scaled _w _t enddef;
+_r((1.1955,4.3899)..(6.7547,4.3899), 0.7743,);
+_s(char242,_n1,1.09091,1.1955,-5.6294,);
+_s("m",_n1,1.57091,7.9502,0.0000,);
+setbounds _p to (0,-5.6294)--(22.0496,-5.6294)--
+ (22.0496,14.3878)--(0,14.3878)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("-",_n16,1.57091,0.5165,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,9.2447,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,17.0963,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,26.2721,5.2507,);
+_s(char141,_n20,1.44000,30.3463,0.0000,);
+setbounds _p to (0,-4.3985)--(37.8364,-4.3985)--
+ (37.8364,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,8.4355,5.2507,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,12.5097,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,20.3613,0.0000,);
+_s(char156,_n19,1.00000,29.5371,5.2507,);
+_s(char141,_n20,1.44000,33.6112,0.0000,);
+setbounds _p to (0,-4.2231)--(41.1014,-4.2231)--
+ (41.1014,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_s(char141,_n20,1.44000,25.4630,0.0000,);
+setbounds _p to (0,-4.2231)--(32.9531,-4.2231)--
+ (32.9531,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+setbounds _p to (0,-0.2927)--(9.5373,-0.2927)--
+ (9.5373,8.1687)--(0,8.1687)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,0.0000)--(11.9991,0.0000)--
+ (11.9991,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,-0.1033)--(11.1728,-0.1033)--
+ (11.1728,11.6376)--(0,11.6376)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+_s("p",_n1,1.57091,77.7793,0.0000,);
+_s("a",_n1,1.57091,86.8862,0.0000,);
+_s("t",_n1,1.57091,94.1167,0.0000,);
+_s("h",_n1,1.57091,99.4707,0.0000,);
+setbounds _p to (0,-4.0284)--(108.6637,-4.0284)--
+ (108.6637,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("e"&char158&"e",_n1,1.57091,6.1631,0.0000,);
+_s("c",_n1,1.57091,30.0581,0.0000,);
+_s("t",_n1,1.57091,37.4608,0.0000,);
+_s("o",_n1,1.57091,42.6082,0.0000,);
+_s("r",_n1,1.57091,51.1815,0.0000,);
+_s("p",_n1,1.57091,61.4763,0.0000,);
+_s("a",_n1,1.57091,70.5832,0.0000,);
+_s("t",_n1,1.57091,77.8137,0.0000,);
+_s("h",_n1,1.57091,83.1677,0.0000,);
+setbounds _p to (0,-4.0284)--(92.3608,-4.0284)--
+ (92.3608,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_s(char141,_n20,1.44000,25.4630,0.0000,);
+setbounds _p to (0,-4.2231)--(32.9531,-4.2231)--
+ (32.9531,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,9.5373,5.2507,);
+setbounds _p to (0,-0.2927)--(13.6115,-0.2927)--
+ (13.6115,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+setbounds _p to (0,-0.2927)--(9.5373,-0.2927)--
+ (9.5373,8.1687)--(0,8.1687)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,8.4355,5.2507,);
+_n21="MnSymbolD12";
+_s(char0,_n21,1.44000,20.1034,0.0000,);
+_s("0",_n16,1.57091,33.8086,0.0000,);
+_s(char156&char16,_n19,1.00000,41.8999,5.2507,);
+setbounds _p to (0,-0.2927)--(52.9833,-0.2927)--
+ (52.9833,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156&char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(19.5190,-0.2927)--
+ (19.5190,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,0.0000)--(11.9991,0.0000)--
+ (11.9991,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,11.9991,5.2507,);
+setbounds _p to (0,0.0000)--(16.0733,0.0000)--
+ (16.0733,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,-0.1033)--(11.1728,-0.1033)--
+ (11.1728,11.6376)--(0,11.6376)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,11.1728,5.2507,);
+setbounds _p to (0,-0.1033)--(15.2469,-0.1033)--
+ (15.2469,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+_s("p",_n1,1.57091,77.7793,0.0000,);
+_s("a",_n1,1.57091,86.8862,0.0000,);
+_s("t",_n1,1.57091,94.1167,0.0000,);
+_s("h",_n1,1.57091,99.4707,0.0000,);
+_s("s",_n1,1.57091,108.5260,0.0000,);
+setbounds _p to (0,-4.0284)--(114.8441,-4.0284)--
+ (114.8441,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("e"&char158&"e",_n1,1.57091,6.1631,0.0000,);
+_s("c",_n1,1.57091,30.0581,0.0000,);
+_s("t",_n1,1.57091,37.4608,0.0000,);
+_s("o",_n1,1.57091,42.6082,0.0000,);
+_s("r",_n1,1.57091,51.1815,0.0000,);
+_s("p",_n1,1.57091,61.4763,0.0000,);
+_s("a",_n1,1.57091,70.5832,0.0000,);
+_s("t",_n1,1.57091,77.8137,0.0000,);
+_s("h",_n1,1.57091,83.1677,0.0000,);
+_s("s",_n1,1.57091,92.2230,0.0000,);
+setbounds _p to (0,-4.0284)--(98.5411,-4.0284)--
+ (98.5411,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,8.4355,5.2507,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,12.5097,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,20.3613,0.0000,);
+_s(char156,_n19,1.00000,29.5371,5.2507,);
+_s(char141,_n20,1.44000,33.6112,0.0000,);
+setbounds _p to (0,-4.2231)--(41.1014,-4.2231)--
+ (41.1014,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_s(char141,_n20,1.44000,25.4630,0.0000,);
+setbounds _p to (0,-4.2231)--(32.9531,-4.2231)--
+ (32.9531,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,25.4630,5.2507,);
+_s(char141,_n20,1.44000,29.5371,0.0000,);
+_n21="MnSymbolD12";
+_s(char0,_n21,1.44000,41.1876,0.0000,);
+_s("k",_n12,1.57091,55.0650,0.0000,);
+_n1="MinionPro-Regular-Base-aa";
+_s(char242,_n1,1.09091,63.8449,5.2507,);
+_s("0",_n16,1.57091,70.2464,0.0000,);
+_s(char136,_n20,1.44000,78.3377,0.0000,);
+_s("x",_n12,1.57091,86.1893,0.0000,);
+_s(char141,_n20,1.44000,95.3651,0.0000,);
+setbounds _p to (0,-4.2231)--(102.8553,-4.2231)--
+ (102.8553,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,9.5373,5.2507,);
+setbounds _p to (0,-0.2927)--(13.6115,-0.2927)--
+ (13.6115,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+setbounds _p to (0,-0.2927)--(9.5373,-0.2927)--
+ (9.5373,8.1687)--(0,8.1687)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,8.4355,5.2507,);
+_n21="MnSymbolD12";
+_s(char0,_n21,1.44000,20.1034,0.0000,);
+_s("0",_n16,1.57091,33.8086,0.0000,);
+_s(char156&char16,_n19,1.00000,41.8999,5.2507,);
+setbounds _p to (0,-0.2927)--(52.9833,-0.2927)--
+ (52.9833,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156&char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(19.5190,-0.2927)--
+ (19.5190,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,0.0000)--(11.9991,0.0000)--
+ (11.9991,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,11.9991,5.2507,);
+setbounds _p to (0,0.0000)--(16.0733,0.0000)--
+ (16.0733,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,-0.1033)--(11.1728,-0.1033)--
+ (11.1728,11.6376)--(0,11.6376)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,11.1728,5.2507,);
+setbounds _p to (0,-0.1033)--(15.2469,-0.1033)--
+ (15.2469,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+_s("p",_n1,1.57091,77.7793,0.0000,);
+_s("a",_n1,1.57091,86.8862,0.0000,);
+_s("t",_n1,1.57091,94.1167,0.0000,);
+_s("h",_n1,1.57091,99.4707,0.0000,);
+_s("s",_n1,1.57091,108.5260,0.0000,);
+setbounds _p to (0,-4.0284)--(114.8441,-4.0284)--
+ (114.8441,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("e"&char158&"e",_n1,1.57091,6.1631,0.0000,);
+_s("c",_n1,1.57091,30.0581,0.0000,);
+_s("t",_n1,1.57091,37.4608,0.0000,);
+_s("o",_n1,1.57091,42.6082,0.0000,);
+_s("r",_n1,1.57091,51.1815,0.0000,);
+_s("p",_n1,1.57091,61.4763,0.0000,);
+_s("a",_n1,1.57091,70.5832,0.0000,);
+_s("t",_n1,1.57091,77.8137,0.0000,);
+_s("h",_n1,1.57091,83.1677,0.0000,);
+_s("s",_n1,1.57091,92.2230,0.0000,);
+setbounds _p to (0,-4.0284)--(98.5411,-4.0284)--
+ (98.5411,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,8.4355,5.2507,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,12.5097,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,20.3613,0.0000,);
+_s(char156,_n19,1.00000,29.5371,5.2507,);
+_s(char141,_n20,1.44000,33.6112,0.0000,);
+setbounds _p to (0,-4.2231)--(41.1014,-4.2231)--
+ (41.1014,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_s(char141,_n20,1.44000,25.4630,0.0000,);
+setbounds _p to (0,-4.2231)--(32.9531,-4.2231)--
+ (32.9531,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("k",_n12,1.57091,0.5165,0.0000,);
+_n1="MinionPro-Regular-Base-aa";
+_s(char242,_n1,1.09091,9.2963,5.2507,);
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,15.6979,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,23.7892,0.0000,);
+_s("x",_n12,1.57091,31.6408,0.0000,);
+_s(char141,_n20,1.44000,40.8166,0.0000,);
+setbounds _p to (0,-4.2231)--(48.3067,-4.2231)--
+ (48.3067,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,9.5373,5.2507,);
+setbounds _p to (0,-0.2927)--(13.6115,-0.2927)--
+ (13.6115,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+setbounds _p to (0,-0.2927)--(9.5373,-0.2927)--
+ (9.5373,8.1687)--(0,8.1687)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,8.4355,5.2507,);
+_n21="MnSymbolD12";
+_s(char0,_n21,1.44000,20.1034,0.0000,);
+_s("0",_n16,1.57091,33.8086,0.0000,);
+_s(char156&char16,_n19,1.00000,41.8999,5.2507,);
+setbounds _p to (0,-0.2927)--(52.9833,-0.2927)--
+ (52.9833,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156&char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(19.5190,-0.2927)--
+ (19.5190,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,0.0000)--(11.9991,0.0000)--
+ (11.9991,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,11.9991,5.2507,);
+setbounds _p to (0,0.0000)--(16.0733,0.0000)--
+ (16.0733,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,-0.1033)--(11.1728,-0.1033)--
+ (11.1728,11.6376)--(0,11.6376)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,11.1728,5.2507,);
+setbounds _p to (0,-0.1033)--(15.2469,-0.1033)--
+ (15.2469,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+_s("p",_n1,1.57091,77.7793,0.0000,);
+_s("a",_n1,1.57091,86.8862,0.0000,);
+_s("t",_n1,1.57091,94.1167,0.0000,);
+_s("h",_n1,1.57091,99.4707,0.0000,);
+_s("s",_n1,1.57091,108.5260,0.0000,);
+setbounds _p to (0,-4.0284)--(114.8441,-4.0284)--
+ (114.8441,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("e"&char158&"e",_n1,1.57091,6.1631,0.0000,);
+_s("c",_n1,1.57091,30.0581,0.0000,);
+_s("t",_n1,1.57091,37.4608,0.0000,);
+_s("o",_n1,1.57091,42.6082,0.0000,);
+_s("r",_n1,1.57091,51.1815,0.0000,);
+_s("p",_n1,1.57091,61.4763,0.0000,);
+_s("a",_n1,1.57091,70.5832,0.0000,);
+_s("t",_n1,1.57091,77.8137,0.0000,);
+_s("h",_n1,1.57091,83.1677,0.0000,);
+_s("s",_n1,1.57091,92.2230,0.0000,);
+setbounds _p to (0,-4.0284)--(98.5411,-4.0284)--
+ (98.5411,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,8.4355,5.2507,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,12.5097,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,20.3613,0.0000,);
+_s(char156,_n19,1.00000,29.5371,5.2507,);
+_s(char141,_n20,1.44000,33.6112,0.0000,);
+setbounds _p to (0,-4.2231)--(41.1014,-4.2231)--
+ (41.1014,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_s(char141,_n20,1.44000,25.4630,0.0000,);
+setbounds _p to (0,-4.2231)--(32.9531,-4.2231)--
+ (32.9531,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("k",_n12,1.57091,0.5165,0.0000,);
+_n1="MinionPro-Regular-Base-aa";
+_s(char242,_n1,1.09091,9.2963,5.2507,);
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,15.6979,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,23.7892,0.0000,);
+_s("x",_n12,1.57091,31.6408,0.0000,);
+_s(char141,_n20,1.44000,40.8166,0.0000,);
+setbounds _p to (0,-4.2231)--(48.3067,-4.2231)--
+ (48.3067,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,9.5373,5.2507,);
+setbounds _p to (0,-0.2927)--(13.6115,-0.2927)--
+ (13.6115,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+setbounds _p to (0,-0.2927)--(9.5373,-0.2927)--
+ (9.5373,8.1687)--(0,8.1687)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,8.4355,5.2507,);
+_n21="MnSymbolD12";
+_s(char0,_n21,1.44000,20.1034,0.0000,);
+_s("0",_n16,1.57091,33.8086,0.0000,);
+_s(char156&char16,_n19,1.00000,41.8999,5.2507,);
+setbounds _p to (0,-0.2927)--(52.9833,-0.2927)--
+ (52.9833,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156&char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(19.5190,-0.2927)--
+ (19.5190,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,0.0000)--(11.9991,0.0000)--
+ (11.9991,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("T",_n12,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,11.9991,5.2507,);
+setbounds _p to (0,0.0000)--(16.0733,0.0000)--
+ (16.0733,11.9303)--(0,11.9303)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+setbounds _p to (0,-0.1033)--(11.1728,-0.1033)--
+ (11.1728,11.6376)--(0,11.6376)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("R",_n12,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,11.1728,5.2507,);
+setbounds _p to (0,-0.1033)--(15.2469,-0.1033)--
+ (15.2469,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+_s("p",_n1,1.57091,77.7793,0.0000,);
+_s("a",_n1,1.57091,86.8862,0.0000,);
+_s("t",_n1,1.57091,94.1167,0.0000,);
+_s("h",_n1,1.57091,99.4707,0.0000,);
+_s("s",_n1,1.57091,108.5260,0.0000,);
+setbounds _p to (0,-4.0284)--(114.8441,-4.0284)--
+ (114.8441,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("e"&char158&"e",_n1,1.57091,6.1631,0.0000,);
+_s("c",_n1,1.57091,30.0581,0.0000,);
+_s("t",_n1,1.57091,37.4608,0.0000,);
+_s("o",_n1,1.57091,42.6082,0.0000,);
+_s("r",_n1,1.57091,51.1815,0.0000,);
+_s("p",_n1,1.57091,61.4763,0.0000,);
+_s("a",_n1,1.57091,70.5832,0.0000,);
+_s("t",_n1,1.57091,77.8137,0.0000,);
+_s("h",_n1,1.57091,83.1677,0.0000,);
+_s("s",_n1,1.57091,92.2230,0.0000,);
+setbounds _p to (0,-4.0284)--(98.5411,-4.0284)--
+ (98.5411,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,8.4355,5.2507,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,12.5097,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,20.3613,0.0000,);
+_s(char156,_n19,1.00000,29.5371,5.2507,);
+_s(char141,_n20,1.44000,33.6112,0.0000,);
+_n21="MnSymbolD12";
+_s(char0,_n21,1.44000,45.2617,0.0000,);
+_s("k",_n12,1.57091,59.1391,0.0000,);
+_s(char156,_n19,1.00000,67.9190,5.2507,);
+_n1="MinionPro-Regular-Base-aa";
+_s(char242,_n1,1.09091,71.4950,5.2507,);
+_s("0",_n16,1.57091,77.8966,0.0000,);
+_s(char156,_n19,1.00000,85.9878,5.2507,);
+_s(char136,_n20,1.44000,90.0619,0.0000,);
+_s("x",_n12,1.57091,97.9136,0.0000,);
+_s(char141,_n20,1.44000,107.0894,0.0000,);
+setbounds _p to (0,-4.2231)--(114.5795,-4.2231)--
+ (114.5795,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_s(char141,_n20,1.44000,25.4630,0.0000,);
+setbounds _p to (0,-4.2231)--(32.9531,-4.2231)--
+ (32.9531,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,8.4355,5.2507,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,12.5097,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,20.3613,0.0000,);
+_s(char141,_n20,1.44000,29.5371,0.0000,);
+setbounds _p to (0,-4.2231)--(37.0272,-4.2231)--
+ (37.0272,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+setbounds _p to (0,-0.1377)--(73.8714,-0.1377)--
+ (73.8714,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("u",_n1,1.57091,6.5591,0.0000,);
+_s("ler",_n1,1.57091,15.7865,0.0000,);
+setbounds _p to (0,-0.1377)--(33.8455,-0.1377)--
+ (33.8455,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("k",_n12,1.57091,0.5165,0.0000,);
+_n1="MinionPro-Regular-Base-aa";
+_s(char242,_n1,1.09091,9.2963,5.2507,);
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,15.6979,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,23.7892,5.2507,);
+setbounds _p to (0,-0.2927)--(31.2967,-0.2927)--
+ (31.2967,12.8901)--(0,12.8901)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("k",_n12,1.57091,0.5165,0.0000,);
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,9.6406,0.0000,);
+_n19="MnSymbolC12";
+_s(char16,_n19,1.00000,17.7319,5.2507,);
+setbounds _p to (0,-0.2927)--(25.2394,-0.2927)--
+ (25.2394,12.4554)--(0,12.4554)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("k",_n12,1.57091,0.5165,0.0000,);
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,9.6406,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,17.7319,5.2507,);
+setbounds _p to (0,-0.2927)--(25.2394,-0.2927)--
+ (25.2394,12.4554)--(0,12.4554)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("k",_n12,1.57091,0.5165,0.0000,);
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,9.6406,0.0000,);
+setbounds _p to (0,-0.2927)--(17.7319,-0.2927)--
+ (17.7319,12.4554)--(0,12.4554)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,0.3615,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,9.5373,5.2507,);
+setbounds _p to (0,-0.2927)--(13.6115,-0.2927)--
+ (13.6115,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156&char16,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(19.5190,-0.2927)--
+ (19.5190,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char156&char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(19.5190,-0.2927)--
+ (19.5190,11.6628)--(0,11.6628)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n19="MnSymbolC12";
+_s(char20,_n19,1.00000,8.4355,5.2507,);
+setbounds _p to (0,-0.2927)--(15.9430,-0.2927)--
+ (15.9430,11.2069)--(0,11.2069)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("t",_n1,1.57091,0.0000,0.0000,);
+_s("ra",_n1,1.57091,5.3368,0.0000,);
+_s("n",_n1,1.57091,19.1263,0.0000,);
+_s("s",_n1,1.57091,28.4054,0.0000,);
+_s("d",_n1,1.57091,34.8612,0.0000,);
+_s("ucer",_n1,1.57091,43.7444,0.0000,);
+setbounds _p to (0,-0.1377)--(73.8714,-0.1377)--
+ (73.8714,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s("r",_n1,1.57091,0.0000,0.0000,);
+_s("u",_n1,1.57091,6.5591,0.0000,);
+_s("ler",_n1,1.57091,15.7865,0.0000,);
+setbounds _p to (0,-0.1377)--(33.8455,-0.1377)--
+ (33.8455,12.1369)--(0,12.1369)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="MinionPro-Regular-Base-aa";
+_s(char212,_n1,1.09091,1.9547,6.7485,);
+interim linecap:=0;
+vardef _r(expr _a,_w)(text _t) =
+  addto _p doublepath _a withpen pencircle scaled _w _t enddef;
+_r((1.1955,4.3899)..(6.7547,4.3899), 0.7743,);
+_s(char242,_n1,1.09091,1.1955,-5.6294,);
+_s("m",_n1,1.57091,7.9502,0.0000,);
+setbounds _p to (0,-5.6294)--(22.0496,-5.6294)--
+ (22.0496,14.3878)--(0,14.3878)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("-",_n16,1.57091,0.5165,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,9.2447,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,17.0963,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,26.2721,5.2507,);
+_s(char141,_n20,1.44000,30.3463,0.0000,);
+setbounds _p to (0,-4.3985)--(37.8364,-4.3985)--
+ (37.8364,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_n19="MnSymbolC12";
+_s(char156,_n19,1.00000,25.4630,5.2507,);
+_s(char141,_n20,1.44000,29.5371,0.0000,);
+setbounds _p to (0,-4.2231)--(37.0272,-4.2231)--
+ (37.0272,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n16="MinionPro-It-Base-ae";
+_s("0",_n16,1.57091,0.3443,0.0000,);
+_n20="MnSymbolE12";
+_s(char136,_n20,1.44000,8.4355,0.0000,);
+_n12="MinionPro-It-Base-aa";
+_s("x",_n12,1.57091,16.2872,0.0000,);
+_s(char141,_n20,1.44000,25.4630,0.0000,);
+setbounds _p to (0,-4.2231)--(32.9531,-4.2231)--
+ (32.9531,12.9881)--(0,12.9881)--cycle;
+_p endgroup
+mpxbreak

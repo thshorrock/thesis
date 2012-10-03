@@ -1,0 +1,82 @@
+%!PS
+%%BoundingBox: -14 -8 99 138 
+%%Creator: MetaPost
+%%CreationDate: 2008.08.04:1849
+%%Pages: 1
+%*Font: cmmi10 9.96265 9.96265 0b:80000000000000220000002
+%*Font: cmr7 6.97385 6.97385 31:e
+%%EndProlog
+%%Page: 1 1
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 42.51968 0 moveto
+0 42.51968 lineto stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 42.51968 0 moveto
+42.51968 42.51968 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 42.51968 0 moveto
+85.03937 42.51968 lineto stroke
+newpath 0 42.51968 moveto
+42.51968 85.03937 lineto stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 42.51968 moveto
+0 85.03937 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 42.51968 42.51968 moveto
+85.03937 85.03937 lineto stroke
+newpath 42.51968 42.51968 moveto
+0 85.03937 lineto stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 85.03937 42.51968 moveto
+85.03937 85.03937 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 85.03937 42.51968 moveto
+42.51968 85.03937 lineto stroke
+newpath 0 85.03937 moveto
+42.51968 127.55905 lineto stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 42.51968 85.03937 moveto
+42.51968 127.55905 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 85.03937 85.03937 moveto
+42.51968 127.55905 lineto stroke
+ 0 3.98505 dtransform truncate idtransform setlinewidth pop
+newpath 42.51968 0 moveto 0 0 rlineto stroke
+newpath 0 42.51968 moveto 0 0 rlineto stroke
+newpath 85.03937 85.03937 moveto 0 0 rlineto stroke
+newpath 42.51968 42.51968 moveto 0 0 rlineto stroke
+newpath 42.51968 85.03937 moveto 0 0 rlineto stroke
+newpath 85.03937 42.51968 moveto 0 0 rlineto stroke
+newpath 0 85.03937 moveto 0 0 rlineto stroke
+newpath 42.51968 127.55905 moveto 0 0 rlineto stroke
+39.31468 -7.2895 moveto
+(\013) cmmi10 9.96265 fshow
+-11.20819 36.13019 moveto
+(e) cmmi10 9.96265 fshow
+-6.56929 34.63579 moveto
+(1) cmr7 6.97385 fshow
+31.3115 36.13019 moveto
+(e) cmmi10 9.96265 fshow
+35.9504 34.63579 moveto
+(2) cmr7 6.97385 fshow
+87.13936 36.13019 moveto
+(e) cmmi10 9.96265 fshow
+91.77826 34.63579 moveto
+(3) cmr7 6.97385 fshow
+-13.92369 88.63376 moveto
+(E) cmmi10 9.96265 fshow
+-6.56929 87.13936 moveto
+(3) cmr7 6.97385 fshow
+28.596 88.63376 moveto
+(E) cmmi10 9.96265 fshow
+35.9504 87.13936 moveto
+(2) cmr7 6.97385 fshow
+87.13936 88.63376 moveto
+(E) cmmi10 9.96265 fshow
+94.49376 87.13936 moveto
+(3) cmr7 6.97385 fshow
+39.93909 130.55905 moveto
+(I) cmmi10 9.96265 fshow
+showpage
+%%EOF

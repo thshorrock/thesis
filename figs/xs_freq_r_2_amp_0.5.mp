@@ -1,0 +1,674 @@
+%GNUPLOT Metapost output: Fri Aug  6 14:47:32 2010
+
+
+warningcheck:=0;
+defaultmpt:=mpt:=4;
+th:=.6;
+%% Have nice sharp joins on our lines
+linecap:=butt;
+linejoin:=mitered;
+
+def scalepen expr n = pickup pencircle scaled (n*th) enddef;
+def ptsize expr n = mpt:=n*defaultmpt enddef;
+
+
+textmag:= 0.800;
+vardef makepic(expr str) =
+  if picture str : str scaled textmag
+  % otherwise a string
+  else: str infont defaultfont scaled (defaultscale*textmag)
+  fi
+enddef;
+
+def infontsize(expr str, size) =
+  infont str scaled (size / fontsize str)
+enddef;
+
+%font changes
+verbatimtex
+\def\setfont#1#2{%.
+  \font\gpfont=#1 at #2pt
+\gpfont}
+\setfont{cmr10}{10.00}
+etex
+
+color currentcolor; currentcolor:=black;
+color fillcolor;
+boolean colorlines,dashedlines;
+colorlines:=true;
+dashedlines:=true;
+
+def _wc = withpen currentpen withcolor currentcolor enddef;
+def _ac = addto currentpicture enddef;
+def _sms = scaled mpt shifted enddef;
+% drawing point-types
+def gpdraw (expr n, x, y) =
+  if n<0: _ac contour fullcircle _sms (x,y)
+  elseif (n=1) or (n=3):
+    _ac doublepath ptpath[n] _sms (x,y) _wc;
+    _ac doublepath ptpath[n] rotated 90 _sms (x,y) _wc
+  elseif n<6: _ac doublepath ptpath[n] _sms (x,y) _wc
+  else: _ac contour ptpath[n] _sms (x,y) _wc
+  fi
+enddef;
+
+% the point shapes
+path ptpath[];
+%diamond
+ptpath0 = ptpath6 = (-1/2,0)--(0,-1/2)--(1/2,0)--(0,1/2)--cycle;
+% plus sign
+ptpath1 = (-1/2,0)--(1/2,0);
+% square
+ptpath2 = ptpath7 = (-1/2,-1/2)--(1/2,-1/2)--(1/2,1/2)--(-1/2,1/2)--cycle;
+% cross
+ptpath3 := (-1/2,-1/2)--(1/2,1/2);
+% circle:
+ptpath4 = ptpath8:= fullcircle;
+% triangle
+ptpath5 = ptpath9 := (0,1/2)--(-1/2,-1/2)--(1/2,-1/2)--cycle;
+
+def linetype expr n =
+  currentcolor:= if colorlines : col[n] else: black fi;
+  if n = -1 :
+      drawoptions(withcolor currentcolor withpen (currentpen scaled .5));
+  elseif n < 1 :
+    drawoptions(_wc);
+  else :
+    drawoptions( if dashedlines: dashed lt[n] fi _wc);
+  fi
+enddef;
+
+% dash patterns
+picture lt[];
+lt1=dashpattern(on 2 off 2); % dashes
+lt2=dashpattern(on 2 off 2 on 0.2 off 2); %dash-dot
+lt3=lt1 scaled 1.414;
+lt4=lt2 scaled 1.414;
+lt5=lt1 scaled 2;
+lt6:=lt2 scaled 2;
+lt7=dashpattern(on 0.2 off 2); %dots
+
+color col[],cyan, magenta, yellow;
+cyan=blue+green; magenta=red+blue;yellow=green+red;
+col[-2]:=col[-1]:=col0:=black;
+col1:=red;
+col2:=(.2,.2,1); %blue
+col3:=(1,.66,0); %orange
+col4:=.85*green;
+col5:=.9*magenta;
+col6:=0.85*cyan;
+col7:=.85*yellow;
+
+%placing text
+picture GPtext;
+def put_text(expr pic, x, y, r, j) =
+  GPtext:=makepic(pic);
+  GPtext:=GPtext shifted
+    if j = 1: (-(ulcorner GPtext + llcorner GPtext)/2)
+    elseif j = 2: (-center GPtext)
+    else: (-(urcorner GPtext + lrcorner GPtext)/2)
+    fi
+    rotated r;
+  draw GPtext shifted (x,y)
+enddef;
+
+beginfig(5);
+w:=5.000in;h:=3.000in;
+a:=w/1200.0;b:=h/720.0;
+scalepen 1; ptsize 1.000;linetype -2;
+draw (211.5a,87.9b)--(228.1a,87.9b);
+draw (1164.7a,87.9b)--(1148.1a,87.9b);
+draw (211.5a,89.9b)--(228.1a,89.9b);
+draw (1164.7a,89.9b)--(1148.1a,89.9b);
+draw (211.5a,91.9b)--(228.1a,91.9b);
+draw (1164.7a,91.9b)--(1148.1a,91.9b);
+draw (211.5a,93.9b)--(228.1a,93.9b);
+draw (1164.7a,93.9b)--(1148.1a,93.9b);
+draw (211.5a,95.9b)--(228.1a,95.9b);
+draw (1164.7a,95.9b)--(1148.1a,95.9b);
+draw (211.5a,97.9b)--(228.1a,97.9b);
+draw (1164.7a,97.9b)--(1148.1a,97.9b);
+draw (211.5a,99.9b)--(228.1a,99.9b);
+draw (1164.7a,99.9b)--(1148.1a,99.9b);
+draw (211.5a,101.9b)--(228.1a,101.9b);
+draw (1164.7a,101.9b)--(1148.1a,101.9b);
+draw (211.5a,103.9b)--(228.1a,103.9b);
+draw (1164.7a,103.9b)--(1148.1a,103.9b);
+draw (211.5a,105.9b)--(228.1a,105.9b);
+draw (1164.7a,105.9b)--(1148.1a,105.9b);
+draw (211.5a,107.9b)--(228.1a,107.9b);
+draw (1164.7a,107.9b)--(1148.1a,107.9b);
+draw (211.5a,87.9b)--(211.5a,104.5b);
+draw (211.5a,107.9b)--(211.5a,91.3b);
+put_text( btex  0.1 etex, 211.5a, 58.6b, 0, 2);
+draw (355.0a,87.9b)--(355.0a,96.2b);
+draw (355.0a,107.9b)--(355.0a,99.6b);
+draw (438.9a,87.9b)--(438.9a,96.2b);
+draw (438.9a,107.9b)--(438.9a,99.6b);
+draw (498.4a,87.9b)--(498.4a,96.2b);
+draw (498.4a,107.9b)--(498.4a,99.6b);
+draw (544.6a,87.9b)--(544.6a,96.2b);
+draw (544.6a,107.9b)--(544.6a,99.6b);
+draw (582.4a,87.9b)--(582.4a,96.2b);
+draw (582.4a,107.9b)--(582.4a,99.6b);
+draw (614.3a,87.9b)--(614.3a,96.2b);
+draw (614.3a,107.9b)--(614.3a,99.6b);
+draw (641.9a,87.9b)--(641.9a,96.2b);
+draw (641.9a,107.9b)--(641.9a,99.6b);
+draw (666.3a,87.9b)--(666.3a,96.2b);
+draw (666.3a,107.9b)--(666.3a,99.6b);
+draw (688.1a,87.9b)--(688.1a,104.5b);
+draw (688.1a,107.9b)--(688.1a,91.3b);
+put_text( btex  1 etex, 688.1a, 58.6b, 0, 2);
+draw (831.6a,87.9b)--(831.6a,96.2b);
+draw (831.6a,107.9b)--(831.6a,99.6b);
+draw (915.5a,87.9b)--(915.5a,96.2b);
+draw (915.5a,107.9b)--(915.5a,99.6b);
+draw (975.0a,87.9b)--(975.0a,96.2b);
+draw (975.0a,107.9b)--(975.0a,99.6b);
+draw (1021.2a,87.9b)--(1021.2a,96.2b);
+draw (1021.2a,107.9b)--(1021.2a,99.6b);
+draw (1059.0a,87.9b)--(1059.0a,96.2b);
+draw (1059.0a,107.9b)--(1059.0a,99.6b);
+draw (1090.9a,87.9b)--(1090.9a,96.2b);
+draw (1090.9a,107.9b)--(1090.9a,99.6b);
+draw (1118.5a,87.9b)--(1118.5a,96.2b);
+draw (1118.5a,107.9b)--(1118.5a,99.6b);
+draw (1142.9a,87.9b)--(1142.9a,96.2b);
+draw (1142.9a,107.9b)--(1142.9a,99.6b);
+draw (1164.7a,87.9b)--(1164.7a,104.5b);
+draw (1164.7a,107.9b)--(1164.7a,91.3b);
+put_text( btex  10 etex, 1164.7a, 58.6b, 0, 2);
+draw (211.5a,107.9b)--(211.5a,87.9b)--(1164.7a,87.9b)--(1164.7a,107.9b)--(211.5a,107.9b);
+linetype -2;
+put_text( btex frequency (MHz) etex, 688.1a, 14.7b, 0, 2);
+linetype -2;
+linetype 0;
+gpdraw(0,886.7a,88.9b);
+gpdraw(0,796.3a,97.8b);
+gpdraw(0,908.8a,89.0b);
+gpdraw(0,990.6a,92.8b);
+gpdraw(0,338.8a,92.9b);
+gpdraw(0,857.3a,93.7b);
+gpdraw(0,776.2a,89.3b);
+gpdraw(0,958.3a,95.6b);
+gpdraw(0,952.8a,91.2b);
+gpdraw(0,883.9a,88.3b);
+gpdraw(0,855.0a,106.7b);
+gpdraw(0,914.2a,106.8b);
+gpdraw(0,314.6a,106.8b);
+gpdraw(0,772.3a,89.6b);
+gpdraw(0,727.3a,88.9b);
+gpdraw(0,956.0a,92.5b);
+gpdraw(0,975.6a,107.6b);
+gpdraw(0,937.9a,98.0b);
+gpdraw(0,851.9a,89.2b);
+gpdraw(0,911.6a,95.8b);
+gpdraw(0,884.1a,103.5b);
+gpdraw(0,999.8a,92.6b);
+gpdraw(0,872.9a,106.7b);
+gpdraw(0,973.4a,107.2b);
+gpdraw(0,852.3a,93.7b);
+gpdraw(0,935.5a,95.3b);
+gpdraw(0,778.9a,89.7b);
+gpdraw(0,1141.0a,99.8b);
+gpdraw(0,886.2a,105.2b);
+gpdraw(0,879.7a,107.9b);
+gpdraw(0,748.3a,101.2b);
+gpdraw(0,863.8a,104.6b);
+gpdraw(0,881.3a,92.2b);
+gpdraw(0,870.0a,97.3b);
+gpdraw(0,687.8a,91.4b);
+gpdraw(0,967.4a,95.0b);
+gpdraw(0,849.2a,107.6b);
+gpdraw(0,889.2a,94.1b);
+gpdraw(0,899.6a,100.1b);
+gpdraw(0,1018.4a,105.2b);
+gpdraw(0,916.1a,89.1b);
+gpdraw(0,775.0a,88.8b);
+gpdraw(0,936.2a,96.0b);
+gpdraw(0,994.5a,97.0b);
+gpdraw(0,883.4a,94.4b);
+gpdraw(0,957.2a,105.0b);
+gpdraw(0,977.1a,96.5b);
+gpdraw(0,887.1a,102.4b);
+gpdraw(0,907.3a,101.4b);
+gpdraw(0,925.9a,95.5b);
+gpdraw(0,340.4a,101.1b);
+gpdraw(0,946.7a,101.4b);
+gpdraw(0,986.2a,99.0b);
+gpdraw(0,876.8a,92.5b);
+gpdraw(0,860.8a,89.2b);
+gpdraw(0,798.2a,102.8b);
+gpdraw(0,275.5a,102.6b);
+gpdraw(0,965.1a,92.4b);
+gpdraw(0,886.5a,100.4b);
+gpdraw(0,750.0a,99.8b);
+gpdraw(0,896.9a,93.9b);
+gpdraw(0,913.5a,98.1b);
+gpdraw(0,739.4a,90.3b);
+gpdraw(0,933.7a,92.8b);
+gpdraw(0,954.9a,94.3b);
+gpdraw(0,974.9a,98.7b);
+gpdraw(0,690.6a,93.9b);
+gpdraw(0,884.3a,90.0b);
+gpdraw(0,890.7a,105.4b);
+gpdraw(0,904.6a,98.0b);
+gpdraw(0,923.4a,104.9b);
+gpdraw(0,944.3a,99.5b);
+gpdraw(0,984.0a,101.9b);
+gpdraw(0,619.7a,101.1b);
+gpdraw(0,745.8a,101.2b);
+gpdraw(0,313.2a,105.5b);
+gpdraw(0,745.8a,98.5b);
+gpdraw(0,730.7a,89.7b);
+gpdraw(0,337.1a,95.8b);
+gpdraw(0,706.5a,92.9b);
+gpdraw(0,735.0a,88.8b);
+linetype 1;
+gpdraw(1,1023.3a,93.8b);
+gpdraw(1,886.7a,92.9b);
+gpdraw(1,908.8a,100.4b);
+gpdraw(1,338.8a,96.9b);
+gpdraw(1,723.2a,105.0b);
+gpdraw(1,857.3a,89.8b);
+gpdraw(1,952.8a,101.2b);
+gpdraw(1,776.2a,90.2b);
+gpdraw(1,883.9a,102.5b);
+gpdraw(1,958.3a,102.5b);
+gpdraw(1,855.0a,91.4b);
+gpdraw(1,914.2a,105.5b);
+gpdraw(1,772.3a,96.2b);
+gpdraw(1,956.0a,89.5b);
+gpdraw(1,851.9a,88.2b);
+gpdraw(1,911.6a,105.7b);
+gpdraw(1,999.8a,102.1b);
+gpdraw(1,727.3a,94.6b);
+gpdraw(1,975.6a,106.4b);
+gpdraw(1,722.7a,93.6b);
+gpdraw(1,937.9a,89.7b);
+gpdraw(1,973.4a,104.3b);
+gpdraw(1,752.5a,104.2b);
+gpdraw(1,935.5a,93.5b);
+gpdraw(1,1141.0a,105.9b);
+gpdraw(1,298.8a,102.4b);
+gpdraw(1,884.1a,105.6b);
+gpdraw(1,748.3a,98.7b);
+gpdraw(1,872.9a,93.8b);
+gpdraw(1,881.3a,88.1b);
+gpdraw(1,852.3a,106.2b);
+gpdraw(1,870.0a,104.6b);
+gpdraw(1,849.2a,99.7b);
+gpdraw(1,722.3a,98.4b);
+gpdraw(1,778.9a,89.6b);
+gpdraw(1,775.0a,105.5b);
+gpdraw(1,883.4a,94.0b);
+gpdraw(1,258.4a,88.4b);
+gpdraw(1,886.2a,93.8b);
+gpdraw(1,879.7a,107.3b);
+gpdraw(1,876.8a,102.2b);
+gpdraw(1,863.8a,89.9b);
+gpdraw(1,860.8a,98.2b);
+gpdraw(1,835.1a,92.4b);
+gpdraw(1,682.5a,94.0b);
+gpdraw(1,965.1a,98.6b);
+gpdraw(1,687.8a,92.4b);
+gpdraw(1,967.4a,88.2b);
+gpdraw(1,886.5a,96.1b);
+gpdraw(1,889.2a,93.6b);
+gpdraw(1,896.9a,88.7b);
+gpdraw(1,899.6a,96.3b);
+gpdraw(1,913.5a,99.3b);
+gpdraw(1,916.1a,106.6b);
+gpdraw(1,933.7a,92.2b);
+gpdraw(1,936.2a,106.4b);
+gpdraw(1,994.5a,105.2b);
+gpdraw(1,954.9a,106.8b);
+gpdraw(1,957.2a,103.6b);
+gpdraw(1,974.9a,97.9b);
+gpdraw(1,977.1a,93.4b);
+gpdraw(1,884.3a,99.1b);
+gpdraw(1,887.1a,102.5b);
+gpdraw(1,890.7a,101.9b);
+gpdraw(1,893.5a,92.5b);
+gpdraw(1,904.6a,100.1b);
+gpdraw(1,907.3a,103.3b);
+gpdraw(1,923.4a,105.9b);
+gpdraw(1,925.9a,91.6b);
+gpdraw(1,999.8a,96.2b);
+gpdraw(1,946.7a,91.1b);
+gpdraw(1,944.3a,102.5b);
+gpdraw(1,986.2a,96.3b);
+gpdraw(1,984.0a,100.6b);
+gpdraw(1,750.0a,101.0b);
+gpdraw(1,719.8a,94.0b);
+gpdraw(1,745.8a,103.8b);
+gpdraw(1,690.6a,93.8b);
+gpdraw(1,337.1a,99.0b);
+gpdraw(1,735.0a,91.1b);
+linetype -2;
+draw (211.5a,107.9b)--(211.5a,87.9b)--(1164.7a,87.9b)--(1164.7a,107.9b)--(211.5a,107.9b);
+draw (211.5a,108.0b)--(228.1a,108.0b);
+draw (1164.7a,108.0b)--(1148.1a,108.0b);
+put_text( btex  1 etex, 197.4a, 108.0b, 0, 3);
+draw (211.5a,143.1b)--(219.8a,143.1b);
+draw (1164.7a,143.1b)--(1156.4a,143.1b);
+draw (211.5a,189.4b)--(219.8a,189.4b);
+draw (1164.7a,189.4b)--(1156.4a,189.4b);
+draw (211.5a,213.2b)--(219.8a,213.2b);
+draw (1164.7a,213.2b)--(1156.4a,213.2b);
+draw (211.5a,224.5b)--(228.1a,224.5b);
+draw (1164.7a,224.5b)--(1148.1a,224.5b);
+put_text( btex  10 etex, 197.4a, 224.5b, 0, 3);
+draw (211.5a,259.6b)--(219.8a,259.6b);
+draw (1164.7a,259.6b)--(1156.4a,259.6b);
+draw (211.5a,306.0b)--(219.8a,306.0b);
+draw (1164.7a,306.0b)--(1156.4a,306.0b);
+draw (211.5a,329.7b)--(219.8a,329.7b);
+draw (1164.7a,329.7b)--(1156.4a,329.7b);
+draw (211.5a,341.0b)--(228.1a,341.0b);
+draw (1164.7a,341.0b)--(1148.1a,341.0b);
+put_text( btex  100 etex, 197.4a, 341.0b, 0, 3);
+draw (211.5a,376.1b)--(219.8a,376.1b);
+draw (1164.7a,376.1b)--(1156.4a,376.1b);
+draw (211.5a,422.5b)--(219.8a,422.5b);
+draw (1164.7a,422.5b)--(1156.4a,422.5b);
+draw (211.5a,446.3b)--(219.8a,446.3b);
+draw (1164.7a,446.3b)--(1156.4a,446.3b);
+draw (211.5a,457.6b)--(228.1a,457.6b);
+draw (1164.7a,457.6b)--(1148.1a,457.6b);
+put_text( btex  1000 etex, 197.4a, 457.6b, 0, 3);
+draw (211.5a,492.6b)--(219.8a,492.6b);
+draw (1164.7a,492.6b)--(1156.4a,492.6b);
+draw (211.5a,539.0b)--(219.8a,539.0b);
+draw (1164.7a,539.0b)--(1156.4a,539.0b);
+draw (211.5a,562.8b)--(219.8a,562.8b);
+draw (1164.7a,562.8b)--(1156.4a,562.8b);
+draw (211.5a,574.1b)--(228.1a,574.1b);
+draw (1164.7a,574.1b)--(1148.1a,574.1b);
+put_text( btex  10000 etex, 197.4a, 574.1b, 0, 3);
+draw (211.5a,609.2b)--(219.8a,609.2b);
+draw (1164.7a,609.2b)--(1156.4a,609.2b);
+draw (211.5a,655.5b)--(219.8a,655.5b);
+draw (1164.7a,655.5b)--(1156.4a,655.5b);
+draw (211.5a,679.3b)--(219.8a,679.3b);
+draw (1164.7a,679.3b)--(1156.4a,679.3b);
+draw (211.5a,690.6b)--(228.1a,690.6b);
+draw (1164.7a,690.6b)--(1148.1a,690.6b);
+put_text( btex  100000 etex, 197.4a, 690.6b, 0, 3);
+draw (211.5a,108.0b)--(211.5a,124.6b);
+draw (211.5a,690.6b)--(211.5a,674.0b);
+draw (355.0a,108.0b)--(355.0a,116.3b);
+draw (355.0a,690.6b)--(355.0a,682.3b);
+draw (438.9a,108.0b)--(438.9a,116.3b);
+draw (438.9a,690.6b)--(438.9a,682.3b);
+draw (498.4a,108.0b)--(498.4a,116.3b);
+draw (498.4a,690.6b)--(498.4a,682.3b);
+draw (544.6a,108.0b)--(544.6a,116.3b);
+draw (544.6a,690.6b)--(544.6a,682.3b);
+draw (582.4a,108.0b)--(582.4a,116.3b);
+draw (582.4a,690.6b)--(582.4a,682.3b);
+draw (614.3a,108.0b)--(614.3a,116.3b);
+draw (614.3a,690.6b)--(614.3a,682.3b);
+draw (641.9a,108.0b)--(641.9a,116.3b);
+draw (641.9a,690.6b)--(641.9a,682.3b);
+draw (666.3a,108.0b)--(666.3a,116.3b);
+draw (666.3a,690.6b)--(666.3a,682.3b);
+draw (688.1a,108.0b)--(688.1a,124.6b);
+draw (688.1a,690.6b)--(688.1a,674.0b);
+draw (831.6a,108.0b)--(831.6a,116.3b);
+draw (831.6a,690.6b)--(831.6a,682.3b);
+draw (915.5a,108.0b)--(915.5a,116.3b);
+draw (915.5a,690.6b)--(915.5a,682.3b);
+draw (975.0a,108.0b)--(975.0a,116.3b);
+draw (975.0a,690.6b)--(975.0a,682.3b);
+draw (1021.2a,108.0b)--(1021.2a,116.3b);
+draw (1021.2a,690.6b)--(1021.2a,682.3b);
+draw (1059.0a,108.0b)--(1059.0a,116.3b);
+draw (1059.0a,690.6b)--(1059.0a,682.3b);
+draw (1090.9a,108.0b)--(1090.9a,116.3b);
+draw (1090.9a,690.6b)--(1090.9a,682.3b);
+draw (1118.5a,108.0b)--(1118.5a,116.3b);
+draw (1118.5a,690.6b)--(1118.5a,682.3b);
+draw (1142.9a,108.0b)--(1142.9a,116.3b);
+draw (1142.9a,690.6b)--(1142.9a,682.3b);
+draw (1164.7a,108.0b)--(1164.7a,124.6b);
+draw (1164.7a,690.6b)--(1164.7a,674.0b);
+draw (211.5a,690.6b)--(211.5a,108.0b)--(1164.7a,108.0b)--(1164.7a,690.6b)--(211.5a,690.6b);
+put_text( btex Normalised Scattering Cross Section (${\sigma}/({4\pi r^2)}$) etex, 69.9a, 399.3b, 90, 2);
+linetype -2;
+linetype 0;
+linetype -2;
+put_text( btex optically measured etex, 521.7a, 659.4b, 0, 3);
+linetype 0;
+gpdraw(0,1023.3a,131.5b);
+gpdraw(0,383.1a,563.1b);
+gpdraw(0,1162.0a,112.0b);
+gpdraw(0,633.4a,422.7b);
+gpdraw(0,1150.4a,112.6b);
+gpdraw(0,1128.9a,113.8b);
+gpdraw(0,1096.6a,116.3b);
+gpdraw(0,1051.5a,122.1b);
+gpdraw(0,1022.7a,132.7b);
+gpdraw(0,525.6a,493.1b);
+gpdraw(0,251.8a,622.2b);
+gpdraw(0,1164.3a,112.0b);
+gpdraw(0,1011.2a,149.1b);
+gpdraw(0,520.8a,495.9b);
+gpdraw(0,1157.4a,112.3b);
+gpdraw(0,723.2a,322.3b);
+gpdraw(0,1140.9a,113.0b);
+gpdraw(0,670.5a,391.5b);
+gpdraw(0,990.1a,170.0b);
+gpdraw(0,1114.2a,114.8b);
+gpdraw(0,1075.8a,118.6b);
+gpdraw(0,1020.6a,136.0b);
+gpdraw(0,515.3a,498.4b);
+gpdraw(0,267.1a,611.8b);
+gpdraw(0,1024.9a,128.8b);
+gpdraw(0,1009.1a,154.3b);
+gpdraw(0,434.6a,539.1b);
+gpdraw(0,664.8a,390.3b);
+gpdraw(0,1018.1a,139.8b);
+gpdraw(0,603.9a,447.5b);
+gpdraw(0,987.9a,174.3b);
+gpdraw(0,1001.9a,159.7b);
+gpdraw(0,818.4a,318.9b);
+gpdraw(0,752.5a,322.8b);
+gpdraw(0,232.6a,631.9b);
+gpdraw(0,1022.8a,132.5b);
+gpdraw(0,298.8a,599.9b);
+gpdraw(0,419.3a,546.3b);
+gpdraw(0,1016.1a,143.8b);
+gpdraw(0,430.4a,540.8b);
+gpdraw(0,596.5a,452.5b);
+gpdraw(0,552.4a,477.8b);
+gpdraw(0,722.7a,321.6b);
+gpdraw(0,815.0a,350.3b);
+gpdraw(0,648.4a,413.2b);
+gpdraw(0,821.5a,346.8b);
+gpdraw(0,722.3a,320.2b);
+gpdraw(0,1105.8a,115.7b);
+gpdraw(0,1025.9a,127.5b);
+gpdraw(0,1163.4a,111.9b);
+gpdraw(0,1036.5a,125.2b);
+gpdraw(0,1157.7a,112.2b);
+gpdraw(0,1053.5a,121.7b);
+gpdraw(0,1147.6a,112.8b);
+gpdraw(0,1074.0a,118.9b);
+gpdraw(0,1133.4a,113.5b);
+gpdraw(0,1095.5a,116.6b);
+gpdraw(0,1115.7a,114.8b);
+gpdraw(0,1023.7a,130.8b);
+gpdraw(0,1164.5a,112.0b);
+gpdraw(0,1030.3a,126.4b);
+gpdraw(0,1161.1a,112.1b);
+gpdraw(0,1044.4a,123.3b);
+gpdraw(0,258.4a,619.5b);
+gpdraw(0,1153.2a,112.5b);
+gpdraw(0,1063.5a,120.1b);
+gpdraw(0,1084.8a,117.5b);
+gpdraw(0,1125.0a,114.1b);
+gpdraw(0,362.0a,572.1b);
+gpdraw(0,494.7a,509.0b);
+gpdraw(0,269.4a,613.7b);
+gpdraw(0,603.5a,448.3b);
+gpdraw(0,838.3a,329.8b);
+gpdraw(0,414.8a,548.2b);
+gpdraw(0,543.3a,483.8b);
+gpdraw(0,801.7a,324.9b);
+gpdraw(0,642.2a,418.6b);
+gpdraw(0,818.1a,318.7b);
+gpdraw(0,1024.0a,130.4b);
+gpdraw(0,717.6a,324.0b);
+gpdraw(0,1008.5a,152.3b);
+gpdraw(0,222.3a,636.8b);
+gpdraw(0,1025.1a,128.1b);
+gpdraw(0,893.5a,147.9b);
+gpdraw(0,1021.8a,134.3b);
+gpdraw(0,1013.9a,145.7b);
+gpdraw(0,1002.0a,163.9b);
+gpdraw(0,483.0a,515.4b);
+gpdraw(0,626.5a,435.3b);
+gpdraw(0,596.1a,452.6b);
+gpdraw(0,835.1a,333.8b);
+gpdraw(0,682.5a,367.2b);
+gpdraw(0,1022.0a,134.0b);
+gpdraw(0,359.1a,573.1b);
+gpdraw(0,1016.3a,143.5b);
+gpdraw(0,1006.4a,154.9b);
+gpdraw(0,452.0a,530.2b);
+gpdraw(0,719.8a,321.4b);
+gpdraw(0,533.0a,489.4b);
+gpdraw(0,992.3a,173.9b);
+gpdraw(0,598.9a,450.9b);
+gpdraw(0,650.8a,411.0b);
+gpdraw(0,1023.1a,131.9b);
+gpdraw(0,1019.7a,137.4b);
+gpdraw(0,1011.9a,148.4b);
+gpdraw(0,999.8a,161.9b);
+gpdraw(0,253.8a,621.2b);
+gpdraw(0,752.1a,322.5b);
+gpdraw(0,242.5a,626.8b);
+gpdraw(0,406.4a,539.8b);
+gpdraw(0,494.4a,509.3b);
+gpdraw(0,567.8a,469.5b);
+gpdraw(0,672.1a,389.7b);
+gpdraw(0,437.8a,537.3b);
+gpdraw(0,572.3a,659.4b);
+linetype 1;
+linetype -2;
+put_text( btex acoustically measured etex, 521.7a, 630.1b, 0, 3);
+linetype 1;
+gpdraw(1,383.1a,524.2b);
+gpdraw(1,1162.0a,112.0b);
+gpdraw(1,633.4a,400.6b);
+gpdraw(1,1150.4a,112.6b);
+gpdraw(1,796.3a,319.5b);
+gpdraw(1,1128.9a,113.8b);
+gpdraw(1,1096.6a,116.2b);
+gpdraw(1,990.6a,173.5b);
+gpdraw(1,1051.5a,122.2b);
+gpdraw(1,251.8a,583.3b);
+gpdraw(1,1164.3a,111.9b);
+gpdraw(1,1022.7a,132.6b);
+gpdraw(1,520.8a,461.8b);
+gpdraw(1,525.6a,458.9b);
+gpdraw(1,1157.4a,112.2b);
+gpdraw(1,1011.2a,149.1b);
+gpdraw(1,1140.9a,113.0b);
+gpdraw(1,670.5a,381.8b);
+gpdraw(1,990.1a,169.4b);
+gpdraw(1,1114.2a,115.0b);
+gpdraw(1,1075.8a,118.7b);
+gpdraw(1,314.6a,553.7b);
+gpdraw(1,1020.6a,136.2b);
+gpdraw(1,515.3a,464.3b);
+gpdraw(1,1009.1a,151.5b);
+gpdraw(1,664.8a,369.8b);
+gpdraw(1,987.9a,173.9b);
+gpdraw(1,267.1a,570.0b);
+gpdraw(1,1024.9a,128.6b);
+gpdraw(1,434.6a,501.9b);
+gpdraw(1,1018.1a,139.9b);
+gpdraw(1,603.9a,420.1b);
+gpdraw(1,232.6a,592.1b);
+gpdraw(1,1022.8a,132.4b);
+gpdraw(1,419.3a,508.7b);
+gpdraw(1,1001.9a,159.6b);
+gpdraw(1,1016.1a,142.7b);
+gpdraw(1,596.5a,424.3b);
+gpdraw(1,818.4a,311.6b);
+gpdraw(1,815.0a,341.6b);
+gpdraw(1,1105.8a,115.6b);
+gpdraw(1,1025.9a,127.4b);
+gpdraw(1,1163.4a,111.9b);
+gpdraw(1,1036.5a,125.1b);
+gpdraw(1,1157.7a,112.2b);
+gpdraw(1,1053.5a,121.8b);
+gpdraw(1,1147.6a,112.7b);
+gpdraw(1,1074.0a,118.9b);
+gpdraw(1,1133.4a,113.5b);
+gpdraw(1,1095.5a,116.5b);
+gpdraw(1,1115.7a,114.7b);
+gpdraw(1,1023.7a,130.8b);
+gpdraw(1,1164.5a,112.0b);
+gpdraw(1,1030.3a,126.3b);
+gpdraw(1,1161.1a,112.1b);
+gpdraw(1,1044.4a,123.3b);
+gpdraw(1,1153.2a,112.5b);
+gpdraw(1,1063.5a,120.3b);
+gpdraw(1,1084.8a,117.7b);
+gpdraw(1,1125.0a,114.2b);
+gpdraw(1,430.4a,504.3b);
+gpdraw(1,552.4a,446.7b);
+gpdraw(1,269.4a,570.1b);
+gpdraw(1,414.8a,510.9b);
+gpdraw(1,648.4a,389.5b);
+gpdraw(1,543.3a,450.9b);
+gpdraw(1,821.5a,309.7b);
+gpdraw(1,642.2a,394.2b);
+gpdraw(1,818.1a,340.6b);
+gpdraw(1,717.6a,316.0b);
+gpdraw(1,222.3a,597.1b);
+gpdraw(1,362.0a,534.1b);
+gpdraw(1,340.4a,542.2b);
+gpdraw(1,494.7a,474.7b);
+gpdraw(1,483.0a,480.2b);
+gpdraw(1,596.1a,425.0b);
+gpdraw(1,603.5a,420.7b);
+gpdraw(1,838.3a,322.9b);
+gpdraw(1,798.2a,319.4b);
+gpdraw(1,801.7a,318.7b);
+gpdraw(1,1022.0a,133.9b);
+gpdraw(1,1024.0a,130.4b);
+gpdraw(1,1016.3a,143.2b);
+gpdraw(1,1018.4a,139.4b);
+gpdraw(1,1006.4a,154.9b);
+gpdraw(1,1008.5a,152.5b);
+gpdraw(1,992.3a,173.9b);
+gpdraw(1,1023.1a,131.8b);
+gpdraw(1,1025.1a,128.1b);
+gpdraw(1,1019.7a,137.5b);
+gpdraw(1,1021.8a,134.3b);
+gpdraw(1,1011.9a,148.2b);
+gpdraw(1,1013.9a,145.6b);
+gpdraw(1,1002.0a,163.9b);
+gpdraw(1,626.5a,405.6b);
+gpdraw(1,619.7a,410.2b);
+gpdraw(1,275.5a,566.0b);
+gpdraw(1,359.1a,535.7b);
+gpdraw(1,739.4a,313.7b);
+gpdraw(1,452.0a,494.3b);
+gpdraw(1,242.5a,586.8b);
+gpdraw(1,533.0a,455.7b);
+gpdraw(1,598.9a,423.5b);
+gpdraw(1,650.8a,387.6b);
+gpdraw(1,437.8a,500.3b);
+gpdraw(1,715.1a,313.1b);
+gpdraw(1,523.1a,460.5b);
+gpdraw(1,572.3a,630.1b);
+linetype -2;
+draw (211.5a,690.6b)--(211.5a,108.0b)--(1164.7a,108.0b)--(1164.7a,690.6b)--(211.5a,690.6b);
+endfig;
+end.

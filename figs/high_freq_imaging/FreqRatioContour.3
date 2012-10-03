@@ -1,0 +1,3020 @@
+%!PS-Adobe-1.0
+%%Creator: Steve Holden
+%%Modified: John Macdonald, Rich Burridge, Rainer Klute
+%%Modified: Bertrand Decouty, Bjorn P. Brox
+%%Title: $Header: /cvsroot/mpdist/mpdist/prologue/mp.pro.ps,v 1.1.1.1 2002/04/12 16:47:26 richbastard Exp $
+%%CreationDate: see above
+%%PageLength 72
+%%LineLength 80
+%%NumCols 1
+%%DocumentFonts: Courier Helvetica-BoldOblique Times-Bold Times-Roman
+%%Pages: (atend)
+%%EndComments
+
+%  $Header: /cvsroot/mpdist/mpdist/prologue/mp.common.ps,v 1.1.1.1 2002/04/12 16:47:26 richbastard Exp $
+%
+%  Mp PostScript routines common to all prologue files.
+%
+%  The initial header comments are read (and output to stdout)
+%  from the individual prologue file, then the contents of this
+%  file are read (and output to stdout), then the remainder of
+%  the individual prologue file.
+
+/inch { 72 mul } bind def
+/cm { 72 mul 2.54 div } def
+
+gsave initclip clippath flattenpath pathbbox grestore
+/topedge    exch def
+/rightedge  exch def
+/bottomedge exch def
+/leftedge   exch def
+%  exchanged later if landscape
+/fullwidth  rightedge leftedge sub def
+/fullheight topedge bottomedge sub def
+% DO NOT change: used to translate user coordinate system at each page
+/paperwidth fullwidth def
+/paperheight fullheight def
+/port_y bottomedge def
+/port_x leftedge def
+
+/topOffset    0.1 inch def
+/bottomOffset 0.1 inch def
+/rightOffset  0.1 inch def
+/leftOffset   0.1 inch def
+
+/papertopOffset topOffset def
+/paperbottomOffset bottomOffset def
+/paperrightOffset rightOffset def
+/paperleftOffset leftOffset def
+
+% Define /ISOLatin1Encoding only if it's not already there.
+/ISOLatin1Encoding where { pop save true }{ false } ifelse
+  /ISOLatin1Encoding [ StandardEncoding 0 45 getinterval aload pop /minus
+    StandardEncoding 46 98 getinterval aload pop /dotlessi /grave /acute
+    /circumflex /tilde /macron /breve /dotaccent /dieresis /.notdef /ring
+    /cedilla /.notdef /hungarumlaut /ogonek /caron /space /exclamdown /cent
+    /sterling /currency /yen /brokenbar /section /dieresis /copyright
+    /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron
+    /degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph
+    /periodcentered /cedilla /onesuperior /ordmasculine /guillemotright
+    /onequarter /onehalf /threequarters /questiondown /Agrave /Aacute
+    /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla /Egrave /Eacute
+    /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis /Eth
+    /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply
+    /Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn
+    /germandbls /agrave /aacute /acircumflex /atilde /adieresis /aring /ae
+    /ccedilla /egrave /eacute /ecircumflex /edieresis /igrave /iacute
+    /icircumflex /idieresis /eth /ntilde /ograve /oacute /ocircumflex
+    /otilde /odieresis /divide /oslash /ugrave /uacute /ucircumflex
+    /udieresis /yacute /thorn /ydieresis ] def
+{ restore } if
+
+%Title: backspacefont.ps suggested by Glenn Reid (Adobe Systems).
+
+/backspacefont {
+    /CourierISO findfont dup length dict begin
+        { %forall
+            1 index /FID eq { pop pop } { def } ifelse
+        } forall
+        currentdict /UniqueID known { %if
+              /UniqueID UniqueID 16#800000 xor def
+        } if
+        CharStrings length 1 add dict begin
+            CharStrings { def } forall
+          /backspace { -600 0 setcharwidth pop } bind def
+            currentdict
+      end
+        /CharStrings exch def
+        /Encoding Encoding 256 array copy def
+        Encoding 8 /backspace put
+        currentdict
+    end
+    definefont pop
+} bind def
+
+/reencodeISO { %def
+    findfont dup length dict begin
+    { 1 index /FID ne { def }{ pop pop } ifelse } forall
+    /Encoding ISOLatin1Encoding def
+    currentdict end definefont pop
+} bind def
+/bottomOffset 8 def
+/leftOffset 8 def
+/rightOffset 8 def
+/topOffset 8 def
+
+
+/setmargin {
+  LandscapeMode
+  {
+    rightedge topedge
+    /rightedge exch def
+    /topedge exch def
+  }  
+  if
+  9 7 LandscapeMode { exch } if pop
+  /FontSize exch def
+
+  /boxHeight  40 def
+  /radius     10 def
+  /topedge    topedge    topOffset    sub def
+  /bottomedge bottomedge bottomOffset add def
+  /leftedge   leftedge   leftOffset   add def
+  /rightedge  rightedge  rightOffset  sub def
+
+  /font1d     /Times-Bold            reencodeISO
+  /font2d     /Times-Roman           reencodeISO
+  /CourierISO /Courier               reencodeISO
+  /fontHd     /Helvetica-BoldOblique reencodeISO
+  /fontH2     /Helvetica-BoldOblique reencodeISO
+  /font3d backspacefont
+ 
+  /BoldFont      { /font1d findfont FontSize scalefont setfont } def
+  /pf            { /font2d findfont FontSize scalefont setfont } def
+  /sf            { /font3d findfont FontSize scalefont setfont } def
+  /fontH         { /fontHd findfont 14 scalefont setfont } def
+  /fontD         { /fontH2 findfont 10 scalefont setfont } def
+} bind def
+
+
+/graybox	% grey llx lly urx ury graybox --
+{
+    newpath
+    3 index radius add 3 index           % llx+radius lly
+    moveto
+    1 index 3 index                      % urx        lly
+    3 index 3 index                      % urx        ury
+    radius arcto pop pop pop pop
+    1 index 1 index
+    5 index 3 index
+    radius arcto pop pop pop pop
+    3 index 1 index
+    5 index 5 index
+    radius arcto pop pop pop pop
+    pop pop
+    2 copy radius add lineto
+    radius add
+    exch radius add exch
+    radius 180 270 arc
+    gsave
+    setgray fill
+    grestore
+    0 setgray stroke
+} bind def
+
+
+/toptopbottom   % toptopbottom -- % redefines boxtop and boxbottom
+{
+  /boxtop topedge def
+  /boxbottom topedge boxHeight sub def
+} def
+
+ 
+/bottomtopbottom % bottomtopbottom -- % redefines boxtop and boxbottom
+{
+  /boxbottom bottomedge def
+  /boxtop bottomedge boxHeight add def
+} def
+
+ 
+/setsubjtop
+{
+  /subjtopbottom {toptopbottom} def
+  /nametopbottom {bottomtopbottom} def
+  /switchtopbottom {setnametop} def
+} def
+
+ 
+/setnametop
+{
+  /subjtopbottom {bottomtopbottom} def
+  /nametopbottom {toptopbottom} def
+  /switchtopbottom {setsubjtop} def
+} def
+
+ 
+setnametop
+
+
+/dobanners		% page_number dobanners --
+{
+  gsave
+    % listing type, user, date across the bottom
+    nametopbottom
+    0.88                                        % gray level
+    leftedge boxbottom                          % bottom left corner
+    rightedge boxHeight 1.1 mul sub boxtop      % top right corner
+    graybox
+
+    currentdict /sfactor known not
+    {
+      % determine a suitable factor to scale down the header text (done
+      % only once per document)
+      rightedge
+      leftedge sub
+      radius 2 mul sub
+      boxHeight 1.1 mul sub   % available space
+      fontD MailFor stringwidth pop
+      fontH User    stringwidth pop add
+            (  )    stringwidth pop add
+      fontD TimeNow stringwidth pop add    % total length of strings
+      div
+      dup 1 gt {pop 1} if                  % does it fit?
+      /sfactor exch def                    % if not scale down
+    }
+    if
+
+    /stringXPos leftedge radius add def
+    /stringYPos boxtop boxHeight 2 div sub FontSize 2 div sub def
+    stringXPos stringYPos moveto
+    gsave
+    sfactor dup scale
+    fontD MailFor show
+    fontH User    show
+          (  )    show
+    grestore
+    fontD
+    /stringXPos rightedge boxHeight 1.1 mul sub radius sub
+                TimeNow stringwidth pop sfactor mul sub def
+    stringXPos stringYPos moveto
+    gsave
+    sfactor dup scale
+    TimeNow show
+    grestore
+    % page number to the top right corner
+    1                                              % gray level
+    rightedge boxHeight sub boxtop boxHeight sub   % bottom left
+    rightedge boxtop                               % top right
+    graybox
+    fontD
+    (Page) dup stringwidth
+       boxtop boxHeight 2 div sub 2 add exch sub             % y-centered
+       exch 2 div rightedge boxHeight 2 div sub exch sub     % x-centered
+       exch moveto show
+    fontH
+    dup stringwidth
+       boxtop boxHeight 2 div sub 12 sub exch sub            % y-centered
+       exch 2 div rightedge boxHeight 2 div sub exch sub     % x-centered
+       exch moveto show
+    % subject (title) centred across the top
+    subjtopbottom
+
+    0.88                                 % gray level
+    leftedge boxbottom                   % bottom left corner
+    rightedge boxbottom boxHeight add    % top right corner
+    graybox
+    fontH
+    % compute x pos for centering
+      % ((l+50) + (r-50)) / 2 is the page centre
+      leftedge rightedge add 2 div
+      % but we want to start at the beginning of the string, not the middle
+      Subject stringwidth pop 2 div sub
+    % y pos is simple
+      boxbottom boxHeight 2 div add 5 sub
+      moveto
+    Subject show
+  grestore
+} bind def
+
+
+/endpage                % page_number endpage --
+{    
+  dobanners
+  showpage              % display it
+} bind def
+
+
+/endcol			% page_number col_number endcol --
+{
+  pop			% get rid of col_number
+  pop                   % get rid of page_number
+  /ypos topedge def
+  /xpos rightedge leftedge sub 2 div def
+  xpos ypos moveto
+} bind def
+
+
+/newpage	% page_number newpage --
+{
+  pop		% pageno
+  LandscapeMode {setlandscape} if
+  /lct 0 def
+  /ypos topedge boxHeight sub 10 2 mul sub def
+  /xpos leftedge def
+  xpos ypos moveto
+  sf
+} bind def
+
+
+/setlandscape
+{
+  612 0 translate
+  90 rotate
+} bind def
+
+
+/showline
+{
+  show
+  /ypos ypos FontSize sub def
+  xpos ypos moveto
+} bind def
+
+
+% see the trouble shooting section in the README for details on setscreen.
+106 45 {dup mul exch dup mul add 1.0 exch sub} setscreen
+
+/LandscapeMode false def
+
+setmargin
+%%EndProlog
+%%Page: ? 1
+1 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (%GNUPLOT Metapost output: Mon May 24 18:11:00 2010) showline
+() showline
+() showline
+(warningcheck:=0;) showline
+(defaultmpt:=mpt:=4;) showline
+(th:=.6;) showline
+(%% Have nice sharp joins on our lines) showline
+(linecap:=butt;) showline
+(linejoin:=mitered;) showline
+() showline
+(def scalepen expr n = pickup pencircle scaled \(n*th\) enddef;) showline
+(def ptsize expr n = mpt:=n*defaultmpt enddef;) showline
+() showline
+() showline
+(textmag:= 1.000;) showline
+(vardef makepic\(expr str\) =) showline
+(  if picture str : str scaled textmag) showline
+(  % otherwise a string) showline
+(  else: str infont defaultfont scaled \(defaultscale*textmag\)) showline
+(  fi) showline
+(enddef;) showline
+() showline
+(def infontsize\(expr str, size\) =) showline
+(  infont str scaled \(size / fontsize str\)) showline
+(enddef;) showline
+() showline
+(%font changes) showline
+(verbatimtex) showline
+(\\def\\setfont#1#2{%.) showline
+(  \\font\\gpfont=#1 at #2pt) showline
+(\\gpfont}) showline
+(\\setfont{cmr10}{10.00}) showline
+(etex) showline
+() showline
+(color currentcolor; currentcolor:=black;) showline
+(color fillcolor;) showline
+(boolean colorlines,dashedlines;) showline
+(colorlines:=false;) showline
+(dashedlines:=true;) showline
+() showline
+(def _wc = withpen currentpen withcolor currentcolor enddef;) showline
+(def _ac = addto currentpicture enddef;) showline
+(def _sms = scaled mpt shifted enddef;) showline
+(% drawing point-types) showline
+(def gpdraw \(expr n, x, y\) =) showline
+(  if n<0: _ac contour fullcircle _sms \(x,y\)) showline
+(  elseif \(n=1\) or \(n=3\):) showline
+(    _ac doublepath ptpath[n] _sms \(x,y\) _wc;) showline
+(    _ac doublepath ptpath[n] rotated 90 _sms \(x,y\) _wc) showline
+(  elseif n<6: _ac doublepath ptpath[n] _sms \(x,y\) _wc) showline
+(  else: _ac contour ptpath[n] _sms \(x,y\) _wc) showline
+(  fi) showline
+(enddef;) showline
+() showline
+(% the point shapes) showline
+(path ptpath[];) showline
+(%diamond) showline
+(ptpath0 = ptpath6 = \(-1/2,0\)--\(0,-1/2\)--\(1/2,0\)--\(0,1/2\)--cycle;) showline
+(% plus sign) showline
+(ptpath1 = \(-1/2,0\)--\(1/2,0\);) showline
+(% square) showline
+(ptpath2 = ptpath7 = \(-1/2,-1/2\)--\(1/2,-1/2\)--\(1/2,1/2\)--\(-1/2,1/2\)--cycle;) showline
+(% cross) showline
+(ptpath3 := \(-1/2,-1/2\)--\(1/2,1/2\);) showline
+(% circle:) showline
+(ptpath4 = ptpath8:= fullcircle;) showline
+(% triangle) showline
+(ptpath5 = ptpath9 := \(0,1/2\)--\(-1/2,-1/2\)--\(1/2,-1/2\)--cycle;) showline
+() showline
+(def linetype expr n =) showline
+(  currentcolor:= if colorlines : col[n] else: black fi;) showline
+(  if n = -1 :) showline
+sf (1) 1 endcol
+(1) endpage
+%%Page: ? 2
+2 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (      drawoptions\(withcolor currentcolor withpen \(currentpen scaled .5\)\);) showline
+(  elseif n < 1 :) showline
+(    drawoptions\(_wc\);) showline
+(  else :) showline
+(    drawoptions\( if dashedlines: dashed lt[n] fi _wc\);) showline
+(  fi) showline
+(enddef;) showline
+() showline
+(% dash patterns) showline
+(picture lt[];) showline
+(lt1=dashpattern\(on 2 off 2\); % dashes) showline
+(lt2=dashpattern\(on 2 off 2 on 0.2 off 2\); %dash-dot) showline
+(lt3=lt1 scaled 1.414;) showline
+(lt4=lt2 scaled 1.414;) showline
+(lt5=lt1 scaled 2;) showline
+(lt6:=lt2 scaled 2;) showline
+(lt7=dashpattern\(on 0.2 off 2\); %dots) showline
+() showline
+(color col[],cyan, magenta, yellow;) showline
+(cyan=blue+green; magenta=red+blue;yellow=green+red;) showline
+(col[-2]:=col[-1]:=col0:=black;) showline
+(col1:=red;) showline
+(col2:=\(.2,.2,1\); %blue) showline
+(col3:=\(1,.66,0\); %orange) showline
+(col4:=.85*green;) showline
+(col5:=.9*magenta;) showline
+(col6:=0.85*cyan;) showline
+(col7:=.85*yellow;) showline
+() showline
+(%placing text) showline
+(picture GPtext;) showline
+(def put_text\(expr pic, x, y, r, j\) =) showline
+(  GPtext:=makepic\(pic\);) showline
+(  GPtext:=GPtext shifted) showline
+(    if j = 1: \(-\(ulcorner GPtext + llcorner GPtext\)/2\)) showline
+(    elseif j = 2: \(-center GPtext\)) showline
+(    else: \(-\(urcorner GPtext + lrcorner GPtext\)/2\)) showline
+(    fi) showline
+(    rotated r;) showline
+(  draw GPtext shifted \(x,y\)) showline
+(enddef;) showline
+() showline
+(beginfig\(0\);) showline
+(w:=5.000in;h:=3.000in;) showline
+(a:=w/1200.0;b:=h/720.0;) showline
+(scalepen 1; ptsize 1.000;linetype -2;) showline
+(draw \(169.3a,73.2b\)--\(185.9a,73.2b\);) showline
+(draw \(675.7a,73.2b\)--\(659.1a,73.2b\);) showline
+(put_text\( btex  0 etex, 151.6a, 73.2b, 0, 3\);) showline
+(draw \(169.3a,137.9b\)--\(185.9a,137.9b\);) showline
+(draw \(675.7a,137.9b\)--\(659.1a,137.9b\);) showline
+(put_text\( btex  10 etex, 151.6a, 137.9b, 0, 3\);) showline
+(draw \(169.3a,202.6b\)--\(185.9a,202.6b\);) showline
+(draw \(675.7a,202.6b\)--\(659.1a,202.6b\);) showline
+(put_text\( btex  20 etex, 151.6a, 202.6b, 0, 3\);) showline
+(draw \(169.3a,267.2b\)--\(185.9a,267.2b\);) showline
+(draw \(675.7a,267.2b\)--\(659.1a,267.2b\);) showline
+(put_text\( btex  30 etex, 151.6a, 267.2b, 0, 3\);) showline
+(draw \(169.3a,331.9b\)--\(185.9a,331.9b\);) showline
+(draw \(675.7a,331.9b\)--\(659.1a,331.9b\);) showline
+(put_text\( btex  40 etex, 151.6a, 331.9b, 0, 3\);) showline
+(draw \(169.3a,396.6b\)--\(185.9a,396.6b\);) showline
+(draw \(675.7a,396.6b\)--\(659.1a,396.6b\);) showline
+(put_text\( btex  50 etex, 151.6a, 396.6b, 0, 3\);) showline
+(draw \(169.3a,73.2b\)--\(169.3a,89.8b\);) showline
+(draw \(169.3a,396.6b\)--\(169.3a,380.0b\);) showline
+(put_text\( btex 0 etex, 169.3a, 36.6b, 0, 2\);) showline
+(draw \(295.9a,73.2b\)--\(295.9a,89.8b\);) showline
+(draw \(295.9a,396.6b\)--\(295.9a,380.0b\);) showline
+(put_text\( btex {/Symbol p}/2 etex, 295.9a, 36.6b, 0, 2\);) showline
+(draw \(422.5a,73.2b\)--\(422.5a,89.8b\);) showline
+(draw \(422.5a,396.6b\)--\(422.5a,380.0b\);) showline
+sf (2) 1 endcol
+(2) endpage
+%%Page: ? 3
+3 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (put_text\( btex {/Symbol p} etex, 422.5a, 36.6b, 0, 2\);) showline
+(draw \(549.1a,73.2b\)--\(549.1a,89.8b\);) showline
+(draw \(549.1a,396.6b\)--\(549.1a,380.0b\);) showline
+(put_text\( btex {/Symbol p}/2 etex, 549.1a, 36.6b, 0, 2\);) showline
+(draw \(675.8a,73.2b\)--\(675.8a,89.8b\);) showline
+(draw \(675.8a,396.6b\)--\(675.8a,380.0b\);) showline
+(put_text\( btex 2{/Symbol p} etex, 675.8a, 36.6b, 0, 2\);) showline
+(draw \(169.3a,396.6b\)--\(169.3a,73.2b\)--\(675.7a,73.2b\)--\(675.7a,396.6b\)--\(169.3a,3) showline
+(96.6b\);) showline
+(currentcolor:=0white;) showline
+(put_text\( btex {/Symbol w}_i/{/Symbol w}_d etex, 62.5a, 234.9b, 90, 2\);) showline
+(linetype -2;) showline
+(put_text\( btex 1% etex, 408.7a, 374.6b, 0, 1\);) showline
+(put_text\( btex 2.5% etex, 399.0a, 189.6b, 0, 1\);) showline
+(put_text\( btex 5% etex, 408.7a, 127.9b, 0, 1\);) showline
+(put_text\( btex 10% etex, 403.0a, 95.2b, 0, 1\);) showline
+(put_text\( btex 20% etex, 403.0a, 79.7b, 0, 1\);) showline
+(linetype 0;) showline
+(draw \(454.6a,88.0b\)--\(456.3a,87.9b\)--\(457.9a,87.7b\)--\(459.6a,87.6b\)--\(461.3a,87.) showline
+(4b\)) showline
+(--\(463.0a,87.3b\)--\(464.7a,87.1b\)--\(466.4a,86.9b\)--\(467.5a,86.8b\)--\(468.1a,86.7b\)) showline
+(--\(469.8a,86.6b\)--\(471.5a,86.4b\)--\(473.1a,86.2b\)--\(474.8a,86.0b\)--\(476.5a,85.8b\)) showline
+(--\(478.2a,85.5b\)--\(478.4a,85.5b\)--\(479.9a,85.3b\)--\(481.6a,85.1b\)--\(483.3a,84.9b\)) showline
+(--\(485.0a,84.6b\)--\(486.6a,84.4b\)--\(487.7a,84.2b\)--\(488.3a,84.1b\)--\(490.0a,83.9b\)) showline
+(--\(491.7a,83.6b\)--\(493.4a,83.4b\)--\(495.1a,83.1b\)--\(496.1a,82.9b\)--\(496.8a,82.8b\)) showline
+(--\(498.5a,82.5b\)--\(500.1a,82.3b\)--\(501.8a,82.0b\)--\(503.5a,81.7b\)--\(503.8a,81.6b\)) showline
+(--\(505.2a,81.4b\)--\(506.9a,81.1b\)--\(508.6a,80.8b\)--\(510.3a,80.5b\)--\(511.0a,80.3b\)) showline
+(--\(512.0a,80.2b\)--\(513.7a,79.9b\)--\(515.3a,79.5b\)--\(517.0a,79.2b\)--\(517.8a,79.0b\)) showline
+(--\(518.7a,78.9b\)--\(520.4a,78.6b\)--\(522.1a,78.2b\)--\(523.8a,77.8b\)--\(524.1a,77.7b\)) showline
+(--\(525.5a,77.5b\)--\(527.2a,77.1b\)--\(528.8a,76.7b\)--\(529.8a,76.4b\)--\(530.5a,76.1b\)) showline
+(--\(532.2a,75.4b\)--\(532.8a,75.1b\)--\(532.2a,74.0b\)--\(532.2a,73.8b\);) showline
+(draw \(312.8a,73.8b\)--\(312.8a,74.0b\)--\(312.2a,75.1b\)--\(312.8a,75.4b\)--\(314.5a,76.) showline
+(1b\)) showline
+(--\(315.2a,76.4b\)--\(316.2a,76.7b\)--\(317.8a,77.1b\)--\(319.5a,77.5b\)--\(320.9a,77.7b\)) showline
+(--\(321.2a,77.8b\)--\(322.9a,78.2b\)--\(324.6a,78.6b\)--\(326.3a,78.9b\)--\(327.2a,79.0b\)) showline
+(--\(328.0a,79.2b\)--\(329.7a,79.5b\)--\(331.3a,79.9b\)--\(333.0a,80.2b\)--\(334.0a,80.3b\)) showline
+(--\(334.7a,80.5b\)--\(336.4a,80.8b\)--\(338.1a,81.1b\)--\(339.8a,81.4b\)--\(341.2a,81.6b\)) showline
+(--\(341.5a,81.7b\)--\(343.2a,82.0b\)--\(344.9a,82.3b\)--\(346.5a,82.5b\)--\(348.2a,82.8b\)) showline
+(--\(348.9a,82.9b\)--\(349.9a,83.1b\)--\(351.6a,83.4b\)--\(353.3a,83.6b\)--\(355.0a,83.9b\)) showline
+(--\(356.7a,84.1b\)--\(357.3a,84.2b\)--\(358.4a,84.4b\)--\(360.0a,84.6b\)--\(361.7a,84.9b\)) showline
+(--\(363.4a,85.1b\)--\(365.1a,85.3b\)--\(366.6a,85.5b\)--\(366.8a,85.5b\)--\(368.5a,85.8b\)) showline
+(--\(370.2a,86.0b\)--\(371.9a,86.2b\)--\(373.5a,86.4b\)--\(375.2a,86.6b\)--\(376.9a,86.7b\)) showline
+(--\(377.5a,86.8b\)--\(378.6a,86.9b\)--\(380.3a,87.1b\)--\(382.0a,87.3b\)--\(383.7a,87.4b\)) showline
+(--\(385.4a,87.6b\)--\(387.1a,87.7b\)--\(388.7a,87.9b\)--\(390.4a,88.0b\)--\(391.6a,88.1b\)) showline
+(--\(392.1a,88.1b\)--\(393.8a,88.3b\)--\(395.5a,88.4b\)--\(397.2a,88.5b\)--\(398.9a,88.6b\)) showline
+(--\(400.6a,88.7b\)--\(402.2a,88.8b\)--\(403.9a,88.9b\)--\(405.6a,88.9b\)--\(407.3a,89.0b\)) showline
+(--\(409.0a,89.1b\)--\(410.7a,89.1b\)--\(412.4a,89.1b\)--\(414.1a,89.2b\)--\(415.7a,89.2b\)) showline
+(--\(417.4a,89.2b\)--\(419.1a,89.3b\)--\(420.8a,89.3b\)--\(422.5a,89.3b\)--\(424.2a,89.3b\)) showline
+(--\(425.9a,89.3b\)--\(427.6a,89.2b\)--\(429.3a,89.2b\)--\(430.9a,89.2b\)--\(432.6a,89.1b\)) showline
+(--\(434.3a,89.1b\)--\(436.0a,89.1b\)--\(437.7a,89.0b\)--\(439.4a,88.9b\)--\(441.1a,88.9b\)) showline
+(--\(442.8a,88.8b\)--\(444.4a,88.7b\)--\(446.1a,88.6b\)--\(447.8a,88.5b\)--\(449.5a,88.4b\)) showline
+(--\(451.2a,88.3b\)--\(452.9a,88.1b\)--\(453.4a,88.1b\)--\(454.6a,88.0b\);) showline
+(draw \(675.7a,89.3b\)--\(674.0a,89.3b\)--\(672.3a,89.3b\)--\(670.6a,89.2b\)--\(668.9a,89.) showline
+(2b\)) showline
+(--\(667.3a,89.2b\)--\(665.6a,89.1b\)--\(663.9a,89.1b\)--\(662.2a,89.1b\)--\(660.5a,89.0b\)) showline
+(--\(658.8a,88.9b\)--\(657.1a,88.9b\)--\(655.4a,88.8b\)--\(653.8a,88.7b\)--\(652.1a,88.6b\)) showline
+(--\(650.4a,88.5b\)--\(648.7a,88.4b\)--\(647.0a,88.3b\)--\(645.3a,88.1b\)--\(644.8a,88.1b\)) showline
+(--\(643.6a,88.0b\)--\(641.9a,87.9b\)--\(640.3a,87.7b\)--\(638.6a,87.6b\)--\(636.9a,87.4b\)) showline
+(--\(635.2a,87.3b\)--\(633.5a,87.1b\)--\(631.8a,86.9b\)--\(630.7a,86.8b\)--\(630.1a,86.7b\)) showline
+(--\(628.4a,86.6b\)--\(626.7a,86.4b\)--\(625.1a,86.2b\)--\(623.4a,86.0b\)--\(621.7a,85.8b\)) showline
+(--\(620.0a,85.5b\)--\(619.8a,85.5b\)--\(618.3a,85.3b\)--\(616.6a,85.1b\)--\(614.9a,84.9b\)) showline
+(--\(613.2a,84.6b\)--\(611.6a,84.4b\)--\(610.5a,84.2b\)--\(609.9a,84.1b\)--\(608.2a,83.9b\)) showline
+(--\(606.5a,83.6b\)--\(604.8a,83.4b\)--\(603.1a,83.1b\)--\(602.1a,82.9b\)--\(601.4a,82.8b\)) showline
+(--\(599.7a,82.5b\)--\(598.1a,82.3b\)--\(596.4a,82.0b\)--\(594.7a,81.7b\)--\(594.4a,81.6b\)) showline
+(--\(593.0a,81.4b\)--\(591.3a,81.1b\)--\(589.6a,80.8b\)--\(587.9a,80.5b\)--\(587.2a,80.3b\)) showline
+(--\(586.2a,80.2b\)--\(584.5a,79.9b\)--\(582.9a,79.5b\)--\(581.2a,79.2b\)--\(580.4a,79.0b\)) showline
+(--\(579.5a,78.9b\)--\(577.8a,78.6b\)--\(576.1a,78.2b\)--\(574.4a,77.8b\)--\(574.1a,77.7b\)) showline
+(--\(572.7a,77.5b\)--\(571.0a,77.1b\)--\(569.4a,76.7b\)--\(568.4a,76.4b\)--\(567.7a,76.1b\)) showline
+(--\(566.0a,75.4b\)--\(565.4a,75.1b\)--\(566.0a,74.0b\)--\(566.0a,73.8b\);) showline
+(draw \(169.3a,89.3b\)--\(171.0a,89.3b\)--\(172.7a,89.3b\)--\(174.4a,89.2b\)--\(176.1a,89.) showline
+(2b\)) showline
+(--\(177.7a,89.2b\)--\(179.4a,89.1b\)--\(181.1a,89.1b\)--\(182.8a,89.1b\)--\(184.5a,89.0b\)) showline
+sf (3) 1 endcol
+(3) endpage
+%%Page: ? 4
+4 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(186.2a,88.9b\)--\(187.9a,88.9b\)--\(189.6a,88.8b\)--\(191.2a,88.7b\)--\(192.9a,88.6b\)) showline
+(--\(194.6a,88.5b\)--\(196.3a,88.4b\)--\(198.0a,88.3b\)--\(199.7a,88.1b\)--\(200.2a,88.1b\)) showline
+(--\(201.4a,88.0b\)--\(203.1a,87.9b\)--\(204.7a,87.7b\)--\(206.4a,87.6b\)--\(208.1a,87.4b\)) showline
+(--\(209.8a,87.3b\)--\(211.5a,87.1b\)--\(213.2a,86.9b\)--\(214.3a,86.8b\)--\(214.9a,86.7b\)) showline
+(--\(216.6a,86.6b\)--\(218.3a,86.4b\)--\(219.9a,86.2b\)--\(221.6a,86.0b\)--\(223.3a,85.8b\)) showline
+(--\(225.0a,85.5b\)--\(225.2a,85.5b\)--\(226.7a,85.3b\)--\(228.4a,85.1b\)--\(230.1a,84.9b\)) showline
+(--\(231.8a,84.6b\)--\(233.4a,84.4b\)--\(234.5a,84.2b\)--\(235.1a,84.1b\)--\(236.8a,83.9b\)) showline
+(--\(238.5a,83.6b\)--\(240.2a,83.4b\)--\(241.9a,83.1b\)--\(242.9a,82.9b\)--\(243.6a,82.8b\)) showline
+(--\(245.3a,82.5b\)--\(246.9a,82.3b\)--\(248.6a,82.0b\)--\(250.3a,81.7b\)--\(250.6a,81.6b\)) showline
+(--\(252.0a,81.4b\)--\(253.7a,81.1b\)--\(255.4a,80.8b\)--\(257.1a,80.5b\)--\(257.8a,80.3b\)) showline
+(--\(258.8a,80.2b\)--\(260.5a,79.9b\)--\(262.1a,79.5b\)--\(263.8a,79.2b\)--\(264.6a,79.0b\)) showline
+(--\(265.5a,78.9b\)--\(267.2a,78.6b\)--\(268.9a,78.2b\)--\(270.6a,77.8b\)--\(270.9a,77.7b\)) showline
+(--\(272.3a,77.5b\)--\(274.0a,77.1b\)--\(275.6a,76.7b\)--\(276.6a,76.4b\)--\(277.3a,76.1b\)) showline
+(--\(279.0a,75.4b\)--\(279.6a,75.1b\)--\(279.0a,74.0b\)--\(279.0a,73.8b\);) showline
+(draw \(427.6a,105.4b\)--\(429.3a,105.4b\)--\(430.9a,105.3b\)--\(432.6a,105.2b\)--\(434.3a) showline
+(,105.1b\)) showline
+(--\(436.0a,105.0b\)--\(437.7a,104.9b\)--\(437.9a,104.9b\)--\(439.4a,104.8b\)--\(441.1a,10) showline
+(4.6b\)) showline
+(--\(442.8a,104.5b\)--\(444.4a,104.3b\)--\(446.1a,104.1b\)--\(447.8a,103.9b\)--\(449.5a,10) showline
+(3.7b\)) showline
+(--\(450.1a,103.6b\)--\(451.2a,103.5b\)--\(452.9a,103.2b\)--\(454.6a,103.0b\)--\(456.3a,10) showline
+(2.7b\)) showline
+(--\(457.9a,102.4b\)--\(458.5a,102.3b\)--\(459.6a,102.1b\)--\(461.3a,101.8b\)--\(463.0a,10) showline
+(1.5b\)) showline
+(--\(464.7a,101.2b\)--\(465.3a,101.0b\)--\(466.4a,100.8b\)--\(468.1a,100.5b\)--\(469.8a,10) showline
+(0.1b\)) showline
+(--\(471.3a,99.7b\)--\(471.5a,99.7b\)--\(473.1a,99.3b\)--\(474.8a,98.9b\)--\(476.5a,98.5b\)) showline
+(--\(476.7a,98.4b\)--\(478.2a,98.1b\)--\(479.9a,97.6b\)--\(481.6a,97.2b\)--\(481.7a,97.1b\)) showline
+(--\(483.3a,96.7b\)--\(485.0a,96.2b\)--\(486.3a,95.8b\)--\(486.6a,95.8b\)--\(488.3a,95.3b\)) showline
+(--\(490.0a,94.8b\)--\(490.7a,94.5b\)--\(491.7a,94.3b\)--\(493.4a,93.7b\)--\(494.9a,93.3b\)) showline
+(--\(495.1a,93.2b\)--\(496.8a,92.7b\)--\(498.5a,92.1b\)--\(498.9a,92.0b\)--\(500.1a,91.6b\)) showline
+(--\(501.8a,91.0b\)--\(502.8a,90.7b\)--\(503.5a,90.4b\)--\(505.2a,89.9b\)--\(506.6a,89.4b\)) showline
+(--\(506.9a,89.3b\)--\(508.6a,88.7b\)--\(510.2a,88.1b\)--\(510.3a,88.1b\)--\(512.0a,87.5b\)) showline
+(--\(513.7a,86.8b\)--\(513.8a,86.8b\)--\(515.3a,86.2b\)--\(517.0a,85.6b\)--\(517.3a,85.5b\)) showline
+(--\(518.7a,85.0b\)--\(520.4a,84.3b\)--\(520.7a,84.2b\)--\(522.1a,83.7b\)--\(523.8a,83.0b\)) showline
+(--\(524.1a,82.9b\)--\(525.5a,82.4b\)--\(527.2a,81.7b\)--\(527.4a,81.6b\)--\(528.8a,81.1b\)) showline
+(--\(530.5a,80.3b\)--\(530.6a,80.3b\)--\(532.2a,79.7b\)--\(533.7a,79.0b\)--\(533.9a,79.0b\)) showline
+(--\(535.6a,78.3b\)--\(536.7a,77.7b\)--\(537.3a,77.5b\)--\(539.0a,76.7b\)--\(539.5a,76.4b\)) showline
+(--\(540.7a,75.5b\)--\(541.0a,75.1b\)--\(540.7a,73.8b\);) showline
+(draw \(304.3a,73.8b\)--\(304.0a,75.1b\)--\(304.3a,75.5b\)--\(305.5a,76.4b\)--\(306.0a,76.) showline
+(7b\)) showline
+(--\(307.7a,77.5b\)--\(308.3a,77.7b\)--\(309.4a,78.3b\)--\(311.1a,79.0b\)--\(311.3a,79.0b\)) showline
+(--\(312.8a,79.7b\)--\(314.4a,80.3b\)--\(314.5a,80.3b\)--\(316.2a,81.1b\)--\(317.6a,81.6b\)) showline
+(--\(317.8a,81.7b\)--\(319.5a,82.4b\)--\(320.9a,82.9b\)--\(321.2a,83.0b\)--\(322.9a,83.7b\)) showline
+(--\(324.3a,84.2b\)--\(324.6a,84.3b\)--\(326.3a,85.0b\)--\(327.7a,85.5b\)--\(328.0a,85.6b\)) showline
+(--\(329.7a,86.2b\)--\(331.2a,86.8b\)--\(331.3a,86.8b\)--\(333.0a,87.5b\)--\(334.7a,88.1b\)) showline
+(--\(334.8a,88.1b\)--\(336.4a,88.7b\)--\(338.1a,89.3b\)--\(338.4a,89.4b\)--\(339.8a,89.9b\)) showline
+(--\(341.5a,90.4b\)--\(342.2a,90.7b\)--\(343.2a,91.0b\)--\(344.9a,91.6b\)--\(346.1a,92.0b\)) showline
+(--\(346.5a,92.1b\)--\(348.2a,92.7b\)--\(349.9a,93.2b\)--\(350.1a,93.3b\)--\(351.6a,93.7b\)) showline
+(--\(353.3a,94.3b\)--\(354.3a,94.5b\)--\(355.0a,94.8b\)--\(356.7a,95.3b\)--\(358.4a,95.8b\)) showline
+(--\(358.7a,95.8b\)--\(360.0a,96.2b\)--\(361.7a,96.7b\)--\(363.3a,97.1b\)--\(363.4a,97.2b\)) showline
+(--\(365.1a,97.6b\)--\(366.8a,98.1b\)--\(368.3a,98.4b\)--\(368.5a,98.5b\)--\(370.2a,98.9b\)) showline
+(--\(371.9a,99.3b\)--\(373.5a,99.7b\)--\(373.7a,99.7b\)--\(375.2a,100.1b\)--\(376.9a,100.5) showline
+(b\)) showline
+(--\(378.6a,100.8b\)--\(379.7a,101.0b\)--\(380.3a,101.2b\)--\(382.0a,101.5b\)--\(383.7a,10) showline
+(1.8b\)) showline
+(--\(385.4a,102.1b\)--\(386.5a,102.3b\)--\(387.1a,102.4b\)--\(388.7a,102.7b\)--\(390.4a,10) showline
+(3.0b\)) showline
+(--\(392.1a,103.2b\)--\(393.8a,103.5b\)--\(394.9a,103.6b\)--\(395.5a,103.7b\)--\(397.2a,10) showline
+(3.9b\)) showline
+(--\(398.9a,104.1b\)--\(400.6a,104.3b\)--\(402.2a,104.5b\)--\(403.9a,104.6b\)--\(405.6a,10) showline
+(4.8b\)) showline
+(--\(407.1a,104.9b\)--\(407.3a,104.9b\)--\(409.0a,105.0b\)--\(410.7a,105.1b\)--\(412.4a,10) showline
+(5.2b\)) showline
+(--\(414.1a,105.3b\)--\(415.7a,105.4b\)--\(417.4a,105.4b\)--\(419.1a,105.5b\)--\(420.8a,10) showline
+(5.5b\)) showline
+(--\(422.5a,105.5b\)--\(424.2a,105.5b\)--\(425.9a,105.5b\)--\(427.6a,105.4b\);) showline
+(draw \(675.7a,105.5b\)--\(674.0a,105.5b\)--\(672.3a,105.5b\)--\(670.6a,105.4b\)--\(668.9a) showline
+(,105.4b\)) showline
+(--\(667.3a,105.3b\)--\(665.6a,105.2b\)--\(663.9a,105.1b\)--\(662.2a,105.0b\)--\(660.5a,10) showline
+(4.9b\)) showline
+(--\(660.3a,104.9b\)--\(658.8a,104.8b\)--\(657.1a,104.6b\)--\(655.4a,104.5b\)--\(653.8a,10) showline
+sf (4) 1 endcol
+(4) endpage
+%%Page: ? 5
+5 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (4.3b\)) showline
+(--\(652.1a,104.1b\)--\(650.4a,103.9b\)--\(648.7a,103.7b\)--\(648.1a,103.6b\)--\(647.0a,10) showline
+(3.5b\)) showline
+(--\(645.3a,103.2b\)--\(643.6a,103.0b\)--\(641.9a,102.7b\)--\(640.3a,102.4b\)--\(639.7a,10) showline
+(2.3b\)) showline
+(--\(638.6a,102.1b\)--\(636.9a,101.8b\)--\(635.2a,101.5b\)--\(633.5a,101.2b\)--\(632.9a,10) showline
+(1.0b\)) showline
+(--\(631.8a,100.8b\)--\(630.1a,100.5b\)--\(628.4a,100.1b\)--\(626.9a,99.7b\)--\(626.7a,99.) showline
+(7b\)) showline
+(--\(625.1a,99.3b\)--\(623.4a,98.9b\)--\(621.7a,98.5b\)--\(621.5a,98.4b\)--\(620.0a,98.1b\)) showline
+(--\(618.3a,97.6b\)--\(616.6a,97.2b\)--\(616.5a,97.1b\)--\(614.9a,96.7b\)--\(613.2a,96.2b\)) showline
+(--\(611.9a,95.8b\)--\(611.6a,95.8b\)--\(609.9a,95.3b\)--\(608.2a,94.8b\)--\(607.5a,94.5b\)) showline
+(--\(606.5a,94.3b\)--\(604.8a,93.7b\)--\(603.3a,93.3b\)--\(603.1a,93.2b\)--\(601.4a,92.7b\)) showline
+(--\(599.7a,92.1b\)--\(599.3a,92.0b\)--\(598.1a,91.6b\)--\(596.4a,91.0b\)--\(595.4a,90.7b\)) showline
+(--\(594.7a,90.4b\)--\(593.0a,89.9b\)--\(591.6a,89.4b\)--\(591.3a,89.3b\)--\(589.6a,88.7b\)) showline
+(--\(588.0a,88.1b\)--\(587.9a,88.1b\)--\(586.2a,87.5b\)--\(584.5a,86.8b\)--\(584.4a,86.8b\)) showline
+(--\(582.9a,86.2b\)--\(581.2a,85.6b\)--\(580.9a,85.5b\)--\(579.5a,85.0b\)--\(577.8a,84.3b\)) showline
+(--\(577.5a,84.2b\)--\(576.1a,83.7b\)--\(574.4a,83.0b\)--\(574.1a,82.9b\)--\(572.7a,82.4b\)) showline
+(--\(571.0a,81.7b\)--\(570.8a,81.6b\)--\(569.4a,81.1b\)--\(567.7a,80.3b\)--\(567.6a,80.3b\)) showline
+(--\(566.0a,79.7b\)--\(564.5a,79.0b\)--\(564.3a,79.0b\)--\(562.6a,78.3b\)--\(561.5a,77.7b\)) showline
+(--\(560.9a,77.5b\)--\(559.2a,76.7b\)--\(558.7a,76.4b\)--\(557.5a,75.5b\)--\(557.2a,75.1b\)) showline
+(--\(557.5a,73.8b\);) showline
+(draw \(169.3a,105.5b\)--\(171.0a,105.5b\)--\(172.7a,105.5b\)--\(174.4a,105.4b\)--\(176.1a) showline
+(,105.4b\)) showline
+(--\(177.7a,105.3b\)--\(179.4a,105.2b\)--\(181.1a,105.1b\)--\(182.8a,105.0b\)--\(184.5a,10) showline
+(4.9b\)) showline
+(--\(184.7a,104.9b\)--\(186.2a,104.8b\)--\(187.9a,104.6b\)--\(189.6a,104.5b\)--\(191.2a,10) showline
+(4.3b\)) showline
+(--\(192.9a,104.1b\)--\(194.6a,103.9b\)--\(196.3a,103.7b\)--\(196.9a,103.6b\)--\(198.0a,10) showline
+(3.5b\)) showline
+(--\(199.7a,103.2b\)--\(201.4a,103.0b\)--\(203.1a,102.7b\)--\(204.7a,102.4b\)--\(205.3a,10) showline
+(2.3b\)) showline
+(--\(206.4a,102.1b\)--\(208.1a,101.8b\)--\(209.8a,101.5b\)--\(211.5a,101.2b\)--\(212.1a,10) showline
+(1.0b\)) showline
+(--\(213.2a,100.8b\)--\(214.9a,100.5b\)--\(216.6a,100.1b\)--\(218.1a,99.7b\)--\(218.3a,99.) showline
+(7b\)) showline
+(--\(219.9a,99.3b\)--\(221.6a,98.9b\)--\(223.3a,98.5b\)--\(223.5a,98.4b\)--\(225.0a,98.1b\)) showline
+(--\(226.7a,97.6b\)--\(228.4a,97.2b\)--\(228.5a,97.1b\)--\(230.1a,96.7b\)--\(231.8a,96.2b\)) showline
+(--\(233.1a,95.8b\)--\(233.4a,95.8b\)--\(235.1a,95.3b\)--\(236.8a,94.8b\)--\(237.5a,94.5b\)) showline
+(--\(238.5a,94.3b\)--\(240.2a,93.7b\)--\(241.7a,93.3b\)--\(241.9a,93.2b\)--\(243.6a,92.7b\)) showline
+(--\(245.3a,92.1b\)--\(245.7a,92.0b\)--\(246.9a,91.6b\)--\(248.6a,91.0b\)--\(249.6a,90.7b\)) showline
+(--\(250.3a,90.4b\)--\(252.0a,89.9b\)--\(253.4a,89.4b\)--\(253.7a,89.3b\)--\(255.4a,88.7b\)) showline
+(--\(257.0a,88.1b\)--\(257.1a,88.1b\)--\(258.8a,87.5b\)--\(260.5a,86.8b\)--\(260.6a,86.8b\)) showline
+(--\(262.1a,86.2b\)--\(263.8a,85.6b\)--\(264.1a,85.5b\)--\(265.5a,85.0b\)--\(267.2a,84.3b\)) showline
+(--\(267.5a,84.2b\)--\(268.9a,83.7b\)--\(270.6a,83.0b\)--\(270.9a,82.9b\)--\(272.3a,82.4b\)) showline
+(--\(274.0a,81.7b\)--\(274.2a,81.6b\)--\(275.6a,81.1b\)--\(277.3a,80.3b\)--\(277.4a,80.3b\)) showline
+(--\(279.0a,79.7b\)--\(280.5a,79.0b\)--\(280.7a,79.0b\)--\(282.4a,78.3b\)--\(283.5a,77.7b\)) showline
+(--\(284.1a,77.5b\)--\(285.8a,76.7b\)--\(286.3a,76.4b\)--\(287.5a,75.5b\)--\(287.8a,75.1b\)) showline
+(--\(287.5a,73.8b\);) showline
+(draw \(509.6a,103.6b\)--\(510.3a,103.1b\)--\(511.4a,102.3b\)--\(512.0a,101.9b\)--\(513.2a) showline
+(,101.0b\)) showline
+(--\(513.7a,100.7b\)--\(515.0a,99.7b\)--\(515.3a,99.5b\)--\(516.7a,98.4b\)--\(517.0a,98.2b) showline
+(\)) showline
+(--\(518.5a,97.1b\)--\(518.7a,96.9b\)--\(520.2a,95.8b\)--\(520.4a,95.7b\)--\(521.9a,94.5b\)) showline
+(--\(522.1a,94.4b\)--\(523.6a,93.3b\)--\(523.8a,93.1b\)--\(525.3a,92.0b\)--\(525.5a,91.8b\)) showline
+(--\(526.9a,90.7b\)--\(527.2a,90.5b\)--\(528.6a,89.4b\)--\(528.8a,89.2b\)--\(530.2a,88.1b\)) showline
+(--\(530.5a,87.9b\)--\(531.9a,86.8b\)--\(532.2a,86.5b\)--\(533.5a,85.5b\)--\(533.9a,85.2b\)) showline
+(--\(535.1a,84.2b\)--\(535.6a,83.9b\)--\(536.7a,82.9b\)--\(537.3a,82.5b\)--\(538.3a,81.6b\)) showline
+(--\(539.0a,81.1b\)--\(539.9a,80.3b\)--\(540.7a,79.7b\)--\(541.4a,79.0b\)--\(542.3a,78.3b\)) showline
+(--\(542.9a,77.7b\)--\(544.0a,76.7b\)--\(544.3a,76.4b\)--\(545.0a,75.1b\)--\(544.9a,73.8b\)) showline
+(;) showline
+(draw \(392.1a,133.3b\)--\(392.3a,133.4b\)--\(393.8a,133.8b\)--\(395.5a,134.3b\)--\(397.0a) showline
+(,134.6b\)) showline
+(--\(397.2a,134.7b\)--\(398.9a,135.1b\)--\(400.6a,135.5b\)--\(402.2a,135.8b\)--\(402.9a,13) showline
+(5.9b\)) showline
+(--\(403.9a,136.1b\)--\(405.6a,136.4b\)--\(407.3a,136.7b\)--\(409.0a,137.0b\)--\(410.7a,13) showline
+(7.2b\)) showline
+(--\(411.4a,137.2b\)--\(412.4a,137.3b\)--\(414.1a,137.5b\)--\(415.7a,137.6b\)--\(417.4a,13) showline
+(7.7b\)) showline
+(--\(419.1a,137.8b\)--\(420.8a,137.8b\)--\(422.5a,137.9b\)--\(424.2a,137.8b\)--\(425.9a,13) showline
+(7.8b\)) showline
+(--\(427.6a,137.7b\)--\(429.3a,137.6b\)--\(430.9a,137.5b\)--\(432.6a,137.3b\)--\(433.6a,13) showline
+sf (5) 1 endcol
+(5) endpage
+%%Page: ? 6
+6 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (7.2b\)) showline
+(--\(434.3a,137.2b\)--\(436.0a,137.0b\)--\(437.7a,136.7b\)--\(439.4a,136.4b\)--\(441.1a,13) showline
+(6.1b\)) showline
+(--\(442.1a,135.9b\)--\(442.8a,135.8b\)--\(444.4a,135.5b\)--\(446.1a,135.1b\)--\(447.8a,13) showline
+(4.7b\)) showline
+(--\(448.0a,134.6b\)--\(449.5a,134.3b\)--\(451.2a,133.8b\)--\(452.7a,133.4b\)--\(452.9a,13) showline
+(3.3b\)) showline
+(--\(454.6a,132.8b\)--\(456.3a,132.3b\)--\(456.9a,132.1b\)--\(457.9a,131.7b\)--\(459.6a,13) showline
+(1.1b\)) showline
+(--\(460.6a,130.8b\)--\(461.3a,130.5b\)--\(463.0a,129.9b\)--\(464.0a,129.5b\)--\(464.7a,12) showline
+(9.2b\)) showline
+(--\(466.4a,128.5b\)--\(467.1a,128.2b\)--\(468.1a,127.8b\)--\(469.8a,127.0b\)--\(470.1a,12) showline
+(6.9b\)) showline
+(--\(471.5a,126.3b\)--\(472.9a,125.6b\)--\(473.1a,125.5b\)--\(474.8a,124.7b\)--\(475.6a,12) showline
+(4.3b\)) showline
+(--\(476.5a,123.9b\)--\(478.2a,123.0b\)--\(479.9a,122.1b\)--\(480.7a,121.7b\)--\(481.6a,12) showline
+(1.2b\)) showline
+(--\(483.1a,120.4b\)--\(483.3a,120.3b\)--\(485.0a,119.4b\)--\(485.4a,119.1b\)--\(486.6a,11) showline
+(8.4b\)) showline
+(--\(487.7a,117.8b\)--\(488.3a,117.4b\)--\(489.9a,116.5b\)--\(490.0a,116.4b\)--\(491.7a,11) showline
+(5.4b\)) showline
+(--\(492.0a,115.2b\)--\(493.4a,114.4b\)--\(494.1a,113.9b\)--\(495.1a,113.3b\)--\(496.2a,11) showline
+(2.7b\)) showline
+(--\(496.8a,112.3b\)--\(498.2a,111.4b\)--\(498.5a,111.2b\)--\(500.1a,110.1b\)--\(501.8a,10) showline
+(8.9b\)) showline
+(--\(502.1a,108.8b\)--\(503.5a,107.8b\)--\(504.0a,107.5b\)--\(505.2a,106.7b\)--\(505.9a,10) showline
+(6.2b\)) showline
+(--\(506.9a,105.5b\)--\(507.7a,104.9b\)--\(508.6a,104.3b\)--\(509.6a,103.6b\);) showline
+(draw \(300.1a,73.8b\)--\(300.0a,75.1b\)--\(300.7a,76.4b\)--\(301.0a,76.7b\)--\(302.1a,77.) showline
+(7b\)) showline
+(--\(302.7a,78.3b\)--\(303.6a,79.0b\)--\(304.3a,79.7b\)--\(305.1a,80.3b\)--\(306.0a,81.1b\)) showline
+(--\(306.7a,81.6b\)--\(307.7a,82.5b\)--\(308.3a,82.9b\)--\(309.4a,83.9b\)--\(309.9a,84.2b\)) showline
+(--\(311.1a,85.2b\)--\(311.5a,85.5b\)--\(312.8a,86.5b\)--\(313.1a,86.8b\)--\(314.5a,87.9b\)) showline
+(--\(314.8a,88.1b\)--\(316.2a,89.2b\)--\(316.4a,89.4b\)--\(317.8a,90.5b\)--\(318.1a,90.7b\)) showline
+(--\(319.5a,91.8b\)--\(319.7a,92.0b\)--\(321.2a,93.1b\)--\(321.4a,93.3b\)--\(322.9a,94.4b\)) showline
+(--\(323.1a,94.5b\)--\(324.6a,95.7b\)--\(324.8a,95.8b\)--\(326.3a,96.9b\)--\(326.5a,97.1b\)) showline
+(--\(328.0a,98.2b\)--\(328.3a,98.4b\)--\(329.7a,99.5b\)--\(330.0a,99.7b\)--\(331.3a,100.7b) showline
+(\)) showline
+(--\(331.8a,101.0b\)--\(333.0a,101.9b\)--\(333.6a,102.3b\)--\(334.7a,103.1b\)--\(335.4a,10) showline
+(3.6b\)) showline
+(--\(336.4a,104.3b\)--\(337.3a,104.9b\)--\(338.1a,105.5b\)--\(339.1a,106.2b\)--\(339.8a,10) showline
+(6.7b\)) showline
+(--\(341.0a,107.5b\)--\(341.5a,107.8b\)--\(342.9a,108.8b\)--\(343.2a,108.9b\)--\(344.9a,11) showline
+(0.1b\)) showline
+(--\(346.5a,111.2b\)--\(346.8a,111.4b\)--\(348.2a,112.3b\)--\(348.8a,112.7b\)--\(349.9a,11) showline
+(3.3b\)) showline
+(--\(350.9a,113.9b\)--\(351.6a,114.4b\)--\(353.0a,115.2b\)--\(353.3a,115.4b\)--\(355.0a,11) showline
+(6.4b\)) showline
+(--\(355.1a,116.5b\)--\(356.7a,117.4b\)--\(357.3a,117.8b\)--\(358.4a,118.4b\)--\(359.6a,11) showline
+(9.1b\)) showline
+(--\(360.0a,119.4b\)--\(361.7a,120.3b\)--\(361.9a,120.4b\)--\(363.4a,121.2b\)--\(364.3a,12) showline
+(1.7b\)) showline
+(--\(365.1a,122.1b\)--\(366.8a,123.0b\)--\(368.5a,123.9b\)--\(369.4a,124.3b\)--\(370.2a,12) showline
+(4.7b\)) showline
+(--\(371.9a,125.5b\)--\(372.1a,125.6b\)--\(373.5a,126.3b\)--\(374.9a,126.9b\)--\(375.2a,12) showline
+(7.0b\)) showline
+(--\(376.9a,127.8b\)--\(377.9a,128.2b\)--\(378.6a,128.5b\)--\(380.3a,129.2b\)--\(381.0a,12) showline
+(9.5b\)) showline
+(--\(382.0a,129.9b\)--\(383.7a,130.5b\)--\(384.4a,130.8b\)--\(385.4a,131.1b\)--\(387.1a,13) showline
+(1.7b\)) showline
+(--\(388.1a,132.1b\)--\(388.7a,132.3b\)--\(390.4a,132.8b\)--\(392.1a,133.3b\);) showline
+(draw \(569.6a,89.4b\)--\(569.4a,89.2b\)--\(568.0a,88.1b\)--\(567.7a,87.9b\)--\(566.3a,86.) showline
+(8b\)) showline
+(--\(566.0a,86.5b\)--\(564.7a,85.5b\)--\(564.3a,85.2b\)--\(563.1a,84.2b\)--\(562.6a,83.9b\)) showline
+(--\(561.5a,82.9b\)--\(560.9a,82.5b\)--\(559.9a,81.6b\)--\(559.2a,81.1b\)--\(558.3a,80.3b\)) showline
+(--\(557.5a,79.7b\)--\(556.8a,79.0b\)--\(555.9a,78.3b\)--\(555.3a,77.7b\)--\(554.2a,76.7b\)) showline
+(--\(553.9a,76.4b\)--\(553.2a,75.1b\)--\(553.3a,73.8b\);) showline
+(draw \(675.7a,137.9b\)--\(674.0a,137.8b\)--\(672.3a,137.8b\)--\(670.6a,137.7b\)--\(668.9a) showline
+(,137.6b\)) showline
+(--\(667.3a,137.5b\)--\(665.6a,137.3b\)--\(664.6a,137.2b\)--\(663.9a,137.2b\)--\(662.2a,13) showline
+(7.0b\)) showline
+(--\(660.5a,136.7b\)--\(658.8a,136.4b\)--\(657.1a,136.1b\)--\(656.1a,135.9b\)--\(655.4a,13) showline
+sf (6) 1 endcol
+(6) endpage
+%%Page: ? 7
+7 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (5.8b\)) showline
+(--\(653.8a,135.5b\)--\(652.1a,135.1b\)--\(650.4a,134.7b\)--\(650.2a,134.6b\)--\(648.7a,13) showline
+(4.3b\)) showline
+(--\(647.0a,133.8b\)--\(645.5a,133.4b\)--\(645.3a,133.3b\)--\(643.6a,132.8b\)--\(641.9a,13) showline
+(2.3b\)) showline
+(--\(641.3a,132.1b\)--\(640.3a,131.7b\)--\(638.6a,131.1b\)--\(637.6a,130.8b\)--\(636.9a,13) showline
+(0.5b\)) showline
+(--\(635.2a,129.9b\)--\(634.2a,129.5b\)--\(633.5a,129.2b\)--\(631.8a,128.5b\)--\(631.1a,12) showline
+(8.2b\)) showline
+(--\(630.1a,127.8b\)--\(628.4a,127.0b\)--\(628.1a,126.9b\)--\(626.7a,126.3b\)--\(625.3a,12) showline
+(5.6b\)) showline
+(--\(625.1a,125.5b\)--\(623.4a,124.7b\)--\(622.6a,124.3b\)--\(621.7a,123.9b\)--\(620.0a,12) showline
+(3.0b\)) showline
+(--\(618.3a,122.1b\)--\(617.5a,121.7b\)--\(616.6a,121.2b\)--\(615.1a,120.4b\)--\(614.9a,12) showline
+(0.3b\)) showline
+(--\(613.2a,119.4b\)--\(612.8a,119.1b\)--\(611.6a,118.4b\)--\(610.5a,117.8b\)--\(609.9a,11) showline
+(7.4b\)) showline
+(--\(608.3a,116.5b\)--\(608.2a,116.4b\)--\(606.5a,115.4b\)--\(606.2a,115.2b\)--\(604.8a,11) showline
+(4.4b\)) showline
+(--\(604.1a,113.9b\)--\(603.1a,113.3b\)--\(602.0a,112.7b\)--\(601.4a,112.3b\)--\(600.0a,11) showline
+(1.4b\)) showline
+(--\(599.7a,111.2b\)--\(598.1a,110.1b\)--\(596.4a,108.9b\)--\(596.1a,108.8b\)--\(594.7a,10) showline
+(7.8b\)) showline
+(--\(594.2a,107.5b\)--\(593.0a,106.7b\)--\(592.3a,106.2b\)--\(591.3a,105.5b\)--\(590.5a,10) showline
+(4.9b\)) showline
+(--\(589.6a,104.3b\)--\(588.6a,103.6b\)--\(587.9a,103.1b\)--\(586.8a,102.3b\)--\(586.2a,10) showline
+(1.9b\)) showline
+(--\(585.0a,101.0b\)--\(584.5a,100.7b\)--\(583.2a,99.7b\)--\(582.9a,99.5b\)--\(581.5a,98.4) showline
+(b\)) showline
+(--\(581.2a,98.2b\)--\(579.7a,97.1b\)--\(579.5a,96.9b\)--\(578.0a,95.8b\)--\(577.8a,95.7b\)) showline
+(--\(576.3a,94.5b\)--\(576.1a,94.4b\)--\(574.6a,93.3b\)--\(574.4a,93.1b\)--\(572.9a,92.0b\)) showline
+(--\(572.7a,91.8b\)--\(571.3a,90.7b\)--\(571.0a,90.5b\)--\(569.6a,89.4b\);) showline
+(draw \(275.4a,89.4b\)--\(275.6a,89.2b\)--\(277.0a,88.1b\)--\(277.3a,87.9b\)--\(278.7a,86.) showline
+(8b\)) showline
+(--\(279.0a,86.5b\)--\(280.3a,85.5b\)--\(280.7a,85.2b\)--\(281.9a,84.2b\)--\(282.4a,83.9b\)) showline
+(--\(283.5a,82.9b\)--\(284.1a,82.5b\)--\(285.1a,81.6b\)--\(285.8a,81.1b\)--\(286.7a,80.3b\)) showline
+(--\(287.5a,79.7b\)--\(288.2a,79.0b\)--\(289.1a,78.3b\)--\(289.7a,77.7b\)--\(290.8a,76.7b\)) showline
+(--\(291.1a,76.4b\)--\(291.8a,75.1b\)--\(291.7a,73.8b\);) showline
+(draw \(169.3a,137.9b\)--\(171.0a,137.8b\)--\(172.7a,137.8b\)--\(174.4a,137.7b\)--\(176.1a) showline
+(,137.6b\)) showline
+(--\(177.7a,137.5b\)--\(179.4a,137.3b\)--\(180.4a,137.2b\)--\(181.1a,137.2b\)--\(182.8a,13) showline
+(7.0b\)) showline
+(--\(184.5a,136.7b\)--\(186.2a,136.4b\)--\(187.9a,136.1b\)--\(188.9a,135.9b\)--\(189.6a,13) showline
+(5.8b\)) showline
+(--\(191.2a,135.5b\)--\(192.9a,135.1b\)--\(194.6a,134.7b\)--\(194.8a,134.6b\)--\(196.3a,13) showline
+(4.3b\)) showline
+(--\(198.0a,133.8b\)--\(199.5a,133.4b\)--\(199.7a,133.3b\)--\(201.4a,132.8b\)--\(203.1a,13) showline
+(2.3b\)) showline
+(--\(203.7a,132.1b\)--\(204.7a,131.7b\)--\(206.4a,131.1b\)--\(207.4a,130.8b\)--\(208.1a,13) showline
+(0.5b\)) showline
+(--\(209.8a,129.9b\)--\(210.8a,129.5b\)--\(211.5a,129.2b\)--\(213.2a,128.5b\)--\(213.9a,12) showline
+(8.2b\)) showline
+(--\(214.9a,127.8b\)--\(216.6a,127.0b\)--\(216.9a,126.9b\)--\(218.3a,126.3b\)--\(219.7a,12) showline
+(5.6b\)) showline
+(--\(219.9a,125.5b\)--\(221.6a,124.7b\)--\(222.4a,124.3b\)--\(223.3a,123.9b\)--\(225.0a,12) showline
+(3.0b\)) showline
+(--\(226.7a,122.1b\)--\(227.5a,121.7b\)--\(228.4a,121.2b\)--\(229.9a,120.4b\)--\(230.1a,12) showline
+(0.3b\)) showline
+(--\(231.8a,119.4b\)--\(232.2a,119.1b\)--\(233.4a,118.4b\)--\(234.5a,117.8b\)--\(235.1a,11) showline
+(7.4b\)) showline
+(--\(236.7a,116.5b\)--\(236.8a,116.4b\)--\(238.5a,115.4b\)--\(238.8a,115.2b\)--\(240.2a,11) showline
+(4.4b\)) showline
+(--\(240.9a,113.9b\)--\(241.9a,113.3b\)--\(243.0a,112.7b\)--\(243.6a,112.3b\)--\(245.0a,11) showline
+(1.4b\)) showline
+(--\(245.3a,111.2b\)--\(246.9a,110.1b\)--\(248.6a,108.9b\)--\(248.9a,108.8b\)--\(250.3a,10) showline
+(7.8b\)) showline
+(--\(250.8a,107.5b\)--\(252.0a,106.7b\)--\(252.7a,106.2b\)--\(253.7a,105.5b\)--\(254.5a,10) showline
+(4.9b\)) showline
+(--\(255.4a,104.3b\)--\(256.4a,103.6b\)--\(257.1a,103.1b\)--\(258.2a,102.3b\)--\(258.8a,10) showline
+(1.9b\)) showline
+(--\(260.0a,101.0b\)--\(260.5a,100.7b\)--\(261.8a,99.7b\)--\(262.1a,99.5b\)--\(263.5a,98.4) showline
+(b\)) showline
+sf (7) 1 endcol
+(7) endpage
+%%Page: ? 8
+8 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(263.8a,98.2b\)--\(265.3a,97.1b\)--\(265.5a,96.9b\)--\(267.0a,95.8b\)--\(267.2a,95.7b\)) showline
+(--\(268.7a,94.5b\)--\(268.9a,94.4b\)--\(270.4a,93.3b\)--\(270.6a,93.1b\)--\(272.1a,92.0b\)) showline
+(--\(272.3a,91.8b\)--\(273.7a,90.7b\)--\(274.0a,90.5b\)--\(275.4a,89.4b\);) showline
+(draw \(519.0a,120.4b\)--\(519.8a,119.1b\)--\(520.4a,118.3b\)--\(520.7a,117.8b\)--\(521.5a) showline
+(,116.5b\)) showline
+(--\(522.1a,115.7b\)--\(522.4a,115.2b\)--\(523.2a,113.9b\)--\(523.8a,113.1b\)--\(524.1a,11) showline
+(2.7b\)) showline
+(--\(524.9a,111.4b\)--\(525.5a,110.6b\)--\(525.8a,110.1b\)--\(526.6a,108.8b\)--\(527.2a,10) showline
+(7.9b\)) showline
+(--\(527.5a,107.5b\)--\(528.3a,106.2b\)--\(528.8a,105.3b\)--\(529.1a,104.9b\)--\(529.9a,10) showline
+(3.6b\)) showline
+(--\(530.5a,102.7b\)--\(530.8a,102.3b\)--\(531.6a,101.0b\)--\(532.2a,100.0b\)--\(532.4a,99) showline
+(.7b\)) showline
+(--\(533.2a,98.4b\)--\(533.9a,97.4b\)--\(534.1a,97.1b\)--\(534.9a,95.8b\)--\(535.6a,94.7b\)) showline
+(--\(535.7a,94.5b\)--\(536.5a,93.3b\)--\(537.3a,92.0b\)--\(538.1a,90.7b\)--\(538.9a,89.4b\)) showline
+(--\(539.0a,89.3b\)--\(539.7a,88.1b\)--\(540.5a,86.8b\)--\(540.7a,86.6b\)--\(541.3a,85.5b\)) showline
+(--\(542.1a,84.2b\)--\(542.3a,83.9b\)--\(542.9a,82.9b\)--\(543.7a,81.6b\)--\(544.0a,81.1b\)) showline
+(--\(544.5a,80.3b\)--\(545.3a,79.0b\)--\(545.7a,78.3b\)--\(546.0a,77.7b\)--\(546.7a,76.4b\)) showline
+(--\(547.1a,75.1b\)--\(547.0a,73.8b\);) showline
+(draw \(451.2a,194.4b\)--\(451.7a,194.2b\)--\(452.9a,193.5b\)--\(453.9a,192.9b\)--\(454.6a) showline
+(,192.4b\)) showline
+(--\(455.9a,191.6b\)--\(456.3a,191.4b\)--\(457.9a,190.3b\)--\(457.9a,190.2b\)--\(459.6a,18) showline
+(9.1b\)) showline
+(--\(459.7a,189.0b\)--\(461.3a,187.8b\)--\(461.5a,187.7b\)--\(463.0a,186.5b\)--\(463.2a,18) showline
+(6.4b\)) showline
+(--\(464.7a,185.2b\)--\(464.8a,185.1b\)--\(466.4a,183.8b\)--\(468.0a,182.5b\)--\(468.1a,18) showline
+(2.4b\)) showline
+(--\(469.4a,181.2b\)--\(469.8a,180.9b\)--\(470.9a,179.9b\)--\(471.5a,179.4b\)--\(472.3a,17) showline
+(8.6b\)) showline
+(--\(473.1a,177.8b\)--\(473.7a,177.3b\)--\(474.8a,176.2b\)--\(475.0a,176.0b\)--\(476.3a,17) showline
+(4.7b\)) showline
+(--\(476.5a,174.6b\)--\(477.6a,173.5b\)--\(478.2a,172.9b\)--\(478.9a,172.2b\)--\(479.9a,17) showline
+(1.1b\)) showline
+(--\(480.1a,170.9b\)--\(481.3a,169.6b\)--\(481.6a,169.3b\)--\(482.5a,168.3b\)--\(483.3a,16) showline
+(7.5b\)) showline
+(--\(483.7a,167.0b\)--\(484.9a,165.7b\)--\(485.0a,165.6b\)--\(486.0a,164.4b\)--\(486.6a,16) showline
+(3.7b\)) showline
+(--\(487.1a,163.1b\)--\(488.3a,161.8b\)--\(488.3a,161.7b\)--\(489.4a,160.5b\)--\(490.0a,15) showline
+(9.7b\)) showline
+(--\(490.4a,159.2b\)--\(491.5a,157.9b\)--\(491.7a,157.7b\)--\(492.6a,156.6b\)--\(493.4a,15) showline
+(5.6b\)) showline
+(--\(493.6a,155.3b\)--\(494.7a,154.1b\)--\(495.1a,153.5b\)--\(495.7a,152.8b\)--\(496.7a,15) showline
+(1.5b\)) showline
+(--\(496.8a,151.4b\)--\(497.7a,150.2b\)--\(498.5a,149.2b\)--\(498.7a,148.9b\)--\(499.7a,14) showline
+(7.6b\)) showline
+(--\(500.1a,147.0b\)--\(500.7a,146.3b\)--\(501.7a,145.0b\)--\(501.8a,144.8b\)--\(502.6a,14) showline
+(3.7b\)) showline
+(--\(503.5a,142.5b\)--\(503.6a,142.4b\)--\(504.5a,141.1b\)--\(505.2a,140.2b\)--\(505.5a,13) showline
+(9.8b\)) showline
+(--\(506.4a,138.5b\)--\(506.9a,137.9b\)--\(507.3a,137.2b\)--\(508.3a,135.9b\)--\(508.6a,13) showline
+(5.5b\)) showline
+(--\(509.2a,134.6b\)--\(510.1a,133.4b\)--\(510.3a,133.1b\)--\(511.0a,132.1b\)--\(511.9a,13) showline
+(0.8b\)) showline
+(--\(512.0a,130.7b\)--\(512.8a,129.5b\)--\(513.7a,128.2b\)--\(514.6a,126.9b\)--\(515.3a,12) showline
+(5.8b\)) showline
+(--\(515.5a,125.6b\)--\(516.3a,124.3b\)--\(517.0a,123.3b\)--\(517.2a,123.0b\)--\(518.1a,12) showline
+(1.7b\)) showline
+(--\(518.7a,120.8b\)--\(519.0a,120.4b\);) showline
+(draw \(353.5a,157.9b\)--\(354.6a,159.2b\)--\(355.0a,159.7b\)--\(355.6a,160.5b\)--\(356.7a) showline
+(,161.7b\)) showline
+(--\(356.7a,161.8b\)--\(357.9a,163.1b\)--\(358.4a,163.7b\)--\(359.0a,164.4b\)--\(360.0a,16) showline
+(5.6b\)) showline
+(--\(360.1a,165.7b\)--\(361.3a,167.0b\)--\(361.7a,167.5b\)--\(362.5a,168.3b\)--\(363.4a,16) showline
+(9.3b\)) showline
+(--\(363.7a,169.6b\)--\(364.9a,170.9b\)--\(365.1a,171.1b\)--\(366.1a,172.2b\)--\(366.8a,17) showline
+(2.9b\)) showline
+(--\(367.4a,173.5b\)--\(368.5a,174.6b\)--\(368.7a,174.7b\)--\(370.0a,176.0b\)--\(370.2a,17) showline
+(6.2b\)) showline
+(--\(371.3a,177.3b\)--\(371.9a,177.8b\)--\(372.7a,178.6b\)--\(373.5a,179.4b\)--\(374.1a,17) showline
+(9.9b\)) showline
+(--\(375.2a,180.9b\)--\(375.6a,181.2b\)--\(376.9a,182.4b\)--\(377.0a,182.5b\)--\(378.6a,18) showline
+(3.8b\)) showline
+sf (8) 1 endcol
+(8) endpage
+%%Page: ? 9
+9 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(380.2a,185.1b\)--\(380.3a,185.2b\)--\(381.8a,186.4b\)--\(382.0a,186.5b\)--\(383.5a,18) showline
+(7.7b\)) showline
+(--\(383.7a,187.8b\)--\(385.3a,189.0b\)--\(385.4a,189.1b\)--\(387.1a,190.2b\)--\(387.1a,19) showline
+(0.3b\)) showline
+(--\(388.7a,191.4b\)--\(389.1a,191.6b\)--\(390.4a,192.4b\)--\(391.1a,192.9b\)--\(392.1a,19) showline
+(3.5b\)) showline
+(--\(393.3a,194.2b\)--\(393.8a,194.4b\)--\(395.5a,195.4b\)--\(395.7a,195.4b\)--\(397.2a,19) showline
+(6.2b\)) showline
+(--\(398.3a,196.7b\)--\(398.9a,197.0b\)--\(400.6a,197.8b\)--\(401.2a,198.0b\)--\(402.2a,19) showline
+(8.5b\)) showline
+(--\(403.9a,199.1b\)--\(404.5a,199.3b\)--\(405.6a,199.7b\)--\(407.3a,200.3b\)--\(408.6a,20) showline
+(0.6b\)) showline
+(--\(409.0a,200.7b\)--\(410.7a,201.2b\)--\(412.4a,201.5b\)--\(414.1a,201.8b\)--\(414.6a,20) showline
+(1.9b\)) showline
+(--\(415.7a,202.1b\)--\(417.4a,202.3b\)--\(419.1a,202.4b\)--\(420.8a,202.5b\)--\(422.5a,20) showline
+(2.5b\)) showline
+(--\(424.2a,202.5b\)--\(425.9a,202.4b\)--\(427.6a,202.3b\)--\(429.3a,202.1b\)--\(430.4a,20) showline
+(1.9b\)) showline
+(--\(430.9a,201.8b\)--\(432.6a,201.5b\)--\(434.3a,201.2b\)--\(436.0a,200.7b\)--\(436.4a,20) showline
+(0.6b\)) showline
+(--\(437.7a,200.3b\)--\(439.4a,199.7b\)--\(440.5a,199.3b\)--\(441.1a,199.1b\)--\(442.8a,19) showline
+(8.5b\)) showline
+(--\(443.8a,198.0b\)--\(444.4a,197.8b\)--\(446.1a,197.0b\)--\(446.7a,196.7b\)--\(447.8a,19) showline
+(6.2b\)) showline
+(--\(449.3a,195.4b\)--\(449.5a,195.4b\)--\(451.2a,194.4b\);) showline
+(draw \(298.0a,73.8b\)--\(297.9a,75.1b\)--\(298.3a,76.4b\)--\(299.0a,77.7b\)--\(299.3a,78.) showline
+(3b\)) showline
+(--\(299.7a,79.0b\)--\(300.5a,80.3b\)--\(301.0a,81.1b\)--\(301.3a,81.6b\)--\(302.1a,82.9b\)) showline
+(--\(302.7a,83.9b\)--\(302.9a,84.2b\)--\(303.7a,85.5b\)--\(304.3a,86.6b\)--\(304.5a,86.8b\)) showline
+(--\(305.3a,88.1b\)--\(306.0a,89.3b\)--\(306.1a,89.4b\)--\(306.9a,90.7b\)--\(307.7a,92.0b\)) showline
+(--\(308.5a,93.3b\)--\(309.3a,94.5b\)--\(309.4a,94.7b\)--\(310.1a,95.8b\)--\(310.9a,97.1b\)) showline
+(--\(311.1a,97.4b\)--\(311.8a,98.4b\)--\(312.6a,99.7b\)--\(312.8a,100.0b\)--\(313.4a,101.0) showline
+(b\)) showline
+(--\(314.2a,102.3b\)--\(314.5a,102.7b\)--\(315.1a,103.6b\)--\(315.9a,104.9b\)--\(316.2a,10) showline
+(5.3b\)) showline
+(--\(316.7a,106.2b\)--\(317.5a,107.5b\)--\(317.8a,107.9b\)--\(318.4a,108.8b\)--\(319.2a,11) showline
+(0.1b\)) showline
+(--\(319.5a,110.6b\)--\(320.1a,111.4b\)--\(320.9a,112.7b\)--\(321.2a,113.1b\)--\(321.8a,11) showline
+(3.9b\)) showline
+(--\(322.6a,115.2b\)--\(322.9a,115.7b\)--\(323.5a,116.5b\)--\(324.3a,117.8b\)--\(324.6a,11) showline
+(8.3b\)) showline
+(--\(325.2a,119.1b\)--\(326.0a,120.4b\)--\(326.3a,120.8b\)--\(326.9a,121.7b\)--\(327.8a,12) showline
+(3.0b\)) showline
+(--\(328.0a,123.3b\)--\(328.7a,124.3b\)--\(329.5a,125.6b\)--\(329.7a,125.8b\)--\(330.4a,12) showline
+(6.9b\)) showline
+(--\(331.3a,128.2b\)--\(332.2a,129.5b\)--\(333.0a,130.7b\)--\(333.1a,130.8b\)--\(334.0a,13) showline
+(2.1b\)) showline
+(--\(334.7a,133.1b\)--\(334.9a,133.4b\)--\(335.8a,134.6b\)--\(336.4a,135.5b\)--\(336.7a,13) showline
+(5.9b\)) showline
+(--\(337.7a,137.2b\)--\(338.1a,137.9b\)--\(338.6a,138.5b\)--\(339.5a,139.8b\)--\(339.8a,14) showline
+(0.2b\)) showline
+(--\(340.5a,141.1b\)--\(341.4a,142.4b\)--\(341.5a,142.5b\)--\(342.4a,143.7b\)--\(343.2a,14) showline
+(4.8b\)) showline
+(--\(343.3a,145.0b\)--\(344.3a,146.3b\)--\(344.9a,147.0b\)--\(345.3a,147.6b\)--\(346.3a,14) showline
+(8.9b\)) showline
+(--\(346.5a,149.2b\)--\(347.3a,150.2b\)--\(348.2a,151.4b\)--\(348.3a,151.5b\)--\(349.3a,15) showline
+(2.8b\)) showline
+(--\(349.9a,153.5b\)--\(350.3a,154.1b\)--\(351.4a,155.3b\)--\(351.6a,155.6b\)--\(352.4a,15) showline
+(6.6b\)) showline
+(--\(353.3a,157.7b\)--\(353.5a,157.9b\);) showline
+(draw \(592.7a,139.8b\)--\(591.8a,138.5b\)--\(591.3a,137.9b\)--\(590.9a,137.2b\)--\(589.9a) showline
+(,135.9b\)) showline
+(--\(589.6a,135.5b\)--\(589.0a,134.6b\)--\(588.1a,133.4b\)--\(587.9a,133.1b\)--\(587.2a,13) showline
+(2.1b\)) showline
+(--\(586.3a,130.8b\)--\(586.2a,130.7b\)--\(585.4a,129.5b\)--\(584.5a,128.2b\)--\(583.6a,12) showline
+(6.9b\)) showline
+(--\(582.9a,125.8b\)--\(582.7a,125.6b\)--\(581.9a,124.3b\)--\(581.2a,123.3b\)--\(581.0a,12) showline
+(3.0b\)) showline
+(--\(580.1a,121.7b\)--\(579.5a,120.8b\)--\(579.2a,120.4b\)--\(578.4a,119.1b\)--\(577.8a,11) showline
+(8.3b\)) showline
+(--\(577.5a,117.8b\)--\(576.7a,116.5b\)--\(576.1a,115.7b\)--\(575.8a,115.2b\)--\(575.0a,11) showline
+(3.9b\)) showline
+sf (9) 1 endcol
+(9) endpage
+%%Page: ? 10
+10 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(574.4a,113.1b\)--\(574.1a,112.7b\)--\(573.3a,111.4b\)--\(572.7a,110.6b\)--\(572.4a,11) showline
+(0.1b\)) showline
+(--\(571.6a,108.8b\)--\(571.0a,107.9b\)--\(570.7a,107.5b\)--\(569.9a,106.2b\)--\(569.4a,10) showline
+(5.3b\)) showline
+(--\(569.1a,104.9b\)--\(568.3a,103.6b\)--\(567.7a,102.7b\)--\(567.4a,102.3b\)--\(566.6a,10) showline
+(1.0b\)) showline
+(--\(566.0a,100.0b\)--\(565.8a,99.7b\)--\(565.0a,98.4b\)--\(564.3a,97.4b\)--\(564.1a,97.1b) showline
+(\)) showline
+(--\(563.3a,95.8b\)--\(562.6a,94.7b\)--\(562.5a,94.5b\)--\(561.7a,93.3b\)--\(560.9a,92.0b\)) showline
+(--\(560.1a,90.7b\)--\(559.3a,89.4b\)--\(559.2a,89.3b\)--\(558.5a,88.1b\)--\(557.7a,86.8b\)) showline
+(--\(557.5a,86.6b\)--\(556.9a,85.5b\)--\(556.1a,84.2b\)--\(555.9a,83.9b\)--\(555.3a,82.9b\)) showline
+(--\(554.5a,81.6b\)--\(554.2a,81.1b\)--\(553.7a,80.3b\)--\(552.9a,79.0b\)--\(552.5a,78.3b\)) showline
+(--\(552.2a,77.7b\)--\(551.5a,76.4b\)--\(551.1a,75.1b\)--\(551.2a,73.8b\);) showline
+(draw \(675.7a,202.5b\)--\(674.0a,202.5b\)--\(672.3a,202.4b\)--\(670.6a,202.3b\)--\(668.9a) showline
+(,202.1b\)) showline
+(--\(667.8a,201.9b\)--\(667.3a,201.8b\)--\(665.6a,201.5b\)--\(663.9a,201.2b\)--\(662.2a,20) showline
+(0.7b\)) showline
+(--\(661.8a,200.6b\)--\(660.5a,200.3b\)--\(658.8a,199.7b\)--\(657.7a,199.3b\)--\(657.1a,19) showline
+(9.1b\)) showline
+(--\(655.4a,198.5b\)--\(654.4a,198.0b\)--\(653.8a,197.8b\)--\(652.1a,197.0b\)--\(651.5a,19) showline
+(6.7b\)) showline
+(--\(650.4a,196.2b\)--\(648.9a,195.4b\)--\(648.7a,195.4b\)--\(647.0a,194.4b\)--\(646.5a,19) showline
+(4.2b\)) showline
+(--\(645.3a,193.5b\)--\(644.3a,192.9b\)--\(643.6a,192.4b\)--\(642.3a,191.6b\)--\(641.9a,19) showline
+(1.4b\)) showline
+(--\(640.3a,190.3b\)--\(640.3a,190.2b\)--\(638.6a,189.1b\)--\(638.5a,189.0b\)--\(636.9a,18) showline
+(7.8b\)) showline
+(--\(636.7a,187.7b\)--\(635.2a,186.5b\)--\(635.0a,186.4b\)--\(633.5a,185.2b\)--\(633.4a,18) showline
+(5.1b\)) showline
+(--\(631.8a,183.8b\)--\(630.2a,182.5b\)--\(630.1a,182.4b\)--\(628.8a,181.2b\)--\(628.4a,18) showline
+(0.9b\)) showline
+(--\(627.3a,179.9b\)--\(626.7a,179.4b\)--\(625.9a,178.6b\)--\(625.1a,177.8b\)--\(624.5a,17) showline
+(7.3b\)) showline
+(--\(623.4a,176.2b\)--\(623.2a,176.0b\)--\(621.9a,174.7b\)--\(621.7a,174.6b\)--\(620.6a,17) showline
+(3.5b\)) showline
+(--\(620.0a,172.9b\)--\(619.3a,172.2b\)--\(618.3a,171.1b\)--\(618.1a,170.9b\)--\(616.9a,16) showline
+(9.6b\)) showline
+(--\(616.6a,169.3b\)--\(615.7a,168.3b\)--\(614.9a,167.5b\)--\(614.5a,167.0b\)--\(613.3a,16) showline
+(5.7b\)) showline
+(--\(613.2a,165.6b\)--\(612.2a,164.4b\)--\(611.6a,163.7b\)--\(611.1a,163.1b\)--\(609.9a,16) showline
+(1.8b\)) showline
+(--\(609.9a,161.7b\)--\(608.8a,160.5b\)--\(608.2a,159.7b\)--\(607.8a,159.2b\)--\(606.7a,15) showline
+(7.9b\)) showline
+(--\(606.5a,157.7b\)--\(605.6a,156.6b\)--\(604.8a,155.6b\)--\(604.6a,155.3b\)--\(603.5a,15) showline
+(4.1b\)) showline
+(--\(603.1a,153.5b\)--\(602.5a,152.8b\)--\(601.5a,151.5b\)--\(601.4a,151.4b\)--\(600.5a,15) showline
+(0.2b\)) showline
+(--\(599.7a,149.2b\)--\(599.5a,148.9b\)--\(598.5a,147.6b\)--\(598.1a,147.0b\)--\(597.5a,14) showline
+(6.3b\)) showline
+(--\(596.5a,145.0b\)--\(596.4a,144.8b\)--\(595.6a,143.7b\)--\(594.7a,142.5b\)--\(594.6a,14) showline
+(2.4b\)) showline
+(--\(593.7a,141.1b\)--\(593.0a,140.2b\)--\(592.7a,139.8b\);) showline
+(draw \(252.3a,139.8b\)--\(253.2a,138.5b\)--\(253.7a,137.9b\)--\(254.1a,137.2b\)--\(255.1a) showline
+(,135.9b\)) showline
+(--\(255.4a,135.5b\)--\(256.0a,134.6b\)--\(256.9a,133.4b\)--\(257.1a,133.1b\)--\(257.8a,13) showline
+(2.1b\)) showline
+(--\(258.7a,130.8b\)--\(258.8a,130.7b\)--\(259.6a,129.5b\)--\(260.5a,128.2b\)--\(261.4a,12) showline
+(6.9b\)) showline
+(--\(262.1a,125.8b\)--\(262.3a,125.6b\)--\(263.1a,124.3b\)--\(263.8a,123.3b\)--\(264.0a,12) showline
+(3.0b\)) showline
+(--\(264.9a,121.7b\)--\(265.5a,120.8b\)--\(265.8a,120.4b\)--\(266.6a,119.1b\)--\(267.2a,11) showline
+(8.3b\)) showline
+(--\(267.5a,117.8b\)--\(268.3a,116.5b\)--\(268.9a,115.7b\)--\(269.2a,115.2b\)--\(270.0a,11) showline
+(3.9b\)) showline
+(--\(270.6a,113.1b\)--\(270.9a,112.7b\)--\(271.7a,111.4b\)--\(272.3a,110.6b\)--\(272.6a,11) showline
+(0.1b\)) showline
+(--\(273.4a,108.8b\)--\(274.0a,107.9b\)--\(274.2a,107.5b\)--\(275.1a,106.2b\)--\(275.6a,10) showline
+(5.3b\)) showline
+(--\(275.9a,104.9b\)--\(276.7a,103.6b\)--\(277.3a,102.7b\)--\(277.6a,102.3b\)--\(278.4a,10) showline
+(1.0b\)) showline
+(--\(279.0a,100.0b\)--\(279.2a,99.7b\)--\(280.0a,98.4b\)--\(280.7a,97.4b\)--\(280.9a,97.1b) showline
+(\)) showline
+sf (10) 1 endcol
+(10) endpage
+%%Page: ? 11
+11 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(281.7a,95.8b\)--\(282.4a,94.7b\)--\(282.5a,94.5b\)--\(283.3a,93.3b\)--\(284.1a,92.0b\)) showline
+(--\(284.9a,90.7b\)--\(285.7a,89.4b\)--\(285.8a,89.3b\)--\(286.5a,88.1b\)--\(287.3a,86.8b\)) showline
+(--\(287.5a,86.6b\)--\(288.1a,85.5b\)--\(288.9a,84.2b\)--\(289.1a,83.9b\)--\(289.7a,82.9b\)) showline
+(--\(290.5a,81.6b\)--\(290.8a,81.1b\)--\(291.3a,80.3b\)--\(292.1a,79.0b\)--\(292.5a,78.3b\)) showline
+(--\(292.8a,77.7b\)--\(293.5a,76.4b\)--\(293.9a,75.1b\)--\(293.8a,73.8b\);) showline
+(draw \(169.3a,202.5b\)--\(171.0a,202.5b\)--\(172.7a,202.4b\)--\(174.4a,202.3b\)--\(176.1a) showline
+(,202.1b\)) showline
+(--\(177.2a,201.9b\)--\(177.7a,201.8b\)--\(179.4a,201.5b\)--\(181.1a,201.2b\)--\(182.8a,20) showline
+(0.7b\)) showline
+(--\(183.2a,200.6b\)--\(184.5a,200.3b\)--\(186.2a,199.7b\)--\(187.3a,199.3b\)--\(187.9a,19) showline
+(9.1b\)) showline
+(--\(189.6a,198.5b\)--\(190.6a,198.0b\)--\(191.2a,197.8b\)--\(192.9a,197.0b\)--\(193.5a,19) showline
+(6.7b\)) showline
+(--\(194.6a,196.2b\)--\(196.1a,195.4b\)--\(196.3a,195.4b\)--\(198.0a,194.4b\)--\(198.5a,19) showline
+(4.2b\)) showline
+(--\(199.7a,193.5b\)--\(200.7a,192.9b\)--\(201.4a,192.4b\)--\(202.7a,191.6b\)--\(203.1a,19) showline
+(1.4b\)) showline
+(--\(204.7a,190.3b\)--\(204.7a,190.2b\)--\(206.4a,189.1b\)--\(206.5a,189.0b\)--\(208.1a,18) showline
+(7.8b\)) showline
+(--\(208.3a,187.7b\)--\(209.8a,186.5b\)--\(210.0a,186.4b\)--\(211.5a,185.2b\)--\(211.6a,18) showline
+(5.1b\)) showline
+(--\(213.2a,183.8b\)--\(214.8a,182.5b\)--\(214.9a,182.4b\)--\(216.2a,181.2b\)--\(216.6a,18) showline
+(0.9b\)) showline
+(--\(217.7a,179.9b\)--\(218.3a,179.4b\)--\(219.1a,178.6b\)--\(219.9a,177.8b\)--\(220.5a,17) showline
+(7.3b\)) showline
+(--\(221.6a,176.2b\)--\(221.8a,176.0b\)--\(223.1a,174.7b\)--\(223.3a,174.6b\)--\(224.4a,17) showline
+(3.5b\)) showline
+(--\(225.0a,172.9b\)--\(225.7a,172.2b\)--\(226.7a,171.1b\)--\(226.9a,170.9b\)--\(228.1a,16) showline
+(9.6b\)) showline
+(--\(228.4a,169.3b\)--\(229.3a,168.3b\)--\(230.1a,167.5b\)--\(230.5a,167.0b\)--\(231.7a,16) showline
+(5.7b\)) showline
+(--\(231.8a,165.6b\)--\(232.8a,164.4b\)--\(233.4a,163.7b\)--\(233.9a,163.1b\)--\(235.1a,16) showline
+(1.8b\)) showline
+(--\(235.1a,161.7b\)--\(236.2a,160.5b\)--\(236.8a,159.7b\)--\(237.2a,159.2b\)--\(238.3a,15) showline
+(7.9b\)) showline
+(--\(238.5a,157.7b\)--\(239.4a,156.6b\)--\(240.2a,155.6b\)--\(240.4a,155.3b\)--\(241.5a,15) showline
+(4.1b\)) showline
+(--\(241.9a,153.5b\)--\(242.5a,152.8b\)--\(243.5a,151.5b\)--\(243.6a,151.4b\)--\(244.5a,15) showline
+(0.2b\)) showline
+(--\(245.3a,149.2b\)--\(245.5a,148.9b\)--\(246.5a,147.6b\)--\(246.9a,147.0b\)--\(247.5a,14) showline
+(6.3b\)) showline
+(--\(248.5a,145.0b\)--\(248.6a,144.8b\)--\(249.4a,143.7b\)--\(250.3a,142.5b\)--\(250.4a,14) showline
+(2.4b\)) showline
+(--\(251.3a,141.1b\)--\(252.0a,140.2b\)--\(252.3a,139.8b\);) showline
+(draw \(533.7a,134.6b\)--\(533.9a,133.8b\)--\(534.0a,133.4b\)--\(534.3a,132.1b\)--\(534.7a) showline
+(,130.8b\)) showline
+(--\(535.0a,129.5b\)--\(535.3a,128.2b\)--\(535.6a,127.1b\)--\(535.7a,126.9b\)--\(536.0a,12) showline
+(5.6b\)) showline
+(--\(536.3a,124.3b\)--\(536.6a,123.0b\)--\(537.0a,121.7b\)--\(537.3a,120.4b\)--\(537.6a,11) showline
+(9.1b\)) showline
+(--\(537.9a,117.8b\)--\(538.3a,116.5b\)--\(538.6a,115.2b\)--\(538.9a,113.9b\)--\(539.0a,11) showline
+(3.7b\)) showline
+(--\(539.2a,112.7b\)--\(539.6a,111.4b\)--\(539.9a,110.1b\)--\(540.2a,108.8b\)--\(540.5a,10) showline
+(7.5b\)) showline
+(--\(540.7a,107.0b\)--\(540.9a,106.2b\)--\(541.2a,104.9b\)--\(541.5a,103.6b\)--\(541.8a,10) showline
+(2.3b\)) showline
+(--\(542.1a,101.0b\)--\(542.3a,100.2b\)--\(542.5a,99.7b\)--\(542.8a,98.4b\)--\(543.1a,97.1) showline
+(b\)) showline
+(--\(543.4a,95.8b\)--\(543.8a,94.5b\)--\(544.0a,93.4b\)--\(544.1a,93.3b\)--\(544.4a,92.0b\)) showline
+(--\(544.7a,90.7b\)--\(545.0a,89.4b\)--\(545.4a,88.1b\)--\(545.7a,86.8b\)--\(545.7a,86.6b\)) showline
+(--\(546.0a,85.5b\)--\(546.3a,84.2b\)--\(546.6a,82.9b\)--\(547.0a,81.6b\)--\(547.3a,80.3b\)) showline
+(--\(547.4a,79.8b\)--\(547.6a,79.0b\)--\(547.9a,77.7b\)--\(548.1a,76.4b\)--\(548.3a,75.1b\)) showline
+(--\(548.3a,73.8b\);) showline
+(draw \(505.2a,240.7b\)--\(505.6a,239.4b\)--\(506.0a,238.1b\)--\(506.3a,236.8b\)--\(506.7a) showline
+(,235.5b\)) showline
+(--\(506.9a,234.9b\)--\(507.1a,234.3b\)--\(507.5a,233.0b\)--\(507.8a,231.7b\)--\(508.2a,23) showline
+(0.4b\)) showline
+(--\(508.6a,229.1b\)--\(508.6a,229.0b\)--\(508.9a,227.8b\)--\(509.3a,226.5b\)--\(509.7a,22) showline
+(5.2b\)) showline
+(--\(510.0a,223.9b\)--\(510.3a,223.0b\)--\(510.4a,222.6b\)--\(510.8a,221.3b\)--\(511.1a,22) showline
+(0.0b\)) showline
+(--\(511.5a,218.7b\)--\(511.8a,217.4b\)--\(512.0a,217.0b\)--\(512.2a,216.1b\)--\(512.6a,21) showline
+sf (11) 1 endcol
+(11) endpage
+%%Page: ? 12
+12 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (4.8b\)) showline
+(--\(512.9a,213.6b\)--\(513.3a,212.3b\)--\(513.6a,211.0b\)--\(513.7a,210.9b\)--\(514.0a,20) showline
+(9.7b\)) showline
+(--\(514.3a,208.4b\)--\(514.7a,207.1b\)--\(515.0a,205.8b\)--\(515.3a,204.7b\)--\(515.4a,20) showline
+(4.5b\)) showline
+(--\(515.8a,203.2b\)--\(516.1a,201.9b\)--\(516.5a,200.6b\)--\(516.8a,199.3b\)--\(517.0a,19) showline
+(8.5b\)) showline
+(--\(517.2a,198.0b\)--\(517.5a,196.7b\)--\(517.9a,195.4b\)--\(518.2a,194.2b\)--\(518.5a,19) showline
+(2.9b\)) showline
+(--\(518.7a,192.2b\)--\(518.9a,191.6b\)--\(519.2a,190.3b\)--\(519.6a,189.0b\)--\(519.9a,18) showline
+(7.7b\)) showline
+(--\(520.3a,186.4b\)--\(520.4a,185.9b\)--\(520.6a,185.1b\)--\(521.0a,183.8b\)--\(521.3a,18) showline
+(2.5b\)) showline
+(--\(521.6a,181.2b\)--\(522.0a,179.9b\)--\(522.1a,179.5b\)--\(522.3a,178.6b\)--\(522.7a,17) showline
+(7.3b\)) showline
+(--\(523.0a,176.0b\)--\(523.4a,174.7b\)--\(523.7a,173.5b\)--\(523.8a,173.1b\)--\(524.0a,17) showline
+(2.2b\)) showline
+(--\(524.4a,170.9b\)--\(524.7a,169.6b\)--\(525.0a,168.3b\)--\(525.4a,167.0b\)--\(525.5a,16) showline
+(6.7b\)) showline
+(--\(525.7a,165.7b\)--\(526.1a,164.4b\)--\(526.4a,163.1b\)--\(526.7a,161.8b\)--\(527.1a,16) showline
+(0.5b\)) showline
+(--\(527.2a,160.2b\)--\(527.4a,159.2b\)--\(527.7a,157.9b\)--\(528.1a,156.6b\)--\(528.4a,15) showline
+(5.3b\)) showline
+(--\(528.7a,154.1b\)--\(528.8a,153.6b\)--\(529.1a,152.8b\)--\(529.4a,151.5b\)--\(529.7a,15) showline
+(0.2b\)) showline
+(--\(530.1a,148.9b\)--\(530.4a,147.6b\)--\(530.5a,147.0b\)--\(530.7a,146.3b\)--\(531.1a,14) showline
+(5.0b\)) showline
+(--\(531.4a,143.7b\)--\(531.7a,142.4b\)--\(532.0a,141.1b\)--\(532.2a,140.4b\)--\(532.4a,13) showline
+(9.8b\)) showline
+(--\(532.7a,138.5b\)--\(533.0a,137.2b\)--\(533.4a,135.9b\)--\(533.7a,134.6b\);) showline
+(draw \(470.2a,341.6b\)--\(470.8a,340.3b\)--\(471.3a,339.0b\)--\(471.5a,338.8b\)--\(471.9a) showline
+(,337.7b\)) showline
+(--\(472.4a,336.4b\)--\(473.0a,335.2b\)--\(473.1a,334.8b\)--\(473.5a,333.9b\)--\(474.1a,33) showline
+(2.6b\)) showline
+(--\(474.6a,331.3b\)--\(474.8a,330.8b\)--\(475.2a,330.0b\)--\(475.7a,328.7b\)--\(476.2a,32) showline
+(7.4b\)) showline
+(--\(476.5a,326.6b\)--\(476.7a,326.1b\)--\(477.2a,324.8b\)--\(477.8a,323.5b\)--\(478.2a,32) showline
+(2.4b\)) showline
+(--\(478.3a,322.2b\)--\(478.8a,320.9b\)--\(479.3a,319.6b\)--\(479.8a,318.3b\)--\(479.9a,31) showline
+(8.0b\)) showline
+(--\(480.3a,317.0b\)--\(480.7a,315.8b\)--\(481.2a,314.5b\)--\(481.6a,313.5b\)--\(481.7a,31) showline
+(3.2b\)) showline
+(--\(482.2a,311.9b\)--\(482.7a,310.6b\)--\(483.1a,309.3b\)--\(483.3a,308.9b\)--\(483.6a,30) showline
+(8.0b\)) showline
+(--\(484.1a,306.7b\)--\(484.5a,305.4b\)--\(485.0a,304.3b\)--\(485.0a,304.1b\)--\(485.5a,30) showline
+(2.8b\)) showline
+(--\(485.9a,301.5b\)--\(486.4a,300.2b\)--\(486.6a,299.5b\)--\(486.8a,298.9b\)--\(487.3a,29) showline
+(7.6b\)) showline
+(--\(487.7a,296.3b\)--\(488.2a,295.1b\)--\(488.3a,294.6b\)--\(488.6a,293.8b\)--\(489.0a,29) showline
+(2.5b\)) showline
+(--\(489.5a,291.2b\)--\(489.9a,289.9b\)--\(490.0a,289.6b\)--\(490.4a,288.6b\)--\(490.8a,28) showline
+(7.3b\)) showline
+(--\(491.2a,286.0b\)--\(491.6a,284.7b\)--\(491.7a,284.5b\)--\(492.1a,283.4b\)--\(492.5a,28) showline
+(2.1b\)) showline
+(--\(492.9a,280.8b\)--\(493.3a,279.5b\)--\(493.4a,279.3b\)--\(493.7a,278.2b\)--\(494.2a,27) showline
+(6.9b\)) showline
+(--\(494.6a,275.6b\)--\(495.0a,274.4b\)--\(495.1a,274.1b\)--\(495.4a,273.1b\)--\(495.8a,27) showline
+(1.8b\)) showline
+(--\(496.2a,270.5b\)--\(496.6a,269.2b\)--\(496.8a,268.7b\)--\(497.0a,267.9b\)--\(497.4a,26) showline
+(6.6b\)) showline
+(--\(497.8a,265.3b\)--\(498.2a,264.0b\)--\(498.5a,263.3b\)--\(498.6a,262.7b\)--\(499.0a,26) showline
+(1.4b\)) showline
+(--\(499.4a,260.1b\)--\(499.8a,258.8b\)--\(500.1a,257.8b\)--\(500.2a,257.5b\)--\(500.6a,25) showline
+(6.2b\)) showline
+(--\(501.0a,255.0b\)--\(501.4a,253.7b\)--\(501.8a,252.4b\)--\(501.8a,252.2b\)--\(502.2a,25) showline
+(1.1b\)) showline
+(--\(502.5a,249.8b\)--\(502.9a,248.5b\)--\(503.3a,247.2b\)--\(503.5a,246.5b\)--\(503.7a,24) showline
+(5.9b\)) showline
+(--\(504.1a,244.6b\)--\(504.5a,243.3b\)--\(504.8a,242.0b\)--\(505.2a,240.7b\);) showline
+(draw \(396.9a,380.4b\)--\(397.2a,380.8b\)--\(398.0a,381.7b\)--\(398.9a,382.8b\)--\(399.1a) showline
+(,383.0b\)) showline
+(--\(400.2a,384.3b\)--\(400.6a,384.7b\)--\(401.4a,385.6b\)--\(402.2a,386.4b\)--\(402.7a,38) showline
+sf (12) 1 endcol
+(12) endpage
+%%Page: ? 13
+13 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (6.9b\)) showline
+(--\(403.9a,388.1b\)--\(404.1a,388.2b\)--\(405.6a,389.5b\)--\(407.2a,390.8b\)--\(407.3a,39) showline
+(0.9b\)) showline
+(--\(409.0a,392.1b\)--\(410.7a,393.1b\)--\(411.1a,393.4b\)--\(412.4a,394.0b\)--\(413.7a,39) showline
+(4.7b\)) showline
+(--\(414.1a,394.8b\)--\(415.7a,395.5b\)--\(417.4a,396.0b\)--\(419.1a,396.3b\)--\(420.8a,39) showline
+(6.5b\)) showline
+(--\(422.5a,396.6b\)--\(424.2a,396.5b\)--\(425.9a,396.3b\)--\(427.6a,396.0b\)--\(429.3a,39) showline
+(5.5b\)) showline
+(--\(430.9a,394.8b\)--\(431.3a,394.7b\)--\(432.6a,394.0b\)--\(433.9a,393.4b\)--\(434.3a,39) showline
+(3.1b\)) showline
+(--\(436.0a,392.1b\)--\(437.7a,390.9b\)--\(437.8a,390.8b\)--\(439.4a,389.5b\)--\(440.9a,38) showline
+(8.2b\)) showline
+(--\(441.1a,388.1b\)--\(442.3a,386.9b\)--\(442.8a,386.4b\)--\(443.6a,385.6b\)--\(444.4a,38) showline
+(4.7b\)) showline
+(--\(444.8a,384.3b\)--\(445.9a,383.0b\)--\(446.1a,382.8b\)--\(447.0a,381.7b\)--\(447.8a,38) showline
+(0.8b\)) showline
+(--\(448.1a,380.4b\)--\(449.1a,379.1b\)--\(449.5a,378.6b\)--\(450.1a,377.8b\)--\(451.0a,37) showline
+(6.5b\)) showline
+(--\(451.2a,376.3b\)--\(451.9a,375.3b\)--\(452.8a,374.0b\)--\(452.9a,373.9b\)--\(453.7a,37) showline
+(2.7b\)) showline
+(--\(454.5a,371.4b\)--\(454.6a,371.3b\)--\(455.4a,370.1b\)--\(456.2a,368.8b\)--\(456.3a,36) showline
+(8.6b\)) showline
+(--\(456.9a,367.5b\)--\(457.7a,366.2b\)--\(457.9a,365.8b\)--\(458.5a,364.9b\)--\(459.2a,36) showline
+(3.6b\)) showline
+(--\(459.6a,362.9b\)--\(459.9a,362.3b\)--\(460.6a,361.0b\)--\(461.3a,359.8b\)--\(461.4a,35) showline
+(9.7b\)) showline
+(--\(462.0a,358.4b\)--\(462.7a,357.1b\)--\(463.0a,356.6b\)--\(463.4a,355.9b\)--\(464.0a,35) showline
+(4.6b\)) showline
+(--\(464.7a,353.3b\)--\(465.3a,352.0b\)--\(466.0a,350.7b\)--\(466.4a,349.8b\)--\(466.6a,34) showline
+(9.4b\)) showline
+(--\(467.2a,348.1b\)--\(467.8a,346.8b\)--\(468.1a,346.3b\)--\(468.4a,345.5b\)--\(469.0a,34) showline
+(4.2b\)) showline
+(--\(469.6a,342.9b\)--\(469.8a,342.6b\)--\(470.2a,341.6b\);) showline
+(draw \(353.4a,284.7b\)--\(353.8a,286.0b\)--\(354.2a,287.3b\)--\(354.6a,288.6b\)--\(355.0a) showline
+(,289.6b\)) showline
+(--\(355.1a,289.9b\)--\(355.5a,291.2b\)--\(356.0a,292.5b\)--\(356.4a,293.8b\)--\(356.7a,29) showline
+(4.6b\)) showline
+(--\(356.8a,295.1b\)--\(357.3a,296.3b\)--\(357.7a,297.6b\)--\(358.2a,298.9b\)--\(358.4a,29) showline
+(9.5b\)) showline
+(--\(358.6a,300.2b\)--\(359.1a,301.5b\)--\(359.5a,302.8b\)--\(360.0a,304.1b\)--\(360.0a,30) showline
+(4.3b\)) showline
+(--\(360.5a,305.4b\)--\(360.9a,306.7b\)--\(361.4a,308.0b\)--\(361.7a,308.9b\)--\(361.9a,30) showline
+(9.3b\)) showline
+(--\(362.3a,310.6b\)--\(362.8a,311.9b\)--\(363.3a,313.2b\)--\(363.4a,313.5b\)--\(363.8a,31) showline
+(4.5b\)) showline
+(--\(364.3a,315.8b\)--\(364.7a,317.0b\)--\(365.1a,318.0b\)--\(365.2a,318.3b\)--\(365.7a,31) showline
+(9.6b\)) showline
+(--\(366.2a,320.9b\)--\(366.7a,322.2b\)--\(366.8a,322.4b\)--\(367.2a,323.5b\)--\(367.8a,32) showline
+(4.8b\)) showline
+(--\(368.3a,326.1b\)--\(368.5a,326.6b\)--\(368.8a,327.4b\)--\(369.3a,328.7b\)--\(369.8a,33) showline
+(0.0b\)) showline
+(--\(370.2a,330.8b\)--\(370.4a,331.3b\)--\(370.9a,332.6b\)--\(371.5a,333.9b\)--\(371.9a,33) showline
+(4.8b\)) showline
+(--\(372.0a,335.2b\)--\(372.6a,336.4b\)--\(373.1a,337.7b\)--\(373.5a,338.8b\)--\(373.7a,33) showline
+(9.0b\)) showline
+(--\(374.2a,340.3b\)--\(374.8a,341.6b\)--\(375.2a,342.6b\)--\(375.4a,342.9b\)--\(376.0a,34) showline
+(4.2b\)) showline
+(--\(376.6a,345.5b\)--\(376.9a,346.3b\)--\(377.2a,346.8b\)--\(377.8a,348.1b\)--\(378.4a,34) showline
+(9.4b\)) showline
+(--\(378.6a,349.8b\)--\(379.0a,350.7b\)--\(379.7a,352.0b\)--\(380.3a,353.3b\)--\(381.0a,35) showline
+(4.6b\)) showline
+(--\(381.6a,355.9b\)--\(382.0a,356.6b\)--\(382.3a,357.1b\)--\(383.0a,358.4b\)--\(383.6a,35) showline
+(9.7b\)) showline
+(--\(383.7a,359.8b\)--\(384.4a,361.0b\)--\(385.1a,362.3b\)--\(385.4a,362.9b\)--\(385.8a,36) showline
+(3.6b\)) showline
+(--\(386.5a,364.9b\)--\(387.1a,365.8b\)--\(387.3a,366.2b\)--\(388.1a,367.5b\)--\(388.7a,36) showline
+(8.6b\)) showline
+(--\(388.8a,368.8b\)--\(389.6a,370.1b\)--\(390.4a,371.3b\)--\(390.5a,371.4b\)--\(391.3a,37) showline
+(2.7b\)) showline
+(--\(392.1a,373.9b\)--\(392.2a,374.0b\)--\(393.1a,375.3b\)--\(393.8a,376.3b\)--\(394.0a,37) showline
+(6.5b\)) showline
+sf (13) 1 endcol
+(13) endpage
+%%Page: ? 14
+14 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(394.9a,377.8b\)--\(395.5a,378.6b\)--\(395.9a,379.1b\)--\(396.9a,380.4b\);) showline
+(draw \(323.0a,179.9b\)--\(323.4a,181.2b\)--\(323.7a,182.5b\)--\(324.0a,183.8b\)--\(324.4a) showline
+(,185.1b\)) showline
+(--\(324.6a,185.9b\)--\(324.7a,186.4b\)--\(325.1a,187.7b\)--\(325.4a,189.0b\)--\(325.8a,19) showline
+(0.3b\)) showline
+(--\(326.1a,191.6b\)--\(326.3a,192.2b\)--\(326.5a,192.9b\)--\(326.8a,194.2b\)--\(327.1a,19) showline
+(5.4b\)) showline
+(--\(327.5a,196.7b\)--\(327.8a,198.0b\)--\(328.0a,198.5b\)--\(328.2a,199.3b\)--\(328.5a,20) showline
+(0.6b\)) showline
+(--\(328.9a,201.9b\)--\(329.2a,203.2b\)--\(329.6a,204.5b\)--\(329.7a,204.7b\)--\(330.0a,20) showline
+(5.8b\)) showline
+(--\(330.3a,207.1b\)--\(330.7a,208.4b\)--\(331.0a,209.7b\)--\(331.3a,210.9b\)--\(331.4a,21) showline
+(1.0b\)) showline
+(--\(331.7a,212.3b\)--\(332.1a,213.6b\)--\(332.4a,214.8b\)--\(332.8a,216.1b\)--\(333.0a,21) showline
+(7.0b\)) showline
+(--\(333.2a,217.4b\)--\(333.5a,218.7b\)--\(333.9a,220.0b\)--\(334.2a,221.3b\)--\(334.6a,22) showline
+(2.6b\)) showline
+(--\(334.7a,223.0b\)--\(335.0a,223.9b\)--\(335.3a,225.2b\)--\(335.7a,226.5b\)--\(336.1a,22) showline
+(7.8b\)) showline
+(--\(336.4a,229.0b\)--\(336.4a,229.1b\)--\(336.8a,230.4b\)--\(337.2a,231.7b\)--\(337.5a,23) showline
+(3.0b\)) showline
+(--\(337.9a,234.3b\)--\(338.1a,234.9b\)--\(338.3a,235.5b\)--\(338.7a,236.8b\)--\(339.0a,23) showline
+(8.1b\)) showline
+(--\(339.4a,239.4b\)--\(339.8a,240.7b\)--\(340.2a,242.0b\)--\(340.5a,243.3b\)--\(340.9a,24) showline
+(4.6b\)) showline
+(--\(341.3a,245.9b\)--\(341.5a,246.5b\)--\(341.7a,247.2b\)--\(342.1a,248.5b\)--\(342.5a,24) showline
+(9.8b\)) showline
+(--\(342.8a,251.1b\)--\(343.2a,252.2b\)--\(343.2a,252.4b\)--\(343.6a,253.7b\)--\(344.0a,25) showline
+(5.0b\)) showline
+(--\(344.4a,256.2b\)--\(344.8a,257.5b\)--\(344.9a,257.8b\)--\(345.2a,258.8b\)--\(345.6a,26) showline
+(0.1b\)) showline
+(--\(346.0a,261.4b\)--\(346.4a,262.7b\)--\(346.5a,263.3b\)--\(346.8a,264.0b\)--\(347.2a,26) showline
+(5.3b\)) showline
+(--\(347.6a,266.6b\)--\(348.0a,267.9b\)--\(348.2a,268.7b\)--\(348.4a,269.2b\)--\(348.8a,27) showline
+(0.5b\)) showline
+(--\(349.2a,271.8b\)--\(349.6a,273.1b\)--\(349.9a,274.1b\)--\(350.0a,274.4b\)--\(350.4a,27) showline
+(5.6b\)) showline
+(--\(350.8a,276.9b\)--\(351.3a,278.2b\)--\(351.6a,279.3b\)--\(351.7a,279.5b\)--\(352.1a,28) showline
+(0.8b\)) showline
+(--\(352.5a,282.1b\)--\(352.9a,283.4b\)--\(353.3a,284.5b\)--\(353.4a,284.7b\);) showline
+(draw \(296.7a,73.8b\)--\(296.7a,75.1b\)--\(296.9a,76.4b\)--\(297.1a,77.7b\)--\(297.4a,79.) showline
+(0b\)) showline
+(--\(297.6a,79.8b\)--\(297.7a,80.3b\)--\(298.0a,81.6b\)--\(298.4a,82.9b\)--\(298.7a,84.2b\)) showline
+(--\(299.0a,85.5b\)--\(299.3a,86.6b\)--\(299.3a,86.8b\)--\(299.6a,88.1b\)--\(300.0a,89.4b\)) showline
+(--\(300.3a,90.7b\)--\(300.6a,92.0b\)--\(300.9a,93.3b\)--\(301.0a,93.4b\)--\(301.2a,94.5b\)) showline
+(--\(301.6a,95.8b\)--\(301.9a,97.1b\)--\(302.2a,98.4b\)--\(302.5a,99.7b\)--\(302.7a,100.2b) showline
+(\)) showline
+(--\(302.9a,101.0b\)--\(303.2a,102.3b\)--\(303.5a,103.6b\)--\(303.8a,104.9b\)--\(304.1a,10) showline
+(6.2b\)) showline
+(--\(304.3a,107.0b\)--\(304.5a,107.5b\)--\(304.8a,108.8b\)--\(305.1a,110.1b\)--\(305.4a,11) showline
+(1.4b\)) showline
+(--\(305.8a,112.7b\)--\(306.0a,113.7b\)--\(306.1a,113.9b\)--\(306.4a,115.2b\)--\(306.7a,11) showline
+(6.5b\)) showline
+(--\(307.1a,117.8b\)--\(307.4a,119.1b\)--\(307.7a,120.4b\)--\(308.0a,121.7b\)--\(308.4a,12) showline
+(3.0b\)) showline
+(--\(308.7a,124.3b\)--\(309.0a,125.6b\)--\(309.3a,126.9b\)--\(309.4a,127.1b\)--\(309.7a,12) showline
+(8.2b\)) showline
+(--\(310.0a,129.5b\)--\(310.3a,130.8b\)--\(310.7a,132.1b\)--\(311.0a,133.4b\)--\(311.1a,13) showline
+(3.8b\)) showline
+(--\(311.3a,134.6b\)--\(311.6a,135.9b\)--\(312.0a,137.2b\)--\(312.3a,138.5b\)--\(312.6a,13) showline
+(9.8b\)) showline
+(--\(312.8a,140.4b\)--\(313.0a,141.1b\)--\(313.3a,142.4b\)--\(313.6a,143.7b\)--\(313.9a,14) showline
+(5.0b\)) showline
+(--\(314.3a,146.3b\)--\(314.5a,147.0b\)--\(314.6a,147.6b\)--\(314.9a,148.9b\)--\(315.3a,15) showline
+(0.2b\)) showline
+(--\(315.6a,151.5b\)--\(315.9a,152.8b\)--\(316.2a,153.6b\)--\(316.3a,154.1b\)--\(316.6a,15) showline
+(5.3b\)) showline
+(--\(316.9a,156.6b\)--\(317.3a,157.9b\)--\(317.6a,159.2b\)--\(317.8a,160.2b\)--\(317.9a,16) showline
+(0.5b\)) showline
+(--\(318.3a,161.8b\)--\(318.6a,163.1b\)--\(318.9a,164.4b\)--\(319.3a,165.7b\)--\(319.5a,16) showline
+(6.7b\)) showline
+(--\(319.6a,167.0b\)--\(320.0a,168.3b\)--\(320.3a,169.6b\)--\(320.6a,170.9b\)--\(321.0a,17) showline
+sf (14) 1 endcol
+(14) endpage
+%%Page: ? 15
+15 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (2.2b\)) showline
+(--\(321.2a,173.1b\)--\(321.3a,173.5b\)--\(321.6a,174.7b\)--\(322.0a,176.0b\)--\(322.3a,17) showline
+(7.3b\)) showline
+(--\(322.7a,178.6b\)--\(322.9a,179.5b\)--\(323.0a,179.9b\);) showline
+(draw \(557.0a,104.9b\)--\(556.7a,103.6b\)--\(556.4a,102.3b\)--\(556.1a,101.0b\)--\(555.9a) showline
+(,100.2b\)) showline
+(--\(555.7a,99.7b\)--\(555.4a,98.4b\)--\(555.1a,97.1b\)--\(554.8a,95.8b\)--\(554.4a,94.5b\)) showline
+(--\(554.2a,93.4b\)--\(554.1a,93.3b\)--\(553.8a,92.0b\)--\(553.5a,90.7b\)--\(553.2a,89.4b\)) showline
+(--\(552.8a,88.1b\)--\(552.5a,86.8b\)--\(552.5a,86.6b\)--\(552.2a,85.5b\)--\(551.9a,84.2b\)) showline
+(--\(551.6a,82.9b\)--\(551.2a,81.6b\)--\(550.9a,80.3b\)--\(550.8a,79.8b\)--\(550.6a,79.0b\)) showline
+(--\(550.3a,77.7b\)--\(550.1a,76.4b\)--\(549.9a,75.1b\)--\(549.9a,73.8b\);) showline
+(draw \(584.5a,210.9b\)--\(584.2a,209.7b\)--\(583.9a,208.4b\)--\(583.5a,207.1b\)--\(583.2a) showline
+(,205.8b\)) showline
+(--\(582.9a,204.7b\)--\(582.8a,204.5b\)--\(582.4a,203.2b\)--\(582.1a,201.9b\)--\(581.7a,20) showline
+(0.6b\)) showline
+(--\(581.4a,199.3b\)--\(581.2a,198.5b\)--\(581.0a,198.0b\)--\(580.7a,196.7b\)--\(580.3a,19) showline
+(5.4b\)) showline
+(--\(580.0a,194.2b\)--\(579.7a,192.9b\)--\(579.5a,192.2b\)--\(579.3a,191.6b\)--\(579.0a,19) showline
+(0.3b\)) showline
+(--\(578.6a,189.0b\)--\(578.3a,187.7b\)--\(577.9a,186.4b\)--\(577.8a,185.9b\)--\(577.6a,18) showline
+(5.1b\)) showline
+(--\(577.2a,183.8b\)--\(576.9a,182.5b\)--\(576.6a,181.2b\)--\(576.2a,179.9b\)--\(576.1a,17) showline
+(9.5b\)) showline
+(--\(575.9a,178.6b\)--\(575.5a,177.3b\)--\(575.2a,176.0b\)--\(574.8a,174.7b\)--\(574.5a,17) showline
+(3.5b\)) showline
+(--\(574.4a,173.1b\)--\(574.2a,172.2b\)--\(573.8a,170.9b\)--\(573.5a,169.6b\)--\(573.2a,16) showline
+(8.3b\)) showline
+(--\(572.8a,167.0b\)--\(572.7a,166.7b\)--\(572.5a,165.7b\)--\(572.1a,164.4b\)--\(571.8a,16) showline
+(3.1b\)) showline
+(--\(571.5a,161.8b\)--\(571.1a,160.5b\)--\(571.0a,160.2b\)--\(570.8a,159.2b\)--\(570.5a,15) showline
+(7.9b\)) showline
+(--\(570.1a,156.6b\)--\(569.8a,155.3b\)--\(569.5a,154.1b\)--\(569.4a,153.6b\)--\(569.1a,15) showline
+(2.8b\)) showline
+(--\(568.8a,151.5b\)--\(568.5a,150.2b\)--\(568.1a,148.9b\)--\(567.8a,147.6b\)--\(567.7a,14) showline
+(7.0b\)) showline
+(--\(567.5a,146.3b\)--\(567.1a,145.0b\)--\(566.8a,143.7b\)--\(566.5a,142.4b\)--\(566.2a,14) showline
+(1.1b\)) showline
+(--\(566.0a,140.4b\)--\(565.8a,139.8b\)--\(565.5a,138.5b\)--\(565.2a,137.2b\)--\(564.8a,13) showline
+(5.9b\)) showline
+(--\(564.5a,134.6b\)--\(564.3a,133.8b\)--\(564.2a,133.4b\)--\(563.9a,132.1b\)--\(563.5a,13) showline
+(0.8b\)) showline
+(--\(563.2a,129.5b\)--\(562.9a,128.2b\)--\(562.6a,127.1b\)--\(562.5a,126.9b\)--\(562.2a,12) showline
+(5.6b\)) showline
+(--\(561.9a,124.3b\)--\(561.6a,123.0b\)--\(561.2a,121.7b\)--\(560.9a,120.4b\)--\(560.6a,11) showline
+(9.1b\)) showline
+(--\(560.3a,117.8b\)--\(559.9a,116.5b\)--\(559.6a,115.2b\)--\(559.3a,113.9b\)--\(559.2a,11) showline
+(3.7b\)) showline
+(--\(559.0a,112.7b\)--\(558.6a,111.4b\)--\(558.3a,110.1b\)--\(558.0a,108.8b\)--\(557.7a,10) showline
+(7.5b\)) showline
+(--\(557.5a,107.0b\)--\(557.3a,106.2b\)--\(557.0a,104.9b\);) showline
+(draw \(616.6a,313.5b\)--\(616.5a,313.2b\)--\(616.0a,311.9b\)--\(615.5a,310.6b\)--\(615.1a) showline
+(,309.3b\)) showline
+(--\(614.9a,308.9b\)--\(614.6a,308.0b\)--\(614.1a,306.7b\)--\(613.7a,305.4b\)--\(613.2a,30) showline
+(4.3b\)) showline
+(--\(613.2a,304.1b\)--\(612.7a,302.8b\)--\(612.3a,301.5b\)--\(611.8a,300.2b\)--\(611.6a,29) showline
+(9.5b\)) showline
+(--\(611.4a,298.9b\)--\(610.9a,297.6b\)--\(610.5a,296.3b\)--\(610.0a,295.1b\)--\(609.9a,29) showline
+(4.6b\)) showline
+(--\(609.6a,293.8b\)--\(609.2a,292.5b\)--\(608.7a,291.2b\)--\(608.3a,289.9b\)--\(608.2a,28) showline
+(9.6b\)) showline
+(--\(607.8a,288.6b\)--\(607.4a,287.3b\)--\(607.0a,286.0b\)--\(606.6a,284.7b\)--\(606.5a,28) showline
+(4.5b\)) showline
+(--\(606.1a,283.4b\)--\(605.7a,282.1b\)--\(605.3a,280.8b\)--\(604.9a,279.5b\)--\(604.8a,27) showline
+(9.3b\)) showline
+(--\(604.5a,278.2b\)--\(604.0a,276.9b\)--\(603.6a,275.6b\)--\(603.2a,274.4b\)--\(603.1a,27) showline
+(4.1b\)) showline
+(--\(602.8a,273.1b\)--\(602.4a,271.8b\)--\(602.0a,270.5b\)--\(601.6a,269.2b\)--\(601.4a,26) showline
+(8.7b\)) showline
+(--\(601.2a,267.9b\)--\(600.8a,266.6b\)--\(600.4a,265.3b\)--\(600.0a,264.0b\)--\(599.7a,26) showline
+(3.3b\)) showline
+(--\(599.6a,262.7b\)--\(599.2a,261.4b\)--\(598.8a,260.1b\)--\(598.4a,258.8b\)--\(598.1a,25) showline
+(7.8b\)) showline
+sf (15) 1 endcol
+(15) endpage
+%%Page: ? 16
+16 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(598.0a,257.5b\)--\(597.6a,256.2b\)--\(597.2a,255.0b\)--\(596.8a,253.7b\)--\(596.4a,25) showline
+(2.4b\)) showline
+(--\(596.4a,252.2b\)--\(596.0a,251.1b\)--\(595.7a,249.8b\)--\(595.3a,248.5b\)--\(594.9a,24) showline
+(7.2b\)) showline
+(--\(594.7a,246.5b\)--\(594.5a,245.9b\)--\(594.1a,244.6b\)--\(593.7a,243.3b\)--\(593.4a,24) showline
+(2.0b\)) showline
+(--\(593.0a,240.7b\)--\(592.6a,239.4b\)--\(592.2a,238.1b\)--\(591.9a,236.8b\)--\(591.5a,23) showline
+(5.5b\)) showline
+(--\(591.3a,234.9b\)--\(591.1a,234.3b\)--\(590.7a,233.0b\)--\(590.4a,231.7b\)--\(590.0a,23) showline
+(0.4b\)) showline
+(--\(589.6a,229.1b\)--\(589.6a,229.0b\)--\(589.3a,227.8b\)--\(588.9a,226.5b\)--\(588.5a,22) showline
+(5.2b\)) showline
+(--\(588.2a,223.9b\)--\(587.9a,223.0b\)--\(587.8a,222.6b\)--\(587.4a,221.3b\)--\(587.1a,22) showline
+(0.0b\)) showline
+(--\(586.7a,218.7b\)--\(586.4a,217.4b\)--\(586.2a,217.0b\)--\(586.0a,216.1b\)--\(585.6a,21) showline
+(4.8b\)) showline
+(--\(585.3a,213.6b\)--\(584.9a,212.3b\)--\(584.6a,211.0b\)--\(584.5a,210.9b\);) showline
+(draw \(675.7a,396.6b\)--\(674.0a,396.5b\)--\(672.3a,396.3b\)--\(670.6a,396.0b\)--\(668.9a) showline
+(,395.5b\)) showline
+(--\(667.3a,394.8b\)--\(666.9a,394.7b\)--\(665.6a,394.0b\)--\(664.3a,393.4b\)--\(663.9a,39) showline
+(3.1b\)) showline
+(--\(662.2a,392.1b\)--\(660.5a,390.9b\)--\(660.4a,390.8b\)--\(658.8a,389.5b\)--\(657.3a,38) showline
+(8.2b\)) showline
+(--\(657.1a,388.1b\)--\(655.9a,386.9b\)--\(655.4a,386.4b\)--\(654.6a,385.6b\)--\(653.8a,38) showline
+(4.7b\)) showline
+(--\(653.4a,384.3b\)--\(652.3a,383.0b\)--\(652.1a,382.8b\)--\(651.2a,381.7b\)--\(650.4a,38) showline
+(0.8b\)) showline
+(--\(650.1a,380.4b\)--\(649.1a,379.1b\)--\(648.7a,378.6b\)--\(648.1a,377.8b\)--\(647.2a,37) showline
+(6.5b\)) showline
+(--\(647.0a,376.3b\)--\(646.3a,375.3b\)--\(645.4a,374.0b\)--\(645.3a,373.9b\)--\(644.5a,37) showline
+(2.7b\)) showline
+(--\(643.7a,371.4b\)--\(643.6a,371.3b\)--\(642.8a,370.1b\)--\(642.0a,368.8b\)--\(641.9a,36) showline
+(8.6b\)) showline
+(--\(641.3a,367.5b\)--\(640.5a,366.2b\)--\(640.3a,365.8b\)--\(639.7a,364.9b\)--\(639.0a,36) showline
+(3.6b\)) showline
+(--\(638.6a,362.9b\)--\(638.3a,362.3b\)--\(637.6a,361.0b\)--\(636.9a,359.8b\)--\(636.8a,35) showline
+(9.7b\)) showline
+(--\(636.2a,358.4b\)--\(635.5a,357.1b\)--\(635.2a,356.6b\)--\(634.8a,355.9b\)--\(634.2a,35) showline
+(4.6b\)) showline
+(--\(633.5a,353.3b\)--\(632.9a,352.0b\)--\(632.2a,350.7b\)--\(631.8a,349.8b\)--\(631.6a,34) showline
+(9.4b\)) showline
+(--\(631.0a,348.1b\)--\(630.4a,346.8b\)--\(630.1a,346.3b\)--\(629.8a,345.5b\)--\(629.2a,34) showline
+(4.2b\)) showline
+(--\(628.6a,342.9b\)--\(628.4a,342.6b\)--\(628.0a,341.6b\)--\(627.4a,340.3b\)--\(626.9a,33) showline
+(9.0b\)) showline
+(--\(626.7a,338.8b\)--\(626.3a,337.7b\)--\(625.8a,336.4b\)--\(625.2a,335.2b\)--\(625.1a,33) showline
+(4.8b\)) showline
+(--\(624.7a,333.9b\)--\(624.1a,332.6b\)--\(623.6a,331.3b\)--\(623.4a,330.8b\)--\(623.0a,33) showline
+(0.0b\)) showline
+(--\(622.5a,328.7b\)--\(622.0a,327.4b\)--\(621.7a,326.6b\)--\(621.5a,326.1b\)--\(621.0a,32) showline
+(4.8b\)) showline
+(--\(620.4a,323.5b\)--\(620.0a,322.4b\)--\(619.9a,322.2b\)--\(619.4a,320.9b\)--\(618.9a,31) showline
+(9.6b\)) showline
+(--\(618.4a,318.3b\)--\(618.3a,318.0b\)--\(617.9a,317.0b\)--\(617.5a,315.8b\)--\(617.0a,31) showline
+(4.5b\)) showline
+(--\(616.6a,313.5b\);) showline
+(draw \(288.0a,104.9b\)--\(288.3a,103.6b\)--\(288.6a,102.3b\)--\(288.9a,101.0b\)--\(289.1a) showline
+(,100.2b\)) showline
+(--\(289.3a,99.7b\)--\(289.6a,98.4b\)--\(289.9a,97.1b\)--\(290.2a,95.8b\)--\(290.6a,94.5b\)) showline
+(--\(290.8a,93.4b\)--\(290.9a,93.3b\)--\(291.2a,92.0b\)--\(291.5a,90.7b\)--\(291.8a,89.4b\)) showline
+(--\(292.2a,88.1b\)--\(292.5a,86.8b\)--\(292.5a,86.6b\)--\(292.8a,85.5b\)--\(293.1a,84.2b\)) showline
+(--\(293.4a,82.9b\)--\(293.8a,81.6b\)--\(294.1a,80.3b\)--\(294.2a,79.8b\)--\(294.4a,79.0b\)) showline
+(--\(294.7a,77.7b\)--\(294.9a,76.4b\)--\(295.1a,75.1b\)--\(295.1a,73.8b\);) showline
+(draw \(260.5a,210.9b\)--\(260.8a,209.7b\)--\(261.1a,208.4b\)--\(261.5a,207.1b\)--\(261.8a) showline
+(,205.8b\)) showline
+(--\(262.1a,204.7b\)--\(262.2a,204.5b\)--\(262.6a,203.2b\)--\(262.9a,201.9b\)--\(263.3a,20) showline
+(0.6b\)) showline
+(--\(263.6a,199.3b\)--\(263.8a,198.5b\)--\(264.0a,198.0b\)--\(264.3a,196.7b\)--\(264.7a,19) showline
+(5.4b\)) showline
+(--\(265.0a,194.2b\)--\(265.3a,192.9b\)--\(265.5a,192.2b\)--\(265.7a,191.6b\)--\(266.0a,19) showline
+(0.3b\)) showline
+(--\(266.4a,189.0b\)--\(266.7a,187.7b\)--\(267.1a,186.4b\)--\(267.2a,185.9b\)--\(267.4a,18) showline
+sf (16) 1 endcol
+(16) endpage
+%%Page: ? 17
+17 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (5.1b\)) showline
+(--\(267.8a,183.8b\)--\(268.1a,182.5b\)--\(268.4a,181.2b\)--\(268.8a,179.9b\)--\(268.9a,17) showline
+(9.5b\)) showline
+(--\(269.1a,178.6b\)--\(269.5a,177.3b\)--\(269.8a,176.0b\)--\(270.2a,174.7b\)--\(270.5a,17) showline
+(3.5b\)) showline
+(--\(270.6a,173.1b\)--\(270.8a,172.2b\)--\(271.2a,170.9b\)--\(271.5a,169.6b\)--\(271.8a,16) showline
+(8.3b\)) showline
+(--\(272.2a,167.0b\)--\(272.3a,166.7b\)--\(272.5a,165.7b\)--\(272.9a,164.4b\)--\(273.2a,16) showline
+(3.1b\)) showline
+(--\(273.5a,161.8b\)--\(273.9a,160.5b\)--\(274.0a,160.2b\)--\(274.2a,159.2b\)--\(274.5a,15) showline
+(7.9b\)) showline
+(--\(274.9a,156.6b\)--\(275.2a,155.3b\)--\(275.5a,154.1b\)--\(275.6a,153.6b\)--\(275.9a,15) showline
+(2.8b\)) showline
+(--\(276.2a,151.5b\)--\(276.5a,150.2b\)--\(276.9a,148.9b\)--\(277.2a,147.6b\)--\(277.3a,14) showline
+(7.0b\)) showline
+(--\(277.5a,146.3b\)--\(277.8a,145.0b\)--\(278.2a,143.7b\)--\(278.5a,142.4b\)--\(278.8a,14) showline
+(1.1b\)) showline
+(--\(279.0a,140.4b\)--\(279.2a,139.8b\)--\(279.5a,138.5b\)--\(279.8a,137.2b\)--\(280.2a,13) showline
+(5.9b\)) showline
+(--\(280.5a,134.6b\)--\(280.7a,133.8b\)--\(280.8a,133.4b\)--\(281.1a,132.1b\)--\(281.5a,13) showline
+(0.8b\)) showline
+(--\(281.8a,129.5b\)--\(282.1a,128.2b\)--\(282.4a,127.1b\)--\(282.5a,126.9b\)--\(282.8a,12) showline
+(5.6b\)) showline
+(--\(283.1a,124.3b\)--\(283.4a,123.0b\)--\(283.8a,121.7b\)--\(284.1a,120.4b\)--\(284.4a,11) showline
+(9.1b\)) showline
+(--\(284.7a,117.8b\)--\(285.1a,116.5b\)--\(285.4a,115.2b\)--\(285.7a,113.9b\)--\(285.8a,11) showline
+(3.7b\)) showline
+(--\(286.0a,112.7b\)--\(286.4a,111.4b\)--\(286.7a,110.1b\)--\(287.0a,108.8b\)--\(287.3a,10) showline
+(7.5b\)) showline
+(--\(287.5a,107.0b\)--\(287.7a,106.2b\)--\(288.0a,104.9b\);) showline
+(draw \(228.4a,313.5b\)--\(228.5a,313.2b\)--\(229.0a,311.9b\)--\(229.5a,310.6b\)--\(229.9a) showline
+(,309.3b\)) showline
+(--\(230.1a,308.9b\)--\(230.4a,308.0b\)--\(230.9a,306.7b\)--\(231.3a,305.4b\)--\(231.8a,30) showline
+(4.3b\)) showline
+(--\(231.8a,304.1b\)--\(232.3a,302.8b\)--\(232.7a,301.5b\)--\(233.2a,300.2b\)--\(233.4a,29) showline
+(9.5b\)) showline
+(--\(233.6a,298.9b\)--\(234.1a,297.6b\)--\(234.5a,296.3b\)--\(235.0a,295.1b\)--\(235.1a,29) showline
+(4.6b\)) showline
+(--\(235.4a,293.8b\)--\(235.8a,292.5b\)--\(236.3a,291.2b\)--\(236.7a,289.9b\)--\(236.8a,28) showline
+(9.6b\)) showline
+(--\(237.2a,288.6b\)--\(237.6a,287.3b\)--\(238.0a,286.0b\)--\(238.4a,284.7b\)--\(238.5a,28) showline
+(4.5b\)) showline
+(--\(238.9a,283.4b\)--\(239.3a,282.1b\)--\(239.7a,280.8b\)--\(240.1a,279.5b\)--\(240.2a,27) showline
+(9.3b\)) showline
+(--\(240.5a,278.2b\)--\(241.0a,276.9b\)--\(241.4a,275.6b\)--\(241.8a,274.4b\)--\(241.9a,27) showline
+(4.1b\)) showline
+(--\(242.2a,273.1b\)--\(242.6a,271.8b\)--\(243.0a,270.5b\)--\(243.4a,269.2b\)--\(243.6a,26) showline
+(8.7b\)) showline
+(--\(243.8a,267.9b\)--\(244.2a,266.6b\)--\(244.6a,265.3b\)--\(245.0a,264.0b\)--\(245.3a,26) showline
+(3.3b\)) showline
+(--\(245.4a,262.7b\)--\(245.8a,261.4b\)--\(246.2a,260.1b\)--\(246.6a,258.8b\)--\(246.9a,25) showline
+(7.8b\)) showline
+(--\(247.0a,257.5b\)--\(247.4a,256.2b\)--\(247.8a,255.0b\)--\(248.2a,253.7b\)--\(248.6a,25) showline
+(2.4b\)) showline
+(--\(248.6a,252.2b\)--\(249.0a,251.1b\)--\(249.3a,249.8b\)--\(249.7a,248.5b\)--\(250.1a,24) showline
+(7.2b\)) showline
+(--\(250.3a,246.5b\)--\(250.5a,245.9b\)--\(250.9a,244.6b\)--\(251.3a,243.3b\)--\(251.6a,24) showline
+(2.0b\)) showline
+(--\(252.0a,240.7b\)--\(252.4a,239.4b\)--\(252.8a,238.1b\)--\(253.1a,236.8b\)--\(253.5a,23) showline
+(5.5b\)) showline
+(--\(253.7a,234.9b\)--\(253.9a,234.3b\)--\(254.3a,233.0b\)--\(254.6a,231.7b\)--\(255.0a,23) showline
+(0.4b\)) showline
+(--\(255.4a,229.1b\)--\(255.4a,229.0b\)--\(255.7a,227.8b\)--\(256.1a,226.5b\)--\(256.5a,22) showline
+(5.2b\)) showline
+(--\(256.8a,223.9b\)--\(257.1a,223.0b\)--\(257.2a,222.6b\)--\(257.6a,221.3b\)--\(257.9a,22) showline
+(0.0b\)) showline
+(--\(258.3a,218.7b\)--\(258.6a,217.4b\)--\(258.8a,217.0b\)--\(259.0a,216.1b\)--\(259.4a,21) showline
+(4.8b\)) showline
+(--\(259.7a,213.6b\)--\(260.1a,212.3b\)--\(260.4a,211.0b\)--\(260.5a,210.9b\);) showline
+(draw \(169.3a,396.6b\)--\(171.0a,396.5b\)--\(172.7a,396.3b\)--\(174.4a,396.0b\)--\(176.1a) showline
+(,395.5b\)) showline
+(--\(177.7a,394.8b\)--\(178.1a,394.7b\)--\(179.4a,394.0b\)--\(180.7a,393.4b\)--\(181.1a,39) showline
+sf (17) 1 endcol
+(17) endpage
+%%Page: ? 18
+18 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (3.1b\)) showline
+(--\(182.8a,392.1b\)--\(184.5a,390.9b\)--\(184.6a,390.8b\)--\(186.2a,389.5b\)--\(187.7a,38) showline
+(8.2b\)) showline
+(--\(187.9a,388.1b\)--\(189.1a,386.9b\)--\(189.6a,386.4b\)--\(190.4a,385.6b\)--\(191.2a,38) showline
+(4.7b\)) showline
+(--\(191.6a,384.3b\)--\(192.7a,383.0b\)--\(192.9a,382.8b\)--\(193.8a,381.7b\)--\(194.6a,38) showline
+(0.8b\)) showline
+(--\(194.9a,380.4b\)--\(195.9a,379.1b\)--\(196.3a,378.6b\)--\(196.9a,377.8b\)--\(197.8a,37) showline
+(6.5b\)) showline
+(--\(198.0a,376.3b\)--\(198.7a,375.3b\)--\(199.6a,374.0b\)--\(199.7a,373.9b\)--\(200.5a,37) showline
+(2.7b\)) showline
+(--\(201.3a,371.4b\)--\(201.4a,371.3b\)--\(202.2a,370.1b\)--\(203.0a,368.8b\)--\(203.1a,36) showline
+(8.6b\)) showline
+(--\(203.7a,367.5b\)--\(204.5a,366.2b\)--\(204.7a,365.8b\)--\(205.3a,364.9b\)--\(206.0a,36) showline
+(3.6b\)) showline
+(--\(206.4a,362.9b\)--\(206.7a,362.3b\)--\(207.4a,361.0b\)--\(208.1a,359.8b\)--\(208.2a,35) showline
+(9.7b\)) showline
+(--\(208.8a,358.4b\)--\(209.5a,357.1b\)--\(209.8a,356.6b\)--\(210.2a,355.9b\)--\(210.8a,35) showline
+(4.6b\)) showline
+(--\(211.5a,353.3b\)--\(212.1a,352.0b\)--\(212.8a,350.7b\)--\(213.2a,349.8b\)--\(213.4a,34) showline
+(9.4b\)) showline
+(--\(214.0a,348.1b\)--\(214.6a,346.8b\)--\(214.9a,346.3b\)--\(215.2a,345.5b\)--\(215.8a,34) showline
+(4.2b\)) showline
+(--\(216.4a,342.9b\)--\(216.6a,342.6b\)--\(217.0a,341.6b\)--\(217.6a,340.3b\)--\(218.1a,33) showline
+(9.0b\)) showline
+(--\(218.3a,338.8b\)--\(218.7a,337.7b\)--\(219.2a,336.4b\)--\(219.8a,335.2b\)--\(219.9a,33) showline
+(4.8b\)) showline
+(--\(220.3a,333.9b\)--\(220.9a,332.6b\)--\(221.4a,331.3b\)--\(221.6a,330.8b\)--\(222.0a,33) showline
+(0.0b\)) showline
+(--\(222.5a,328.7b\)--\(223.0a,327.4b\)--\(223.3a,326.6b\)--\(223.5a,326.1b\)--\(224.0a,32) showline
+(4.8b\)) showline
+(--\(224.6a,323.5b\)--\(225.0a,322.4b\)--\(225.1a,322.2b\)--\(225.6a,320.9b\)--\(226.1a,31) showline
+(9.6b\)) showline
+(--\(226.6a,318.3b\)--\(226.7a,318.0b\)--\(227.1a,317.0b\)--\(227.5a,315.8b\)--\(228.0a,31) showline
+(4.5b\)) showline
+(--\(228.4a,313.5b\);) showline
+(linetype -2;) showline
+(draw \(169.3a,396.6b\)--\(169.3a,73.2b\)--\(675.7a,73.2b\)--\(675.7a,396.6b\)--\(169.3a,3) showline
+(96.6b\);) showline
+(endfig;) showline
+() showline
+(beginfig\(1\);) showline
+(w:=5.000in;h:=3.000in;) showline
+(a:=w/1200.0;b:=h/720.0;) showline
+(scalepen 1; ptsize 1.000;linetype -2;) showline
+(draw \(169.3a,73.2b\)--\(185.9a,73.2b\);) showline
+(draw \(675.7a,73.2b\)--\(659.1a,73.2b\);) showline
+(put_text\( btex  0 etex, 151.6a, 73.2b, 0, 3\);) showline
+(draw \(169.3a,137.9b\)--\(185.9a,137.9b\);) showline
+(draw \(675.7a,137.9b\)--\(659.1a,137.9b\);) showline
+(put_text\( btex  10 etex, 151.6a, 137.9b, 0, 3\);) showline
+(draw \(169.3a,202.6b\)--\(185.9a,202.6b\);) showline
+(draw \(675.7a,202.6b\)--\(659.1a,202.6b\);) showline
+(put_text\( btex  20 etex, 151.6a, 202.6b, 0, 3\);) showline
+(draw \(169.3a,267.2b\)--\(185.9a,267.2b\);) showline
+(draw \(675.7a,267.2b\)--\(659.1a,267.2b\);) showline
+(put_text\( btex  30 etex, 151.6a, 267.2b, 0, 3\);) showline
+(draw \(169.3a,331.9b\)--\(185.9a,331.9b\);) showline
+(draw \(675.7a,331.9b\)--\(659.1a,331.9b\);) showline
+(put_text\( btex  40 etex, 151.6a, 331.9b, 0, 3\);) showline
+(draw \(169.3a,396.6b\)--\(185.9a,396.6b\);) showline
+(draw \(675.7a,396.6b\)--\(659.1a,396.6b\);) showline
+(put_text\( btex  50 etex, 151.6a, 396.6b, 0, 3\);) showline
+(draw \(169.3a,73.2b\)--\(169.3a,89.8b\);) showline
+(draw \(169.3a,396.6b\)--\(169.3a,380.0b\);) showline
+(put_text\( btex 0 etex, 169.3a, 36.6b, 0, 2\);) showline
+(draw \(295.9a,73.2b\)--\(295.9a,89.8b\);) showline
+(draw \(295.9a,396.6b\)--\(295.9a,380.0b\);) showline
+(put_text\( btex {/Symbol p}/2 etex, 295.9a, 36.6b, 0, 2\);) showline
+(draw \(422.5a,73.2b\)--\(422.5a,89.8b\);) showline
+(draw \(422.5a,396.6b\)--\(422.5a,380.0b\);) showline
+(put_text\( btex {/Symbol p} etex, 422.5a, 36.6b, 0, 2\);) showline
+sf (18) 1 endcol
+(18) endpage
+%%Page: ? 19
+19 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (draw \(549.1a,73.2b\)--\(549.1a,89.8b\);) showline
+(draw \(549.1a,396.6b\)--\(549.1a,380.0b\);) showline
+(put_text\( btex {/Symbol p}/2 etex, 549.1a, 36.6b, 0, 2\);) showline
+(draw \(675.8a,73.2b\)--\(675.8a,89.8b\);) showline
+(draw \(675.8a,396.6b\)--\(675.8a,380.0b\);) showline
+(put_text\( btex 2{/Symbol p} etex, 675.8a, 36.6b, 0, 2\);) showline
+(draw \(169.3a,396.6b\)--\(169.3a,73.2b\)--\(675.7a,73.2b\)--\(675.7a,396.6b\)--\(169.3a,3) showline
+(96.6b\);) showline
+(currentcolor:=0white;) showline
+(put_text\( btex {/Symbol w}_i/{/Symbol w}_d etex, 62.5a, 234.9b, 90, 2\);) showline
+(linetype -2;) showline
+(put_text\( btex 1% etex, 408.7a, 374.6b, 0, 1\);) showline
+(put_text\( btex 2.5% etex, 399.0a, 189.6b, 0, 1\);) showline
+(put_text\( btex 5% etex, 408.7a, 127.9b, 0, 1\);) showline
+(put_text\( btex 10% etex, 403.0a, 95.2b, 0, 1\);) showline
+(put_text\( btex 20% etex, 403.0a, 79.7b, 0, 1\);) showline
+(linetype 0;) showline
+(draw \(454.6a,88.0b\)--\(456.3a,87.9b\)--\(457.9a,87.7b\)--\(459.6a,87.6b\)--\(461.3a,87.) showline
+(4b\)) showline
+(--\(463.0a,87.3b\)--\(464.7a,87.1b\)--\(466.4a,86.9b\)--\(467.5a,86.8b\)--\(468.1a,86.7b\)) showline
+(--\(469.8a,86.6b\)--\(471.5a,86.4b\)--\(473.1a,86.2b\)--\(474.8a,86.0b\)--\(476.5a,85.8b\)) showline
+(--\(478.2a,85.5b\)--\(478.4a,85.5b\)--\(479.9a,85.3b\)--\(481.6a,85.1b\)--\(483.3a,84.9b\)) showline
+(--\(485.0a,84.6b\)--\(486.6a,84.4b\)--\(487.7a,84.2b\)--\(488.3a,84.1b\)--\(490.0a,83.9b\)) showline
+(--\(491.7a,83.6b\)--\(493.4a,83.4b\)--\(495.1a,83.1b\)--\(496.1a,82.9b\)--\(496.8a,82.8b\)) showline
+(--\(498.5a,82.5b\)--\(500.1a,82.3b\)--\(501.8a,82.0b\)--\(503.5a,81.7b\)--\(503.8a,81.6b\)) showline
+(--\(505.2a,81.4b\)--\(506.9a,81.1b\)--\(508.6a,80.8b\)--\(510.3a,80.5b\)--\(511.0a,80.3b\)) showline
+(--\(512.0a,80.2b\)--\(513.7a,79.9b\)--\(515.3a,79.5b\)--\(517.0a,79.2b\)--\(517.8a,79.0b\)) showline
+(--\(518.7a,78.9b\)--\(520.4a,78.6b\)--\(522.1a,78.2b\)--\(523.8a,77.8b\)--\(524.1a,77.7b\)) showline
+(--\(525.5a,77.5b\)--\(527.2a,77.1b\)--\(528.8a,76.7b\)--\(529.8a,76.4b\)--\(530.5a,76.1b\)) showline
+(--\(532.2a,75.4b\)--\(532.8a,75.1b\)--\(532.2a,74.0b\)--\(532.2a,73.8b\);) showline
+(draw \(312.8a,73.8b\)--\(312.8a,74.0b\)--\(312.2a,75.1b\)--\(312.8a,75.4b\)--\(314.5a,76.) showline
+(1b\)) showline
+(--\(315.2a,76.4b\)--\(316.2a,76.7b\)--\(317.8a,77.1b\)--\(319.5a,77.5b\)--\(320.9a,77.7b\)) showline
+(--\(321.2a,77.8b\)--\(322.9a,78.2b\)--\(324.6a,78.6b\)--\(326.3a,78.9b\)--\(327.2a,79.0b\)) showline
+(--\(328.0a,79.2b\)--\(329.7a,79.5b\)--\(331.3a,79.9b\)--\(333.0a,80.2b\)--\(334.0a,80.3b\)) showline
+(--\(334.7a,80.5b\)--\(336.4a,80.8b\)--\(338.1a,81.1b\)--\(339.8a,81.4b\)--\(341.2a,81.6b\)) showline
+(--\(341.5a,81.7b\)--\(343.2a,82.0b\)--\(344.9a,82.3b\)--\(346.5a,82.5b\)--\(348.2a,82.8b\)) showline
+(--\(348.9a,82.9b\)--\(349.9a,83.1b\)--\(351.6a,83.4b\)--\(353.3a,83.6b\)--\(355.0a,83.9b\)) showline
+(--\(356.7a,84.1b\)--\(357.3a,84.2b\)--\(358.4a,84.4b\)--\(360.0a,84.6b\)--\(361.7a,84.9b\)) showline
+(--\(363.4a,85.1b\)--\(365.1a,85.3b\)--\(366.6a,85.5b\)--\(366.8a,85.5b\)--\(368.5a,85.8b\)) showline
+(--\(370.2a,86.0b\)--\(371.9a,86.2b\)--\(373.5a,86.4b\)--\(375.2a,86.6b\)--\(376.9a,86.7b\)) showline
+(--\(377.5a,86.8b\)--\(378.6a,86.9b\)--\(380.3a,87.1b\)--\(382.0a,87.3b\)--\(383.7a,87.4b\)) showline
+(--\(385.4a,87.6b\)--\(387.1a,87.7b\)--\(388.7a,87.9b\)--\(390.4a,88.0b\)--\(391.6a,88.1b\)) showline
+(--\(392.1a,88.1b\)--\(393.8a,88.3b\)--\(395.5a,88.4b\)--\(397.2a,88.5b\)--\(398.9a,88.6b\)) showline
+(--\(400.6a,88.7b\)--\(402.2a,88.8b\)--\(403.9a,88.9b\)--\(405.6a,88.9b\)--\(407.3a,89.0b\)) showline
+(--\(409.0a,89.1b\)--\(410.7a,89.1b\)--\(412.4a,89.1b\)--\(414.1a,89.2b\)--\(415.7a,89.2b\)) showline
+(--\(417.4a,89.2b\)--\(419.1a,89.3b\)--\(420.8a,89.3b\)--\(422.5a,89.3b\)--\(424.2a,89.3b\)) showline
+(--\(425.9a,89.3b\)--\(427.6a,89.2b\)--\(429.3a,89.2b\)--\(430.9a,89.2b\)--\(432.6a,89.1b\)) showline
+(--\(434.3a,89.1b\)--\(436.0a,89.1b\)--\(437.7a,89.0b\)--\(439.4a,88.9b\)--\(441.1a,88.9b\)) showline
+(--\(442.8a,88.8b\)--\(444.4a,88.7b\)--\(446.1a,88.6b\)--\(447.8a,88.5b\)--\(449.5a,88.4b\)) showline
+(--\(451.2a,88.3b\)--\(452.9a,88.1b\)--\(453.4a,88.1b\)--\(454.6a,88.0b\);) showline
+(draw \(675.7a,89.3b\)--\(674.0a,89.3b\)--\(672.3a,89.3b\)--\(670.6a,89.2b\)--\(668.9a,89.) showline
+(2b\)) showline
+(--\(667.3a,89.2b\)--\(665.6a,89.1b\)--\(663.9a,89.1b\)--\(662.2a,89.1b\)--\(660.5a,89.0b\)) showline
+(--\(658.8a,88.9b\)--\(657.1a,88.9b\)--\(655.4a,88.8b\)--\(653.8a,88.7b\)--\(652.1a,88.6b\)) showline
+(--\(650.4a,88.5b\)--\(648.7a,88.4b\)--\(647.0a,88.3b\)--\(645.3a,88.1b\)--\(644.8a,88.1b\)) showline
+(--\(643.6a,88.0b\)--\(641.9a,87.9b\)--\(640.3a,87.7b\)--\(638.6a,87.6b\)--\(636.9a,87.4b\)) showline
+(--\(635.2a,87.3b\)--\(633.5a,87.1b\)--\(631.8a,86.9b\)--\(630.7a,86.8b\)--\(630.1a,86.7b\)) showline
+(--\(628.4a,86.6b\)--\(626.7a,86.4b\)--\(625.1a,86.2b\)--\(623.4a,86.0b\)--\(621.7a,85.8b\)) showline
+(--\(620.0a,85.5b\)--\(619.8a,85.5b\)--\(618.3a,85.3b\)--\(616.6a,85.1b\)--\(614.9a,84.9b\)) showline
+(--\(613.2a,84.6b\)--\(611.6a,84.4b\)--\(610.5a,84.2b\)--\(609.9a,84.1b\)--\(608.2a,83.9b\)) showline
+(--\(606.5a,83.6b\)--\(604.8a,83.4b\)--\(603.1a,83.1b\)--\(602.1a,82.9b\)--\(601.4a,82.8b\)) showline
+(--\(599.7a,82.5b\)--\(598.1a,82.3b\)--\(596.4a,82.0b\)--\(594.7a,81.7b\)--\(594.4a,81.6b\)) showline
+(--\(593.0a,81.4b\)--\(591.3a,81.1b\)--\(589.6a,80.8b\)--\(587.9a,80.5b\)--\(587.2a,80.3b\)) showline
+(--\(586.2a,80.2b\)--\(584.5a,79.9b\)--\(582.9a,79.5b\)--\(581.2a,79.2b\)--\(580.4a,79.0b\)) showline
+(--\(579.5a,78.9b\)--\(577.8a,78.6b\)--\(576.1a,78.2b\)--\(574.4a,77.8b\)--\(574.1a,77.7b\)) showline
+(--\(572.7a,77.5b\)--\(571.0a,77.1b\)--\(569.4a,76.7b\)--\(568.4a,76.4b\)--\(567.7a,76.1b\)) showline
+(--\(566.0a,75.4b\)--\(565.4a,75.1b\)--\(566.0a,74.0b\)--\(566.0a,73.8b\);) showline
+(draw \(169.3a,89.3b\)--\(171.0a,89.3b\)--\(172.7a,89.3b\)--\(174.4a,89.2b\)--\(176.1a,89.) showline
+(2b\)) showline
+(--\(177.7a,89.2b\)--\(179.4a,89.1b\)--\(181.1a,89.1b\)--\(182.8a,89.1b\)--\(184.5a,89.0b\)) showline
+(--\(186.2a,88.9b\)--\(187.9a,88.9b\)--\(189.6a,88.8b\)--\(191.2a,88.7b\)--\(192.9a,88.6b\)) showline
+sf (19) 1 endcol
+(19) endpage
+%%Page: ? 20
+20 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(194.6a,88.5b\)--\(196.3a,88.4b\)--\(198.0a,88.3b\)--\(199.7a,88.1b\)--\(200.2a,88.1b\)) showline
+(--\(201.4a,88.0b\)--\(203.1a,87.9b\)--\(204.7a,87.7b\)--\(206.4a,87.6b\)--\(208.1a,87.4b\)) showline
+(--\(209.8a,87.3b\)--\(211.5a,87.1b\)--\(213.2a,86.9b\)--\(214.3a,86.8b\)--\(214.9a,86.7b\)) showline
+(--\(216.6a,86.6b\)--\(218.3a,86.4b\)--\(219.9a,86.2b\)--\(221.6a,86.0b\)--\(223.3a,85.8b\)) showline
+(--\(225.0a,85.5b\)--\(225.2a,85.5b\)--\(226.7a,85.3b\)--\(228.4a,85.1b\)--\(230.1a,84.9b\)) showline
+(--\(231.8a,84.6b\)--\(233.4a,84.4b\)--\(234.5a,84.2b\)--\(235.1a,84.1b\)--\(236.8a,83.9b\)) showline
+(--\(238.5a,83.6b\)--\(240.2a,83.4b\)--\(241.9a,83.1b\)--\(242.9a,82.9b\)--\(243.6a,82.8b\)) showline
+(--\(245.3a,82.5b\)--\(246.9a,82.3b\)--\(248.6a,82.0b\)--\(250.3a,81.7b\)--\(250.6a,81.6b\)) showline
+(--\(252.0a,81.4b\)--\(253.7a,81.1b\)--\(255.4a,80.8b\)--\(257.1a,80.5b\)--\(257.8a,80.3b\)) showline
+(--\(258.8a,80.2b\)--\(260.5a,79.9b\)--\(262.1a,79.5b\)--\(263.8a,79.2b\)--\(264.6a,79.0b\)) showline
+(--\(265.5a,78.9b\)--\(267.2a,78.6b\)--\(268.9a,78.2b\)--\(270.6a,77.8b\)--\(270.9a,77.7b\)) showline
+(--\(272.3a,77.5b\)--\(274.0a,77.1b\)--\(275.6a,76.7b\)--\(276.6a,76.4b\)--\(277.3a,76.1b\)) showline
+(--\(279.0a,75.4b\)--\(279.6a,75.1b\)--\(279.0a,74.0b\)--\(279.0a,73.8b\);) showline
+(draw \(427.6a,105.4b\)--\(429.3a,105.4b\)--\(430.9a,105.3b\)--\(432.6a,105.2b\)--\(434.3a) showline
+(,105.1b\)) showline
+(--\(436.0a,105.0b\)--\(437.7a,104.9b\)--\(437.9a,104.9b\)--\(439.4a,104.8b\)--\(441.1a,10) showline
+(4.6b\)) showline
+(--\(442.8a,104.5b\)--\(444.4a,104.3b\)--\(446.1a,104.1b\)--\(447.8a,103.9b\)--\(449.5a,10) showline
+(3.7b\)) showline
+(--\(450.1a,103.6b\)--\(451.2a,103.5b\)--\(452.9a,103.2b\)--\(454.6a,103.0b\)--\(456.3a,10) showline
+(2.7b\)) showline
+(--\(457.9a,102.4b\)--\(458.5a,102.3b\)--\(459.6a,102.1b\)--\(461.3a,101.8b\)--\(463.0a,10) showline
+(1.5b\)) showline
+(--\(464.7a,101.2b\)--\(465.3a,101.0b\)--\(466.4a,100.8b\)--\(468.1a,100.5b\)--\(469.8a,10) showline
+(0.1b\)) showline
+(--\(471.3a,99.7b\)--\(471.5a,99.7b\)--\(473.1a,99.3b\)--\(474.8a,98.9b\)--\(476.5a,98.5b\)) showline
+(--\(476.7a,98.4b\)--\(478.2a,98.1b\)--\(479.9a,97.6b\)--\(481.6a,97.2b\)--\(481.7a,97.1b\)) showline
+(--\(483.3a,96.7b\)--\(485.0a,96.2b\)--\(486.3a,95.8b\)--\(486.6a,95.8b\)--\(488.3a,95.3b\)) showline
+(--\(490.0a,94.8b\)--\(490.7a,94.5b\)--\(491.7a,94.3b\)--\(493.4a,93.7b\)--\(494.9a,93.3b\)) showline
+(--\(495.1a,93.2b\)--\(496.8a,92.7b\)--\(498.5a,92.1b\)--\(498.9a,92.0b\)--\(500.1a,91.6b\)) showline
+(--\(501.8a,91.0b\)--\(502.8a,90.7b\)--\(503.5a,90.4b\)--\(505.2a,89.9b\)--\(506.6a,89.4b\)) showline
+(--\(506.9a,89.3b\)--\(508.6a,88.7b\)--\(510.2a,88.1b\)--\(510.3a,88.1b\)--\(512.0a,87.5b\)) showline
+(--\(513.7a,86.8b\)--\(513.8a,86.8b\)--\(515.3a,86.2b\)--\(517.0a,85.6b\)--\(517.3a,85.5b\)) showline
+(--\(518.7a,85.0b\)--\(520.4a,84.3b\)--\(520.7a,84.2b\)--\(522.1a,83.7b\)--\(523.8a,83.0b\)) showline
+(--\(524.1a,82.9b\)--\(525.5a,82.4b\)--\(527.2a,81.7b\)--\(527.4a,81.6b\)--\(528.8a,81.1b\)) showline
+(--\(530.5a,80.3b\)--\(530.6a,80.3b\)--\(532.2a,79.7b\)--\(533.7a,79.0b\)--\(533.9a,79.0b\)) showline
+(--\(535.6a,78.3b\)--\(536.7a,77.7b\)--\(537.3a,77.5b\)--\(539.0a,76.7b\)--\(539.5a,76.4b\)) showline
+(--\(540.7a,75.5b\)--\(541.0a,75.1b\)--\(540.7a,73.8b\);) showline
+(draw \(304.3a,73.8b\)--\(304.0a,75.1b\)--\(304.3a,75.5b\)--\(305.5a,76.4b\)--\(306.0a,76.) showline
+(7b\)) showline
+(--\(307.7a,77.5b\)--\(308.3a,77.7b\)--\(309.4a,78.3b\)--\(311.1a,79.0b\)--\(311.3a,79.0b\)) showline
+(--\(312.8a,79.7b\)--\(314.4a,80.3b\)--\(314.5a,80.3b\)--\(316.2a,81.1b\)--\(317.6a,81.6b\)) showline
+(--\(317.8a,81.7b\)--\(319.5a,82.4b\)--\(320.9a,82.9b\)--\(321.2a,83.0b\)--\(322.9a,83.7b\)) showline
+(--\(324.3a,84.2b\)--\(324.6a,84.3b\)--\(326.3a,85.0b\)--\(327.7a,85.5b\)--\(328.0a,85.6b\)) showline
+(--\(329.7a,86.2b\)--\(331.2a,86.8b\)--\(331.3a,86.8b\)--\(333.0a,87.5b\)--\(334.7a,88.1b\)) showline
+(--\(334.8a,88.1b\)--\(336.4a,88.7b\)--\(338.1a,89.3b\)--\(338.4a,89.4b\)--\(339.8a,89.9b\)) showline
+(--\(341.5a,90.4b\)--\(342.2a,90.7b\)--\(343.2a,91.0b\)--\(344.9a,91.6b\)--\(346.1a,92.0b\)) showline
+(--\(346.5a,92.1b\)--\(348.2a,92.7b\)--\(349.9a,93.2b\)--\(350.1a,93.3b\)--\(351.6a,93.7b\)) showline
+(--\(353.3a,94.3b\)--\(354.3a,94.5b\)--\(355.0a,94.8b\)--\(356.7a,95.3b\)--\(358.4a,95.8b\)) showline
+(--\(358.7a,95.8b\)--\(360.0a,96.2b\)--\(361.7a,96.7b\)--\(363.3a,97.1b\)--\(363.4a,97.2b\)) showline
+(--\(365.1a,97.6b\)--\(366.8a,98.1b\)--\(368.3a,98.4b\)--\(368.5a,98.5b\)--\(370.2a,98.9b\)) showline
+(--\(371.9a,99.3b\)--\(373.5a,99.7b\)--\(373.7a,99.7b\)--\(375.2a,100.1b\)--\(376.9a,100.5) showline
+(b\)) showline
+(--\(378.6a,100.8b\)--\(379.7a,101.0b\)--\(380.3a,101.2b\)--\(382.0a,101.5b\)--\(383.7a,10) showline
+(1.8b\)) showline
+(--\(385.4a,102.1b\)--\(386.5a,102.3b\)--\(387.1a,102.4b\)--\(388.7a,102.7b\)--\(390.4a,10) showline
+(3.0b\)) showline
+(--\(392.1a,103.2b\)--\(393.8a,103.5b\)--\(394.9a,103.6b\)--\(395.5a,103.7b\)--\(397.2a,10) showline
+(3.9b\)) showline
+(--\(398.9a,104.1b\)--\(400.6a,104.3b\)--\(402.2a,104.5b\)--\(403.9a,104.6b\)--\(405.6a,10) showline
+(4.8b\)) showline
+(--\(407.1a,104.9b\)--\(407.3a,104.9b\)--\(409.0a,105.0b\)--\(410.7a,105.1b\)--\(412.4a,10) showline
+(5.2b\)) showline
+(--\(414.1a,105.3b\)--\(415.7a,105.4b\)--\(417.4a,105.4b\)--\(419.1a,105.5b\)--\(420.8a,10) showline
+(5.5b\)) showline
+(--\(422.5a,105.5b\)--\(424.2a,105.5b\)--\(425.9a,105.5b\)--\(427.6a,105.4b\);) showline
+(draw \(675.7a,105.5b\)--\(674.0a,105.5b\)--\(672.3a,105.5b\)--\(670.6a,105.4b\)--\(668.9a) showline
+(,105.4b\)) showline
+(--\(667.3a,105.3b\)--\(665.6a,105.2b\)--\(663.9a,105.1b\)--\(662.2a,105.0b\)--\(660.5a,10) showline
+(4.9b\)) showline
+(--\(660.3a,104.9b\)--\(658.8a,104.8b\)--\(657.1a,104.6b\)--\(655.4a,104.5b\)--\(653.8a,10) showline
+(4.3b\)) showline
+sf (20) 1 endcol
+(20) endpage
+%%Page: ? 21
+21 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(652.1a,104.1b\)--\(650.4a,103.9b\)--\(648.7a,103.7b\)--\(648.1a,103.6b\)--\(647.0a,10) showline
+(3.5b\)) showline
+(--\(645.3a,103.2b\)--\(643.6a,103.0b\)--\(641.9a,102.7b\)--\(640.3a,102.4b\)--\(639.7a,10) showline
+(2.3b\)) showline
+(--\(638.6a,102.1b\)--\(636.9a,101.8b\)--\(635.2a,101.5b\)--\(633.5a,101.2b\)--\(632.9a,10) showline
+(1.0b\)) showline
+(--\(631.8a,100.8b\)--\(630.1a,100.5b\)--\(628.4a,100.1b\)--\(626.9a,99.7b\)--\(626.7a,99.) showline
+(7b\)) showline
+(--\(625.1a,99.3b\)--\(623.4a,98.9b\)--\(621.7a,98.5b\)--\(621.5a,98.4b\)--\(620.0a,98.1b\)) showline
+(--\(618.3a,97.6b\)--\(616.6a,97.2b\)--\(616.5a,97.1b\)--\(614.9a,96.7b\)--\(613.2a,96.2b\)) showline
+(--\(611.9a,95.8b\)--\(611.6a,95.8b\)--\(609.9a,95.3b\)--\(608.2a,94.8b\)--\(607.5a,94.5b\)) showline
+(--\(606.5a,94.3b\)--\(604.8a,93.7b\)--\(603.3a,93.3b\)--\(603.1a,93.2b\)--\(601.4a,92.7b\)) showline
+(--\(599.7a,92.1b\)--\(599.3a,92.0b\)--\(598.1a,91.6b\)--\(596.4a,91.0b\)--\(595.4a,90.7b\)) showline
+(--\(594.7a,90.4b\)--\(593.0a,89.9b\)--\(591.6a,89.4b\)--\(591.3a,89.3b\)--\(589.6a,88.7b\)) showline
+(--\(588.0a,88.1b\)--\(587.9a,88.1b\)--\(586.2a,87.5b\)--\(584.5a,86.8b\)--\(584.4a,86.8b\)) showline
+(--\(582.9a,86.2b\)--\(581.2a,85.6b\)--\(580.9a,85.5b\)--\(579.5a,85.0b\)--\(577.8a,84.3b\)) showline
+(--\(577.5a,84.2b\)--\(576.1a,83.7b\)--\(574.4a,83.0b\)--\(574.1a,82.9b\)--\(572.7a,82.4b\)) showline
+(--\(571.0a,81.7b\)--\(570.8a,81.6b\)--\(569.4a,81.1b\)--\(567.7a,80.3b\)--\(567.6a,80.3b\)) showline
+(--\(566.0a,79.7b\)--\(564.5a,79.0b\)--\(564.3a,79.0b\)--\(562.6a,78.3b\)--\(561.5a,77.7b\)) showline
+(--\(560.9a,77.5b\)--\(559.2a,76.7b\)--\(558.7a,76.4b\)--\(557.5a,75.5b\)--\(557.2a,75.1b\)) showline
+(--\(557.5a,73.8b\);) showline
+(draw \(169.3a,105.5b\)--\(171.0a,105.5b\)--\(172.7a,105.5b\)--\(174.4a,105.4b\)--\(176.1a) showline
+(,105.4b\)) showline
+(--\(177.7a,105.3b\)--\(179.4a,105.2b\)--\(181.1a,105.1b\)--\(182.8a,105.0b\)--\(184.5a,10) showline
+(4.9b\)) showline
+(--\(184.7a,104.9b\)--\(186.2a,104.8b\)--\(187.9a,104.6b\)--\(189.6a,104.5b\)--\(191.2a,10) showline
+(4.3b\)) showline
+(--\(192.9a,104.1b\)--\(194.6a,103.9b\)--\(196.3a,103.7b\)--\(196.9a,103.6b\)--\(198.0a,10) showline
+(3.5b\)) showline
+(--\(199.7a,103.2b\)--\(201.4a,103.0b\)--\(203.1a,102.7b\)--\(204.7a,102.4b\)--\(205.3a,10) showline
+(2.3b\)) showline
+(--\(206.4a,102.1b\)--\(208.1a,101.8b\)--\(209.8a,101.5b\)--\(211.5a,101.2b\)--\(212.1a,10) showline
+(1.0b\)) showline
+(--\(213.2a,100.8b\)--\(214.9a,100.5b\)--\(216.6a,100.1b\)--\(218.1a,99.7b\)--\(218.3a,99.) showline
+(7b\)) showline
+(--\(219.9a,99.3b\)--\(221.6a,98.9b\)--\(223.3a,98.5b\)--\(223.5a,98.4b\)--\(225.0a,98.1b\)) showline
+(--\(226.7a,97.6b\)--\(228.4a,97.2b\)--\(228.5a,97.1b\)--\(230.1a,96.7b\)--\(231.8a,96.2b\)) showline
+(--\(233.1a,95.8b\)--\(233.4a,95.8b\)--\(235.1a,95.3b\)--\(236.8a,94.8b\)--\(237.5a,94.5b\)) showline
+(--\(238.5a,94.3b\)--\(240.2a,93.7b\)--\(241.7a,93.3b\)--\(241.9a,93.2b\)--\(243.6a,92.7b\)) showline
+(--\(245.3a,92.1b\)--\(245.7a,92.0b\)--\(246.9a,91.6b\)--\(248.6a,91.0b\)--\(249.6a,90.7b\)) showline
+(--\(250.3a,90.4b\)--\(252.0a,89.9b\)--\(253.4a,89.4b\)--\(253.7a,89.3b\)--\(255.4a,88.7b\)) showline
+(--\(257.0a,88.1b\)--\(257.1a,88.1b\)--\(258.8a,87.5b\)--\(260.5a,86.8b\)--\(260.6a,86.8b\)) showline
+(--\(262.1a,86.2b\)--\(263.8a,85.6b\)--\(264.1a,85.5b\)--\(265.5a,85.0b\)--\(267.2a,84.3b\)) showline
+(--\(267.5a,84.2b\)--\(268.9a,83.7b\)--\(270.6a,83.0b\)--\(270.9a,82.9b\)--\(272.3a,82.4b\)) showline
+(--\(274.0a,81.7b\)--\(274.2a,81.6b\)--\(275.6a,81.1b\)--\(277.3a,80.3b\)--\(277.4a,80.3b\)) showline
+(--\(279.0a,79.7b\)--\(280.5a,79.0b\)--\(280.7a,79.0b\)--\(282.4a,78.3b\)--\(283.5a,77.7b\)) showline
+(--\(284.1a,77.5b\)--\(285.8a,76.7b\)--\(286.3a,76.4b\)--\(287.5a,75.5b\)--\(287.8a,75.1b\)) showline
+(--\(287.5a,73.8b\);) showline
+(draw \(509.6a,103.6b\)--\(510.3a,103.1b\)--\(511.4a,102.3b\)--\(512.0a,101.9b\)--\(513.2a) showline
+(,101.0b\)) showline
+(--\(513.7a,100.7b\)--\(515.0a,99.7b\)--\(515.3a,99.5b\)--\(516.7a,98.4b\)--\(517.0a,98.2b) showline
+(\)) showline
+(--\(518.5a,97.1b\)--\(518.7a,96.9b\)--\(520.2a,95.8b\)--\(520.4a,95.7b\)--\(521.9a,94.5b\)) showline
+(--\(522.1a,94.4b\)--\(523.6a,93.3b\)--\(523.8a,93.1b\)--\(525.3a,92.0b\)--\(525.5a,91.8b\)) showline
+(--\(526.9a,90.7b\)--\(527.2a,90.5b\)--\(528.6a,89.4b\)--\(528.8a,89.2b\)--\(530.2a,88.1b\)) showline
+(--\(530.5a,87.9b\)--\(531.9a,86.8b\)--\(532.2a,86.5b\)--\(533.5a,85.5b\)--\(533.9a,85.2b\)) showline
+(--\(535.1a,84.2b\)--\(535.6a,83.9b\)--\(536.7a,82.9b\)--\(537.3a,82.5b\)--\(538.3a,81.6b\)) showline
+(--\(539.0a,81.1b\)--\(539.9a,80.3b\)--\(540.7a,79.7b\)--\(541.4a,79.0b\)--\(542.3a,78.3b\)) showline
+(--\(542.9a,77.7b\)--\(544.0a,76.7b\)--\(544.3a,76.4b\)--\(545.0a,75.1b\)--\(544.9a,73.8b\)) showline
+(;) showline
+(draw \(392.1a,133.3b\)--\(392.3a,133.4b\)--\(393.8a,133.8b\)--\(395.5a,134.3b\)--\(397.0a) showline
+(,134.6b\)) showline
+(--\(397.2a,134.7b\)--\(398.9a,135.1b\)--\(400.6a,135.5b\)--\(402.2a,135.8b\)--\(402.9a,13) showline
+(5.9b\)) showline
+(--\(403.9a,136.1b\)--\(405.6a,136.4b\)--\(407.3a,136.7b\)--\(409.0a,137.0b\)--\(410.7a,13) showline
+(7.2b\)) showline
+(--\(411.4a,137.2b\)--\(412.4a,137.3b\)--\(414.1a,137.5b\)--\(415.7a,137.6b\)--\(417.4a,13) showline
+(7.7b\)) showline
+(--\(419.1a,137.8b\)--\(420.8a,137.8b\)--\(422.5a,137.9b\)--\(424.2a,137.8b\)--\(425.9a,13) showline
+(7.8b\)) showline
+(--\(427.6a,137.7b\)--\(429.3a,137.6b\)--\(430.9a,137.5b\)--\(432.6a,137.3b\)--\(433.6a,13) showline
+(7.2b\)) showline
+sf (21) 1 endcol
+(21) endpage
+%%Page: ? 22
+22 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(434.3a,137.2b\)--\(436.0a,137.0b\)--\(437.7a,136.7b\)--\(439.4a,136.4b\)--\(441.1a,13) showline
+(6.1b\)) showline
+(--\(442.1a,135.9b\)--\(442.8a,135.8b\)--\(444.4a,135.5b\)--\(446.1a,135.1b\)--\(447.8a,13) showline
+(4.7b\)) showline
+(--\(448.0a,134.6b\)--\(449.5a,134.3b\)--\(451.2a,133.8b\)--\(452.7a,133.4b\)--\(452.9a,13) showline
+(3.3b\)) showline
+(--\(454.6a,132.8b\)--\(456.3a,132.3b\)--\(456.9a,132.1b\)--\(457.9a,131.7b\)--\(459.6a,13) showline
+(1.1b\)) showline
+(--\(460.6a,130.8b\)--\(461.3a,130.5b\)--\(463.0a,129.9b\)--\(464.0a,129.5b\)--\(464.7a,12) showline
+(9.2b\)) showline
+(--\(466.4a,128.5b\)--\(467.1a,128.2b\)--\(468.1a,127.8b\)--\(469.8a,127.0b\)--\(470.1a,12) showline
+(6.9b\)) showline
+(--\(471.5a,126.3b\)--\(472.9a,125.6b\)--\(473.1a,125.5b\)--\(474.8a,124.7b\)--\(475.6a,12) showline
+(4.3b\)) showline
+(--\(476.5a,123.9b\)--\(478.2a,123.0b\)--\(479.9a,122.1b\)--\(480.7a,121.7b\)--\(481.6a,12) showline
+(1.2b\)) showline
+(--\(483.1a,120.4b\)--\(483.3a,120.3b\)--\(485.0a,119.4b\)--\(485.4a,119.1b\)--\(486.6a,11) showline
+(8.4b\)) showline
+(--\(487.7a,117.8b\)--\(488.3a,117.4b\)--\(489.9a,116.5b\)--\(490.0a,116.4b\)--\(491.7a,11) showline
+(5.4b\)) showline
+(--\(492.0a,115.2b\)--\(493.4a,114.4b\)--\(494.1a,113.9b\)--\(495.1a,113.3b\)--\(496.2a,11) showline
+(2.7b\)) showline
+(--\(496.8a,112.3b\)--\(498.2a,111.4b\)--\(498.5a,111.2b\)--\(500.1a,110.1b\)--\(501.8a,10) showline
+(8.9b\)) showline
+(--\(502.1a,108.8b\)--\(503.5a,107.8b\)--\(504.0a,107.5b\)--\(505.2a,106.7b\)--\(505.9a,10) showline
+(6.2b\)) showline
+(--\(506.9a,105.5b\)--\(507.7a,104.9b\)--\(508.6a,104.3b\)--\(509.6a,103.6b\);) showline
+(draw \(300.1a,73.8b\)--\(300.0a,75.1b\)--\(300.7a,76.4b\)--\(301.0a,76.7b\)--\(302.1a,77.) showline
+(7b\)) showline
+(--\(302.7a,78.3b\)--\(303.6a,79.0b\)--\(304.3a,79.7b\)--\(305.1a,80.3b\)--\(306.0a,81.1b\)) showline
+(--\(306.7a,81.6b\)--\(307.7a,82.5b\)--\(308.3a,82.9b\)--\(309.4a,83.9b\)--\(309.9a,84.2b\)) showline
+(--\(311.1a,85.2b\)--\(311.5a,85.5b\)--\(312.8a,86.5b\)--\(313.1a,86.8b\)--\(314.5a,87.9b\)) showline
+(--\(314.8a,88.1b\)--\(316.2a,89.2b\)--\(316.4a,89.4b\)--\(317.8a,90.5b\)--\(318.1a,90.7b\)) showline
+(--\(319.5a,91.8b\)--\(319.7a,92.0b\)--\(321.2a,93.1b\)--\(321.4a,93.3b\)--\(322.9a,94.4b\)) showline
+(--\(323.1a,94.5b\)--\(324.6a,95.7b\)--\(324.8a,95.8b\)--\(326.3a,96.9b\)--\(326.5a,97.1b\)) showline
+(--\(328.0a,98.2b\)--\(328.3a,98.4b\)--\(329.7a,99.5b\)--\(330.0a,99.7b\)--\(331.3a,100.7b) showline
+(\)) showline
+(--\(331.8a,101.0b\)--\(333.0a,101.9b\)--\(333.6a,102.3b\)--\(334.7a,103.1b\)--\(335.4a,10) showline
+(3.6b\)) showline
+(--\(336.4a,104.3b\)--\(337.3a,104.9b\)--\(338.1a,105.5b\)--\(339.1a,106.2b\)--\(339.8a,10) showline
+(6.7b\)) showline
+(--\(341.0a,107.5b\)--\(341.5a,107.8b\)--\(342.9a,108.8b\)--\(343.2a,108.9b\)--\(344.9a,11) showline
+(0.1b\)) showline
+(--\(346.5a,111.2b\)--\(346.8a,111.4b\)--\(348.2a,112.3b\)--\(348.8a,112.7b\)--\(349.9a,11) showline
+(3.3b\)) showline
+(--\(350.9a,113.9b\)--\(351.6a,114.4b\)--\(353.0a,115.2b\)--\(353.3a,115.4b\)--\(355.0a,11) showline
+(6.4b\)) showline
+(--\(355.1a,116.5b\)--\(356.7a,117.4b\)--\(357.3a,117.8b\)--\(358.4a,118.4b\)--\(359.6a,11) showline
+(9.1b\)) showline
+(--\(360.0a,119.4b\)--\(361.7a,120.3b\)--\(361.9a,120.4b\)--\(363.4a,121.2b\)--\(364.3a,12) showline
+(1.7b\)) showline
+(--\(365.1a,122.1b\)--\(366.8a,123.0b\)--\(368.5a,123.9b\)--\(369.4a,124.3b\)--\(370.2a,12) showline
+(4.7b\)) showline
+(--\(371.9a,125.5b\)--\(372.1a,125.6b\)--\(373.5a,126.3b\)--\(374.9a,126.9b\)--\(375.2a,12) showline
+(7.0b\)) showline
+(--\(376.9a,127.8b\)--\(377.9a,128.2b\)--\(378.6a,128.5b\)--\(380.3a,129.2b\)--\(381.0a,12) showline
+(9.5b\)) showline
+(--\(382.0a,129.9b\)--\(383.7a,130.5b\)--\(384.4a,130.8b\)--\(385.4a,131.1b\)--\(387.1a,13) showline
+(1.7b\)) showline
+(--\(388.1a,132.1b\)--\(388.7a,132.3b\)--\(390.4a,132.8b\)--\(392.1a,133.3b\);) showline
+(draw \(569.6a,89.4b\)--\(569.4a,89.2b\)--\(568.0a,88.1b\)--\(567.7a,87.9b\)--\(566.3a,86.) showline
+(8b\)) showline
+(--\(566.0a,86.5b\)--\(564.7a,85.5b\)--\(564.3a,85.2b\)--\(563.1a,84.2b\)--\(562.6a,83.9b\)) showline
+(--\(561.5a,82.9b\)--\(560.9a,82.5b\)--\(559.9a,81.6b\)--\(559.2a,81.1b\)--\(558.3a,80.3b\)) showline
+(--\(557.5a,79.7b\)--\(556.8a,79.0b\)--\(555.9a,78.3b\)--\(555.3a,77.7b\)--\(554.2a,76.7b\)) showline
+(--\(553.9a,76.4b\)--\(553.2a,75.1b\)--\(553.3a,73.8b\);) showline
+(draw \(675.7a,137.9b\)--\(674.0a,137.8b\)--\(672.3a,137.8b\)--\(670.6a,137.7b\)--\(668.9a) showline
+(,137.6b\)) showline
+(--\(667.3a,137.5b\)--\(665.6a,137.3b\)--\(664.6a,137.2b\)--\(663.9a,137.2b\)--\(662.2a,13) showline
+(7.0b\)) showline
+(--\(660.5a,136.7b\)--\(658.8a,136.4b\)--\(657.1a,136.1b\)--\(656.1a,135.9b\)--\(655.4a,13) showline
+(5.8b\)) showline
+sf (22) 1 endcol
+(22) endpage
+%%Page: ? 23
+23 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(653.8a,135.5b\)--\(652.1a,135.1b\)--\(650.4a,134.7b\)--\(650.2a,134.6b\)--\(648.7a,13) showline
+(4.3b\)) showline
+(--\(647.0a,133.8b\)--\(645.5a,133.4b\)--\(645.3a,133.3b\)--\(643.6a,132.8b\)--\(641.9a,13) showline
+(2.3b\)) showline
+(--\(641.3a,132.1b\)--\(640.3a,131.7b\)--\(638.6a,131.1b\)--\(637.6a,130.8b\)--\(636.9a,13) showline
+(0.5b\)) showline
+(--\(635.2a,129.9b\)--\(634.2a,129.5b\)--\(633.5a,129.2b\)--\(631.8a,128.5b\)--\(631.1a,12) showline
+(8.2b\)) showline
+(--\(630.1a,127.8b\)--\(628.4a,127.0b\)--\(628.1a,126.9b\)--\(626.7a,126.3b\)--\(625.3a,12) showline
+(5.6b\)) showline
+(--\(625.1a,125.5b\)--\(623.4a,124.7b\)--\(622.6a,124.3b\)--\(621.7a,123.9b\)--\(620.0a,12) showline
+(3.0b\)) showline
+(--\(618.3a,122.1b\)--\(617.5a,121.7b\)--\(616.6a,121.2b\)--\(615.1a,120.4b\)--\(614.9a,12) showline
+(0.3b\)) showline
+(--\(613.2a,119.4b\)--\(612.8a,119.1b\)--\(611.6a,118.4b\)--\(610.5a,117.8b\)--\(609.9a,11) showline
+(7.4b\)) showline
+(--\(608.3a,116.5b\)--\(608.2a,116.4b\)--\(606.5a,115.4b\)--\(606.2a,115.2b\)--\(604.8a,11) showline
+(4.4b\)) showline
+(--\(604.1a,113.9b\)--\(603.1a,113.3b\)--\(602.0a,112.7b\)--\(601.4a,112.3b\)--\(600.0a,11) showline
+(1.4b\)) showline
+(--\(599.7a,111.2b\)--\(598.1a,110.1b\)--\(596.4a,108.9b\)--\(596.1a,108.8b\)--\(594.7a,10) showline
+(7.8b\)) showline
+(--\(594.2a,107.5b\)--\(593.0a,106.7b\)--\(592.3a,106.2b\)--\(591.3a,105.5b\)--\(590.5a,10) showline
+(4.9b\)) showline
+(--\(589.6a,104.3b\)--\(588.6a,103.6b\)--\(587.9a,103.1b\)--\(586.8a,102.3b\)--\(586.2a,10) showline
+(1.9b\)) showline
+(--\(585.0a,101.0b\)--\(584.5a,100.7b\)--\(583.2a,99.7b\)--\(582.9a,99.5b\)--\(581.5a,98.4) showline
+(b\)) showline
+(--\(581.2a,98.2b\)--\(579.7a,97.1b\)--\(579.5a,96.9b\)--\(578.0a,95.8b\)--\(577.8a,95.7b\)) showline
+(--\(576.3a,94.5b\)--\(576.1a,94.4b\)--\(574.6a,93.3b\)--\(574.4a,93.1b\)--\(572.9a,92.0b\)) showline
+(--\(572.7a,91.8b\)--\(571.3a,90.7b\)--\(571.0a,90.5b\)--\(569.6a,89.4b\);) showline
+(draw \(275.4a,89.4b\)--\(275.6a,89.2b\)--\(277.0a,88.1b\)--\(277.3a,87.9b\)--\(278.7a,86.) showline
+(8b\)) showline
+(--\(279.0a,86.5b\)--\(280.3a,85.5b\)--\(280.7a,85.2b\)--\(281.9a,84.2b\)--\(282.4a,83.9b\)) showline
+(--\(283.5a,82.9b\)--\(284.1a,82.5b\)--\(285.1a,81.6b\)--\(285.8a,81.1b\)--\(286.7a,80.3b\)) showline
+(--\(287.5a,79.7b\)--\(288.2a,79.0b\)--\(289.1a,78.3b\)--\(289.7a,77.7b\)--\(290.8a,76.7b\)) showline
+(--\(291.1a,76.4b\)--\(291.8a,75.1b\)--\(291.7a,73.8b\);) showline
+(draw \(169.3a,137.9b\)--\(171.0a,137.8b\)--\(172.7a,137.8b\)--\(174.4a,137.7b\)--\(176.1a) showline
+(,137.6b\)) showline
+(--\(177.7a,137.5b\)--\(179.4a,137.3b\)--\(180.4a,137.2b\)--\(181.1a,137.2b\)--\(182.8a,13) showline
+(7.0b\)) showline
+(--\(184.5a,136.7b\)--\(186.2a,136.4b\)--\(187.9a,136.1b\)--\(188.9a,135.9b\)--\(189.6a,13) showline
+(5.8b\)) showline
+(--\(191.2a,135.5b\)--\(192.9a,135.1b\)--\(194.6a,134.7b\)--\(194.8a,134.6b\)--\(196.3a,13) showline
+(4.3b\)) showline
+(--\(198.0a,133.8b\)--\(199.5a,133.4b\)--\(199.7a,133.3b\)--\(201.4a,132.8b\)--\(203.1a,13) showline
+(2.3b\)) showline
+(--\(203.7a,132.1b\)--\(204.7a,131.7b\)--\(206.4a,131.1b\)--\(207.4a,130.8b\)--\(208.1a,13) showline
+(0.5b\)) showline
+(--\(209.8a,129.9b\)--\(210.8a,129.5b\)--\(211.5a,129.2b\)--\(213.2a,128.5b\)--\(213.9a,12) showline
+(8.2b\)) showline
+(--\(214.9a,127.8b\)--\(216.6a,127.0b\)--\(216.9a,126.9b\)--\(218.3a,126.3b\)--\(219.7a,12) showline
+(5.6b\)) showline
+(--\(219.9a,125.5b\)--\(221.6a,124.7b\)--\(222.4a,124.3b\)--\(223.3a,123.9b\)--\(225.0a,12) showline
+(3.0b\)) showline
+(--\(226.7a,122.1b\)--\(227.5a,121.7b\)--\(228.4a,121.2b\)--\(229.9a,120.4b\)--\(230.1a,12) showline
+(0.3b\)) showline
+(--\(231.8a,119.4b\)--\(232.2a,119.1b\)--\(233.4a,118.4b\)--\(234.5a,117.8b\)--\(235.1a,11) showline
+(7.4b\)) showline
+(--\(236.7a,116.5b\)--\(236.8a,116.4b\)--\(238.5a,115.4b\)--\(238.8a,115.2b\)--\(240.2a,11) showline
+(4.4b\)) showline
+(--\(240.9a,113.9b\)--\(241.9a,113.3b\)--\(243.0a,112.7b\)--\(243.6a,112.3b\)--\(245.0a,11) showline
+(1.4b\)) showline
+(--\(245.3a,111.2b\)--\(246.9a,110.1b\)--\(248.6a,108.9b\)--\(248.9a,108.8b\)--\(250.3a,10) showline
+(7.8b\)) showline
+(--\(250.8a,107.5b\)--\(252.0a,106.7b\)--\(252.7a,106.2b\)--\(253.7a,105.5b\)--\(254.5a,10) showline
+(4.9b\)) showline
+(--\(255.4a,104.3b\)--\(256.4a,103.6b\)--\(257.1a,103.1b\)--\(258.2a,102.3b\)--\(258.8a,10) showline
+(1.9b\)) showline
+(--\(260.0a,101.0b\)--\(260.5a,100.7b\)--\(261.8a,99.7b\)--\(262.1a,99.5b\)--\(263.5a,98.4) showline
+(b\)) showline
+(--\(263.8a,98.2b\)--\(265.3a,97.1b\)--\(265.5a,96.9b\)--\(267.0a,95.8b\)--\(267.2a,95.7b\)) showline
+sf (23) 1 endcol
+(23) endpage
+%%Page: ? 24
+24 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(268.7a,94.5b\)--\(268.9a,94.4b\)--\(270.4a,93.3b\)--\(270.6a,93.1b\)--\(272.1a,92.0b\)) showline
+(--\(272.3a,91.8b\)--\(273.7a,90.7b\)--\(274.0a,90.5b\)--\(275.4a,89.4b\);) showline
+(draw \(519.0a,120.4b\)--\(519.8a,119.1b\)--\(520.4a,118.3b\)--\(520.7a,117.8b\)--\(521.5a) showline
+(,116.5b\)) showline
+(--\(522.1a,115.7b\)--\(522.4a,115.2b\)--\(523.2a,113.9b\)--\(523.8a,113.1b\)--\(524.1a,11) showline
+(2.7b\)) showline
+(--\(524.9a,111.4b\)--\(525.5a,110.6b\)--\(525.8a,110.1b\)--\(526.6a,108.8b\)--\(527.2a,10) showline
+(7.9b\)) showline
+(--\(527.5a,107.5b\)--\(528.3a,106.2b\)--\(528.8a,105.3b\)--\(529.1a,104.9b\)--\(529.9a,10) showline
+(3.6b\)) showline
+(--\(530.5a,102.7b\)--\(530.8a,102.3b\)--\(531.6a,101.0b\)--\(532.2a,100.0b\)--\(532.4a,99) showline
+(.7b\)) showline
+(--\(533.2a,98.4b\)--\(533.9a,97.4b\)--\(534.1a,97.1b\)--\(534.9a,95.8b\)--\(535.6a,94.7b\)) showline
+(--\(535.7a,94.5b\)--\(536.5a,93.3b\)--\(537.3a,92.0b\)--\(538.1a,90.7b\)--\(538.9a,89.4b\)) showline
+(--\(539.0a,89.3b\)--\(539.7a,88.1b\)--\(540.5a,86.8b\)--\(540.7a,86.6b\)--\(541.3a,85.5b\)) showline
+(--\(542.1a,84.2b\)--\(542.3a,83.9b\)--\(542.9a,82.9b\)--\(543.7a,81.6b\)--\(544.0a,81.1b\)) showline
+(--\(544.5a,80.3b\)--\(545.3a,79.0b\)--\(545.7a,78.3b\)--\(546.0a,77.7b\)--\(546.7a,76.4b\)) showline
+(--\(547.1a,75.1b\)--\(547.0a,73.8b\);) showline
+(draw \(451.2a,194.4b\)--\(451.7a,194.2b\)--\(452.9a,193.5b\)--\(453.9a,192.9b\)--\(454.6a) showline
+(,192.4b\)) showline
+(--\(455.9a,191.6b\)--\(456.3a,191.4b\)--\(457.9a,190.3b\)--\(457.9a,190.2b\)--\(459.6a,18) showline
+(9.1b\)) showline
+(--\(459.7a,189.0b\)--\(461.3a,187.8b\)--\(461.5a,187.7b\)--\(463.0a,186.5b\)--\(463.2a,18) showline
+(6.4b\)) showline
+(--\(464.7a,185.2b\)--\(464.8a,185.1b\)--\(466.4a,183.8b\)--\(468.0a,182.5b\)--\(468.1a,18) showline
+(2.4b\)) showline
+(--\(469.4a,181.2b\)--\(469.8a,180.9b\)--\(470.9a,179.9b\)--\(471.5a,179.4b\)--\(472.3a,17) showline
+(8.6b\)) showline
+(--\(473.1a,177.8b\)--\(473.7a,177.3b\)--\(474.8a,176.2b\)--\(475.0a,176.0b\)--\(476.3a,17) showline
+(4.7b\)) showline
+(--\(476.5a,174.6b\)--\(477.6a,173.5b\)--\(478.2a,172.9b\)--\(478.9a,172.2b\)--\(479.9a,17) showline
+(1.1b\)) showline
+(--\(480.1a,170.9b\)--\(481.3a,169.6b\)--\(481.6a,169.3b\)--\(482.5a,168.3b\)--\(483.3a,16) showline
+(7.5b\)) showline
+(--\(483.7a,167.0b\)--\(484.9a,165.7b\)--\(485.0a,165.6b\)--\(486.0a,164.4b\)--\(486.6a,16) showline
+(3.7b\)) showline
+(--\(487.1a,163.1b\)--\(488.3a,161.8b\)--\(488.3a,161.7b\)--\(489.4a,160.5b\)--\(490.0a,15) showline
+(9.7b\)) showline
+(--\(490.4a,159.2b\)--\(491.5a,157.9b\)--\(491.7a,157.7b\)--\(492.6a,156.6b\)--\(493.4a,15) showline
+(5.6b\)) showline
+(--\(493.6a,155.3b\)--\(494.7a,154.1b\)--\(495.1a,153.5b\)--\(495.7a,152.8b\)--\(496.7a,15) showline
+(1.5b\)) showline
+(--\(496.8a,151.4b\)--\(497.7a,150.2b\)--\(498.5a,149.2b\)--\(498.7a,148.9b\)--\(499.7a,14) showline
+(7.6b\)) showline
+(--\(500.1a,147.0b\)--\(500.7a,146.3b\)--\(501.7a,145.0b\)--\(501.8a,144.8b\)--\(502.6a,14) showline
+(3.7b\)) showline
+(--\(503.5a,142.5b\)--\(503.6a,142.4b\)--\(504.5a,141.1b\)--\(505.2a,140.2b\)--\(505.5a,13) showline
+(9.8b\)) showline
+(--\(506.4a,138.5b\)--\(506.9a,137.9b\)--\(507.3a,137.2b\)--\(508.3a,135.9b\)--\(508.6a,13) showline
+(5.5b\)) showline
+(--\(509.2a,134.6b\)--\(510.1a,133.4b\)--\(510.3a,133.1b\)--\(511.0a,132.1b\)--\(511.9a,13) showline
+(0.8b\)) showline
+(--\(512.0a,130.7b\)--\(512.8a,129.5b\)--\(513.7a,128.2b\)--\(514.6a,126.9b\)--\(515.3a,12) showline
+(5.8b\)) showline
+(--\(515.5a,125.6b\)--\(516.3a,124.3b\)--\(517.0a,123.3b\)--\(517.2a,123.0b\)--\(518.1a,12) showline
+(1.7b\)) showline
+(--\(518.7a,120.8b\)--\(519.0a,120.4b\);) showline
+(draw \(353.5a,157.9b\)--\(354.6a,159.2b\)--\(355.0a,159.7b\)--\(355.6a,160.5b\)--\(356.7a) showline
+(,161.7b\)) showline
+(--\(356.7a,161.8b\)--\(357.9a,163.1b\)--\(358.4a,163.7b\)--\(359.0a,164.4b\)--\(360.0a,16) showline
+(5.6b\)) showline
+(--\(360.1a,165.7b\)--\(361.3a,167.0b\)--\(361.7a,167.5b\)--\(362.5a,168.3b\)--\(363.4a,16) showline
+(9.3b\)) showline
+(--\(363.7a,169.6b\)--\(364.9a,170.9b\)--\(365.1a,171.1b\)--\(366.1a,172.2b\)--\(366.8a,17) showline
+(2.9b\)) showline
+(--\(367.4a,173.5b\)--\(368.5a,174.6b\)--\(368.7a,174.7b\)--\(370.0a,176.0b\)--\(370.2a,17) showline
+(6.2b\)) showline
+(--\(371.3a,177.3b\)--\(371.9a,177.8b\)--\(372.7a,178.6b\)--\(373.5a,179.4b\)--\(374.1a,17) showline
+(9.9b\)) showline
+(--\(375.2a,180.9b\)--\(375.6a,181.2b\)--\(376.9a,182.4b\)--\(377.0a,182.5b\)--\(378.6a,18) showline
+(3.8b\)) showline
+(--\(380.2a,185.1b\)--\(380.3a,185.2b\)--\(381.8a,186.4b\)--\(382.0a,186.5b\)--\(383.5a,18) showline
+sf (24) 1 endcol
+(24) endpage
+%%Page: ? 25
+25 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (7.7b\)) showline
+(--\(383.7a,187.8b\)--\(385.3a,189.0b\)--\(385.4a,189.1b\)--\(387.1a,190.2b\)--\(387.1a,19) showline
+(0.3b\)) showline
+(--\(388.7a,191.4b\)--\(389.1a,191.6b\)--\(390.4a,192.4b\)--\(391.1a,192.9b\)--\(392.1a,19) showline
+(3.5b\)) showline
+(--\(393.3a,194.2b\)--\(393.8a,194.4b\)--\(395.5a,195.4b\)--\(395.7a,195.4b\)--\(397.2a,19) showline
+(6.2b\)) showline
+(--\(398.3a,196.7b\)--\(398.9a,197.0b\)--\(400.6a,197.8b\)--\(401.2a,198.0b\)--\(402.2a,19) showline
+(8.5b\)) showline
+(--\(403.9a,199.1b\)--\(404.5a,199.3b\)--\(405.6a,199.7b\)--\(407.3a,200.3b\)--\(408.6a,20) showline
+(0.6b\)) showline
+(--\(409.0a,200.7b\)--\(410.7a,201.2b\)--\(412.4a,201.5b\)--\(414.1a,201.8b\)--\(414.6a,20) showline
+(1.9b\)) showline
+(--\(415.7a,202.1b\)--\(417.4a,202.3b\)--\(419.1a,202.4b\)--\(420.8a,202.5b\)--\(422.5a,20) showline
+(2.5b\)) showline
+(--\(424.2a,202.5b\)--\(425.9a,202.4b\)--\(427.6a,202.3b\)--\(429.3a,202.1b\)--\(430.4a,20) showline
+(1.9b\)) showline
+(--\(430.9a,201.8b\)--\(432.6a,201.5b\)--\(434.3a,201.2b\)--\(436.0a,200.7b\)--\(436.4a,20) showline
+(0.6b\)) showline
+(--\(437.7a,200.3b\)--\(439.4a,199.7b\)--\(440.5a,199.3b\)--\(441.1a,199.1b\)--\(442.8a,19) showline
+(8.5b\)) showline
+(--\(443.8a,198.0b\)--\(444.4a,197.8b\)--\(446.1a,197.0b\)--\(446.7a,196.7b\)--\(447.8a,19) showline
+(6.2b\)) showline
+(--\(449.3a,195.4b\)--\(449.5a,195.4b\)--\(451.2a,194.4b\);) showline
+(draw \(298.0a,73.8b\)--\(297.9a,75.1b\)--\(298.3a,76.4b\)--\(299.0a,77.7b\)--\(299.3a,78.) showline
+(3b\)) showline
+(--\(299.7a,79.0b\)--\(300.5a,80.3b\)--\(301.0a,81.1b\)--\(301.3a,81.6b\)--\(302.1a,82.9b\)) showline
+(--\(302.7a,83.9b\)--\(302.9a,84.2b\)--\(303.7a,85.5b\)--\(304.3a,86.6b\)--\(304.5a,86.8b\)) showline
+(--\(305.3a,88.1b\)--\(306.0a,89.3b\)--\(306.1a,89.4b\)--\(306.9a,90.7b\)--\(307.7a,92.0b\)) showline
+(--\(308.5a,93.3b\)--\(309.3a,94.5b\)--\(309.4a,94.7b\)--\(310.1a,95.8b\)--\(310.9a,97.1b\)) showline
+(--\(311.1a,97.4b\)--\(311.8a,98.4b\)--\(312.6a,99.7b\)--\(312.8a,100.0b\)--\(313.4a,101.0) showline
+(b\)) showline
+(--\(314.2a,102.3b\)--\(314.5a,102.7b\)--\(315.1a,103.6b\)--\(315.9a,104.9b\)--\(316.2a,10) showline
+(5.3b\)) showline
+(--\(316.7a,106.2b\)--\(317.5a,107.5b\)--\(317.8a,107.9b\)--\(318.4a,108.8b\)--\(319.2a,11) showline
+(0.1b\)) showline
+(--\(319.5a,110.6b\)--\(320.1a,111.4b\)--\(320.9a,112.7b\)--\(321.2a,113.1b\)--\(321.8a,11) showline
+(3.9b\)) showline
+(--\(322.6a,115.2b\)--\(322.9a,115.7b\)--\(323.5a,116.5b\)--\(324.3a,117.8b\)--\(324.6a,11) showline
+(8.3b\)) showline
+(--\(325.2a,119.1b\)--\(326.0a,120.4b\)--\(326.3a,120.8b\)--\(326.9a,121.7b\)--\(327.8a,12) showline
+(3.0b\)) showline
+(--\(328.0a,123.3b\)--\(328.7a,124.3b\)--\(329.5a,125.6b\)--\(329.7a,125.8b\)--\(330.4a,12) showline
+(6.9b\)) showline
+(--\(331.3a,128.2b\)--\(332.2a,129.5b\)--\(333.0a,130.7b\)--\(333.1a,130.8b\)--\(334.0a,13) showline
+(2.1b\)) showline
+(--\(334.7a,133.1b\)--\(334.9a,133.4b\)--\(335.8a,134.6b\)--\(336.4a,135.5b\)--\(336.7a,13) showline
+(5.9b\)) showline
+(--\(337.7a,137.2b\)--\(338.1a,137.9b\)--\(338.6a,138.5b\)--\(339.5a,139.8b\)--\(339.8a,14) showline
+(0.2b\)) showline
+(--\(340.5a,141.1b\)--\(341.4a,142.4b\)--\(341.5a,142.5b\)--\(342.4a,143.7b\)--\(343.2a,14) showline
+(4.8b\)) showline
+(--\(343.3a,145.0b\)--\(344.3a,146.3b\)--\(344.9a,147.0b\)--\(345.3a,147.6b\)--\(346.3a,14) showline
+(8.9b\)) showline
+(--\(346.5a,149.2b\)--\(347.3a,150.2b\)--\(348.2a,151.4b\)--\(348.3a,151.5b\)--\(349.3a,15) showline
+(2.8b\)) showline
+(--\(349.9a,153.5b\)--\(350.3a,154.1b\)--\(351.4a,155.3b\)--\(351.6a,155.6b\)--\(352.4a,15) showline
+(6.6b\)) showline
+(--\(353.3a,157.7b\)--\(353.5a,157.9b\);) showline
+(draw \(592.7a,139.8b\)--\(591.8a,138.5b\)--\(591.3a,137.9b\)--\(590.9a,137.2b\)--\(589.9a) showline
+(,135.9b\)) showline
+(--\(589.6a,135.5b\)--\(589.0a,134.6b\)--\(588.1a,133.4b\)--\(587.9a,133.1b\)--\(587.2a,13) showline
+(2.1b\)) showline
+(--\(586.3a,130.8b\)--\(586.2a,130.7b\)--\(585.4a,129.5b\)--\(584.5a,128.2b\)--\(583.6a,12) showline
+(6.9b\)) showline
+(--\(582.9a,125.8b\)--\(582.7a,125.6b\)--\(581.9a,124.3b\)--\(581.2a,123.3b\)--\(581.0a,12) showline
+(3.0b\)) showline
+(--\(580.1a,121.7b\)--\(579.5a,120.8b\)--\(579.2a,120.4b\)--\(578.4a,119.1b\)--\(577.8a,11) showline
+(8.3b\)) showline
+(--\(577.5a,117.8b\)--\(576.7a,116.5b\)--\(576.1a,115.7b\)--\(575.8a,115.2b\)--\(575.0a,11) showline
+(3.9b\)) showline
+(--\(574.4a,113.1b\)--\(574.1a,112.7b\)--\(573.3a,111.4b\)--\(572.7a,110.6b\)--\(572.4a,11) showline
+sf (25) 1 endcol
+(25) endpage
+%%Page: ? 26
+26 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (0.1b\)) showline
+(--\(571.6a,108.8b\)--\(571.0a,107.9b\)--\(570.7a,107.5b\)--\(569.9a,106.2b\)--\(569.4a,10) showline
+(5.3b\)) showline
+(--\(569.1a,104.9b\)--\(568.3a,103.6b\)--\(567.7a,102.7b\)--\(567.4a,102.3b\)--\(566.6a,10) showline
+(1.0b\)) showline
+(--\(566.0a,100.0b\)--\(565.8a,99.7b\)--\(565.0a,98.4b\)--\(564.3a,97.4b\)--\(564.1a,97.1b) showline
+(\)) showline
+(--\(563.3a,95.8b\)--\(562.6a,94.7b\)--\(562.5a,94.5b\)--\(561.7a,93.3b\)--\(560.9a,92.0b\)) showline
+(--\(560.1a,90.7b\)--\(559.3a,89.4b\)--\(559.2a,89.3b\)--\(558.5a,88.1b\)--\(557.7a,86.8b\)) showline
+(--\(557.5a,86.6b\)--\(556.9a,85.5b\)--\(556.1a,84.2b\)--\(555.9a,83.9b\)--\(555.3a,82.9b\)) showline
+(--\(554.5a,81.6b\)--\(554.2a,81.1b\)--\(553.7a,80.3b\)--\(552.9a,79.0b\)--\(552.5a,78.3b\)) showline
+(--\(552.2a,77.7b\)--\(551.5a,76.4b\)--\(551.1a,75.1b\)--\(551.2a,73.8b\);) showline
+(draw \(675.7a,202.5b\)--\(674.0a,202.5b\)--\(672.3a,202.4b\)--\(670.6a,202.3b\)--\(668.9a) showline
+(,202.1b\)) showline
+(--\(667.8a,201.9b\)--\(667.3a,201.8b\)--\(665.6a,201.5b\)--\(663.9a,201.2b\)--\(662.2a,20) showline
+(0.7b\)) showline
+(--\(661.8a,200.6b\)--\(660.5a,200.3b\)--\(658.8a,199.7b\)--\(657.7a,199.3b\)--\(657.1a,19) showline
+(9.1b\)) showline
+(--\(655.4a,198.5b\)--\(654.4a,198.0b\)--\(653.8a,197.8b\)--\(652.1a,197.0b\)--\(651.5a,19) showline
+(6.7b\)) showline
+(--\(650.4a,196.2b\)--\(648.9a,195.4b\)--\(648.7a,195.4b\)--\(647.0a,194.4b\)--\(646.5a,19) showline
+(4.2b\)) showline
+(--\(645.3a,193.5b\)--\(644.3a,192.9b\)--\(643.6a,192.4b\)--\(642.3a,191.6b\)--\(641.9a,19) showline
+(1.4b\)) showline
+(--\(640.3a,190.3b\)--\(640.3a,190.2b\)--\(638.6a,189.1b\)--\(638.5a,189.0b\)--\(636.9a,18) showline
+(7.8b\)) showline
+(--\(636.7a,187.7b\)--\(635.2a,186.5b\)--\(635.0a,186.4b\)--\(633.5a,185.2b\)--\(633.4a,18) showline
+(5.1b\)) showline
+(--\(631.8a,183.8b\)--\(630.2a,182.5b\)--\(630.1a,182.4b\)--\(628.8a,181.2b\)--\(628.4a,18) showline
+(0.9b\)) showline
+(--\(627.3a,179.9b\)--\(626.7a,179.4b\)--\(625.9a,178.6b\)--\(625.1a,177.8b\)--\(624.5a,17) showline
+(7.3b\)) showline
+(--\(623.4a,176.2b\)--\(623.2a,176.0b\)--\(621.9a,174.7b\)--\(621.7a,174.6b\)--\(620.6a,17) showline
+(3.5b\)) showline
+(--\(620.0a,172.9b\)--\(619.3a,172.2b\)--\(618.3a,171.1b\)--\(618.1a,170.9b\)--\(616.9a,16) showline
+(9.6b\)) showline
+(--\(616.6a,169.3b\)--\(615.7a,168.3b\)--\(614.9a,167.5b\)--\(614.5a,167.0b\)--\(613.3a,16) showline
+(5.7b\)) showline
+(--\(613.2a,165.6b\)--\(612.2a,164.4b\)--\(611.6a,163.7b\)--\(611.1a,163.1b\)--\(609.9a,16) showline
+(1.8b\)) showline
+(--\(609.9a,161.7b\)--\(608.8a,160.5b\)--\(608.2a,159.7b\)--\(607.8a,159.2b\)--\(606.7a,15) showline
+(7.9b\)) showline
+(--\(606.5a,157.7b\)--\(605.6a,156.6b\)--\(604.8a,155.6b\)--\(604.6a,155.3b\)--\(603.5a,15) showline
+(4.1b\)) showline
+(--\(603.1a,153.5b\)--\(602.5a,152.8b\)--\(601.5a,151.5b\)--\(601.4a,151.4b\)--\(600.5a,15) showline
+(0.2b\)) showline
+(--\(599.7a,149.2b\)--\(599.5a,148.9b\)--\(598.5a,147.6b\)--\(598.1a,147.0b\)--\(597.5a,14) showline
+(6.3b\)) showline
+(--\(596.5a,145.0b\)--\(596.4a,144.8b\)--\(595.6a,143.7b\)--\(594.7a,142.5b\)--\(594.6a,14) showline
+(2.4b\)) showline
+(--\(593.7a,141.1b\)--\(593.0a,140.2b\)--\(592.7a,139.8b\);) showline
+(draw \(252.3a,139.8b\)--\(253.2a,138.5b\)--\(253.7a,137.9b\)--\(254.1a,137.2b\)--\(255.1a) showline
+(,135.9b\)) showline
+(--\(255.4a,135.5b\)--\(256.0a,134.6b\)--\(256.9a,133.4b\)--\(257.1a,133.1b\)--\(257.8a,13) showline
+(2.1b\)) showline
+(--\(258.7a,130.8b\)--\(258.8a,130.7b\)--\(259.6a,129.5b\)--\(260.5a,128.2b\)--\(261.4a,12) showline
+(6.9b\)) showline
+(--\(262.1a,125.8b\)--\(262.3a,125.6b\)--\(263.1a,124.3b\)--\(263.8a,123.3b\)--\(264.0a,12) showline
+(3.0b\)) showline
+(--\(264.9a,121.7b\)--\(265.5a,120.8b\)--\(265.8a,120.4b\)--\(266.6a,119.1b\)--\(267.2a,11) showline
+(8.3b\)) showline
+(--\(267.5a,117.8b\)--\(268.3a,116.5b\)--\(268.9a,115.7b\)--\(269.2a,115.2b\)--\(270.0a,11) showline
+(3.9b\)) showline
+(--\(270.6a,113.1b\)--\(270.9a,112.7b\)--\(271.7a,111.4b\)--\(272.3a,110.6b\)--\(272.6a,11) showline
+(0.1b\)) showline
+(--\(273.4a,108.8b\)--\(274.0a,107.9b\)--\(274.2a,107.5b\)--\(275.1a,106.2b\)--\(275.6a,10) showline
+(5.3b\)) showline
+(--\(275.9a,104.9b\)--\(276.7a,103.6b\)--\(277.3a,102.7b\)--\(277.6a,102.3b\)--\(278.4a,10) showline
+(1.0b\)) showline
+(--\(279.0a,100.0b\)--\(279.2a,99.7b\)--\(280.0a,98.4b\)--\(280.7a,97.4b\)--\(280.9a,97.1b) showline
+(\)) showline
+(--\(281.7a,95.8b\)--\(282.4a,94.7b\)--\(282.5a,94.5b\)--\(283.3a,93.3b\)--\(284.1a,92.0b\)) showline
+sf (26) 1 endcol
+(26) endpage
+%%Page: ? 27
+27 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(284.9a,90.7b\)--\(285.7a,89.4b\)--\(285.8a,89.3b\)--\(286.5a,88.1b\)--\(287.3a,86.8b\)) showline
+(--\(287.5a,86.6b\)--\(288.1a,85.5b\)--\(288.9a,84.2b\)--\(289.1a,83.9b\)--\(289.7a,82.9b\)) showline
+(--\(290.5a,81.6b\)--\(290.8a,81.1b\)--\(291.3a,80.3b\)--\(292.1a,79.0b\)--\(292.5a,78.3b\)) showline
+(--\(292.8a,77.7b\)--\(293.5a,76.4b\)--\(293.9a,75.1b\)--\(293.8a,73.8b\);) showline
+(draw \(169.3a,202.5b\)--\(171.0a,202.5b\)--\(172.7a,202.4b\)--\(174.4a,202.3b\)--\(176.1a) showline
+(,202.1b\)) showline
+(--\(177.2a,201.9b\)--\(177.7a,201.8b\)--\(179.4a,201.5b\)--\(181.1a,201.2b\)--\(182.8a,20) showline
+(0.7b\)) showline
+(--\(183.2a,200.6b\)--\(184.5a,200.3b\)--\(186.2a,199.7b\)--\(187.3a,199.3b\)--\(187.9a,19) showline
+(9.1b\)) showline
+(--\(189.6a,198.5b\)--\(190.6a,198.0b\)--\(191.2a,197.8b\)--\(192.9a,197.0b\)--\(193.5a,19) showline
+(6.7b\)) showline
+(--\(194.6a,196.2b\)--\(196.1a,195.4b\)--\(196.3a,195.4b\)--\(198.0a,194.4b\)--\(198.5a,19) showline
+(4.2b\)) showline
+(--\(199.7a,193.5b\)--\(200.7a,192.9b\)--\(201.4a,192.4b\)--\(202.7a,191.6b\)--\(203.1a,19) showline
+(1.4b\)) showline
+(--\(204.7a,190.3b\)--\(204.7a,190.2b\)--\(206.4a,189.1b\)--\(206.5a,189.0b\)--\(208.1a,18) showline
+(7.8b\)) showline
+(--\(208.3a,187.7b\)--\(209.8a,186.5b\)--\(210.0a,186.4b\)--\(211.5a,185.2b\)--\(211.6a,18) showline
+(5.1b\)) showline
+(--\(213.2a,183.8b\)--\(214.8a,182.5b\)--\(214.9a,182.4b\)--\(216.2a,181.2b\)--\(216.6a,18) showline
+(0.9b\)) showline
+(--\(217.7a,179.9b\)--\(218.3a,179.4b\)--\(219.1a,178.6b\)--\(219.9a,177.8b\)--\(220.5a,17) showline
+(7.3b\)) showline
+(--\(221.6a,176.2b\)--\(221.8a,176.0b\)--\(223.1a,174.7b\)--\(223.3a,174.6b\)--\(224.4a,17) showline
+(3.5b\)) showline
+(--\(225.0a,172.9b\)--\(225.7a,172.2b\)--\(226.7a,171.1b\)--\(226.9a,170.9b\)--\(228.1a,16) showline
+(9.6b\)) showline
+(--\(228.4a,169.3b\)--\(229.3a,168.3b\)--\(230.1a,167.5b\)--\(230.5a,167.0b\)--\(231.7a,16) showline
+(5.7b\)) showline
+(--\(231.8a,165.6b\)--\(232.8a,164.4b\)--\(233.4a,163.7b\)--\(233.9a,163.1b\)--\(235.1a,16) showline
+(1.8b\)) showline
+(--\(235.1a,161.7b\)--\(236.2a,160.5b\)--\(236.8a,159.7b\)--\(237.2a,159.2b\)--\(238.3a,15) showline
+(7.9b\)) showline
+(--\(238.5a,157.7b\)--\(239.4a,156.6b\)--\(240.2a,155.6b\)--\(240.4a,155.3b\)--\(241.5a,15) showline
+(4.1b\)) showline
+(--\(241.9a,153.5b\)--\(242.5a,152.8b\)--\(243.5a,151.5b\)--\(243.6a,151.4b\)--\(244.5a,15) showline
+(0.2b\)) showline
+(--\(245.3a,149.2b\)--\(245.5a,148.9b\)--\(246.5a,147.6b\)--\(246.9a,147.0b\)--\(247.5a,14) showline
+(6.3b\)) showline
+(--\(248.5a,145.0b\)--\(248.6a,144.8b\)--\(249.4a,143.7b\)--\(250.3a,142.5b\)--\(250.4a,14) showline
+(2.4b\)) showline
+(--\(251.3a,141.1b\)--\(252.0a,140.2b\)--\(252.3a,139.8b\);) showline
+(draw \(533.7a,134.6b\)--\(533.9a,133.8b\)--\(534.0a,133.4b\)--\(534.3a,132.1b\)--\(534.7a) showline
+(,130.8b\)) showline
+(--\(535.0a,129.5b\)--\(535.3a,128.2b\)--\(535.6a,127.1b\)--\(535.7a,126.9b\)--\(536.0a,12) showline
+(5.6b\)) showline
+(--\(536.3a,124.3b\)--\(536.6a,123.0b\)--\(537.0a,121.7b\)--\(537.3a,120.4b\)--\(537.6a,11) showline
+(9.1b\)) showline
+(--\(537.9a,117.8b\)--\(538.3a,116.5b\)--\(538.6a,115.2b\)--\(538.9a,113.9b\)--\(539.0a,11) showline
+(3.7b\)) showline
+(--\(539.2a,112.7b\)--\(539.6a,111.4b\)--\(539.9a,110.1b\)--\(540.2a,108.8b\)--\(540.5a,10) showline
+(7.5b\)) showline
+(--\(540.7a,107.0b\)--\(540.9a,106.2b\)--\(541.2a,104.9b\)--\(541.5a,103.6b\)--\(541.8a,10) showline
+(2.3b\)) showline
+(--\(542.1a,101.0b\)--\(542.3a,100.2b\)--\(542.5a,99.7b\)--\(542.8a,98.4b\)--\(543.1a,97.1) showline
+(b\)) showline
+(--\(543.4a,95.8b\)--\(543.8a,94.5b\)--\(544.0a,93.4b\)--\(544.1a,93.3b\)--\(544.4a,92.0b\)) showline
+(--\(544.7a,90.7b\)--\(545.0a,89.4b\)--\(545.4a,88.1b\)--\(545.7a,86.8b\)--\(545.7a,86.6b\)) showline
+(--\(546.0a,85.5b\)--\(546.3a,84.2b\)--\(546.6a,82.9b\)--\(547.0a,81.6b\)--\(547.3a,80.3b\)) showline
+(--\(547.4a,79.8b\)--\(547.6a,79.0b\)--\(547.9a,77.7b\)--\(548.1a,76.4b\)--\(548.3a,75.1b\)) showline
+(--\(548.3a,73.8b\);) showline
+(draw \(505.2a,240.7b\)--\(505.6a,239.4b\)--\(506.0a,238.1b\)--\(506.3a,236.8b\)--\(506.7a) showline
+(,235.5b\)) showline
+(--\(506.9a,234.9b\)--\(507.1a,234.3b\)--\(507.5a,233.0b\)--\(507.8a,231.7b\)--\(508.2a,23) showline
+(0.4b\)) showline
+(--\(508.6a,229.1b\)--\(508.6a,229.0b\)--\(508.9a,227.8b\)--\(509.3a,226.5b\)--\(509.7a,22) showline
+(5.2b\)) showline
+(--\(510.0a,223.9b\)--\(510.3a,223.0b\)--\(510.4a,222.6b\)--\(510.8a,221.3b\)--\(511.1a,22) showline
+(0.0b\)) showline
+(--\(511.5a,218.7b\)--\(511.8a,217.4b\)--\(512.0a,217.0b\)--\(512.2a,216.1b\)--\(512.6a,21) showline
+(4.8b\)) showline
+sf (27) 1 endcol
+(27) endpage
+%%Page: ? 28
+28 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(512.9a,213.6b\)--\(513.3a,212.3b\)--\(513.6a,211.0b\)--\(513.7a,210.9b\)--\(514.0a,20) showline
+(9.7b\)) showline
+(--\(514.3a,208.4b\)--\(514.7a,207.1b\)--\(515.0a,205.8b\)--\(515.3a,204.7b\)--\(515.4a,20) showline
+(4.5b\)) showline
+(--\(515.8a,203.2b\)--\(516.1a,201.9b\)--\(516.5a,200.6b\)--\(516.8a,199.3b\)--\(517.0a,19) showline
+(8.5b\)) showline
+(--\(517.2a,198.0b\)--\(517.5a,196.7b\)--\(517.9a,195.4b\)--\(518.2a,194.2b\)--\(518.5a,19) showline
+(2.9b\)) showline
+(--\(518.7a,192.2b\)--\(518.9a,191.6b\)--\(519.2a,190.3b\)--\(519.6a,189.0b\)--\(519.9a,18) showline
+(7.7b\)) showline
+(--\(520.3a,186.4b\)--\(520.4a,185.9b\)--\(520.6a,185.1b\)--\(521.0a,183.8b\)--\(521.3a,18) showline
+(2.5b\)) showline
+(--\(521.6a,181.2b\)--\(522.0a,179.9b\)--\(522.1a,179.5b\)--\(522.3a,178.6b\)--\(522.7a,17) showline
+(7.3b\)) showline
+(--\(523.0a,176.0b\)--\(523.4a,174.7b\)--\(523.7a,173.5b\)--\(523.8a,173.1b\)--\(524.0a,17) showline
+(2.2b\)) showline
+(--\(524.4a,170.9b\)--\(524.7a,169.6b\)--\(525.0a,168.3b\)--\(525.4a,167.0b\)--\(525.5a,16) showline
+(6.7b\)) showline
+(--\(525.7a,165.7b\)--\(526.1a,164.4b\)--\(526.4a,163.1b\)--\(526.7a,161.8b\)--\(527.1a,16) showline
+(0.5b\)) showline
+(--\(527.2a,160.2b\)--\(527.4a,159.2b\)--\(527.7a,157.9b\)--\(528.1a,156.6b\)--\(528.4a,15) showline
+(5.3b\)) showline
+(--\(528.7a,154.1b\)--\(528.8a,153.6b\)--\(529.1a,152.8b\)--\(529.4a,151.5b\)--\(529.7a,15) showline
+(0.2b\)) showline
+(--\(530.1a,148.9b\)--\(530.4a,147.6b\)--\(530.5a,147.0b\)--\(530.7a,146.3b\)--\(531.1a,14) showline
+(5.0b\)) showline
+(--\(531.4a,143.7b\)--\(531.7a,142.4b\)--\(532.0a,141.1b\)--\(532.2a,140.4b\)--\(532.4a,13) showline
+(9.8b\)) showline
+(--\(532.7a,138.5b\)--\(533.0a,137.2b\)--\(533.4a,135.9b\)--\(533.7a,134.6b\);) showline
+(draw \(470.2a,341.6b\)--\(470.8a,340.3b\)--\(471.3a,339.0b\)--\(471.5a,338.8b\)--\(471.9a) showline
+(,337.7b\)) showline
+(--\(472.4a,336.4b\)--\(473.0a,335.2b\)--\(473.1a,334.8b\)--\(473.5a,333.9b\)--\(474.1a,33) showline
+(2.6b\)) showline
+(--\(474.6a,331.3b\)--\(474.8a,330.8b\)--\(475.2a,330.0b\)--\(475.7a,328.7b\)--\(476.2a,32) showline
+(7.4b\)) showline
+(--\(476.5a,326.6b\)--\(476.7a,326.1b\)--\(477.2a,324.8b\)--\(477.8a,323.5b\)--\(478.2a,32) showline
+(2.4b\)) showline
+(--\(478.3a,322.2b\)--\(478.8a,320.9b\)--\(479.3a,319.6b\)--\(479.8a,318.3b\)--\(479.9a,31) showline
+(8.0b\)) showline
+(--\(480.3a,317.0b\)--\(480.7a,315.8b\)--\(481.2a,314.5b\)--\(481.6a,313.5b\)--\(481.7a,31) showline
+(3.2b\)) showline
+(--\(482.2a,311.9b\)--\(482.7a,310.6b\)--\(483.1a,309.3b\)--\(483.3a,308.9b\)--\(483.6a,30) showline
+(8.0b\)) showline
+(--\(484.1a,306.7b\)--\(484.5a,305.4b\)--\(485.0a,304.3b\)--\(485.0a,304.1b\)--\(485.5a,30) showline
+(2.8b\)) showline
+(--\(485.9a,301.5b\)--\(486.4a,300.2b\)--\(486.6a,299.5b\)--\(486.8a,298.9b\)--\(487.3a,29) showline
+(7.6b\)) showline
+(--\(487.7a,296.3b\)--\(488.2a,295.1b\)--\(488.3a,294.6b\)--\(488.6a,293.8b\)--\(489.0a,29) showline
+(2.5b\)) showline
+(--\(489.5a,291.2b\)--\(489.9a,289.9b\)--\(490.0a,289.6b\)--\(490.4a,288.6b\)--\(490.8a,28) showline
+(7.3b\)) showline
+(--\(491.2a,286.0b\)--\(491.6a,284.7b\)--\(491.7a,284.5b\)--\(492.1a,283.4b\)--\(492.5a,28) showline
+(2.1b\)) showline
+(--\(492.9a,280.8b\)--\(493.3a,279.5b\)--\(493.4a,279.3b\)--\(493.7a,278.2b\)--\(494.2a,27) showline
+(6.9b\)) showline
+(--\(494.6a,275.6b\)--\(495.0a,274.4b\)--\(495.1a,274.1b\)--\(495.4a,273.1b\)--\(495.8a,27) showline
+(1.8b\)) showline
+(--\(496.2a,270.5b\)--\(496.6a,269.2b\)--\(496.8a,268.7b\)--\(497.0a,267.9b\)--\(497.4a,26) showline
+(6.6b\)) showline
+(--\(497.8a,265.3b\)--\(498.2a,264.0b\)--\(498.5a,263.3b\)--\(498.6a,262.7b\)--\(499.0a,26) showline
+(1.4b\)) showline
+(--\(499.4a,260.1b\)--\(499.8a,258.8b\)--\(500.1a,257.8b\)--\(500.2a,257.5b\)--\(500.6a,25) showline
+(6.2b\)) showline
+(--\(501.0a,255.0b\)--\(501.4a,253.7b\)--\(501.8a,252.4b\)--\(501.8a,252.2b\)--\(502.2a,25) showline
+(1.1b\)) showline
+(--\(502.5a,249.8b\)--\(502.9a,248.5b\)--\(503.3a,247.2b\)--\(503.5a,246.5b\)--\(503.7a,24) showline
+(5.9b\)) showline
+(--\(504.1a,244.6b\)--\(504.5a,243.3b\)--\(504.8a,242.0b\)--\(505.2a,240.7b\);) showline
+(draw \(396.9a,380.4b\)--\(397.2a,380.8b\)--\(398.0a,381.7b\)--\(398.9a,382.8b\)--\(399.1a) showline
+(,383.0b\)) showline
+(--\(400.2a,384.3b\)--\(400.6a,384.7b\)--\(401.4a,385.6b\)--\(402.2a,386.4b\)--\(402.7a,38) showline
+(6.9b\)) showline
+sf (28) 1 endcol
+(28) endpage
+%%Page: ? 29
+29 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(403.9a,388.1b\)--\(404.1a,388.2b\)--\(405.6a,389.5b\)--\(407.2a,390.8b\)--\(407.3a,39) showline
+(0.9b\)) showline
+(--\(409.0a,392.1b\)--\(410.7a,393.1b\)--\(411.1a,393.4b\)--\(412.4a,394.0b\)--\(413.7a,39) showline
+(4.7b\)) showline
+(--\(414.1a,394.8b\)--\(415.7a,395.5b\)--\(417.4a,396.0b\)--\(419.1a,396.3b\)--\(420.8a,39) showline
+(6.5b\)) showline
+(--\(422.5a,396.6b\)--\(424.2a,396.5b\)--\(425.9a,396.3b\)--\(427.6a,396.0b\)--\(429.3a,39) showline
+(5.5b\)) showline
+(--\(430.9a,394.8b\)--\(431.3a,394.7b\)--\(432.6a,394.0b\)--\(433.9a,393.4b\)--\(434.3a,39) showline
+(3.1b\)) showline
+(--\(436.0a,392.1b\)--\(437.7a,390.9b\)--\(437.8a,390.8b\)--\(439.4a,389.5b\)--\(440.9a,38) showline
+(8.2b\)) showline
+(--\(441.1a,388.1b\)--\(442.3a,386.9b\)--\(442.8a,386.4b\)--\(443.6a,385.6b\)--\(444.4a,38) showline
+(4.7b\)) showline
+(--\(444.8a,384.3b\)--\(445.9a,383.0b\)--\(446.1a,382.8b\)--\(447.0a,381.7b\)--\(447.8a,38) showline
+(0.8b\)) showline
+(--\(448.1a,380.4b\)--\(449.1a,379.1b\)--\(449.5a,378.6b\)--\(450.1a,377.8b\)--\(451.0a,37) showline
+(6.5b\)) showline
+(--\(451.2a,376.3b\)--\(451.9a,375.3b\)--\(452.8a,374.0b\)--\(452.9a,373.9b\)--\(453.7a,37) showline
+(2.7b\)) showline
+(--\(454.5a,371.4b\)--\(454.6a,371.3b\)--\(455.4a,370.1b\)--\(456.2a,368.8b\)--\(456.3a,36) showline
+(8.6b\)) showline
+(--\(456.9a,367.5b\)--\(457.7a,366.2b\)--\(457.9a,365.8b\)--\(458.5a,364.9b\)--\(459.2a,36) showline
+(3.6b\)) showline
+(--\(459.6a,362.9b\)--\(459.9a,362.3b\)--\(460.6a,361.0b\)--\(461.3a,359.8b\)--\(461.4a,35) showline
+(9.7b\)) showline
+(--\(462.0a,358.4b\)--\(462.7a,357.1b\)--\(463.0a,356.6b\)--\(463.4a,355.9b\)--\(464.0a,35) showline
+(4.6b\)) showline
+(--\(464.7a,353.3b\)--\(465.3a,352.0b\)--\(466.0a,350.7b\)--\(466.4a,349.8b\)--\(466.6a,34) showline
+(9.4b\)) showline
+(--\(467.2a,348.1b\)--\(467.8a,346.8b\)--\(468.1a,346.3b\)--\(468.4a,345.5b\)--\(469.0a,34) showline
+(4.2b\)) showline
+(--\(469.6a,342.9b\)--\(469.8a,342.6b\)--\(470.2a,341.6b\);) showline
+(draw \(353.4a,284.7b\)--\(353.8a,286.0b\)--\(354.2a,287.3b\)--\(354.6a,288.6b\)--\(355.0a) showline
+(,289.6b\)) showline
+(--\(355.1a,289.9b\)--\(355.5a,291.2b\)--\(356.0a,292.5b\)--\(356.4a,293.8b\)--\(356.7a,29) showline
+(4.6b\)) showline
+(--\(356.8a,295.1b\)--\(357.3a,296.3b\)--\(357.7a,297.6b\)--\(358.2a,298.9b\)--\(358.4a,29) showline
+(9.5b\)) showline
+(--\(358.6a,300.2b\)--\(359.1a,301.5b\)--\(359.5a,302.8b\)--\(360.0a,304.1b\)--\(360.0a,30) showline
+(4.3b\)) showline
+(--\(360.5a,305.4b\)--\(360.9a,306.7b\)--\(361.4a,308.0b\)--\(361.7a,308.9b\)--\(361.9a,30) showline
+(9.3b\)) showline
+(--\(362.3a,310.6b\)--\(362.8a,311.9b\)--\(363.3a,313.2b\)--\(363.4a,313.5b\)--\(363.8a,31) showline
+(4.5b\)) showline
+(--\(364.3a,315.8b\)--\(364.7a,317.0b\)--\(365.1a,318.0b\)--\(365.2a,318.3b\)--\(365.7a,31) showline
+(9.6b\)) showline
+(--\(366.2a,320.9b\)--\(366.7a,322.2b\)--\(366.8a,322.4b\)--\(367.2a,323.5b\)--\(367.8a,32) showline
+(4.8b\)) showline
+(--\(368.3a,326.1b\)--\(368.5a,326.6b\)--\(368.8a,327.4b\)--\(369.3a,328.7b\)--\(369.8a,33) showline
+(0.0b\)) showline
+(--\(370.2a,330.8b\)--\(370.4a,331.3b\)--\(370.9a,332.6b\)--\(371.5a,333.9b\)--\(371.9a,33) showline
+(4.8b\)) showline
+(--\(372.0a,335.2b\)--\(372.6a,336.4b\)--\(373.1a,337.7b\)--\(373.5a,338.8b\)--\(373.7a,33) showline
+(9.0b\)) showline
+(--\(374.2a,340.3b\)--\(374.8a,341.6b\)--\(375.2a,342.6b\)--\(375.4a,342.9b\)--\(376.0a,34) showline
+(4.2b\)) showline
+(--\(376.6a,345.5b\)--\(376.9a,346.3b\)--\(377.2a,346.8b\)--\(377.8a,348.1b\)--\(378.4a,34) showline
+(9.4b\)) showline
+(--\(378.6a,349.8b\)--\(379.0a,350.7b\)--\(379.7a,352.0b\)--\(380.3a,353.3b\)--\(381.0a,35) showline
+(4.6b\)) showline
+(--\(381.6a,355.9b\)--\(382.0a,356.6b\)--\(382.3a,357.1b\)--\(383.0a,358.4b\)--\(383.6a,35) showline
+(9.7b\)) showline
+(--\(383.7a,359.8b\)--\(384.4a,361.0b\)--\(385.1a,362.3b\)--\(385.4a,362.9b\)--\(385.8a,36) showline
+(3.6b\)) showline
+(--\(386.5a,364.9b\)--\(387.1a,365.8b\)--\(387.3a,366.2b\)--\(388.1a,367.5b\)--\(388.7a,36) showline
+(8.6b\)) showline
+(--\(388.8a,368.8b\)--\(389.6a,370.1b\)--\(390.4a,371.3b\)--\(390.5a,371.4b\)--\(391.3a,37) showline
+(2.7b\)) showline
+(--\(392.1a,373.9b\)--\(392.2a,374.0b\)--\(393.1a,375.3b\)--\(393.8a,376.3b\)--\(394.0a,37) showline
+(6.5b\)) showline
+(--\(394.9a,377.8b\)--\(395.5a,378.6b\)--\(395.9a,379.1b\)--\(396.9a,380.4b\);) showline
+sf (29) 1 endcol
+(29) endpage
+%%Page: ? 30
+30 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (draw \(323.0a,179.9b\)--\(323.4a,181.2b\)--\(323.7a,182.5b\)--\(324.0a,183.8b\)--\(324.4a) showline
+(,185.1b\)) showline
+(--\(324.6a,185.9b\)--\(324.7a,186.4b\)--\(325.1a,187.7b\)--\(325.4a,189.0b\)--\(325.8a,19) showline
+(0.3b\)) showline
+(--\(326.1a,191.6b\)--\(326.3a,192.2b\)--\(326.5a,192.9b\)--\(326.8a,194.2b\)--\(327.1a,19) showline
+(5.4b\)) showline
+(--\(327.5a,196.7b\)--\(327.8a,198.0b\)--\(328.0a,198.5b\)--\(328.2a,199.3b\)--\(328.5a,20) showline
+(0.6b\)) showline
+(--\(328.9a,201.9b\)--\(329.2a,203.2b\)--\(329.6a,204.5b\)--\(329.7a,204.7b\)--\(330.0a,20) showline
+(5.8b\)) showline
+(--\(330.3a,207.1b\)--\(330.7a,208.4b\)--\(331.0a,209.7b\)--\(331.3a,210.9b\)--\(331.4a,21) showline
+(1.0b\)) showline
+(--\(331.7a,212.3b\)--\(332.1a,213.6b\)--\(332.4a,214.8b\)--\(332.8a,216.1b\)--\(333.0a,21) showline
+(7.0b\)) showline
+(--\(333.2a,217.4b\)--\(333.5a,218.7b\)--\(333.9a,220.0b\)--\(334.2a,221.3b\)--\(334.6a,22) showline
+(2.6b\)) showline
+(--\(334.7a,223.0b\)--\(335.0a,223.9b\)--\(335.3a,225.2b\)--\(335.7a,226.5b\)--\(336.1a,22) showline
+(7.8b\)) showline
+(--\(336.4a,229.0b\)--\(336.4a,229.1b\)--\(336.8a,230.4b\)--\(337.2a,231.7b\)--\(337.5a,23) showline
+(3.0b\)) showline
+(--\(337.9a,234.3b\)--\(338.1a,234.9b\)--\(338.3a,235.5b\)--\(338.7a,236.8b\)--\(339.0a,23) showline
+(8.1b\)) showline
+(--\(339.4a,239.4b\)--\(339.8a,240.7b\)--\(340.2a,242.0b\)--\(340.5a,243.3b\)--\(340.9a,24) showline
+(4.6b\)) showline
+(--\(341.3a,245.9b\)--\(341.5a,246.5b\)--\(341.7a,247.2b\)--\(342.1a,248.5b\)--\(342.5a,24) showline
+(9.8b\)) showline
+(--\(342.8a,251.1b\)--\(343.2a,252.2b\)--\(343.2a,252.4b\)--\(343.6a,253.7b\)--\(344.0a,25) showline
+(5.0b\)) showline
+(--\(344.4a,256.2b\)--\(344.8a,257.5b\)--\(344.9a,257.8b\)--\(345.2a,258.8b\)--\(345.6a,26) showline
+(0.1b\)) showline
+(--\(346.0a,261.4b\)--\(346.4a,262.7b\)--\(346.5a,263.3b\)--\(346.8a,264.0b\)--\(347.2a,26) showline
+(5.3b\)) showline
+(--\(347.6a,266.6b\)--\(348.0a,267.9b\)--\(348.2a,268.7b\)--\(348.4a,269.2b\)--\(348.8a,27) showline
+(0.5b\)) showline
+(--\(349.2a,271.8b\)--\(349.6a,273.1b\)--\(349.9a,274.1b\)--\(350.0a,274.4b\)--\(350.4a,27) showline
+(5.6b\)) showline
+(--\(350.8a,276.9b\)--\(351.3a,278.2b\)--\(351.6a,279.3b\)--\(351.7a,279.5b\)--\(352.1a,28) showline
+(0.8b\)) showline
+(--\(352.5a,282.1b\)--\(352.9a,283.4b\)--\(353.3a,284.5b\)--\(353.4a,284.7b\);) showline
+(draw \(296.7a,73.8b\)--\(296.7a,75.1b\)--\(296.9a,76.4b\)--\(297.1a,77.7b\)--\(297.4a,79.) showline
+(0b\)) showline
+(--\(297.6a,79.8b\)--\(297.7a,80.3b\)--\(298.0a,81.6b\)--\(298.4a,82.9b\)--\(298.7a,84.2b\)) showline
+(--\(299.0a,85.5b\)--\(299.3a,86.6b\)--\(299.3a,86.8b\)--\(299.6a,88.1b\)--\(300.0a,89.4b\)) showline
+(--\(300.3a,90.7b\)--\(300.6a,92.0b\)--\(300.9a,93.3b\)--\(301.0a,93.4b\)--\(301.2a,94.5b\)) showline
+(--\(301.6a,95.8b\)--\(301.9a,97.1b\)--\(302.2a,98.4b\)--\(302.5a,99.7b\)--\(302.7a,100.2b) showline
+(\)) showline
+(--\(302.9a,101.0b\)--\(303.2a,102.3b\)--\(303.5a,103.6b\)--\(303.8a,104.9b\)--\(304.1a,10) showline
+(6.2b\)) showline
+(--\(304.3a,107.0b\)--\(304.5a,107.5b\)--\(304.8a,108.8b\)--\(305.1a,110.1b\)--\(305.4a,11) showline
+(1.4b\)) showline
+(--\(305.8a,112.7b\)--\(306.0a,113.7b\)--\(306.1a,113.9b\)--\(306.4a,115.2b\)--\(306.7a,11) showline
+(6.5b\)) showline
+(--\(307.1a,117.8b\)--\(307.4a,119.1b\)--\(307.7a,120.4b\)--\(308.0a,121.7b\)--\(308.4a,12) showline
+(3.0b\)) showline
+(--\(308.7a,124.3b\)--\(309.0a,125.6b\)--\(309.3a,126.9b\)--\(309.4a,127.1b\)--\(309.7a,12) showline
+(8.2b\)) showline
+(--\(310.0a,129.5b\)--\(310.3a,130.8b\)--\(310.7a,132.1b\)--\(311.0a,133.4b\)--\(311.1a,13) showline
+(3.8b\)) showline
+(--\(311.3a,134.6b\)--\(311.6a,135.9b\)--\(312.0a,137.2b\)--\(312.3a,138.5b\)--\(312.6a,13) showline
+(9.8b\)) showline
+(--\(312.8a,140.4b\)--\(313.0a,141.1b\)--\(313.3a,142.4b\)--\(313.6a,143.7b\)--\(313.9a,14) showline
+(5.0b\)) showline
+(--\(314.3a,146.3b\)--\(314.5a,147.0b\)--\(314.6a,147.6b\)--\(314.9a,148.9b\)--\(315.3a,15) showline
+(0.2b\)) showline
+(--\(315.6a,151.5b\)--\(315.9a,152.8b\)--\(316.2a,153.6b\)--\(316.3a,154.1b\)--\(316.6a,15) showline
+(5.3b\)) showline
+(--\(316.9a,156.6b\)--\(317.3a,157.9b\)--\(317.6a,159.2b\)--\(317.8a,160.2b\)--\(317.9a,16) showline
+(0.5b\)) showline
+(--\(318.3a,161.8b\)--\(318.6a,163.1b\)--\(318.9a,164.4b\)--\(319.3a,165.7b\)--\(319.5a,16) showline
+(6.7b\)) showline
+(--\(319.6a,167.0b\)--\(320.0a,168.3b\)--\(320.3a,169.6b\)--\(320.6a,170.9b\)--\(321.0a,17) showline
+(2.2b\)) showline
+sf (30) 1 endcol
+(30) endpage
+%%Page: ? 31
+31 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(321.2a,173.1b\)--\(321.3a,173.5b\)--\(321.6a,174.7b\)--\(322.0a,176.0b\)--\(322.3a,17) showline
+(7.3b\)) showline
+(--\(322.7a,178.6b\)--\(322.9a,179.5b\)--\(323.0a,179.9b\);) showline
+(draw \(557.0a,104.9b\)--\(556.7a,103.6b\)--\(556.4a,102.3b\)--\(556.1a,101.0b\)--\(555.9a) showline
+(,100.2b\)) showline
+(--\(555.7a,99.7b\)--\(555.4a,98.4b\)--\(555.1a,97.1b\)--\(554.8a,95.8b\)--\(554.4a,94.5b\)) showline
+(--\(554.2a,93.4b\)--\(554.1a,93.3b\)--\(553.8a,92.0b\)--\(553.5a,90.7b\)--\(553.2a,89.4b\)) showline
+(--\(552.8a,88.1b\)--\(552.5a,86.8b\)--\(552.5a,86.6b\)--\(552.2a,85.5b\)--\(551.9a,84.2b\)) showline
+(--\(551.6a,82.9b\)--\(551.2a,81.6b\)--\(550.9a,80.3b\)--\(550.8a,79.8b\)--\(550.6a,79.0b\)) showline
+(--\(550.3a,77.7b\)--\(550.1a,76.4b\)--\(549.9a,75.1b\)--\(549.9a,73.8b\);) showline
+(draw \(584.5a,210.9b\)--\(584.2a,209.7b\)--\(583.9a,208.4b\)--\(583.5a,207.1b\)--\(583.2a) showline
+(,205.8b\)) showline
+(--\(582.9a,204.7b\)--\(582.8a,204.5b\)--\(582.4a,203.2b\)--\(582.1a,201.9b\)--\(581.7a,20) showline
+(0.6b\)) showline
+(--\(581.4a,199.3b\)--\(581.2a,198.5b\)--\(581.0a,198.0b\)--\(580.7a,196.7b\)--\(580.3a,19) showline
+(5.4b\)) showline
+(--\(580.0a,194.2b\)--\(579.7a,192.9b\)--\(579.5a,192.2b\)--\(579.3a,191.6b\)--\(579.0a,19) showline
+(0.3b\)) showline
+(--\(578.6a,189.0b\)--\(578.3a,187.7b\)--\(577.9a,186.4b\)--\(577.8a,185.9b\)--\(577.6a,18) showline
+(5.1b\)) showline
+(--\(577.2a,183.8b\)--\(576.9a,182.5b\)--\(576.6a,181.2b\)--\(576.2a,179.9b\)--\(576.1a,17) showline
+(9.5b\)) showline
+(--\(575.9a,178.6b\)--\(575.5a,177.3b\)--\(575.2a,176.0b\)--\(574.8a,174.7b\)--\(574.5a,17) showline
+(3.5b\)) showline
+(--\(574.4a,173.1b\)--\(574.2a,172.2b\)--\(573.8a,170.9b\)--\(573.5a,169.6b\)--\(573.2a,16) showline
+(8.3b\)) showline
+(--\(572.8a,167.0b\)--\(572.7a,166.7b\)--\(572.5a,165.7b\)--\(572.1a,164.4b\)--\(571.8a,16) showline
+(3.1b\)) showline
+(--\(571.5a,161.8b\)--\(571.1a,160.5b\)--\(571.0a,160.2b\)--\(570.8a,159.2b\)--\(570.5a,15) showline
+(7.9b\)) showline
+(--\(570.1a,156.6b\)--\(569.8a,155.3b\)--\(569.5a,154.1b\)--\(569.4a,153.6b\)--\(569.1a,15) showline
+(2.8b\)) showline
+(--\(568.8a,151.5b\)--\(568.5a,150.2b\)--\(568.1a,148.9b\)--\(567.8a,147.6b\)--\(567.7a,14) showline
+(7.0b\)) showline
+(--\(567.5a,146.3b\)--\(567.1a,145.0b\)--\(566.8a,143.7b\)--\(566.5a,142.4b\)--\(566.2a,14) showline
+(1.1b\)) showline
+(--\(566.0a,140.4b\)--\(565.8a,139.8b\)--\(565.5a,138.5b\)--\(565.2a,137.2b\)--\(564.8a,13) showline
+(5.9b\)) showline
+(--\(564.5a,134.6b\)--\(564.3a,133.8b\)--\(564.2a,133.4b\)--\(563.9a,132.1b\)--\(563.5a,13) showline
+(0.8b\)) showline
+(--\(563.2a,129.5b\)--\(562.9a,128.2b\)--\(562.6a,127.1b\)--\(562.5a,126.9b\)--\(562.2a,12) showline
+(5.6b\)) showline
+(--\(561.9a,124.3b\)--\(561.6a,123.0b\)--\(561.2a,121.7b\)--\(560.9a,120.4b\)--\(560.6a,11) showline
+(9.1b\)) showline
+(--\(560.3a,117.8b\)--\(559.9a,116.5b\)--\(559.6a,115.2b\)--\(559.3a,113.9b\)--\(559.2a,11) showline
+(3.7b\)) showline
+(--\(559.0a,112.7b\)--\(558.6a,111.4b\)--\(558.3a,110.1b\)--\(558.0a,108.8b\)--\(557.7a,10) showline
+(7.5b\)) showline
+(--\(557.5a,107.0b\)--\(557.3a,106.2b\)--\(557.0a,104.9b\);) showline
+(draw \(616.6a,313.5b\)--\(616.5a,313.2b\)--\(616.0a,311.9b\)--\(615.5a,310.6b\)--\(615.1a) showline
+(,309.3b\)) showline
+(--\(614.9a,308.9b\)--\(614.6a,308.0b\)--\(614.1a,306.7b\)--\(613.7a,305.4b\)--\(613.2a,30) showline
+(4.3b\)) showline
+(--\(613.2a,304.1b\)--\(612.7a,302.8b\)--\(612.3a,301.5b\)--\(611.8a,300.2b\)--\(611.6a,29) showline
+(9.5b\)) showline
+(--\(611.4a,298.9b\)--\(610.9a,297.6b\)--\(610.5a,296.3b\)--\(610.0a,295.1b\)--\(609.9a,29) showline
+(4.6b\)) showline
+(--\(609.6a,293.8b\)--\(609.2a,292.5b\)--\(608.7a,291.2b\)--\(608.3a,289.9b\)--\(608.2a,28) showline
+(9.6b\)) showline
+(--\(607.8a,288.6b\)--\(607.4a,287.3b\)--\(607.0a,286.0b\)--\(606.6a,284.7b\)--\(606.5a,28) showline
+(4.5b\)) showline
+(--\(606.1a,283.4b\)--\(605.7a,282.1b\)--\(605.3a,280.8b\)--\(604.9a,279.5b\)--\(604.8a,27) showline
+(9.3b\)) showline
+(--\(604.5a,278.2b\)--\(604.0a,276.9b\)--\(603.6a,275.6b\)--\(603.2a,274.4b\)--\(603.1a,27) showline
+(4.1b\)) showline
+(--\(602.8a,273.1b\)--\(602.4a,271.8b\)--\(602.0a,270.5b\)--\(601.6a,269.2b\)--\(601.4a,26) showline
+(8.7b\)) showline
+(--\(601.2a,267.9b\)--\(600.8a,266.6b\)--\(600.4a,265.3b\)--\(600.0a,264.0b\)--\(599.7a,26) showline
+(3.3b\)) showline
+(--\(599.6a,262.7b\)--\(599.2a,261.4b\)--\(598.8a,260.1b\)--\(598.4a,258.8b\)--\(598.1a,25) showline
+(7.8b\)) showline
+(--\(598.0a,257.5b\)--\(597.6a,256.2b\)--\(597.2a,255.0b\)--\(596.8a,253.7b\)--\(596.4a,25) showline
+sf (31) 1 endcol
+(31) endpage
+%%Page: ? 32
+32 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (2.4b\)) showline
+(--\(596.4a,252.2b\)--\(596.0a,251.1b\)--\(595.7a,249.8b\)--\(595.3a,248.5b\)--\(594.9a,24) showline
+(7.2b\)) showline
+(--\(594.7a,246.5b\)--\(594.5a,245.9b\)--\(594.1a,244.6b\)--\(593.7a,243.3b\)--\(593.4a,24) showline
+(2.0b\)) showline
+(--\(593.0a,240.7b\)--\(592.6a,239.4b\)--\(592.2a,238.1b\)--\(591.9a,236.8b\)--\(591.5a,23) showline
+(5.5b\)) showline
+(--\(591.3a,234.9b\)--\(591.1a,234.3b\)--\(590.7a,233.0b\)--\(590.4a,231.7b\)--\(590.0a,23) showline
+(0.4b\)) showline
+(--\(589.6a,229.1b\)--\(589.6a,229.0b\)--\(589.3a,227.8b\)--\(588.9a,226.5b\)--\(588.5a,22) showline
+(5.2b\)) showline
+(--\(588.2a,223.9b\)--\(587.9a,223.0b\)--\(587.8a,222.6b\)--\(587.4a,221.3b\)--\(587.1a,22) showline
+(0.0b\)) showline
+(--\(586.7a,218.7b\)--\(586.4a,217.4b\)--\(586.2a,217.0b\)--\(586.0a,216.1b\)--\(585.6a,21) showline
+(4.8b\)) showline
+(--\(585.3a,213.6b\)--\(584.9a,212.3b\)--\(584.6a,211.0b\)--\(584.5a,210.9b\);) showline
+(draw \(675.7a,396.6b\)--\(674.0a,396.5b\)--\(672.3a,396.3b\)--\(670.6a,396.0b\)--\(668.9a) showline
+(,395.5b\)) showline
+(--\(667.3a,394.8b\)--\(666.9a,394.7b\)--\(665.6a,394.0b\)--\(664.3a,393.4b\)--\(663.9a,39) showline
+(3.1b\)) showline
+(--\(662.2a,392.1b\)--\(660.5a,390.9b\)--\(660.4a,390.8b\)--\(658.8a,389.5b\)--\(657.3a,38) showline
+(8.2b\)) showline
+(--\(657.1a,388.1b\)--\(655.9a,386.9b\)--\(655.4a,386.4b\)--\(654.6a,385.6b\)--\(653.8a,38) showline
+(4.7b\)) showline
+(--\(653.4a,384.3b\)--\(652.3a,383.0b\)--\(652.1a,382.8b\)--\(651.2a,381.7b\)--\(650.4a,38) showline
+(0.8b\)) showline
+(--\(650.1a,380.4b\)--\(649.1a,379.1b\)--\(648.7a,378.6b\)--\(648.1a,377.8b\)--\(647.2a,37) showline
+(6.5b\)) showline
+(--\(647.0a,376.3b\)--\(646.3a,375.3b\)--\(645.4a,374.0b\)--\(645.3a,373.9b\)--\(644.5a,37) showline
+(2.7b\)) showline
+(--\(643.7a,371.4b\)--\(643.6a,371.3b\)--\(642.8a,370.1b\)--\(642.0a,368.8b\)--\(641.9a,36) showline
+(8.6b\)) showline
+(--\(641.3a,367.5b\)--\(640.5a,366.2b\)--\(640.3a,365.8b\)--\(639.7a,364.9b\)--\(639.0a,36) showline
+(3.6b\)) showline
+(--\(638.6a,362.9b\)--\(638.3a,362.3b\)--\(637.6a,361.0b\)--\(636.9a,359.8b\)--\(636.8a,35) showline
+(9.7b\)) showline
+(--\(636.2a,358.4b\)--\(635.5a,357.1b\)--\(635.2a,356.6b\)--\(634.8a,355.9b\)--\(634.2a,35) showline
+(4.6b\)) showline
+(--\(633.5a,353.3b\)--\(632.9a,352.0b\)--\(632.2a,350.7b\)--\(631.8a,349.8b\)--\(631.6a,34) showline
+(9.4b\)) showline
+(--\(631.0a,348.1b\)--\(630.4a,346.8b\)--\(630.1a,346.3b\)--\(629.8a,345.5b\)--\(629.2a,34) showline
+(4.2b\)) showline
+(--\(628.6a,342.9b\)--\(628.4a,342.6b\)--\(628.0a,341.6b\)--\(627.4a,340.3b\)--\(626.9a,33) showline
+(9.0b\)) showline
+(--\(626.7a,338.8b\)--\(626.3a,337.7b\)--\(625.8a,336.4b\)--\(625.2a,335.2b\)--\(625.1a,33) showline
+(4.8b\)) showline
+(--\(624.7a,333.9b\)--\(624.1a,332.6b\)--\(623.6a,331.3b\)--\(623.4a,330.8b\)--\(623.0a,33) showline
+(0.0b\)) showline
+(--\(622.5a,328.7b\)--\(622.0a,327.4b\)--\(621.7a,326.6b\)--\(621.5a,326.1b\)--\(621.0a,32) showline
+(4.8b\)) showline
+(--\(620.4a,323.5b\)--\(620.0a,322.4b\)--\(619.9a,322.2b\)--\(619.4a,320.9b\)--\(618.9a,31) showline
+(9.6b\)) showline
+(--\(618.4a,318.3b\)--\(618.3a,318.0b\)--\(617.9a,317.0b\)--\(617.5a,315.8b\)--\(617.0a,31) showline
+(4.5b\)) showline
+(--\(616.6a,313.5b\);) showline
+(draw \(288.0a,104.9b\)--\(288.3a,103.6b\)--\(288.6a,102.3b\)--\(288.9a,101.0b\)--\(289.1a) showline
+(,100.2b\)) showline
+(--\(289.3a,99.7b\)--\(289.6a,98.4b\)--\(289.9a,97.1b\)--\(290.2a,95.8b\)--\(290.6a,94.5b\)) showline
+(--\(290.8a,93.4b\)--\(290.9a,93.3b\)--\(291.2a,92.0b\)--\(291.5a,90.7b\)--\(291.8a,89.4b\)) showline
+(--\(292.2a,88.1b\)--\(292.5a,86.8b\)--\(292.5a,86.6b\)--\(292.8a,85.5b\)--\(293.1a,84.2b\)) showline
+(--\(293.4a,82.9b\)--\(293.8a,81.6b\)--\(294.1a,80.3b\)--\(294.2a,79.8b\)--\(294.4a,79.0b\)) showline
+(--\(294.7a,77.7b\)--\(294.9a,76.4b\)--\(295.1a,75.1b\)--\(295.1a,73.8b\);) showline
+(draw \(260.5a,210.9b\)--\(260.8a,209.7b\)--\(261.1a,208.4b\)--\(261.5a,207.1b\)--\(261.8a) showline
+(,205.8b\)) showline
+(--\(262.1a,204.7b\)--\(262.2a,204.5b\)--\(262.6a,203.2b\)--\(262.9a,201.9b\)--\(263.3a,20) showline
+(0.6b\)) showline
+(--\(263.6a,199.3b\)--\(263.8a,198.5b\)--\(264.0a,198.0b\)--\(264.3a,196.7b\)--\(264.7a,19) showline
+(5.4b\)) showline
+(--\(265.0a,194.2b\)--\(265.3a,192.9b\)--\(265.5a,192.2b\)--\(265.7a,191.6b\)--\(266.0a,19) showline
+(0.3b\)) showline
+(--\(266.4a,189.0b\)--\(266.7a,187.7b\)--\(267.1a,186.4b\)--\(267.2a,185.9b\)--\(267.4a,18) showline
+(5.1b\)) showline
+sf (32) 1 endcol
+(32) endpage
+%%Page: ? 33
+33 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(267.8a,183.8b\)--\(268.1a,182.5b\)--\(268.4a,181.2b\)--\(268.8a,179.9b\)--\(268.9a,17) showline
+(9.5b\)) showline
+(--\(269.1a,178.6b\)--\(269.5a,177.3b\)--\(269.8a,176.0b\)--\(270.2a,174.7b\)--\(270.5a,17) showline
+(3.5b\)) showline
+(--\(270.6a,173.1b\)--\(270.8a,172.2b\)--\(271.2a,170.9b\)--\(271.5a,169.6b\)--\(271.8a,16) showline
+(8.3b\)) showline
+(--\(272.2a,167.0b\)--\(272.3a,166.7b\)--\(272.5a,165.7b\)--\(272.9a,164.4b\)--\(273.2a,16) showline
+(3.1b\)) showline
+(--\(273.5a,161.8b\)--\(273.9a,160.5b\)--\(274.0a,160.2b\)--\(274.2a,159.2b\)--\(274.5a,15) showline
+(7.9b\)) showline
+(--\(274.9a,156.6b\)--\(275.2a,155.3b\)--\(275.5a,154.1b\)--\(275.6a,153.6b\)--\(275.9a,15) showline
+(2.8b\)) showline
+(--\(276.2a,151.5b\)--\(276.5a,150.2b\)--\(276.9a,148.9b\)--\(277.2a,147.6b\)--\(277.3a,14) showline
+(7.0b\)) showline
+(--\(277.5a,146.3b\)--\(277.8a,145.0b\)--\(278.2a,143.7b\)--\(278.5a,142.4b\)--\(278.8a,14) showline
+(1.1b\)) showline
+(--\(279.0a,140.4b\)--\(279.2a,139.8b\)--\(279.5a,138.5b\)--\(279.8a,137.2b\)--\(280.2a,13) showline
+(5.9b\)) showline
+(--\(280.5a,134.6b\)--\(280.7a,133.8b\)--\(280.8a,133.4b\)--\(281.1a,132.1b\)--\(281.5a,13) showline
+(0.8b\)) showline
+(--\(281.8a,129.5b\)--\(282.1a,128.2b\)--\(282.4a,127.1b\)--\(282.5a,126.9b\)--\(282.8a,12) showline
+(5.6b\)) showline
+(--\(283.1a,124.3b\)--\(283.4a,123.0b\)--\(283.8a,121.7b\)--\(284.1a,120.4b\)--\(284.4a,11) showline
+(9.1b\)) showline
+(--\(284.7a,117.8b\)--\(285.1a,116.5b\)--\(285.4a,115.2b\)--\(285.7a,113.9b\)--\(285.8a,11) showline
+(3.7b\)) showline
+(--\(286.0a,112.7b\)--\(286.4a,111.4b\)--\(286.7a,110.1b\)--\(287.0a,108.8b\)--\(287.3a,10) showline
+(7.5b\)) showline
+(--\(287.5a,107.0b\)--\(287.7a,106.2b\)--\(288.0a,104.9b\);) showline
+(draw \(228.4a,313.5b\)--\(228.5a,313.2b\)--\(229.0a,311.9b\)--\(229.5a,310.6b\)--\(229.9a) showline
+(,309.3b\)) showline
+(--\(230.1a,308.9b\)--\(230.4a,308.0b\)--\(230.9a,306.7b\)--\(231.3a,305.4b\)--\(231.8a,30) showline
+(4.3b\)) showline
+(--\(231.8a,304.1b\)--\(232.3a,302.8b\)--\(232.7a,301.5b\)--\(233.2a,300.2b\)--\(233.4a,29) showline
+(9.5b\)) showline
+(--\(233.6a,298.9b\)--\(234.1a,297.6b\)--\(234.5a,296.3b\)--\(235.0a,295.1b\)--\(235.1a,29) showline
+(4.6b\)) showline
+(--\(235.4a,293.8b\)--\(235.8a,292.5b\)--\(236.3a,291.2b\)--\(236.7a,289.9b\)--\(236.8a,28) showline
+(9.6b\)) showline
+(--\(237.2a,288.6b\)--\(237.6a,287.3b\)--\(238.0a,286.0b\)--\(238.4a,284.7b\)--\(238.5a,28) showline
+(4.5b\)) showline
+(--\(238.9a,283.4b\)--\(239.3a,282.1b\)--\(239.7a,280.8b\)--\(240.1a,279.5b\)--\(240.2a,27) showline
+(9.3b\)) showline
+(--\(240.5a,278.2b\)--\(241.0a,276.9b\)--\(241.4a,275.6b\)--\(241.8a,274.4b\)--\(241.9a,27) showline
+(4.1b\)) showline
+(--\(242.2a,273.1b\)--\(242.6a,271.8b\)--\(243.0a,270.5b\)--\(243.4a,269.2b\)--\(243.6a,26) showline
+(8.7b\)) showline
+(--\(243.8a,267.9b\)--\(244.2a,266.6b\)--\(244.6a,265.3b\)--\(245.0a,264.0b\)--\(245.3a,26) showline
+(3.3b\)) showline
+(--\(245.4a,262.7b\)--\(245.8a,261.4b\)--\(246.2a,260.1b\)--\(246.6a,258.8b\)--\(246.9a,25) showline
+(7.8b\)) showline
+(--\(247.0a,257.5b\)--\(247.4a,256.2b\)--\(247.8a,255.0b\)--\(248.2a,253.7b\)--\(248.6a,25) showline
+(2.4b\)) showline
+(--\(248.6a,252.2b\)--\(249.0a,251.1b\)--\(249.3a,249.8b\)--\(249.7a,248.5b\)--\(250.1a,24) showline
+(7.2b\)) showline
+(--\(250.3a,246.5b\)--\(250.5a,245.9b\)--\(250.9a,244.6b\)--\(251.3a,243.3b\)--\(251.6a,24) showline
+(2.0b\)) showline
+(--\(252.0a,240.7b\)--\(252.4a,239.4b\)--\(252.8a,238.1b\)--\(253.1a,236.8b\)--\(253.5a,23) showline
+(5.5b\)) showline
+(--\(253.7a,234.9b\)--\(253.9a,234.3b\)--\(254.3a,233.0b\)--\(254.6a,231.7b\)--\(255.0a,23) showline
+(0.4b\)) showline
+(--\(255.4a,229.1b\)--\(255.4a,229.0b\)--\(255.7a,227.8b\)--\(256.1a,226.5b\)--\(256.5a,22) showline
+(5.2b\)) showline
+(--\(256.8a,223.9b\)--\(257.1a,223.0b\)--\(257.2a,222.6b\)--\(257.6a,221.3b\)--\(257.9a,22) showline
+(0.0b\)) showline
+(--\(258.3a,218.7b\)--\(258.6a,217.4b\)--\(258.8a,217.0b\)--\(259.0a,216.1b\)--\(259.4a,21) showline
+(4.8b\)) showline
+(--\(259.7a,213.6b\)--\(260.1a,212.3b\)--\(260.4a,211.0b\)--\(260.5a,210.9b\);) showline
+(draw \(169.3a,396.6b\)--\(171.0a,396.5b\)--\(172.7a,396.3b\)--\(174.4a,396.0b\)--\(176.1a) showline
+(,395.5b\)) showline
+(--\(177.7a,394.8b\)--\(178.1a,394.7b\)--\(179.4a,394.0b\)--\(180.7a,393.4b\)--\(181.1a,39) showline
+(3.1b\)) showline
+sf (33) 1 endcol
+(33) endpage
+%%Page: ? 34
+34 newpage
+/MailFor (Listing for ) def
+/User (Tom) def
+/TimeNow (Mon May 24 18:12:13 2010) def
+/Subject () def
+sf (--\(182.8a,392.1b\)--\(184.5a,390.9b\)--\(184.6a,390.8b\)--\(186.2a,389.5b\)--\(187.7a,38) showline
+(8.2b\)) showline
+(--\(187.9a,388.1b\)--\(189.1a,386.9b\)--\(189.6a,386.4b\)--\(190.4a,385.6b\)--\(191.2a,38) showline
+(4.7b\)) showline
+(--\(191.6a,384.3b\)--\(192.7a,383.0b\)--\(192.9a,382.8b\)--\(193.8a,381.7b\)--\(194.6a,38) showline
+(0.8b\)) showline
+(--\(194.9a,380.4b\)--\(195.9a,379.1b\)--\(196.3a,378.6b\)--\(196.9a,377.8b\)--\(197.8a,37) showline
+(6.5b\)) showline
+(--\(198.0a,376.3b\)--\(198.7a,375.3b\)--\(199.6a,374.0b\)--\(199.7a,373.9b\)--\(200.5a,37) showline
+(2.7b\)) showline
+(--\(201.3a,371.4b\)--\(201.4a,371.3b\)--\(202.2a,370.1b\)--\(203.0a,368.8b\)--\(203.1a,36) showline
+(8.6b\)) showline
+(--\(203.7a,367.5b\)--\(204.5a,366.2b\)--\(204.7a,365.8b\)--\(205.3a,364.9b\)--\(206.0a,36) showline
+(3.6b\)) showline
+(--\(206.4a,362.9b\)--\(206.7a,362.3b\)--\(207.4a,361.0b\)--\(208.1a,359.8b\)--\(208.2a,35) showline
+(9.7b\)) showline
+(--\(208.8a,358.4b\)--\(209.5a,357.1b\)--\(209.8a,356.6b\)--\(210.2a,355.9b\)--\(210.8a,35) showline
+(4.6b\)) showline
+(--\(211.5a,353.3b\)--\(212.1a,352.0b\)--\(212.8a,350.7b\)--\(213.2a,349.8b\)--\(213.4a,34) showline
+(9.4b\)) showline
+(--\(214.0a,348.1b\)--\(214.6a,346.8b\)--\(214.9a,346.3b\)--\(215.2a,345.5b\)--\(215.8a,34) showline
+(4.2b\)) showline
+(--\(216.4a,342.9b\)--\(216.6a,342.6b\)--\(217.0a,341.6b\)--\(217.6a,340.3b\)--\(218.1a,33) showline
+(9.0b\)) showline
+(--\(218.3a,338.8b\)--\(218.7a,337.7b\)--\(219.2a,336.4b\)--\(219.8a,335.2b\)--\(219.9a,33) showline
+(4.8b\)) showline
+(--\(220.3a,333.9b\)--\(220.9a,332.6b\)--\(221.4a,331.3b\)--\(221.6a,330.8b\)--\(222.0a,33) showline
+(0.0b\)) showline
+(--\(222.5a,328.7b\)--\(223.0a,327.4b\)--\(223.3a,326.6b\)--\(223.5a,326.1b\)--\(224.0a,32) showline
+(4.8b\)) showline
+(--\(224.6a,323.5b\)--\(225.0a,322.4b\)--\(225.1a,322.2b\)--\(225.6a,320.9b\)--\(226.1a,31) showline
+(9.6b\)) showline
+(--\(226.6a,318.3b\)--\(226.7a,318.0b\)--\(227.1a,317.0b\)--\(227.5a,315.8b\)--\(228.0a,31) showline
+(4.5b\)) showline
+(--\(228.4a,313.5b\);) showline
+(linetype -2;) showline
+(draw \(169.3a,396.6b\)--\(169.3a,73.2b\)--\(675.7a,73.2b\)--\(675.7a,396.6b\)--\(169.3a,3) showline
+(96.6b\);) showline
+(endfig;) showline
+(end.) showline
+sf (34) 1 endcol
+(34) endpage
+%%Trailer
+%%Pages: 34

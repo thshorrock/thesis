@@ -1,0 +1,68 @@
+#!/bin/sh
+
+#g++ FreqRatio.cpp -o FreqRatio
+#./FreqRatio
+
+#/mirror/progs/cpp/icr-10.02/
+
+gnuplot "./FreqRatioMaxError.gp" 
+mpost FreqRatioContourMaxError.mp
+cp FreqRatioContourMaxError.0 ../
+
+gnuplot "./FreqRatioMinError.gp" 
+mpost FreqRatioContourMinError.mp
+cp FreqRatioContourMinError.0 ../
+
+gnuplot "./FreqRatio1.gp" 
+
+
+sed -i '1i enddef;' FreqRatioContour1.mp
+ sed -i '1i draw GPtext shifted (x,y)' FreqRatioContour1.mp
+    sed -i '1i rotated r;' FreqRatioContour1.mp
+    sed -i '1i fi' FreqRatioContour1.mp
+    sed -i '1i else: (-(urcorner GPtext + lrcorner GPtext)/2)' FreqRatioContour1.mp
+    sed -i '1i elseif j = 2: (-center GPtext)' FreqRatioContour1.mp
+    sed -i '1i if j = 1: (-(ulcorner GPtext + llcorner GPtext)/2)' FreqRatioContour1.mp
+  sed -i '1i GPtext:=GPtext shifted' FreqRatioContour1.mp
+  sed -i '1i GPtext:=makepic_small(pic);' FreqRatioContour1.mp
+sed -i '1i def put_text_small(expr pic, x, y, r, j) =' FreqRatioContour1.mp
+
+sed -i '1i %' FreqRatioContour1.mp
+sed -i '1i enddef;' FreqRatioContour1.mp
+sed -i '1i fi' FreqRatioContour1.mp
+sed -i '1i else: str infont defaultfont scaled (defaultscale*textmag_small)' FreqRatioContour1.mp
+sed -i '1i % otherwise a string' FreqRatioContour1.mp
+sed -i '1i if picture str : str scaled textmag_small' FreqRatioContour1.mp
+sed -i '1i vardef makepic_small(expr str) =' FreqRatioContour1.mp
+sed -i '1i textmag_small:= 0.500;' FreqRatioContour1.mp
+
+mpost FreqRatioContour1.mp
+cp FreqRatioContour1.* ../
+
+
+gnuplot "./FreqRatio3.gp" 
+
+sed -i '1i enddef;' FreqRatioContour3.mp
+ sed -i '1i draw GPtext shifted (x,y)' FreqRatioContour3.mp
+    sed -i '1i rotated r;' FreqRatioContour3.mp
+    sed -i '1i fi' FreqRatioContour3.mp
+    sed -i '1i else: (-(urcorner GPtext + lrcorner GPtext)/2)' FreqRatioContour3.mp
+    sed -i '1i elseif j = 2: (-center GPtext)' FreqRatioContour3.mp
+    sed -i '1i if j = 1: (-(ulcorner GPtext + llcorner GPtext)/2)' FreqRatioContour3.mp
+  sed -i '1i GPtext:=GPtext shifted' FreqRatioContour3.mp
+  sed -i '1i GPtext:=makepic_small(pic);' FreqRatioContour3.mp
+sed -i '1i def put_text_small(expr pic, x, y, r, j) =' FreqRatioContour3.mp
+
+sed -i '1i %' FreqRatioContour3.mp
+sed -i '1i enddef;' FreqRatioContour3.mp
+sed -i '1i fi' FreqRatioContour3.mp
+sed -i '1i else: str infont defaultfont scaled (defaultscale*textmag_small)' FreqRatioContour3.mp
+sed -i '1i % otherwise a string' FreqRatioContour3.mp
+sed -i '1i if picture str : str scaled textmag_small' FreqRatioContour3.mp
+sed -i '1i vardef makepic_small(expr str) =' FreqRatioContour3.mp
+sed -i '1i textmag_small:= 0.500;' FreqRatioContour3.mp
+
+
+mpost FreqRatioContour3.mp
+cp FreqRatioContour3.* ../
+

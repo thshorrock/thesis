@@ -1,0 +1,98 @@
+%GNUPLOT Metapost output: Mon May 24 20:29:44 2010
+
+
+warningcheck:=0;
+defaultmpt:=mpt:=4;
+th:=.6;
+%% Have nice sharp joins on our lines
+linecap:=butt;
+linejoin:=mitered;
+
+def scalepen expr n = pickup pencircle scaled (n*th) enddef;
+def ptsize expr n = mpt:=n*defaultmpt enddef;
+
+
+textmag:= 0.800;
+vardef makepic(expr str) =
+  if picture str : str scaled textmag
+  % otherwise a string
+  else: str infont defaultfont scaled (defaultscale*textmag)
+  fi
+enddef;
+
+def infontsize(expr str, size) =
+  infont str scaled (size / fontsize str)
+enddef;
+
+%font changes
+verbatimtex
+\def\setfont#1#2{%.
+  \font\gpfont=#1 at #2pt
+\gpfont}
+\setfont{cmr10}{10.00}
+etex
+
+color currentcolor; currentcolor:=black;
+color fillcolor;
+boolean colorlines,dashedlines;
+colorlines:=false;
+dashedlines:=true;
+
+def _wc = withpen currentpen withcolor currentcolor enddef;
+def _ac = addto currentpicture enddef;
+def _sms = scaled mpt shifted enddef;
+% drawing point-types
+def gpdraw (expr n, x, y) =
+  if n<0: _ac contour fullcircle _sms (x,y)
+  elseif (n=1) or (n=3):
+    _ac doublepath ptpath[n] _sms (x,y) _wc;
+    _ac doublepath ptpath[n] rotated 90 _sms (x,y) _wc
+  elseif n<6: _ac doublepath ptpath[n] _sms (x,y) _wc
+  else: _ac contour ptpath[n] _sms (x,y) _wc
+  fi
+enddef;
+
+% the point shapes
+path ptpath[];
+%diamond
+ptpath0 = ptpath6 = (-1/2,0)--(0,-1/2)--(1/2,0)--(0,1/2)--cycle;
+% plus sign
+ptpath1 = (-1/2,0)--(1/2,0);
+% square
+ptpath2 = ptpath7 = (-1/2,-1/2)--(1/2,-1/2)--(1/2,1/2)--(-1/2,1/2)--cycle;
+% cross
+ptpath3 := (-1/2,-1/2)--(1/2,1/2);
+% circle:
+ptpath4 = ptpath8:= fullcircle;
+% triangle
+ptpath5 = ptpath9 := (0,1/2)--(-1/2,-1/2)--(1/2,-1/2)--cycle;
+
+def linetype expr n =
+  currentcolor:= if colorlines : col[n] else: black fi;
+  if n = -1 :
+      drawoptions(withcolor currentcolor withpen (currentpen scaled .5));
+  elseif n < 1 :
+    drawoptions(_wc);
+  else :
+    drawoptions( if dashedlines: dashed lt[n] fi _wc);
+  fi
+enddef;
+
+% dash patterns
+picture lt[];
+lt1=dashpattern(on 2 off 2); % dashes
+lt2=dashpattern(on 2 off 2 on 0.2 off 2); %dash-dot
+lt3=lt1 scaled 1.414;
+lt4=lt2 scaled 1.414;
+lt5=lt1 scaled 2;
+lt6:=lt2 scaled 2;
+lt7=dashpattern(on 0.2 off 2); %dots
+
+color col[],cyan, magenta, yellow;
+cyan=blue+green; magenta=red+blue;yellow=green+red;
+col[-2]:=col[-1]:=col0:=black;
+col1:=red;
+col2:=(.2,.2,1); %blue
+col3:=(1,.66,0); %orange
+col4:=.85*green;
+col5:=.9*magenta;

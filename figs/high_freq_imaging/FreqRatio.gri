@@ -1,0 +1,18 @@
+
+# Example 1 -- Linegraph of data in separate file
+#open FreqRatio.dat     # Open the data file
+#read columns x y      # Read (x,y) columns
+#draw curve            # Draw data curve
+#draw title "Example 1"# Title above plot
+# Example 4 -- Simple contour graph
+#
+# Read x-grid; blank-line means stop reading.
+\file = "FreqRatio.dat"
+\rows = system wc \file      | awk '{print $1}'
+\cols = system head -1 \file | awk '{print NF}'
+set x grid 0 1 /\cols
+set y grid 0 1 /\rows
+open \file
+read grid data \rows \cols
+close
+draw contour
