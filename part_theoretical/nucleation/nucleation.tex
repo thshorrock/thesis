@@ -1,0 +1,2115 @@
+
+\chapter{Bubble Nucleation 40\%}\label{ch:nucleation}
+%\begin{quote}
+%\flushleft
+%I had a little turtle \break
+%His name was Tiny Tim \break
+%I put him in the bathtub \break
+%To see if he could swim. \break\break
+%He drank up all the water \break
+%He ate up all the soap \break
+%Now he's stuck in bed \break
+%with a bubble in his throat. \break\break
+%Bubble, bubble, bubble, \break
+%Bubble, bubble, bubble, \break
+%Bubble, bubble, bubble, \break
+%Bubble, bubble, POP!! 
+
+%\flushright
+% Nursery rhyme
+%\end{quote}
+%\begin{quote}
+
+%Consider, for example, a crystal of Rochelle salt.
+%For one set of experiments on it, we work with temperature, pressure and volume.
+%The entropy can therefore be expressed as some function $S_e(T,P)$.
+%For another set of experiments on the same crystal,
+%we work with temperature, the component $e_{xy}$ of the strain tensor,
+%and the component $P_z$ of the electric polarisation;
+%the entropy as found in these experiments is a function $S_e(T, e_{xy}, P_z)$.
+%It is clearly meaningless to ask ``What is the entropy of the crystal?''
+%unless we first specify the set of parameters which define its thermodynamic state.%
+%
+%One might reply that in each of the experiments cited, 
+%we have used only part of the degrees of freedom of the system,
+%and there is a ``true'' entropy which is a function of all these parameters simultaneously.
+%However we can always introduce as many parameters as we please...
+%There is no end to this search for the ultimate ``true'' entropy until we have reached the point where we control
+%the location of each atom independently.
+%But just at that point the notion of entropy collapses, and we are no longer talking thermodynamics!
+%
+%From this we see that entropy is an anthropomorphic concept,
+%not only in the well known statistical sense that it measures the extent of human ignorance as to the microstate.
+%{\em Even at the purely phenomenological level, entropy is an anthropomorphic concept.}
+%For it is a property, not of the physical system,
+%but of the particular experiments that you or I choose to perform on it.
+%
+%\flushright Edwin T. Jaynes\cite{Jaynes1965}
+%\end{quote}
+
+%Conventional microbubble contrast agents are too large to be able to leave the blood
+%and small bubbles are difficult to stabilise.
+%This  limits their diagnostic applicability.
+%One solution to this problem is to use an oil-droplet as the contrast agent.
+%Oil droplets are inherently more stable at diameters of 
+
+
+%The bubbles should not be generated haphazardly
+%in the bodily  tissues (here assumed to be water)
+%but rather formed selectively from an injected oil based  {\em contrast agent},
+%which is vapourised when placed under a tension from an ultrasound induced negative pressure.
+%In this chapter we review the theory behind the nucleation events that generate the bubbles.
+
+\section{Introduction}
+In this chapter we investigate theoretically the use of an ultrasound pulse to generate submicron bubbles.
+Submicron bubbles are important because they
+resonate at higher-frequencies, enabling imaging at higher resolutions;
+and because 
+%due to their size 
+they are more likely to leave the blood than conventional micron-sized bubbles,
+the crucial first step towards functional diagnostic contrast imaging.
+
+Broadly, there are two approaches to acoustically generating a bubble:
+\nlist
+{
+  \item produce a bubble from the bulk fluid directly.  
+In medical ultrasound the bulk will invariably be some aqueous solution.
+  \item introduce a second fluid, immiscible to the bulk, from which to generate bubbles.
+%In medical ultrasound this involves introducing an emulsion 
+This second fluid - an oil in the aqueous bulk - 
+can be chosen with properties to facilitate the acoustic generation of a bubble.\label{item:nuc:oil}
+}
+Unfortunately, this division in methodology does not make clear the mechanisms
+by which a bubble may be generated. % a more careful division in methodology is required.
+%The difficulty with this division in methodology is that it does not bear close scrutiny.
+The bulk fluid will, unless extraordinary efforts are undertaken,
+contain small particles of dust that may or may not entrap pockets of gas,
+contain gas bubbles stabilised with trace amounts of detergent,
+in addition to containing a host of dissolved gases.
+Likewise for any secondary fluid that is introduced,
+with the additional complication of the water-oil interface 
+becoming a rest point for other impurities in the system and 
+developing a complex chemistry of its own.
+It will be seen in this chapter that
+bubble generation is extremely sensitive to the surface chemistry of a nascent bubble,
+while the presents of motes and existing bubbles can change the
+mechanism of bubble generation entirely.
+The presence of dissolved gasses is also known to be important in bubble generation\cite{},
+although this case is not investigated in this thesis.
+%but  
+%There are multiple mechanisms by which 
+
+
+
+
+%There are a number of different mechanisms by which a gas bubble can be produced when 
+%the pressure drops within a fluid.
+Historically the term {\em cavitation} has been used ambiguously with respect to the mechanism of bubble formation. % upon a reduction in pressure within a fluid.
+It is therefore helpful 
+to instead use the word {\em nucleation} with the more careful categorisation of Jones\cite{Jones1999}:
+\desc{
+  \item[Type 1: classical homogeneous nucleation:]
+     a bubble is {\em created} within the bulk medium where no bubbles were present prior to the reduction in pressure,
+  \item[Type 2: classical heterogeneous nucleation:]
+    a bubble is {\em created} upon a solid particle floating in the medium, or in a crevice in the surface of the container,
+  \item[Type 3: pseudo classical nucleation:]
+    a bubble results from a {\em pre-existing} but sub-critical gas cavity.
+    The gas cavities may be stabilised by a crevice in a floating particle or by a crevice in  the container,
+    or may be bubbles stabilised by a variably permeable skin\cite{Yount1979}.
+    Sub-critical means that their curvature is smaller than the {\em critical radius}, 
+    the radius at which the bubble is in equilibrium with its surroundings.
+    The bubble  must still overcome an energy barrier to grow.
+  \item[Type 4: non-classical nucleation:]
+    a bubble results from a {\em pre-existing} gas cavity but there is no  energy barrier to growth.
+    This occurs when the radius of curvature of a crevice is larger than the critical radius.
+%    and multiple cavitation events generally occur from the same crevice.
+    It is the lack of the energy barrier that makes this nucleation  non-classical.    
+}
+
+
+With these differing mechanisms in mind our two broad methodologies are revisited.
+By what mechanism can the bulk fluid (water) be nucleated with ultrasound?
+Is the mechanism the same in an oil emulsion?
+
+
+\subsection{The nucleation of water}
+
+
+The pressures required for water to undergo type I nucleation are prohibitive for diagnostic ultrasound.
+Herbert\cite{Herbert2006} measured the nucleation probability to be vanishingly small at  \unit{-20}\mega\pascal,
+with the probability rising to 50\% at \unit{-26}\mega\pascal, a result typical of  other measurements\cite{Hemmingsen1975}.
+However, gas can be extracted from water at negative pressures of  \unit{100}\kilo\pascal\todo{cite this}.
+Such nucleation events must result from another mechanism.
+%Dissolved gasses or impurities within the water must therefore be the cause.
+
+Motes %(particles of dirt within the water) 
+promote nucleation by reducing the surface area of the vapour-liquid interface,
+thereby reducing the energy required to form the bubble.
+In the absence of entrapped gas - when the crevices are fully {\em wetted} with the bulk fluid -  type 2 nucleation occurs.
+The reduction in the energy barrier can be considerable and is greatest when the crevices are deep and narrow\cite{Lubetkin1995}.
+Herbert\cite{Herbert2006}, for instance, noted that while tap water has the same 50\% cavitation threshold as purified water%
+%\footnote{To calculate the cavitation probability, 
+%
+%it is likely that any gas entrapped is removed from the motes within the water by earlier pulses.
+%},
+tap water has a very long tail of rarer nucleation events at much less extreme pressures.
+Although not fully determined in the article, 
+it seems reasonable to suggest that these events occur through type II nucleation:
+Herbert uses repeated pulses that have negative pressures in excess of \unit{15}\mega\pascal\
+and at such high pressures it is likely that gas entrapped in motes is removed 
+by earlier pulses.
+This would be consistent with a 50\% cavitation threshold that is identical to purified and degassed water,
+a result that is hard to reconcile if there is entrapped gas within the system.
+
+Nucleation events in human tissue are relatively rare,
+%
+%even at pressure in excess of \todo{need to find this study} \cite{}.
+%Nucleation 
+and do not become probable until the type I/II nucleation thresholds of water\todo{cite}\cite{}.
+%Such pressures by far exceed the nucleation pressures recorded for free standing water.
+Biology, it seems, is very adept at preventing gas pockets from occurring within tissue.
+
+
+
+
+%However, deep and narrow crevices are also those that are most likely to entrap gas\cite{Lubetkin1995}
+The high cavitation pressures recorded for type I and type II nucleation 
+mean that the nucleation of impure water at diagnostic pressures is believed to proceed via type III and IV nucleation\cite{Atchley1989, Borkent2009, Jones1999}.
+%Herbert also studied the nucleation probabil
+%However, such crevices are not in general wetted, meaning that they entrap gas. % and so they usually undergo type 3 and 4 nucleation.
+%For these reasons, the cavitation of water is generally believed to proceed via type 3 and 4 nucleation at diagnostic pressures\cite{Atchley1989, Borkent2009, Jones1999}.
+There are two models for type 3 and 4 nucleation. 
+The first is that  partially wetted motes trap gas\cite{Atchley1989} and  the second is 
+that  organic impurities  stabilise freely floating gas bubbles\cite{Yount1979}.
+Both suggestions have been observed experimentally\cite{Borkent2009, Johnson1981}
+and both are thought to be important in practice.
+
+Due to the high cavitation pressures in biological tissues,
+a medium that introduces Type III and IV nucleation events is a prime targets for developing a contrast agent.
+These media have traditionally introduced stabalised micron sized bubbles.
+% that have been 
+%stabalised to various degrees of sophisication.
+There is no reason why they should not, alternatively, introduce gas entrapped in motes,
+such as are found in regular tap water.
+%This possibility is investigated in this thesis
+%along side a medium that contains oil droplets chosen for their cavitation properties.
+
+%and so a technique that cavitates the bulk as well as the contrast agent will have limited use,
+%irrespective of the lifetimes of the two types of bubble.
+
+% The motes trap gas 
+% The entrapment of gas within a crevice can be explained in terms of the initial wetting of the mote -
+% the contact angle of partial wetting preventing the fluid reaching the bottom of the crevice.
+% The model of Atchley and Prosperetti\cite{Atchley1989} has been successful in predicating the nucleation of bubbles on cylinders etched into a silicon wafer substrate\cite{Borkent2009}.
+% The stabilisation of a dissolving bubble by organic solvents - in accord to the variable permeability model of Yount\cite{Yount1979} - 
+% has been observed by Johnson and Cooke\cite{Johnson1981}.
+% Which of these models dominate - the stabilised bubble or motes - is not certain.
+
+%The cavitation of water therefore depends upon its cleanliness.
+%The purity of tap water varies, but Apfel's\cite{Apfel1984} suggestion of \unit{$10^5$}\centi\metre\rpcubed,
+%has been found to be useful\todo{Lookup where this figure has been used again}.
+
+% If the water were distributed into droplets, or one mote per \unit{140}\micro\metre-radius droplet.
+% The problem of a `dirty' fluid, therefore, can be eliminated by using small enough droplets.
+% This is the basis of the droplet explosion technique\cite{HongChul2005} to calculate the investigate the super-saturation limit of a fluid\cite{Apfel1984}. 
+
+%The cavitation properties of human tissue seem to be closer to that of type II nucleation.
+
+%To give contrast it is necessary that the  bubble  formed from the droplet is distinguishable
+%from other nucleation events that can occur in the bulk.
+%This can occur if
+%\nlist{
+%  \item the  droplet, or gas within the droplet,  is induced to vapourise at a less negative pressure than the bulk;
+%  \item the lifetime of the oil vapour bubble is longer than bubbles formed in the bulk.
+%}
+%The first is the most important.
+%This is because the cavitation threshold of many human tissues approaches the type I/II nucleation thresholds\todo{cite}.
+%Biology seems very adept at preventing gas pockets from occuring.
+% cavitation is not without bio-effect
+%and so a technique that cavitates the bulk as well as the contrast agent will have limited use,
+%irrespective of the lifetimes of the two types of bubble.
+
+\subsection{The nucleation of an oil droplet within an emulsion}
+
+
+To leave the blood the radius of a droplet must be at  most  \unit{300}\nano\metre.
+What is the likely nucleation mechanism for a droplet this small?
+Let us first estimate the probability that the droplet contains a mote.
+
+The probability that a droplet contains a mote depends both on the purity of the oil used to make up the droplets
+and the purity of the surrounding medium.
+We assume that the proportion of oil in the medium is small and that the impurities from the bulk dominate.
+We also neglect any differences in the affinities of the oil and bulk to the mote.
+Finally, we suppose that we make no special effort to either clean or dirty the water,
+but instead take the water straight from the tap.
+%This then provides an estimate of the importance of motes in the nucleation process,
+For the mote-density of tap water we shall use Apfel's\cite{Apfel1984} suggestion  of \unit{$10^5$}\centi\metre\rpcubed.
+
+From Apfel's density it follows that for every mote there will be
+\begin{align}
+\frac{1}{\text{motes per volume}\times\text{volume per droplet}} = 10^8
+%\frac{1}{10^11 * \frac{4}{3}\pi \lr{3\times10^-7}^3} =
+\end{align} 
+droplets with a radius of \unit{300}\nano\metre.
+Since a pre-existing gas bubble (stabalised or not) would have to be exceptionally small to be trapped within \unit{300}\nano\metre\ oil droplet,
+%and since mote-induced cavitation is not found to be dominated by a vastly higher density of existing bubbles,
+we conclude that  the oil droplets of interest are  likely to undergo type 1 nucleation.
+Indeed, the use of small droplets to avoid the problems of `dirty' water is  a well used technique for experimentally investigating type 1 nucleation\cite{Turnbull1952, HongChul2005,Apfel1984}.
+%Such experiments back up the conclusion that nucleation in a sub micron droplet will occur by type-1 nucleation.
+For instance, Turnbull\cite{1952} found that droplets of 2-\unit{8}\micro\metre\ bubble are required to homogeneously freeze mercury.  
+Such droplets are already an order of magnitude larger than what is required to leave the blood,
+and it therefore seems reasonable to suggest that smaller droplets will nucleate homogeneously.
+
+
+
+
+\ctable[cap=Boiling points and critical temperatures of various perfluorocarbons
+        caption=Boiling points and critical temperatures of various perfluorocarbons
+        label=table:nuc:critical_temps
+        pos=top
+        %width = 0.6\textwidth,
+        left
+       ]
+       {llrrc}
+{
+}{\FL
+  &        & Boiling Point & Critical Point & 
+  \NN
+  &         &    (\degreecelsius)& (\degreecelsius) &
+    \ML
+    &Perfluoroethane  & -78 &  20    &
+    \NN
+    &Perfluoropropane &   -38 &  72    &
+    \NN
+    &Perfluorobutane  & -1.7  &  113   &   
+    \NN
+    &Perfluoropentane &28     &  149    &  
+    \NN
+    &Perfluorohexane  & 59    &  176    & 
+    \LL
+  }
+
+
+
+
+Type I nucleation can be challenging to initiate. 
+For an oil to undergo type I nucleation at conventional ultrasound pressures it must either have a much lower boiling point than  water,
+or be able to dissolve a much greater concentration of gas.
+In this chapter we consider the perfluorocarbons.
+This series of oils is characterised by their low boiling points, given in \tableref{nuc:critical_temps}, and  their high solubility of many gases.
+%For example  \pfb\ and \pfp\ boils at    \unit{-1.7}\degreecelsius and  \unit{28}\degreecelsius, respectively, while \pfh\  boils at \unit{59}\degreecelsius\todo{citation}.
+The perfluorocarbons are also chemically inert and  have been used before in medical applications\todo{give a citation here}.
+%We keep this group of compounds in mind throughout the discussion.
+%For an oil to be used as a medical contrast agent it needs to be non-toxic.
+%The perfluorocarbons - carbon chains with fluorine replacing the hydrogen atoms - 
+%are a series of oils that are chemically inert and that have been used before in medical applications \todo{fake blood citation}.
+%We keep this group of compounds in mind throughout the discussion.
+
+
+
+%The above estimations are based on Apfel's density estimate.
+%The above conclusion  is provided by 
+%To check that requires the (huge) droplet size of \unit{140}\micro\metre-radius for it to contain, on average, a single mote.
+%This is larger than the 2-\unit{8}\micro\metre\ bubble that Turnbull\cite{Turnbull1952} found necessary to homogeneously freeze mercury, but such droplets are nevertheless too large to leave the blood.
+
+%Even the large uncertainty in the mode density does not change the 
+%Motes are therefore unlikely to have a role in cavitating a contrast agent.
+
+%the basis of the droplet explosion technique\cite{HongChul2005}
+%for investigating type 1 nucleation\cite{Apfel1984}.
+%to calculate the investigate the super-saturation limit of a fluid\cite{Apfel1984}.
+%Apfel's mode density requires the (huge) droplet size of \unit{140}\micro\metre-radius for it to contain, on average, a single mote.
+%This is larger than the 2-\unit{8}\micro\metre\ bubble that Turnbull\cite{Turnbull1952} found necessary to homogeneously freeze mercury, but such droplets are nevertheless too large to leave the blood.
+%Pre-existing stablised bubbles are also likely to e 
+%This is true even with the caviat that the estimate of the mote density is not well supported,
+%and that our calculation  ignores the transport across an interface of different viscosities and potentials\cite{Brennen1982}.
+%This is because our calculation would have to err by many  orders of magnitude does not 
+%change the conclusion that the oil droplets of interest are  likely to undergo type 1 nucleation.
+
+\subsection{Structure of the chapter}
+
+
+During the course of this thesis two contrast media with two differing nucleation mechanisms shall be investigated:
+the type III/type IV nucleation of a mote or bubble found in ``dirty water'',
+and the type I nucleation of an oil droplet.
+In the first case the driving wave is used to evacuate gas entrapped on motes
+and to manipulate the size of the resulting (and pre-existing) bubbles.
+In the second case the driving wave is used to initiate the nucleation of the perfluorocarbon droplet
+and manipulate the resulting bubble's diameter.
+
+For a complete bubble to have formed on a mote it must have been more favourable
+for the bubble to grow rather than shrink back into its crevice.
+The radius at which this occurs is known as the {\em critical radius}
+and it provides, as a function of pressure,  a lower bound on the size of the bubble that is evacuated from a mote.
+%The critical radius is dependant upon the pressure of the medium.
+%and is dependent on the pressure of the medium.
+%The size of bubble evacuated from a mote can
+%therefore be written in terms of the driving pressure.
+Evaluating this bound is the first objective of this chapter,
+and is explored in detail in \secref{nuc:evacuation}.
+
+ %T bubble is at equilibrium with its surrounding.
+%The bubble must reach this size in order to leave the bubble.
+
+%The motivation for the first question is the possibility 
+%of selecting a driving pressure that evacuates bubbles only in a narrow band of sizes.
+%The driving wave could be then further be used to tune that size for a given imaging wave.
+%The second question relies on the possibility of manufacturing oil droplets
+%within a narrow size distribution, 
+%so that their resulting bubbles are sufficiently similar in size 
+%for a significant proportion of the bubbles to be resonant or tuned to resonance.
+
+%A {\em density functional} approach is used to investigate these questions.
+%Density functional theory enables the critical radius of the bubble
+%to be estimated as a function of pressure.
+%This is the radius at which it is energetically favourable for the bubble to grow.
+%In answer of the first question, 
+%the critical radius must be reached for entrapped gas to form a complete bubble and leave a mote.
+%If the radius is not reached, then it will cost less energy for the bubble to remain on the 
+%It thereby provides an estimate of the size of a free bubble that is  generated from a mote.
+%In answer of the second, the critical radius enables the energy barrier to nucleation to be calculated,
+%from which the nucleation probability follows.
+%By setting a threshold probability at which observing a nucleation event is deemed likely,
+%the vaporisation pressure can be calculated.
+
+
+
+%Only submicron bubbles are interesting.
+
+%
+%
+%\nlist
+%{
+%  \item Imaging a pre-existing, submicron bubble that has been evacuated from a mote within the bulk fluid
+%    via type III nucleation.
+%  \item Imaging a bubble that has been yielded from an oil based contrast via type I nucleation. \label{item:nuc:oil}
+%}
+%
+%the pressures required to do so are prohibitively high for ultrasound.
+%In this chapter we will concentrate on approach \ref{item:nuc:oil}.
+%
+%Basing a contrast agent upon the impurites in water is only defensible if the
+%water does not
+%
+%This is because the cavitation threshold of many human tissues approaches the type I/II nucleation thresholds\todo{cite}.
+%Biology seems very adept at preventing gas pockets from occuring.
+%cavitation is not without bio-effect.
+%
+
+%To begin this study, this chapter asks the following questions:
+%
+%\subsection{Structure of the chapter}
+%
+%The two mechanisms are analysed by asking the following questions,
+%The first step is then 
+%\nlist{
+%  \item as a function of the driving waves peak-negative pressure, what size bubble is expected to be evacuated from a mote?
+%  \item at what pressures are submicron perfluorocarbon droplets expected to vaporise?
+%}
+
+The second objective is to determine the pressures at which a submicron perfluorocarbon droplet vaporises.
+%Although creating a bubble via type I nucleation is very different than evacuating entrapped gas,
+Again, the key step in this calculation is the evaluation of the critical radius. % of the bubble.
+The thermodynamic fluctuation that forms a nascent bubble 
+will dissolve away if the critical radius is not reached.
+%  t reach the critical radius to prevent the bubble from instantly dissolving away.
+It defines the energy required for the bubble to form,
+from which %The critical radius enables the energy barrier to forming a bubble to be calculated via the Arrhenius equation.
+the probability of a type I nucleation event follows.
+The calculation is introduced in \secref{nuc:vapourise}
+and is little more than an application of the Aarenhius equation.
+The energy barrier to nucleation is found from thermodynamic arguments,
+while the rate is obtained from a kinematic argument.
+
+\Secref{nuc:radius} then completes the calculations of \secref{nuc:evacuate} and \secref{vapourise}
+by evaluating the critical radius.
+This is achieved with two semi-empirical approaches
+that fit theoretical parameters such as the critical radius
+to the following thermodynamic properties of the water/oil droplet:
+%To calculate the rate of nucleation the following experimental data must be provided\cite{Nyquist1995}:
+\nlist{
+  \item the density of the liquid,
+  \item the equilibrium vapour pressure,
+  \item the equilibrium surface tension between liquid and vapour.
+
+}
+
+The first model, introduced in \secref{nuc:cnt}, uses the capillary approximation to find the critical radius.
+Both liquid and vapour are assumed to be at their respective bulk densities with a sharp interface between the two.
+The surface tension is taken to be that of the macroscopic plainer interface.
+These assumptions are problematic when the nucleating bubble is very small\cite{Talanquer1995},
+when the distance over which the density changes from liquid to vapour is not insignificant
+and when the surface tension is typically reduced from its bulk value\cite{Kiang1971}.
+For instance, %deviations in the surface tension from the bulk value take exponential importance in the rate calculations
+%necessary to determine the pressure required to observe a nucleation event.
+an increase in the surface tension of 15\%
+was calculated\cite{Kiang1971} to change the predicted nucleation rate by $10^{17}$.
+Another example is provided by the calculations of Talanquer and Oxtoby\cite{Talanquer1995, Oxtoby1988}.
+%Their  density functional calculations 
+%predicted that the rates  from these  calculations were  {\em typically}   20 orders of magnitude different from those of \cnt.
+
+To overcome these difficulties we employ the semi-empirical density functional approach of Nyquist\cite{Nyquist1995} and Talanquer\cite{Talanquer2001} in \secref{nuc:DFT}.
+An improvement on the capillary approximation is achieved by  relaxing
+the requirement for sharp interfaces between liquid and vapour.
+Instead, a model for the intermolecular forces is used to evaluate the transition from liquid to vapour.
+The model parameters are then fitted to the fluids bulk thermodynamic properties.
+
+
+
+\section{The size of a bubble evacuated from a mote}\label{sec:nuc:evacuate}
+
+
+\section{The vapourisation pressure of a perfluorocarbon droplet}\label{sec:nuc:vapourise}
+
+There are two possible goals that may be set 
+when imaging a bubble generated from a perfluorocarbon droplet:
+\nlist{
+ \item image the actual vaporisation event,
+ \item image the resultant bubble after it has vaporised but before it redissolves.
+}
+%In this section we calculate the driving pressures that are required to achieve each of these goals.
+Due to the stochastic nature of bubble nucleation, 
+the pressures required to achieve these goals are best expressed in terms of pressures required
+to achieve a given rate of nucleation,
+the rate being such that observations are likely in the time frame of a given experiment.
+
+
+\subsection{The rate required to image a vaporisation event}
+
+For a nucleation event to be directly imaged
+it must occur within the acoustical volume of the imaging pulse -
+the volume in which the pressure is near its peak.
+%
+%To estimate the rate required to image a nucleation event
+%we model the pulse as occupying a cylinder 
+%The rate required to image a nucleation event can be estimated in terms of imaging pulse's wavelength, $\lambda$,
+%and its acoustical volume, $V$.
+The imaging volume is most simply approximated as a cylinder
+and the pulse's principle wavelength, $\lambda$, makes a reasonable estimate for the radius of a focused pulse.
+If the pulse is $n$ cycles long then the acoustical volume, $V$, is given as so,
+\begin{align}
+  V \approx n  \pi \lambda^3.
+\end{align}
+The duration of the pulse is $\tau_p=n\lambda/c$ and so it follows that the rate, $R$, at which the medium is sampled is 
+\begin{align}
+R \approx V/\tau_p = c\pi\lambda^2 
+\end{align}
+The sampling rate of a \unit{15}\mega\hertz\ imaging pulse is therefore approximately
+$\unit{50}\centi\metre\rpcubed\reciprocal\second$.
+This gives the maximal rate of nucleation that would  be expected to be observed with a single a-line pulse.
+It is greater than the limit of observation typically chosen in other nucleation applications: \unit{1}\centi\metre\rpcubed\reciprocal\second.\todo{cite}.
+%For consistency with other applications, we therefore use this latter definition of  \unit{1}\centi\metre\rpcubed\reciprocal\second\
+%as the limit of what can be observed with ultrasound.
+
+\subsection{The rate required to image a generated bubble}
+
+If only the bubble resulting from a nucleation event needs to be imaged, rather than the nucleation event itself, 
+then the observable rate of nucleation is much lower.
+This is because the bubble is potentially observable if the pulse passes within its lifetime 
+and so it is the lifetime of the bubble, $\tau_b$, and not the duration of the acoustical pulse,
+that defines the observable nucleation rate,
+\begin{align}
+R\approx V/\tau_b = n\pi\lambda^3/\tau_b.
+\label{eqn:observable_rate_lifetime}
+\end{align}
+To calculate the bubble's lifetime we assume that, at equilibrium, the bubble is smaller than its critical radius.
+Its lifetime is therefore defined by its rate of dissolution into the surrounding medium.
+This will be the usual case
+for although the bubble is greater than its critical radius when it is brought into existence,
+the driving wave is transient and in its absence the bubble will not normally continue to grow.
+
+
+%To complete \eqnref{observable_rate_lifetime} it is necessary to calculate the lifetime of a bubble.
+%A generated bubble can either redissolve or grow and form a large bubble that will 
+%float to the surface of the experimental chamber.
+%Here we assume that the generated bubble is below it critical radius, 
+%and we evaluate the lifetime of the bubble prior to it redissolving.
+
+
+\subsubsection{The lifetime of a vapour bubble}
+
+
+
+
+
+
+\subsection{The rate of bubble nucleation}
+
+
+The rate of nucleation per unit volume is given by the Aarenhius equation, 
+\begin{align}
+J = J_0\exp \lr{-\frac{\Delta G}{\kB T}},% = J_0 \exp\lr{- \frac{16\pi\gamma^3}{3\kB T\lr{p_v^\ast - p_L}^2}},
+\label{eqn:nuc:J}
+\end{align}
+where $\Delta \Omega$ is the energy barrier to nucleation (in terms of the Grand Potential, $\Omega$),
+$\kB$ is Boltzmann's constant, $T$ is the temperature
+and $J_0$ is a rate  (per unit volume) obtained when $T\rightarrow \infty$ or when $\Delta G \rightarrow 0$.
+
+The rate constant, $J_0$, for bubble nucleation is problematic.
+The reason is that the definition of a very small bubble is not clear conceptually.
+What is meant, for example, by a bubble of three molecules?
+And how does one know when a new molecule has joined it?
+Such uncertainties mean that arguments for $J_0$ very rapidly lose their precision\cite{}.
+%Molecules on the bubble edge will be close to the bulk medium and so the proximity of the mo
+In contradistinction, the formation of a liquid droplet from a saturated vapour is clear conceptually:
+a droplet of three molecules is easy to envisage, 
+a cluster of just a few molecules is easier to define than a void.
+Collision theory provides plausible arguments for the rate of droplet formation in a saturated vapour\cite{}.
+%
+%A collection  because the proximity of the molecules in the droplet in comparison to the vapour is what defines the droplet.
+%and when a new molecule becomes associated with the droplet  for the reason 
+%Despite these differences
+% and how it is to be distinguished from the bulk fluid is uncertain.
+% boils down to it not being clear What is meant by the rate 
+Be it on the grounds of reciprocity\todo{cite}, or simply because a better alternative cannot be found\todo{cite},
+the rate constant $J_o$ for bubble formation is usually taken to be the same 
+as that for the formation of a liquid droplet from a saturated vapour\todo{cite}.
+
+
+Rather than repeat a spurious argument we prefer to estimate $J_0$ by dimensional analysis.
+The result is the same as that used in the literature and is obtained at a fraction of the effort.
+In addition, the estimate obtained here does not give the impression of greater accuracy than it deserves,
+a danger ever present in kinematic derivations.
+
+%Here we argue the calculation of $J_0$ on dimensional grounds.
+
+At high temperatures, or when the energy barrier $\Delta G$ vanishes,
+one would expect the detailed chemistry of the medium to become unimportant
+with the liquid medium characterised as a collection of point particles of mass, $m$, and number density, $\rho_l$.
+Likewise, a vapour bubble within the medium characterised by its number density, $\rho_v$, 
+and surface tension, $\gamma$.
+These properties are summarised in \tabref{nuc:dimensions} along with their dimensions.
+%The variables that are deemed relevant are listed in \tabref{nuc:dimensional_vars} along with their dimensions.
+There are five variables listed comprising of three dimensions: mass $[M]$, length $[L]$ and time $[t]$.
+It is therefore possible to write down 2 dimensionless groups\cite{SanjoyBook}.
+
+
+\ctable[cap=Nucleation dimensionless groups
+        caption=Dimensionless groups in the calculation of the nucleation rate constant
+        label=table:nuc:dimensional_vars
+        pos=top
+        %width = 0.6\textwidth,
+        left
+       ]
+       {llcrrc}
+{
+}{\FL
+  &        & Parameter &Symbol & Dimension & 
+  \ML
+  &   Bubble      &  Rate of bubble growth  & $J_0$ & $[L]^3[t]^{-1}$ &
+    \NN
+    &  &  Vapour number density &$\rho_v$ &  $[M][L]^{-3}$    &
+    \NN
+    & &   Surface tension & $\gamma$ & $[M][T]^{-2}$    &
+    \ML
+    &Fluid  & Fluid number density & $\rho_l$  &  $[M][L]^{-3}$   &   
+    \ML
+    &Particle& Particle mass & $m$ & $[M]$ &
+    \LL
+  }
+
+%The 5 variables split into variables that characterise the bubble
+%\nlist{
+%  \item the rate of bubble growth $J_0$
+%  \item the vapour mass density, $m \rho_v$,
+%  \item the surface tension, $\gamma$,
+%}
+%and a  variable that characterise the fluid
+%\nlist{
+%  \item the liquid mass density, $\rho_L$.
+%}
+
+To eliminate the temporal dependence $J_0$ must be squared 
+and combined with surface tension.
+The resulting $J^2/\gamma$ has the units $\lrsquare{M}^{-1}\lrsquare{L}^{-6}$.
+% where the square brackets denote the units of mass and length, respectively.
+These dimensions can be cancelled by using the particle mass  
+and the square of a number density.
+There is a choice as to which of the  number densities, $\rho_L$ and  $\rho_v$,  should be used.
+Le Chatelier's principle advices that that denser liquids are more expensive (in terms of energy)
+to separate, and that denser bubbles are less expensive to maintain.
+One would expect, therefore, the rate $J_0$ to be proportional to $\rho_v$.
+%The first non-dimensional group is therefore 
+\begin{align}
+  \Pi_1 &= \frac{J_0^2 m}{\gamma\rho_v^2}.
+ \intertext{The second dimensionless group that can then be formed is then simply ratio of the densities,}
+  \Pi_2 &= \frac{\rho_v}{\rho_L}.
+\end{align}
+Writing $\Pi_1$ as some function, $g$, of $\Pi_2$ we obtain,
+\begin{align}
+   J_0 = \rho_v \sqrt{\frac{\gamma}{m}} g\lr{\frac{\rho_v}{\rho_L}}.
+\end{align}
+The function $g$ is undetermined but for the reasons just argued
+we anticipate $g$ to increase with $\rho_v$ and decrease with $\rho_L$.
+%
+%If the number density of the liquid is increased above equilibrium, then the excess chemical potential will be balanced if  molecules leave the fluid and enter the bubble.
+%The nucleation rate should therefore increase with $\rho_L$.
+%Conversely,  the nucleation rate should  decrease with an increased vapour density, $\rho_v$.
+The simplest such relationship %between rate and density 
+is a linear one
+and so we guess $g(x) \propto x$.
+If the constant of proportionality is assumed to be approximately unity, then 
+for  bubble nucleation we have
+%
+%This is the conventional form for the pre-exponential factor in bubble nucleation.
+%
+%
+%The result of the collision theory argument of Katz\cite{Katz1992} is that
+%%
+%Due to the uncertain nature of the derivation
+%Conceptually, however, bubble formation and droplet condensation are very different.
+%
+%However, conceptually the models are 
+%The rate for a liquid droplet may be derived kinematically by  collision theory argument used to find the rate of formation of a liquid droplet from a saturated vapour.
+%The adaptation is problematic, however.
+%When modeIn the liquid droplet model the  droplet is modelled as a cluster of  molecules bound together, 
+%and the rate   at which,  say, a fourth molecule condenses onto a cluster of three molecules is clear conceptually.
+%What is meant by a `bubble of three molecules', and how it is to be distinguished from the bulk fluid is uncertain.
+%Nevertheless, we use the results of such a derivation\cite{Katz1992}. % (which we provide in \appref{CNT} for completeness), 
+%
+%Nevertheless, we carry to calculate the rate of nucleation,
+%so at least to have a benchmark with which to compare the density functional method we use in \secref{nuc:DFT}.
+%
+\begin{align}
+  J_0 \approx \frac{\rho_v^2}{\rho_l}\sqrt{\frac{\gamma}{m}},
+\end{align}
+This is identical to the result of the collision theory argument of Katz\cite{Katz1992}.
+%where $m$ is the mass of the particle, $rho_v$ and $\rho_l$ are the densities of the vapour and bubble respectively,
+%and $\gamma$ is \todo{What is gamma}.
+For water $J_0\approx 10^{34}\centi\metre \rpcubed \reciprocal\second$ and for perfluoropentane $J_0\approx 10^{32}\centi\metre \rpcubed \reciprocal\second$. 
+
+
+
+
+
+%In \figref{cnt:rate} it is seen that \cnt\
+%predicts that the nucleation of \pfp\ becomes observable at \unit{-7}\mega\pascal,
+%\pfb\ nucleation becomes observable at \unit{-8}\mega\pascal\ 
+%and water nucleation becomes observable at \unit{$\approx$-105}\mega\pascal.
+%These results are somewhat  discouraging, % they are much higher than what can be achieved with a diagnostic probe.
+%for while the nucleation rate is much greater than that of water,
+%such pressures are still tremendously high for diagnostic ultrasound.
+%However,
+%as has already been discussed,
+%it is common for \cnt\ to severely underestimate the nucleation rate.
+%Experimentally water undergoes types 1 nucleation 
+%at approximately 25\mega\pascal,
+%a much lower pressure than predicted from the classical theory.
+%Similar reductions for the perfluorocarbons would bring the nucleation 
+%rates into experimental reach.
+
+%\Figref{cnt:rate} is also interesting because it highlights the sensitivity
+%to the exponential terms in \eqnref{nuc:J},
+%and the insensitivity to the pre-exponential factor.
+%It is evident that the 
+%pressure required for nucleation is barely altered even if the rate 
+%is altered by several orders of magnitude.
+%For this reason, the theory should be insensitive to inaccuracies in the (problematic) derivation of $J_0$.
+
+%On the other hand, the appreciable difference in the pressure pressures required to nucleate 
+%perfluoropentane
+%and \pfb\ result from the  10\% difference in surface tension.
+%This corresponds to a 16 order of  difference between the two rates.
+
+%There does not seem to be a wealth of surface tension measurements for perfluorobutane.
+%It is not clear as to whether the surface tension of \pfb\ is genuinely higher than \pfp,
+%or whether the difference between the two is from the slight difference in temperature at which the measurements are made, 
+%or due to experimental uncertainty.
+%Whatever the cause, 
+%it is the higher value of surface tension used for \pfb\ that causes the somewhat surprising prediction that 
+%\pfp\ has a higher nucleation rate than \pfb.
+
+
+% Rather than give a spurious argument we prefer  here to estimate $J_0$ by dimensional analysis.
+% The result is the same as that used in the literature and is obtained at a fraction of the effort.
+% In addition, the estimate obtained here does not give the impression of greater accuracy than it deserves.
+% A danger ever present in kinematic derivations.
+
+% The variables that are deemed relevant are listed in \tabref{nuc:dimensional_vars} along with their dimensions.
+% Listed are 5 variables comprised of 3 dimensions: mass, length and time.
+% It is therefore possible to write down 2 dimensionless groups\cite{SanjoyBook}.
+
+% % The 5 variables split into variables that characterise the bubble
+% % \nlist{
+% %   \item the rate of bubble growth $J_0$
+% %   \item the vapour mass density, $m \rho_v$,
+% %   \item the surface tension, $\gamma$,
+% % }
+% % and a  variable that characterise the fluid
+% % \nlist{
+% %   \item the liquid mass density, $\rho_L$.
+% % }
+
+% % To eliminate the temporal dependence the rate per volume, $J_0$, must be squared 
+% % and combined with surface tension.
+% % This resulting $J^2/\gamma$ has the units $\lrsquare{M}^{-1}\lrsquare{L}^{-6}$,
+% % where the square brackets denote the units of mass and length, respectively.
+% % These quantities can be cancelled from the mass of the fluid, $m$, 
+% % and the square of a number density.
+% % There is a choice as to which number density should be used.
+% % The density of the liquid $\rho_L$, or the number density of the vapour, $\rho_v$.
+
+% The first is 
+% \begin{align}
+%   \Pi_1 &= \frac{J_0^2 m}{\gamma\rho_v^2}.
+%  \intertext{The vapour number density, $\rho_v$, chosen here rather than the liquid number density $\rho_L$. 
+%    $\rho_v$ is more appropriate since  $J_0$ is the high temperature limit.
+%  The second dimensionless group is the ratio of the densities,}
+%   \Pi_2 &= \frac{\rho_L}{\rho_v}.
+% \end{align}
+% Writing $\Pi_1$ as some function, $g$, of $\Pi_2$ we obtain,
+% \begin{align}
+%   J_0 = \rho_v \sqrt{\frac{\gamma}{m}} g\lr{\frac{\rho_L}{\rho_v}}.
+% \end{align}
+% The function $g$ is undetermined, however, it may be argued on physical grounds.
+
+% If the number density of the liquid is increased above equilibrium, then the excess chemical potential will be balanced if  molecules 
+% leave the fluid and enter the bubble.
+% The nucleation rate should therefore increase with $\rho_L$.
+% Conversely,  the nucleation rate should  decrease with an increased vapour density, $\rho_v$.
+% The simplest such relationship between rate and density is a linear one, 
+% and so we guess $g(x) \propto x$.
+% If the constant of proportionality is assumed to be approximately unity, then 
+% for  bubble nucleation we have
+% \begin{align}
+%   J_0 \approx \rho_L \sqrt{\frac{\gamma}{m}} g\lr{\frac{\rho_L}{\rho_v}}.
+% \end{align}
+% This is the conventional form for the pre-exponential factor in bubble nucleation.
+
+% Sometimes 
+
+% the rate should decrease with density of the vapour density, $\rho_v$.
+
+% If $g = 1$ then 
+% If however, 
+% Writing $g(x)= x$ gives
+
+
+% The most general function of the variables $\Pi_1$ and $\Pi_2$ is
+% \begin{align}
+%   f(\Pi_1, \Pi_2) = 0. \label{eqn:nuc:roots}
+% \end{align}
+% If $Pi_2$ is held fixed then \eqnref{nuc:roots} may be written fixed we examine the family of roots 
+% \begin{align}
+%   f_{\Pi_2}(\Pi_1) = 0,
+% \end{align}
+% of which the solution is $Pi_1 = f(
+
+% The second of these 
+
+
+% The resulting constant is the same as that which is used in the literature, 
+% without 
+% but 
+
+
+% It is not entirely clear, however, what is meant by a `cluster bubble'. 
+% Conceiving a bubble as a cluster of  gas molecules is difficult conceptually, however.
+
+
+
+
+
+
+% Rather, the rate can be estimated from a kinematic argument 
+% by estimating the rate at which individual molecules impinge upon and then leave the bubble\cite{Katz1992}.
+% The number density of bubbles containing $i$ molecules is needed for the calculation
+% and we obtain this from the thermodynamic argument by assuming that 
+% the number density is distributed according to a Boltzmann distribution%
+% \footnote{A Boltzmann distribution is the least prejudicial view\cite{Jaynes1957a}},
+% \begin{align}
+%   C_i =n \exp \lr{- \frac{\Delta G}{\kB T}}, %= N \exp\lr{- \frac{16\pi\sigma^3}{3\kB\lr{p_v^\ast - p_L} T}},
+%   \label{eqn:CnBoltzman}
+% \end{align}
+% where $n$ is the  number density of molecules in the fluid.
+
+% The resulting rate equation  is 
+% \begin{align}
+%   J = J_0 \exp\lr{- \frac{16\pi\sigma^3}{3\kB T\lr{p_v^\ast - p_L}^2}}, \label{eqn:nuc:J}
+% \end{align}
+% where 
+% \begin{align}
+%   J_0 = S^{i^\ast}
+%   \frac{p_v n}{  \rho_v^\ast\kB T}\sqrt{\frac{2\sigma M_r}{\pi }}
+%   \label{eqn:nuc:Jzero}
+% \end{align}
+% and  $i^\ast = \frac{4\pi \astar^3 \rho_v^\ast}{3 M_r}$ is the critical number of molecules in the bubble and $M_r$ is the molecular weight.
+% The derivation $J_0$ is reproduced in \appref{CNT}.
+% It is originally from Katz\cite{Katz1992},
+% although we prefer the notation of McClurg\cite{McClurg},
+% and so it is this that is given.
+
+
+% we need to know the number density of bubbles containing $i$ molecules.
+% We denote this density $C_i$ and assume that is  distributed according to a Boltzmann distribution%
+% \footnote{A Boltzmann distribution is the least prejudicial view\cite{Jaynes1957a}},
+% \begin{align}
+%   C_i =n \exp \lr{- \frac{\Delta G}{\kB T}}, %= N \exp\lr{- \frac{16\pi\sigma^3}{3\kB\lr{p_v^\ast - p_L} T}},
+%   \label{eqn:CnBoltzman}
+% \end{align}
+% where $n$ is the  number density of molecules in the fluid.
+
+
+
+% To find the rate of nucleation we cannot use equilibrium thermodynamics.
+% We give McClurg's\cite{McClurg} version of the derivation of Katz\cite{Katz1992} in \appref{CNT}.
+% The result is that
+% \begin{align}
+%   J = J_0 \exp\lr{- \frac{16\pi\sigma^3}{3\kB T\lr{p_v^\ast - p_L}^2}}, \label{eqn:nuc:J}
+% \end{align}
+% where 
+% \begin{align}
+%   J_0 = S^{i^\ast}
+%   \frac{p_v n}{  \rho_v^\ast\kB T}\sqrt{\frac{2\sigma M_r}{\pi }}
+%   \label{eqn:nuc:Jzero}
+% \end{align}
+% where $i^\ast = \frac{4\pi \astar^3 \rho_v^\ast}{3 M_r}$ is the critical number of molecules in the bubble and $M_r$ is the molecular weight.
+
+
+
+
+
+
+
+% At $a = \astar$ the probability of the bubble expanding is equal to the probability of the bubble contracting,
+% and so (an unstable) thermodynamic equilibrium has been reached.
+% This implies that the chemical potentials are equal
+% \begin{align}
+%   \mu_v(p_v^\ast) = \mu_L(p_L),\label{eqn:thermoEqlbm} \quad\text{ at $a = \astar$.}
+% \end{align}
+
+% The critical radius alternatively be expressed 
+% \begin{align}
+%   \astar = \frac{2\sigma}{\rho_L \kB T \ln S}
+% \end{align}
+% where $S \equiv \frac{p_v}{p_\infty}$ is the supersaturation ratio.
+% To obtain this expression we assume that the oil is incompressible so that 
+% \begin{align}
+%   p_v - p_L = 
+% \end{align}
+
+%The vapour pressure is evaluated from the Antoine equation, with the coefficients taken from Barber\cite{Barber1956}.
+
+
+
+% To find the rate of nucleation we cannot use equilibrium thermodynamics.
+% We give McClurg's\cite{McClurg} version of the derivation of Katz\cite{Katz1992} in \appref{CNT}.
+% The result is that
+% \begin{align}
+%   J = J_0 \exp\lr{- \frac{16\pi\sigma^3}{3\kB T\lr{p_v^\ast - p_L}^2}}, \label{eqn:nuc:J}
+% \end{align}
+% where 
+% \begin{align}
+%   J_0 = S^{i^\ast}
+%   \frac{p_v n}{  \rho_v^\ast\kB T}\sqrt{\frac{2\sigma M_r}{\pi }}
+%   \label{eqn:nuc:Jzero}
+% \end{align}
+% where $i^\ast = \frac{4\pi \astar^3 \rho_v^\ast}{3 M_r}$ is the critical number of molecules in the bubble and $M_r$ is the molecular weight.
+
+% Equation \eqnref{nuc:J} is perhaps the simplest of many variants.
+% For instance, type 2 nucleation can be incorporated by included a prefactor to $\Delta G$.
+% The reduction  in nucleation energy is because the surface that needs to be created is smaller when a bubble forms within a crevice,
+% and the technique is review by Lubetkin\cite{Lubetkin1995}.
+% Type 2 nucleation is not of primary interest, however, and so we do not pursue this technique here.
+
+
+\section{The critical radius of a bubble} \label{sec:nuc:radius}
+
+\subsection{The definition of the critical radius}
+
+
+
+When the rarefactional pressure of the acoustic wave exceeds the atmospheric pressure it places the fluid under tension.
+The creation of a vapour bubble  relaxes this pressure but  also creates an interface.
+Creating a small bubble is energetically unfavourable because the energy required to maintain the interface dominates.
+A large bubble, on the other hand, will grow explosively when placed under tension because the volume term dominates.
+For a given pressure there exists, therefore, a {\em critical radius}, $\astar$, at which the bubble neither grows nor shrinks 
+but is at thermodynamic equilibrium.
+If  spherical symmetry is assumed then 
+%the bubble boundary is defined by its radius.
+the critical radius is such that\cite{Oxtoby1992,Oxtoby1988}
+\begin{align}
+  \frac{d \Omega}{d a} =0,\quad\text{at $a = \astar$} \label{eqn:DFT:astarR}
+\end{align}
+where $\Omega$ is the {\em grand potential}.
+
+\subsection{A simplifying assumption}
+
+%The oil droplet is assumed to be the entire thermodynamic system and we consider the nucleation of a bubble  within it.
+
+
+Both the classical (thermodynamic) and density functional (statistical) approaches considered in this thesis struggle in the presence of highly polar fluids, such as water\cite{Talanquer2001, Nyquist1995}.
+%It is difficult to model water accurately.
+To simplify, this chapter assumes that the type 1 nucleation occurs entirely within 
+the perfluorocarbon droplet.
+The water is neglected.
+The exceptionally low solubility (a few parts per million\cite{Wen1979}) of the perfluorocarbons in water goes some way to justify this approximation.
+%
+
+The assumption is not without its problems.
+The small size, potentially, could  make a droplet a potential poor approximation to an `infinite thermodynamic system',
+with the finite volume errors that this can entail.
+However, neglecting the nucleation at the interface remains a limitation of our approach.
+Techniques for lifting the restriction have been considered by others\cite{Jarvis1975, Katz1992},
+but we do not pursue these here.
+For instance, the interface between the water and the droplet could be an interesting site of nucleation.
+On the other hand, the perfluorocarbons are exceptionally insoluble in water\todo{cite} -
+and so the water surrounding the droplet will not act as a source of extra perfluoropentane.
+\todo{comment on literature on this point - surface tension between water and pfcs.  Classical nucleation on interface was considered by Jarvis\cite{Jarvis1975}
+and by Katz\cite{Katz1992}}
+
+
+\subsection{Classical Theory}
+
+\Cnt\ uses a thermodynamic argument to evaluate the critical radius and the energy barrier to nucleation.
+As such, the argument strictly applies only in the thermodynamic limit
+where the  
+\ilist{
+  \item the density of the liquid,
+  \item the equilibrium vapour pressure and
+  \item the equilibrium surface tension between liquid and vapour
+}
+take their bulk values.
+The use of bulk quantities is the capillary approximation:
+the oil and vapour are assumed to be separated by a sharp interface and
+the surface tension is taken to be that of the macroscopic plainer interface.
+
+When the nucleating bubble is very small the thermodynamic limit is a poor approximation\cite{Talanquer1995}.
+The distance over which the density changes from liquid to vapour becomes not insignificant %for very small bubbles
+and the surface tension is typically reduced from its bulk value\cite{Kiang1971}.
+%Indeed, it can be unclear even how to define a bubble of just a few molecules\cite{Shen2003}.
+%This is a not insignificant problem in numerically simulating bubble nucleation events\cite{Shen2003}
+
+Nevertheless, with these problems in mind we continue.
+
+
+If a bubble is created adiabatically then the energy required to form a bubble of radius $a$ is  \cite{Delale2003, Katz1973}
+\begin{align}
+  \Delta \Omega =4\pi \gamma  a^2 - \frac{4\pi a^3}{3}\lr{p_v - p_L} + i\lr{\mu_v(p_v) - \mu_L(p_L)}.\label{eqn:DeltaG}
+\end{align}
+Here $\Delta \Omega$ is the change in the grand potential , $\gamma$ is the surface tension and $a$ is the radius of the bubble.
+$p_L$ and $p_v$ are the pressures of the oil droplet and the vapour,
+ $\mu_L(p_L)$ and $\mu_v(p_v)$ are the chemical potentials (per molecule) of the oil droplet and vapour
+at their given pressures,
+and $i$ is the number of molecules in the newly created vapour bubble.
+The first term on the right hand side of equation \eqnref{DeltaG} is the contribution from the surface tension.
+The second is the energy released by the change in volume,
+the third is the energy generated from  the chemical potential by the transport of molecules.
+
+
+
+The critical radius is  when the energy  barrier $\Delta \Omega$ is maximal.
+By differentiating \eqnref{DeltaG} with respect to $a$ it is found to be
+\begin{align}
+  \astar = \frac{2\gamma}{p_v^\ast-p_L}, \label{eqn:LaplaceRelation}
+\end{align}
+which is the Laplace relation.
+Substituting \eqnref{LaplaceRelation} into \eqnref{DeltaG} gives the energy required to create a bubble of  critical radius,
+\begin{align}
+   \Delta \Omega^\ast \equiv \given{\Delta G}{a = \astar} = \frac{16\pi\gamma^3}{3\lr{p_v^\ast- p_L}^2}.\label{eqn:DeltaGStar}
+\end{align}
+The chemical potentials have vanished from \eqnref{DeltaGStar} because  the bubble is at thermodynamic equilibrium, whence
+\begin{align}
+  \mu_v(p_v^\ast) = \mu_L(p_L),\label{eqn:thermoEqlbm} \quad\text{ at $a = \astar$.}
+\end{align} 
+The pressure, $p_v^\ast$, is the critical pressure within the bubble.
+Due to the bubble's curvature  it is not equal to the equilibrium vapour pressure of a flat interface, 
+denoted $p_\infty$. % (the $\infty$ being the radius of a `flat' bubble).
+The two vapour pressures are related by the Poynting correction, 
+\begin{align}
+  p_v^\ast = p_\infty \exp \lr{ \frac{V_m\lr{p_L -p_\infty} }{R T}  },\label{eqn:PoyntingCorrection}
+\end{align}
+where $V_m$ is the molar volume  and $R$ is the ideal gas constant.
+Equation \eqnref{PoyntingCorrection} is derived, for completeness, in  \appref{CNT}.
+
+
+
+\subsection{Density Functional theory}\label{sec:nuc:DFT}
+%\begin{quote}
+%  An enthusiastic graduate student ... has heard that the density functional approach is {\em the} thing to use but is confused by the plethora of possible approximations.
+%Which recipe or recipes do you recommend?  This would be my advice.
+%The simple van der Waals approximation is always a good starting point.
+%\flushright{Evans}
+%\end{quote}
+%From \cite{Oxtoby1992}
+
+
+%\subsubsection{Introduction}
+
+
+\Dft\ relaxes the capillary approximation used in \cnt.
+The density of the nucleated bubble is not assumed to be uniform,
+and the interface is not assumed to be macroscopic and plainer\cite{Oxtoby1992, Oxtoby1988}.
+The density functional approach therefore does much better at modelling the interface than \cnt.
+Rather than it being a sharp boundary,
+there is a finite interval over which the density varies from that of the fluid to that of the vapour.
+%However, the density functional approach also models the change in  density across liquid-vapour interface,
+%whence removing the flawed capillary approximation from the calculation.
+In addition, and as will be shown, the energy barrier to the phase change vanishes at the spinodal.
+This is as it should be, but marks a second major improvement on the classical theory\cite{Talanquer1994}.
+
+
+
+%and the bubble is modelled for what it is -  a fluctuation in density - 
+%rather than a vapour entrapped in  flexible boundary.
+
+%Here we use density functional theory only test the approximations of the classical calculations already carried.
+%Density functional theory can be us to calculate the nucleation rate.
+%However, it approaches the problem microscopically from a model for the intermolecular potential.
+%The calculated rate is, just as in the classical case, exceptionally sensitive to the parameters fed to this model.
+%To make quantitative predictions  a semi-empirical approach can be used that fits the parameters to the bulk properties of the fluid\cite{Nyquist1995}.
+%Unfortunately, however,  perfluoropentane does not have sufficient data for either the density variations with temperature 
+%or the chemical potential variations with temperature.
+
+%This makes qantative predictions unlikeThe vapour pressure 
+
+%\begin{figure}
+%  \input{part_theoretical/nucleation/figs/c2_vapour_pressure_fit.tex}
+%  \caption{ Fitting the Lennard-Jones model to experimental data for the vapour pressure of perfluoropentane\cite{NISTdata}.
+%   However, there is insufficient density data available for perfluoropentane to constrain the data for quantitative measurements.    
+%  }
+% \label{fig:vapour_pressure}
+%\end{figure}
+%Data does exist for the vapour pressure as a function of temperature.
+%This is used with the single datum  for the density at room temperature to fit the model.
+%The result of the fit given in \figref{vapour_pressure}.
+%However, enough confidence cannot be placed in the fits to use for quantitative predictions. 
+% To use density functional theory toe 
+
+% To calculate the nucleation rate the  Arrhenius form of \eqnref{} is still used.
+% The prefactor $J_0$ also remains the same.
+% The removal of the capillary approximation changes the expression of the free-energy
+% in the exponential.
+% It is this quantity that we wish to calculate.
+
+% Rather than starting with thermodynamics, \Dft\ approaches the problem microscopically
+ \Dft\ starts by modelling the inter-molecular potentials.
+ Good models for the fluid potential exist and 
+ among the most widely used are the Lennard-Jones potential
+ and the Kihira potential.
+ The former describes small spherically symmetric molecules very accurately.
+ The latter is a extension on the Lennard-Jones model to describe larger, less symmetric molecules.
+
+
+In principle, macroscopic predictions can then be drawn by inserting the intermolecular potentials into the usual thermodynamic potentials of statistical mechanics.  
+While the full multi-particle potentials are in general insolvable and approximations must be made,
+the density functional approach is one derived from a firm theoretical base\cite{Evans1992}.
+%the data inputted does not need to be provided.
+Unfortunately, the first principles approach to nucleation has only ever had qualitative success\cite{Nyquist1995,Talanquer2001}.
+The nucleation rates still depend exponentially on the predicted energy barrier and small deviations have a profound influence on predictions.
+%and the success of the density functional approach to nucleation - without the empirical input - has always only been qualitative
+
+The semi-empirical approach of Nyquist\cite{Nyquist1995} and Talanquer\cite{Talanquer2001}
+attempts to temper this sensitivity by fitting the molecular-scale parameters to the experimental data used for the classical theory prior.
+% to making nucleation rate predictions.
+% By construction, therefore, the bulk predications of the model are correct. 
+By construction, therefore, the bulk thermodynamic predications of the model are correct.
+Thermodynamic arguments can then be used to obtain other quantities of interest such as those in equation \eqnref{}.
+
+
+ %However, by modelling the change in  density across liquid-vapour interface,
+ %one of the major flaws of the capillary approximation is removed.
+ %In addition with this approach, the energy barrier to the phase change vanishes at the spinodal,
+ %a second major correction on the classical theory.
+
+
+The density functional approach models fluctuations about the bulk properties of the fluid.
+It is therefore a mean-field approach that fails, like all mean field theories, near to the critical temperature.
+One must be cautious, therefore, only to apply it to nucleation events that occur well away from the critical point.
+In this thesis  attention is restricted to nucleation events that are induced by a reduction in pressure 
+rather than by boiling.
+The critical temperatures for a number of perfluorocarbons are listed in \tabref{nuc:critical_temps}.
+It is interesting to note that for the perfluorocarbons the critical temperatures are considerably higher than their boiling points.
+At \unit{37}\degreecelsius, for example, perfluoropentane is in a meta-stable state but is still far from being `on the cusp' of vapourisation.
+Type 1 nucleation events are still likely to occur via a reduction in pressure rather than an increase in temperature.
+On the other hand, perfluoroethane is above its  critical point at room temperature and we 
+consider perfluoropropane to be a little to close to its  critical point to be considered in this thesis.
+
+% The oil chosen for this purpose is perfluoropentane.
+% It has the following properties that make it suitable
+% \nlist{
+% \item
+%   it is chemically inert with a low toxicity, \label{nuc:PFP:one} \todo{some references here} 
+% \item
+%   it has a boiling point of about \unit{28}\degreecelsius. \label{nuc:PFP:two}\todo{some references here to} 
+% }
+% Property \ref{nuc:PFP:one} is important for any diagnostic contrast agent.
+% Property \ref{nuc:PFP:two} suggests that when placed under tension
+% \pfp\ should vapourise  more readily than the bulk (assumed to be water).
+% This would then give the required selectivity for the contrast agent.
+% %It is an oversimplification, however, 
+% %to argue that  \pfp's lower boiling point implies that it should form bubbles prior to the bulk.
+% %There are multiple mechanisms to bubble nucleation in ultrasound.
+% %We argue in \secref{} that the mechanisms for water and \pfp\ droplets are likely to be different,
+% %and that the boiling point in the case of water   is not relevant in diagnostic cavitation.
+
+% making a comparison based on the respective physical chemistry incorrect.
+
+
+
+%and are then used to derive further
+%  so that the model reproduces the 
+%correct thermodynamic limit.
+%
+%While \cnt\ is a useful first calculation,
+%it is not adequate to provide quantitative  predictions.
+%To overcome these difficulties we employ the semi-empirical density functional approach of Nyquist\cite{Nyquist1995} and Talanquer\cite{Talanquer2001}
+%in \secref{nuc:DFT}.
+%The {\em semi-empirical} approach uses the same 
+%By construction, therefore, the bulk predications of the model are correct. 
+
+
+
+% The density functional approach calculates  the free energy 
+% directly from the interaction potentials.
+% However, as for the classical theory,
+% the calculated rates are exponentially sensitive to inaccuracies in the provided model.
+% Great care must be taken, therefore, when setting up the models.
+
+% The semi-empiciral approach ...
+% Fits so that in the bulk limit...
+% DFT then proposes the  details omitted by the classical theory,
+% such as finite with of interface.
+
+
+% Use the approach of Nyquist to calcualate the rate of perlfuorpentane and perfluorbutane.
+\subsubsection{Summary}
+In short, the algorithm we shall be using proceeds as follows % The steps that are to be taken are 
+ \nlist{
+   \item write down an accurate model for the intermolecular potential
+   \item approximate the model so that it can be solved.
+   \item fit the model's parameters so that it reproduces macroscopic thermodynamics
+   \item use thermodynamic arguments to extend the predictions to other parameters.
+ }
+
+
+
+\subsubsection{Approximating the grand potential}
+
+The grand potential $\Omega$ is required to evaluate both the rate of nucleation and the critical radius.
+%If  spherical symmetry is assumed then 
+%the bubble boundary is defined by its radius.
+%The critical radius is such that\cite{Oxtoby1992,Oxtoby1988}
+%\begin{align}
+%  \frac{d \Omega}{d a} =0,\quad\text{at $a = \astar$} \label{eqn:DFT:astarR}
+%\end{align}
+%where $\Omega$ is the {\em grand potential}.
+%
+On a microscopic level, however, the grand potential is difficult to evaluate
+because the positions of the molecules within the system are not independent,
+but rather depend on the position of every other molecule due to their mutual interactions.
+%This is because 
+%the intrinsic free energy incorporates the interaction of every molecule with every other molecule in the system.
+Evaluating the intrinsic free energy is then intractable.
+%This introduces integrals that are intractable.
+%The approach of \dft\ to this problem is standard in statistical physics:
+
+To overcome this problem 
+the true probability density function, $p_0(\H; \cx_1,\cp_1)$, that describes 
+the positions of the particles and their momenta,
+is approximated to a simpler distribution $p(H; \cx_1, \cp_1)$ that may be solved.
+Here, $\H$, is the true Hamiltonian of the system 
+and $H$ is the approximate Hamiltonian with simpler interaction terms.
+We have also employed the  convenient shorthand
+\begin{align}
+\cx_n \equiv r_n,r_{n+1},\ldots,r_N,  \quad\text{and}\quad
+\cp_n \equiv  p_n,p_{n+1},\ldots, p_N.
+    \label{eqn:shorthand}
+\end{align}
+to describe the positions and momenta of  $N-n$ particles.
+
+The {\em relative entropy } or {\em Kullback-Leibler divergance} gives the amount of information lost 
+when using the approximate distribution  $p$ rather than the correct distribution $p_0$,
+and is defined
+\begin{align}
+  \KLD{p}{p_0} = \Tr p \log \frac{p}{p_0}, \label{eqn:nuc:KLD}
+\end{align}
+where $\Tr$ is the classical trace operator. %$\Tr\equiv \sum_{N=0}^\infty \frac{1}{h^{3N}N!} \iint d\cx_1 d\cp_1$ is the classical trace operator.
+The relative entropy has the property that 
+$\KLD{p}{p_0} \ge 0$, which follows from Gibbs inequality\cite{MacKayBook}.
+Only if $p=p_0$ does $\KLD{p}{p_0} = 0$.
+Therefore once the structure of the approximate  distribution $p$ has been chosen,
+it can be varied to match to content of $p_0$ as closely as possible by minimising $\KLD{p}{p_0}$.
+% In this thesis we consider only pair-wise interactions,
+% \begin{align}
+% %  \UE(\cx) \approx 
+% \Phi(\cx) =  \sum_{j>i} \sum_i^N \phi(\vr_i, \vr_j),
+% \end{align}
+% where $\phi(\vr_i, \vr_j)$ is the two particle potential between a particle at $r_i$ and $r_j$.
+% The structure imposed by higher-order correlations  is ignored by $p$.
+
+Employing this variational procedure to approximate the thermodynamic potentials is ubiquitous in statistical physics\cite{Yedidia2000a}.
+The point of departure for the density functional method is the realisation that
+\nlist{
+\item the {\em density is a functional of the external potential.}
+  This follows because the approximation to the  density is related to the single particle probability density function
+  \begin{align}
+    \rho(\vr) \propto \iint d\cp_1 d\cx_2 p(H, \cx, \cp) \propto  \int e^{-\beta\sum_i^N V_\ext(\vr_i)} d\cx_2
+  \end{align}
+  where $V_\ext(\vr_i)$ is the external potential at the position $\vr$ of the $i^{th}$ molecule.
+  Here were have extended the shorthand  employed in  \eqnref{dshorthand} so that
+  \begin{align}
+    d\cx_n &\equiv dr_n dr_{n+1}\ldots dr_N, &&\quad\text{and}&
+    d\cp_n &\equiv  dp_n dp_{n+1}\ldots dp_N.
+    \label{eqn:dshorthand}
+  \end{align}
+\item {\em the external potential is uniquely determined by the density}.
+  This converse result is known as the Hohenberg-Kohn theorem.
+%  and an outline of the proof is given in  \appref{DFT}.
+  It follows because the external potential is determined by the probability density, $p$, which is in turn determined uniquely by the density.
+}
+It is thereby permissible to work with the mass density rather than the probability density when considering the thermodynamics of the bubble.
+Since the density is the term of interest bubble nucleation, the density functional approach is much more direct.
+
+We may therefore define a approximate grand potential as a functional of the (approximate) density \cite{Evans1992}
+\begin{align}
+ \Omega_V\lrs{\rho} \equiv \beta^{-1}\KLD{p\lrs{\rho}}{p_0}+   \Omega, 
+\end{align}
+The approximate  grand potential approaches the true value when
+it is minimised with  respect to $\rho$.
+Furthermore, since $\Omega$ is the grand potential at thermodynamic equilibrium,
+$\Omega_V$ is minimal when $\rho$ describes the  critical density distribution.
+The condition \eqnref{DFT:astarR}
+can therefore be expressed by the functional derivative\cite{Oxtoby1992}
+\begin{align}
+  \frac{\delta \Omega_V}{\delta \rho} =0,\quad\text{at $\rho = \rhostar$.} \label{eqn:DFT:astar}
+\end{align}
+
+
+%\subsubsection{The critical bubble}
+The grand potential is related to the Helmholtz free energy by a Legendre transformation
+\begin{align}
+  \Omega_V = F -  \mu \int d\vr \rho(\vr), \label{eqn:OmegaVDefn}
+\end{align}
+where $\mu$ is the chemical potential.
+%The chemical potential is comprised of the two phases of a nucleating bubble:
+%the oil and its vapour.
+The free energy, $F$, is the sum of  internal energy $\Phi$ and an  entropic contribution.
+The inter-particle interactions are contained within the internal energy.
+
+To simplify $F$ it is noted that  the interactions of most fluids are dominated  by volume exclusion effects (van der Waal type interactions).
+Longer range interactions are, in general, only of secondary importance.
+If only pair-wise attractions are considered, then the internal energy can then be split into the 
+free energy of a {\em hard sphere} reference fluid, $F_\hs$ 
+and a small perturbation, $\phi\attr$, that incorporates the long range attractions.
+Then 
+\begin{align}
+   F\lrs{\rho} = F_\hs\lrs{\rho} +\half   \iint d \vr_i d\vr_j \phi_\attr( \vr_i, \vr_j)\rho(\vr_i, \vr_j),  \label{eqn:F_pert}
+\end{align}
+where $\phi_\attr(\vr_i, \vr_j)$ is the residual two particle potential between a particle at $\vr_i$ and $\vr_j$,
+not incorporated into $F_\hs$.
+$\rho(\vr_i, \vr_j) $ is the two particle density function.
+(See Evans\cite{Evans1992} for a formal treatment of the above steps).
+
+Equation \eqnref{F_pert} is still exact for two particle potential theories.
+In order to solve it we first  assume that the  hard sphere potential is a function only of the local density,
+\begin{align}
+  F_\hs \lrs{\rho} \approx \int d\vr f_\hs(\rho(\vr)). \label{eqn:LDA}
+\end{align}
+$f_\hs(\rho(\vr))$ is the potential (per unit volume) of a uniform  hard-sphere fluid\cite{Evans1992}.
+It is obtained from the accurate  Carnahan-Stirling equation of state,
+\begin{align}
+    \fh(\rho(\vr)) =  f_\ideal + \rho \kB T\frac{4\eta - 3\eta^2}{\lr{1-\eta}^2}
+\end{align}
+where $\eta =  \frac{\pi \rho d^3}{6}$ is the packing function and $f_\ideal =  \rho\kB T\lr{\ln \lr{\rho \lambda^3} -1}$ is the free energy (per volume) of an ideal gas.
+$\lambda$ is the de Broglie wavelength.
+%
+%\begin{align}
+%  f_\hs(\rho) = p_\hs + \mu \rho.
+%\end{align}
+%$f_\hs(\rho(\vr))$ can be obtained from the accurate Carnahan-Stirling equation of state.
+%It is  a known (but non-linear) function of the number density.
+The approximation \eqnref{LDA} is known as the {\em local-density approximation}.
+
+The perturbation may be approximated by assuming that the two particle densities are uncorrelated, 
+\begin{align}
+\rho(\vr_i, \vr_j) \approx \rho(\vr_i)\rho(\vr_j).\label{eqn:RPA}
+\end{align}
+This is known as the {\em random phase approximation}.
+%The approximation has been found to be accurate in the absence of rapid \todo{get this sentence right} \cite.
+If the oil droplet is sufficiently large then this approximation should hold.
+The random phase approximation may well need to be refined for very small droplets, however, 
+where the oil-water interface cannot be ignored.
+
+Equation \eqnref{OmegaVDefn} can therefore be written as an explicit function of $\rho$,
+\begin{align}
+   \Omega_V = \int d\vr f_\hs(\rho(\vr))  +   \iint d \vr_i d\vr_j \phi_\attr( \vr_i, \vr_j) \rho(\vr_i)\rho(\vr_j) -  \mu \int d\vr \rho(\vr),  \label{eqn:OmegaV}
+\end{align}
+where equations \eqnref{F_pert}, \eqnref{LDA} and \eqnref{RPA} have been used.
+Minimising \eqnref{OmegaV} with respect to $\rho(\vr)$ gives
+\begin{align}
+  \frac{\delta  f_\hs(\rho(\vr)) }{\delta \rho(\vr)} \equiv \mu_\hs\lrs{\rho(\vr)} = \mu - \int d\vr^\prime \phi_\attr( \vr, \vr^\prime) \rho(\vr^\prime). \label{eqn:ChemPots}
+\end{align}
+$\mu_\hs\lrs{\rho(\vr)}$ is the chemical potential of the hard sphere fluid.
+It is given by 
+\begin{align}
+ \mu_\hs = \frac{d \fh}{d \rho} =  \kB T\frac{8\eta - 9 \eta^2 + 3\eta^3}{\lr{1-\eta}^3} + \kB \ln \lr{\rho \lambda^3}
+\end{align}
+
+All the terms on in \eqnref{ChemPots} can be obtained for a given function density profile.
+$\mu_\hs$ on the left and the second term on the right hand side have explicit representations, while
+the chemical potential $\mu$ `mean field' obtained by analysing the bulk properties of the fluid.
+Equation \eqnref{ChemPots} can therefore be solved by iteration.
+An initial guess as the density profile is given to the right hand side.
+The chemical potential $\mu_\hs$ is then inverted (numerically) to give an improved estimate of $\rho$.
+%This procedure is carried out for the perfluorocarbons in \secref{}.
+
+The density obtained by solving \eqnref{ChemPots} is the density that minimises $\Omega_V$,
+and it therefore gives the best approximation the true equilibrium grand potential.
+The bubble is only in thermodynamic equilibrium when it is at its critical radius, however.
+Therefore the density $\rho$ obtained from \eqnref{ChemPots} is the density profile of the critical bubble.
+With this we may obtain an improved estimate of the surface tension and estimate a more reliable nucleation rate.
+
+
+
+To use equation \eqnref{ChemPots}, however, 
+we first need to evaluate the bulk properties about which we construct the perturbation.
+Only then can we find $\mu$, the `mean field' guess for the iteration. %necessary for the right hand side of \eqnref{ChemPots}.
+
+\subsubsection{Bulk properties}
+If the density is uniform then equation \eqnref{OmegaV} becomes
+\begin{align}
+   \Omega_V/V =  f_\hs(\rho)  +   \alpha \rho^2 -  \mu \rho= p_\hs + \mu \rho +   \alpha \rho^2 -  \mu \rho. \label{eqn:OmegaVBulk}
+\end{align}
+where $V$ is the volume of the system and 
+\begin{align}
+  \alpha =  \iint d \vr_i d\vr_j \phi_\attr( \vr_i, \vr_j)
+\end{align}
+is the total attractive contribution from the perturbation.
+The hard sphere pressure is given by
+\begin{align}
+ p_\hs = \kB T \rho \frac{1+\eta +\eta^2-\eta^3}{1-\eta^3}. \label{eqn:HSpressure}
+\end{align}
+
+Equation \Eqnref{OmegaVBulk}  can be minimised with the help of the Maxwell relation
+\begin{align}
+  \frac{\d p_\hs}{\d \rho} = \rho \frac{\d \mu_\hs}{\d \rho} 
+\end{align}
+to obtain
+\begin{align}
+  \mu = \mu_\hs - \alpha \rho. \label{eqn:muBulk}
+\end{align}
+Substituting \eqnref{muBulk} into \eqnref{OmegaVBulk} gives
+\begin{align}
+   \Omega_V/V = -p_\hs(\rho) + \half \alpha \rho^2 = -p.
+\end{align}
+
+\begin{figure}
+  \input{part_theoretical/nucleation/figs/c2_lspinodal_pressure.tex}
+  \caption{ 
+    The pressure difference between coexistance and the liquid spinodal.
+This graph calculates  the pressures required to guarantee a phase change.
+Notice that the pressures required vanish at the critical pressure.
+  }
+ \label{fig:sppressure}
+\end{figure}
+
+Below the critical temperature there will be 
+two phases in  bulk coexistence.
+The number densities of these two phases are $\rho_v$ and $\rho_L$,
+where the ``$v$'' denotes the vapour and the ``$L$'' denotes the liquid,
+as in \secref{nuc:CNT}.
+
+At equilibrium the chemical potential and the pressures for both phases are equal
+\sub{
+\label{eqn:BulkCoex}
+\begin{align}
+  \mu_v = \mu_\hs(\rho_v) - \alpha \rho_v &= \mu_\hs(\rho_L) - \alpha \rho_L = \mu_L,\\
+  p_v = p_\hs(\rho_v) - \half \alpha \rho_v^2 &= p_\hs(\rho_L) - \half \alpha \rho_L^2 = p_L.
+\end{align}
+}
+The solutions to \eqnref{BulkCoex} define the coexistance curve,
+which is plotted in \figref{sppressure}
+% Below the critical temperature two phases exist and so the simultaneous  equations \eqnref{BulkCoex} can be solved numerically 
+% so long as  $p_\hs(rho)$ and $\mu(\rho)$ are known functions of $\rho$.
+% The solutions to \eqnref{BulkCoex} as a function of temperature define the coexistance curve.
+%Each minima 
+
+The spinodal is defines the point of equilibrium where the energy barrier to the transition vanishes.
+There region of the spinodal is bound by the curves
+\sub{
+\label{eqn:LocusSpinodal}
+\begin{align}
+  \mu_v = \mu_\hs(\rho_v) - \alpha \rho_v &= \mu_\hs(\rho_L) - \alpha \rho_L = \mu_L,\label{eqn:Locus0}\\
+  \frac{\d \mu_v}{\d \rho} &= 0 \label{eqn:Locus1}\\
+\text{or}\quad  \frac{\d \mu_L}{\d \rho} &= 0 \label{eqn:Locus2} 
+\end{align}
+}
+Equation  \eqnref{Locus0} demands thermodynamic equilibrium.
+Equation \eqnref{Locus1}   \eqnref{Locus2}  demand that the equilibrium point is a saddle point (where the energy barrier vanishes).
+
+
+% \subsubsection{The Carnarhan-Stirling Hard Sphere Equation of State}
+
+
+% To make further progress we need to solve the thermodynamics of the reference hard sphere fluid.
+% This can be done by starting with the hightly accurate Carnahan-Stirling equaion of state,
+% Carnahan-Starling\cite{Carnahan1969} see\cite{Song1989} for interest, equation of state
+% \begin{align}
+% Z = \frac{pV}{N\kB T} = \frac{1+\eta +\eta^2-\eta^3}{1-\eta^3}\label{eqn:HSeos}
+% \end{align}
+% where $\eta$ is the packing fraction of the fluid,
+% \begin{align}
+%   \eta = \eta(\rho) = \frac{\pi \rho d^3}{6}
+% \end{align}
+% where $d$ is the hard-sphere diameter.
+
+% By rearranging \eqnref{HSeos} the pressure is
+% \begin{align}
+%   p = \kB T \rho \frac{1+\eta +\eta^2-\eta^3}{1-\eta^3} \label{eqn:HSpressure}
+% \end{align}
+
+% To calculate the hard-sphere free energy  it is useful to calcuate the residual pressure over that of an ideal gas.
+% That is 
+% \begin{align}
+% p^\Res = p - p_\ideal = p -\rho\kB T = \rho \kB T \lr{Z-1}.
+% \end{align}
+% At a constant temperature the residual free energy $df^\Res = - p^\Res dV$ may then be integrated so that
+% \begin{align}
+%   \fh &= f_\ideal  - p ^\Res dV/V =  f_\ideal  +  \rho \kB T \int_0^\rho d\rho^\prime \frac{\lr{Z-1}}{\rho^\prime }\\
+% &=   f_\ideal + \rho \kB T\frac{4\eta - 3\eta^2}{\lr{1-\eta}^2}
+% \end{align}
+% where the free energy per volume of an ideal gas is\cite{Santos2005}
+% \begin{align}
+%   f_\ideal =  \rho\kB T\lr{\ln \lr{\rho \lambda^3} -1}. % \sum_i \ln \lr{\rho_i \lambda_i^3} -1.
+% \end{align}
+% $\lambda$ is the de Broglie wavelenghth of the medium.
+% Finally, the chemical potential is 
+% \begin{align}
+%   \mu = \mu_h + \mu_\ideal = \frac{d \fh}{d \rho} + \mu_\ideal=  \kB T\frac{8\eta - 9 \eta^2 + 3\eta^3}{\lr{1-\eta}^3} + \kB \ln \lr{\rho \lambda^3}
+% \end{align}
+
+% excess chemical potential is\cite{Lee1995}
+% \begin{align}
+% \mu = \kB T\frac{8\eta - 9 \eta^2 + 3\eta^3}{\lr{1-\eta}^3}
+% \end{align}
+% or should that be\cite{Yang2002}
+% \begin{align}
+% \mu = \kB T\frac{8\eta - 9 \eta^2 + 3\eta^3}{\lr{1-\eta}^3} - 
+% \end{align}
+%http://www.sklogwiki.org/SklogWiki/index.php/Carnahan-Starling_equation_of_state
+
+\subsubsection{The attractive perturbation}
+
+
+% \begin{figure}
+%  \centering
+% %\hspace*{-0.2cm}
+%  \label{fig:Kihira_potentials}
+%  \subfloat[Kihira 2-particle potentials for various perfluorocarbons]{
+%   \input{part_theoretical/nucleation/figs/c2_plot_potentials.tex}}
+% \hfill
+%  \label{fig:Kihira_WCA}
+%  \subfloat[WCA decomposition of the Kihira  potential for perfluoropentane]{
+%   \input{part_theoretical/nucleation/figs/c2_plot_potentials_WCA.tex}}\\
+% \label{fig:Kihira_d}
+% \subfloat[Comparison of the WCA repulsive potential with the hard sphere potential]{
+%   \input{part_theoretical/nucleation/figs/c2_plot_potentials_WCA_hs.tex}} \hfill
+%   \caption{ 
+%   }
+%  \label{fig:}
+% \end{figure}
+
+All that remains to specify the model is a concrete attractive perturbation.
+To do so, we begin with a model for the full two particle interaction 
+and then split it into attractive and repulsive parts, according the WCA procedure.
+
+For small symmetric molecules the Lennard-Jones 6-12 potential has good accuracy.
+It is given by
+\begin{align}
+  \phi_\LJ(r) = 4\epsilon\lr{\frac{\sigma^{12}}{r^{12}} - \frac{\sigma^{6}}{r^{6}}}
+\end{align}
+where $r = \abs{\vr=\vr^\prime}$, $\eta$ is the characteristic bond energy 
+and $\sigma$ the characteristic length.
+The Kihira-potential does a better job for larger models such as perfluoropentane 
+but greatly complicates the approach.
+The Lennard-Jones is used  in this thesis.
+
+% The Kihira-potential is an extension to approximate assymmetric molecules.
+% It remains a symmetric potential, 
+% but it includes a hard sphere of radius $r$ of excluded volume.
+% \begin{align}
+%   \phi_\K(r) = 4\epsilon\lr{\frac{\lr{\sigma-2a}^{12}}{\lr{r-2a}^{12}} - \frac{\lr{\sigma-2a}^{6}}{\lr{r-2a}^{6}}}
+% \end{align}
+% Oh\cite{Oh2010} recently fitted the Kihira-potential to the measured  second viral coefficient and viscosity 
+% of the perlfuoroalkane series.
+% The calculated potentials are plotted in \figref{Kihira_potentials}
+
+The potentials are then separated into attractive and repulsive parts, $\phi_\attr$ and $\phi_\rep$, respectively,
+\begin{align}
+  \phi_\rep^\WCA(r) = \left\{
+    \begin{array}{ll}
+      \phi(r) +  \epsilon & \text{if $r<r_\min$}\\
+      0 & \text{otherwise}
+    \end{array} \right. 
+\end{align}
+and 
+\begin{align}
+  \phi_\attr^\WCA(r) = \left\{ 
+    \begin{array}{ll}
+      - \epsilon & \text{if $r<r_\min$}\\
+      \phi(r) & \text{otherwise}
+    \end{array} \right.
+\end{align}
+where $r_\min$ is the radius at which the potential is minimal.
+%This WCA decomposition is plotted for \pfp\ in \figref{Kihira_WCA}.
+
+Finally to reestablish contact with the hard sphere approximation 
+the repulsive part of the decomposition is replaced by an infinite repulsion at a distance $d$,
+That is 
+\begin{align}
+  \phi_\hs(r) = \left\{
+    \begin{array}{ll}
+      \infty & \text{if $r<d$}\\
+      0 & \text{otherwise}
+    \end{array} \right. 
+\end{align}
+
+
+\begin{figure}
+ \centering
+%\hspace*{-0.2cm}
+  \input{part_theoretical/nucleation/figs/c2_interface.tex}
+  \caption{ The density profile of perfluoropentane at a plainer interface.
+  }
+ \label{fig:profile}
+\end{figure}
+%There is a degree of ambiguity as to what the choice of $d$ should be.
+%One choice could be hard sphere diameter of the Kihira model.
+%However, as seen from \figref{Kihira_d}, 
+%this choice seems unrepresentatively small.
+%A more appropriate looking choice seems to be the characteristic length $\sigma$.
+
+%To overcome this difficulty the data is fitted to the
+
+
+% \begin{figure}
+%  \centering
+% %\hspace*{-0.2cm}
+% % \label{fig:Kihira_potentials}
+%  \subfloat[Kihira 2-particle potentials for various perfluorocarbons]{
+%   \input{part_theoretical/nucleation/figs/c2_vapour_pressure_fit.tex}}
+% \hfill
+% % \label{fig:Kihira_WCA}
+%  \subfloat[WCA decomposition of the Kihira  potential for perfluoropentane]{
+%   \input{part_theoretical/nucleation/figs/c2_vapour_pressure_fit_LJ.tex}}\\
+% %\label{fig:Kihira_d}
+%   \caption{ 
+%   }
+%  \label{fig:}
+% \end{figure}
+
+%The final result of the density functional approach, \figref{profile} shows that the thickness of the interface extends over 10 anstrums on each side of the inteface.
+%xsThis is extends over most of the bubble wheWhen this compared to the
+
+
+
+\subsection{DFT}
+\section{Other discussion}
+
+In addition to the nucleation rate we provide an upper bound on the pressure required to induce a phase change.
+This is done by evaluating the spinodal : the point at which the energy barrier for the liquid-vapour transition vanishes (see Favvas\cite{Favvas2008} for an introduction).
+While the decomposition of phases past the spinodal is not  nucleation -
+the phases separate throughout the oil rather than forming a bubble -
+the spinodal nevertheless marks a fundamental and guaranteed  change in the contrast agent.
+%However, Talanquer and Oxtoby used dissolved gasses such as oxygen and carbon dioxide as their examples of nucleation. 
+%The high vapour pressures of these gases causes the critical radius of the bubble very small: just a few na
+%with a corresponding  cause considered  the nucleation of highly volatile liquids  the nucleaton of volatile liquids 
+
+%Such spectacular deviations are typical for bubble nucleation predictions. 
+%On the other hand, for predicting the condensation of a vapour bubble 
+%\cnt\ is often satisfactory.
+%The density functional approach explained this discrepancy by finding that the 
+%spinodal exerts a stronger influence on the liquid-vapour transition than its reverse\cite{Oxtoby1997}.
+\Cnt\ does not model the spinodal and the rates predicted for   evaporation and condensation are identical.
+The qualitative success of the classical theory for this transition was considered fortuitous,
+resulting from a cancellation of errors\cite{Oxtoby1997}.
+
+%Talanquer and Oxtoby, however,
+
+
+\subsection{Other}
+
+
+The grand potential is in general difficult to evaluate, however.
+This is because the intrinsic free energy incorporates the interaction of every molecule with every other molecule in the system.
+This introduces integrals that are intractable.
+The approach of \dft\ to this problem is standard in statistical physics:
+the true probability density function, $p_0(\H; \cx_1,\cp_1)$, that describes 
+the positions of the particles and their momentums,
+is approximated to a simpler distribution $p(H; \cx_1, \cp_1)$ that may be solved.
+Here, $\H$, is the true Hamiltonian of the system 
+and $H$ is the approximate Hamiltonian with simpler interaction terms.
+We has also employed the  convenient shorthand
+\begin{align}
+\cx_n \equiv r_n,r_{n+1},\ldots,r_N,  \quad\text{and}\quad
+\cp_n \equiv  p_n,p_{n+1},\ldots, p_N.
+    \label{eqn:shorthand}
+\end{align}
+to describe the positions and momentums of  $N-n$ particles.
+
+
+
+\section{Classical nucleation theory} \label{sec:nuc:CNT}
+
+
+When the rarefactional pressure of the acoustic wave exceeds the atmospheric pressure it places the fluid under tension.
+The creation of a vapour bubble  relaxes this pressure but  also creates an interface.
+Creating a small bubble is energetically unfavourable because the surface tension dominates.
+A large bubble, on the other hand, will grow explosively when placed under tension because the volume term dominates.
+For a given pressure there exists, therefore, a {\em critical radius}, $\astar$, at which the bubble neither grows nor shrinks, 
+but is at thermodynamic equilibrium.
+
+If a bubble is created adiabatically then the energy required to form a bubble of radius $a$ is  \cite{Delale2003, Katz1973}
+\begin{align}
+  \Delta G =4\pi \gamma  a^2 - \frac{4\pi a^3}{3}\lr{p_v - p_L} + i\lr{\mu_v(p_v) - \mu_L(p_L)}.\label{eqn:DeltaG}
+\end{align}
+Here $\Delta G$ is the change in the Gibbs free energy, $\gamma$ is the surface tension and $a$ is the radius of the bubble.
+$p_L$ and $p_v$ are the pressures of the oil droplet and the vapour,
+ $\mu_L(p_L)$ and $\mu_v(p_v)$ are the chemical potentials (per molecule) of the oil droplet and vapour
+at their given pressures,
+and $i$ is the number of molecules in the newly created vapour bubble.
+The first term on the right hand side of equation \eqnref{DeltaG} is the contribution from the surface tension.
+The second is the energy released by the change in volume,
+the third is the energy generated from  the chemical potential by the transport of molecules.
+
+The critical radius is  when the energy  barrier $\Delta G$ is maximal.
+By differentiating \eqnref{DeltaG} with respect to $a$ it is found to be
+\begin{align}
+  \astar = \frac{2\gamma}{p_v^\ast-p_L}, \label{eqn:LaplaceRelation}
+\end{align}
+which is the Laplace relation.
+Substituting \eqnref{LaplaceRelation} into \eqnref{DeltaG} gives the energy required to create a bubble of  critical radius,
+\begin{align}
+   \Delta G^\ast \equiv \given{\Delta G}{a = \astar} = \frac{16\pi\gamma^3}{3\lr{p_v^\ast- p_L}^2}.\label{eqn:DeltaGStar}
+\end{align}
+The chemical potentials have vanished from \eqnref{DeltaGStar} because  the bubble is at thermodynamic equilibrium, whence
+\begin{align}
+  \mu_v(p_v^\ast) = \mu_L(p_L),\label{eqn:thermoEqlbm} \quad\text{ at $a = \astar$.}
+\end{align} 
+The pressure, $p_v^\ast$, is the critical pressure within the bubble.
+Due to the bubble's curvature  it is not equal to the equilibrium vapour pressure of a flat interface, 
+denoted $p_\infty$. % (the $\infty$ being the radius of a `flat' bubble).
+The two vapour pressures are related by the Poynting correction, 
+\begin{align}
+  p_v^\ast = p_\infty \exp \lr{ \frac{V_m\lr{p_L -p_\infty} }{R T}  },\label{eqn:PoyntingCorrection}
+\end{align}
+where $V_m$ is the molar volume  and $R$ is the ideal gas constant.
+Equation \eqnref{PoyntingCorrection} is derived, for completeness, in  \appref{CNT}.
+
+
+%Another variation on equation \eqnref{nuc:J} enables type 2 nuclation to be encorporated.
+%The reduction in the surface area of a bubble provided by a crevice can be included as a prefactor to the Gibbs free energy.
+%The technique is reviewed by Lubetkin\cite{Lubetkin1995}, but since type 2 nucleation is not of primary interest we do not pursue this technique here.
+
+
+
+% \Cnt\ is perhaps the simplest theory that we can be applied.
+% However, the approximations it makes are extremely questionable.
+
+% First, it assumes a clear boundary between the oil and vapour phase.
+% The densities are uniform within the two phases and the boundary is without thickness.
+% The surface tension used is from a macroscopic plainar interface.
+% These assumptions typically go by the name of the capillary approximation.
+% For a ... radius bubble \todo {work out typical radius}
+% they are almost certainly wrong\cite{Dale2003,Ruckenstein2005,Talanquer1995}.
+% Indeed, it is unclear even how to define a bubble of just a few molecules.
+% This is a not insignificant problem in numerically simulating bubble nucleation events\cite{Shen2003}
+
+
+% It is worthwhile mentioning, however,  how sensitive  \cnt\ is to  adjustments in $\Delta G$.
+% For example, in 1962 Lothe and Pound introduced - inconsistently, as it turned out\cite{Blander1972, McClurg200} - translation and vibrational modes  into the Gibbs free energy.
+% This change  to the exponential factor increased the  predicted nucleation rate bya factor of $10^{17}$ \cite{Feder} in \cite{Kiang1971},
+% pulling the theory far away from the available measurements.
+% To restore the theory, however, required an increase in the surface tension\cite{Feder} of just 15\%!
+% The surface tension is expected to decrease rather than increase for very small bubbles\cite{Kiang1971}.
+% Nevertheless, the example is illustrative of just how sensitive the \cnt\ is to small adjustments in very uncertain parameters, such as the surface tension.
+% %A careful re-examination of \cnt\ in its application to type 1 nucleation was provided by Delale\cite{Delale2003}.
+
+
+
+% \Cnt has been fairly  successful at describing certain nucleation events, in particular the nucleation of droplets from vapours,
+%  and these successes encouraged its development for many years.
+% However, \cnt\ can also fail rather spectacularly.
+% For example, when the calculated nucleation rates were compared with a density functional approach (which does not make the Capillary approximation)
+% by Talanquer and Oxtoby\cite{Talanquer1995, Oxtoby1988} they  {\em typically}  found a 20 order of magnitude difference.
+% When compared to experiment \cnt\ generally predicts steady state nucleation rates that are too low. (articles 11, 4, 12)\cite{Dale2003}
+
+% \Cnt\ typically does much better at predicting the supersaturation limit for a fluid.
+% This is unsurprising as, by rearranging \eqnref{}
+% we have
+% \begin{align}
+%   p_L = p_v - 
+% \end{align}
+% For example, predictions agreed with the measurements of ... for a range of droplets to within about ...
+% It is to this application that we use \cnt\ in the next section.
+% %The reason that \cnt\ does so badly at predicting bubble nucleation rates is 
+
+
+
+
+%Early Rate derivation  \cite{Kiang1971} (printed) .
+
+%Nice derivation in \cite{Katz1992} (printed).
+
+
+% The \cnt\ makes the following assumptions that are known to be problematic
+% macroscopic thermodynamics and microscopic objects\cite{Shen2003}
+% \nlist{
+%   \item surface tension.... (curvature) (article 8) \cite{Dale2003}
+%   \item inability to predicat vanisheing free-enerygy at spinodal.\cite{Shen2003} (article 9,4 \cite{Dale2003})
+%   \item failure to predict tensile stenghts at relatively low temperatures article 10 in \cite{Dale2003}
+%   \item extensions not satisfying nucleation theorem article (8) \cite{Dale2003}
+% }
+
+
+
+%\subsubsection{Application of the \cnt}
+
+
+%\section{Kinematics}
+%Problem of identifying the emerging embrioy at molecular level \cite{shen2003}
+%Method of identifying join and leaving rates directly \cite{Shen2003}
+
+%Lothe and Pound 1962 included translation and rotiaontion and increased nucleation rate by $10^{17}$ as to without \cite{Kiang1971}.
+%Feder suggested that such an effect could also be accounted for by 15\% increase in surface tnsion than that for bulk liquid \cite{Kiang1971}.
+%While this is small change, Kirkwood and Buff and Tolman suggest surfacec tension should go down for small droplets, 100 to 10000 molecules \cite{Kiang1971}.
+
+%\cite{Ruckenstei% n2005} kinetic theory without relying on thermodynamics and thereby removing notions of bulk surface tension.
+
+
+% \section{Classical Nucleation Theory}
+
+% Critical bubble \cite{HongChul} 
+% \begin{align}
+%   P_e -P_\infty = 2\sigma/r 
+% \end{align}
+% equlibrium from Jarvais 1975 \cite{HongChul} 
+% \begin{align}
+% P_e = P_v \exp\lr{v_l \lr{P_\infty - P_v}/RT}
+% \end{align}
+% so that free energy is \cite{HongChul} 
+% \begin{align}
+% \frac{4\pi r^2\sigma  }{3} = \frac{16\pi}{3}\frac{\sigma^3}{\lr{P_e - P_\infty}^2}
+% \end{align}
+
+%\subsection{Delale}
+
+
+
+%Then 
+%\begin{align}
+%  \frac{C_n^\eqlbm}{C_1^\eqlbm} = \exp\lr{-\Delta G/(\kB T)}
+%\end{align}
+%where 
+%\begin{align}
+%  G_n^\capillary = \mu n + \sigma A_n
+%\end{align}
+%in the capillary approximation
+%or
+%\begin{align}
+%  G_n^\Tol = \mu n + \sigma A_n\lr{1 + 2\delta / r}
+%\end{align}
+%in Tolman's correction.
+%These described, as well as other models in \cite{McClurg1998}
+
+
+%More than one fluid in cite{Katz1992}
+
+% \section{use for super-heat limits}
+% some evidence of smaller droplets nucleate at lower temperatures \cite{HongChul2005}
+
+
+
+\subsection{Density functional approach}\label{sec:nuc:DFT}
+
+ This is done in \secref{nuc:DFT}.
+ The capillary approximation of \cnt\ is relaxed by considering variations in the density within and across the bubble.
+ The density profile at the (unstable) equilibrium radius of the bubble can be obtained via the  density functional approach of Evens and Oxtoby\cite{}.
+ We then consider how the nucleation is altered by mixing two perfluorocarbons together.
+
+
+
+
+ disagreeing with the more reliable density functional theory by 20 orders of magnitude in some cases\cite{Oxtoby}
+ For this reason, we also 
+ consider then density functional approach to homogeneous bubble nucleation in \secref{}.
+ This enables us to study ...
+ the result is that ...
+
+
+Bubble nucleation is a statistical phenominen. 
+To study nucleation in inhomogeneous fluids (such as emulsions), 
+density functional theory will be used.
+This studies permutations about the mean density, and so is  valid only well away from the critical point of the fluids involved.
+The critical points of water and various perflurocarbons is listed in \tabref{critical_points}.
+For the conditions in medical ultrasound, we are well away from the critical point and so the approach is valid.
+
+
+\section{Results}
+
+
+
+\begin{figure}
+ \centering
+  \subfloat[]{\input{part_theoretical/nucleation/figs/c2_cnt_nucleation_rate.tex}}
+  \caption{
+    Bulk surface tension (at 20\degreecelsius) and density  for \pfp\ from Sakka\cite{Sakka2005}.
+    Surface tension (at 25\degreecelsius) and density for \pfb\ from Yaws\cite{Yaws2001}.
+  }
+ \label{fig:cnt:rate}
+\end{figure}
+
+The nucleation rates  (\centi\metre\rpcubed\reciprocal\second)  for \pfb,  perfluoropentane and water is plotted in \figref{cnt:rate}.
+
+
+\subsection{Discussion of  \cnt}
+
+
+
+Deviations from the capillary approximation are exponentially important in rate calculations,
+which follows from the Arrhenius equation.
+%This is because the thermodynamic part of the calcuations
+For example, an increase in the surface tension of 15\%
+was calculated\cite{Kiang1971} to change the predicted nucleation rate by $10^{17}$.
+Another example is provided by the calculations of Talanquer and Oxtoby\cite{Talanquer1995, Oxtoby1988}.
+Their  density functional calculations 
+predicted that the rates  from these  calculations were  {\em typically}   20 orders of magnitude different from those of \cnt.
+% to  allow the density profile to change more  realistically from the step jump assumed in the classical theory.
+%The rates  from these  calculations were  {\em typically}   20 orders of magnitude different from those of \cnt.
+%In order to bound our calculations, we use the density functional approach to evaluate the spinodal.
+%This is the point at which the energy barrier vanishes and a phase decomposition is guaranteed to occur\cite{Favvas2008}.
+
+
+ % \todo{comment on previous work}
+ % Before we start however, 
+ % we note that perfluorocarbon droplets have successfully been vapourised with ultrasound before,
+ % and indeed has a fairly long history.
+ % Kripkins was amongst the first to demonstrate the technique in an attempt to form a large bubble to obficate blood vessels.
+ % More recently ... in Toronto has found that bubbles of perfluorpentane (with a boiling point of 28 degrees) can be vaporised with long bursts of ultrasound.
+ % Additionally they found that the surfactant was very important.  With some surfactants they were able to increase the rate of nucleation,
+ % with others they were not.  Their initial success was with Zonyl ..., a somewhat toxic and explosive substance, although seeminly tolerated by mice in the small quantities used.
+ % A type 1 nucleation agent should not be impossible for diagnostic ultrasound.
+
+% Finally, in this chapter we would like to emphasise a reoccuring theme in this thesis.
+% And that is that the variables that we may measure experimentally are not, in general independent of the process of measurement.
+% This is particularly the case in statistical physics.
+% As the quote that introduces this chapter emphasises, 
+% the entropy, of central importance in the following discussion,
+% is not a propterty of the physical system at all - but is entirely a function of what experiment is carried out.
+
+
+
+% \section{Nucleation of a small oil droplet}
+
+% As argued, the nucleation of a small droplet is likely to occur in the absence of motes and pre-existing stabalised vapour bubbles.
+
+% The simplest approach to estimating the nucleation rate of the oil droplet is to 
+% assume that the droplet is the `bulk fluid' and estimate the rate of type 1 nucleation events within it.
+% We do this first within the framework of \cnt\ in \secref{nuc:CNT}.
+
+% Superheating often brings near critical region where mean field approach fails so concentrate on negative pressure \cite{Oxtoby1988}.
+
+% Cavitation does not parallel condenstaion\cite{Oxtoby1988}.
+% the spinodal is much close tot h phase coexstance curve n the iquid side thana on the gas, 
+% therefore the spinodal exerts a large influence on ucleation and  clasical theoory fails\cite{Oxtoby1988}.
+
+
+
+%This ignores the finite size of the droplet.
+%However
+
+
+ For some applications \cnt\ works well, particularly in determining the supersaturation limit of the oil.
+ However,  the bubble nucleation rate predicted by the classical theory 
+ is generally poor\cite{Talanquer1994} with discrepancies of 20 orders of magnitude with more accurate calculations typical\cite{Talanquer1994}).
+ The reason is that the macroscopic thermodynamics enters  the exponential of the Aarenhius  equation,
+ upon which the rate is incredibly sensitive.
+ To predict the pressures at which the perfluocarbons nucleate,
+ we need to handle the thermodynamics of bubble nucleation with greater care.
+
+
+
+As mentioned, classical nucleation theory represents a semi-empirical theory
+which is obtained with
+\nlist{
+  \item the density of the liquid,
+  \item the equilibrium vapour pressure,
+  \item the equilibrium surface tension between liquid and vapour.
+}
+
+%The free energy of a gas, $\Omega_G$ in this region will therefore be lower than the bulk liquid $\Omega_L$.
+%On the other hand, the creation of the bubble has the cost of creating the surface tension.
+%The change in the grand potential will therefore be
+%\begin{align}
+%\Delta \Omega(a) = \frac{4}{3}\pi a^3 \lr{\Omega_G - \Omega_L} + 4 \pi a^2. \label{eqn:nuc:DeltaOmega}
+%\end{align}
+%The first term is negative, but the second positive.
+%Small bubbles are dominated by the surface tension and are accordingly unfavorable.
+%There is therefore, a {\em critical radius} $\astar$ at which the energy gap vanishes and the 
+%bubble will form.%
+
+The problems of the capillary approximation in relation to bubble nucleation
+have already been discussed.
+We have also pointed out where the approximations become problematic in the calculations provided.
+While \cnt\ provides a useful point of departure for rate estimates,
+the theory is too simplistic to be definitive.
+
+The version of the \cnt\ used here is perhaps the simplest that can be used.
+There are many modifications that alter in some way the exponential in \eqnref{nuc:J},
+and thereby drastically altering the rate predictions.
+The problems of the capillary approximation are common to all classical theories, however, 
+and so the simple application here is representative.
+
+Perhaps the most relevant of the modified classical theories is the careful application to bubble nucleation carried out by Delale\cite{Delale2003}.
+In addition to the problems associated with the capillary approximation,
+Delale notes that it is unlikely in ultrasound applications for cavitation to proceed on  reversible path, as is assumed.
+Furthermore, the viscous dampening at the bubble-oil interface, which is known to be important in bubble dynamics, mean that 
+at thermodynamic equilibrium (when the bubble's radius is at its critical size),
+the bubble is not in mechanical equilibrium.
+Delale\cite{Delale2003}  convincingly argues for a phenomenological term should be added to the Gibbs energy difference to correct for these problems.
+Unfortunately the terms of this correction are difficult to ascertain far from the critical temperature.
+It is therefore difficult to apply Delale's theory in this thesis\cite{Delale2003}.
+
+
+\begin{figure}
+ \centering
+  \label{fig:cnt:critical_radius}
+  \subfloat[]{\input{part_theoretical/nucleation/figs/nucleation_radius.tex}}
+  \label{fig:cnt:critical_number}
+  \subfloat[]{\input{part_theoretical/nucleation/figs/nucleation_number.tex}}
+  \caption{
+    \Cnt\ predictions for the critical radius and critical number of molecules for a bubble as a function of the pressure.  
+    The vapour is assumed to be an ideal gas, with the vapour pressure obtained by experimental fits to Antoine's equation.
+    The coefficients for Antoine's equation are taken from National Institute of Standards Database\cite{NISTdata}
+    (Note that the perfluorobutane data is used outside of its range of validity, see text).
+  %  The other parameters are taken from the table. \tabref{nuc:parameters}.
+  }
+ \label{fig:nucleation_radius}
+\end{figure}
+ 
+\section{discussion}
+
+In \figref{cnt:critical_radius}  the critical radius as a function of pressure is plotted  for water, perfluoropentane and perfluorobutane.
+\Cnt\ predicts that the critical radius is smaller for the perfluorocarbons than for water.
+This is  encouraging, for it implies that type 1 nucleation is easier to induce for the perfluorocarbons than for water.
+%However, the critical radii predicted are  somewhat large for our application.
+A \unit{20}\nano\metre-radius bubble represents more than 10\% of the radius of the oil-droplet.
+This undermines the assumption made that  neglects boundary between the oil droplet and the water.
+On the other hand, the capillary approximation is likely to be less severe.
+
+At high pressures the critical radii of the two perfluorocarbons converge.
+This is because the critical radius depends linearly on the surface tension (equation \eqnref{LaplaceRelation})
+and the surface tension are similar for perfluorocarbons.
+At lower pressures the vapour pressure has a much greater role, which is higher in the case of perfluorobutane.
+It should be noted that the vapour pressure used for perfluorobutane was extrapolated by \unit{29}\degreecelsius\  outside of its range of validity\cite{NISTdata}
+ by use of Antoine's equation.
+Since \unit{25}\degreecelsius\ is above the boiling point of perfluorobutane no  equilibrium vapour pressure can be defined.
+However, since \unit{25}\degreecelsius\ is also well below the critical temperature, % (\tabref{:nuc:critical_temps}), 
+and so it is hoped that the predicted pressures within the (super-heated) bubble are still meaningful.
+The other parameters are taken from \tabref{nuc:parameters}.
+
+
+In \figref{cnt:critical_number}  the predicted number of molecules contained within a critical bubble are plotted.
+Again, the number of perfluorocarbon molecules required to form a bubble are smaller than if the for water.
+\Figref{cnt:critical_number} does, however, illustrate  the difficulty with the capillary approximation being used.
+It is highly questionable that a bubble containing so few molecules behaves like its thermodynamic bulk,
+with a constant density until the interface.
+\Cnt\ predicts that a greater number of molecules are required to form a critical bubble for perfluorobutane than for perfluoropentane.
+This is again due to the higher vapour pressure of  perfluorobutane.
+
+%(A 20\nano\metre-diameter bubble {\em is} large to materialise by spontaneous fluctuation)
+%the resulting bubble is not predicted to  contain too many molecules.
+%The number of molecules within a critical bubble is perhaps more suggestive.
+%This is the number of molecules that must join a bubble by fluctuation before it can grow.
+%Again the number is far fewer for perfluoropentane than water.
+
+%It is worthwhile estimating the number of molecules within the perfluoropentane bubble.
+%For example, at a  negative pressure of \unit{1}\mega\pascal\ the critical radius
+%of perfluoropentane is predicted to be \unit{8.7}\nano\metre\ at a vapour pressure of \unit{0.927}\ atmospheres.
+%Assuming that the vapour behaves as an ideal gas, we find that the bubble contain approximately 60 molecules.
+
+
+
+\section{Discussion}
+
+\subsection{Discussion}
+
+\Figref{nucleation_radius} plots the critical radius of a bubble as a function of the liquid pressure.
+At low pressures, the capillary approximation is not significant.
+The density profile of \figref{profile} shows that the interface extends over only a nanometre or so.
+However, \figref{cnt:rate} shows that the nucleation rate is incredibly slow at these pressure.
+By comparing the graphs it is seen that it is exactly when the rate becomes appreciable, 
+when \figref{profile} shows the rate to become invalid.
+
+Finally we note that \figref{sppressure} reproduces exactly the result found by Oxtoby\cite{Oxtoby1988}.
+That the vapour spinodal is smaller than the liquid spinodal.
+This was used to explain the difference performance of the classical theory for liquid-bubble cavitation, 
+compared to vapour condensation, (with cavitation doing poorly)
+
+
+
+
+%The final result of the density functional approach, \figref{profile} shows that the thickness of the interface extends over 10 anstrums on each side of the inteface.
+%xsThis is extends over most of the bubble wheWhen this compared to the
+
+
+% \subsection{The density profile}
+
+
+% For most fluids the interactions are dominated by the strong repulsive forces between the molecules.
+% The hard core model is the simplest method of implementing these.
+% The pairwise attractive are then treated as a perturbation about the hard core.
+% %\begin{align}
+% %  F\lrs{\rho(\vr), \rho(\vr^\rpime)} = \fh\lrs{\rho(\vr), \rho(\vr^\rpime)} - \half \phi_{i%j} \rho(\vr_i)\rho(\vr_j)
+% %\end{align}
+% By writing the joint density $\rho^{(2)} = \rho(\vr)\rho(\vr^\prime)$ we are assuming that there are no correlations in the density distribtution,
+% an approximation known as the random phase approximation.
+
+% between most fluids  liquids are well approximated by modelling 
+% and so the Free energy can  
+
+
+
+
+% Data for perfluorocarbons in Oh\cite{Oh2010}
+
+%In this chapter we ask the following questions:
+%\nlist{
+%  \item What is the critical radius of a bubble as a function of pressure.
+%  \item At what pressures do we expect the perfluorocarbon oils undergo type 1 nucleation? \label{item:nuc_question1}
+ % \item Can the perfluorocarbons be mixed in order to tune the nucleation pressure?\label{item:nuc_question2}
+%}
+%To answer these questions we need to calculate the  rate of nucleation.
+%The bulk of this chapter is dedicated to calculating these rates; first as a function of pressure,
+%and second as a function of the perfluorocarbon mixing.
+%\todo{get rid of wishful thinking}
+
+
+%This chapter calculates the pressures required to cavitate perfluorobutane and perfluoropentane
+%by using \cnt.
+%This is done with classical nucleation theo
+% In this chapter we ask At what pressures do we expect the perfluorocarbon oils undergo type 1 nucleation?the following questions:
+% \nlist{
+%   \item At what pressures do we expect the perfluorocarbon oils undergo type 1 nucleation? \label{item:nuc_question1}
+%   \item Can the perfluorocarbons be mixed in order to tune the nucleation pressure?\label{item:nuc_question2}
+% }
+% To answer these questions we need to calculate the  rate of nucleation.
+% The bulk of this chapter is dedicated to calculating these rates; first as a function of pressure,
+% and second a
+%%%
+%
+%Theoretical rate calculations areThe nucleation rate has 
+%%
+%
+%he simplest estimate for nucleation rate is provided by  \cnt, which is discussed in \secref{nuc:CNT}.
+%This method is essentially an application of the Aarenhius equation.
+%The energy barrier to nucleation is found from thermodynamic arguments,
+%while the rate is obtained from a kinematic argument.
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../tshorrock_thesis"
+%%% End: 

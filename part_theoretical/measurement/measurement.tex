@@ -1,0 +1,861 @@
+
+\chapter{The pulsations of a bubble as measured with  ultrasound 95\%}\label{ch:measurement}
+
+
+\section{Introduction}\label{sec:introduction}
+
+Current models that describe the pulsations of a bubble in an acoustic field do not 
+account for how measurements are made with ultrasound.
+In particular, how the finiteness of the sound speed influences the spatio-temporal locations attributed to echo sources,
+and limits the maximum velocities that can be measured.
+Measurements made acoustically with ultrasound differ from those
+made optically with a microscope due to the differing speeds of sound and light.
+When a model is proposed for the pulsations of a bubble
+the system of measurement that is to be used to test that model must also be specified.
+%Current models have tacitly assumed that tests will be made with a microscope.
+In this chapter the Keller-Miksis model 
+- taken to be representative of current bubble pulsation models -
+is altered to predict for the first time the pulsations that are  measured with ultrasound.
+
+To do so it is recognised that measurements in ultrasound should be subject to the considerations of special relativity,
+where the speed of sound rather than the speed of light takes the role of the limiting velocity.
+This is because the pulse-echo definitions of time and space that are used in ultrasound are identical to the radar definitions used by Einstein.
+Furthermore, since all ultrasound measurements are temporal,
+a fixed and constant speed of sound is necessary before anything can said regarding distance.
+Einstein's second postulate {\em must} be assumed for ultrasound to measure anything at all
+and there is no choice but to accept the resulting discrepancies with other imaging modalities.
+The only assumption made is an insistence upon invariance to inertial motions
+(Einstein's first postulate).
+It would be perverse for such a fundamental symmetry to be dependent on the choice of imaging modality.
+%Not assuming this invariance would mark a fundamental departure for dynamics as when measured with ultrasound from
+%any physics currently known.
+
+Simulation results for the new model are presented and compared with the results from the original Keller-Miksis equation.
+The acoustically-measured-Keller-Miksis equation presented here correctly predicts 
+that motions of the bubble wall that exceed the speed of sound cannot be observed with ultrasound.
+The radial response of the two models is similar when the harmonic response of the bubble is not strong -
+otherwise the pulsations are quite different when measured acoustically and optically.
+
+
+\section{The acoustic measurement process}\label{sec:introduction}
+
+
+In medical ultrasound distances are measured using the time it takes a pulse of sound to propagate from a transducer
+to a reflecting object and then to return again. 
+%This interval is known as the pulse-echo time.
+If the sound is emitted from the transducer at a time, $\tm$,
+and the sound returns at a time,  $\tp$,
+then the task is to find from these two numbers the spatio-temporal location, $x$,
+of the point of reflection.
+
+What happens to the sound in between leaving the transducer and returning
+cannot be known by acoustic measurement.
+In this ignorance ultrasound practitioners assume that the time at which the echo 
+occurred is the midpoint of $\tm$ and $\tp$,
+\sub{
+\label{eqn:radar}
+\begin{align}
+ \tau(x) &= \frac{\tp + \tm}{2}.
+\intertext{Other choices could certainly be made, 
+  but would imply a knowledge of the world beyond that learnt from $\tm$ and $\tp$ alone.
+  To measure distances from the times $\tm$ and $\tp$ a sound speed, $c$, is required.
+  Assuming, again in ignorance, that the sound returns at the same speed at which it left gives
+}
+ \rho(x) &= \frac{\tp - \tm}{2}c. \label{eqn:radarDistance}
+\end{align}
+}
+These are the definitions of time and space that are used in ultrasound.
+%The assumption that the sound returns at the same speed as it left may be relaxed.
+%Then $\tau(x) =\epsilon \tp + (1-\epsilon)\tm$ and 
+%$\rho(x) = \epsilon \tp c - (1-\epsilon)\tm c$ for any
+%$0<\epsilon<1$.
+%This does not change any of the arguments that follow\cite{Debs1996}.
+
+Equation \eqnref{radarDistance} requires an {\em a priori} knowledge of the sound speed.
+This is of course obvious because ultrasound attempts to determine distances from temporal measurements.
+Nevertheless, 
+it does raise the question as to how the sound speed is to be found.
+
+To determine the speed of sound of a given medium an independent notion of length is required.
+This practically would be found with a set of callipers.
+The average speed of sound is then found from equation \eqnref{radarDistance},
+using the times measured and the predetermined ({\em a priori})  distance.
+The point is that %the distance measured by the callipers now represents the {\em a priori} knowledge.
+in order to use equation \eqnref{radarDistance} something must be taken for granted; 
+it is impossible to measure simultaneously both speeds and distances from temporal measurements.
+
+%All this is familiar. %Before ultrasound measurements can be made a calibration measurement to determine the speed of sound is required.
+%In order to use ultrasound to measure distances within people (without reaching for the callipers, and therefore for the scalpel)
+%it is necessary to first find the appropriate sound speed in the laboratory.
+%Bovine liver, typically, is used for this purpose, and is  cut into carefully measured thicknesses,
+%with care being taken to known a great deal about the sample before \eqnref{radarDistance} is applied.
+%[can you suggest a few  citations for here Jeff...]
+
+When using equation \eqnref{radarDistance} to measure distances the sound speed must be constant.
+This is because there is no way to measure its variations.
+This constancy of the speed of sound is identical to Einstein's  second postulate for special relativity\cite{Einstein1905},
+except that the sound speed takes the role of the speed of light.
+Likewise, Einstein used equations \eqnref{radar} for the definition of time and space, 
+except that  the  constant $c$ was understood to be the speed of light rather than the speed of sound.
+In the relativity literature equations \eqnref{radar} go by the names of radar-time 
+and radar-distance and their application to the example of the ``twin paradox'' is discussed by Dolby and Gull  \cite{Dolby2001}.
+
+In this thesis we  assume that the dynamics of entities is invariant to inertial motions even when measured acoustically (Einstein's first postulate).
+There has never been a counter example to this symmetry and we do not expect ultrasound to provide one.
+It then follows that measurements in ultrasound are subject to the considerations of special relativity,
+where the speed of sound rather than the speed of light takes the role of the limiting velocity.
+
+The surface of a  bubble that has been induced to pulsate by an ultrasound wave may collapse at a significant fraction of the speed of sound\cite{Neppiras1980}.
+The pulsations of a bubble as measured by ultrasound are therefore expected to disagree with the same pulsations measured by an optical techniques.
+To investigate this, we now derive and analyse a version of the Keller-Miksis model\cite{Keller1980} 
+- a commonly used model for a pulsating bubble - that is consistent with how ultrasound measures spatio-temporal locations.
+%This will be different than the current Keller-Miksis model that describes the pulsations of a bubble when observed optically under a microscope.
+
+
+\section{The acoustically-measured Keller-Miksis model}
+\subsection{The original formulation}\label{sec:KMoriginal}
+The Keller-Miksis model\cite{Keller1980}  assumes that a gas bubble is located within a stationary and vorticity free fluid medium.
+The fluid particles are described by the velocity potential, $\psi$.
+The  bubble is assumed to remain spherical, with a  time dependent radius, $a \equiv a(t)$,
+and assumed to remain at the origin.
+From the spherical symmetry of the model only radial components of the velocity need to be considered. 
+
+Keller and Miksis retain perturbations in density only up to first order, from which it follows that variations in the sound speed, $c$, are neglected
+and that the velocity potential obeys the linear wave equation,
+\begin{align}
+\label{eqn:WaveEqn}
+\lr{\dr^2 - \frac{1}{c^2}\frac{\d^2}{\d t^2}} \psi = 0.
+\end{align}
+The notation $\dr \equiv\frac{\d}{\d r}$ is used to denote the radial derivative
+while both  $\dt \equiv \frac{\d}{\d t}$ and the over dot notation will be employed to denote the differential with respect to time.
+
+The solution to \eqnref{WaveEqn} is
+\begin{align}
+  \label{eqn:Ansatz}
+  \psi = \frac{1}{r}\lr{f_1\lr{t-\tfrac{r}{c}} + f_2\lr{t+\tfrac{r}{c}}},
+\end{align}
+where $r$ is the radial distance from the centre of the bubble
+and $f_1$ and $f_2$ are functions to be determined.
+
+Since equation \eqnref{WaveEqn} is second order two boundary conditions are required.
+The first is that the radial velocity of the fluid, $v$, is equal to the velocity of the bubble wall.
+That is 
+\sub{
+\begin{align}
+  v \equiv \dot a(t) = v \text{ at $r = a$.}
+\end{align}
+The second boundary condition is that the pressure in the liquid adjacent to the surface of bubble, $p(a,t)$,
+must equal the pressure on the bubble wall, $p_b$,
+\begin{align}
+  p(a,t) = p_b. \label{eqn:pressureBC}
+\end{align}
+}
+We will consider explicit expression for $p_b$ \secref{surface_pressure} and in \secref{viscosity}.
+
+To apply these boundary conditions Keller and Miksis eliminated the spatial derivate of $\psi$ by using its definition,
+\sub{
+\begin{align}
+  \dr \psi &= v, \label{eqn:VelocityPotNR}
+\intertext{
+and used Bernoulli's equation to eliminate the temporal derivatives,}
+\dt \psi &= -\frac{1}{2}v^2 - h.\label{eqn:BernoulliNR}
+\end{align}
+}
+$h$ is the enthalpy of the fluid.
+
+The completes the specification of the model that was setup and solved by Keller and Miksis\cite{Keller1980}.
+
+\subsection{Alterations required when making measurements with ultrasound}
+\label{sec:measurement:alterations}
+Equations that describe  measurements made with ultrasound require, via  special relativity,  Lorentz invariance.
+Equations \eqnref{VelocityPotNR} and \eqnref{BernoulliNR} do not have this property and so 
+do not apply to acoustical measurement.
+To fix  \eqnref{VelocityPotNR} and \eqnref{BernoulliNR} the  relativistic generalisation to the velocity potential\cite{LandauBook} must be used,
+\eqa{
+  \label{eqn:RelVPot}
+  \del \psi = -\frac{w u}{nc} \equiv -A.
+}
+Here $w$ is the heat function per proper volume and $n$ is the particle number per proper volume.
+The velocity $u$ and the vector potential, $A$,  are spacetime vectors and $\del$ is the spacetime derivative.
+The heat per proper volume can be written in terms of the total energy density, 
+such that\cite{LandauBook, Doran2003}
+\eqa{
+  w = \epsilon + p = n m c^2 + nm e + p,
+}
+where $e$ is the thermodynamic energy and $m$ is the proper mass.
+Spacetime vectors are sometimes referred to as 4-vectors, although this terminology will not be used here.
+The spacetime velocity, $u$, is parameterised so that $u^2 = c^2$ where $c$ is the speed of sound.
+The symbol $u$ has been used to avoid confusion with the radial component, $v$, of the spatial velocity (a 3-vector).
+
+
+%
+%in order for the resulting equations to be consistent with the way ultrasound assigns spatio-temporal locations to echo sources.
+The temporal and spatial projections of \eqnref{RelVPot} in the laboratory frame are
+\sub{
+\begin{align}
+\dr \psi &= \frac{\gamma w v}{nc} \equiv \frac{\phi v}{c} \label{eqn:VelocityPot}
+\intertext {and}
+\dt \psi &=- \frac{\gamma w  c}{n} \equiv - \phi c \label{eqn:Bernoulli}
+\end{align}
+}
+where  $\gamma = \lr{1-v^2/c^2}^{-1/2}$ is the Lorentz factor and  the potential 
+\begin{align}
+  \phi \equiv \frac{\gamma w}{n} \label{eqn:phiDefn}
+\end{align}
+has been introduced for convenience.
+The heat function per particle is related to the enthalpy by the proper mass,
+\begin{align}
+  w/n = \lr{mc^2 + me + p/n} = m\lr{c^2 +  h}.
+\end{align}
+The thermodynamic relation $h = e + p/(nm)$ has been used in the second equality.
+
+The potential $\phi$ is the relativistic generalisation to the total enthalpy (multiplied by the proper mass).
+In the non-relativistic it becomes, 
+\begin{align}
+  \phi \rightarrow \lr{1+\tfrac{1}{2}\tfrac{v^2}{c^2}} \lr{mc^2 + mh} = mc^2 + \tfrac{1}{2}m v^2 + mh \text{\quad as ${v/c\rightarrow 0.}$}
+\end{align}
+The right hand side is the energy contributed by the rest mass plus the  standard non-relativistic expression for the  total enthalpy (multiplied by the mass),
+as claimed.
+
+By replacing equations \eqnref{VelocityPotNR} and \eqnref{BernoulliNR} with equations \eqnref{VelocityPot} and \eqnref{Bernoulli} the derivation of Keller and Miksis
+can be used without further alteration.
+The resulting equation will be Lorentz invariant and therefore satisfy the constraints imposed by using pulse-echo to  define the spatio-temporal locations of the echo's source.
+
+
+\subsection{The derivation of the acoustically-measured-Keller-Miksis equation}
+Differentiating equation \eqnref{Ansatz} with respect to time obtains
+\begin{align}
+  r \dt \psi =  f_1^\prime + f_2^\prime, \label{eqn:dtAnsatz}
+\end{align}
+where the prime denotes differentiation with respect to the argument,
+while differentiating with respect to the radius gives,
+\begin{align}
+ r^2 c \del \psi = r \lr{f_2^\prime - f_1^\prime} - c\lr{f_1+f_2}. \label{eqn:drAnsatz}
+\end{align}
+Equations \eqnref{dtAnsatz} and \eqnref{drAnsatz}, evaluated at $r = a$, are combined to eliminate $f_1^\prime$,
+\begin{align}
+  a^2 \lr{\dt \psi + c \dr \psi} - 2 a f_2^\prime + c\lr{f_1 + f_2} = 0. \label{eqn:Combo1}
+\end{align}
+By using equations \eqnref{VelocityPot} and \eqnref{Bernoulli} in \eqnref{Combo1} (rather than \eqnref{VelocityPotNR} and \eqnref{BernoulliNR}) 
+we obtain
+\begin{align}
+a^2 \lr{\phi \dot a -\phi c } - 2 a f_2^\prime + c\lr{f_1 + f_2} = 0.  \label{eqn:Combo2}
+\end{align}
+Differentiating \eqnref{Combo2} with respect to time and reusing \eqnref{dtAnsatz} and \eqnref{Bernoulli} gives
+\begin{align}
+  a \frac{\phi}{c^2} \ddot a + 2 {\dot a}^2\frac{\phi}{c^2} - \phi\lr{1 + \frac{\dot a}{c}} - a \frac{\dot \phi}{c}\lr{1-\frac{\dot a}{c}} - \frac{2}{c^2} f_2^\dprime\lr{1+\frac{\dot a}{c}} = 0
+  \label{eqn:Combo3}
+\end{align}
+
+The driving acoustic pressure comes from the converging acoustic wave, $f_2$.
+To evaluate this term, following Keller and Miksis, 
+we assume that the incident wave is planar and decompose it into  spherical harmonics.
+By assumption, however, the bubble pulsates purely radially and so only the zeroth harmonic interacts with the bubble.
+The potential of the incoming wave, $\psi_i (r,t)$, is accordingly 
+%\begin{align}
+  $\psi_i (r,t) = \frac{1}{r}\lr{f_2(t+r/c) + f_3(t-r/c)}$.
+%\end{align}
+Requiring that the potential is finite at the bubble's centre implies that  $f_2 = -f_3$ and so
+\begin{align}
+  \psi_i (r,t) = \frac{f_2(t+r/c) - f_2(t-r/c)}{r}.
+\end{align}
+The bubble is small in comparison to the wavelength and so the velocity potential of the fluid near the origin satisfies
+\begin{align}
+  \label{eqn:Tau}
+ \psi_i (a,t) = \frac{f_2(t+a/c) - f_2(t-a/c)}{a} \approx \frac{2}{c}f_2^\prime(\tau).
+\end{align}
+The differential on the right-hand-side of \eqnref{Tau} is a function of the proper time, $\tau$, of the bubble.
+This is because the equation holds only in a frame of reference where the bubble is stationary and at the origin.
+Differentiating \eqnref{Tau} with respect to the proper time we obtain
+\begin{align}
+  \frac{d}{d \tau} \psi_i \equiv \gamma \lr{\d_t+ v\dr } \psi_i = u \cdot \del \psi = \frac{2}{c}f^\dprime.
+\end{align}
+Using equation \eqnref{RelVPot}  this gives
+\begin{align}
+\frac{2}{c}f^\dprime =-\frac{wc}{n}= - \frac{\phi_i c}{\gamma}, \label{eqn:IncidentWave}
+\end{align}
+where $\phi_i$ is the incident  potential.
+Substituting  \eqnref{IncidentWave} into \eqnref{Combo3} and using equation \eqnref{phiDefn} in the form $\phi = \gamma m\lr{c^2 + h}$ we obtain
+%\begin{align}
+%  a \frac{\phi}{c^2} \ddot a + 2 {\dot a}^2\frac{\phi}{c^2} - \lr{\phi-\frac{\phi_i}{\gamma}}\lr{1 + \frac{\dot a}{c}} - a \frac{\dot \phi}{c}\lr{1-\frac{\dot a}{c}}  = 0
+%  \label{eqn:Combo4}
+%\end{align}
+\begin{align}
+  a \ddot a & \gamma \lr{1 + \frac{h}{c^2}}\lr{1 - \frac{\dot a}{c}\gamma^2\lr{1- \frac{\dot a}{c}}}+ 2 {\dot a}^2\gamma\lr{1 + \frac{h}{c^2}}\nonumber\\
+  &- \lrsquare{\gamma\lr{c^2 + h} - \lr{c^2 + h_i}}\lr{1 + \frac{\dot a}{c}}- \gamma \dot h \lr{\frac{a}{c}}\lr{1 - \frac{\dot a}{c}}
+= 0\label{eqn:RKM}
+\end{align}
+Equation \eqnref{RKM} is the final answer. The enthalpy contains the pressure terms, and with them the boundary condition of equation \eqnref{pressureBC}
+
+ The  non-relativistic limit (with $\gamma \approx 1 - \frac{{\dot a}^2}{2c^2}$), equation \eqnref{RKM} reduces to
+\begin{align}
+  a \ddot a\lr{1 - \frac{\dot a}{c}}+ \frac{3}{2} {\dot a}^2\lr{1- \frac{1}{3}\frac{\dot a }{c}}
+    - \lr{h - h_i}\lr{1 + \frac{\dot a}{c}}
+  -  \dot h \lr{\frac{a}{c}}
+= 0, \label{eqn:KM}
+\end{align}
+which is the original Keller-Miksis equation\cite{Hoff2001}.
+
+The acoustically-measured-Keller-Miksis model therefore reduces to the original when the maximum speed of the bubble wall is small in comparison to the sound speed.
+In the non-relativistic approximation made to obtain equation \eqnref{KM} discards terms of order $M^2$, 
+where  $M = \abs{\frac{\dot a}{c}}$ is the Mach number of the bubble wall.
+Therefore, the original Keller-Miksis model approximates the acoustically measured motion when $M^2$ is small.
+I.e. %for acoustical measurements, the two equations may be used interchangeably 
+up to about $M=0.4$.
+
+
+\subsection{The applicability of the equation}
+In the original derivation Keller and Miksis linearised the density. 
+The consequence of this is that fluctuations in the sound speed are ignored.
+This enabled our starting point, the linear wave equation of  \eqnref{WaveEqn}, to be derived.
+The discarded second order terms become important when $M^2$ is not small.
+The approximation holds, therefore, up to about Mach 0.4.
+Interestingly,  the optical and acoustical observer
+agree over the range of speeds to which the original Keller-Miksis equation is applicable.
+
+When the measurements are made with ultrasound,
+however, 
+no approximation is made to obtain equation \eqnref{WaveEqn}.
+The reason is that  ultrasound is not capable of  measuring variations in the speed of sound.
+Second order fluctuations in the density  can therefore play no role when ultrasound is used to describe the world.
+It is instructive to see this argument borne out in the equations that describe an acoustically measured fluid.
+The equations of motion must  be Lorentz invariant and this condition  is automatically fulfilled  when  the equations 
+are obtained from the divergence of the energy-momentum tensor of the ideal fluid.
+In the derivation we also need to use the hitherto unused  condition
+that the sound speed takes the role  of the speed of light.
+This condition is imposed by equating the two speeds.
+This further requires that the energy density for the fluid, as measured acoustically, be a function of the pressure only (barotripic),
+for the sound speed cannot equal the speed of light otherwise\cite{Taub1978}.
+
+The energy-momentum tensor of an ideal fluid is\cite{Doran2003}
+\eqal{
+  T(a) = w a \cdot u u - a p = (\epsilon + p) a \cdot u u - a p,
+}{EMtensor}
+where, $\epsilon \equiv \epsilon(p)$ is the barotropic total energy density,
+$p$ is the pressure
+and 
+$u=u(\tau)$ is the velocity vector of the spacetime path, with the parameterisation chosen such that $u^2 = 1$. % and $P$ is the pressure.
+Natural units have been chosen in this section, and so that the speed of light is unity.
+
+The speed of sound, $c$,  given at constant entropy density, $\sigma$, is\cite{LandauBook,Taub1978} 
+\begin{align}
+  c^2 = \given{\frac{\d p}{\d \epsillon}}{\sigma}. \label{eqn:soundspeed}
+\end{align}
+This is the same as the non-relativistic expression except that the energy density has replaced the mass density.
+Setting the speed of sound to equal the speed of light (unity) and the integrating 
+ gives,
+ \begin{align}
+   \epsilon = p^\prime - p_0 + \epsilon_0
+ \end{align} 
+where $p^\prime$ is a pressure that fluctuates with position, so that $dp = dp^\prime$,
+and $p_0$  and $\epsilon_0$  are the ambient  pressure and mean energy density, respectively.
+%Rather can carry the constants $ p_0 $ and $\epsilon_0$ through the rest of the derivation we write
+The thermodynamic pressure is therefore
+\begin{align}
+  p \equiv p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
+\end{align}
+and the fluid obeys the equation of state, 
+\eqal{
+  \epsilon(p) = p.
+}{eos}
+At infinity $p^\prime = p_0$ 
+and so $\epsilon_\infty = p_\infty = \epsilon_0 \ne p_0$.
+
+%therefore enforces that the sound speed equals that of light (unity).
+%The notation of equation \eqn{eos} is quite compact.
+%For \eqnref{eos} to be consistent with the integral of the sound speed (equation \eqnref{soundspeed}),
+%the pressure $p$ must be interpreted as follows,
+%\begin{align}
+%  p = p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
+%\end{align}
+%Here $p^\prime$ is the pressure perturbation measured with a hydrophone,
+%$p_0$  and $\epsilon_0$  are the mean  pressure and energy density respectively.
+
+
+
+Applying \eqnref{eos} simplifies the energy momentum tensor considerably,
+\eqal{
+  T(a) =  p\lr{2 a \cdot u u  - a} \equiv  \frac{1}{4}  A a A,
+}{EMFluid}
+where vector potential, $A$, introduced on the right hand side satisfies
+\eqal{
+  A = 2p^{1/2}u =2 \epsilon^{1/2} u.
+}{defnA}
+
+The vector $A$ is the same as was introduced in \eqnref{RelVPot},
+i.e.
+\begin{align}
+  \del \psi = - \frac{wu}{n} = - 2\sqrt p u.
+\end{align}
+%where $n$ is the proper particle number density of the fluid and equation \eqnref{eos} has been used for the second equality.
+To demonstrate this second equality we  use an argument of Taub\cite{Taub1978}.
+Using the isentropic thermodynamic relation $m de = - p d\lr{\frac{1}{n}}$ with the relation for the internal energy, $\epsilon= nm( 1 + e(p))$,
+it follows that 
+\begin{align}
+ n d\epsilon = \epsilon dn - n^2 p d \lr{\frac{1}{n}} = \lr{\epsilon + p} dn.
+\end{align}
+Applying equation \eqnref{eos} and integrating we obtain
+\begin{align}
+  n = \sqrt p, \label{eqn:nrootp}
+\end{align}
+from which we find
+\begin{align}
+A = 2\sqrt p  u = \frac{2\epsilon}{n} u = \frac{wu}{n} =  - \del \psi,
+\end{align}
+as claimed.
+
+
+The divergence of the energy momentum tensor (equation \eqnref{EMFluid}) vanishes in the absence of external fields.
+Therefore, by projecting the divergence of \eqnref{EMFluid} along the timelike component we find
+\eqa{
+  u\cdot\scope T(\scope\del)= \half  u\cdot A \del \cdot A = 0.
+}
+The check denotes the scope of the derivative.
+Since, from \eqnref{defnA}, $A$ is parallel to $u$  it follows that 
+\eqal{
+  \del \cdot A  =0
+}{eomTime}
+and so the vector potential $A$ is conserved.
+The spacelike projection, $\scope T(\scope \del) - u u\cdot \scope T(\scope\del)$, gives in turn,
+\eqal{
+  u \cdot \lr{\del \wedge A} = 0.
+}{eomSpace}
+The relativistic vorticity bivector is 
+\eqal{F = \del \wedge A,}{DefnVorticity}
+and so \eqnref{eomSpace} implies that the vorticity is orthogonal to the velocity.
+
+By taking the divergence of \eqnref{eomTime} and using the vector identity
+$\del \del \cdot A = \del^2 A - \del\cdot\lr{ \del \wedge A} $
+ we find,
+\eqal{
+  \del^2 A = \del \cdot F = \del F.
+}{wave}
+The second equality follows because $\del F = \del \cdot F + \del \wedge F$ 
+and because the  operator identity $\del\wedge \del = 0$ causes $\del \wedge F$ to vanish.
+Equation \eqnref{wave} is a wave equation and so interpreting the right-hand-side of \eqnref{wave} as an acoustic source current, $J$, we obtain
+\eqal{
+  \del  F = J.
+}{Maxwell}
+Interestingly equation \eqnref{Maxwell} is Maxwell's equation and equation \eqnref{eomTime} has specified that we are working in the Lorenz gauge.
+We explore this observation more in \chapref{interactions}.
+%We do not explore this observation further here.
+
+
+When deriving the Keller-Miksis equation potential flow in the fluid was assumed.
+This implies that the vorticity tensor vanishes, for
+$F = \del \wedge A = -\del \wedge \del \psi = 0$.
+Therefore the acoustic sources vanish and the wave equation $\del^2 A =0$ is satisfied.
+This was the starting equation in the derivation of the Keller-Miksis model, 
+equation \eqnref{WaveEqn}. 
+Notice that other than potential flow, no approximation  has been made to derive \eqnref{WaveEqn}.
+When using ultrasound, sound must be measured to propagate linearly.
+This is simply because it is impossible for ultrasound to measure fluctuations in the speed of its propagating signal.
+The acoustically-measured-Keller-Miksis equation is exact.
+
+%Since no perturbation scheme has been used to obtain \eqnref{WaveEqn} when the measurements are made acoustically 
+%(in contradistinction to the case when optical measurements are made)
+%the acoustically-measured-Keller-Miksis equation can claim validity over a much greater range of sound speeds than the original.
+%The original equation may be obtained as an approximation to the acoustically-measured-Keller-Miksis equation when the sound speed is small.
+%This approximation, interestingly, is to the same order as the (quite different) approximations of the original Keller-Miksis equation.
+%Therefore both acoustic measurements and optical measurements agree that the original Keller-Miksis is valid so long as $M^2$ is small.
+
+
+
+\subsection{The pressure on the surface of the bubble}\label{sec:surface_pressure}
+
+When introducing the original Keller-Miksis model in \secref{KMoriginal} the pressure on the surface of the bubble was not specified (equation \eqnref{pressureBC}).
+In this section and the next we fix this boundary condition for the cases with and without viscosity.
+
+
+The gas within the bubble may simply be modelled a polytropic exponent, $\kappa$. 
+The pressure within the bubble is then $p_e \lr{\frac{a}{a_e}}^{-3\kappa}$ where $p_e$ is the pressure of the gas within the bubble at equilibrium,
+and $a_e$ is the radius of the bubble at equilibrium\cite{Hoff2001}.
+The contribution of the vapour pressure has been neglected for simplicity.
+This within the bubble pressure exceeds the pressure of the fluid at the surface, $p(a,t)$, due to the contributions of the surface tension, $\sigma$.
+The pressure boundary condition is then
+\begin{align}
+  p_b(a) = p_e \lr{\frac{a}{a_e}}^{-3\kappa} - 2\frac{\sigma}{a}. 
+\end{align}
+To write the boundary condition in terms of the enthalpy we use the  thermodynamic relation $d h = \frac{1}{m n} dp$.
+Substituting in \eqnref{nrootp} gives
+\begin{align}
+  h(a) =  \int_{p_\infty}^{p}  \frac{1}{m n}dp = 2\lr{\sqrt{p}-\sqrt{ p_\infty}} = 2 \frac{p_\infty}{n_\infty} \lr{\sqrt{p/p_\infty} - 1} 
+\end{align}
+where  $n_\infty = \sqrt{p_\infty} = \sqrt{\epsilon_\infty} $ has been used in the second equality.
+Expanding $p$ from \eqnref{pshort} gives
+\begin{align}
+  h(a) = 2 \frac{p_\infty}{n_\infty} \lr{\sqrt{{p-p_0+p_\infty}/p_\infty} - 1} =  2 \frac{p_\infty}{n_\infty} \lr{\sqrt{1 + {p - p_0}{p_\infty}} - 1}
+\end{align}
+In the non-relativistic limit $p_\infty = \epsilon_\infty \approx n_\infty m c^2 \approx \unit{1}\giga\pascal$\cite{Hoff2001}.
+This is much larger than any pressures reached in ultrasound and so we may write, simply, that
+\begin{align}
+  h(a) \approx \frac{p - p_0}{mn_\infty}
+\end{align}
+
+
+%The incident pressure $p_i$ is a perturbation about the  pressure at infinity $p_\infty$.
+%Therefore
+%\begin{align}
+%  h_i(a) = 2\lr{\sqrt{p(a) + p_\infty }-\sqrt{ p_\infty}}.
+%\end{align}
+
+The acoustically-measured-Keller-Miksis equation is now complete. 
+We emphasise that for an free polytropic gas bubble pulsating in ideal vortex-free fluid, the model is exact.
+
+
+\subsection{Acoustically-measured viscosity}\label{sec:viscosity}
+
+Viscous fluids have so far been excluded from our analysis.
+Viscosity usually plays a minor role in medical applications - 
+an ideal fluid does a fairly good job for propagation.
+However, the viscosity does play an important role in dampening the oscillations of the bubble.
+In ultrasound contrast physics, therefore, the viscosity is usually incorporated into the pressure boundary condition of equation \eqnref{pressureBC}.
+% Even though viscous effects have been ignored to find \eqnref{WaveEqn} they are generally incorporated into the boundary conditions.
+% If they were neglected altogether there would be no dampening mechanism in the final model.
+% Transient solutions to equation \eqnref{WaveEqn} would never relax and numerical studies of the resulting equations predict exotic harmonics resulting from beating between the 
+% stable and transient solutions of \eqnref{WaveEqn}.
+% The  second boundary condition used by Keller and Miksis is therefore
+% \begin{align}
+% p(a, t) =  k a^{-3\gamma} + \frac{4\mu}{3}\lr{\dr \dot a - \frac{\dot a}{a}} - 2 \frac{\sigma}{a},
+%  \label{eqn:BCPressure}
+% \end{align}
+% }
+% where $\mu$ is the viscosity and $\sigma$ is the surface tension.
+To model the viscous dampening it is assumed that the fluid is Newtonian; only the  {\em  dynamic viscosity}, $\eta$, is considered. %while the {\em second viscosity} is neglected\cite{LandauBook}.
+Then the stress tensor measured with ultrasound is\cite{LandauBook}, 
+\begin{align}
+  \sigma(a) = a p - c\eta \lr{a \cdot \del u + \del u\cdot a - a\cdot u u\cdot \del u - u u \cdot \del  u\cdot a -\tfrac{2}{3}\del \cdot u \lr{a - a\cdot u v}}.\label{eqn:RelStress}
+\end{align}
+The derivative with respect to the vector $a$ yields the trace\cite{Hestenes1984},
+\begin{align}
+  \Tr\ \sigma(a) \equiv \d_a \cdot \sigma(a) = 4p. \label{eqn:RelStressTrace} 
+  % 4 p -2 c\eta \lr{ \del\cdot v  -  u\cdot \scope\del \scope v \cdot v -  \del \cdot v } = 4 p.
+\end{align}
+%\begin{align}
+%\sigma_{00}  &=  p - \tfrac{2}{3}\eta\lr{1-\gamma^2}\lr{2\dt \gamma + 2 \vu\cdot \vdel \gamma - \gamma \vdel \cdot \vv} 
+%+ 2 \eta \vv \cdot \vdel \gamma,\\
+%\sigma_{ii} \equiv \gamma_i \cdot \sigma(\gamma_i) &=  -p + 2 \eta\lr{ \vdel_i \lr{\gamma \vv_i} + \gamma \vv_i/c u\cdot \del \lr{\gamma \vv_i} + \tfrac{1}{3}c\del\cdot u \lr{1+\gamma^2 %\vv_i^2/c^2 }}
+%\end{align}
+We wish to evaluate the radial component of the stress tensor, $\sigma_{rr} \equiv \hat r \cdot \sigma(\hat r)$, where $\hat r$ is the radial unit vector.
+This is because in our spherically symmetric model it is this component that dampens the oscillation.
+From \eqnref{RelStress} this is evaluated to be 
+\begin{align}
+  \sigma_{rr}  &= -p + 2\eta \lrsquare{\dr v + \tfrac{\gamma^2 v}{c} \tfrac{c u\cdot \del }{\gamma}\lr{\tfrac{\gamma v}{c}} - \tfrac{1}{3} c\del\cdot u\lr{1 + \tfrac{\gamma^2v^2}{c^2}}}, \label{eqn:sigmarr1}
+\end{align}
+where $v$ is the radial component of the velocity.
+To keep the expressions short  the inner products $ u\cdot \del = \frac{\gamma }{c} \lr{\dt + v \dr}$ and $\del\cdot u = \frac{1}{c}\lr{\dt\gamma + \dr(\gamma v)}$ have not been expanded.
+
+Equation \eqnref{sigmarr1} can be simplified by noting that $\lr{1 + \tfrac{\gamma^2v^2}{c^2}} = \lr{1 - \gamma^2\lr{1-\tfrac{v^2}{c^2}} + \gamma^2 } =  \gamma^2$.
+Using a similar trick we find,
+\begin{align}
+   \frac{\gamma^2 v}{c} \frac{c u\cdot \del }{\gamma}\lr{\frac{\gamma v}{c}} 
+=-\lr{1-\gamma^2 } \frac{c u\cdot \del }{\gamma}\gamma +\frac{\gamma^3 v}{c^2} \frac{c u\cdot \del }{\gamma}v
+=\gamma c u\cdot \del \gamma. 
+\end{align}
+The relation $d \gamma = \frac{\gamma^3}{c^2} v d v$ has been used to obtain the second equality.
+Equation \eqnref{sigmarr1} then simplifies to
+\begin{align}
+  \sigma_{rr}  &= -p + 2\eta \lrsquare{\dr v + \gamma c u\cdot \del\gamma - \tfrac{1}{3}\gamma^2 c\del\cdot u}. \label{eqn:sigmarr2}
+\end{align}
+To make further progress we re-evaluate the trace using \eqnref{sigmarr2} and the other components of the diagonal of the stress tensor,
+\begin{align}
+  \sigma_{tt} &= p - 2 \eta \lrsquare{\dt \gamma - \gamma c u \cdot \del \gamma - \tfrac{1}{3} \lr{1-\gamma^2} c \del\cdot u    }\\
+  \sigma_{\theta\theta} =  \sigma_{\phi\phi}  &= -p + 2\eta\lrsquare{\tfrac{v}{r} - \tfrac{1}{3} c \del \cdot u},
+\end{align}
+and find that 
+\begin{align}
+  \Tr\ \sigma(a) = 4p - 2 \eta \lrsquare{2 \tfrac{v}{r} + \dr v - \dr(\gamma v) }.\label{eqn:RelStressTrace2}
+\end{align}
+Equating \eqnref{RelStressTrace} with \eqnref{RelStressTrace2} implies that
+\begin{align}
+  \dr v = - 2 \frac{v}{r}  + \dr(\gamma v)
+\end{align}
+and so
+\begin{align}
+  \sigma_{rr}  &= -p - 4\eta \lrsquare{  \frac{v}{r}  -\tfrac{1}{2}\lr{1-\tfrac{1}{3}\gamma^2}\dr(\gamma v) - \tfrac{6\gamma^2}{5c^2} v \dt v  }. \label{eqn:sigmarr3}
+\end{align}
+
+In the non-relativistic limit this equals 
+\begin{align}
+ \sigma_{rr}  &= -p - 4\eta \lrsquare{  \frac{v}{r}  -\tfrac{1}{3}\dr v }, \label{eqn:NRsigmarr}
+\end{align}
+which is  the standard expression for the radial stress exerted on a bubble \cite{Hoff2001}.
+
+The spatial derivative $\dr(\gamma v) $ in \eqnref{sigmarr3} may be evaluated from the relation $\dr (\phi v) = -\dt \phi$, 
+obtained from the spatial projection of \eqnref{eomTime}  in the laboratory frame.
+However, the resulting equation is complicated to evaluate and contributes of order $c^-2$ compared to the first term of \eqnref{sigmarr2},
+which of itself is small if the viscosity of the fluid is low.
+Therefore,
+for analytic simplicity, we neglect the small terms on the right of 
+ \eqnref{sigmarr3} and write
+\begin{align}
+ \sigma_{rr}  &\approx -p - 4\eta  \frac{v}{r}. \label{eqn:sigmarr4}
+\end{align}
+Equation \eqnref{sigmarr4} is of  adequate accuracy for our purposes and is used in the numerical studies that follow.
+It has the additional virtue in that it is identical for both acoustical and optical measurement.
+
+The pressure boundary condition is then
+\begin{align}
+  p_b(a) = p_e \lr{\frac{a}{a_e}}^{-3\kappa} - 2\frac{\sigma}{a} - 4\eta  \frac{\dot a}{r}. 
+\end{align}
+
+\section{Analysis of the equation}
+ \begin{figure}[p!]
+      \centering
+     \subfloat[\unit{100}\kilo\pascal]{
+           \label{fig:R1rad}
+           \includegraphics{radius_r2_f2_a0.1.0}}
+      \subfloat[\unit{100}\kilo\pascal]{
+           \label{fig:R1vel}
+           \includegraphics{velocity_r2_f2_a0.1.3}}
+     \subfloat[\unit{300}\kilo\pascal]{
+           \label{fig:R3rad}
+           \includegraphics{radius_r2_f2_a0.3.1}}
+      \subfloat[\unit{300}\kilo\pascal]{
+           \label{fig:R3vel}
+           \includegraphics{velocity_r2_f2_a0.3.4}}
+     \subfloat[\unit{500}\kilo\pascal]{
+           \label{fig:R5rad}
+           \includegraphics{radius_r2_f2_a0.5.2}}
+      \subfloat[\unit{500}\kilo\pascal]{
+           \label{fig:R5vel}
+           \includegraphics{velocity_r2_f2_a0.5.5}}
+      \label{fig:BubbleResponse}
+      \caption{The calculated response of a two micron bubble to a \unit{1/2}\mega\hertz\ wave at various pressures
+as measured optically (using the Keller-Miksis model) and acoustically (using the acoustically-measured-Keller-Miksis model)
+      The radial response is shown in the figures on the left, the velocity response on the right.}
+ \end{figure}
+We finish by briefly examining the non-linear response of the two models to an incident sound pulse.
+The strongly non-linear response of bubbles is important 
+in medical applications because it is a property not  shared by the surrounding tissue,
+and therefore provides a means of identifying the bubble.
+
+To start, we compare  the response of the two models for 3 different pressures:
+\unit{100}\kilo\pascal, \unit{300}\kilo\pascal\ and \unit{500}\kilo\pascal.
+The equilibrium radius of the bubble is chosen to be \unit{2}\micro\meter, 
+which, like the pressures, is typical for diagnostic ultrasound applications.
+The pressure applied is a sinusoidal  with a frequency of \unit{500}\kilo\hertz.
+The pulse consists of 10 cycles and the first and last quarter of the pulse is tempered with a cosine function.
+The radial and velocity response of the bubble is plotted in \figref{BubbleResponse}.
+
+
+
+
+For the low incident pressure of \unit{100}\kilo\pascal\ the radial response of the bubble is essentially identical in the two models (\figref{R1rad}).
+This is as would be expected, for as \figref{R1vel} shows,  at this pressure the velocity of the bubble wall 
+is always a small fraction of the sound speed.
+
+At the higher pressure of \unit{100}\kilo\pascal 
+the original Keller-Miksis model predicts that the bubble wall collapses at very high velocities,
+even surpassing the speed of sound on some occasions.
+It is obvious that ultrasound measurements cannot measure the speed of a bubble wall undergoing  supersonic collapse, 
+and so the predictions of the original Keller-Miksis equation is contrary to what is measured acoustically.
+\Figref{R3vel} illustrates what ultrasound would measure when a bubble responds to the pulse.
+The acoustically measured velocity is always slower than the sound speed.
+The radial response as measured by ultrasound is predicted to be different to the response as measured optically, 
+as is shown in \figref{R3rad}.
+
+At the yet higher pressure of \unit{500}\kilo\pascal\ there is a small surprise.
+As before the original Keller-Miksis model predicts that the bubble wall will collapse at speeds that cannot be measured acoustically,
+and as before the acoustically-observed-Keller-Miksis model assigns the  spatial and temporal locations according to the pulse-echo definitions.
+The surprise, 
+however, is how well it does in comparison to \Figref{R3rad}.
+In \figref{R5rad} the predicted radial response of the bubble looks very similar with both models;
+the maximal radii are in good agreement, as are the  times at which the bubble reaches its minimal radii.
+All this despite the large differences in the predicted velocity \figref{R5rad}.
+
+A clue as to why the radial response at some pressures looks very similar for both models (\figref{R1rad} and \figref{R5rad}),
+while at other pressures it looks very different (\figref{R3rad}) 
+- apparently without any obvious correlation with the speed of the bubble wall -
+is found in the predicted scattering cross section of the two models.
+
+\subsection{ The scattering cross section}\label{sec:measurement:scatteringxs}
+The scattering cross section, $\sigma$ is found from the ratio of the  emitted acoustic power to the incident intensity, \cite{ShutilovBook}
+\begin{align}
+  \sigma(\omega) = 4\pi r^2 \oint \frac{ \lr{p(r, t) a(t)}^2}{p_i(r,t)^2} dt,\label{eqn:sigmaff}
+\end{align}
+where $p$ is the emitted pressure, $p_i$ is the incident pressure (a plain wave of frequency $\omega$, and $a$ is the bubble radius.
+In the acoustic far field the pressure emitted by the bubble\cite{Howe2003} is 
+\begin{align}
+p(r, t) =  \frac{a^2 \ddot a+  2a {\dot a}^2}{r^2}, \label{eqn:pff}
+\end{align}
+and so the $r^2$ dependence of \eqnref{sigmaff} and \eqnref{pff} cancels.
+The scattering cross section may be normalised by dividing out the area of the bubble at equilibrium, $4\pi a_e^2$.
+
+
+The scattering cross section is only well defined for an incident planar wave.
+The period of the emitted wave can be different from period of the incident wave.
+The integral is carried out over the
+time period where both incident and emitted waves are stable - the closed integral sign being an mnemonic of this.
+This occurs when both the imaging and emitted wave oscillate an integer number of times within the period.
+However, this can make the scattering cross section hard to evaluate, 
+for such a period may not exist (the ratio of the periodicity of the incident and emitted waves may be irrational),
+or else may be very long, and hence hard to find numerically.
+%Furthermore, it is not applicable to the short pulses that are used in diagnostic ultrasound.
+%The integral in \eqnref{sigmaff} is therefore evaluated over the shortest time 
+%that is an integer multiple of the period of the incident and emitted sound waves.
+%Such a interval is not always finite, however;
+%the ratio of the periodicity of the incident and emitted waves may be irrational.
+
+
+Since the temporal and spatial dependence of the scattering cross section are integrated out,
+the scattering cross section is not expected to be dependant upon the measurement process.
+On the other hand, however,
+the scattering cross section is dependent upon the bubble wall's measured radius, velocity and acceleration
+in \eqnref{pff} -
+and therefore the two models will give different answers when $M^2$ is not small.
+We note, however, that the original Keller-Miksis model, unlike the acoustically measured version,
+never claimed to be accurate in presence of high velocities.
+The scattering cross section should therefore be computed using the acoustically measured theory.
+
+
+To find the scattering cross section  numerically 
+a finite incident sinusoid must be used to drive the oscillation,
+and the incident number of cycles must be sufficient for the transient response to dampen.
+In this chapter, we use 750 cycles.
+To evaluate whether the response has stabilised
+ a 12 cycle section of the radial response  (i.e. from cycle 738 to 750) is chosen as a reference 
+and the cross-correlation of the this 12-cycle segment is evaluated with previous 12-cycle segments.
+When the average of the cross-correlation coefficients is to within \unit{0.1}\% of the average of the autocorrelation coefficients,
+we consider that the bubble response is sufficiently stable
+and that the ratio of the periodicities of the incident and driving wave are sufficiently close to being integer.
+The scattering cross section is then evaluated over the segment.
+This procedure will fail if 
+\begin{enumerate}
+\item the transient response has not been sufficiently damped.
+\item the ratio of the periodicities of the incident and driving wave wave cannot be expressed in 12 cycles
+(i.e. the super-harmonic ratio is not  1/6, 1/3,1/2, 2/3, 1, 2, 3/2, 3, 6).
+\end{enumerate}
+If the procedure fails then then the search is abandoned and the scattering cross section is not given.
+While it is possible for more super-harmonics to be searched for,
+this process cannot go on forever, for irrational super-harmonics will never be found.
+
+The normalised scatting cross section of a two micron bubble
+as a function of the incident frequency is plotted in  \figref{nxs_high}.
+%The pressures of the incident wave are low in \figref{nxs_low} (\unit{10}\kilo\pascal\ and \unit{100}\kilo\pascal)
+%and are high (\unit{300}\kilo\pascal\ and \unit{500}\kilo\pascal) in  \figref{nxs_high}.
+Below the figures it is 
+%\figref{nxs_low1}, \figref{nxs_high3} and \figref{nxs_high5} is 
+plotted  where the scattering cross section could not be evaluated.
+
+%In \figref{nxs_low01} the scattering cross section could always be found it is not misleading to interpolate between the evaluated points and this is done.
+
+ \begin{figure}[p!]
+      \centering
+     \subfloat[\unit{10}\kilo\pascal]{
+           \label{fig:nxs_low01}
+           \includegraphics{xs_freq_r_2_amp_0.01.0}}
+      \subfloat[\unit{100}\kilo\pascal]{
+           \label{fig:nxs_low1}
+           \includegraphics{xs_freq_r_2_amp_0.1.1}}
+%      \label{fig:nxs_low}
+ \end{figure}
+\begin{figure}[p!]
+      \centering
+ \subfloat[\unit{300}\kilo\pascal]{
+           \label{fig:nxs_high3}
+           \includegraphics{xs_freq_r_2_amp_0.2.2}}
+ \subfloat[\unit{500}\kilo\pascal]{
+           \label{fig:nxs_high5}
+           \includegraphics{xs_freq_r_2_amp_0.5.5}}
+      \caption{The calculated normalised scattering cross section as a function of frequency evaluated at various pressures as measured optically (using the Keller-Miksis model) and acoustically (using the acoustically-measured-Keller-Miksis model). The bubble has an equilibrium radius of \unit{2}\micro\metre. 
+Below the graphs the frequencies at which the scattering cross section could not be evaluated is plotted.
+The small vertical axis of this plot is meaningless, it is used to help convey the density of points.
+}
+      \label{fig:nxs_high}
+ \end{figure}
+
+
+
+%The pressures used  are the same  as were used in \figref{BubbleResponse},
+%except that here the very low pressure of \unit{10}\kilo\pascal\ is also considered.
+At \unit{10}\kilo\pascal\ the  bubble's response is nearly linear when evaluated with both models,
+and \figref{nxs_low01} exhibits a large resonance peak near to \unit{2}\mega\hertz  -
+which is familiar from linear studies on bubble response\cite{Hoff2001}.
+At the higher pressure of  \unit{100}\kilo\pascal, drawn in \figref{nxs_low1}, the fundamental resonance occurs at lower frequency, the bubble also responds when pulsated at the first harmonic and at fractions of the fundamental. 
+The response of the two models at  \unit{100}\kilo\pascal\ is essentially identical, 
+as was seen for the same pressure in  \figref{R1rad} and \figref{R1vel}.
+
+At the higher pressures shown in \figref{nxs_high} differences do emerge between the responses predicted by the two models.
+Considering  \figref{nxs_high3} first, 
+we find that the fundamental again occurs at a lower frequency.
+Above this resonance the scattering cross section predicted by the two models is essentially identical.
+Near the resonance it becomes  hard to evaluate the scattering cross-section, and there is a large drop-out in returned values.
+Such dropouts occur when unusual harmonics are present (or developing) within the bubble's response.
+Below the resonance the scattering cross section for both models becomes more stable (with few dropouts)
+but the scattering cross section evaluated using the acoustically-measured model is systematically 
+lower than for when the scattering cross section is evaluated from the original model.
+These observations are repeated in \figref{nxs_high5}, except that the discrepancy seems to begin at a harmonic of the fundamental.
+
+\Figref{nxs_high} may now be used to give an explanation the observations of \figref{BubbleResponse}.
+The frequency used to pulsate the bubbles in \figref{BubbleResponse} was \unit{1/2}\mega\hertz.
+In \figref{nxs_high3} \unit{1/2}\mega\hertz\ is seen to occur in the region of the graph near resonance where 
+the scatting cross section is hard to evaluate.
+This suggests that the differences observed in the response of \figref{R3rad} 
+are due to differences in the harmonic response of the two equations.
+In \figref{nxs_high5}, \unit{1/2}\mega\hertz\ is well below the dropout region, 
+suggesting that the harmonics have little role.
+This would explain why the radial response appeared so similar.
+The difference in the scattering cross section between the two models in \figref{nxs_high5} 
+would therefore seem to result from the differing velocity and acceleration that is measured by the two models,
+which manifests itself in the scattering cross via the $\dot a$ and $\ddot a$ terms in equation \eqnref{pff}.
+
+
+
+\section{Discussion}
+
+In this chapter we have derived for the first time the pulsations of a bubble as they would be measured with ultrasound.
+The model is based upon the Keller-Miksis model, but is exact.
+Indeed, the original Keller-Miksis equation can be obtained by approximating the acoustically-measured version -
+valid for when velocity of the bubble wall is small in comparison to the sound speed.
+
+The derivation followed from noting that for ultrasound to measure distances (using pulse-echo) 
+the sound speed in the medium must be known {\em a priori}, 
+with no possibility of measuring variations in this sound speed.
+This has two consequences:
+\begin{enumerate}
+  \item The sound speed must be measured to be a constant.
+  \item The sound must be measured to be propagating linearly.
+\end{enumerate}
+If invariance to inertial translations is also assumed,
+then the constancy of the sound speed  implies that 
+ultrasound is subject to the considerations of special relativity,
+with the sound speed taking the role of the speed of light.
+This invariance has been assumed here.
+
+To describe the propagation of the sound we considered an ideal fluid medium.
+When measured acoustically the relativistic (Lorentz invariant) description of the ideal fluid should be used,
+with the additional constraint that the speed of sound equal the speed of light.
+We have shown that the sound does indeed propagate linearly in this case.
+Indeed, we have shown it obeys Maxwell's relations.
+
+Finally, the response of the acoustically-measured-Keller-Miksis equation to an acoustic wave has been simulated,
+and the results compared to the original Keller-Miksis equation.
+The radial pulsations observed by the two models is similar when the harmonic response of the bubble is not strong -
+otherwise the pulsations become quite different.
+The velocity response for the two models diverges when the bubble wall speed is high.
+The acoustically-measured-Keller-Miksis equation correctly maintains
+that ultrasound cannot measure supersonic bubble collapse, 
+and predicts what is measured acoustically when such collapses do occur.
+
+When the bubble wall moves at speeds close or exceeding the sound speed,
+differences are found between the scattering cross section obtained from the two models.
+The acoustically-measured-Keller-Miksis model claims accuracy in this regime.
+The original does not.
+The scattering cross section predictions therefore
+provide a means of testing the acoustically-measured-Keller-Miksis equation directly.
+
+
+
+
+% LocalWords:  Miksis Bamber Shorrock spatio radarDistance WaveEqn BernoulliNR
+% LocalWords:  VelocityPotNR nc spacetime RelVPot mh VelocityPot Ansatz wv RKM
+% LocalWords:  dtAnsatz drAnsatz IncidentWave phiDefn EMtensor barotropic defnA
+% LocalWords:  EMFluid wu Taub dn timelike eomTime spacelike eomSpace bivector
+% LocalWords:  DefnVorticity KMoriginal pressureBC polytropic nrootp dp rr tt
+% LocalWords:  RelStress sigmarr RelStressTrace htp XSfreq XS Mie
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "tshorrock_thesis"
+%%% End: 
