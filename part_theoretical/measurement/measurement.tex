@@ -318,127 +318,127 @@ however,
 no approximation is made to obtain equation \eqnref{WaveEqn}.
 The reason is that  ultrasound is not capable of  measuring variations in the speed of sound.
 Second order fluctuations in the density  can therefore play no role when ultrasound is used to describe the world.
-It is instructive to see this argument borne out in the equations that describe an acoustically measured fluid.
-The equations of motion must  be Lorentz invariant and this condition  is automatically fulfilled  when  the equations 
-are obtained from the divergence of the energy-momentum tensor of the ideal fluid.
-In the derivation we also need to use the hitherto unused  condition
-that the sound speed takes the role  of the speed of light.
-This condition is imposed by equating the two speeds.
-This further requires that the energy density for the fluid, as measured acoustically, be a function of the pressure only (barotripic),
-for the sound speed cannot equal the speed of light otherwise\cite{Taub1978}.
+%It is instructive to see this argument borne out in the equations that describe an acoustically measured fluid.
+%The equations of motion must  be Lorentz invariant and this condition  is automatically fulfilled  when  the equations 
+%are obtained from the divergence of the energy-momentum tensor of the ideal fluid.
+%In the derivation we also need to use the hitherto unused  condition
+%that the sound speed takes the role  of the speed of light.
+%This condition is imposed by equating the two speeds.
+%This further requires that the energy density for the fluid, as measured acoustically, be a function of the pressure only (barotripic),
+%for the sound speed cannot equal the speed of light otherwise\cite{Taub1978}.
 
-The energy-momentum tensor of an ideal fluid is\cite{Doran2003}
-\eqal{
-  T(a) = w a \cdot u u - a p = (\epsilon + p) a \cdot u u - a p,
-}{EMtensor}
-where, $\epsilon \equiv \epsilon(p)$ is the barotropic total energy density,
-$p$ is the pressure
-and 
-$u=u(\tau)$ is the velocity vector of the spacetime path, with the parameterisation chosen such that $u^2 = 1$. % and $P$ is the pressure.
-Natural units have been chosen in this section, and so that the speed of light is unity.
+%The energy-momentum tensor of an ideal fluid is\cite{Doran2003}
+%\eqal{
+%  T(a) = w a \cdot u u - a p = (\epsilon + p) a \cdot u u - a p,
+%}{EMtensor}
+%where, $\epsilon \equiv \epsilon(p)$ is the barotropic total energy density,
+%$p$ is the pressure
+%and 
+%$u=u(\tau)$ is the velocity vector of the spacetime path, with the parameterisation chosen such that $u^2 = 1$. % and $P$ is the pressure.
+%Natural units have been chosen in this section, and so that the speed of light is unity.
 
-The speed of sound, $c$,  given at constant entropy density, $\sigma$, is\cite{LandauBook,Taub1978} 
-\begin{align}
-  c^2 = \given{\frac{\d p}{\d \epsillon}}{\sigma}. \label{eqn:soundspeed}
-\end{align}
-This is the same as the non-relativistic expression except that the energy density has replaced the mass density.
-Setting the speed of sound to equal the speed of light (unity) and the integrating 
- gives,
- \begin{align}
-   \epsilon = p^\prime - p_0 + \epsilon_0
- \end{align} 
-where $p^\prime$ is a pressure that fluctuates with position, so that $dp = dp^\prime$,
-and $p_0$  and $\epsilon_0$  are the ambient  pressure and mean energy density, respectively.
-%Rather can carry the constants $ p_0 $ and $\epsilon_0$ through the rest of the derivation we write
-The thermodynamic pressure is therefore
-\begin{align}
-  p \equiv p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
-\end{align}
-and the fluid obeys the equation of state, 
-\eqal{
-  \epsilon(p) = p.
-}{eos}
-At infinity $p^\prime = p_0$ 
-and so $\epsilon_\infty = p_\infty = \epsilon_0 \ne p_0$.
-
-%therefore enforces that the sound speed equals that of light (unity).
-%The notation of equation \eqn{eos} is quite compact.
-%For \eqnref{eos} to be consistent with the integral of the sound speed (equation \eqnref{soundspeed}),
-%the pressure $p$ must be interpreted as follows,
+%The speed of sound, $c$,  given at constant entropy density, $\sigma$, is\cite{LandauBook,Taub1978} 
 %\begin{align}
-%  p = p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
+%  c^2 = \given{\frac{\d p}{\d \epsillon}}{\sigma}. \label{eqn:soundspeed}
 %\end{align}
-%Here $p^\prime$ is the pressure perturbation measured with a hydrophone,
-%$p_0$  and $\epsilon_0$  are the mean  pressure and energy density respectively.
+%This is the same as the non-relativistic expression except that the energy density has replaced the mass density.
+%Setting the speed of sound to equal the speed of light (unity) and the integrating 
+% gives,
+% \begin{align}
+%   \epsilon = p^\prime - p_0 + \epsilon_0
+% \end{align} 
+%where $p^\prime$ is a pressure that fluctuates with position, so that $dp = dp^\prime$,
+%and $p_0$  and $\epsilon_0$  are the ambient  pressure and mean energy density, respectively.
+%%Rather can carry the constants $ p_0 $ and $\epsilon_0$ through the rest of the derivation we write
+%The thermodynamic pressure is therefore
+%\begin{align}
+%  p \equiv p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
+%\end{align}
+%and the fluid obeys the equation of state, 
+%\eqal{
+%  \epsilon(p) = p.
+%}{eos}
+%At infinity $p^\prime = p_0$ 
+%and so $\epsilon_\infty = p_\infty = \epsilon_0 \ne p_0$.
+
+%%therefore enforces that the sound speed equals that of light (unity).
+%%The notation of equation \eqn{eos} is quite compact.
+%%For \eqnref{eos} to be consistent with the integral of the sound speed (equation \eqnref{soundspeed}),
+%%the pressure $p$ must be interpreted as follows,
+%%\begin{align}
+%%  p = p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
+%%\end{align}
+%%Here $p^\prime$ is the pressure perturbation measured with a hydrophone,
+%%$p_0$  and $\epsilon_0$  are the mean  pressure and energy density respectively.
 
 
 
-Applying \eqnref{eos} simplifies the energy momentum tensor considerably,
-\eqal{
-  T(a) =  p\lr{2 a \cdot u u  - a} \equiv  \frac{1}{4}  A a A,
-}{EMFluid}
-where vector potential, $A$, introduced on the right hand side satisfies
-\eqal{
-  A = 2p^{1/2}u =2 \epsilon^{1/2} u.
-}{defnA}
+%Applying \eqnref{eos} simplifies the energy momentum tensor considerably,
+%\eqal{
+%  T(a) =  p\lr{2 a \cdot u u  - a} \equiv  \frac{1}{4}  A a A,
+%}{EMFluid}
+%where vector potential, $A$, introduced on the right hand side satisfies
+%\eqal{
+%  A = 2p^{1/2}u =2 \epsilon^{1/2} u.
+%}{defnA}
 
-The vector $A$ is the same as was introduced in \eqnref{RelVPot},
-i.e.
-\begin{align}
-  \del \psi = - \frac{wu}{n} = - 2\sqrt p u.
-\end{align}
-%where $n$ is the proper particle number density of the fluid and equation \eqnref{eos} has been used for the second equality.
-To demonstrate this second equality we  use an argument of Taub\cite{Taub1978}.
-Using the isentropic thermodynamic relation $m de = - p d\lr{\frac{1}{n}}$ with the relation for the internal energy, $\epsilon= nm( 1 + e(p))$,
-it follows that 
-\begin{align}
- n d\epsilon = \epsilon dn - n^2 p d \lr{\frac{1}{n}} = \lr{\epsilon + p} dn.
-\end{align}
-Applying equation \eqnref{eos} and integrating we obtain
-\begin{align}
-  n = \sqrt p, \label{eqn:nrootp}
-\end{align}
-from which we find
-\begin{align}
-A = 2\sqrt p  u = \frac{2\epsilon}{n} u = \frac{wu}{n} =  - \del \psi,
-\end{align}
-as claimed.
+%The vector $A$ is the same as was introduced in \eqnref{RelVPot},
+%i.e.
+%\begin{align}
+%  \del \psi = - \frac{wu}{n} = - 2\sqrt p u.
+%\end{align}
+%%where $n$ is the proper particle number density of the fluid and equation \eqnref{eos} has been used for the second equality.
+%To demonstrate this second equality we  use an argument of Taub\cite{Taub1978}.
+%Using the isentropic thermodynamic relation $m de = - p d\lr{\frac{1}{n}}$ with the relation for the internal energy, $\epsilon= nm( 1 + e(p))$,
+%it follows that 
+%\begin{align}
+% n d\epsilon = \epsilon dn - n^2 p d \lr{\frac{1}{n}} = \lr{\epsilon + p} dn.
+%\end{align}
+%Applying equation \eqnref{eos} and integrating we obtain
+%\begin{align}
+%  n = \sqrt p, \label{eqn:nrootp}
+%\end{align}
+%from which we find
+%\begin{align}
+%A = 2\sqrt p  u = \frac{2\epsilon}{n} u = \frac{wu}{n} =  - \del \psi,
+%\end{align}
+%as claimed.
 
 
-The divergence of the energy momentum tensor (equation \eqnref{EMFluid}) vanishes in the absence of external fields.
-Therefore, by projecting the divergence of \eqnref{EMFluid} along the timelike component we find
-\eqa{
-  u\cdot\scope T(\scope\del)= \half  u\cdot A \del \cdot A = 0.
-}
-The check denotes the scope of the derivative.
-Since, from \eqnref{defnA}, $A$ is parallel to $u$  it follows that 
-\eqal{
-  \del \cdot A  =0
-}{eomTime}
-and so the vector potential $A$ is conserved.
-The spacelike projection, $\scope T(\scope \del) - u u\cdot \scope T(\scope\del)$, gives in turn,
-\eqal{
-  u \cdot \lr{\del \wedge A} = 0.
-}{eomSpace}
-The relativistic vorticity bivector is 
-\eqal{F = \del \wedge A,}{DefnVorticity}
-and so \eqnref{eomSpace} implies that the vorticity is orthogonal to the velocity.
+%The divergence of the energy momentum tensor (equation \eqnref{EMFluid}) vanishes in the absence of external fields.
+%Therefore, by projecting the divergence of \eqnref{EMFluid} along the timelike component we find
+%\eqa{
+%  u\cdot\scope T(\scope\del)= \half  u\cdot A \del \cdot A = 0.
+%}
+%The check denotes the scope of the derivative.
+%Since, from \eqnref{defnA}, $A$ is parallel to $u$  it follows that 
+%\eqal{
+%  \del \cdot A  =0
+%}{eomTime}
+%and so the vector potential $A$ is conserved.
+%The spacelike projection, $\scope T(\scope \del) - u u\cdot \scope T(\scope\del)$, gives in turn,
+%\eqal{
+%  u \cdot \lr{\del \wedge A} = 0.
+%}{eomSpace}
+%The relativistic vorticity bivector is 
+%\eqal{F = \del \wedge A,}{DefnVorticity}
+%and so \eqnref{eomSpace} implies that the vorticity is orthogonal to the velocity.
 
-By taking the divergence of \eqnref{eomTime} and using the vector identity
-$\del \del \cdot A = \del^2 A - \del\cdot\lr{ \del \wedge A} $
- we find,
-\eqal{
-  \del^2 A = \del \cdot F = \del F.
-}{wave}
-The second equality follows because $\del F = \del \cdot F + \del \wedge F$ 
-and because the  operator identity $\del\wedge \del = 0$ causes $\del \wedge F$ to vanish.
-Equation \eqnref{wave} is a wave equation and so interpreting the right-hand-side of \eqnref{wave} as an acoustic source current, $J$, we obtain
-\eqal{
-  \del  F = J.
-}{Maxwell}
-Interestingly equation \eqnref{Maxwell} is Maxwell's equation and equation \eqnref{eomTime} has specified that we are working in the Lorenz gauge.
-We explore this observation more in \chapref{interactions}.
-%We do not explore this observation further here.
+%By taking the divergence of \eqnref{eomTime} and using the vector identity
+%$\del \del \cdot A = \del^2 A - \del\cdot\lr{ \del \wedge A} $
+% we find,
+%\eqal{
+%  \del^2 A = \del \cdot F = \del F.
+%}{wave}
+%The second equality follows because $\del F = \del \cdot F + \del \wedge F$ 
+%and because the  operator identity $\del\wedge \del = 0$ causes $\del \wedge F$ to vanish.
+%Equation \eqnref{wave} is a wave equation and so interpreting the right-hand-side of \eqnref{wave} as an acoustic source current, $J$, we obtain
+%\eqal{
+%  \del  F = J.
+%}{Maxwell}
+%Interestingly equation \eqnref{Maxwell} is Maxwell's equation and equation \eqnref{eomTime} has specified that we are working in the Lorenz gauge.
+%We explore this observation more in \chapref{interactions}.
+%%We do not explore this observation further here.
 
 
 When deriving the Keller-Miksis equation potential flow in the fluid was assumed.
@@ -855,7 +855,8 @@ provide a means of testing the acoustically-measured-Keller-Miksis equation dire
 % LocalWords:  DefnVorticity KMoriginal pressureBC polytropic nrootp dp rr tt
 % LocalWords:  RelStress sigmarr RelStressTrace htp XSfreq XS Mie
 
+
 %%% Local Variables: 
 %%% mode: latex
-%%% TeX-master: "tshorrock_thesis"
+%%% TeX-master: "../../tshorrock_thesis"
 %%% End: 

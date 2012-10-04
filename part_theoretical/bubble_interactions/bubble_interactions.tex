@@ -152,111 +152,133 @@ This helps to distinguish them from their spacetime analogues.
 
 
 
-\section{Acoustically measured physics}\label{sec:measurement}
+%\section{Acoustically measured physics}\label{sec:measurement}
 
-Ultrasound measures both the spatial and temporal locations of an object from the time
-it takes a pulse of sound to propagate from a transducer and then to return again.
-If the sound is emitted  at a time $\tm$ and the sound returns at a time  $\tp$,
-then the temporal label $\tau(x)$ and the spatial label $\rho(x)$  for the object at the spacetime point $x$ is defined to be
-\sub{
-\label{eqn:radar}
-\begin{align}
- \tau(x) &= \frac{\tm + \tp}{2}, &&\text{and}& \rho(x) &= \frac{\tp - \tm}{2}c
-\end{align}
-}
-where $c$ is the speed of sound.
-It is noted, firstly, that equations \eqnref{radar} provide no method for determining the spatio-temporal location of an object absolutely,
-there is no preferred direction or location.
-Secondly the sound speed is a constant of the medium and so is independent of the motion of the transducer.
+%Ultrasound measures both the spatial and temporal locations of an object from the time
+%it takes a pulse of sound to propagate from a transducer and then to return again.
+%If the sound is emitted  at a time $\tm$ and the sound returns at a time  $\tp$,
+%then the temporal label $\tau(x)$ and the spatial label $\rho(x)$  for the object at the spacetime point $x$ is defined to be
+%\sub{
+%\label{eqn:radar}
+%\begin{align}
+% \tau(x) &= \frac{\tm + \tp}{2}, &&\text{and}& \rho(x) &= \frac{\tp - \tm}{2}c
+%\end{align}
+%}
+%where $c$ is the speed of sound.
+%It is noted, firstly, that equations \eqnref{radar} provide no method for determining the spatio-temporal location of an object absolutely,
+%there is no preferred direction or location.
+%Secondly the sound speed is a constant of the medium and so is independent of the motion of the transducer.
 
-It is  interesting to note that equations \eqnref{radar} are identical  to the `radar' definitions that Einstein used to define time and space \cite{Dolby2001},
-except that sound is used as the propagating signal rather than light.
-Likewise, Einsteins postulates also hold (as discussed in more detail in a companion paper elsewhere in these proceedings).
-Ultrasound is, therefore, a relativistic theory where the speed of sound takes the role of the speed of light.
+%It is  interesting to note that equations \eqnref{radar} are identical  to the `radar' definitions that Einstein used to define time and space \cite{Dolby2001},
+%except that sound is used as the propagating signal rather than light.
+%Likewise, Einsteins postulates also hold (as discussed in more detail in a companion paper elsewhere in these proceedings).
+%Ultrasound is, therefore, a relativistic theory where the speed of sound takes the role of the speed of light.
 
-Lorentz invariant theories obey the measurement process of equation \eqnref{radar}
-and so form an appropriate point to begin the acoustically observed description of the medium.
-Here we assume that the medium is an ideal and homentropic fluid.
-In this case the speed of sound is $c^2 = \frac{\d p}{\d \epsillon}$
-where $\epsilon$ is the energy density and $p$ is the pressure.
-Natural units are chosen so that the speed of sound, which will shortly be set to equal the speed of light, is unity.
-From the definition of the sound speed we see that  the equation of state, $\epsilon \equiv \epsilon(p) = p$,
-enforces the speed speed condition.
-The equation  $p^{1/2} = \rho$ follows from the homentropy condition.
-These equations of state are the relativistic analogues to incompressibility and are  reviewed by  Taub \cite{Taub1978}.
+%Lorentz invariant theories obey the measurement process of equation \eqnref{radar}
+%and so form an appropriate point to begin the acoustically observed description of the medium.
+%Here we assume that the medium is an ideal and homentropic fluid.
+%In this case the speed of sound is $c^2 = \frac{\d p}{\d \epsillon}$
+%where $\epsilon$ is the energy density and $p$ is the pressure.
+%Natural units are chosen so that the speed of sound, which will shortly be set to equal the speed of light, is unity.
+%From the definition of the sound speed we see that  the equation of state, $\epsilon \equiv \epsilon(p) = p$,
+%enforces the speed speed condition.
+%The equation  $p^{1/2} = \rho$ follows from the homentropy condition.
+%These equations of state are the relativistic analogues to incompressibility and are  reviewed by  Taub \cite{Taub1978}.
 
-The 4-vector $A$ is defined to have the temporal and spatial components 
-\begin{align}
-  \phi &\equiv \gamma \frac{\epsilon + p}{\rho} = \gamma\lr{c^2 + h}, &&\text{and}&\vA &\equiv\phi \vv 
-\end{align}
-where  $\gamma = \frac{1}{\sqrt{1-\vv^2}}$ is the Lorentz factor and $h$ is the enthalpy.
-It is apparent that $\phi$ reduces to the total enthalpy $H = h+ \frac{v^2}{2}$ in the non-relativistic limit.
-Applying these conditions for acoustic measurement,
-the energy momentum tensor for a relativistic ideal fluid simplifies to
-\eqal{
-  T(a) = (\epsilon + p) a \cdot v v - a p =  \frac{1}{4}  A a A. 
-}{EMFluid}
-In the absence of external forces the equations of motion, when expressed in the lab frame, are
-\eqal{
-   \vdel \cdot \vA &=  - \dt \phi  &&\text{and}& \dt \vA - \vv \times \lr{\vdel \times \vA}  + \vdel \phi &= 0.
-}{ContsRel}
-These are the acoustically measured versions of the continuity equation and the Euler's equation.
+%The 4-vector $A$ is defined to have the temporal and spatial components 
+%\begin{align}
+%  \phi &\equiv \gamma \frac{\epsilon + p}{\rho} = \gamma\lr{c^2 + h}, &&\text{and}&\vA &\equiv\phi \vv 
+%\end{align}
+%where  $\gamma = \frac{1}{\sqrt{1-\vv^2}}$ is the Lorentz factor and $h$ is the enthalpy.
+%It is apparent that $\phi$ reduces to the total enthalpy $H = h+ \frac{v^2}{2}$ in the non-relativistic limit.
+%Applying these conditions for acoustic measurement,
+%the energy momentum tensor for a relativistic ideal fluid simplifies to
+%\eqa{
+%  T(a) = (\epsilon + p) a \cdot v v - a p =  \frac{1}{4}  A a A. 
+%}
+%In the absence of external forces the equations of motion, when expressed in the lab frame, are
+%\eqal{
+%   \vdel \cdot \vA &=  - \dt \phi  &&\text{and}& \dt \vA - \vv \times \lr{\vdel \times \vA}  + \vdel \phi &= 0.
+%}{ContsRel}
+%These are the acoustically measured versions of the continuity equation and the Euler's equation.
 
-By differentiating the continuity equation with respect to time
-and subtracting from the spatial derivative of Euler's equation, 
-a wave equation for the specific total enthalpy is obtained
-\subl{
-\eqa{
-   \lr{\vdel^2 - \dt^2}\phi
-  & = \vdel \cdot \lr{\vv \times\lr{\vdel \times \vA} } \equiv - \rho_q.
-\label{eqn:WavePhi}
-  \intertext{Alternatively, 
-    by differentiating the continuity equation with respect to space 
-    and adding it to the temporal derivative of Euler's equation,
-    a wave equation for $\vA$ is obtained,
-    }
-   \lr{\vdel^2 - \dt^2}\vA 
-   &  = - \vdel\times\lr{\vdel \times \vA} - \dt \lr{ \vv \times \lr{\vdel \times \vA}} \equiv -\vJ.
-    \label{eqn:WavevA}
-  }
-}{Waves}
-The right hand side of \eqnref{WavePhi} and  \eqnref{WavevA} have been interpreted as an acoustic source density and acoustic current density, respectively.
-Notice the nice property that the current is conserved $\vdel\cdot \vJ + \dt \rho_q = 0$.
-This pair of equations are the acoustically measured version of Lighthill's equations expressed in terms of enthalpy and vorticity \cite{Howe1998}.
+%By differentiating the continuity equation with respect to time
+%and subtracting from the spatial derivative of Euler's equation, 
+%a wave equation for the specific total enthalpy is obtained
+%\subl{
+%\eqa{
+%   \lr{\vdel^2 - \dt^2}\phi
+%  & = \vdel \cdot \lr{\vv \times\lr{\vdel \times \vA} } \equiv - \rho_q.
+%\label{eqn:WavePhi}
+%  \intertext{Alternatively, 
+%    by differentiating the continuity equation with respect to space 
+%    and adding it to the temporal derivative of Euler's equation,
+%    a wave equation for $\vA$ is obtained,
+%    }
+%   \lr{\vdel^2 - \dt^2}\vA 
+%   &  = - \vdel\times\lr{\vdel \times \vA} - \dt \lr{ \vv \times \lr{\vdel \times \vA}} \equiv -\vJ.
+%    \label{eqn:WavevA}
+%  }
+%}{Waves}
+%The right hand side of \eqnref{WavePhi} and  \eqnref{WavevA} have been interpreted as an acoustic source density and acoustic current density, respectively.
+%Notice the nice property that the current is conserved $\vdel\cdot \vJ + \dt \rho_q = 0$.
+%This pair of equations are the acoustically measured version of Lighthill's equations expressed in terms of enthalpy and vorticity \cite{Howe1998}.
 
-We complete this section by defining the Coriolis acceleration, $\vE = - \vv \times \lr{ \vdel \times \vA}$ and the vorticity $\vB = \vdel \times \vA$.
-Then \eqnref{Waves} are seen to be equivalent to Maxwell's equations in the Lorenz gauge ($\vdel \cdot \vA + \dt \phi = 0$).
-$\vA$ is interpreted as the analogue vector potential, $\phi$ the analogue scalar potential, $\vE$ the analogue electric field, and $\vB$ the analogue magnetic field.
-It is easy to confirm,
-\subl{
-\eqa{
-  \vdel \cdot \vE  &= q, %&& \text{from \eqnref{qdefn} and \eqnref{vELamb},} \label{eqn:M1} \\
-&  \vdel \times \vE &= -\dt  \vB, \label{eqn:ME} \\%&& \text{from  \eqnref{vELambPots} and \eqnref{IvBVort},} \label{eqn:M2} \\
-  \vdel \cdot \vB  &= 0, %\text{from \eqnref{IvBVort},}  \label{eqn:M3}\\
-&  \vdel \times \vB &=  \lr{ \vJ +\dt \vE}.%
-  %&& \text{from \eqnref{vJdefn} and \eqnref{IvBVort}.} \label{eqn:M4}
-}
-}{Maxwell}
-For example, the second of \eqnref{ME} is the vorticity equation. %, as confirmed by taking the curl of the second of \eqnref{ContsRel}
-By combing the acoustic source density  and the acoustic current into a single 4-vector $J$,
-equations \eqnref{Maxwell} can be combined into a single equation \cite{Doran2003}
-\eqal{
-  \del F = J
-}{MaxwellGA}
-where $F = \del \wedge A$ is the 4-vorticity.
-The acoustic field is therefore characterised by a single, linear equation.
+%We complete this section by defining the Coriolis acceleration, $\vE = - \vv \times \lr{ \vdel \times \vA}$ and the vorticity $\vB = \vdel \times \vA$.
+%Then \eqnref{Waves} are seen to be equivalent to Maxwell's equations in the Lorenz gauge ($\vdel \cdot \vA + \dt \phi = 0$).
+%$\vA$ is interpreted as the analogue vector potential, $\phi$ the analogue scalar potential, $\vE$ the analogue electric field, and $\vB$ the analogue magnetic field.
+%It is easy to confirm,
+%\subl{
+%\eqa{
+%  \vdel \cdot \vE  &= q, %&& \text{from \eqnref{qdefn} and \eqnref{vELamb},} \label{eqn:M1} \\
+%&  \vdel \times \vE &= -\dt  \vB, \label{eqn:ME} \\%&& \text{from  \eqnref{vELambPots} and \eqnref{IvBVort},} \label{eqn:M2} \\
+%  \vdel \cdot \vB  &= 0, %\text{from \eqnref{IvBVort},}  \label{eqn:M3}\\
+%&  \vdel \times \vB &=  \lr{ \vJ +\dt \vE}.%
+%  %&& \text{from \eqnref{vJdefn} and \eqnref{IvBVort}.} \label{eqn:M4}
+%}
+%}{Maxwell}
+%For example, the second of \eqnref{ME} is the vorticity equation. %, as confirmed by taking the curl of the second of \eqnref{ContsRel}
+%By combing the acoustic source density  and the acoustic current into a single 4-vector $J$,
+%equations \eqnref{Maxwell} can be combined into a single equation \cite{Doran2003}
+%\eqal{
+%  \del F = J
+%}{MaxwellGA}
+%where $F = \del \wedge A$ is the 4-vorticity.
+%The acoustic field is therefore characterised by a single, linear equation.
 
-%When the turbulence  is confined to a bounded volume it is reasonable to call the region a particle.
-%Surfaces with an outward $\vE$-field (and therefore charge) are called Lamb surfaces.
-%Topologically, a toroid seem a favoured configuration \cite{}.
+%%When the turbulence  is confined to a bounded volume it is reasonable to call the region a particle.
+%%Surfaces with an outward $\vE$-field (and therefore charge) are called Lamb surfaces.
+%%Topologically, a toroid seem a favoured configuration \cite{}.
 
 \section{Interactions of sound and turbulence}
 %Usually, when imagining the average motion of particles in a sound wave,
 %we think of the particles oscillating back and forth as the pressure perturbation passes through.
 %This is because we think of sound waves as being longitudinal.
-Equations \eqnref{Maxwell} imply that a sound waves can be considered to be a self-inducing vorticity-Coriolis wave.
+
+In \chapref{acousticSR} it was found that when measuring the world with sound,
+the world should be described relativistically with reference to the speed of sound.
+It was also found that the a sound wave, in this measurement system, obeys an exact analogue of
+Maxwell's equations of electromagnetism.
+That is, 
+\sub{
+\eqa{
+  \vdel \cdot \vE &= \frac{\rho_q}{\permitivity},\tag{\ref{eqn:M1}}  \\ 
+ \vdel \times \vB &= \permeability \vJ + \tfrac{1}{c^2} \dt E, \tag{\ref{eqn:M2}}\\
+ \vdel \times \vE &= -\dt\vB\tag{\ref{eqn:M3}},\\
+ \vdel \cdot \vB &= 0\tag{\ref{eqn:M4}}.
+}
+%\tag{\ref{eqn:M}}
+}
+where  $\vE$ is known as the Lamb vector and $\vB$ is the spatial vorticity.
+
+
+Equations \eqnref{M1}-\eqnref{M4} imply that a sound waves can be considered to be a self-inducing vorticity-Coriolis wave.
 The transverse nature (with respect to the direction of propagation)  of electromagnetic waves is well known, and applies equally to the vorticity and Coriolis fields here.
 In this section we consider the implications of this observation.
+
+
+
+
 \subsection{The acoustic Lagrangian}\label{sec:lagrangian}
 %From equations \eqnref{Maxwell} acoustic sources are described by the same equations that characterise electromagnetic sources.
 The common mathematical  description of acoustics and electromagnetism will result if both are derived from same Lagrangian,
@@ -299,6 +321,36 @@ but since we are interested in acoustic plain waves we shall not do this.
 % %  S(n) = A \cdot  \lr{F\wedge  n} =  \lr{A\cdot F} \wedge n %= -\phi I\vB
 %\end{align}
 
+\subsection{Interpreting the transversivity of the sound pulse} \label{sec:transversivity}
+
+
+An acoustic plain wave is  a  perturbation of the fluid particles in the direction of propagation of the pulse.
+It is also a transverse wave in terms of the Coriolis and vorticity fields.
+We now propose a method of squaring these seemingly contradictory views.
+
+We consider a segment of the plain wave to be a narrow tube,
+so that the entire plain wave is formed by adding together many such tubes.
+Within the tube a pertabation in pressure propagates the sound wave longitudinally.
+Outside of the tube no such pertabation exists.
+
+Both within and outside of the tube  there is no vorticity and so there is no propagation of the transverse wave.
+On the interface of the tube, however, there is shearing of the fluid:
+the molecules  within tube move as the wave passes, the molecules outside do not.
+This shearing induces a {\em vortex sheet} on the interface \cite{Howe1998}.
+The vorticity is confined to the sheet 
+and has a strength equal to the average speed of the molecules on either side of the interface.
+From the acoustic analogue Maxwell's equations, this vorticity then induces a Coriolis acceleration orthogonal to the interface.
+A longitudinal wave therefore  induces a transverse wave on its boundary.
+
+There remains a difficulty with this interpretation, however.
+A transverse wave should have exactly two helicity states.
+The interpretation given to the first seems, to the author at least, entirely plausible.
+The second is more difficult, however.
+The construction of a transverse wave with the Coriolis and vorticity vectors interchanged does not seem obvious.
+Rather than speculate, 
+we leave this question unanswered.
+
+\subsection{Helicity}
 Finally, we introduce the helicity, $\H$, which is the component of the spin in the direction of the wave.
 This direction is specified by the unit Poynting vector,  $\hat\vP =\frac{\vE \times \vB}{\abs{\vE\times\vB}}$,
 and so the  spin rotating about this axis is 
@@ -551,3 +603,8 @@ the application to acoustic interactions followed more-or-less mechanically.
 This indicates, on the one hand, the potential power of the analogy.
 It represents, on the other hand, a set of stringent experimental test with which to test the link between acoustics, relativity and electromagnetism.
 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../../tshorrock_thesis"
+%%% End: 

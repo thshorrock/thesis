@@ -61,7 +61,7 @@
 % misc/decl,
 %misc/abstract,
 %misc/dedication,
-misc/preface,
+%misc/preface,
 %part_intro/part_intro,
 %part_intro/introduction/introduction,
 %part_intro/part_maths,
@@ -70,9 +70,9 @@ misc/preface,
 %part_theoretical/part_theory,
 %part_theoretical/nucleation/nucleation,
 part_theoretical/acoustic_relativity/acoustic_relativity,
-%part_theoretical/measurement/measurement,
 %part_theoretical/maxwell_analogy/Maxwell_analogy,
-%part_theoretical/bubble_interactions/bubble_interactions,
+%part_theoretical/measurement/measurement,
+part_theoretical/bubble_interactions/bubble_interactions,
 %part_theoretical/computations/computations,
 %part_experimental/part_experimental,
 %part_experimental/rationale/rationale,
@@ -81,6 +81,7 @@ part_theoretical/acoustic_relativity/acoustic_relativity,
 %part_discussion/part_discussion,
 %part_discussion/discussion/discussion,
 %part_appendix/part_appendix,
+%part_appendix/tensor_derivation,
 %part_appendix/nucleation_classical_appendix,
 %part_appendix/nucleation_DFT_appendix
 %
@@ -190,8 +191,8 @@ part_theoretical/acoustic_relativity/acoustic_relativity,
 \include{part_theoretical/part_theory}
 \include{part_theoretical/nucleation/nucleation}
 \include{part_theoretical/acoustic_relativity/acoustic_relativity}
+%\include{part_theoretical/maxwell_analogy/Maxwell_analogy}
 \include{part_theoretical/measurement/measurement}
-%\include{Maxwell_analogy}
 \include{part_theoretical/bubble_interactions/bubble_interactions}
 \include{part_theoretical/computations/computations}
 \include{mechanisms}
@@ -223,7 +224,9 @@ part_theoretical/acoustic_relativity/acoustic_relativity,
 %\include{notes/spin}
 %\include{basic_bubble_model}
 %\include{partAppendix}
+\appendix
 \include{part_appendix/part_appendix}
+\include{part_appendix/tensor_derivation}
 \include{part_appendix/nucleation_classical_appendix}
 \include{part_appendix/nucleation_DFT_appendix}
 %\include{program}

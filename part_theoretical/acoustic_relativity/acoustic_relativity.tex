@@ -834,17 +834,20 @@ for the sound speed cannot be set equal to the speed of light otherwise\cite{Tau
 
 \subsection{The acoustics analogue to Maxwell's relation}\label{sec:MaxwellAnalogue}
 
-
 The energy-momentum tensor of an ideal fluid is\cite{LandauBook, Taub1978}
 \eqal{
-  T^{i j} = (\epsilon + p) u^i u^j - g^{i j} p
+%  \GATA{
+T(a) = (\epsilon + p) a \cdot u u - a p,
+%}
+%{T^{i j} = (\epsilon + p) u^i u^j - g^{i j} p}
 %  T(a) = (\epsilon + p) a \cdot u u - a p, % w a \cdot u u - a p =
 }{EMtensor}
 where, $\epsilon \equiv \epsilon(p)$ is the barotropic total energy density,
-$p$ is the pressure,
-$g^{i j}$ is a diagonal metric tensor with $g^{00}=1$ and $g^{i i} = -1$ for $i=1,2,3$,
+$p$ is the pressure
+%$g^{i j}$ is a diagonal metric tensor with $g^{00}=1$ and $g^{i i} = -1$ for $i=1,2,3$,
 and 
-$u$ is the velocity vector of the spacetime path, with the parametrisation chosen such that $u^2 = u^i u_i = 1$. % and $P$ is the pressure.
+%$u$ is the velocity vector of the spacetime path, with the parametrisation chosen such that $u^2 = u^i u_i = 1$. 
+$u$ is the velocity vector of the spacetime path, with the parametrisation chosen such that $u^2 =  1$. % aand $P$ is the pressure.
 That is, the units of length and time are chosen so that velocity of sound is set to unity.
 %That is, c.g.s. units have been chosen.
 
@@ -886,12 +889,25 @@ This equation of state was first introduced by Taub\cite{Taub1978}.
 
 Applying \eqnref{eos} to \eqnref{EMtensor} simplifies the energy momentum tensor,
 \eqal{
-  T^{i j}  = p\lr{2 u^i u^j - g^{i j}} \equiv \frac{\scalefactor^2}{2 } \lr{ A^i A^j - A^k A_k g^{i j}/2} 
-%  T(a) =  p\lr{2 a \cdot u u  - a} \equiv  \frac{1}{4}  A a A,
+ % \GATA
+%{
+T(a) =  p\lr{2 a \cdot u u  - a} \equiv  \frac{\scalefactor^2}{4}  A a A, 
+%}
+%{
+%  T^{i j}  = p\lr{2 u^i u^j - g^{i j}} 
+%           \equiv \frac{\scalefactor^2}{2 } \lr{ A^i A^j - A^k A_k g^{i j}/2} 
+%}
+%  
 }{EMFluid}
 where the vector potential, $A$,  satisfies
 \eqal{
-  A^i = 2\tfrac{1}{\scalefactor}p^{1/2}u^i =2 \tfrac{1}{\scalefactor} \epsilon^{1/2} u^i.
+%\GATA
+%{
+A = 2\tfrac{1}{\scalefactor}p^{1/2}u =2\tfrac{1}{\scalefactor} \epsilon^{1/2} u.
+%}
+%{
+%A^i = 2\tfrac{1}{\scalefactor}p^{1/2}u^i =2 \tfrac{1}{\scalefactor} \epsilon^{1/2} u^i.
+%}
 }{defnA}
 The constant scale-factor, $\scalefactor$, is determined from the ambient proper number density of the fluid, $n_0$, and the ambient pressure, $p_0$, as follows,
 \begin{align}
@@ -903,25 +919,30 @@ The constant scale-factor, $\scalefactor$, is determined from the ambient proper
 The motivation for introducing the 4-vector $A$ is that it represents a potential flow.
 To demonstrate this, we first note that the relativistic generalisation to the velocity potential, $\psi$,  is defined\cite{LandauBook} by
 \begin{align}
-  \d_i \psi \equiv - \frac{\epsilon+p}{n} u_i = - \frac{2 p}{n} u_i,
-% \del \psi = - \frac{\epsilon+p}{n} v = - \frac{2\epsilon}{n} v,
+%  \d_i \psi \equiv - \frac{\epsilon+p}{n} u_i = - \frac{2 p}{n} u_i,
+ \del \psi = - \frac{\epsilon+p}{n} v = - \frac{2\epsilon}{n} v,
+\label{eqn:relPot}
 \end{align}
-where $\d_j \equiv \frac{\d}{\d x^j}$ and  $n$ is the proper particle number density of the fluid.
+%where $\d_j \equiv \frac{\d}{\d x^j}$ and  $n$ is the proper particle number density of the fluid.
+where $\del$ is the vector derivative and  $n$ is the proper particle number density of the fluid.
 Equation \eqnref{eos} has been used to obtain the second equality.
 To show that this is equal to the negative of the potential $A$, we use a thermodynamic argument given by Taub\cite{Taub1978}.
 The internal energy density, $\epsilon$, is equal to the sum of the rest mass and the internal energy per particle\cite{LandauBook, Taub1978}, $e$, 
 \begin{align}
   \epsilon(p) = nm( 1 + e(p)),
+\label{eqn:relEpsilon}
 \end{align}
 where $m$ is the particle mass at rest.
 From the isentropic thermodynamic relation $m de = - p d\lr{\frac{1}{n}}$
 it follows that 
 \begin{align}
  n d\epsilon = \epsilon dn - n^2 p d \lr{\frac{1}{n}} = \lr{\epsilon + p} dn.
+\label{eqn:relNEpsilon}
 \end{align}
 Applying equation \eqnref{eos} and integrating we obtain
 \begin{align}
 n =\scalefactor \sqrt{   p },
+\label{eqn:relN}
 \end{align}
 where $\scalefactor$ is the constant introduced in \eqnref{scalefactor}.
 With the aid of equation \eqnref{eos} it follows that
@@ -940,28 +961,29 @@ In the absence of external fields, the equations of motion are obtained by setti
  divergence of the energy momentum tensor (equation \eqnref{EMFluid}) to zero.
 By projecting the divergence of \eqnref{EMFluid} along the timelike component we find
 \eqa{
-  u_i \d_j T^{i j} = \half\scalefactor^2 u_i A^i \d_j A^j = 0.
-%  u\cdot\scope T(\scope\del)= \half  u\cdot A \del \cdot A = 0.
+%  u_i \d_j T^{i j} = \half\scalefactor^2 u_i A^i \d_j A^j = 0.
+  u\cdot\scope T(\scope\del)= \half \scalefactor^2 u\cdot A \del \cdot A = 0.
+\label{eqn:projEMFLuidTime}
 }
 %The check denotes the scope of the derivative.
 Since, from \eqnref{defnA}, the vector $A$ is parallel to $u$  it follows that 
 \eqal{
-  \d_j A^j = 0
-  %\del \cdot A  =0
+ % \d_j A^j = 0
+ \del \cdot A  =0
 }{eomTime}
 and so the vector potential $A$ is conserved.
 The spacelike projection,
-$\d_j T^{k j} - u^k u_i \d_j T^{i j}$, gives in turn,
-% $\scope T(\scope \del) - u u\cdot \scope T(\scope\del)$, gives in turn,
+%$\d_j T^{k j} - u^k u_i \d_j T^{i j}$, gives in turn,
+$\scope T(\scope \del) - u u\cdot \scope T(\scope\del)$, gives in turn,
 \eqal{
 %  u^j \d_j A^k - u^l \d_j A_l g^{k j} = 
-u_j \lr{\d^j A^k - \d^k A^j} = 0.
-%  u \cdot \lr{\del \wedge A} = 0.
+%u_j \lr{\d^j A^k - \d^k A^j} = 0.
+  u \cdot \lr{\del \wedge A} = 0.
 }{eomSpace}
 The relativistic vorticity tensor, $F^{j k}$, is the exterior derivative  of the vector potential, 
 \eqal{
-F^{j k} \equiv \d^j A^k - \d^k A^j
-%F = \deal \wedge A,
+%F^{j k} \equiv \d^j A^k - \d^k A^j
+F = \del \wedge A,
 }{DefnVorticity}
 and so \eqnref{eomSpace} implies that the vorticity tensor is orthogonal to the velocity.
 
@@ -970,33 +992,43 @@ By taking the divergence of \eqnref{DefnVorticity} and using \eqnref{eomTime} it
 %$\del \del \cdot A = \del^2 A - \del\cdot\lr{ \del \wedge A} $
 % we find,
 \eqal{
-  \d_i \d^i A^j = \d_i F^{i j}.
-%  \del^2 A = \del \cdot F = \del F.
+%  \d_i \d^i A^j = \d_i F^{i j}.
+  \del^2 A = \del \cdot F = \del F.
 }{wave}
 %The second equality follows because $\del F = \del \cdot F + \del \wedge F$ 
 %and because the  operator identity $\del\wedge \del = 0$ causes $\del \wedge F$ to vanish.
 The left-hand-side of equation \eqnref{wave} is a wave equation and so we interpret the right-hand-side as an acoustic source,
 a 4-current, $J$.
 Therefore 
-\sub{
-\label{eqn:Maxwell}
-\eqa{
-  \d_i F^{i j} \equiv J^j.
-%  \del  F = J.
-}
-Furthermore, from \eqnref{DefnVorticity} we have
 \begin{align}
-  \epsilon_{i j k l} \d^j F^{k l} = \epsilon_{i j k l} \d^j \lr{\d^k A^l - \d^l A^k} = 0,
+\label{eqn:Maxwell}
+\del F =J.
+\end{align}
+Equation \Eqnref{Maxwell} is Maxwell's equation. 
+It is the expressiveness of Geometric Algebra enable it to be condensed into a single equation.
+The two equations of Tensor algebra are 
+\sub{
+\eqa{
+\label{eqn:Maxwell:a}
+%  \d_i F^{i j} \equiv J^j.
+  \del \cdot F = J
+}
+and 
+%Furthermore, from \eqnref{DefnVorticity} we have
+\begin{align}
+\label{eqn:Maxwell:b}
+  \del \wedge F = 0.    
+%  \epsilon_{i j k l} \d^j F^{k l} = \epsilon_{i j k l} \d^j \lr{\d^k A^l - \d^l A^k} = 0,
 \end{align}
 }
-which follows due to the use of the repeated differential with the Levi-Civita permutation tensor, $\epsilon_{i j k l}$.
-The two equations of \eqnref{Maxwell} constitute Maxwell's relation and equation \eqnref{eomTime} has specified the Lorenz gauge.
+%which follows due to the use of the repeated differential with the Levi-Civita permutation tensor, $\epsilon_{i j k l}$.
+Equation \eqnref{eomTime} has specified the Lorenz gauge.
 %We do not explore this observation further here.
 
 As is well known, Maxwell's relations are invariant to a gauge transformations of the form
 \begin{align}
-  A_i^\prime = A_i - \d_i \psi.
-%A^\prime = A - \del \psi,
+%  A_i^\prime = A_i - \d_i \psi.
+A^\prime = A - \del \psi,
 \end{align}
 This transformation is equivalent to the addition of a potential flow to the equations.
 However, in equation~\eqnref{AisPotFlow} the vector potential was already interpreted as a potential flow.
@@ -1218,6 +1250,7 @@ Writing out Maxwell's 4 equations explicitly gives
  \vdel \times \vE &= -\dt\vB\label{eqn:M3},\\
  \vdel \cdot \vB &= 0\label{eqn:M4}.
 }
+\label{eqn:M}
 }
 The acoustic interpretation of these equations are as follows:
 \nlist{

@@ -1,0 +1,207 @@
+
+
+\chapter{Tensor derivation to Maxwell's equations}\label{ch:acousticSRTensor}
+
+
+\section{Introduction}\label{sec:AcousticSRTensor:introduction}
+
+In \chapref{acousticSR} Geometric Algebra was used for the derivations.
+Since Geometric Algebra is not of widespread use in the physics community, this appendix repeats the derivation using Tensor Algebra.
+The same equation numbers will be used in this appendix so the derivations can be easily compared.
+Doing so makes a good advert for the economy of expression afforded by Geometric Algebra.
+
+\section{The acoustics analogue to Maxwell's relation}
+
+The energy-momentum tensor of an ideal fluid is\cite{LandauBook, Taub1978}
+\eqa{
+%  \GATA{T(a) = (\epsilon + p) a \cdot u u - a p,}
+{T^{i j} = (\epsilon + p) u^i u^j - g^{i j} p}
+%  T(a) = (\epsilon + p) a \cdot u u - a p, % w a \cdot u u - a p =
+\tag{\ref{eqn:EMtensor}}
+}
+where, $\epsilon \equiv \epsilon(p)$ is the barotropic total energy density,
+$p$ is the pressure,
+$g^{i j}$ is a diagonal metric tensor with $g^{00}=1$ and $g^{i i} = -1$ for $i=1,2,3$,
+and 
+$u$ is the velocity vector of the spacetime path, with the parametrisation chosen such that $u^2 = u^i u_i = 1$. % and $P$ is the pressure.
+That is, the units of length and time are chosen so that velocity of sound is set to unity.
+%That is, c.g.s. units have been chosen.
+
+The speed of sound, $c$,  given at constant entropy density, $\sigma$, is\cite{LandauBook,Taub1978} 
+\begin{align}
+  c^2 = \given{\frac{\d p}{\d \epsillon}}{\sigma}. 
+\tag{\ref{eqn:soundspeed}}
+\end{align}
+This is the same as the non-relativistic expression except that the energy density has replaced the mass density.
+The speed of sound equals the speed of light (unity) if 
+% \begin{align}
+%   \epsilon = p^\prime - p_0 + \epsilon_0
+% \end{align} 
+%where $p^\prime$ is a pressure that fluctuates with position, so that $dp = dp^\prime$,
+%and $p_0$  and $\epsilon_0$  are the ambient  pressure and mean energy density, respectively.
+%%Rather can carry the constants $ p_0 $ and $\epsilon_0$ through the rest of the derivation we write
+%The thermodynamic pressure is therefore
+%\begin{align}
+%  p \equiv p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
+%\end{align}
+% the equation of state first introduced by Taub\cite{Taub1978},
+\eqa{
+  \epsilon(p) = p.
+\tag{\ref{eqn:eos}}
+}
+This equation of state was first introduced by Taub\cite{Taub1978}.
+%At infinity $p^\prime = p_0$ 
+%and so $\epsilon_\infty = p_\infty = \epsilon_0 \ne p_0$.
+
+%therefore enforces that the sound speed equals that of light (unity).
+%The notation of equation \eqn{eos} is quite compact.
+%For \eqnref{eos} to be consistent with the integral of the sound speed (equation \eqnref{soundspeed}),
+%the pressure $p$ must be interpreted as follows,
+%\begin{align}
+%  p = p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
+%\end{align}
+%Here $p^\prime$ is the pressure perturbation measured with a hydrophone,
+%$p_0$  and $\epsilon_0$  are the mean  pressure and energy density respectively.
+
+
+
+Applying \eqnref{eos} to \eqnref{EMtensor} simplifies the energy momentum tensor,
+\eqa{
+ % \GATA
+%{
+%T(a) &=  p\lr{2 a \cdot u u  - a} \\
+%&\equiv  \frac{\scalefactor^2}{4}  A a A, }
+{
+  T^{i j}  = p\lr{2 u^i u^j - g^{i j}} 
+           \equiv \frac{\scalefactor^2}{2 } \lr{ A^i A^j - A^k A_k g^{i j}/2} 
+}
+%  
+\tag{\ref{eqn:EMFluid}}
+}
+where the vector potential, $A$,  satisfies
+\eqa{
+%\GATA
+%{
+%A = 2\tfrac{1}{\scalefactor}p^{1/2}u =2\tfrac{1}{\scalefactor} \epsilon^{1/2} u.
+%}
+{
+A^i = 2\tfrac{1}{\scalefactor}p^{1/2}u^i =2 \tfrac{1}{\scalefactor} \epsilon^{1/2} u^i.
+}
+\tag{\ref{eqn:defnA}}
+}
+The constant scale-factor, $\scalefactor$, is determined from the ambient proper number density of the fluid, $n_0$, and the ambient pressure, $p_0$, as follows,
+\begin{align}
+\scalefactor = \frac{n_0}{\sqrt{p_0}}. 
+\tag{\ref{eqn:scalefactor}}
+\end{align}
+%As will be seen, its role in the formulation is analogous to the free permitivity of space in electromagnetism.
+
+The motivation for introducing the 4-vector $A$ is that it represents a potential flow.
+To demonstrate this, we first note that the relativistic generalisation to the velocity potential, $\psi$,  is defined\cite{LandauBook} by
+\begin{align}
+  \d_i \psi \equiv - \frac{\epsilon+p}{n} u_i = - \frac{2 p}{n} u_i,
+% \del \psi = - \frac{\epsilon+p}{n} v = - \frac{2\epsilon}{n} v,
+\tag{\ref{eqn:relPot}}
+\end{align}
+where $\d_j \equiv \frac{\d}{\d x^j}$ and  $n$ is the proper particle number density of the fluid.
+Equation \eqnref{eos} has been used to obtain the second equality.
+To show that this is equal to the negative of the potential $A$, we use a thermodynamic argument given by Taub\cite{Taub1978}.
+The internal energy density, $\epsilon$, is equal to the sum of the rest mass and the internal energy per particle\cite{LandauBook, Taub1978}, $e$, 
+\begin{align}
+  \epsilon(p) = nm( 1 + e(p)),
+\tag{\ref{eqn:relEpsilon}}
+\end{align}
+where $m$ is the particle mass at rest.
+From the isentropic thermodynamic relation $m de = - p d\lr{\frac{1}{n}}$
+it follows that 
+\begin{align}
+ n d\epsilon = \epsilon dn - n^2 p d \lr{\frac{1}{n}} = \lr{\epsilon + p} dn.
+\tag{\ref{eqn:relNEpsilon}}
+\end{align}
+Applying equation \eqnref{eos} and integrating we obtain
+\begin{align}
+n =\scalefactor \sqrt{   p },
+\tag{\ref{eqn:relN}}
+\end{align}
+where $\scalefactor$ is the constant introduced in \eqnref{scalefactor}.
+With the aid of equation \eqnref{eos} it follows that
+\begin{align}
+A_i = 2\tfrac{1}{\scalefactor}\sqrt p  u_i =\frac{\epsilon + p}{n} u_i =  -\d_i \psi,
+\tag{\ref{eqn:AisPotFlow}}
+\end{align}
+as asserted.
+%Therefore, and as asserted, the presence of a potential flow in the acoustic medium corresponds to a gauge transformation of Maxwell's equations,
+%and hence, the description of the acoustic wave is unaffected by potential flows of the medium.
+
+
+
+
+In the absence of external fields, the equations of motion are obtained by setting the 
+ divergence of the energy momentum tensor (equation \eqnref{EMFluid}) to zero.
+By projecting the divergence of \eqnref{EMFluid} along the timelike component we find
+\eqa{
+  u_i \d_j T^{i j} = \half\scalefactor^2 u_i A^i \d_j A^j = 0.
+%  u\cdot\scope T(\scope\del)= \half  u\cdot A \del \cdot A = 0.
+\tag{\ref{eqn:projEMFLuidTime}}
+}
+%The check denotes the scope of the derivative.
+Since, from \eqnref{defnA}, the vector $A$ is parallel to $u$  it follows that 
+\eqa{
+  \d_j A^j = 0
+  %\del \cdot A  =0
+\tag{\ref{eqn:eomTime}}
+}
+and so the vector potential $A$ is conserved.
+The spacelike projection,
+$\d_j T^{k j} - u^k u_i \d_j T^{i j}$, gives in turn,
+% $\scope T(\scope \del) - u u\cdot \scope T(\scope\del)$, gives in turn,
+\eqa{
+%  u^j \d_j A^k - u^l \d_j A_l g^{k j} = 
+u_j \lr{\d^j A^k - \d^k A^j} = 0.
+%  u \cdot \lr{\del \wedge A} = 0.
+\tag{\ref{eqn:eomSpace}}
+}
+The relativistic vorticity tensor, $F^{j k}$, is the exterior derivative  of the vector potential, 
+\eqa{
+F^{j k} \equiv \d^j A^k - \d^k A^j
+%F = \deal \wedge A,
+\tag{\ref{eqn:DefnVorticity}}
+}
+and so \eqnref{eomSpace} implies that the vorticity tensor is orthogonal to the velocity.
+
+By taking the divergence of \eqnref{DefnVorticity} and using \eqnref{eomTime} it follows that 
+%the vector identity
+%$\del \del \cdot A = \del^2 A - \del\cdot\lr{ \del \wedge A} $
+% we find,
+\eqa{
+  \d_i \d^i A^j = \d_i F^{i j}.
+%  \del^2 A = \del \cdot F = \del F.
+\tag{\ref{eqn:wave}}
+}
+%The second equality follows because $\del F = \del \cdot F + \del \wedge F$ 
+%and because the  operator identity $\del\wedge \del = 0$ causes $\del \wedge F$ to vanish.
+The left-hand-side of equation \eqnref{wave} is a wave equation and so we interpret the right-hand-side as an acoustic source,
+a 4-current, $J$.
+Therefore 
+\sub{
+\eqa{
+  \d_i F^{i j} \equiv J^j.
+\tag{\ref{eqn:Maxwell:a}}
+%  \del  F = J.
+}
+Furthermore, from \eqnref{DefnVorticity} we have
+\begin{align}
+\tag{\ref{eqn:Maxwell:b}}
+  \epsilon_{i j k l} \d^j F^{k l} = \epsilon_{i j k l} \d^j \lr{\d^k A^l - \d^l A^k} = 0,
+\end{align}
+}
+which follows due to the use of the repeated differential with the Levi-Civita permutation tensor, $\epsilon_{i j k l}$.
+The two equations of \eqnref{Maxwell} constitute Maxwell's relation and equation \eqnref{eomTime} has specified the Lorenz gauge.
+%We do not explore this observation further here.
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../tshorrock_thesis"
+%%% End: 
