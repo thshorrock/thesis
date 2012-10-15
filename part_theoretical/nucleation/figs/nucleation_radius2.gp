@@ -18,8 +18,8 @@ Cpfb = 	-33.624
 Mrpfb = (238.0268 / 1e3)/A
 Mpfb =238.0268/1e3 # molar mass kgs per mole
 #print Mpfp
-rhopfb =  1.497*1e3 #kg/m3 at 25 298 Yaws 
-sigmapfb = 0.0072064# 
+rhopfb =  1.497*1e3 #kg/m3 at 25 298 Yaws
+sigmapfb = 11.093e-3 # Yaws dynes/cm
 #6.20963	2354.731	7.559
 
 
@@ -32,17 +32,7 @@ Mrpfp = (288.0343 / 1e3)/A
 Mpfp =288.0343 /1e3 # molar mass kgs per mole
 #print Mpfp
 rhopfp = 1.62 * 1000  #kg/m3 at 25 298 Sakka 2005
-rhopfp273 = 5.8981 * Mpfp
-rhopfp283 = 5.7832 * Mpfp
-rhopfp293 = 5.6653 * Mpfp
-rhopfp303 = 5.5440 * Mpfp
-
-sigmapfp =  0.0096828 # N/m
-sigmapfp298 =  0.0096828 # N/m
-sigmapfp273 =  0.012099 # N/m
-sigmapfp283 =  0.011122 # N/m
-sigmapfp293 =  0.010159 # N/m
-sigmapfp303 =  0.0092108 # N/m
+sigmapfp = 9.89e-3 # dynes/cm Sakka2005
 #6.20963	2354.731	7.559
 
 Awater = 6.20963
@@ -83,8 +73,6 @@ J0(pL, A, B, C, M, rhoL, sigma, mass) = (rhoL/mass)*sqrt(sigma/mass) / 1e6 #per 
 DeltaG(pL, A, B, C, M, rhoL, sigma) = 16.0*pi*sigma**3/(3*(pvap(pL, A, B, C, M, rhoL)-pL)**2)
 
 J(pL, A, B, C, M, rhoL, sigma, mass) = J0(pL, A, B, C, M, rhoL, sigma, mass)*exp(-DeltaG(pL, A, B, C, M, rhoL, sigma)/KT(298))
-
-JT(pL, A, B, C, M, rhoL, sigma, mass,T) = J0(pL, A, B, C, M, rhoL, sigma, mass)*exp(-DeltaG(pL, A, B, C, M, rhoL, sigma)/KT(T))
 
 volume(pL, A, B, C, M, rhoL, sigma) = 4*pi*(astar(pL, A, B, C, M, rhoL, sigma))**3/3
 
@@ -134,9 +122,7 @@ plot number(x*1e6, Apfb, Bpfb, Cpfb, Mpfb, rhopfb, sigmapfb) title "perfluorobut
      set output
      set term pop
      set term epslatex solid color
-
-
-     set output "c2_cnt_nucleation_rate2.tex"
+     set output "c2_cnt_nucleation_rate.tex"
 
      ##set key box
      set key width -5
@@ -158,11 +144,11 @@ print "J0 pfp = ",J0(-1e6, Apfp, Bpfp, Cpfp, Mpfp, rhopfp, sigmapfp, Mrpfp)
 print "J0 water = ", J0(-1e6, Awater, Bwater, Cwater, Mwater, rhowater, sigmawater, Mrwater)
 set xrange[1:200]
 set yrange[1e-40:1e50]
-set key  top right
+set key  top left
 set format y "$10^{%L}$"
 set logscale y
 set logscale x
-set ylabel "nucleation rate (\$\\centi\\meter^{-3}\\second^{-1}\$)" #offset 6,0
+set ylabel "nucleation rate (\$\\centi\\meter^{-3}\\second^{-1}\$)" offset 6,0
 
 set yzeroaxis lt -1
 #set yrange[-20:10e40]
@@ -173,37 +159,6 @@ J(-x*1e6, Apfp, Bpfp, Cpfp, Mpfp, rhopfp, sigmapfp,Mrpfp) title "perfluoropentan
 J(x*1e6, Awater, Bwater, Cwater, Mwater, rhowater, sigmawater, Mrwater) title "water"
 #plot   DeltaG(x*1e6, Awater, Bwater, Cwater, Mwater, rhowater, sigmawater)/KT(298) title "water"
      
-     set output
-
-print "perfluorcarbon molecular volume  =", molecular_volume(Mpfp,rhopfp)  #kg/mol / kg /m^3 / number of moleucles in mole
-#print pvap(-1e6, Apfp, Bpfp, Cpfp, Mpfp, rhopfp)
-#print astar(-1e6, Apfp, Bpfp, Cpfp, Mpfp, rhopfp, sigmapfp)*1e9 
-
-
-
-     set output "c2_cnt_nucleation_rate_temp.tex"
-
-     ##set key box
-     set key width -5
-    set lmargin 10
-set rmargin 1
-set tmargin 0.1
-set bmargin 3 
-
-set xrange[1:10]
-set yrange[1e-40:1e20]
-set key  top right
-set format y "$10^{%L}$"
-set logscale y
-unset logscale x
-set ylabel "nucleation rate (\$\\centi\\meter^{-3}\\second^{-1}\$)" #offset 6,0
-
-set yzeroaxis lt -1
-plot JT(-x*1e6, Apfp, Bpfp, Cpfp, Mpfp, rhopfp273, sigmapfp273,Mrpfp,273) title "273 K",     \
-JT(-x*1e6, Apfp, Bpfp, Cpfp, Mpfp, rhopfp283, sigmapfp283,Mrpfp,283) title "283 K",     \
-JT(-x*1e6, Apfp, Bpfp, Cpfp, Mpfp, rhopfp293, sigmapfp293,Mrpfp,293) title "293 K",     \
-JT(-x*1e6, Apfp, Bpfp, Cpfp, Mpfp, rhopfp303, sigmapfp303,Mrpfp,303) title "303 K"    
-
      set output
      set term pop
 

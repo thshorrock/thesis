@@ -832,6 +832,12 @@ is enforced by simply equating these two speeds.
 This further requires that the energy density of the fluid, as measured acoustically, be a function of the pressure only (barotripic),
 for the sound speed cannot be set equal to the speed of light otherwise\cite{Taub1978}.
 
+The complete analogy between an incompressible relativistic fluid and electromagnetism was first published in French by Girrado\cite{Girrado1982} in 1982.
+The results were unknown to the author of this thesis, who derived the results of the following section independently.
+
+This section makes use of Geometric Algebra for the derivation.
+However, due to the importance of the section the derivation is repeated in tensor algebra in \chapref{acousticSRTensor}.
+
 \subsection{The acoustics analogue to Maxwell's relation}\label{sec:MaxwellAnalogue}
 
 The energy-momentum tensor of an ideal fluid is\cite{LandauBook, Taub1978}
@@ -857,9 +863,9 @@ The speed of sound, $c$,  given at constant entropy density, $\sigma$, is\cite{L
 \end{align}
 This is the same as the non-relativistic expression except that the energy density has replaced the mass density.
 The speed of sound equals the speed of light (unity) if 
-% \begin{align}
+%\begin{align}
 %   \epsilon = p^\prime - p_0 + \epsilon_0
-% \end{align} 
+%\end{align} 
 %where $p^\prime$ is a pressure that fluctuates with position, so that $dp = dp^\prime$,
 %and $p_0$  and $\epsilon_0$  are the ambient  pressure and mean energy density, respectively.
 %%Rather can carry the constants $ p_0 $ and $\epsilon_0$ through the rest of the derivation we write
@@ -868,10 +874,20 @@ The speed of sound equals the speed of light (unity) if
 %  p \equiv p^\prime - p_0 + \epsilon_0. \label{eqn:pshort}
 %\end{align}
 % the equation of state first introduced by Taub\cite{Taub1978},
+%\begin{align}
+% d\epsilon = dp
+% \label{eqn:eosDiff}
+%\end{align}
+%at constant entropy density.
+
+In this chapter we shall consider the equation of state
 \eqal{
-  \epsilon(p) = p.
+  \epsilon(p) = p,
 }{eos}
-This equation of state was first introduced by Taub\cite{Taub1978}.
+which describes an incompressible relativistic fluid.
+%While it is not the most general solution to equation \eqnref{eosDiff},
+%we shall find it to have very interesting properties.
+Equation \eqnref{eos} was first studied by Taub\cite{Taub1978}.
 %At infinity $p^\prime = p_0$ 
 %and so $\epsilon_\infty = p_\infty = \epsilon_0 \ne p_0$.
 
@@ -899,7 +915,7 @@ T(a) =  p\lr{2 a \cdot u u  - a} \equiv  \frac{\scalefactor^2}{4}  A a A,
 %}
 %  
 }{EMFluid}
-where the vector potential, $A$,  satisfies
+where the dot-product, \eqnref{dot_product}, has been used and the vector potential, $A$,  satisfies
 \eqal{
 %\GATA
 %{
@@ -947,7 +963,7 @@ n =\scalefactor \sqrt{   p },
 where $\scalefactor$ is the constant introduced in \eqnref{scalefactor}.
 With the aid of equation \eqnref{eos} it follows that
 \begin{align}
-A_i = 2\tfrac{1}{\scalefactor}\sqrt p  u_i =\frac{\epsilon + p}{n} u_i =  -\d_i \psi,
+A = 2\tfrac{1}{\scalefactor}\sqrt p  u =\frac{\epsilon + p}{n} u =  -\del \psi,
 \label{eqn:AisPotFlow}
 \end{align}
 as asserted.
@@ -980,7 +996,7 @@ $\scope T(\scope \del) - u u\cdot \scope T(\scope\del)$, gives in turn,
 %u_j \lr{\d^j A^k - \d^k A^j} = 0.
   u \cdot \lr{\del \wedge A} = 0.
 }{eomSpace}
-The relativistic vorticity tensor, $F^{j k}$, is the exterior derivative  of the vector potential, 
+The relativistic vorticity bivector, $F$, is the exterior derivative  of the vector potential, 
 \eqal{
 %F^{j k} \equiv \d^j A^k - \d^k A^j
 F = \del \wedge A,
@@ -1006,7 +1022,7 @@ Therefore
 \end{align}
 Equation \Eqnref{Maxwell} is Maxwell's equation. 
 It is the expressiveness of Geometric Algebra enable it to be condensed into a single equation.
-The two equations of Tensor algebra are 
+The two equations familiar from tensor algebra are 
 \sub{
 \eqa{
 \label{eqn:Maxwell:a}
@@ -1068,7 +1084,7 @@ into the laboratory frame.
 The result is
 \sub{
   \begin{align}
-     \vdel \cdot \vA &=  - \tfrac{1}{c^2}\dt \phi, \label{eqn:Rcontinuity}\\ % &\quad\text{and} &&
+     \vdel \cdot \vA &=  - \tfrac{1}{c}\dt \phi, \label{eqn:Rcontinuity}\\ % &\quad\text{and} &&
 \dt \vA -  \vv \times  \lr{\vdel \times \vA} \label{eqn:REuler}
 &= - \vdel \phi.
   \end{align}
@@ -1185,7 +1201,7 @@ then it follows that the two constants are related:
 \begin{align}
   c^2 = \frac{1}{\permitivity\permeability}.
 \end{align}
-In the rest of this report we assume this to be the case.
+In the rest of this chapter we assume this to be the case.
 %We assume that this relation holds.
 
 
@@ -1276,7 +1292,7 @@ enable light alone to be used to define  distances.
 
 
 
-In this report it has been demonstrated that
+In this chapter it has been demonstrated that
  when distances are measured by acoustic pulse-echo, % sound is used to measure distance %- as it is in sonar-based technologies -
  relativistic corrections must be used to correctly predict motions that  are close to the speed of sound.
 Ultrasound, as well as other sonar-based technologies, is  a relativistic subject
@@ -1547,6 +1563,279 @@ most certainly is part of the current.
 
 
 
+\subsection{The acoustic Lagrangian}\label{sec:lagrangian}
+To finish, we introduce some future directions in acoustics that can be explored by means of the analogy.
+The first  is  the nature of spin,
+and the second is acoustic-turbulence interaction.
+
+To do so, it is helpful to introduce the acoustic Lagrangian,
+which, due to the common description of acoustics and electromagnetism,
+is the same as the electromagnetic Lagrangian, 
+% whishow how the extension to electro
+%explore the analogue between electromagnetism and acoustics further it is helpful to start define
+%From equations \eqnref{Maxwell} acoustic sources are described by the same equations that characterise electromagnetic sources.
+%The common mathematical  description of acoustics and electromagnetism will result if both are derived from same Lagrangian,
+\begin{align}
+  \L = \frac{1}{2} F \cdot F  - A \cdot J.
+\end{align}
+In the absence of sources ($J = 0$),
+the canonical energy-momentum tensor, which expresses invariance with respect to translations,
+is found to be \cite{Lasenby1993, Doran2003},  $T(a) = \lr{a\cdot \del A}\cdot F - \half a F \cdot F.$
+The explicit dependence on $A$ can be moved to the bounding surface \cite{Lasenby1993}
+to leave a manifestly gauge invariant form within the volume,
+\begin{align}
+\label{eqn:TAEM}
+  \Tgi(a) = -\half F a F.
+\end{align}
+Similarly, the  adjoint to the canonical angular momentum of the acoustic field, which expresses the isometry of the acoustic medium, 
+is found from the Lagrangian to be \cite{Lasenby1993}
+\begin{align}
+  \label{eqn:AM}
+  \J(n) = T(n) \wedge x - A \wedge \lr{F\cdot n} = T(n) \wedge x - S(n).
+\end{align}
+The term $T(n) \wedge x$ is the  orbital angular momentum and $S(n)$ is the spin of the acoustic field.
+The spin term is often suppressed by putting its influence in the boundary conditions,
+but since we are interested in acoustic plain waves we shall not do this.
+
+%The meaning the spin in an acoustic field is somewhat of an open question.  
+%The most natural interpretation is 
+%However, some 
+
+%This has the advantage of making the angular momentum manifestly gauge-invariant,
+%although at the cost of making plain-waves (that reach to infinity) more inconvenient to handle.
+%Again this isn't manifestly gauge invariant.
+%When the fields diminish rapidly at infinity the angular momentum may be  expressed in gauge invarent form,
+%the spin is absorbed into the angular momentum $T(n)$.
+%However, such a procedure is not valid for plain wave solutions (as the field does not vanish at infinity)
+% so we keep \eqnref{AM}.
+%The spin in the lab frame  is
+%\begin{align}
+%  S(v) =A \wedge   \lr{F \wedge \gamma} = -\multi{\phi + \vA \vE}_2 = \phi phi I \vB_v 
+ %  S(n) = A \cdot  \lr{F\wedge  n} =  \lr{A\cdot F} \wedge n %= -\phi I\vB
+%\end{align}
+%The spin in the lab frame  is
+%\begin{align}
+%  S(\g) =A \wedge   \lr{F \cdot \g} = -\phi \vE - I \vA \times \vE  = 
+% %  S(n) = A \cdot  \lr{F\wedge  n} =  \lr{A\cdot F} \wedge n %= -\phi I\vB
+%\end{align}
+
+% \subsection{Interpreting the transversivity of the sound pulse} \label{sec:transversivity}
+
+
+% An acoustic plain wave is  a  perturbation of the fluid particles in the direction of propagation of the pulse.
+% It is also a transverse wave in terms of the Coriolis and vorticity fields.
+% We now propose a method of squaring these seemingly contradictory views.
+
+% We consider a segment of the plain wave to be a narrow tube,
+% so that the entire plain wave is formed by adding together many such tubes.
+% Within the tube a pertabation in pressure propagates the sound wave longitudinally.
+% Outside of the tube no such pertabation exists.
+
+% Both within and outside of the tube  there is no vorticity and so there is no propagation of the transverse wave.
+% On the interface of the tube, however, there is shearing of the fluid:
+% the molecules  within tube move as the wave passes, the molecules outside do not.
+% This shearing induces a {\em vortex sheet} on the interface \cite{Howe1998}.
+% The vorticity is confined to the sheet 
+% and has a strength equal to the average speed of the molecules on either side of the interface.
+% From the acoustic analogue Maxwell's equations, this vorticity then induces a Coriolis acceleration orthogonal to the interface.
+% A longitudinal wave therefore  induces a transverse wave on its boundary.
+
+% There remains a difficulty with this interpretation, however.
+% A transverse wave should have exactly two helicity states.
+% The interpretation given to the first seems, to the author at least, entirely plausible.
+% The second is more difficult, however.
+% The construction of a transverse wave with the Coriolis and vorticity vectors interchanged does not seem obvious.
+% Rather than speculate, 
+% we leave this question unanswered.
+
+The existence of the intrinsic acoustic spin raises  interpretative issues.
+In the absence of satisfactory explanation for these the temptation to speculate will be resisted.
+All that we say on the matter is to note that the helicity of the sound wave, 
+the projection of the spin on the direction of the momentum, 
+is identical to the hydrodynamical helicity introduced by Moffatt\cite{Moffatt1969}.
+This is interesting because the integral of the hydrodynamic helicity is a topological invariant that measures the degree of knottedness of the flow\cite{Moffatt1969}.
+
+To see this, we introduce the helicity,
+\begin{align}
+  \H \equiv   \hat \vP \cdot S(\gamma_0) = \hat \vP \cdot \lr{\phi \vE - \vA \times\vE} =  \frac{\abs{\vE}^2}{\abs{\vE\times\vB}}\vA \cdot \vB.
+\end{align}
+where  $\hat \vP$ is the unit  Poynting vector, 
+\begin{align}
+ \hat\vP =\frac{\vE \times \vB}{\abs{\vE\times\vB}}.
+\end{align}
+and $S(\gamma_0)$ is the timelike component of the Spin 
+as measured in the laboratory frame,
+\begin{align}
+ S(\gamma_0) % &=  A \wedge(F\cdot)  \\
+ &= \half\bivector{A\g \g \lr{F\g - \g F}}\\
+ &= \phi\vE - \vA \times \vE.
+\end{align}
+For a sound wave
+%\begin{align}
+$\abs {\vE} = c\abs{\vB}$
+%\end{align}
+and so the helicity simplifies to
+\begin{align}
+  \label{eqn:Helicity}
+\H = \vA \cdot \vB.
+\end{align}
+
+ The term $\vA \cdot \vB$ on the right hand side is the same as the 
+relativistic generalisation\footnote{ \label{footnote:dimensionallity_footnote}
+The relativistic generalisation is accomplished by replacing $\vv$ in Moffatt's definition with $\vA$.
+Notice, furthermore, that Moffatt did not normalise the Helicity,
+that is $\H_{\text{Moffatt}} = p\cdot S$ rather than $\frac{1}{\abs{p}}p\cdot S$,
+where $p$ is the momentum.
+When we make the comparison to $\H = \epsilon_0 A\cdot B$, therefore,
+we implicitly divide $\H_{\text{Moffatt}}$ by a unit momentum,
+so that dimensionally all is correct.
+} to the
+{\em hydrodynamic helicity} per unit volume defined by Moffatt\cite{Moffatt1969}.
+It is also  readily interpretable.
+$\vB = \vdel \times \vA$ measures a rotation,
+and the rotation is projected about  $\vA$.
+The helicity therefore measures the degree to which the fluid streamlines rotate about themselves,
+that is, the degree to which the streamlines are helical\cite{Moffatt1969, Ranada1992}.
+%In a small volume $dV$ the flow is comprised of a superposition of a uniform flow $A_0$, a shear
+%and a rigid body rotation about the origin of $dV$ with an angular velocity of twice the vorticity $2\vB_0$
+%The streamlines of the flow within the sound pulse will be helices about the sheared $A_0$
+The contribution to $\vA \cdot \vB dV \approx \vA_0\cdot \vB_0 dV$
+is positive or negative depending on the orientation of the helix\cite{Moffatt1969}.
+
+In this way Moffatt identifies the component of the spin parallel to the momentum
+with the {\em orbital angular momentum} of a fluid streamline about its mean trajectory.
+The equivalence between the two helicities (acoustic and hydrodynamic)
+suggests that this interpretation of the spin is valid.
+
+Finally we note that the hydrodynamic helicity was introduced by Moffatt because 
+\begin{align}
+  I = \int \abs{dV} \H = \int \abs{dV} \vA \cdot \vB
+\end{align}
+is an invariant that defines the degree of knottness of the fluid.
+In the case of two vortex rings, for example, $\H =2 \alpha \kappa_1 \kappa_2$ 
+where $\kappa_i$ are the circulations around the two rings. % $C_i$ of the two vortex filaments,
+%\begin{align}
+%  \kappa_i = \oint_{C_i} \vu \cdot d\vect{l},
+%\end{align}
+%where $\vu$ is the velocity around $C_i$,
+%and $\alpha$ is an integer that defines the linking of the two filaments.
+If they are unlinked $\alpha = 0$, whereas if they are singularly linked $\alpha = \pm 1$.
+The helicity in a volume, the component of the spin parallel to the momentum, is therefore quantised
+in accordance with the topology of the streamlines.
+
+The author does not have an interpretation for this fascinating result and so does not comment further.
+We note, however, that there has been considerable effort in applying the hydrodynamic helicity electromagnetism,
+with implications to both the quantisation of the spin and to the quantisation of the charge.
+We refer the interested reader to the literature\cite{Trueba1996, Trueba2000, Ranada2002}.
+
+
+
+
+% %\subsection{Helicity}%
+% %
+% %Finally, we introduce 
+% The helicity, $\H$, of the sound wave is the component of the spin in the direction of the wave.
+% This direction is specified by the unit Poynting vector,  $\hat\vP =\frac{\vE \times \vB}{\abs{\vE\times\vB}}$,
+% and so the  spin rotating about this axis is 
+% \begin{align}
+%   \label{eqn:Helicity}
+%   \H = - \hat \vP\cdot \lr{I S(\g)} =  \hat \vP \cdot \lr{\phi \vE - \vA \times\vE} =  \vA \cdot \vB.
+% \end{align}
+% The helicity in  \eqnref{Helicity} is defined in accordance to the electromagnetic notion of helicity.
+% However, the term $\vA \cdot \vB$ on the right hand side is the same as the 
+% {\em hydrodynamic helicity} defined by Moffatt \cite{Moffatt1969}.
+% Moffatt demonstrated that the helicity is a measure of the degree of linking of a vortex line.
+% For a knot, such as the trefoil knot drawn in \figref{particle}, 
+% the total helicity in a volume is an integer multiple of the number of links 
+% that exist when the  vortex line is unknotted.
+% The spin is a topological invariant, and is accordingly quantised
+% %The sound field has a  quantised angular momentum, a property  not put in `by hand'.
+% %We shall not persue further here the links between electromagnetism, topology and quantisation,
+% %but rather refer the interseted reader to the literature 
+% \cite{Moffatt1969, Moffatt1988, Chechkin1993,  Trueba1996, Trueba2000}.
+% %On the left is the electromagnetic helicity. 
+% %On the right is the acoustical helicity first defined by Moffat \cite{Moffatt1969}.
+
+% %For the acoustic wave to be transverse in vorticity the particles being perturbed must contribute to  an angular momentum (spin) when the sound wave passes through.
+% %We must therefore imagine the wave to be moving on small vortex lines, 
+% %rather than `to and throw' in a linear fashion.
+% %These loops must be closed, for else momentum will be passed to the fluid  after the sound wave has passed,
+% %and the the longitudinal oscillation should coincide with the frequency of the wave. 
+% %A motion such as the streamline in \figref{particle} could be imagined.
+
+
+
+% %The loop drawn in \figref{particle} may seem overly complicated.
+% %The reason that a simple circle, for example, 
+% %would not do is due to the non-trivial topology implied by the non-vanishing helicity.
+% While $\H$ in \eqnref{Helicity} is defined in accordance to the electromagnetic helicity,
+% the term $\vA \cdot \vB$ on the right hand side is the same as the 
+% {\em hydrodynamic helicity} defined by Moffatt \cite{Moffatt1969}.
+% Moffatt demonstrated that the helicity is a measure of the degree of linking of a vortex line.
+% For a knot, such as the trefoil knot drawn in \figref{particle}, 
+% the total helicity in a volume is an integer multiple of the number of links 
+% that exist when the  vortex line is unknotted.
+% The spin is a topological invariant, and is accordingly quantised
+% %The sound field has a  quantised angular momentum, a property  not put in `by hand'.
+% %We shall not persue further here the links between electromagnetism, topology and quantisation,
+% %but rather refer the interseted reader to the literature 
+% \cite{Moffatt1969, Moffatt1988, Chechkin1993,  Trueba1996, Trueba2000}.
+
+
+%Much of the interest in hydrodynamic helicity stems 
+%comes from its application to magneto-hydrodynamics.
+%Here we note a similarity between an acoustically observed fluid and a perfectly conducting fluid.
+%Both obey  $\dt \vB = \vdel \times \lr{\vv \times \vB}$,
+%which is one of Maxwell's equations in the present scheme.
+%This present discussion is but one example of what ultrasound 
+%can learn much from the magneto-hydrodynamics literature.
+
+
+% \begin{figure}[h]
+%  \centering
+%  \includegraphics{trefoil_knot.pdf}
+%  \caption{
+%    A possible streamline (red) with its averaged rotation in green.
+%    The streamline was chosen to be a trefoil knot. The reasons for the non-trivial topology are discussed in the text.
+%    }
+%    \label{fig:particle}
+% \end{figure}
+
+\subsection{Interactions between spinless charges}\label{sec:spinless}
+When an acoustic charge has no spin (or the spin is ignored)
+the equations of motion can be derived from the manifestly gauge invariant energy momentum tensor in  equation \eqnref{TAEM}.
+By taking the  divergence and picking out the spatial terms,
+the force $\vf$ is found to be \cite{Doran2003}
+\begin{align}
+  \vf = - \lr{\rho_q\vE + \vJ \times \vB}.
+\end{align}
+If it is assumed that an acoustic charge $q$ is carried by an `acoustic particle' (a vortex tube without swirl, for instance)
+moving at speed $\vu$, then
+$\vf = - q\lr{\vE + \vu \times \vB}$, which is the Lorentz force law.
+We argue, therefore, that turbulent sources of sound, interact according to the Lorentz-force law when measured acoustically.
+
+Whether this result could be used to model bubble-bubble interactions remains an open question.
+% The force law takes the form
+% \eqal{
+% \dot  u  = - \frac{q}{m_0} F \cdot u
+% }{LorentzGA}
+% when expressed with geometric algebra, where the dot denotes differentiation 
+% with respect to proper time and $m_0$ is the {\em rest mass} of the vortex source,
+% presumably the mass  displaced by the differing density of the vortex.
+
+
+% The divergence of the energy momentum tensor gives the force
+% and the spatial component in the lab frame is
+% \begin{align}
+%   \vf = - \lr{\rho_q\vE + \vJ \times \vB}.
+% \end{align}
+% If it is assumed that an acoustic charge $q$ is carried by a `particle' moving at speed $\vu$, then
+% $\vf = - q\lr{\vE + \vu \times \vB}$, which is the Lorentz force law.
+% Turbulent sources of sound, therefore, interact according to the Lorentz-force law when measured acoustically.
+
+%\subsection{Particles with Spin}
+
+
 \subsection{Other similar studies}
 
 %The  similarities between acoustics and electromagnetism have long been recognised.
@@ -1556,13 +1845,17 @@ and that the acoustic analogue to the magnetic field is the vorticity.
 %The spacetime vorticity tensor takes the role of the field tensor.
 An analogy in this form has been presented before by both Marmanis\cite{Marmanis2000} and Sridhar\cite{Marmanis2000,Sridhar1998}.
 However, both these attempts were constructed from Galilean fluid mechanics and so the analogy was only partial.
-To the author's knowledge, the derivation in this report is the first time that the analogy has been  completed.
-The key step, missing in previous attempts, 
-is to note that acoustics must be formulated in terms of a Lorentz invariant fluid where
-{\em the speed of sound equals the speed of light}.
-It is only when this step is made that the complete analogy exists.
-The motivation for this step is obvious only when it is appreciated that the speed of sound
-may take the role of the speed of light in a relativistic theory.
+A complete  analogy, using a relativistic incompressible fluid, was first published by Garrado\cite{Garrado1982} long before the studies of Marmanis and Sridhar.  
+Unfortunately, this article was missed by the wider community, 
+and has only come to the attention of the author since completing this thesis.
+%Nonetheless, the importance of the analogy to ultrasound physics is new.
+%To the author's knowledge, the derivation in this report is the first time that the analogy has been  completed.
+%The key step, missing in the attempts of Marmanis and Sridhar, 
+%is to note that acoustics must be formulated in terms of a Lorentz invariant fluid where
+%{\em the speed of sound equals the speed of light}.
+%It is only when this step is made that the complete analogy exists for incompressible fluids.
+%The motivation for this step is obvious only when it is appreciated that the speed of sound
+%may take the role of the speed of light in a relativistic theory.
 
 
 

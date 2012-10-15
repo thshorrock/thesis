@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: nucleation_radius.tex
-%%Creator: gnuplot 4.2 patchlevel 6 
-%%CreationDate: Sun Sep 26 20:06:35 2010
+%%Creator: gnuplot 4.4 patchlevel 3
+%%CreationDate: Sun Oct 14 21:04:47 2012
 %%DocumentFonts: 
 %%BoundingBox: 50 50 302 226
 %%EndComments
@@ -9,8 +9,8 @@
 /gnudict 256 dict def
 gnudict begin
 %
-% The following 6 true/false flags may be edited by hand if required
-% The unit line width may also be changed
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
 %
 /Color true def
 /Blacktext true def
@@ -19,9 +19,11 @@ gnudict begin
 /Landscape false def
 /Level1 false def
 /Rounded false def
+/ClipToBoundingBox false def
 /TransparentPatterns false def
 /gnulinewidth 5.000 def
 /userlinewidth gnulinewidth def
+/Gamma 1.0 def
 %
 /vshift -73 def
 /dl1 {
@@ -44,16 +46,24 @@ systemdict /pdfmark known not {
 SDict begin [
   /Title (nucleation_radius.tex)
   /Subject (gnuplot plot)
-  /Creator (gnuplot 4.2 patchlevel 6 )
-  /Author (Tom,,,)
+  /Creator (gnuplot 4.4 patchlevel 3)
+  /Author (tommy)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Sun Sep 26 20:06:35 2010)
+  /CreationDate (Sun Oct 14 21:04:47 2012)
   /DOCINFO pdfmark
 end
 } ifelse
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 302 50 lineto 302 226 lineto 50 226 lineto closepath
+    clip
+  } if
+} def
 %
-% Gnuplot Prolog Version 4.2 (August 2006)
+% Gnuplot Prolog Version 4.4 (August 2010)
+%
+%/SuppressPDFMark true def
 %
 /M {moveto} bind def
 /L {lineto} bind def
@@ -63,6 +73,8 @@ end
 /Z {closepath} bind def
 /C {setrgbcolor} bind def
 /f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
 /vpt2 vpt 2 mul def
 /hpt2 hpt 2 mul def
 /Lshow {currentpoint stroke M 0 vshift R 
@@ -83,6 +95,7 @@ end
 	dup 1 lt {pop 1} if 10 mul /udl exch def} def
 /PL {stroke userlinewidth setlinewidth
 	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
 % Default Line colors
 /LCw {1 1 1} def
 /LCb {0 0 0} def
@@ -424,6 +437,7 @@ end
 %%EndProlog
 gnudict begin
 gsave
+doclip
 50 50 translate
 0.050 0.050 scale
 0 setgray
@@ -433,35 +447,35 @@ LTb
 LCb setrgbcolor
 396 660 M
 63 0 V
-4449 0 R
+4448 0 R
 -63 0 V
 stroke
 LTb
 396 1229 M
 63 0 V
-4449 0 R
+4448 0 R
 -63 0 V
 396 1798 M
 63 0 V
-4449 0 R
+4448 0 R
 -63 0 V
 396 2367 M
 63 0 V
-4449 0 R
+4448 0 R
 -63 0 V
 396 2936 M
 63 0 V
-4449 0 R
+4448 0 R
 -63 0 V
 396 3505 M
 63 0 V
-4449 0 R
+4448 0 R
 -63 0 V
-4908 660 M
+4907 660 M
 0 63 V
 0 2782 R
 0 -63 V
-3780 660 M
+3779 660 M
 0 63 V
 0 2782 R
 0 -63 V
@@ -480,9 +494,9 @@ LTb
 stroke
 396 3505 N
 396 660 L
-4512 0 V
+4511 0 V
 0 2845 V
--4512 0 V
+-4511 0 V
 Z stroke
 1.000 UP
 1.000 UL
@@ -490,52 +504,64 @@ LTb
 1.000 UL
 LT0
 LC0 setrgbcolor
-LTb
 LCb setrgbcolor
 LT0
 LC0 setrgbcolor
-4449 3332 M
+4448 3332 M
 195 0 V
-4908 801 M
--46 2 V
--45 1 V
--46 1 V
--45 2 V
+4907 752 M
 -46 1 V
 -45 1 V
+-46 0 V
+-45 1 V
+-46 1 V
+-45 1 V
+-46 1 V
+-46 1 V
+-45 1 V
+-46 1 V
+-45 1 V
+-46 1 V
+-45 1 V
+-46 1 V
+-45 1 V
+-46 1 V
+-46 1 V
+-45 2 V
+-46 1 V
+-45 1 V
+-46 1 V
+-45 1 V
+-46 2 V
+-46 1 V
+-45 1 V
+-46 2 V
+-45 1 V
+-46 2 V
+-45 1 V
 -46 2 V
 -46 1 V
 -45 2 V
 -46 1 V
 -45 2 V
--46 1 V
--45 2 V
 -46 2 V
--46 1 V
--45 2 V
+-45 1 V
 -46 2 V
 -45 2 V
--46 1 V
+-46 2 V
 -46 2 V
 -45 2 V
 -46 2 V
 -45 2 V
 -46 2 V
--45 2 V
+-45 3 V
 -46 2 V
 -46 2 V
 -45 3 V
 -46 2 V
--45 2 V
+-45 3 V
 -46 3 V
 -45 2 V
--46 3 V
--46 2 V
--45 3 V
--46 2 V
--45 3 V
--46 3 V
--45 3 V
 -46 3 V
 -46 3 V
 -45 3 V
@@ -544,177 +570,162 @@ LC0 setrgbcolor
 -46 3 V
 -45 4 V
 -46 4 V
--46 3 V
+-46 4 V
 -45 4 V
 -46 4 V
--45 5 V
--46 4 V
--46 4 V
--45 5 V
+-45 4 V
 -46 5 V
--45 5 V
--46 5 V
--45 5 V
--46 6 V
+-45 4 V
 -46 5 V
 -45 6 V
+-46 5 V
+-46 6 V
+-45 6 V
+-46 6 V
+-45 6 V
+-46 7 V
+-45 7 V
+-46 8 V
+-46 8 V
+-45 9 V
+-46 9 V
+-45 10 V
+-46 10 V
+-45 11 V
+-46 12 V
+-46 12 V
+-45 14 V
+-46 14 V
+-45 16 V
+-46 17 V
+-45 18 V
+-46 20 V
+-45 22 V
+-46 24 V
+-46 27 V
+-45 29 V
+-46 33 V
+-45 37 V
+-46 42 V
+-45 48 V
+-46 55 V
+stroke
+LT1
+LC1 setrgbcolor
+LCb setrgbcolor
+LT1
+LC1 setrgbcolor
+4448 3112 M
+195 0 V
+4907 792 M
+-46 2 V
+-45 1 V
+-46 1 V
+-45 2 V
+-46 1 V
+-45 2 V
+-46 1 V
+-46 2 V
+-45 1 V
+-46 2 V
+-45 1 V
+-46 2 V
+-45 1 V
+-46 2 V
+-45 2 V
+-46 2 V
+-46 1 V
+-45 2 V
+-46 2 V
+-45 2 V
+-46 2 V
+-45 2 V
+-46 2 V
+-46 2 V
+-45 3 V
+-46 2 V
+-45 2 V
+-46 3 V
+-45 2 V
+-46 2 V
+-46 3 V
+-45 3 V
+-46 2 V
+-45 3 V
+-46 3 V
+-45 3 V
+-46 3 V
+-45 3 V
+-46 3 V
+-46 4 V
+-45 3 V
+-46 4 V
+-45 3 V
+-46 4 V
+-45 4 V
+-46 4 V
+-46 5 V
+-45 4 V
+-46 4 V
+-45 5 V
+-46 5 V
+-45 5 V
+-46 5 V
+-46 6 V
+-45 5 V
+-46 6 V
+-45 7 V
 -46 6 V
 -45 7 V
 -46 7 V
--45 7 V
--46 7 V
 -46 7 V
 -45 8 V
+-46 8 V
+-45 9 V
 -46 9 V
--45 8 V
--46 10 V
 -45 9 V
 -46 10 V
--46 11 V
 -45 11 V
+-46 11 V
 -46 12 V
 -45 12 V
--46 14 V
--45 14 V
--46 14 V
--46 16 V
--45 17 V
--46 18 V
--45 19 V
--46 21 V
--46 23 V
+-46 13 V
+-45 15 V
+-46 15 V
+-45 16 V
+-46 17 V
+-46 19 V
+-45 20 V
+-46 22 V
 -45 24 V
 -46 26 V
 -45 28 V
 -46 31 V
--45 34 V
--46 37 V
--46 41 V
--45 45 V
--46 51 V
--45 57 V
--46 65 V
--45 73 V
--46 85 V
-stroke
-LT1
-LC1 setrgbcolor
-LTb
-LCb setrgbcolor
-LT1
-LC1 setrgbcolor
-4449 3112 M
-195 0 V
-4908 795 M
--46 2 V
--45 1 V
--46 1 V
--45 2 V
--46 1 V
--45 2 V
--46 1 V
--46 2 V
--45 1 V
--46 2 V
--45 1 V
--46 2 V
--45 2 V
--46 1 V
--46 2 V
--45 2 V
--46 2 V
--45 2 V
--46 2 V
--46 2 V
--45 2 V
--46 2 V
--45 2 V
--46 2 V
--45 2 V
--46 3 V
--46 2 V
--45 2 V
--46 3 V
--45 2 V
--46 3 V
--45 3 V
--46 3 V
--46 2 V
--45 3 V
--46 3 V
--45 3 V
--46 4 V
--45 3 V
--46 3 V
--46 4 V
--45 4 V
--46 3 V
--45 4 V
--46 4 V
--45 4 V
--46 5 V
--46 4 V
--45 5 V
--46 5 V
--45 5 V
--46 5 V
--46 5 V
--45 6 V
--46 5 V
--45 7 V
--46 6 V
--45 6 V
--46 7 V
--46 8 V
--45 7 V
--46 8 V
--45 8 V
--46 9 V
--45 9 V
--46 10 V
--46 10 V
--45 11 V
--46 11 V
--45 12 V
--46 13 V
--45 14 V
--46 14 V
--46 16 V
--45 16 V
--46 18 V
--45 19 V
--46 21 V
--45 22 V
--46 24 V
--46 27 V
--45 28 V
--46 32 V
--45 35 V
--46 38 V
--46 43 V
--45 48 V
--46 54 V
--45 62 V
--46 70 V
--45 82 V
--46 96 V
--46 115 V
--45 138 V
--46 170 V
--45 215 V
--46 280 V
--45 380 V
--29 338 V
+-46 34 V
+-45 37 V
+-46 42 V
+-45 47 V
+-46 53 V
+-45 61 V
+-46 69 V
+-45 80 V
+-46 94 V
+-46 112 V
+-45 135 V
+-46 167 V
+-45 210 V
+-46 274 V
+-45 372 V
+-34 391 V
 stroke
 LT2
 LC2 setrgbcolor
-LTb
 LCb setrgbcolor
 LT2
 LC2 setrgbcolor
-4449 2892 M
+4448 2892 M
 195 0 V
-4908 1685 M
+4907 1685 M
 -46 10 V
 -45 11 V
 -46 11 V
@@ -729,64 +740,64 @@ LC2 setrgbcolor
 -46 14 V
 -45 13 V
 -46 14 V
--46 14 V
--45 15 V
+-45 14 V
+-46 15 V
 -46 15 V
 -45 15 V
 -46 15 V
--46 16 V
--45 17 V
+-45 16 V
 -46 17 V
 -45 17 V
+-46 17 V
 -46 18 V
 -45 18 V
 -46 19 V
--46 19 V
--45 20 V
+-45 19 V
 -46 20 V
--45 21 V
+-45 20 V
+-46 21 V
 -46 22 V
 -45 22 V
 -46 23 V
--46 23 V
--45 25 V
+-45 23 V
 -46 25 V
 -45 25 V
--46 27 V
--45 28 V
+-46 25 V
+-45 27 V
 -46 28 V
--46 30 V
+-46 28 V
 -45 30 V
--46 32 V
--45 33 V
--46 34 V
--45 35 V
+-46 30 V
+-45 32 V
+-46 33 V
+-45 34 V
+-46 35 V
 -46 37 V
--46 38 V
--45 40 V
--46 41 V
--45 43 V
--46 44 V
+-45 38 V
+-46 40 V
+-45 41 V
+-46 43 V
+-45 44 V
 -46 47 V
--45 49 V
--46 51 V
--45 53 V
--46 56 V
--45 58 V
--46 62 V
+-46 49 V
+-45 51 V
+-46 53 V
+-45 56 V
+-46 58 V
+-45 62 V
 -46 65 V
--45 68 V
--46 71 V
--45 76 V
+-46 68 V
+-45 71 V
+-46 76 V
 -20 35 V
 stroke
 LTb
 LCb setrgbcolor
 396 3505 N
 396 660 L
-4512 0 V
+4511 0 V
 0 2845 V
--4512 0 V
+-4511 0 V
 Z stroke
 1.000 UP
 1.000 UL

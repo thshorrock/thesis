@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: c2_cnt_nucleation_rate.tex
-%%Creator: gnuplot 4.2 patchlevel 6 
-%%CreationDate: Sun Sep 26 20:06:35 2010
+%%Creator: gnuplot 4.4 patchlevel 3
+%%CreationDate: Sun Oct 14 20:29:12 2012
 %%DocumentFonts: 
 %%BoundingBox: 50 50 302 226
 %%EndComments
@@ -9,8 +9,8 @@
 /gnudict 256 dict def
 gnudict begin
 %
-% The following 6 true/false flags may be edited by hand if required
-% The unit line width may also be changed
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
 %
 /Color true def
 /Blacktext true def
@@ -19,9 +19,11 @@ gnudict begin
 /Landscape false def
 /Level1 false def
 /Rounded false def
+/ClipToBoundingBox false def
 /TransparentPatterns false def
 /gnulinewidth 5.000 def
 /userlinewidth gnulinewidth def
+/Gamma 1.0 def
 %
 /vshift -73 def
 /dl1 {
@@ -44,16 +46,24 @@ systemdict /pdfmark known not {
 SDict begin [
   /Title (c2_cnt_nucleation_rate.tex)
   /Subject (gnuplot plot)
-  /Creator (gnuplot 4.2 patchlevel 6 )
-  /Author (Tom,,,)
+  /Creator (gnuplot 4.4 patchlevel 3)
+  /Author (tommy)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Sun Sep 26 20:06:35 2010)
+  /CreationDate (Sun Oct 14 20:29:12 2012)
   /DOCINFO pdfmark
 end
 } ifelse
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 302 50 lineto 302 226 lineto 50 226 lineto closepath
+    clip
+  } if
+} def
 %
-% Gnuplot Prolog Version 4.2 (August 2006)
+% Gnuplot Prolog Version 4.4 (August 2010)
+%
+%/SuppressPDFMark true def
 %
 /M {moveto} bind def
 /L {lineto} bind def
@@ -63,6 +73,8 @@ end
 /Z {closepath} bind def
 /C {setrgbcolor} bind def
 /f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
 /vpt2 vpt 2 mul def
 /hpt2 hpt 2 mul def
 /Lshow {currentpoint stroke M 0 vshift R 
@@ -83,6 +95,7 @@ end
 	dup 1 lt {pop 1} if 10 mul /udl exch def} def
 /PL {stroke userlinewidth setlinewidth
 	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
 % Default Line colors
 /LCw {1 1 1} def
 /LCb {0 0 0} def
@@ -424,6 +437,7 @@ end
 %%EndProlog
 gnudict begin
 gsave
+doclip
 50 50 translate
 0.050 0.050 scale
 0 setgray
@@ -433,204 +447,237 @@ LTb
 LCb setrgbcolor
 1320 660 M
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
 stroke
 LTb
 1320 723 M
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
 1320 786 M
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
 1320 850 M
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
 1320 913 M
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
 1320 976 M
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
--3525 63 R
+-3524 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 64 R
+-3556 64 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
--3525 63 R
+-3524 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 64 R
+-3556 64 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
--3525 64 R
+-3524 64 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
--3525 64 R
+-3524 64 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 64 R
+-3556 64 R
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
--3525 63 R
+-3524 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
 stroke 1351 2367 M
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 64 R
+-3556 64 R
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
--3525 63 R
+-3524 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 64 R
+-3556 64 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
--3525 63 R
+-3524 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 64 R
+-3556 64 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
--3525 63 R
+-3524 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 64 R
+-3556 64 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 31 0 V
-3557 0 R
+3556 0 R
 -31 0 V
--3557 63 R
+-3556 63 R
 63 0 V
-3525 0 R
+3524 0 R
 -63 0 V
-1320 660 M
+4907 660 M
 0 63 V
 0 2782 R
 0 -63 V
-1789 660 M
+4438 660 M
 0 31 V
 0 2814 R
 0 -31 V
-2064 660 M
+4163 660 M
 0 31 V
 0 2814 R
 0 -31 V
-2259 660 M
+3968 660 M
+0 31 V
+0 2814 R
+0 -31 V
+3817 660 M
+0 31 V
+0 2814 R
+0 -31 V
+3694 660 M
+0 31 V
+0 2814 R
+0 -31 V
+3590 660 M
+0 31 V
+0 2814 R
+0 -31 V
+3499 660 M
+0 31 V
+stroke 3499 691 M
+0 2814 R
+0 -31 V
+3419 660 M
+0 31 V
+0 2814 R
+0 -31 V
+3348 660 M
+0 63 V
+0 2782 R
+0 -63 V
+2879 660 M
+0 31 V
+0 2814 R
+0 -31 V
+2604 660 M
 0 31 V
 0 2814 R
 0 -31 V
@@ -638,73 +685,40 @@ stroke 1351 2367 M
 0 31 V
 0 2814 R
 0 -31 V
-2533 660 M
+2259 660 M
 0 31 V
 0 2814 R
 0 -31 V
-2638 660 M
+2135 660 M
 0 31 V
 0 2814 R
 0 -31 V
-2728 660 M
-0 31 V
-stroke 2728 691 M
-0 2814 R
-0 -31 V
-2808 660 M
+2031 660 M
 0 31 V
 0 2814 R
 0 -31 V
-2879 660 M
+1940 660 M
+0 31 V
+0 2814 R
+0 -31 V
+1861 660 M
+0 31 V
+0 2814 R
+0 -31 V
+1789 660 M
 0 63 V
 0 2782 R
 0 -63 V
-3349 660 M
-0 31 V
-0 2814 R
-0 -31 V
-3623 660 M
-0 31 V
-0 2814 R
-0 -31 V
-3818 660 M
-0 31 V
-0 2814 R
-0 -31 V
-3969 660 M
-0 31 V
-0 2814 R
-0 -31 V
-4093 660 M
-0 31 V
-0 2814 R
-0 -31 V
-4197 660 M
-0 31 V
-0 2814 R
-0 -31 V
-4287 660 M
-0 31 V
-0 2814 R
-0 -31 V
-4367 660 M
-0 31 V
-0 2814 R
-0 -31 V
-4439 660 M
-0 63 V
-0 2782 R
-0 -63 V
-4908 660 M
+1320 660 M
 0 31 V
 0 2814 R
 0 -31 V
 stroke
 1320 3505 N
 0 -2845 V
-3588 0 V
+3587 0 V
 0 2845 V
--3588 0 V
+-3587 0 V
 Z stroke
 1.000 UP
 1.000 UL
@@ -712,193 +726,190 @@ LTb
 1.000 UL
 LT0
 LC0 setrgbcolor
-LTb
 LCb setrgbcolor
 LT0
 LC0 setrgbcolor
 3036 3332 M
 195 0 V
-2484 660 M
-32 201 V
-36 205 V
-36 186 V
-37 167 V
-36 152 V
-36 137 V
-36 124 V
-37 111 V
-36 101 V
-36 91 V
-36 82 V
-37 74 V
-36 67 V
-36 60 V
-36 54 V
-37 49 V
-36 44 V
-36 40 V
-36 36 V
-37 32 V
-36 29 V
-36 26 V
-36 23 V
-37 21 V
-36 19 V
-36 18 V
-36 15 V
-37 14 V
-36 12 V
-36 12 V
-36 10 V
-37 9 V
-36 8 V
-36 7 V
-36 7 V
-36 6 V
-37 5 V
-36 5 V
-36 4 V
-36 4 V
-37 4 V
-36 3 V
-36 2 V
-36 3 V
-37 2 V
-36 2 V
-36 2 V
-36 2 V
-37 1 V
-36 2 V
-36 1 V
-36 1 V
-37 1 V
-36 1 V
-36 0 V
-36 1 V
-37 1 V
-36 0 V
-36 1 V
-36 0 V
-37 1 V
-36 0 V
-36 0 V
-36 1 V
-37 0 V
-36 0 V
-36 0 V
+3743 660 M
+-32 201 V
+-36 205 V
+-36 186 V
+-36 167 V
+-37 152 V
+-36 137 V
+-36 124 V
+-36 111 V
+-37 101 V
+-36 91 V
+-36 82 V
+-36 74 V
+-36 67 V
+-37 60 V
+-36 54 V
+-36 49 V
+-36 44 V
+-37 40 V
+-36 36 V
+-36 32 V
+-36 29 V
+-37 26 V
+-36 23 V
+-36 21 V
+-36 19 V
+-36 18 V
+-37 15 V
+-36 14 V
+-36 12 V
+-36 12 V
+-37 10 V
+-36 9 V
+-36 8 V
+-36 7 V
+-37 7 V
+-36 6 V
+-36 5 V
+-36 5 V
+-36 4 V
+-37 4 V
+-36 4 V
+-36 3 V
+-36 2 V
+-37 3 V
+-36 2 V
+-36 2 V
+-36 2 V
+-37 2 V
+-36 1 V
+-36 2 V
+-36 1 V
+-37 1 V
+-36 1 V
+-36 1 V
+-36 0 V
+-36 1 V
+-37 1 V
+-36 0 V
+-36 1 V
+-36 0 V
+-37 1 V
+-36 0 V
+-36 0 V
+-36 1 V
+-37 0 V
+-36 0 V
+-36 0 V
 stroke
 LT1
 LC1 setrgbcolor
-LTb
 LCb setrgbcolor
 LT1
 LC1 setrgbcolor
 3036 3112 M
 195 0 V
-2381 660 M
-26 173 V
-37 212 V
-36 191 V
-36 173 V
-36 155 V
-36 139 V
-37 126 V
-36 114 V
-36 102 V
-36 91 V
-37 83 V
-36 74 V
-36 67 V
-36 60 V
-37 55 V
-36 48 V
-36 44 V
-36 40 V
-37 35 V
-36 32 V
-36 29 V
-36 25 V
-37 24 V
-36 20 V
-36 19 V
-36 17 V
-37 15 V
-36 14 V
-36 12 V
-36 11 V
-37 10 V
-36 9 V
-36 8 V
-36 7 V
-37 6 V
-36 6 V
-36 6 V
-36 4 V
-36 4 V
-37 4 V
-36 4 V
-36 3 V
-36 2 V
-37 3 V
-36 2 V
-36 2 V
-36 2 V
-37 1 V
-36 2 V
-36 1 V
-36 1 V
-37 1 V
-36 1 V
-36 1 V
-36 1 V
-37 1 V
-36 0 V
-36 1 V
-36 0 V
-37 1 V
-36 0 V
-36 1 V
-36 0 V
-37 0 V
-36 0 V
-36 1 V
-36 0 V
-37 0 V
-36 0 V
-36 0 V
+3847 660 M
+-27 173 V
+-36 212 V
+-36 191 V
+-37 173 V
+-36 155 V
+-36 139 V
+-36 126 V
+-37 114 V
+-36 102 V
+-36 91 V
+-36 83 V
+-37 74 V
+-36 67 V
+-36 60 V
+-36 55 V
+-36 48 V
+-37 44 V
+-36 40 V
+-36 35 V
+-36 32 V
+-37 29 V
+-36 25 V
+-36 24 V
+-36 20 V
+-37 19 V
+-36 17 V
+-36 15 V
+-36 14 V
+-36 12 V
+-37 11 V
+-36 10 V
+-36 9 V
+-36 8 V
+-37 7 V
+-36 6 V
+-36 6 V
+-36 6 V
+-37 4 V
+-36 4 V
+-36 4 V
+-36 4 V
+-36 3 V
+-37 2 V
+-36 3 V
+-36 2 V
+-36 2 V
+-37 2 V
+-36 1 V
+-36 2 V
+-36 1 V
+-37 1 V
+-36 1 V
+-36 1 V
+-36 1 V
+-37 1 V
+-36 1 V
+-36 0 V
+-36 1 V
+-36 0 V
+-37 1 V
+-36 0 V
+-36 1 V
+-36 0 V
+-37 0 V
+-36 0 V
+-36 1 V
+-36 0 V
+-37 0 V
+-36 0 V
+-36 0 V
 stroke
 LT2
 LC2 setrgbcolor
-LTb
 LCb setrgbcolor
 LT2
 LC2 setrgbcolor
 3036 2892 M
 195 0 V
-4399 660 M
-2 13 V
-36 239 V
-36 214 V
-36 192 V
-37 173 V
-36 156 V
-36 139 V
-36 126 V
-37 112 V
-36 102 V
-36 91 V
-36 81 V
-37 74 V
-36 66 V
-36 59 V
+1829 660 M
+-2 13 V
+-36 239 V
+-36 214 V
+-36 192 V
+-37 173 V
+-36 156 V
+-36 139 V
+-36 126 V
+-37 112 V
+-36 102 V
+-36 91 V
+-36 81 V
+-37 74 V
+-36 66 V
+-36 59 V
 stroke
 LTb
 LCb setrgbcolor
 1320 3505 N
 0 -2845 V
-3588 0 V
+3587 0 V
 0 2845 V
--3588 0 V
+-3587 0 V
 Z stroke
 1.000 UP
 1.000 UL

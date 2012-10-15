@@ -2,7 +2,7 @@
 \chapter{The pulsations of a bubble as measured with  ultrasound 95\%}\label{ch:measurement}
 
 
-\section{Introduction}\label{sec:introduction}
+\section{Introduction}\label{sec:measurement:introduction}
 
 Current models that describe the pulsations of a bubble in an acoustic field do not 
 account for how measurements are made with ultrasound.
@@ -37,79 +37,79 @@ The radial response of the two models is similar when the harmonic response of t
 otherwise the pulsations are quite different when measured acoustically and optically.
 
 
-\section{The acoustic measurement process}\label{sec:introduction}
+%\section{The acoustic measurement process}\label{sec:measurement:introduction}
 
 
-In medical ultrasound distances are measured using the time it takes a pulse of sound to propagate from a transducer
-to a reflecting object and then to return again. 
-%This interval is known as the pulse-echo time.
-If the sound is emitted from the transducer at a time, $\tm$,
-and the sound returns at a time,  $\tp$,
-then the task is to find from these two numbers the spatio-temporal location, $x$,
-of the point of reflection.
+%In medical ultrasound distances are measured using the time it takes a pulse of sound to propagate from a transducer
+%to a reflecting object and then to return again. 
+%%This interval is known as the pulse-echo time.
+%If the sound is emitted from the transducer at a time, $\tm$,
+%and the sound returns at a time,  $\tp$,
+%then the task is to find from these two numbers the spatio-temporal location, $x$,
+%of the point of reflection.
 
-What happens to the sound in between leaving the transducer and returning
-cannot be known by acoustic measurement.
-In this ignorance ultrasound practitioners assume that the time at which the echo 
-occurred is the midpoint of $\tm$ and $\tp$,
-\sub{
-\label{eqn:radar}
-\begin{align}
- \tau(x) &= \frac{\tp + \tm}{2}.
-\intertext{Other choices could certainly be made, 
-  but would imply a knowledge of the world beyond that learnt from $\tm$ and $\tp$ alone.
-  To measure distances from the times $\tm$ and $\tp$ a sound speed, $c$, is required.
-  Assuming, again in ignorance, that the sound returns at the same speed at which it left gives
-}
- \rho(x) &= \frac{\tp - \tm}{2}c. \label{eqn:radarDistance}
-\end{align}
-}
-These are the definitions of time and space that are used in ultrasound.
-%The assumption that the sound returns at the same speed as it left may be relaxed.
-%Then $\tau(x) =\epsilon \tp + (1-\epsilon)\tm$ and 
-%$\rho(x) = \epsilon \tp c - (1-\epsilon)\tm c$ for any
-%$0<\epsilon<1$.
-%This does not change any of the arguments that follow\cite{Debs1996}.
+%What happens to the sound in between leaving the transducer and returning
+%cannot be known by acoustic measurement.
+%In this ignorance ultrasound practitioners assume that the time at which the echo 
+%occurred is the midpoint of $\tm$ and $\tp$,
+%\sub{
+%\label{eqn:radar}
+%\begin{align}
+% \tau(x) &= \frac{\tp + \tm}{2}.
+%\intertext{Other choices could certainly be made, 
+%  but would imply a knowledge of the world beyond that learnt from $\tm$ and $\tp$ alone.
+%  To measure distances from the times $\tm$ and $\tp$ a sound speed, $c$, is required.
+%  Assuming, again in ignorance, that the sound returns at the same speed at which it left gives
+%}
+% \rho(x) &= \frac{\tp - \tm}{2}c. \label{eqn:radarDistance}
+%\end{align}
+%}
+%These are the definitions of time and space that are used in ultrasound.
+%%The assumption that the sound returns at the same speed as it left may be relaxed.
+%%Then $\tau(x) =\epsilon \tp + (1-\epsilon)\tm$ and 
+%%$\rho(x) = \epsilon \tp c - (1-\epsilon)\tm c$ for any
+%%$0<\epsilon<1$.
+%%This does not change any of the arguments that follow\cite{Debs1996}.
 
-Equation \eqnref{radarDistance} requires an {\em a priori} knowledge of the sound speed.
-This is of course obvious because ultrasound attempts to determine distances from temporal measurements.
-Nevertheless, 
-it does raise the question as to how the sound speed is to be found.
+%Equation \eqnref{radarDistance} requires an {\em a priori} knowledge of the sound speed.
+%This is of course obvious because ultrasound attempts to determine distances from temporal measurements.
+%Nevertheless, 
+%it does raise the question as to how the sound speed is to be found.
 
-To determine the speed of sound of a given medium an independent notion of length is required.
-This practically would be found with a set of callipers.
-The average speed of sound is then found from equation \eqnref{radarDistance},
-using the times measured and the predetermined ({\em a priori})  distance.
-The point is that %the distance measured by the callipers now represents the {\em a priori} knowledge.
-in order to use equation \eqnref{radarDistance} something must be taken for granted; 
-it is impossible to measure simultaneously both speeds and distances from temporal measurements.
+%To determine the speed of sound of a given medium an independent notion of length is required.
+%This practically would be found with a set of callipers.
+%The average speed of sound is then found from equation \eqnref{radarDistance},
+%using the times measured and the predetermined ({\em a priori})  distance.
+%The point is that %the distance measured by the callipers now represents the {\em a priori} knowledge.
+%in order to use equation \eqnref{radarDistance} something must be taken for granted; 
+%it is impossible to measure simultaneously both speeds and distances from temporal measurements.
 
-%All this is familiar. %Before ultrasound measurements can be made a calibration measurement to determine the speed of sound is required.
-%In order to use ultrasound to measure distances within people (without reaching for the callipers, and therefore for the scalpel)
-%it is necessary to first find the appropriate sound speed in the laboratory.
-%Bovine liver, typically, is used for this purpose, and is  cut into carefully measured thicknesses,
-%with care being taken to known a great deal about the sample before \eqnref{radarDistance} is applied.
-%[can you suggest a few  citations for here Jeff...]
+%%All this is familiar. %Before ultrasound measurements can be made a calibration measurement to determine the speed of sound is required.
+%%In order to use ultrasound to measure distances within people (without reaching for the callipers, and therefore for the scalpel)
+%%it is necessary to first find the appropriate sound speed in the laboratory.
+%%Bovine liver, typically, is used for this purpose, and is  cut into carefully measured thicknesses,
+%%with care being taken to known a great deal about the sample before \eqnref{radarDistance} is applied.
+%%[can you suggest a few  citations for here Jeff...]
 
-When using equation \eqnref{radarDistance} to measure distances the sound speed must be constant.
-This is because there is no way to measure its variations.
-This constancy of the speed of sound is identical to Einstein's  second postulate for special relativity\cite{Einstein1905},
-except that the sound speed takes the role of the speed of light.
-Likewise, Einstein used equations \eqnref{radar} for the definition of time and space, 
-except that  the  constant $c$ was understood to be the speed of light rather than the speed of sound.
-In the relativity literature equations \eqnref{radar} go by the names of radar-time 
-and radar-distance and their application to the example of the ``twin paradox'' is discussed by Dolby and Gull  \cite{Dolby2001}.
+%When using equation \eqnref{radarDistance} to measure distances the sound speed must be constant.
+%This is because there is no way to measure its variations.
+%This constancy of the speed of sound is identical to Einstein's  second postulate for special relativity\cite{Einstein1905},
+%except that the sound speed takes the role of the speed of light.
+%Likewise, Einstein used equations \eqnref{radar} for the definition of time and space, 
+%except that  the  constant $c$ was understood to be the speed of light rather than the speed of sound.
+%In the relativity literature equations \eqnref{radar} go by the names of radar-time 
+%and radar-distance and their application to the example of the ``twin paradox'' is discussed by Dolby and Gull  \cite{Dolby2001}.
 
-In this thesis we  assume that the dynamics of entities is invariant to inertial motions even when measured acoustically (Einstein's first postulate).
-There has never been a counter example to this symmetry and we do not expect ultrasound to provide one.
-It then follows that measurements in ultrasound are subject to the considerations of special relativity,
-where the speed of sound rather than the speed of light takes the role of the limiting velocity.
+%In this thesis we  assume that the dynamics of entities is invariant to inertial motions even when measured acoustically (Einstein's first postulate).
+%There has never been a counter example to this symmetry and we do not expect ultrasound to provide one.
+%It then follows that measurements in ultrasound are subject to the considerations of special relativity,
+%where the speed of sound rather than the speed of light takes the role of the limiting velocity.
 
-The surface of a  bubble that has been induced to pulsate by an ultrasound wave may collapse at a significant fraction of the speed of sound\cite{Neppiras1980}.
-The pulsations of a bubble as measured by ultrasound are therefore expected to disagree with the same pulsations measured by an optical techniques.
-To investigate this, we now derive and analyse a version of the Keller-Miksis model\cite{Keller1980} 
-- a commonly used model for a pulsating bubble - that is consistent with how ultrasound measures spatio-temporal locations.
-%This will be different than the current Keller-Miksis model that describes the pulsations of a bubble when observed optically under a microscope.
+%The surface of a  bubble that has been induced to pulsate by an ultrasound wave may collapse at a significant fraction of the speed of sound\cite{Neppiras1980}.
+%The pulsations of a bubble as measured by ultrasound are therefore expected to disagree with the same pulsations measured by an optical techniques.
+%To investigate this, we now derive and analyse a version of the Keller-Miksis model\cite{Keller1980} 
+%- a commonly used model for a pulsating bubble - that is consistent with how ultrasound measures spatio-temporal locations.
+%%This will be different than the current Keller-Miksis model that describes the pulsations of a bubble when observed optically under a microscope.
 
 
 \section{The acoustically-measured Keller-Miksis model}
@@ -142,7 +142,7 @@ The first is that the radial velocity of the fluid, $v$, is equal to the velocit
 That is 
 \sub{
 \begin{align}
-  v \equiv \dot a(t) = v \text{ at $r = a$.}
+  v = \dot a(t) \text{ at $r = a$.}
 \end{align}
 The second boundary condition is that the pressure in the liquid adjacent to the surface of bubble, $p(a,t)$,
 must equal the pressure on the bubble wall, $p_b$,
@@ -177,12 +177,14 @@ To fix  \eqnref{VelocityPotNR} and \eqnref{BernoulliNR} the  relativistic genera
 }
 Here $w$ is the heat function per proper volume and $n$ is the particle number per proper volume.
 The velocity $u$ and the vector potential, $A$,  are spacetime vectors and $\del$ is the spacetime derivative.
+This is the same as equation \eqnref{AisPotFlow} used in \chapref{acousticSR}. 
 The heat per proper volume can be written in terms of the total energy density, 
 such that\cite{LandauBook, Doran2003}
 \eqa{
   w = \epsilon + p = n m c^2 + nm e + p,
 }
 where $e$ is the thermodynamic energy and $m$ is the proper mass.
+The second equality uses equation \eqnref{relEpsilon} from \chapref{acousticSR}.
 Spacetime vectors are sometimes referred to as 4-vectors, although this terminology will not be used here.
 The spacetime velocity, $u$, is parameterised so that $u^2 = c^2$ where $c$ is the speed of sound.
 The symbol $u$ has been used to avoid confusion with the radial component, $v$, of the spatial velocity (a 3-vector).
@@ -448,8 +450,8 @@ Therefore the acoustic sources vanish and the wave equation $\del^2 A =0$ is sat
 This was the starting equation in the derivation of the Keller-Miksis model, 
 equation \eqnref{WaveEqn}. 
 Notice that other than potential flow, no approximation  has been made to derive \eqnref{WaveEqn}.
-When using ultrasound, sound must be measured to propagate linearly.
-This is simply because it is impossible for ultrasound to measure fluctuations in the speed of its propagating signal.
+%When using ultrasound, sound must be measured to propagate linearly.
+%This is simply because it is impossible for ultrasound to measure fluctuations in the speed of its propagating signal.
 The acoustically-measured-Keller-Miksis equation is exact.
 
 %Since no perturbation scheme has been used to obtain \eqnref{WaveEqn} when the measurements are made acoustically 
@@ -467,30 +469,35 @@ When introducing the original Keller-Miksis model in \secref{KMoriginal} the pre
 In this section and the next we fix this boundary condition for the cases with and without viscosity.
 
 
-The gas within the bubble may simply be modelled a polytropic exponent, $\kappa$. 
+The gas within the bubble may be modelled with a polytropic exponent, $\kappa$. 
 The pressure within the bubble is then $p_e \lr{\frac{a}{a_e}}^{-3\kappa}$ where $p_e$ is the pressure of the gas within the bubble at equilibrium,
 and $a_e$ is the radius of the bubble at equilibrium\cite{Hoff2001}.
 The contribution of the vapour pressure has been neglected for simplicity.
-This within the bubble pressure exceeds the pressure of the fluid at the surface, $p(a,t)$, due to the contributions of the surface tension, $\sigma$.
+Within the bubble pressure exceeds the pressure of the fluid at the surface, $p(a,t)$, due to the contributions of the surface tension, $\sigma$.
 The pressure boundary condition is then
 \begin{align}
   p_b(a) = p_e \lr{\frac{a}{a_e}}^{-3\kappa} - 2\frac{\sigma}{a}. 
 \end{align}
 To write the boundary condition in terms of the enthalpy we use the  thermodynamic relation $d h = \frac{1}{m n} dp$.
-Substituting in \eqnref{nrootp} gives
+Substituting in $n=\frac{n_\infty}{\sqrt{p_\infty}}\sqrt{p}$, equation \eqnref{relN}, gives
 \begin{align}
-  h(a) =  \int_{p_\infty}^{p}  \frac{1}{m n}dp = 2\lr{\sqrt{p}-\sqrt{ p_\infty}} = 2 \frac{p_\infty}{n_\infty} \lr{\sqrt{p/p_\infty} - 1} 
+  h(a) =  \int_{p_\infty}^{p}  \frac{1}{m n}dp = 2\frac{\sqrt{p_\infty}}{mn_\infty}\lr{\sqrt{p}-\sqrt{ p_\infty}} = 2 \frac{p_\infty}{mn_\infty} \lr{\sqrt{p/p_\infty} - 1} 
 \end{align}
-where  $n_\infty = \sqrt{p_\infty} = \sqrt{\epsilon_\infty} $ has been used in the second equality.
-Expanding $p$ from \eqnref{pshort} gives
-\begin{align}
-  h(a) = 2 \frac{p_\infty}{n_\infty} \lr{\sqrt{{p-p_0+p_\infty}/p_\infty} - 1} =  2 \frac{p_\infty}{n_\infty} \lr{\sqrt{1 + {p - p_0}{p_\infty}} - 1}
-\end{align}
+%where  $n_\infty = \sqrt{p_\infty} = \sqrt{\epsilon_\infty} $ has been used in the second equality.
 In the non-relativistic limit $p_\infty = \epsilon_\infty \approx n_\infty m c^2 \approx \unit{1}\giga\pascal$\cite{Hoff2001}.
-This is much larger than any pressures reached in ultrasound and so we may write, simply, that
+This is much larger than any pressures reached in ultrasound and so we may write the pressure in terms of a fluctuations, $p^\prime$, around the ambient pressure at the surface of the bubble, $p_0$,
 \begin{align}
-  h(a) \approx \frac{p - p_0}{mn_\infty}
+  p = p^\prime - p_0 + p_\infty.
 \end{align}
+Then
+\begin{align}
+  h(a) =  2 \frac{p_\infty}{mn_\infty} \lr{\sqrt{1 + \frac{p^\prime - p_0}{p_\infty}} - 1} \approx \frac{p^\prime - p_0}{mn_\infty}
+\end{align}
+%In the non-relativistic limit $p_\infty = \epsilon_\infty \approx n_\infty m c^2 \approx \unit{1}\giga\pascal$\cite%{Hoff2001}.
+%This is much larger than any pressures reached in ultrasound and so we may write, simply, that
+%\begin{align}
+%  h(a) \approx \frac{p - p_0}{mn_\infty}
+%\end{align}
 
 
 %The incident pressure $p_i$ is a perturbation about the  pressure at infinity $p_\infty$.
@@ -507,7 +514,7 @@ We emphasise that for an free polytropic gas bubble pulsating in ideal vortex-fr
 
 Viscous fluids have so far been excluded from our analysis.
 Viscosity usually plays a minor role in medical applications - 
-an ideal fluid does a fairly good job for propagation.
+an ideal fluid does a fairly good job for modelling propagation.
 However, the viscosity does play an important role in dampening the oscillations of the bubble.
 In ultrasound contrast physics, therefore, the viscosity is usually incorporated into the pressure boundary condition of equation \eqnref{pressureBC}.
 % Even though viscous effects have been ignored to find \eqnref{WaveEqn} they are generally incorporated into the boundary conditions.
@@ -583,7 +590,7 @@ which is  the standard expression for the radial stress exerted on a bubble \cit
 
 The spatial derivative $\dr(\gamma v) $ in \eqnref{sigmarr3} may be evaluated from the relation $\dr (\phi v) = -\dt \phi$, 
 obtained from the spatial projection of \eqnref{eomTime}  in the laboratory frame.
-However, the resulting equation is complicated to evaluate and contributes of order $c^-2$ compared to the first term of \eqnref{sigmarr2},
+However, the resulting equation is complicated to evaluate and contributes of order $c^{-2}$ compared to the first term of \eqnref{sigmarr2},
 which of itself is small if the viscosity of the fluid is low.
 Therefore,
 for analytic simplicity, we neglect the small terms on the right of 
@@ -607,23 +614,23 @@ The pressure boundary condition is then
            \includegraphics{radius_r2_f2_a0.1.0}}
       \subfloat[\unit{100}\kilo\pascal]{
            \label{fig:R1vel}
-           \includegraphics{velocity_r2_f2_a0.1.3}}
+           \includegraphics{velocity_r2_f2_a0.1.3}}\\
      \subfloat[\unit{300}\kilo\pascal]{
            \label{fig:R3rad}
            \includegraphics{radius_r2_f2_a0.3.1}}
       \subfloat[\unit{300}\kilo\pascal]{
            \label{fig:R3vel}
-           \includegraphics{velocity_r2_f2_a0.3.4}}
+           \includegraphics{velocity_r2_f2_a0.3.4}}\\
      \subfloat[\unit{500}\kilo\pascal]{
            \label{fig:R5rad}
            \includegraphics{radius_r2_f2_a0.5.2}}
       \subfloat[\unit{500}\kilo\pascal]{
            \label{fig:R5vel}
            \includegraphics{velocity_r2_f2_a0.5.5}}
-      \label{fig:BubbleResponse}
       \caption{The calculated response of a two micron bubble to a \unit{1/2}\mega\hertz\ wave at various pressures
 as measured optically (using the Keller-Miksis model) and acoustically (using the acoustically-measured-Keller-Miksis model)
       The radial response is shown in the figures on the left, the velocity response on the right.}
+      \label{fig:BubbleResponse}
  \end{figure}
 We finish by briefly examining the non-linear response of the two models to an incident sound pulse.
 The strongly non-linear response of bubbles is important 
@@ -636,7 +643,7 @@ The equilibrium radius of the bubble is chosen to be \unit{2}\micro\meter,
 which, like the pressures, is typical for diagnostic ultrasound applications.
 The pressure applied is a sinusoidal  with a frequency of \unit{500}\kilo\hertz.
 The pulse consists of 10 cycles and the first and last quarter of the pulse is tempered with a cosine function.
-The radial and velocity response of the bubble is plotted in \figref{BubbleResponse}.
+The radial and velocity response of the bubble is plotted in \Figref{BubbleResponse}.
 
 
 
@@ -645,7 +652,7 @@ For the low incident pressure of \unit{100}\kilo\pascal\ the radial response of 
 This is as would be expected, for as \figref{R1vel} shows,  at this pressure the velocity of the bubble wall 
 is always a small fraction of the sound speed.
 
-At the higher pressure of \unit{100}\kilo\pascal 
+At the higher pressure of \unit{100}\kilo\pascal\ 
 the original Keller-Miksis model predicts that the bubble wall collapses at very high velocities,
 even surpassing the speed of sound on some occasions.
 It is obvious that ultrasound measurements cannot measure the speed of a bubble wall undergoing  supersonic collapse, 
@@ -670,7 +677,7 @@ while at other pressures it looks very different (\figref{R3rad})
 is found in the predicted scattering cross section of the two models.
 
 \subsection{ The scattering cross section}\label{sec:measurement:scatteringxs}
-The scattering cross section, $\sigma$ is found from the ratio of the  emitted acoustic power to the incident intensity, \cite{ShutilovBook}
+The scattering cross section, $\sigma$, is found from the ratio of the  emitted acoustic power to the incident intensity, \cite{ShutilovBook}
 \begin{align}
   \sigma(\omega) = 4\pi r^2 \oint \frac{ \lr{p(r, t) a(t)}^2}{p_i(r,t)^2} dt,\label{eqn:sigmaff}
 \end{align}
@@ -744,7 +751,7 @@ plotted  where the scattering cross section could not be evaluated.
       \centering
      \subfloat[\unit{10}\kilo\pascal]{
            \label{fig:nxs_low01}
-           \includegraphics{xs_freq_r_2_amp_0.01.0}}
+           \includegraphics{xs_freq_r_2_amp_0.01.0}}\\
       \subfloat[\unit{100}\kilo\pascal]{
            \label{fig:nxs_low1}
            \includegraphics{xs_freq_r_2_amp_0.1.1}}
@@ -754,7 +761,7 @@ plotted  where the scattering cross section could not be evaluated.
       \centering
  \subfloat[\unit{300}\kilo\pascal]{
            \label{fig:nxs_high3}
-           \includegraphics{xs_freq_r_2_amp_0.2.2}}
+           \includegraphics{xs_freq_r_2_amp_0.2.2}}\\
  \subfloat[\unit{500}\kilo\pascal]{
            \label{fig:nxs_high5}
            \includegraphics{xs_freq_r_2_amp_0.5.5}}
@@ -788,17 +795,19 @@ lower than for when the scattering cross section is evaluated from the original 
 These observations are repeated in \figref{nxs_high5}, except that the discrepancy seems to begin at a harmonic of the fundamental.
 
 \Figref{nxs_high} may now be used to give an explanation the observations of \figref{BubbleResponse}.
-The frequency used to pulsate the bubbles in \figref{BubbleResponse} was \unit{1/2}\mega\hertz.
-In \figref{nxs_high3} \unit{1/2}\mega\hertz\ is seen to occur in the region of the graph near resonance where 
-the scatting cross section is hard to evaluate.
-This suggests that the differences observed in the response of \figref{R3rad} 
-are due to differences in the harmonic response of the two equations.
-In \figref{nxs_high5}, \unit{1/2}\mega\hertz\ is well below the dropout region, 
-suggesting that the harmonics have little role.
-This would explain why the radial response appeared so similar.
-The difference in the scattering cross section between the two models in \figref{nxs_high5} 
-would therefore seem to result from the differing velocity and acceleration that is measured by the two models,
-which manifests itself in the scattering cross via the $\dot a$ and $\ddot a$ terms in equation \eqnref{pff}.
+The divergence in the predicted scattering cross-section occur near resonance, 
+where the role of harmonics (and therefore the dropout) is strong.
+%The frequency used to pulsate the bubbles in \figref{BubbleResponse} was \unit{1/2}\mega\hertz.
+%In \figref{nxs_high3} \unit{1/2}\mega\hertz\ is seen to occur in the region of the graph near resonance where 
+%the scatting cross section is hard to evaluate.
+%This suggests that the differences observed in the response of \figref{R3rad} 
+%are due to differences in the harmonic response of the two equations.
+%In \figref{nxs_high5}, \unit{1/2}\mega\hertz\ is well below the dropout region, 
+%suggesting that the harmonics have little role.
+%This would explain why the radial response appeared so similar.
+%The difference in the scattering cross section between the two models in \figref{nxs_high5} 
+%would therefore seem to result from the differing velocity and acceleration that is measured by the two models,
+%which manifests itself in the scattering cross via the $\dot a$ and $\ddot a$ terms in equation \eqnref{pff}.
 
 
 
@@ -823,11 +832,11 @@ ultrasound is subject to the considerations of special relativity,
 with the sound speed taking the role of the speed of light.
 This invariance has been assumed here.
 
-To describe the propagation of the sound we considered an ideal fluid medium.
-When measured acoustically the relativistic (Lorentz invariant) description of the ideal fluid should be used,
-with the additional constraint that the speed of sound equal the speed of light.
-We have shown that the sound does indeed propagate linearly in this case.
-Indeed, we have shown it obeys Maxwell's relations.
+%To describe the propagation of the sound we considered an ideal fluid medium.
+%When measured acoustically the relativistic (Lorentz invariant) description of the ideal fluid should be used,
+%with the additional constraint that the speed of sound equal the speed of light.
+%We have shown that the sound does indeed propagate linearly in this case.
+%Indeed, we have shown it obeys Maxwell's relations.
 
 Finally, the response of the acoustically-measured-Keller-Miksis equation to an acoustic wave has been simulated,
 and the results compared to the original Keller-Miksis equation.

@@ -44,6 +44,11 @@
 \input{latex/input/thermodynamics.tex}
 \input{latex/input/thesis_extra.tex}
 
+%\usepackage{fontspec}
+%\setmainfont[RawFeature={protrusion=default}]{TeX Gyre Pagella}
+
+%\pdfprotrudechars2 % 1 if you don't want to change line breaking
+
 % \usepackage{setspace}
 %\onehalfspacing
 
@@ -68,11 +73,11 @@
 %part_intro/geometric_algebra/gc,
 %part_intro/inference/variational_methods,
 %part_theoretical/part_theory,
-%part_theoretical/nucleation/nucleation,
-part_theoretical/acoustic_relativity/acoustic_relativity,
+part_theoretical/nucleation/nucleation,
+%part_theoretical/acoustic_relativity/acoustic_relativity,
 %part_theoretical/maxwell_analogy/Maxwell_analogy,
 %part_theoretical/measurement/measurement,
-part_theoretical/bubble_interactions/bubble_interactions,
+%part_theoretical/bubble_interactions/bubble_interactions,
 %part_theoretical/computations/computations,
 %part_experimental/part_experimental,
 %part_experimental/rationale/rationale,
@@ -141,6 +146,7 @@ part_theoretical/bubble_interactions/bubble_interactions,
   {part_theoretical/nucleation/figs/} %
   {part_theoretical/bubble_interactions/figs/} %
   {figs/} %
+  {figs/nucleation/} %
   {figs/acoustic_relativity/} %
   {figs/water_cav_design/} %
   {figs/water_cav_results/voltage_0.088/imaging_2nd/} %
@@ -193,7 +199,7 @@ part_theoretical/bubble_interactions/bubble_interactions,
 \include{part_theoretical/acoustic_relativity/acoustic_relativity}
 %\include{part_theoretical/maxwell_analogy/Maxwell_analogy}
 \include{part_theoretical/measurement/measurement}
-\include{part_theoretical/bubble_interactions/bubble_interactions}
+%\include{part_theoretical/bubble_interactions/bubble_interactions}
 \include{part_theoretical/computations/computations}
 \include{mechanisms}
 \include{part_experimental/part_experimental}
