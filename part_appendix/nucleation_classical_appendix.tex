@@ -13,8 +13,8 @@ Then the chemical potentials are equal
 \begin{align}
   \mu_v(p_v^\ast) = \mu_L(p_L)\tag{\ref{eqn:thermoEqlbm}}.
 \end{align}
-Due to the curvature of the bubble, the critical pressure within the bubble, $p_v^\ast$,
-is not the same as the equilibrium vapour pressure, however.
+However, due to the curvature of the bubble, the critical pressure within the bubble, $p_v^\ast$,
+is not the same as the equilibrium vapour pressure.
 At a flat interface the vapour pressure is  $p_\infty$ (where the $\infty$ denotes the radius of the bubble for a flat interface).
 The flat interface is therefore at equilibrium when
 \begin{align}
@@ -58,190 +58,190 @@ An alternative derivation is to start  from Kelvin's equation,
 which more directly relates pressure and curvature. (see Skinner's review\cite{Skinner1972} for derivation and general discussion).
 Equation \eqnref{PoyntingCorrection} follows immediately by substituting  \eqnref{LaplaceRelation} into \eqnref{KelvinRelation}.
 
-\subsection{The rate of nucleation}
+% \subsection{The rate of nucleation}
 
 
 
-This taken from \cite{Oxtoby1992}.
-Grand potential of single phase
-\begin{align}
-  \Omega = - pV
-\end{align}
-and for two phase with planar interface
-\begin{align}
-  \Omega = -pV + \sigma A.
-\end{align}
-where $\sigma$ is surface tension and $A$ is area.
-The first term is negative and second positive.
-
-Spherical droplet of vapour in liquid background
-\begin{align}
-  \Omega  = -p_l V_l  - p_vV_v + 4\pi R^2 \sigma.
-\end{align}
-where
-\begin{align}
-  V_l &= V-\frac{4\pi}{3}R^3 \\
-  V_v &= \frac{4\pi}{3}R^2
-\end{align}
-so that (check sign here)
-\begin{align}
-  \Delta \Omega = -  \frac{4\pi}{3} R^3 \Delta p + 4\pi R^2 \sigma.
-\end{align}
-where $\Delta p = p_l - p_v$.
-
-If liquid assumed to be incompressible
-\begin{align}
-\Delta p - \rho_l\lr{\mu - \mu_{sat}}.
-\end{align}
-If vapour ideal gas
-\begin{align}
-  \mu - mu_{sat} = \kB \ln\lr{\frac{p_v}{p_{sat}}} = \kB T \ln S.
-\end{align}
-
-Replace $R$ with number of particles
-\begin{align}
-\Delta \Omega=-n\kB T \ln S + \lr{36 \pi}^{1/3} \rho_l^{-2/3} \sigma n^{2/3}.
-\end{align}
-Maximum occurs when 
-\begin{align}
-n^\ast = \frac{32 \pi \sigma^3}{2\rho_l^2 \lr{\kB T}^3 \lr{\ln S}^3}
-\end{align}
-and height of barrier is
-\begin{align}
-  \Delta \Omega^\ast = \frac{16\pi \sigma^3}{3\rho_l^2 \lr{\kB T}^2\lr{\ln S}^2}
-\end{align}
-As $S$ increases from 1 at coexistence, the hight of barrier falls.
-
-To get rate of nucleation need to find the number of critical nuclei per unit volume.
-Make this equal to 
-\begin{align}
-  J = J_0 \exp\lr{-\Delta \Omega^\ast / \kB T}
-\end{align}
-where 
-\begin{align}
-J_0 = a \sqrt{2/\pi}\frac{\rho_v^2}{\rho_l} \sqrt{\frac{\gamma}{m}}
-\end{align}
-where m is molecular mass and a is sticking probability, usually taken to be unity.
-
-
-
-
-
-
-In this section we give the kinetic argument for \cnt.
-We use the notation of McClurg\cite{},
-although the argument is much older, with Katz\cite{} doing much of the work to put it into it's modern form.
-Like McClurg we consider only the simplest case, 
-the  growth and shrinking of a bubble by the absorption and release of individual molecules.
-For the more general case of groups of molecules joining and releasing see \cite{}.
-
-In the derivation the oil is split into a solute and the solution.
-The solute are the molecules of the oil that have sufficient energy to join the bubble.
-The solution is the rest of the liquid oil.
-While this split is somewhat artificial,
-the result does not depend upon the details.
-It is used only as a conceptual crutch.
-
-
-
-The rate of growth of a bubble with $i$ molecules is
-\begin{align}
-  J_i = \beta  A_i C_i - E_{i+1} C_{i+1}. \label{eqn:Jn}
-\end{align}
-$\beta$ is the impingement rate of the bubble vapour on a unit area.
-From the kinetic theory of ideal gasses it is equal to 
-\begin{align}
-\beta = \frac{p_v}{\sqrt{2\pi M_r \kB T}}, \label{eqn:nuc:beta}
-\end{align}
-where  $M_r$ is the molecular weight.
-The ratio 
- \begin{align}
-\frac{\beta}{\beta^\eqlbm} = \frac{p_v}{p_\infty} \equiv  S
-\end{align}
-is the  supersaturation ratio.
-
-$C_i$ is the number concentration of bubble containing $i$ molecules and $E_{i+1}$ is the rate at which a molecule leaves a bubble with $i+1$ molecules.
-%Equation \eqnref{Jn} is a recurrence relation for a Markov process.
-
-Next  thermodynamic equilibrium is assumed (denoted with a $\eqlbm$ superscript).
-At equilibrium the probability of adding a molecule is equal to the probability of loosing one, 
-and so 
-\begin{align}
-  J_i^\eqlbm = 0 =  \beta^\eqlbm A_i C_i^\eqlbm - E_{i+1}^\eqlbm C_{i+1}^\eqlbm.
-\end{align}
-If the number density of the molecules that are capable of joining the bubble  (the solute) is small compared to the rest of the oil (the solvent)
-then the rate at which the bubble looses  molecules will be independent of the concentration of the solute, 
-so that $E_{i+1} = E_{i+1}^\eqlbm$ and 
-\begin{align}
-  E_{i+1} =  \beta^\eqlbm A_i C_i^\eqlbm/C_{i+1}^\eqlbm. \label{eqn:Enpone}
-\end{align}
-Substituting  equation \eqnref{Enpone} and multiplying by $\lr{\beta^\eqlbm / \beta}^n$ gives 
+% This taken from \cite{Oxtoby1992}.
+% Grand potential of single phase
 % \begin{align}
-%   J_i = \beta A_i C_i^\eqlbm \lrs{\frac{C_i}{C_i^\eqlbm} - \frac{\beta^\eqlbm C_{i+1}}{\beta C_{i+1}^\eqlbm}}. \label{eqn:JnTwo}
+%   \Omega = - pV
 % \end{align}
-% Multiplying \eqnref{JnTwo}   by $\lr{\beta^\eqlbm / \beta}^n$ gives
-\begin{align}
-  \frac{J_i} {\alpha_i \beta C_i^\eqlbm\lr{\beta/\beta^\eqlbm}^n} 
-= \frac{C_i}{C_i^\eqlbm}\lr{\frac{\beta^\eqlbm}{\beta}}^n - \frac{C_{i+1}}{C_{i+1}^\eqlbm}\lr{\frac{\beta^\eqlbm}{\beta}}^{i+1} \label{eqn:JnThree}
-\end{align}
-The final step is to assume that the rate of nucleation is steady.
-Then $J_1 = J_2 = ... =  J_b = J$.
-Most of the terms in the sum cancel.
-If we let the sum tend to infinity then
-% then upon summing the first $b$ terms equation \eqnref{JnThree} becomes
+% and for two phase with planar interface
 % \begin{align}
-%   J\sum_{i=1}^b\frac{1} {\alpha_i \beta C_i^\eqlbm\lr{\beta/\beta^\eqlbm}^n} = \frac{C_1}{C_1^\eqlbm}\lr{\frac{\beta^\eqlbm}{\beta}} - \frac{C_{b+1}}{C_{b+1}^\eqlbm}\lr{\frac{\beta^\eqlbm}{\beta}}^{b+1}.
+%   \Omega = -pV + \sigma A.
 % \end{align}
-% If $b$ is let to go to infinity then 
-\begin{align}
-  J = \frac{\beta}{\sum_{i=1}^\infty\lrs{ A_i C_i^\eqlbm S^n}^{-1}} \label{eqn:rateOne}
-\end{align}
+% where $\sigma$ is surface tension and $A$ is area.
+% The first term is negative and second positive.
 
-From the thermodynamic argument in \secref{nuc:CNT} we found that the bubbles with $n$ molecules is
-\begin{align}
-  C_i = n \exp \lr{- \frac{\Delta G(n)}{\kB T}}. \tag{\ref{eqn:CnBoltzman}}
-\end{align}
+% Spherical droplet of vapour in liquid background
+% \begin{align}
+%   \Omega  = -p_l V_l  - p_vV_v + 4\pi R^2 \sigma.
+% \end{align}
+% where
+% \begin{align}
+%   V_l &= V-\frac{4\pi}{3}R^3 \\
+%   V_v &= \frac{4\pi}{3}R^2
+% \end{align}
+% so that (check sign here)
+% \begin{align}
+%   \Delta \Omega = -  \frac{4\pi}{3} R^3 \Delta p + 4\pi R^2 \sigma.
+% \end{align}
+% where $\Delta p = p_l - p_v$.
 
-It is convenient to turn the sum in \eqnref{rateOne} into an integral over $i$, the number of molecules in a bubble.
-Formally the  integral run from 1 molecule to $\infty$,
-however, since the integral is dominated over the narrow range  near to the critical radius we 
-can let the integral run from $-\infty$ to $\infty$, and expand the change in Gibbs energy to quadratic terms,
-\begin{align}
-  \Delta G = \Delta G^\ast - \frac{\lr{i-i^\ast}^2}{2}\frac{\d^2 \Delta G(i)}{\d i ^2}. \label{eqn:DeltaGExp}
-\end{align}
-The minus sign in \eqnref{DeltaGExp} follows because the energy change is a maximum at the critical radius.
-In addition, we assume that in the integral  $A = A^\ast \equiv 4\pi \astar^2$ and $S^i = S^{i^\ast}$. 
-%\equiv S^{\rho_v\Delta G^\ast / M_r}$  take their critical values.
-%To obtain this latter relation we have noted that a bubble of volume 
-%$V_b = 4\pi a^3/3$ has $i= V_b /N_v$ molecules, and $N_v$ is the number density of the vapour.
-Equation \eqnref{rateOne} therefore becomes
-\begin{align}
-  J &= \frac{ A^\ast S^{i^\ast} \beta^\ast n\exp{ \lr{- \frac{\Delta G^\ast}{\kB T}}   }}{\int_{-\infty}^\infty dn \exp{\lr{- \frac{\lr{n-n^\ast}^2}{2}\frac{1}{\kB T}\frac{\d^2 \Delta G(n)}{\d n ^2  }}}}
-\\ &= { A^\ast \beta^\ast   Z  n\exp{ \lr{ i^\ast\ln S -\frac{\Delta G^\ast}{\kB T}}   }}.
- \label{eqn:rateTwo}
-\end{align}
-where
-\begin{align}
-Z = \frac{1}{\rho_v^\ast A^\ast}\sqrt{-\frac{1}{2\pi \kB T}\lrsquare{\frac{\d}{\dr}\lr{\frac{1}{r^2}\frac{\d }{\d r}}}\Delta G(r)} 
-= \frac{1}{\rho_v^\ast A^\ast}\sqrt{\frac{4\sigma}{\kB T}} %\frac{M_r}{4\pi \astar^2  \rho_v^\ast}\sqrt{\frac{4\sigma}{\kB T}}
-\label{eqn:Zeldovich}
-\end{align}
-is called the Zeldovich factor.
+% If liquid assumed to be incompressible
+% \begin{align}
+% \Delta p - \rho_l\lr{\mu - \mu_{sat}}.
+% \end{align}
+% If vapour ideal gas
+% \begin{align}
+%   \mu - mu_{sat} = \kB \ln\lr{\frac{p_v}{p_{sat}}} = \kB T \ln S.
+% \end{align}
 
-Pulling together equations \eqnref{nuc:beta}, \eqnref{Zeldovich} and \eqnref{rateTwo}  gives
-\begin{align}
-  J \approx S^{{\rho_v\Delta G^\ast / M_r}}   
-  \frac{p_v n}{  \rho_v^\ast\kB T}\sqrt{\frac{2\sigma M_r}{\pi }}
-  \exp{ \lr{- \frac{\Delta G^\ast}{\kB T}}   }.
-\end{align}
-The pre-exponential factor is therefore
-\begin{align} 
-J_0=  S^{i^*}   
-  \frac{p_v n}{  \rho_v^\ast\kB T}\sqrt{\frac{2\sigma M_r}{\pi }}.
-  \tag{\ref{eqn:nuc:Jzero}}
-\end{align}
+% Replace $R$ with number of particles
+% \begin{align}
+% \Delta \Omega=-n\kB T \ln S + \lr{36 \pi}^{1/3} \rho_l^{-2/3} \sigma n^{2/3}.
+% \end{align}
+% Maximum occurs when 
+% \begin{align}
+% n^\ast = \frac{32 \pi \sigma^3}{2\rho_l^2 \lr{\kB T}^3 \lr{\ln S}^3}
+% \end{align}
+% and height of barrier is
+% \begin{align}
+%   \Delta \Omega^\ast = \frac{16\pi \sigma^3}{3\rho_l^2 \lr{\kB T}^2\lr{\ln S}^2}
+% \end{align}
+% As $S$ increases from 1 at coexistence, the hight of barrier falls.
+
+% To get rate of nucleation need to find the number of critical nuclei per unit volume.
+% Make this equal to 
+% \begin{align}
+%   J = J_0 \exp\lr{-\Delta \Omega^\ast / \kB T}
+% \end{align}
+% where 
+% \begin{align}
+% J_0 = a \sqrt{2/\pi}\frac{\rho_v^2}{\rho_l} \sqrt{\frac{\gamma}{m}}
+% \end{align}
+% where m is molecular mass and a is sticking probability, usually taken to be unity.
+
+
+
+
+
+
+% In this section we give the kinetic argument for \cnt.
+% We use the notation of McClurg\cite{},
+% although the argument is much older, with Katz\cite{} doing much of the work to put it into it's modern form.
+% Like McClurg we consider only the simplest case, 
+% the  growth and shrinking of a bubble by the absorption and release of individual molecules.
+% For the more general case of groups of molecules joining and releasing see \cite{}.
+
+% In the derivation the oil is split into a solute and the solution.
+% The solute are the molecules of the oil that have sufficient energy to join the bubble.
+% The solution is the rest of the liquid oil.
+% While this split is somewhat artificial,
+% the result does not depend upon the details.
+% It is used only as a conceptual crutch.
+
+
+
+% The rate of growth of a bubble with $i$ molecules is
+% \begin{align}
+%   J_i = \beta  A_i C_i - E_{i+1} C_{i+1}. \label{eqn:Jn}
+% \end{align}
+% $\beta$ is the impingement rate of the bubble vapour on a unit area.
+% From the kinetic theory of ideal gasses it is equal to 
+% \begin{align}
+% \beta = \frac{p_v}{\sqrt{2\pi M_r \kB T}}, \label{eqn:nuc:beta}
+% \end{align}
+% where  $M_r$ is the molecular weight.
+% The ratio 
+%  \begin{align}
+% \frac{\beta}{\beta^\eqlbm} = \frac{p_v}{p_\infty} \equiv  S
+% \end{align}
+% is the  supersaturation ratio.
+
+% $C_i$ is the number concentration of bubble containing $i$ molecules and $E_{i+1}$ is the rate at which a molecule leaves a bubble with $i+1$ molecules.
+% %Equation \eqnref{Jn} is a recurrence relation for a Markov process.
+
+% Next  thermodynamic equilibrium is assumed (denoted with a $\eqlbm$ superscript).
+% At equilibrium the probability of adding a molecule is equal to the probability of loosing one, 
+% and so 
+% \begin{align}
+%   J_i^\eqlbm = 0 =  \beta^\eqlbm A_i C_i^\eqlbm - E_{i+1}^\eqlbm C_{i+1}^\eqlbm.
+% \end{align}
+% If the number density of the molecules that are capable of joining the bubble  (the solute) is small compared to the rest of the oil (the solvent)
+% then the rate at which the bubble looses  molecules will be independent of the concentration of the solute, 
+% so that $E_{i+1} = E_{i+1}^\eqlbm$ and 
+% \begin{align}
+%   E_{i+1} =  \beta^\eqlbm A_i C_i^\eqlbm/C_{i+1}^\eqlbm. \label{eqn:Enpone}
+% \end{align}
+% Substituting  equation \eqnref{Enpone} and multiplying by $\lr{\beta^\eqlbm / \beta}^n$ gives 
+% % \begin{align}
+% %   J_i = \beta A_i C_i^\eqlbm \lrs{\frac{C_i}{C_i^\eqlbm} - \frac{\beta^\eqlbm C_{i+1}}{\beta C_{i+1}^\eqlbm}}. \label{eqn:JnTwo}
+% % \end{align}
+% % Multiplying \eqnref{JnTwo}   by $\lr{\beta^\eqlbm / \beta}^n$ gives
+% \begin{align}
+%   \frac{J_i} {\alpha_i \beta C_i^\eqlbm\lr{\beta/\beta^\eqlbm}^n} 
+% = \frac{C_i}{C_i^\eqlbm}\lr{\frac{\beta^\eqlbm}{\beta}}^n - \frac{C_{i+1}}{C_{i+1}^\eqlbm}\lr{\frac{\beta^\eqlbm}{\beta}}^{i+1} \label{eqn:JnThree}
+% \end{align}
+% The final step is to assume that the rate of nucleation is steady.
+% Then $J_1 = J_2 = ... =  J_b = J$.
+% Most of the terms in the sum cancel.
+% If we let the sum tend to infinity then
+% % then upon summing the first $b$ terms equation \eqnref{JnThree} becomes
+% % \begin{align}
+% %   J\sum_{i=1}^b\frac{1} {\alpha_i \beta C_i^\eqlbm\lr{\beta/\beta^\eqlbm}^n} = \frac{C_1}{C_1^\eqlbm}\lr{\frac{\beta^\eqlbm}{\beta}} - \frac{C_{b+1}}{C_{b+1}^\eqlbm}\lr{\frac{\beta^\eqlbm}{\beta}}^{b+1}.
+% % \end{align}
+% % If $b$ is let to go to infinity then 
+% \begin{align}
+%   J = \frac{\beta}{\sum_{i=1}^\infty\lrs{ A_i C_i^\eqlbm S^n}^{-1}} \label{eqn:rateOne}
+% \end{align}
+
+% From the thermodynamic argument in \secref{nuc:CNT} we found that the bubbles with $n$ molecules is
+% \begin{align}
+%   C_i = n \exp \lr{- \frac{\Delta G(n)}{\kB T}}. \tag{\ref{eqn:CnBoltzman}}
+% \end{align}
+
+% It is convenient to turn the sum in \eqnref{rateOne} into an integral over $i$, the number of molecules in a bubble.
+% Formally the  integral run from 1 molecule to $\infty$,
+% however, since the integral is dominated over the narrow range  near to the critical radius we 
+% can let the integral run from $-\infty$ to $\infty$, and expand the change in Gibbs energy to quadratic terms,
+% \begin{align}
+%   \Delta G = \Delta G^\ast - \frac{\lr{i-i^\ast}^2}{2}\frac{\d^2 \Delta G(i)}{\d i ^2}. \label{eqn:DeltaGExp}
+% \end{align}
+% The minus sign in \eqnref{DeltaGExp} follows because the energy change is a maximum at the critical radius.
+% In addition, we assume that in the integral  $A = A^\ast \equiv 4\pi \astar^2$ and $S^i = S^{i^\ast}$. 
+% %\equiv S^{\rho_v\Delta G^\ast / M_r}$  take their critical values.
+% %To obtain this latter relation we have noted that a bubble of volume 
+% %$V_b = 4\pi a^3/3$ has $i= V_b /N_v$ molecules, and $N_v$ is the number density of the vapour.
+% Equation \eqnref{rateOne} therefore becomes
+% \begin{align}
+%   J &= \frac{ A^\ast S^{i^\ast} \beta^\ast n\exp{ \lr{- \frac{\Delta G^\ast}{\kB T}}   }}{\int_{-\infty}^\infty dn \exp{\lr{- \frac{\lr{n-n^\ast}^2}{2}\frac{1}{\kB T}\frac{\d^2 \Delta G(n)}{\d n ^2  }}}}
+% \\ &= { A^\ast \beta^\ast   Z  n\exp{ \lr{ i^\ast\ln S -\frac{\Delta G^\ast}{\kB T}}   }}.
+%  \label{eqn:rateTwo}
+% \end{align}
+% where
+% \begin{align}
+% Z = \frac{1}{\rho_v^\ast A^\ast}\sqrt{-\frac{1}{2\pi \kB T}\lrsquare{\frac{\d}{\dr}\lr{\frac{1}{r^2}\frac{\d }{\d r}}}\Delta G(r)} 
+% = \frac{1}{\rho_v^\ast A^\ast}\sqrt{\frac{4\sigma}{\kB T}} %\frac{M_r}{4\pi \astar^2  \rho_v^\ast}\sqrt{\frac{4\sigma}{\kB T}}
+% \label{eqn:Zeldovich}
+% \end{align}
+% is called the Zeldovich factor.
+
+% Pulling together equations \eqnref{nuc:beta}, \eqnref{Zeldovich} and \eqnref{rateTwo}  gives
+% \begin{align}
+%   J \approx S^{{\rho_v\Delta G^\ast / M_r}}   
+%   \frac{p_v n}{  \rho_v^\ast\kB T}\sqrt{\frac{2\sigma M_r}{\pi }}
+%   \exp{ \lr{- \frac{\Delta G^\ast}{\kB T}}   }.
+% \end{align}
+% The pre-exponential factor is therefore
+% \begin{align} 
+% J_0=  S^{i^*}   
+%   \frac{p_v n}{  \rho_v^\ast\kB T}\sqrt{\frac{2\sigma M_r}{\pi }}.
+%   \tag{\ref{eqn:nuc:Jzero}}
+% \end{align}
 
 %%% Local Variables: 
 %%% mode: latex
-%%% TeX-master: "tshorrock_thesis"
+%%% TeX-master: "../tshorrock_thesis"
 %%% End: 
