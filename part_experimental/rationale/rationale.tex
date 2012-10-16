@@ -112,25 +112,25 @@ In this chapter an outline the principle experimental design decisions are outli
 % \end{figure}
 
 
-\begin{figure}[h]
-     \centering
-     \subfloat[]{
-     \missingfigure{The sketch of the arrangement}\label{fig:pressure_pulses:a}
-   }\\
-     \subfloat[]{
-     \missingfigure{The incident pressures}\label{fig:pressure_pulses:b}
-}\\
-     \subfloat[]{
-     \missingfigure{The generated response}\label{fig:pressure_pulses:c}
-   }
-     \caption{
-       When the transducers face each the phase relationship between the two pulses will be sampled as a function of depth.
-       \subref{fig:pressure_pulses:a} shows the arrangement of the transducers.
-       \subref{fig:pressure_pulses:b} shows the pulses pass through each other as a function of depth and time.
-       The acoustic response of a bubble at each depth is illustrated in \subref{fig:pressure_pulses:c}.
-     }
-     \label{fig:pressure_pulses}
-\end{figure}
+%\begin{figure}[h]
+%     \centering
+%     \subfloat[]{
+%     \missingfigure{The sketch of the arrangement}\label{fig:pressure_pulses:a}
+%   }\\
+%     \subfloat[]{
+%     \missingfigure{The incident pressures}\label{fig:pressure_pulses:b}
+%}\\
+%     \subfloat[]{
+%     \missingfigure{The generated response}\label{fig:pressure_pulses:c}
+%   }
+%     \caption{
+%       When the transducers face each the phase relationship between the two pulses will be sampled as a function of depth.
+%       \subref{fig:pressure_pulses:a} shows the arrangement of the transducers.
+%       \subref{fig:pressure_pulses:b} shows the pulses pass through each other as a function of depth and time.
+%       The acoustic response of a bubble at each depth is illustrated in \subref{fig:pressure_pulses:c}.
+%     }
+%     \label{fig:pressure_pulses}
+%\end{figure}
 
 In this thesis two separate ultrasound transducers are used to generate the cavitating and imaging waves.
 This brings the advantage of flexibility:
@@ -150,16 +150,17 @@ If the bubbly mixture is both dense and homogeneous,
 so that it may be considered a continuous medium,
 then at every position within the sample a different phase relationship
 between the two waves is interrogated.
-This is illustrated in \figref{pressure_pulses:a}.
-Bubbles that are close to the imaging transducer will backscatter sound
-before the driving wave arrives.  This is seen in the top left of \figref{pressure_pulses:b}.
-The forward scatter contributed by these bubbles from the driving wave arrives later, as seen in the top right of \figref{pressure_pulses:b}.
-Bubbles that are a little further away will be driven by the driving  and  imaging waves simultaneously.
-Still further from the imaging wave, the driving wave will arrive first, followed by the imaging wave.
-%Further from the away still, theThe first few oscillations will be due to the driving wave alone,
-%before the  imaging wave arrives at a given phase of the driving wave.
+\todo{Maybe dig out the picture here}
+%This is illustrated in \figref{pressure_pulses:a}.
+%Bubbles that are close to the imaging transducer will backscatter sound
+%before the driving wave arrives.  This is seen in the top left of \figref{pressure_pulses:b}.
+%The forward scatter contributed by these bubbles from the driving wave arrives later, as seen in the top right of \figref{pressure_pulses:b}.
+%Bubbles that are a little further away will be driven by the driving  and  imaging waves simultaneously.
+%Still further from the imaging wave, the driving wave will arrive first, followed by the imaging wave.
+%%Further from the away still, theThe first few oscillations will be due to the driving wave alone,
+%%before the  imaging wave arrives at a given phase of the driving wave.
 
-Alternative arrangements for the two transducers are of course possible.
+Alternative arrangements for the two transducers are possible.
 In principle, the two transducers could be at any angle, $\phi$, with respect to each other.
 However, having the transducers co-axial (where $\phi = 0\degree,180\degree$) is optimal because
 the sampling precision in the axial direction is vastly superior than in the orthogonal directions.
@@ -167,19 +168,20 @@ This is because the sampling rate in the axial direction is determined by the ra
 In the orthogonal direction sampling precision  is determined by the beam width of the ultrasound transducer.
 Any arrangement other than co-axial will therefore deteriorate the sampling precision by a factor of $\sin(\phi)$.
 
-The two co-axial arrangements both have their pros and cons.
+The two co-axial arrangements both have their advantages and dissadvantages.
 The advantage of having the two transducers facing each other ($\phi = 180\degree$) 
 is that all phase relationships between the two pulses are explored in a single shot.
 The disadvantage is that the driving pulse is incident upon the imaging transducer even if no scattering occurs.
 This directly transmitted signal is not generally dominant, however, so long as the  band-widths of the driving and imaging crystals do not greatly overlap.
-If the two crystals are intermeshed into the same transducer ($\phi = 0\degree$) then the two pulses traverse with each other.  
+
+If the two crystals are interleaved into the same transducer ($\phi = 0\degree$) then the two pulses traverse with each other.  
 There is no problem with either signal being directly transmitted.
 However, each phase relation of the two pulses needs to be carried out individually
-and it is difficult to maintain micron-sized bubbles in a consistent state for any length of time.
-A further problem is that the phase relationship between the two pulses changes as a function of depth;
+and it is difficult to maintain a population of micron-sized bubbles in a consistent state for any length of time.
+A further problem is that the phase relationship between the two pulses changes as a function of density;
 a high frequency pulse {\em surfing} on a compression of a lower-frequency pulse travels at a greater speed than when timed with a rarefaction.
-This effect is measurable.  It is the basis of {\surf}-imaging\cite{Anderson}\todo{get citations}.
-Finally, inter-meshing two crystals into the same transducer generally requires bespoke transducers
+This effect is measurable and is the basis of {\surf}-imaging\cite{Anderson}\todo{get citations}.
+Finally, interleaving two crystals into the same transducer generally requires bespoke transducers
 and comes at a considerable cost.
 For these reasons, the angle $\phi = 180\degree$ is chosen in this thesis.
 
@@ -223,8 +225,8 @@ on the imaging wave.
   to be sure that the bubbles generated by the driving wave are not simply from heterogeneous nucleation of the water.
   Furthermore, any surfactant used to stabilise the emulsion must be known not to also stabilise
   any bubble formed in the manufacturing process, or to itself form a nucleating centre.
-  Research is being carried out reduce the pressure required for to cavitate a perlfuorocarbon droplet,
-  which ideally would be possible with a diagnostic transducer,
+  Research is being carried out by other groups \todo{cite} to reduce the pressure required for to cavitate a perlfuorocarbon droplet by mixing different perfluorocarbons,
+%  which ideally would be possible with a diagnostic transducer,
   but this research has not yet come to fruition \todo{cite}.
   
 
@@ -232,7 +234,7 @@ on the imaging wave.
 %\subsection{Commercially available microbubbles}
 \item[Commercially available microbubbles:]\hfill \\
   The difficulties resulting from the novelty of perfluorocarbon  emulsions 
-  are resolved by using commercial available microbubbles.
+  are not present for commercial available microbubbles.
   Microbubble contrast agents have been licensed since ,\todo{get date and bubble}
   and \Sonovue\ (Bracco) is currently licenced for clinical use in the EU \todo{cite}.
   Both its size distribution (...\todo{get numbers and cite}) 
@@ -249,10 +251,9 @@ on the imaging wave.
   Since microbubbles are highly attenuating to ultrasound \todo{cite}
   the pressure field in the sample changes as the distribution changes,
   meaning that the response becomes a complicated function of depth.
-  The large size of commercial bubbles also means that they are more fragile to larger pressures.
-  \todo[inline]{Comment about curvature to back this up}
-  The use of microbubbles forces the experiment away from the domain where a submicron bubbles is generated  with a high pressure wave.
-  
+  %The large size of commercial bubbles also means that they are more fragile to larger pressures.
+  %\todo[inline]{Comment about curvature to back this up}
+  %
 
 
   Secondly, commercial microbubbles have a fairly broad distribution of sizes.
@@ -262,6 +263,8 @@ on the imaging wave.
   Not only would we be trying to find the excess scattering cross-section of  a bubble in the complicated region
   corresponding to large bubble radii, we would be trying to perform a weighted average over that region.
 
+Finally, the use of microbubbles forces the experiment away from the domain where a submicron bubbles is generated  with a high pressure wave.
+  
   %Finally, the degree to which the samples are free from nucleation centres is uncertain with commercial bubbles.
   %The bubbles are designed to be sterile, and come packaged with a dry surfactant and a solution into which the bubbles are to be formed.
   %Making a control solution to test that you are actually imaging the commercial bubble and , free from the comertial 
@@ -285,14 +288,16 @@ on the imaging wave.
   gas entrapped in stabilised microbubbles and motes can be released\todo{cite}.
   %(An example is shown if \figref{av:108:1000_ex} and is discussed in \secref{WE:motivating_ex}).
   
-  The critical radius, $R$, of the resulting bubble can be estimated from the Laplace pressure
-  \eq
-  {
-    R = \frac{2\sigma}{P}
-  }
-  where $\sigma$ is the surface tension between air and water,
-  and $P$ is the applied pressure. 
-  If $P = \unit{1}\mega\pascal$ diameter of the bubble is approximately $300\nano\metre$.
+  The critical radius, $R$, as a function of acoustic pressure, $P$, for an air bubble in water was estimated in \chapref{nucleation}.
+  %of a bubble generated by  can be estimated from the Laplace pressure
+  %\eq
+  %{
+  %  R = \frac{2\sigma}{P}
+  %}
+  %where $\sigma$ is the surface tension between air and water,
+  %and $P$ is the applied pressure. 
+  If the negative pressure is  $\unit{1}\mega\pascal$ then the diameter of the bubble is approximately $300\nano\metre$
+(\figref{} on page \pageref{}).
   This is the size that would be expected for extravascular contrast agent,
   achieved with a pressure that would be desirable for an extravascular contrast agent.
   %It therefore makes an excellent mode
@@ -317,223 +322,223 @@ that are additional to those needed to test the influence of the cavitating wave
 A full list of the experimental objectives is given in  \secref{WE:objectives}
 and the experimental methodology designed to meet these objectives is given in \secref{WE:methodology}.
 
-\section{Characterisation of the bubbly fluid}
-  
-The characterisation of the nucleation sources within the water can be achieved indirectly
-using a method discussed in \secref{WE:characterisation}.  
+%\section{Characterisation of the bubbly fluid}
+%  
+%The characterisation of the nucleation sources within the water can be achieved indirectly
+%using a method discussed in \secref{WE:characterisation}.  
 
-\subsection{Density of Impurities and threshold}
-Argument from Herbert\cite{Herbert2006}.
+% \subsection{Density of Impurities and threshold}
+% Argument from Herbert\cite{Herbert2006}.
 
-Let $dn/dP$ be distribution of impurities with threshold $P$.
-I.e. concentration of impurities with threshold between $P$ and $P+dP$ is $(dn/dP)dP$
-Cavititation probability when pressure reaches $\Pmin$ at the focus,
-\begin{align}
-  \sum\lr{\Pmin} = 1- \exp\lr{-\int_Vdr \int_{P(r)}^\Psat dP \frac{dn}{dP} }
-\end{align}
-$V$ is volume of the focal region
+% Let $dn/dP$ be distribution of impurities with threshold $P$.
+% I.e. concentration of impurities with threshold between $P$ and $P+dP$ is $(dn/dP)dP$
+% Cavititation probability when pressure reaches $\Pmin$ at the focus,
+% \begin{align}
+%   \sum\lr{\Pmin} = 1- \exp\lr{-\int_Vdr \int_{P(r)}^\Psat dP \frac{dn}{dP} }
+% \end{align}
+% $V$ is volume of the focal region
 
-Simplest distribution assumes all have the same threshold 
-\begin{align}
-  \frac{dn}{dP} = n_0 \delta(P-P_0)
-\end{align}
-Then 
-\begin{align}
-  \sum\lr{\Pmin} = 1- \exp\lr{-n_0 V(P<P_0|\Pmin)}
-\end{align}
-If spherical distribution so that 
-\begin{align}
-  P(r) = \Pmin \frac{\sin(kr)}{kr}
-\end{align}
-then
-\begin{align}
-  \sum\lr{\Pmin} = 1- \exp\lr{-n_0 4\pi r^3 /3}
-\end{align}
-which can be expressed in terms of power series of $\epsilon \equiv 1-P_0/\Pmin$.
-But this provides bad fit
-Herbert tries distribution:
-\begin{align}
-\frac{dn}{dP} = \frac{\alpha n_0}{\lr{P_2-P_1}^{\alpha}}\lr{P_2-P}^{\alpha-1}
-\end{align}
-which can be fit well.
+% Simplest distribution assumes all have the same threshold 
+% \begin{align}
+%   \frac{dn}{dP} = n_0 \delta(P-P_0)
+% \end{align}
+% Then 
+% \begin{align}
+%   \sum\lr{\Pmin} = 1- \exp\lr{-n_0 V(P<P_0|\Pmin)}
+% \end{align}
+% If spherical distribution so that 
+% \begin{align}
+%   P(r) = \Pmin \frac{\sin(kr)}{kr}
+% \end{align}
+% then
+% \begin{align}
+%   \sum\lr{\Pmin} = 1- \exp\lr{-n_0 4\pi r^3 /3}
+% \end{align}
+% which can be expressed in terms of power series of $\epsilon \equiv 1-P_0/\Pmin$.
+% But this provides bad fit
+% Herbert tries distribution:
+% \begin{align}
+% \frac{dn}{dP} = \frac{\alpha n_0}{\lr{P_2-P_1}^{\alpha}}\lr{P_2-P}^{\alpha-1}
+% \end{align}
+% which can be fit well.
 
-\subsection{Distribution of bubbles}
+% \subsection{Distribution of bubbles}
 
-Diffusion vs buyancy.
+% Diffusion vs buyancy.
 
-\subsection{Boolean model}
-From Stoyan Stochastic geometry and its applications.
+% \subsection{Boolean model}
+% From Stoyan Stochastic geometry and its applications.
 
-Constructed with {\em germs} $x_n$ and the {\em primary grains}, $\Xi_n$, such that
-\begin{align}
-  \Xi = \bigcup_{n=1}^\infty \lr{\Xi_n + x_n} = \lr{\Xi_1 + x_1} \cup \lr{\Xi_2 + x_2} \cup\ldots .
-\end{align}
-With condtion that 
-\begin{align}
-  E(\nu_d(\Xi_0 \oplus K)) < \infty \text{ for all compact k}
-\end{align}
-$\Xi_0$ denotes a further random compact set of same distribution of $\Xi_n$ but independent of both of them and of the germ process $\Phi$.
-$\Xi$ is a {\em boolean model with primary grain } $\Xi_o$.
+% Constructed with {\em germs} $x_n$ and the {\em primary grains}, $\Xi_n$, such that
+% \begin{align}
+%   \Xi = \bigcup_{n=1}^\infty \lr{\Xi_n + x_n} = \lr{\Xi_1 + x_1} \cup \lr{\Xi_2 + x_2} \cup\ldots .
+% \end{align}
+% With condtion that 
+% \begin{align}
+%   E(\nu_d(\Xi_0 \oplus K)) < \infty \text{ for all compact k}
+% \end{align}
+% $\Xi_0$ denotes a further random compact set of same distribution of $\Xi_n$ but independent of both of them and of the germ process $\Phi$.
+% $\Xi$ is a {\em boolean model with primary grain } $\Xi_o$.
 
-Condition ensures finitely many of the grains $\Xi_n+x_n$ meet any given compact set,
-ensuring property of beiing a closed set is inherited by $\Xi$ from the primiary grains.
-A simpler but more restrictive condition is that 
-\begin{align}
-  E(R^d) < \infty
-\end{align}
-where $R$ is the radius of the ball circumscribing $\Xi_n$.
+% Condition ensures finitely many of the grains $\Xi_n+x_n$ meet any given compact set,
+% ensuring property of beiing a closed set is inherited by $\Xi$ from the primiary grains.
+% A simpler but more restrictive condition is that 
+% \begin{align}
+%   E(R^d) < \infty
+% \end{align}
+% where $R$ is the radius of the ball circumscribing $\Xi_n$.
 
-The primary grains are here spheres of random radius, drawn from a distribution, $M$,
-the {\em mark distribution}.
-They are therefore convex.
+% The primary grains are here spheres of random radius, drawn from a distribution, $M$,
+% the {\em mark distribution}.
+% They are therefore convex.
 
-Not assumed to be much overlap,
-therefore considered as a point process, the Neyman-scott point process
+% Not assumed to be much overlap,
+% therefore considered as a point process, the Neyman-scott point process
 
-\subsubsection{Capacity Functional}
-Determined uniquely by the {\em capacity functional}, $T_\Xi$.
+% \subsubsection{Capacity Functional}
+% Determined uniquely by the {\em capacity functional}, $T_\Xi$.
 
-\begin{align}
-T_\Xi (K) &= P(\Xi \cap K \text{ is not empty}) \\
-&= P(\Xi \cap K \ne 0)
-\end{align}
-for any compact K.
+% \begin{align}
+% T_\Xi (K) &= P(\Xi \cap K \text{ is not empty}) \\
+% &= P(\Xi \cap K \ne 0)
+% \end{align}
+% for any compact K.
 
-From the Poisson assuption, 
-\begin{align}
-  T_\Xi (K) = 1 - \exp\lr{-\lambda E(\nu_d(\check{\Xi}_0 \oplus K))}
-\end{align}
-or 
-\begin{align}
-  T_\Xi (K) = 1 - \exp\lr{-\lambda E(\nu_d({\Xi}_0 \oplus\check K))}
-\end{align}
-and the proof is in Stoyan.
+% From the Poisson assuption, 
+% \begin{align}
+%   T_\Xi (K) = 1 - \exp\lr{-\lambda E(\nu_d(\check{\Xi}_0 \oplus K))}
+% \end{align}
+% or 
+% \begin{align}
+%   T_\Xi (K) = 1 - \exp\lr{-\lambda E(\nu_d({\Xi}_0 \oplus\check K))}
+% \end{align}
+% and the proof is in Stoyan.
 
-Useful to intodcue 
-\begin{align}
-  \psi(K) = 0 \ln P(\Xi \cap K = \absurdity).
-\end{align}
-so that
-\begin{align}
-  \psi(K) = \lambda E(\nu_d(\Xi_0 \oplus \check K))
-\end{align}
+% Useful to intodcue 
+% \begin{align}
+%   \psi(K) = 0 \ln P(\Xi \cap K = \absurdity).
+% \end{align}
+% so that
+% \begin{align}
+%   \psi(K) = \lambda E(\nu_d(\Xi_0 \oplus \check K))
+% \end{align}
 
-\subsection{Neyman-Scott Point Process}
+% \subsection{Neyman-Scott Point Process}
 
 
-\subsubsection{Contact Distribution functions}
-{\em Contact distribution function} or {\em hit distrubution function}
-for a stationary random closed set $\Xi$ is defined by using a specified test set or structuring element $B$,
-a convex body of $R^d$ containing the origin $o$.
-Then the contact distribution function is defined as
-\begin{align}
-  H_B(r) = 1 - \frac{P(\Xi\cap rB = \absurdity)}{1-p}
-\end{align}
-for $r\ge 0$ and where $p$ is the volume fraction of $\Xi$.
-Since $B$ contains the origin, $\Xi\cap rB$ being empty implies that $\Xi$ does not conatin the origin. So the value of $H_B(r)$ is the conditional probablity that the parallele set of distance $r$ of $B$ makes contact with $\Xi$, conditional on $\Xi$ nt containing $o$.
+% \subsubsection{Contact Distribution functions}
+% {\em Contact distribution function} or {\em hit distrubution function}
+% for a stationary random closed set $\Xi$ is defined by using a specified test set or structuring element $B$,
+% a convex body of $R^d$ containing the origin $o$.
+% Then the contact distribution function is defined as
+% \begin{align}
+%   H_B(r) = 1 - \frac{P(\Xi\cap rB = \absurdity)}{1-p}
+% \end{align}
+% for $r\ge 0$ and where $p$ is the volume fraction of $\Xi$.
+% Since $B$ contains the origin, $\Xi\cap rB$ being empty implies that $\Xi$ does not conatin the origin. So the value of $H_B(r)$ is the conditional probablity that the parallele set of distance $r$ of $B$ makes contact with $\Xi$, conditional on $\Xi$ nt containing $o$.
 
-The sphecica contact ditribution may be interpreted as the distrubtion functionof distance from a point chosen randomly outside $\Xi$,
-measured to the nearest point $Xi$.  Hence, $H_s$ is the law of first contact.
+% The sphecica contact ditribution may be interpreted as the distrubtion functionof distance from a point chosen randomly outside $\Xi$,
+% measured to the nearest point $Xi$.  Hence, $H_s$ is the law of first contact.
 
-In general we have
-\begin{align}
-  H_B(r) = 1- \exp\lr{-\lambda\lr{E\lr{\nu_d \lr{\check \Xi_0 \oplus r B}}- E\lr{\nu_d{\Xi_0}}}}
-\end{align}
-for $r\ge 0$.
+% In general we have
+% \begin{align}
+%   H_B(r) = 1- \exp\lr{-\lambda\lr{E\lr{\nu_d \lr{\check \Xi_0 \oplus r B}}- E\lr{\nu_d{\Xi_0}}}}
+% \end{align}
+% for $r\ge 0$.
 
- Let $\Xi_\ast$ be a primary grain chosen at random, the ``typical'' grain.
- Let $x_\ast$ be the corresponding germ of the typical grain, $\Xi_\ast$ and let
- \begin{align}
-   \Xi^\prime = \bigcup\left\{\Xi_i + x_i : x_i \ne x_\ast \right\}
- \end{align}
- be the union of the ramaining grains, then the following are of interest,
- \begin{align}
-   p_o &= P(x_\ast \text{ is covered by $\Xi^\prime$}\\
-   p_G &= P(\Xi_\ast + x_\ast \text{ intersects $\Xi^\prime$}),\\
-   p_s &= \text{fraction of boundary of $\Xi_\ast$ which is covered by $Xi^\prime$}
- \end{align}
- Probabities satisfy
- \begin{align}
-   p_0 &= p\\
-   p_G &= 1 - E\lr{\exp\lr{-\psi\lr{\Xi_0}}}\\
-   p_s &= p
- \end{align}
- for proofs see Stoyon.
+%  Let $\Xi_\ast$ be a primary grain chosen at random, the ``typical'' grain.
+%  Let $x_\ast$ be the corresponding germ of the typical grain, $\Xi_\ast$ and let
+%  \begin{align}
+%    \Xi^\prime = \bigcup\left\{\Xi_i + x_i : x_i \ne x_\ast \right\}
+%  \end{align}
+%  be the union of the ramaining grains, then the following are of interest,
+%  \begin{align}
+%    p_o &= P(x_\ast \text{ is covered by $\Xi^\prime$}\\
+%    p_G &= P(\Xi_\ast + x_\ast \text{ intersects $\Xi^\prime$}),\\
+%    p_s &= \text{fraction of boundary of $\Xi_\ast$ which is covered by $Xi^\prime$}
+%  \end{align}
+%  Probabities satisfy
+%  \begin{align}
+%    p_0 &= p\\
+%    p_G &= 1 - E\lr{\exp\lr{-\psi\lr{\Xi_0}}}\\
+%    p_s &= p
+%  \end{align}
+%  for proofs see Stoyon.
 
-The number of isolated grains with germ pointst in a given compact set $K$ is 
-\begin{align}
-  \lambda \lr{1-p_G}\nu_d(K)
-\end{align}
+% The number of isolated grains with germ pointst in a given compact set $K$ is 
+% \begin{align}
+%   \lambda \lr{1-p_G}\nu_d(K)
+% \end{align}
 
-\subsubsection{Convex Grains}
-If $\Xi_0$ is isotropic and convex then $\psi(K)$ can be calculatd for convex $K$ by the generalised Steiner Formula,
-\begin{align}
-  \psi(K) = \lambda E(\nu_d(\Xi_0 \oplus \check K)) = \frac{\lambda}{b_d}\sum_{k=0}^d \twovec{d}{k}\bar W_k W_{d-k}(K)
-\end{align}
-Where $\bar W_k$ denotes the mean of the $k$th Mindowski function of $\Xi_0$,
-\begin{align}
-  \bar W_k = E(W_k(\Xi_0)) \text{ for $k = 1, \ldots, d$}
-\end{align}
-and $b_d$ is the volume of the $d$-dimensional unit ball.
+% \subsubsection{Convex Grains}
+% If $\Xi_0$ is isotropic and convex then $\psi(K)$ can be calculatd for convex $K$ by the generalised Steiner Formula,
+% \begin{align}
+%   \psi(K) = \lambda E(\nu_d(\Xi_0 \oplus \check K)) = \frac{\lambda}{b_d}\sum_{k=0}^d \twovec{d}{k}\bar W_k W_{d-k}(K)
+% \end{align}
+% Where $\bar W_k$ denotes the mean of the $k$th Mindowski function of $\Xi_0$,
+% \begin{align}
+%   \bar W_k = E(W_k(\Xi_0)) \text{ for $k = 1, \ldots, d$}
+% \end{align}
+% and $b_d$ is the volume of the $d$-dimensional unit ball.
 
-E.g. let $X_0$ be a sphere, $b(o,R)$ of random radius $R$ with $E(R^d) <\infty$.
-Then 
-\begin{align}
-  \psi(K)= \lambda(A(K) + U(K)E(R) + \pi E(R^2))
-\end{align}
-and if $d=3$ then
-\begin{align}
-  \psi(K) = \lambda\lr{  V(K) + S(K)E(R) + 2\pi \bar b(K) E(R^2) + \frac{4}{3} \pi E(R^3) }
-\end{align}
+% E.g. let $X_0$ be a sphere, $b(o,R)$ of random radius $R$ with $E(R^d) <\infty$.
+% Then 
+% \begin{align}
+%   \psi(K)= \lambda(A(K) + U(K)E(R) + \pi E(R^2))
+% \end{align}
+% and if $d=3$ then
+% \begin{align}
+%   \psi(K) = \lambda\lr{  V(K) + S(K)E(R) + 2\pi \bar b(K) E(R^2) + \frac{4}{3} \pi E(R^3) }
+% \end{align}
 
-\subsubsection{Contact Distribution Function}
-For convex structure We have
-\begin{align}
-  H_B(r) = 1 - \exp\lr{ -\frac{\lambda}{b_d}\sum_{k=1}^d\twovec{d}{k}r^k \bar W_k W_{d-k}(B)}
-\end{align}
-for $r\ge 0$.
-The $k=0$ term cancels with $-\lambda \bar W_0$ or $-\lambda E(\nu_d(\Xi_0))$ terms.
+% \subsubsection{Contact Distribution Function}
+% For convex structure We have
+% \begin{align}
+%   H_B(r) = 1 - \exp\lr{ -\frac{\lambda}{b_d}\sum_{k=1}^d\twovec{d}{k}r^k \bar W_k W_{d-k}(B)}
+% \end{align}
+% for $r\ge 0$.
+% The $k=0$ term cancels with $-\lambda \bar W_0$ or $-\lambda E(\nu_d(\Xi_0))$ terms.
 
-If $d=3$ then
-\begin{align}
-  H_B(r) &= 1 - \exp\lr{-\lambda \lr{\frac{\bar S M(B)}{4\pi}r + \frac{\bar M S(B)}{4 \pi}r^2 + V(B) r^3 } }\\
-  &= 1 - \exp\lr{ -\frac{1}{1-V_V} \lr{ \frac{S_V M(B) }{4\pi}r + \frac{M_V^+S(B)}{4\pi}r^2 + N_V^+V(B)r^3  } }
-\end{align}
-for $r\ge 0$.
-N.B. The physical dimensionality of the $H_B(r)$ has to be noted.  See the book.
+% If $d=3$ then
+% \begin{align}
+%   H_B(r) &= 1 - \exp\lr{-\lambda \lr{\frac{\bar S M(B)}{4\pi}r + \frac{\bar M S(B)}{4 \pi}r^2 + V(B) r^3 } }\\
+%   &= 1 - \exp\lr{ -\frac{1}{1-V_V} \lr{ \frac{S_V M(B) }{4\pi}r + \frac{M_V^+S(B)}{4\pi}r^2 + N_V^+V(B)r^3  } }
+% \end{align}
+% for $r\ge 0$.
+% N.B. The physical dimensionality of the $H_B(r)$ has to be noted.  See the book.
 
-Spherical Contact Distribution
-\begin{align}
-  H_s(r) = 1-\exp\lr{-\lambda \sum_{k=1}^d\twovec{d}{k} \bar W_kr^k}
-\end{align}
-for $r\ge0$.
-It is the distance to the nearest sphere from a point chosen at random but from outside one of the spheres.
-It is 
-\begin{align}
-   H_s(r) = 1-\exp\lr{-\frac{4}{3}\pi\lambda r\lr{3E(R^2) + 3r E(R) + r^2}}
-\end{align}
+% Spherical Contact Distribution
+% \begin{align}
+%   H_s(r) = 1-\exp\lr{-\lambda \sum_{k=1}^d\twovec{d}{k} \bar W_kr^k}
+% \end{align}
+% for $r\ge0$.
+% It is the distance to the nearest sphere from a point chosen at random but from outside one of the spheres.
+% It is 
+% \begin{align}
+%    H_s(r) = 1-\exp\lr{-\frac{4}{3}\pi\lambda r\lr{3E(R^2) + 3r E(R) + r^2}}
+% \end{align}
 
-Special cases
-Primary grains are random balls with radius $R$ and distribution function $F_R$ with
-\begin{align}
-  p = 1- \exp\lr{-\frac{4}{3}\lambda \pi E(R^3)}
-\end{align}
-\begin{align}
-  \lambda_1^{(3)} = \lambda \pi E(R^2)
-\end{align}
-\begin{align}
-  H_s(r) = 1 - \exp\lr{ -\lambda \pi r \lr{ 4 r E(R) + \frac{4r^2}{3} }  }
-\end{align}
-\begin{align}
-  C(r) = 2p - 1 + \lr{1-p}^2 \exp \lr{ \lambda \frac{4}{3}\pi \int_{r/2}^\infty x^3\lr{1-\frac{3r}{4x}+\frac{r^2}{16x^3}} dF_R(x)}
-\end{align}
+% Special cases
+% Primary grains are random balls with radius $R$ and distribution function $F_R$ with
+% \begin{align}
+%   p = 1- \exp\lr{-\frac{4}{3}\lambda \pi E(R^3)}
+% \end{align}
+% \begin{align}
+%   \lambda_1^{(3)} = \lambda \pi E(R^2)
+% \end{align}
+% \begin{align}
+%   H_s(r) = 1 - \exp\lr{ -\lambda \pi r \lr{ 4 r E(R) + \frac{4r^2}{3} }  }
+% \end{align}
+% \begin{align}
+%   C(r) = 2p - 1 + \lr{1-p}^2 \exp \lr{ \lambda \frac{4}{3}\pi \int_{r/2}^\infty x^3\lr{1-\frac{3r}{4x}+\frac{r^2}{16x^3}} dF_R(x)}
+% \end{align}
 
-\subsection{Proximity of Bubbles}
-Are they likely to be interacting
+% \subsection{Proximity of Bubbles}
+% Are they likely to be interacting
 
-\subsection{Probability of a bubble in the imaging field of view}
+% \subsection{Probability of a bubble in the imaging field of view}
 
-\subsection{Probability of a bubble in the Driving field of view}
+% \subsection{Probability of a bubble in the Driving field of view}
 
 
 
@@ -761,29 +766,51 @@ Are they likely to be interacting
 
 \section{Experimental Objectives} \label{sec:WE:objectives}
 
+This thesis has four experimental objectives that aim to test the predictions made in the first parts of the thesis.
+\nlist{
+\item Determine whether bubbles can evacuated from dirty water with a driving wave,
+  and simultaneously imaged with a higher-frequency pulse.
+\item Determine if the precise location of the bubble can be determined.
+  In particular, can the excess scatter introduced in \chapref{computations}
+  be shown to have experimental merit.
+\item Determine whether any of the characteristics of the bubble can be inferred from the scattered sound.
+  In particular, can the pressure of the driving wave be used to determine the radius of the bubble
+  as hoped in \chapref{nucleation}.
+  Also, can the lifetime of the bubble be measured by using the driving-imaging wave pair.
+\item 
+  Determine whether the acoustic Keller-Miksis equation from \chapref{measurement} improve the modelling of the returned echo.
+}
+
+The objectives are incremental in that the latter depend upon the former.
+The first is the most straight forward.
+The generation of bubbles in dirty water is familiar to most practicioners of ultrasound
+and the only technical difficulty is in timing the imaging wave appropriately to image the wave.
+
+Only the first of these objectives has The first 
 
 
-In line with the goal of imaging an extravascular bubble,
-we focus in this chapter on imaging sub-micron bubbles 
-that have been pulled into solution with a low-frequency cavitating wave.
-This forces the experimental proceedure to 
-examine the major practical difficulty encountered when imaging with two ultrasound waves:
-the removal of the  bubble's high frequency response to the cavitating wave.
-As was shown in \chapref{mechanisms},
-if the driving wave is of sufficient pressure \todo{make this more precise}
-it will cause bubble to undergo an callapse with every cycle,
-each of which  can be detected by the imaging trasducer.
-This destroys the spatitial resolution of the image,
-for the bubble's temporal resolution is equal to the  duration of the low-frequeny pulse,
-rather than that of the much shorter imaging pulse.
-A method of overcoming this problem is to repeat the driving pulse,
-but this time without the imaging wave.
-By subtracting the response to the driving pulse alone,
-from the response when both waves are present,
-then the influence of the imagaging wave can be determined.
-This method propted the definition of {\em excess scattering cross section},
-given by \eqnref{excessI} on page \pageref{eqn:excessI}.
-This double-pulse method is explored in \secref{WE:method}.
+
+%In order to line with the goal of imaging an extravascular bubble,
+%we focus in this chapter on imaging sub-micron bubbles 
+%that have been pulled into solution with a low-frequency cavitating wave.
+%This forces the experimental proceedure to 
+%examine the major practical difficulty encountered when imaging with two ultrasound waves:
+%the removal of the  bubble's high frequency response to the cavitating wave.
+%As was shown in \chapref{mechanisms},
+%if the driving wave is of sufficient pressure \todo{make this more precise}
+%it will cause bubble to undergo an callapse with every cycle,
+%each of which  can be detected by the imaging trasducer.
+%This destroys the spatitial resolution of the image,
+%for the bubble's temporal resolution is equal to the  duration of the low-frequeny pulse,
+%rather than that of the much shorter imaging pulse.
+%A method of overcoming this problem is to repeat the driving pulse,
+%but this time without the imaging wave.
+%By subtracting the response to the driving pulse alone,
+%from the response when both waves are present,
+%then the influence of the imagaging wave can be determined.
+%This method propted the definition of {\em excess scattering cross section},
+%given by \eqnref{excessI} on page \pageref{eqn:excessI}.
+%This double-pulse method is explored in \secref{WE:method}.
 
 
 
@@ -809,7 +836,7 @@ This double-pulse method is explored in \secref{WE:method}.
 
 %\Chapref{mechanisms} investigated, with a computational model,
 %how two ultrasound waves may be used 
-The generation and the imaging of a bubble places different requirements on an ultrasound pulse.
+%The generation and the imaging of a bubble places different requirements on an ultrasound pulse.
 
 %\ilist{
 %  \item the low frequencies and long pulses required for generating a bubble lead to poor resolution 
@@ -819,49 +846,49 @@ The generation and the imaging of a bubble places different requirements on an u
 %which means that the bubble's response is sub-optimal,
 %\item the 
 %}
-the low frequencies and long pulses required for generating a bubble lead to poor resolution 
-when used for imaging;
-the size of the generated bubble is, in general,
-such that its resonance frequency is a poor match to the generating wave,
-which means that the bubble's response is sub-optimal;
-the high pressures used in the generating wave 
+%the low frequencies and long pulses required for generating a bubble lead to poor resolution 
+%when used for imaging;
+%he size of the generated bubble is, in general,
+%such that its resonance frequency is a poor match to the generating wave,
+%which means that the bubble's response is sub-optimal;
+%the high pressures used in the generating wave 
 
 
-The prediction of \chapref{mechanisms} requires two waves
+%The prediction of \chapref{mechanisms} requires two waves
 
-that the scattering of a bubble in response a high frequency wave
-can be modulated by the pulsations induced in the model with a second wave.
+%that the scattering of a bubble in response a high frequency wave
+%can be modulated by the pulsations induced in the model with a second wave.
 
-When the driving wave shrinks the bubble, the resonance frequency temporarily increases.
-If the new resonance frequency is closer to that of the imaging wave, then the scattering increases.
-Otherwise it decreases.
-
-
-The principle difficulty in doing this is separating the influence of the imaging wave from 
-the scatter generated from the driving wave alone.
-To do so, as was discussed in \chapref{mechanisms},
-two pulses need to be taken, one with and one without the imaging wave.
+%When the driving wave shrinks the bubble, the resonance frequency temporarily increases.
+%If the new resonance frequency is closer to that of the imaging wave, then the scattering increases.
+%Otherwise it decreases.
 
 
-This chapter analyses the results of the experiment outlined int  whether the driving  wave influences the back-scatter from an imaging wave in the predicted manner.
+%The principle difficulty in doing this is separating the influence of the imaging wave from 
+%the scatter generated from the driving wave alone.
+%To do so, as was discussed in \chapref{mechanisms},
+%two pulses need to be taken, one with and one without the imaging wave.
 
 
-To determine the influence of the high frequency wave 
-on a bubble pulsating to a dual frequency wave,
-the influence 
+%This chapter analyses the results of the experiment outlined int  whether the driving  wave influences the back-scatter from an imaging wave in the predicted manner.
 
-\Chapref{mechanisms} described a method of determining whether the scattering of a high frequency wave
-can be altered by the pulsations induced by  a lower frequency wave.
-Two pulses were required, 
-one comprising of low frequency and high frequency components,
-the other comprising of just low frequency components.
-In this way the unperturbed-forward scatter from the low frequency wave could be subtracted out, 
-leaving behind the scatter that is caused by the high frequency wave.
 
-However, using two pulses causes its own problems,
-for it is difficult to guarenee that the pulses are independant of one-another.
-A pulsating bubble can grow (rectified diffusion),
-can dissolve away or can burst into many smaller bubbles. 
+%To determine the influence of the high frequency wave 
+%on a bubble pulsating to a dual frequency wave,
+%the influence 
+
+%\Chapref{mechanisms} described a method of determining whether the scattering of a high frequency wave
+%can be altered by the pulsations induced by  a lower frequency wave.
+%Two pulses were required, 
+%one comprising of low frequency and high frequency components,
+%the other comprising of just low frequency components.
+%In this way the unperturbed-forward scatter from the low frequency wave could be subtracted out, 
+%leaving behind the scatter that is caused by the high frequency wave.
+
+%However, using two pulses causes its own problems,
+%for it is difficult to guarenee that the pulses are independant of one-another.
+%A pulsating bubble can grow (rectified diffusion),
+%can dissolve away or can burst into many smaller bubbles. 
 %Additionally,
 %even if 
 %To generate a bubble, low frequencies and high pressures are required,
@@ -884,18 +911,25 @@ can dissolve away or can burst into many smaller bubbles.
 
 
 
-\section{Discussion} \label{sec:WE:discussion}
+%\section{Discussion} \label{sec:WE:discussion}
 
 
 
+%\Chapref{mechanisms} described a method of determining whether the scattering of a high frequency wave
+%can be altered by the pulsations induced by  a lower frequency wave.
+%Two pulses were required, 
+%one comprising of low frequency and high frequency components,
+%the other comprising of just low frequency components.
+%In this way the unperturbed-forward scatter from the low frequency wave could be subtracted out, 
+%leaving behind the scatter that is caused by the high frequency wave.
 
-This chapter gives two representative images at two different pressures for the cavitation of water.
-The issues in interpreting these images are then discussed.
-Without an interpretation, I do not believe we can say whether the images presented are novel or not, 
-even in terms of a balance of evidence.
+%This chapter gives two representative images at two different pressures for the cavitation of water.
+%The issues in interpreting these images are then discussed.
+%Without an interpretation, I do not believe we can say whether the images presented are novel or not, 
+%even in terms of a balance of evidence.
 
-The images are Hilbert transformed data from the Cortex scanner.
-I have informally called these B-mode images - but in reality I have done nothing other than  Hilbert transform the RF data along A-lines.
+%The images are Hilbert transformed data from the Cortex scanner.
+%I have informally called these B-mode images - but in reality I have done nothing other than  Hilbert transform the RF data along A-lines.
 
 
 % \todo[inline]{The following text has been taken from previous reports.
