@@ -75,18 +75,18 @@
 %part_theoretical/part_theory,
 %part_theoretical/nucleation/nucleation,
 %part_theoretical/acoustic_relativity/acoustic_relativity,
-<<<<<<< HEAD
-=======
+%<<<<<<< HEAD
+%=======
 %part_theoretical/measurement/measurement,
->>>>>>> 061ae1ca44e322a36342ec8f9f946d2793a172c6
+%>>>>>>> 061ae1ca44e322a36342ec8f9f946d2793a172c6
 %part_theoretical/maxwell_analogy/Maxwell_analogy,
 %part_theoretical/measurement/measurement,
 %part_theoretical/bubble_interactions/bubble_interactions,
 %part_theoretical/computations/computations,
-part_experimental/part_experimental,
+%part_experimental/part_experimental,
 part_experimental/rationale/rationale,
-part_experimental/DPR500_protocol/DPR500_protocol,
-part_experimental/characterisation/characterisation,
+%part_experimental/DPR500_protocol/DPR500_protocol,
+%part_experimental/characterisation/characterisation,
 %part_discussion/part_discussion,
 %part_discussion/discussion/discussion,
 %part_appendix/part_appendix,
@@ -103,7 +103,7 @@ part_experimental/characterisation/characterisation,
 % %
 % %mechanisms
 %phase_shift,
-% %high_frequency_imaging,
+high_frequency_imaging,
 % %
 % %
 % %notes/church,
@@ -149,6 +149,7 @@ part_experimental/characterisation/characterisation,
 \graphicspath{ %
   {part_theoretical/nucleation/figs/} %
   {part_theoretical/bubble_interactions/figs/} %
+  {part_experimental/rationale/figs/} %
   {figs/} %
   {figs/nucleation/} %
   {figs/acoustic_relativity/} %
@@ -193,23 +194,30 @@ part_experimental/characterisation/characterisation,
 \include{misc/table_list}
 \include{misc/preface}
 \pagenumbering{arabic}
-\include{part_intro/part_intro}
-\include{part_intro/introduction/introduction}
-\include{part_intro/part_maths}
-\include{part_intro/inference/variational_methods}
-\include{part_intro/geometric_algebra/gc}
-\include{part_theoretical/part_theory}
-\include{part_theoretical/nucleation/nucleation}
-\include{part_theoretical/acoustic_relativity/acoustic_relativity}
-%\include{part_theoretical/maxwell_analogy/Maxwell_analogy}
-\include{part_theoretical/measurement/measurement}
-%\include{part_theoretical/bubble_interactions/bubble_interactions}
-\include{part_theoretical/computations/computations}
-\include{mechanisms}
-\include{part_experimental/part_experimental}
+%\include{part_intro/part_intro}
+%\include{part_intro/introduction/introduction}
+%\include{part_intro/part_maths}
+%\include{part_intro/inference/variational_methods}
+%\include{part_intro/geometric_algebra/gc}
+%\include{part_theoretical/part_theory}
+%\include{part_theoretical/nucleation/nucleation}
+%\include{part_theoretical/acoustic_relativity/acoustic_relativity}
+%\include{part_theoretical/measurement/measurement}
+%\include{part_theoretical/computations/computations}
+%\include{mechanisms}
+%\include{part_experimental/part_experimental}
 \include{part_experimental/rationale/rationale}
-\include{part_experimental/DPR500_protocol/DPR500_protocol}
-\include{part_experimental/characterisation/characterisation}
+%\include{part_experimental/DPR500_protocol/DPR500_protocol}
+%\include{part_experimental/characterisation/characterisation}
+%\include{part_discussion/part_discussion}
+%\include{part_discussion/discussion/discussion}
+%\appendix
+%\include{part_appendix/part_appendix}
+%\include{part_appendix/tensor_derivation}
+%\include{part_appendix/nucleation_classical_appendix}
+%\include{part_appendix/nucleation_DFT_appendix}
+%\include{part_theoretical/maxwell_analogy/Maxwell_analogy}
+%\include{part_theoretical/bubble_interactions/bubble_interactions}
 %\include{experimental_method}
 %\include{part_experimental/high_frequency_experiments}
 %\include{water_cavitation_experiments}
@@ -218,8 +226,6 @@ part_experimental/characterisation/characterisation,
 %\include{part_experimental/oil_cavitation_experiments}
 %\include{phase_shift}
 %\include{high_frequency_imaging}
-\include{part_discussion/part_discussion}
-\include{part_discussion/discussion/discussion}
 %\include{notes/church}
 %\include{model_building}
 %\include{Newtonian_bubble}
@@ -227,18 +233,13 @@ part_experimental/characterisation/characterisation,
 %\include{acoustic_bubble_computations}
 %\include{acoustic_bubble}
 %\include{phase_shift}
-%\include{high_frequency_imaging}
+\include{high_frequency_imaging}
 %\include{phase_shift_combo}
 %\include{notes/elasticity}
 %\include{notes/stream_function}
 %\include{notes/spin}
 %\include{basic_bubble_model}
 %\include{partAppendix}
-\appendix
-\include{part_appendix/part_appendix}
-\include{part_appendix/tensor_derivation}
-\include{part_appendix/nucleation_classical_appendix}
-\include{part_appendix/nucleation_DFT_appendix}
 %\include{program}
 %\include{fragments}
 %\include{appendix_Lie}
