@@ -441,7 +441,7 @@ In \secref{exp:prelim}, a preliminary study is discussed that
 confirms question 1 in the affirmative.
 It is found, however, that the preliminary study is not capable of determining the answer to 
 the second question, namely,
-whether the imaging transducer actively imaging the generating bubbles
+whether the high frequency transducer actively imaging the generated bubbles
 or whether it is simply passively detecting high harmonics
 of bubbles oscillating due the driving wave.
 This prompts some changes in experimental design that are discussed in \secref{exp:finalDesign}.
@@ -466,17 +466,49 @@ The motivation for being below the principle resonance comes from \chapref{compu
 This is approximately the size of bubble  that we ultimately wish to image.
 \item Both transducers are  focussed.  Firstly, this results in an imaging volume that is well located.
 Secondly, higher driving and imaging pressures can be obtained at the focus than would be possible if the transducers were flat.
-A plot of the focal widths is provided in \figref{}.  
-\item The \unit{20}\mega\hertz\ trasnducer was a spare taken from a  Cortex Skin Scanner
-that had been customised to obtain the radio-frequency output.
-  The transducer could therefore be fixed to obtain M-mode images,
+A plot of the focal widths is provided in \figref{exp:profiles}.  
+\item The \unit{20}\mega\hertz\ trasnducer was a spare taken from a  Cortex Skin Scanner.
+%that had been customised to obtain the radio-frequency output.
+  The transducer can therefore be fixed to obtain M-mode images,
   or mounted on a pendulum  scan-head to obtain B-mode images.
  }
+\begin{centering}
+\begin{figure}
+\subfloat[Imaging transducer (20\mega\hertz) ]{
+    \label{fig:exp:Dprofile}
+    \includegraphics[width=.9\textwidth]{0.5mhz_profile.eps}}\\
+\subfloat[Imaging transducer (20\mega\hertz) ]{
+    \label{fig:exp:Iprofile}
+    \includegraphics[width=.9\textwidth]{20mhz_profile.eps}}
+  %\hspace{.3in}
+   \caption{
+     The profile along the two lateral and axial direction for the imaging and pumping transducer measured with a membrane hydrophone
+   }
+   \label{fig:exp:profiles}
+\end{figure}
+\end{centering}
+
+
+%\begin{centering}
+%\begin{figure}
+%\subfloat[Sample holder components]{
+%    \label{fig:exp:sampleholdercomps}
+%    \includegraphics[width=.9\textwidth]{\missingfigure{Diagram of the sample holder components}}}
+%\subfloat[]{
+%    \label{fig:exp:samplehoderarrangement}
+%    \includegraphics[width=.9\textwidth]{\missingfigure{sample holder arrangement in prelim study}}}
+%  %\hspace{.3in}
+%   \caption{
+%     The sample holder components, and the arrangement used in the preliminary study.
+%   }
+%   \label{fig:exp:sampleholder}
+%\end{figure}
+%\end{centering}
 
 The two transducers were clamped together in a custom made sample holder which ensured that the mechanical focus of the two transducers was conincident.  
 Two mounts for the imaging transducer were made, one that fixed the imaging transducer on axis with the driving transducer, and one that enabled the imaging trasducer to swing for B-Mode imaging.
 The cofocus was designed so that it stood in the middle of a sampling volume that could be separated from the transducer standoffs with Mylar film.  
-\Figref{} gives a schematic of the holder.
+\Figref{exp:sampleholder} gives a schematic of the holder.
 
 
 B-mode imaging was chosen for the preliminary study
@@ -485,13 +517,13 @@ so as to  maximise the view of the two wave interaction.
 %the imaging transducer was used in 2-dimensional mode.
 %This helped to mitigate the risk of missing regions of the cavitation chamber that were generating bubbles. 
 The modified  Cortex scanner gives output to the frame trigger output, the
-A-line trigger output , the
-direction of the scan of the transducer and the RF data.
+A-line trigger output, the swing
+direction  of the transducer and the RF data.
 It has a slow frame rate of  approximately \unit{3-4}\hertz.
 The cortex also has a curious although very useful pulse sequence, with two
 A-line-pulses in rapid (100 microsecond) succession, followed by a large (millisecond
 scale) interval.
-This is illustrated in \figref{cortex_gate}.
+This is illustrated in \figref{exp:cortex_gate}.
 
 \begin{figure}[h]
      \centering
@@ -499,20 +531,23 @@ This is illustrated in \figref{cortex_gate}.
      \caption{The cortex fires two A-lines in quick succession before
        repeating the sequence after a
      relatively large pause.}
-          \label{fig:cortex_gate}
+          \label{fig:exp:cortex_gate}
 \end{figure}
 
 
-The focal length of the low frequency transducer is longer than that
-of the Cortex
-transducer
-and as such it needs to be triggered before the cortex in order for
+Unfortunately the Cortex scanner cannot be triggered,
+only providing an output to an internal trigger.
+However, since the focal length of the low frequency transducer is longer than that
+of the Cortex transducer,
+it needs to be triggered earlier in order for
 both signals to reach the sample at the same time.
-It is therefore impossible to time the low frequency transducer to
-propagate through to the sample  at the same time as the low
-frequency pulse.
-The two pulses from the cortex enables this problem to be overcome.
-The first pulse of the cortex A-line doublet is used to trigger 
+%
+%It is therefore impossible to use the A-line trigger to
+%trigger  the low frequency transducer to
+%propagate through to the sample  at the same time as the low
+%frequency pulse.
+The two pulses from the Cortex scanner enables this problem to be overcome.
+The first pulse of the Cortex A-line doublet is used to trigger 
 a timer delay for the low frequency transducer.
 The delay is chosen  so that the first low frequency pulse arrives at the
 sample at the same time as the second high frequency pulse.
@@ -642,8 +677,8 @@ Pressures chosen \todo{Not sure what to do here}
 
 \Figref{water_cavitation_70} shows two plots.
 The images are the Hilbert transform of the RF data along the A-lines obtained from the Cortex scanner.
-I have informally called these B-mode images - but in reality I have done nothing other than  
-
+%I have informally called these B-mode images - but in reality I have done nothing other than  
+%
 The top image is generated when both the driving wave and the imaging waves are on.
 The two lines are the front and rear of the Mylar film, as imaged by the high frequency wave.
 The lower plot is the same sample but when just the imaging wave is on.
@@ -655,7 +690,7 @@ The temporal interval between the bands is consistent with the frequency of the 
 These signals are not present when the driving wave is off. % indicating that the signals are short lived (i.e. less than a few milliseconds - the time between adjacent A-lines).
 
 At 30db suppression  such signals are  common but by no mean ubiquitous.
-Often such signals are present only  few A-lines (grouped together, as above), sometimes only for a single A-line in the image, and often no visible at all.
+Often such signals are present in only  few A-lines (grouped together, as above), sometimes only for a single A-line in the image, and often no visible at all.
 At greater suppression (i.e 32 db) you get such signals but with a lesser frequency,
 at a lesser suppression they become more common.
 The 30db signal has the property that you see  the bubbles at gains that  do not pick up the direct transmit.
@@ -691,49 +726,48 @@ More regular banding is evident in addition to the more stochastic events observ
 \subsubsection{Interpretation}
 
 The regular banding in \figref{water_cavitation_85} is very stable.
-It is present only when the driving wave is, increases in amplitude with the driving wave,
+It is present only when the driving wave is on, increases in amplitude with the driving wave,
 and is of the same wavelength as the driving wave.
 The most natural interpretation is that this portion of the image is the 
 direct transmit of the driving wave arriving on the imaging wave.
 
 The signal from the direct transmit is useful because it indicates the sampling of the compression
 and rarefaction cycles of the driving wave by the imaging wave.
-While it must be remembered that the imaging transducer is filtering the frequencies of the actual received signals,
+While it must be remembered that the imaging transducer is filtering the frequencies of the received pulse,
 thereby distorting them in the image, 
-the broad phase of the driving wave is nevertheless evident in \figref{water_cavitation_85},
-with the bright pixels indicating a compression in the driving wave.
+the broad phase of the driving wave is nevertheless evident in \figref{water_cavitation_85}.
+Bright pixels indicate a compression in the driving wave.
 
 The bright and stochastic signals that are seen on top of the direct transmission 
 are interpreted as resulting from bubbles in the solution.
-It is seen that their greatest intensites come in at the beginning of the rarefaction phase of the driving wave - the rebound after the compression. 
+It is seen that their greatest intensities come in at the beginning of the rarefaction phase of the driving wave - the rebound after the compression. 
 The lack of coherence between adjacent alines indicate that the bubbles are short lived (milliseconds).
 This is expected from the analysis of \chapref{nucleation}.
 
 Both \figref{water_cavitation_70} and \figref{water_cavitation_85} were driven with a
 10 cycle burst from the driving transducer.
 In \figref{water_cavitation_85}, however, 16 bands can be counted in the signal.
-This suggest that the generated bubble through for the duration of the driving pulse (microseconds)
+This suggest that the generated bubble survives through for the duration of the driving pulse (microseconds)
 and interacts with the ringdown of the transducer after its burst.
 It suggests that the bubbles are not destroyed and reborn on every cycle of the driving wave.
 
 
-\subsubsection{What remains ambiguous}
+\subsubsection{What remains ambiguous?}
 Unfortunately a number of questions are not answered by the \figref{water_cavitation_70}
 and  \Figref{water_cavitation_85}.
 \desc{
 \item[The location of the scattering bubble(s):]
   The location of the bubble(s) within the sample is not clear in the experiment.
+  
   The signal detected by the imaging wave could result from one bubble, 
   generating an acoustic output with every cycle of the driving wave.
-  
-  However, even if there is only one bubble,  there is no indication as to its location.
-  It could be anywhere along the axis between the two transducers.
-  The localisation of an interacting bubble id entirely based upon the
-  driving wave being focused.
-  In \figref{zAxis} it is seen that this gives quite a lot of scope for the location of the bubble.
-
-  The excess pressure cannot be applied in this experiment to help determine the location of the bubble.
-  This is because the because the imaging transducer is moving between alines.
+  %However, even if there is only one bubble,  there is no indication as to its location.
+  Its location, however, could be anywhere along the axis between the two transducers.
+  The interacting bubble is more likely at the focus of the driving wave, 
+  due to the greater pressures that exist there, 
+  but \figref{zAxis} shows that the fall off in axial pressures is quite gradual.
+  The excess pressure technique cannot be applied in this experiment to help determine the location of the bubble.
+  This is because the because the imaging transducer is moving between adjacent alines.
 
   
   Alternatively, the generated signal could be a superposition from many bubbles,
@@ -755,17 +789,17 @@ and  \Figref{water_cavitation_85}.
   The result would then be ``If you use a sufficiently high pressure you can pulsate a small bubble  to generate higher-frequency harmonics''.
 
   If, on the other hand, the signal is a combination of forward-scatter and backscatter then it would be a very interesting result.  
-  We need a way of separating out `interesting' backscatter from the dull forward scatter,
-  an issue was discussed at length in \chapref{mechanisms}.
+  We need a way of separating out `interesting' backscatter from `dull' forward scatter.
+  This was an issue discussed at length in \chapref{mechanisms}.
   The way to do this is to subtract an image generated when only the driving wave is present (providing the forward scatter and direct transmit)
   from an image containing both waves.
   Then you are left with the contribution from the imaging wave.
   However, this is impossible with the current experimental setup.
   Since the driving wave is further from the cofocus than the imaging wave,
   it must be the driving wave that fires first and triggers the experiment.
-  Unfortunately the Cortex scanner cannot be triggered in this way.
-  Additionally, the technique relies upon both repetitions imaging the same bubble.
-  The pendulum motion of the Cortex scan had is also therefore  inappropriate.
+  The Cortex scanner cannot be triggered in this way.
+  Additionally, the technique relies upon both repetitions imaging the same bubble population.
+  The pendulum motion of the Cortex scan head is also therefore  inappropriate.
 }
 
  The problem with the preliminary setup, therefore,  is that it is impossible to distinguish an interesting result (the driving wave and imaging wave interacting)
@@ -776,9 +810,99 @@ and  \Figref{water_cavitation_85}.
 
 \subsection{The final experimental design} \label{sec:exp:finalDesign}
 
-To resolve this problem the imaging transducer needs to be able to be turned off.
- However, this is not easy to do with the Cortex.
- To answer these questions I need a pulse-receive system that lets me choose which transducer is off/on at any give time.
+To enable the excess pressure to be plotted one need
+\nlist{
+  \item the driving wave to trigger the imaging wave,
+  \item A fixed imaging transducer,
+  \item A way of rapidly turning switching the imaging transducer from pulse-receive into receive-only mode (the imaging mode)
+}
+This is achieved by removing the imaging pulse from the Cortex scanner
+and mounting it statically to the experimental chamber as shown in \figref{exp:setup:fixed}.
+
+To drive the imaging transducer a DPR500 pulser-receiver was purchaced,
+and a ...\todo{get preamplifer details} preamplifer.
+The DPR500 may be controlled via a serial connection,
+with options including the firing voltage, the gain,
+and the imaging mode.
+
+The setup is illustrated in \figref{exp:setup:electronic:final}.
+Notice that the delay of each of the wave generators is also controlled electronically.
+The purpose of this is to alter the delay of the imaging pulse after the passing of the driving wave.
+\Figref{} suggests that the bubbles may live on beyond the passing of the driving wave.
+If the lifetime of the bubbles can be determined, then their radius can be estimated 
+from the results of \chapref{nucleation}.
+
+
+The library to control the equipment was written by the author of this thesis
+and is available on github\cite{ExperimentCode}.
+The  experiment carried out can understood in detail
+from the program that called the library, \coderef{experiment}.
+%according to the 
+
+%In order to test the lifetime of such bubbles,
+%the delay of the imaging pulse was also altered.
+%This was achieved via the serial input to the 
+%In order to attempt to measure the lifetime of a bubble, 
+%various 
+
+%This is achieved by removing the 
+% problem the imaging transducer needs to be able to be turned off.
+% However, this is not easy to do with the Cortex.
+% To answer these questions I need a pulse-receive system that lets me choose which transducer is off/on at any giv%e time.
+
+
+%The prediction of \chapref{mechanisms} requires two waves
+
+%that the scattering of a bubble in response a high frequency wave
+%can be modulated by the pulsations induced in the model with a second wave.
+
+%When the driving wave shrinks the bubble, the resonance frequency temporarily increases.
+%If the new resonance frequency is closer to that of the imaging wave, then the scattering increases.
+%Otherwise it decreases.
+
+
+%The principle difficulty in doing this is separating the influence of the imaging wave from 
+%the scatter generated from the driving wave alone.
+%To do so, as was discussed in \chapref{mechanisms},
+%two pulses need to be taken, one with and one without the imaging wave.
+
+
+%This chapter analyses the results of the experiment outlined int  whether the driving  wave influences the back-scatter from an imaging wave in the predicted manner.
+
+
+%To determine the influence of the high frequency wave 
+%on a bubble pulsating to a dual frequency wave,
+%the influence 
+
+%\Chapref{mechanisms} described a method of determining whether the scattering of a high frequency wave
+%can be altered by the pulsations induced by  a lower frequency wave.
+%Two pulses were required, 
+%one comprising of low frequency and high frequency components,
+%the other comprising of just low frequency components.
+%In this way the unperturbed-forward scatter from the low frequency wave could be subtracted out, 
+%leaving behind the scatter that is caused by the high frequency wave.
+
+%However, using two pulses causes its own problems,
+%for it is difficult to guarenee that the pulses are independant of one-another.
+%A pulsating bubble can grow (rectified diffusion),
+%can dissolve away or can burst into many smaller bubbles. 
+%Additionally,
+%even if 
+%To generate a bubble, low frequencies and high pressures are required,
+%parameters that are poor for imaging.
+
+%There are two regimes where the tuning of the 
+%is no
+%The ability to tune the bubble's resonance frequency is not the only 
+%use of theThe influence of the the low frequency wave is not only interesting because
+%it allows the resonance frequency of the bubble to be tuned.
+
+
+
+%To carry out such an experiment, however,
+%requires a source of bubbles.
+
+
 
 %<<<<<<< HEAD
 % \section{Characterisation of the bubbly fluid}
@@ -1256,7 +1380,7 @@ To resolve this problem the imaging transducer needs to be able to be turned off
 %Otherwise it decreases.
 
 
-%The principle difficulty in doing this is separating the influence of the imaging wave from 
+%The principle difficulty in doing this is separating th influence of the imaging wave from 
 %the scatter generated from the driving wave alone.
 %To do so, as was discussed in \chapref{mechanisms},
 %two pulses need to be taken, one with and one without the imaging wave.

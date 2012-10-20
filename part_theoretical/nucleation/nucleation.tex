@@ -1,5 +1,5 @@
 
-\chapter{Bubble Nucleation 40\%}\label{ch:nucleation}
+\chapter{Bubble Nucleation}\label{ch:nucleation}
 %\begin{quote}
 %\flushleft
 %I had a little turtle \break
@@ -2400,7 +2400,12 @@ The value of $\sigma$ is chosen so that the calculated value of $\gamma$ matches
   \subfloat[d water]{\input{part_theoretical/nucleation/figs/chNucParamsDWater.tex}}
   \subfloat[e water]{\input{part_theoretical/nucleation/figs/chNucParamsEWater.tex}}\\
   \subfloat[d pfp]{\input{part_theoretical/nucleation/figs/chNucParamsDPfp.tex}}
-  \subfloat[e pfp]{\input{part_theoretical/nucleation/figs/chNucParamsEPfp.tex}}
+  \subfloat[e pfp]{\input{part_theoretical/nucleation/figs/chNucParamsEPfp.tex}}\\
+  \subfloat[d pfp]{\input{\missingfigure{sigma water}}}
+  \subfloat[e pfp]{\input{\missingfigure{sigma_pfp}}}
+%     \subfloat[]{
+%     \missingfigure{The sketch of the arrangement}\label{fig:pressure_pulses:a}
+%   }\\
   \caption{
     Coex
   }
@@ -2436,16 +2441,42 @@ the spinodal nevertheless marks a fundamental and guaranteed  change in the medi
 It is seen that at \unit{20}\degree\ perfluoropentane will undergo a phase change at ....
 
 The fitted values are plotted in \figref{nuc:params}.
-The stability of the parameters with temperature is encouraging,
-for it would surely indicate a failure in the model if the characteristic energy and distance 
-varied too strongly.
+The stability of the parameters below the critical point is encouraging
+for it indicates that the predictive power of the parameters is strong.
+Near the critical point the curve in \todo{parameters that curve}
+starting to be very sensitive changes in temperature.
+The model is not applicable near the critical point 
+and its parameters are being pulled inappropriately by the changing 
+physics.
+%interactions In this domain the parameters are having 
+%The parameters are b
+%for it would surely indicate a failure in the model if the characteristic energy and distance 
+%varied too strongly.
 
 The parameters at \unit{20}\degree\ are plotted in \tabref{nuc:params}.
-One notable observation is that the distance scale in the Lennard Jones model is very small,
-indicating a very low interaction length (illustrated in \figref{nuc:LennardJones}.
-The reason for this is the highly polar nature of water and the strong electronegativity of perfluoropentane.
+One notable observation is that the distance scale in the Lennard Jones model is very small for water.
+This indicates a very low interaction length, which is illustrated in \figref{nuc:LennardJones}.
+The reason for this is the highly polar nature of water.
 Density functional (statistical) approaches have previously been found to struggle in the presence of highly polar fluids such as water\cite{Talanquer2001, Nyquist1995},
 with the difficulty being the value of $d$ being forced to be very small.
+
+In \figref{nuc:profiles}
+the density profiles for water and perfluoropentane are plotted.
+The small value of $d$ for water means that the 
+density profile varies over ...\todo{get this number}.
+This is ...\todo{get number}\% of the diameter of a water vapour bubble.
+For water, therefore, 
+the density functional approach differs little from the capillary approximation.
+The are box expected to perform equally poorly.
+
+From \figref{} it is seen that the density profile for \pfp\ varies over a more significant length scale.
+The ...{number}\nano\metre\ of \figref{} represents ...\todo{number}\%
+of the critical diameter of a \pfp\ vapour droplet.
+The use of the  capillary approximation for \pfp\ is therefore highly questionable.
+
+
+
+
 
 
 
@@ -2467,12 +2498,23 @@ with the difficulty being the value of $d$ being forced to be very small.
 
 
 
-\subsubsection{The density profile}
+%\subsubsection{The density profile}
 
-\subsection{Evaluation of the Capillary approximation}
+%\subsection{Evaluation of the Capillary approximation}
 
 \subsection{Further work}
+The density profile of \pfp\ plotted in \figref{}
+indicates that the density functional approach may 
+have much to offer theoretical studies of perfluoropentane.
 
+In particular, the density functional approach can be
+extended to binary fluids to estimate the nucleation rates for various 
+gases disolved within the perfluorpentane droplet.
+The perfluorocarbons are remarkable for their solubility of carbon dioxide.
+It could be that type 1  nucleation can be facilitated by the perfluorocarbons  
+by not their low boiling points,
+but rather due to the nucleation of the gases that they hold.\todo{clumsy}
+%of the medium, but due to the ease with which their solutes form 
 
 %  (using the coexistence value of $\mu$)
 

@@ -11,28 +11,28 @@
 
 
 \section{Transducers chosen}
-A number of transducers were tried.
+%A number of transducers were tried.
 We report on the use of a  \unit{0.5}\mega\hertz\ (TMS) pumping transducer and a 20\mega\hertz\ (Panametrics) imaging transducer.
  \unit{0.5}\mega\hertz\ should be sufficiently below the resonance frequency of the microbubbles for the ambient pressure condition of \secref{theidea} 
 to apply, while still being sufficiently high in frequency to elicit a response from the microbubble.
 
-The choice of 20\mega\hertz\ for an imaging transducer needs more discussion.
-From \figref{frequency} we see that 20\mega\hertz\ should  resonate free gas bubbles of about 300\nano\metre,
-which is approximately the size of bubble  that we ultimately wish to image.
+%The choice of 20\mega\hertz\ for an imaging transducer needs more discussion.
+%From \figref{frequency} we see that 20\mega\hertz\ should  resonate free gas bubbles of about 300\nano\metre,
+%which is approximately the size of bubble  that we ultimately wish to image.
 
-This choice of imaging frequency also brings to the fore some of the technical challenges that need to be considered and overcome in this project.
-Principle among these are very small focal regions,  the very high pressure gradients, 
-and the electronics required for high frequency signal amplification.
+%This choice of imaging frequency also brings to the fore some of the technical challenges that need to be considered and overcome in this project.
+%Principle among these are very small focal regions,  the very high pressure gradients, 
+%and the electronics required for high frequency signal amplification.
 
 
 
-The  \unit{0.5}\mega\hertz\ transducer is fully submersible but the 20\mega\hertz\ is not.
-A Mylar film acting as an acoustic window is built into the water tank used.
-The imaging wave passes through this via ultrasound coupling gel and into the tank.
+%The  \unit{0.5}\mega\hertz\ transducer is fully submersible but the 20\mega\hertz\ is not.
+%A Mylar film acting as an acoustic window is built into the water tank used.
+%The imaging wave passes through this via ultrasound coupling gel and into the tank.
 %This is discussed in \secref{discussion}.
-While this is not ideal,
-as the imaging wave must pass through 4 interfaces (two for entering and leaving the tank, and two for entering and leaving the sample),
-hydrophone measurements indicate that significant pressures are still obtained (see \figref{Iprofile}).
+%While this is not ideal,
+%as the imaging wave must pass through 4 interfaces (two for entering and leaving the tank, and two for entering and leaving the sample),
+%hydrophone measurements indicate that significant pressures are still obtained (see \figref{Iprofile}).
 
 
 \subsection{Introduction}
@@ -94,30 +94,30 @@ The scope is controlled by LAN. Waveforms are grabbed directly from the scope.
 %to filter out the direct transmit of the low-frequency wave.
 
 
-\subsection{The Experimental container}
-The experiment is carried out with a experimental chamber built by Mr Craig ...
-The dimensions are drawn in \figref{chamber_drawing}
-and a photo is seen in \figref{chamber_photo}.
-A water bath is provided for both the driving and imaging transducers,
-both such that the geometric focus is coincident in the middle of central,
-reaction chamber.
-the central chamber can be closed with a plastic acoustic medium.
-However,
-in this experiment no such division was made.
+%\subsection{The Experimental container}
+%The experiment is carried out with a experimental chamber built by Mr Craig ...
+%The dimensions are drawn in \figref{chamber_drawing}
+%and a photo is seen in \figref{chamber_photo}.
+%A water bath is provided for both the driving and imaging transducers,
+%both such that the geometric focus is coincident in the middle of central,
+%reaction chamber.
+%the central chamber can be closed with a plastic acoustic medium.
+%However,
+%in this experiment no such division was made.
 
-\section{Electronic Arrangements}
+%\section{Electronic Arrangements}
 
 
-Two transducer driving arrangements were tried, and  are compared in \figref{arrangements}.
-The first (\figref{arrA}) had both transducers driven from the same signal 
-and relied on the different bandwidths of the transducers to separate the signals.
-That is, a single composite signal would be generated, which included the delay required for the imaging transducer,
-that was then fed simultaneously into both transducers.
-While this arrangement was elegant in that it required few parts, there were problems.
-The greatest difficulty arose from the fact that the output from both  transducers entered into the same data acquisition input.
-The two signals were often of vastly different magnitudes,
-requiring a non-trivial set of filter and frequency specific amplifiers to then separate and digitise them. % with a similar number of bits.
-This introduced complicated phase warps and destroyed the simplify of the method.  The arrangement was abandoned.
+%Two transducer driving arrangements were tried, and  are compared in \figref{arrangements}.
+%The first (\figref{arrA}) had both transducers driven from the same signal 
+%and relied on the different bandwidths of the transducers to separate the signals.
+%That is, a single composite signal would be generated, which included the delay required for the imaging transducer,%
+%that was then fed simultaneously into both transducers.
+%While this arrangement was elegant in that it required few parts, there were problems.
+%The greatest difficulty arose from the fact that the output from both  transducers entered into the same data acquisition input.
+%The two signals were often of vastly different magnitudes,
+%requiring a non-trivial set of filter and frequency specific amplifiers to then separate and digitise them. % with a similar number of bits.
+%This introduced complicated phase warps and destroyed the simplify of the method.  The arrangement was abandoned.
 
 \begin{centering}
 \begin{figure}[h]%[htp]
@@ -138,26 +138,33 @@ This introduced complicated phase warps and destroyed the simplify of the method
 \end{figure}
 \end{centering}
 
-The second arrangement decoupled the transducers so that the output of each could be considered separately.
-The 20\mega\hertz\ transducer has, from a previous project, an Institute-built high speed diode cascade amplifier
-and matched preamp.
-The author then built a  broadband  shunt-series pair amplifier outlined in \cite{Horowitz1980} with the precise circuit layout from \cite{amp}.
-The amplifier has a flat frequency response  up to 25\mega\hertz\ and was linear in phase, as can be seen in \figref{amplifier}.
-The gain of the amplifier built was 14\deci\bel.
+%The second arrangement decoupled the transducers so that the output of each could be considered separately.
+%The 20\mega\hertz\ transducer has, from a previous project, an Institute-built high speed diode cascade amplifier
+%and matched preamp.
+%The author then built a  broadband  shunt-series pair amplifier outlined in \cite{Horowitz1980} with the precise circuit layout from \cite{amp}.
+%The amplifier has a flat frequency response  up to 25\mega\hertz\ and was linear in phase, as can be seen in \figref{amplifier}.
+%The gain of the amplifier built was 14\deci\bel.
 
  %though membrane amp must be low gain to help feedback
 
-The data acquisition block in \figref{arrangements} is as a National Instruments NI-5911 high speed digitiser.
-The author wrote a C++ interface  to link to the National Instrument libraries for this device.
-The signal generator used was an Analogic 2045, 
-the pulse generator was a Tomco RF Pulse Generator while a RS pulse generator and an 
-HP functional generator were used for the trigger and delay respectively.
+%The data acquisition block in \figref{arrangements} is as a National Instruments NI-5911 high speed digitiser.
+%The author wrote a C++ interface  to link to the National Instrument libraries for this device.
+%The signal generator used was an Analogic 2045, 
+%the pulse generator was a Tomco RF Pulse Generator while a RS pulse generator and an 
+%HP functional generator were used for the trigger and delay respectively.
 
 
 \subsection{Summary of arrangement}
 The full arrangement is given in \figref{arrangement}.
-
-
+The code that controls the equipment is found in on github.
+An example script that runs an experiment is shown in \coderef{}.
+It is seen that issues addressed in \secref{} are addressed.
+\nlist{
+\item The excess wave is calculated
+\item The tail of the wave
+\item The pressure dependence is calculated ...
+}
+The automation brings a great deal of flexability to the experimental proceedure.
 
 %\subsection{The characterisation of the nucleated bubbles}\label{sec:WE:characterisation}
 
@@ -165,30 +172,31 @@ The full arrangement is given in \figref{arrangement}.
 \subsection{The experimental volume}
 
 Beamplot goes here.
+Show the pressure releationship as a function of voltage that can then be interpolated.
 
-\subsubsection{Generation of Bubbles}
+%\subsubsection{Generation of Bubbles}
 
-\subsubsection{Assumptions made}
+%\subsubsection{Assumptions made}
 
 
 
 
 \subsection{Alignment Used}
 
-A better way is to retain the coaxial%
-\footnote{This gives the greatest possible overlap of the mutual focus.} alignment of the pumping and imaging transducer
-but to have the transducers facing each other rather than co-located.
-Instead of  having the two waves moving together at a constant phase relationship,
-the two travelling waves  now pass through each other.
-In each pass, the waves  move through all possible phases in relation to each other
-so that we find the  phase relationship for all angles in a single shot.
+%A better way is to retain the coaxial%
+%\footnote{This gives the greatest possible overlap of the mutual focus.} alignment of the pumping and imaging tran%sducer
+%but to have the transducers facing each other rather than co-located.
+%Instead of  having the two waves moving together at a constant phase relationship,
+%the two travelling waves  now pass through each other.
+%In each pass, the waves  move through all possible phases in relation to each other
+%so that we find the  phase relationship for all angles in a single shot.
 
 
-This alignment has  one drawback in that the back scattered high frequency and transmitted low frequency waves 
-(that by design meet at the focus)  travel back together to the imaging transducer.
-We still, although to a much lesser degree, rely on the different bandwidths of the transducers to make this problem small.
-%However, if our transducer's are sufficiently different in bandwidth then this problem should be small.
-Slightly misaligning the transducer's (so that they are still co-focal, but not quite co-axial) will also help in this respect.
+%This alignment has  one drawback in that the back scattered high frequency and transmitted low frequency waves 
+%(that by design meet at the focus)  travel back together to the imaging transducer.
+%We still, although to a much lesser degree, rely on the different bandwidths of the transducers to make this problem small.
+%%However, if our transducer's are sufficiently different in bandwidth then this problem should be small.
+%Slightly misaligning the transducer's (so that they are still co-focal, but not quite co-axial) will also help in this respect.
 %To avoid this problem it might be tempting to angle the transducer's at 90 degrees.
 %However, such an arrangement would struggle to define a precise phase relationship.
 %This is because the time it takes for a wave to traverse the focal cross-section of the imaging wave,
@@ -199,38 +207,28 @@ Slightly misaligning the transducer's (so that they are still co-focal, but not 
 %a problem due to the strong directionality of hydrophones.
 
 
-\subsection{Alignment Implementation}
+%\subsection{Alignment Implementation}
 
 
-The two transducers were placed geometrically opposite each other by aligning them with respect to the tank.
-The axis of the sound beam from each transducer will therefore be near parallel.
-Making this exactly acoustically parallel was not deemed necessary
-as the transducers being slightly off axis is advantageous in the reduction of transmission effects.
+%The two transducers were placed geometrically opposite each other by aligning them with respect to the tank.
+%The axis of the sound beam from each transducer will therefore be near parallel.
+%Making this exactly acoustically parallel was not deemed necessary
+%as the transducers being slightly off axis is advantageous in the reduction of transmission effects.
 
-The two transducers were arranged to be co-focal using a membrane hydrophone attached to the aforementioned gantry. % 
-The membrane hydrophone  enables the pressure to be measured on both faces simultaneously, 
-and since the hydrophone has negligible thickness,
+%The two transducers were arranged to be co-focal using a membrane hydrophone attached to the aforementioned gantry%%_. % 
+%%The membrane hydrophone  enables the pressure to be measured on both faces simultaneously, 
+a%nd since the hydrophone has negligible thickness,
 the pressure measured can be assigned accurately to a single point.
 First the high frequency transducer was fixed and its focus found.
-Then the pumping transducer was moved and its focus found iteratively until it too shared the same focus as the imaging transducer.
+Then the pumping transducer was moved and its focus found iteratively until it too shared the same focus as the imagi5%ng transducer.
 The accuracy attained is shown in \figref{profiles},
 where zero in each plot gives  the found focus.
 
-
-
-%width=.9\textwidth
 \begin{centering}
-\begin{figure}[h]%[htp]
-  \subfloat[Low frequency transducer (0.5\mega\hertz)]{
-    \label{fig:Pprofile}
-    \includegraphics[width=.9\textwidth]{0.5mhz_profile.eps}
-}
-   \\
-   \vspace{.3in}
-   \subfloat[Imaging transducer (20\mega\hertz) ]{
+\begin{figure}
+\subfloat[Imaging transducer (20\mega\hertz) ]{
     \label{fig:Iprofile}
-    \includegraphics[width=.9\textwidth]{20mhz_profile.eps}
-}
+    \includegraphics[width=.9\textwidth]{20mhz_profile.eps}}
   %\hspace{.3in}
    \caption{
      The profile along the two lateral and axial direction for the imaging and pumping transducer measured with a membrane hydrophone
@@ -310,86 +308,86 @@ need to demonstrate
 
 
 
-\nlist{
-  \item A bubble is transiently created at the bright regions and dissolves in the dark regions (a very short lived bubble).
-\item A bubble is created and lives for the entire A-line and then dissolves/returns to its mote before being generated again in the next A-line (i.e. The lifetime of the bubble is less than the time between adjacent A-lines).
-\item A bubble is created and lives for a while (see it for many A-lines).  
-}
-If the third of these were true then it must be explained  why the bubble cannot be seen when the driving wave is off (for example, the bubble is small).
+%\nlist{
+%  \item A bubble is transiently created at the bright regions and dissolves in the dark regions (a very short live%d bubble).
+%\item A bubble is created and lives for the entire A-line and then dissolves/returns to its mote before being generated again in the next A-line (i.e. The lifetime of the bubble is less than the time between adjacent A-lines).
+%\item A bubble is created and lives for a while (see it for many A-lines).  
+%}
+%If the third of these were true then it must be explained  why the bubble cannot be seen when the driving wave is off (for example, the bubble is small).
 
-To give an interpretation I think the following question must be answered:
+%To give an interpretation I think the following question must be answered:
 
-\begin{sidetext}{}{Important Question}
-  Is the signal backscatter from the imaging wave or forward scatter from the driving transducer or a mixture of the two?
-\end{sidetext}
-If the signal is just forward scatter then we are simply doing passive cavitation detection,
-via an overly complicated harmonic imaging setup.
-There is then no relation to the computational work done.
-There is no new technology at work.
-It should also be said that if this is the case then we are also using the word cavitation in its loosest sense.
-We could not claim to be generating a bubble - the bubble probably does exist, but is just not visible at the pressures and frequencies used in the imaging setup.
-The result would then be ``If you use a sufficiently high pressure you can pulsate a small bubble  to generate higher-frequency harmonics''.
-I do not feel that this is a novel contribution.
-
-
-If the signal is just back-scatter then we have a very interesting result.
-It could be that the bubble is very short lived, or that the driving wave has influenced the backscatter of the imaging wave.
-The second of these is the result that we are looking for, but a very short lived bubble would be interesting too.
-
-If the signal is a combination of forward-scatter and backscatter then we need a way of separating out `interesting' backscatter from the dull forward scatter.
-This issue was discussed at length in \chapref{mechanisms}.
-The way to do this is to subtract an image generated when only the driving wave is present (providing the forward scatter and direct transmit)
-from an image containing both waves.
-Then you are left with the contribution from the imaging wave.
-
-If the bubble is the same in both images then the forward transmit will be subtracted away.
-If all the signal is removed in the subtraction then we have simply been doing harmonic imaging and therefore contributed nothing.
-(I.e. pulse inversion without inverting the pulse).
-If a portion of the signal is obliterated then we have the imaging wave interacting with the driving wave (the most interesting result).
-The beginning of the resultant signal indicates where the bubble is located (see \chapref{mechanisms}).
-If the signals are in no way obliterated then it indicates that the bubble was not the same from one pulse to the next:
-it indicates that we are destroying/creating the bubbles with the driving wave.
-
-\todo[inline]{%
-The problem, therefore,  is that I cannot distinguish an interesting result (the driving wave and imaging wave interacting, or very short lived bubbles)
-from a result that contributes very little (harmonic imaging).
-To resolve this problem the imaging transducer needs to be able to be turned off.
-However, this is not easy to do with the Cortex.
-To answer these questions I need a pulse-receive system that lets me choose which transducer is off/on at any given time.
-With such a system the experiment can be repeated in an afternoon - and the answer to this central question obtained.
-}
-
-\nlist{
-\item homogeneity of bubble motes
-}
+%\begin{sidetext}{}{Important Question}
+%  Is the signal backscatter from the imaging wave or forward scatter from the driving transducer or a mixture of the two?
+%\end{sidetext}
+%If the signal is just forward scatter then we are simply doing passive cavitation detection,
+%via an overly complicated harmonic imaging setup.
+%There is then no relation to the computational work done.
+%There is no new technology at work.
+%It should also be said that if this is the case then we are also using the word cavitation in its loosest sense.
+%We could not claim to be generating a bubble - the bubble probably does exist, but is just not visible at the pressures and frequencies used in the imaging setup.
+%The result would then be ``If you use a sufficiently high pressure you can pulsate a small bubble  to generate higher-frequency harmonics''.
+%I do not feel that this is a novel contribution.
 
 
+%If the signal is just back-scatter then we have a very interesting result.
+%It could be that the bubble is very short lived, or that the driving wave has influenced the backscatter of the imaging wave.
+%The second of these is the result that we are looking for, but a very short lived bubble would be interesting too.
 
-\section{Experimental Objectives} \label{sec:WE:objectives}
+%If the signal is a combination of forward-scatter and backscatter then we need a way of separating out `interesting' backscatter from the dull forward scatter.
+%This issue was discussed at length in \chapref{mechanisms}.
+%The way to do this is to subtract an image generated when only the driving wave is present (providing the forward scatter and direct transmit)
+%from an image containing both waves.
+%Then you are left with the contribution from the imaging wave.
+
+%If the bubble is the same in both images then the forward transmit will be subtracted away.
+%If all the signal is removed in the subtraction then we have simply been doing harmonic imaging and therefore contributed nothing.
+%(I.e. pulse inversion without inverting the pulse).
+%If a portion of the signal is obliterated then we have the imaging wave interacting with the driving wave (the most interesting result).
+%The beginning of the resultant signal indicates where the bubble is located (see \chapref{mechanisms}).
+%If the signals are in no way obliterated then it indicates that the bubble was not the same from one pulse to the next:
+%it indicates that we are destroying/creating the bubbles with the driving wave.
+
+%\todo[inline]{%
+%The problem, therefore,  is that I cannot distinguish an interesting result (the driving wave and imaging wave interacting, or very short lived bubbles)
+%from a result that contributes very little (harmonic imaging).
+%To resolve this problem the imaging transducer needs to be able to be turned off.
+%However, this is not easy to do with the Cortex.
+%To answer these questions I need a pulse-receive system that lets me choose which transducer is off/on at any given time.
+%With such a system the experiment can be repeated in an afternoon - and the answer to this central question obtaine%d.
+%}
+
+%\nlist{
+%\item homogeneity of bubble motes
+%}
 
 
 
-In line with the goal of imaging an extravascular bubble,
-we focus in this chapter on imaging sub-micron bubbles 
-that have been pulled into solution with a low-frequency cavitating wave.
-This forces the experimental proceedure to 
-examine the major practical difficulty encountered when imaging with two ultrasound waves:
-the removal of the  bubble's high frequency response to the cavitating wave.
-As was shown in \chapref{mechanisms},
-if the driving wave is of sufficient pressure \todo{make this more precise}
-it will cause bubble to undergo an callapse with every cycle,
-each of which  can be detected by the imaging trasducer.
-This destroys the spatitial resolution of the image,
-for the bubble's temporal resolution is equal to the  duration of the low-frequeny pulse,
-rather than that of the much shorter imaging pulse.
-A method of overcoming this problem is to repeat the driving pulse,
-but this time without the imaging wave.
-By subtracting the response to the driving pulse alone,
-from the response when both waves are present,
-then the influence of the imagaging wave can be determined.
-This method propted the definition of {\em excess scattering cross section},
-given by \eqnref{excessI} on page \pageref{eqn:excessI}.
-This double-pulse method is explored in \secref{WE:method}.
+%\section{Experimental Objectives} \label{sec:WE:objectives}
+
+
+
+%In line with the goal of imaging an extravascular bubble,
+%we focus in this chapter on imaging sub-micron bubbles 
+%that have been pulled into solution with a low-frequency cavitating wave.
+%This forces the experimental proceedure to 
+%examine the major practical difficulty encountered when imaging with two ultrasound waves:
+%the removal of the  bubble's high frequency response to the cavitating wave.
+%As was shown in \chapref{mechanisms},
+%if the driving wave is of sufficient pressure \todo{make this more precise}
+%it will cause bubble to undergo an callapse with every cycle,
+%each of which  can be detected by the imaging trasducer.
+%This destroys the spatitial resolution of the image,
+%for the bubble's temporal resolution is equal to the  duration of the low-frequeny pulse,
+%rather than that of the much shorter imaging pulse.
+%A method of overcoming this problem is to repeat the driving pulse,
+%but this time without the imaging wave.
+%By subtracting the response to the driving pulse alone,
+%from the response when both waves are present,
+%then the influence of the imagaging wave can be determined.
+%This method propted the definition of {\em excess scattering cross section},
+%given by \eqnref{excessI} on page \pageref{eqn:excessI}.
+%This double-pulse method is explored in \secref{WE:method}.
 
 
 
@@ -415,7 +413,7 @@ This double-pulse method is explored in \secref{WE:method}.
 
 %\Chapref{mechanisms} investigated, with a computational model,
 %how two ultrasound waves may be used 
-The generation and the imaging of a bubble places different requirements on an ultrasound pulse.
+%The generation and the imaging of a bubble places different requirements on an ultrasound pulse.
 
 %\ilist{
 %  \item the low frequencies and long pulses required for generating a bubble lead to poor resolution 
@@ -425,12 +423,12 @@ The generation and the imaging of a bubble places different requirements on an u
 %which means that the bubble's response is sub-optimal,
 %\item the 
 %}
-the low frequencies and long pulses required for generating a bubble lead to poor resolution 
-when used for imaging;
-the size of the generated bubble is, in general,
-such that its resonance frequency is a poor match to the generating wave,
-which means that the bubble's response is sub-optimal;
-the high pressures used in the generating wave 
+%the low frequencies and long pulses required for generating a bubble lead to poor resolution 
+%when used for imaging;
+%the size of the generated bubble is, in general,
+%such that its resonance frequency is a poor match to the generating wave,
+%which means that the bubble's response is sub-optimal;
+%the high pressures used in the generating wave 
 
 
 The prediction of \chapref{mechanisms} requires two waves
@@ -490,7 +488,7 @@ can dissolve away or can burst into many smaller bubbles.
 
 
 
-\section{Experimental Protocol}
+%\section{Experimental Protocol}
 
 \section{Discussion} \label{sec:WE:discussion}
 
@@ -514,85 +512,84 @@ I have informally called these B-mode images - but in reality I have done nothin
 % }
 
 
-% The main experimental parameters that are 
-% subject to our control are:
-% \nlist{
-%   \item
-%     The relative phase between the low-frequency and imaging wave.
-%   \item
-%     The pressures of the two waves.
-%   \item
+ The main experimental parameters that are 
+ subject to our control are:
+ \nlist{
+   \item
+     The relative phase between the low-frequency and imaging wave.
+   \item
+   The pressures of the two waves.
+   \item
 %     The frequencies of the two waves.
-%   \item
-%     The pulse-length of the two waves.
-% }
-% All variables other than the pulse length were investigated computationally in  \chapref{mechanisms}
+ \item
+    The pulse-length of the two waves.
+ }
+ All variables other than the pulse length were investigated computationally in  \chapref{mechanisms}
 
 
-% The first of these is well sampled by  virtue of the experimental
-% setup.
-% The two waves pass through each-other and so in {\em every} image {\em
-%   all}
-% phases between the two waves will be sampled.
+ The first of these is well sampled by  virtue of the experimental
+ setup.
+ The two waves pass through each-other and so in {\em every} image {\em
+   all}
+ phases between the two waves will be sampled.
 
-% Sampling the pressure of the low-frequency wave is also
-% straight-forward.
-% A wide range of driving pulses are chosen to vary the peak pressure
-% at the focus.
-% In addition, since an 2D image is formed, 
-% the spatially varying pressure field of the low frequency wave 
-% will be imaged in  {\em every } image.
-% The pressure of the imaging wave is much harder to control,
-% for it is controlled internally by the scanner.
-% %Indeed, it would be helpful to turn the imaging wave off altogether.
-% %This cannot be achieved without modifying the scanner, however.
-% The pressure ranges experimented with range from 0 through to $>1$ MPa
-% peak-negative.
+ Sampling the pressure of the low-frequency wave is also
+ straight-forward.
+ A wide range of driving pulses are chosen to vary the peak pressure
+ at the focus.
+ In addition, since an 2D image is formed, 
+ the spatially varying pressure field of the low frequency wave 
+ will be imaged in  {\em every } image.
+ The pressure of the imaging wave is much harder to control,
+ for it is controlled internally by the scanner.
+Indeed, it would be helpful to turn the imaging wave off altogether.
+This cannot be achieved without modifying the scanner, however.
+he pressure ranges experimented with range from 0 through to $>1$ MPa
+peak-negative.
 
-% Likewise, by choosing different  transducer, a range of
-% frequencies  can be used for the two waves.
-% Although our choice is not completely free.
-% The high frequency pulse ideally should last for only a small fraction
-% of the period of the low frequency wave.
-% In addition, 
-% when the difference in frequency between the low and high frequency transducers
-% becomes small the direct transmission of sound between the transducer's
-% becomes a problem for the anti-parallel setup of the transducers.
-% Imaging frequencies of between 7.5 and 20 MHz have been tried, 
-% along with low-frequency waves of between 0.5 and 2 MHz.
-% The results presented here were used a 0.5 MHz low frequency wave and
-% a 20 MHz imaging wave, unless otherwise stated.
+ed for the two waves.
+ Although our choice is not completely free.
+ The high frequency pulse ideally should last for only a small fraction
+ of the period of the low frequency wave.
+ In addition, 
+ when the difference in frequency between the low and high frequency transducers
+ becomes small the direct transmission of sound between the transducer's
+ becomes a problem for the anti-parallel setup of the transducers.
+ Imaging frequencies of between 7.5 and 20 MHz have been tried, 
+long with low-frequency waves of between 0.5 and 2 MHz.
+ The results presented here were used a 0.5 MHz low frequency wave and
+ a 20 MHz imaging wave, unless otherwise stated.
 
-% The pulse length of the imaging wave should be short, 
-% although when imaging is achieved with a scanner, such as the cortex,
-% then this parameter cannot be changed.
-% The pulse length of the low frequency transducer is readily set.
-% To avoid bubbles growing (by rectified diffusion), fusing (by Bjerknes
-% forces) and collapsing (by instabilities in the oscillations) the low-frequency
-% pulse should also be short.
-% However, to reduce forward transmission the  frequency output of the
-% low frequency wave should not be 
-% too broad-band.
-% 10 cycles is used in these experiments.
+ The pulse length of the imaging wave should be short, 
+ although when imaging is achieved with a scanner, such as the cortex,
+ then this parameter cannot be changed.
+ The pulse length of the low frequency transducer is readily set.
+ To avoid bubbles growing (by rectified diffusion), fusing (by Bjerknes
+ forces) and collapsing (by instabilities in the oscillations) the low-frequency
+ pulse should also be short.
+ However, to reduce forward transmission the  frequency output of the
+ low frequency wave should not be 
+ too broad-band.
+ 10 cycles is used in these experiments.
 
-% The size of the bubbles/droplets is not simple to control.
-% In general a fairly broad-range of sizes is present, even for the
-% commercial agents,
-% although one of the advantages of using commercially available
-% contrast agents are that their size have been well studied.
-% It is not possible to directly size the bubbles formed in cavitation,
-% even though this is of interest.
-% This is because the bubbles are too short lived.
-% Finally, 
-% sizing the perfluoropentane emulsion is also hard.
-% This is because perfluoropentane is a transparent fluid with
-% essentially the same refractive index as water,
-% and so optical sizing becomes hard.
-% The best that can be done so far is to bound the size distributions by
-% passing the emulsion though a filter.
-% For other reasons it is desirable to attach a fluorescent
-% marker to the emulsion, but as a bonus this should help size the
-% droplets.
+ The size of the bubbles/droplets is not simple to control.
+ In general a fairly broad-range of sizes is present, even for the
+ commercial agents,
+ although one of the advantages of using commercially available
+ contrast agents are that their size have been well studied.
+ It is not possible to directly size the bubbles formed in cavitation,
+ even though this is of interest.
+ This is because the bubbles are too short lived.
+ Finally, 
+ sizing the perfluoropentane emulsion is also hard.
+ This is because perfluoropentane is a transparent fluid with
+ essentially the same refractive index as water,
+ and so optical sizing becomes hard.
+ The best that can be done so far is to bound the size distributions by
+ passing the emulsion though a filter.
+ For other reasons it is desirable to attach a fluorescent
+ marker to the emulsion, but as a bonus this should help size the
+ droplets.
 
 
 
@@ -601,28 +598,28 @@ I have informally called these B-mode images - but in reality I have done nothin
 
 
 
-%\begin{figure}[h]
-%     \centering
-%          \includegraphics[width=0.8\textwidth]{emulsion_cavitation_signal.png}
-%     \caption{Typical cavitation signal seen in bubbly water.
-%     The two long vertical lines are the reflections of the sample
-%     holder.
-%     The imaging transducer is to the left,
-%     the low-frequency transducer is to the right.}
-%   \label{fig:cavitation}
-%\end{figure}
+\begin{figure}[h]
+     \centering
+          \includegraphics[width=0.8\textwidth]{emulsion_cavitation_signal.png}
+     \caption{Typical cavitation signal seen in bubbly water.
+     The two long vertical lines are the reflections of the sample
+     holder.
+     The imaging transducer is to the left,
+     the low-frequency transducer is to the right.}
+   \label{fig:cavitation}
+\end{figure}
 
 
-%\begin{figure}[h]
-%     \centering
-%          \includegraphics[width=0.8\textwidth]{pure90dbsmall41.png}
-%     \caption{Typical cavitation signal seen in bubbly water.
-%     The two long vertical lines are the reflections of the sample
-%     holder.
-%     The imaging transducer is to the left,
-%     the low-frequency transducer is to the right.}
-%   \label{fig:cavitation}
-%\end{figure}
+\begin{figure}[h]
+     \centering
+          \includegraphics[width=0.8\textwidth]{pure90dbsmall41.png}
+     \caption{Typical cavitation signal seen in bubbly water.
+     The two long vertical lines are the reflections of the sample
+     holder.
+     The imaging transducer is to the left,
+     the low-frequency transducer is to the right.}
+   \label{fig:cavitation}
+\end{figure}
 
 
 
