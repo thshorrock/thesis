@@ -69,25 +69,17 @@
 %misc/preface,
 %part_intro/part_intro,
 %part_intro/introduction/introduction,
-%part_intro/part_maths,
-%part_intro/geometric_algebra/gc,
-%part_intro/inference/variational_methods,
 %part_theoretical/part_theory,
 %part_theoretical/nucleation/nucleation,
 %part_theoretical/acoustic_relativity/acoustic_relativity,
-%<<<<<<< HEAD
-%=======
-%part_theoretical/measurement/measurement,
-%>>>>>>> 061ae1ca44e322a36342ec8f9f946d2793a172c6
-%part_theoretical/maxwell_analogy/Maxwell_analogy,
 %part_theoretical/measurement/measurement,
 %part_theoretical/bubble_interactions/bubble_interactions,
 %part_theoretical/computations/computations,
-%part_experimental/part_experimental,
+part_experimental/part_experimental,
 part_experimental/rationale/rationale,
 part_experimental/DPR500_protocol/DPR500_protocol,
 part_experimental/characterisation/characterisation,
-%part_discussion/part_discussion,
+part_discussion/part_discussion,
 %part_discussion/discussion/discussion,
 %part_appendix/part_appendix,
 %part_appendix/tensor_derivation,
@@ -95,7 +87,16 @@ part_experimental/characterisation/characterisation,
 %part_appendix/nucleation_DFT_appendix
 %
 %%
+%<<<<<<< HEAD
+%=======
+%part_theoretical/measurement/measurement,
+%>>>>>>> 061ae1ca44e322a36342ec8f9f946d2793a172c6
+%part_theoretical/maxwell_analogy/Maxwell_analogy,
 %
+%
+%part_intro/part_maths,
+%part_intro/geometric_algebra/gc,
+%part_intro/inference/variational_methods,
 %
 % %appendix_Lie
 % %program,
@@ -159,16 +160,24 @@ part_experimental/characterisation/characterisation,
   {figs/water_cav_results/voltage_0.108/imaging_2nd/} %
   {figs/water_cav_results/voltage_0.132/imaging_2nd/} %
   {figs/water_cav_results/voltage_0.088/no_imaging/} %
+  {figs/water_cav_results/voltage_0.088/gap_between_pulses_100/no_imaging_av_with_sd/} %
   {figs/water_cav_results/voltage_0.108/no_imaging/} %
   {figs/water_cav_results/voltage_0.132/no_imaging/} %
+  {figs/water_cav_results/voltage_0.132/gap_between_pulses_100/no_imaging_av_with_sd/} %
   {figs/water_cav_results/voltage_0.108/imaging_1st_cmp_none/} %
   {figs/water_cav_results/voltage_0.108/imaging_2nd_cmp_none/} %
   {figs/water_cav_results/voltage_0.108/imaging_1st_cmp_none_fft/} %
   {figs/water_cav_results/voltage_0.108/imaging_2nd_cmp_none_fft/} %
   {figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_100/imaging_1st_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_100/imaging_2nd_av_with_sd/} %
   {figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/} %
   {figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/} %
   {figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/} %
+  {figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/} %
   {figs/water_cav_results/voltage_0.108/gap_between_pulses_500/no_imaging_av_with_sd/} %
   {figs/water_cav_results/voltage_0.108/gap_between_pulses_1000/no_imaging_av_with_sd/} %
   {figs/water_cav_results/voltage_0.108/gap_between_pulses_2000/no_imaging_av_with_sd/} %
@@ -194,27 +203,27 @@ part_experimental/characterisation/characterisation,
 \include{misc/table_list}
 \include{misc/preface}
 \pagenumbering{arabic}
-%\include{part_intro/part_intro}
-%\include{part_intro/introduction/introduction}
+\include{part_intro/part_intro}
+\include{part_intro/introduction/introduction}
 %\include{part_intro/part_maths}
 %\include{part_intro/inference/variational_methods}
 %\include{part_intro/geometric_algebra/gc}
-%\include{part_theoretical/part_theory}
-%\include{part_theoretical/nucleation/nucleation}
-%\include{part_theoretical/acoustic_relativity/acoustic_relativity}
-%\include{part_theoretical/measurement/measurement}
-%\include{part_theoretical/computations/computations}
-%\include{mechanisms}
-%\include{part_experimental/part_experimental}
+\include{part_theoretical/part_theory}
+\include{part_theoretical/nucleation/nucleation}
+\include{part_theoretical/acoustic_relativity/acoustic_relativity}
+\include{part_theoretical/measurement/measurement}
+\include{part_theoretical/computations/computations}
+\include{mechanisms}
+\include{part_experimental/part_experimental}
 \include{part_experimental/rationale/rationale}
 \include{part_experimental/DPR500_protocol/DPR500_protocol}
 \include{part_experimental/characterisation/characterisation}
-%\include{part_discussion/part_discussion}
-%\include{part_discussion/discussion/discussion}
-%\appendix
-%\include{part_appendix/part_appendix}
-%\include{part_appendix/tensor_derivation}
-%\include{part_appendix/nucleation_classical_appendix}
+\include{part_discussion/part_discussion}
+\include{part_discussion/discussion/discussion}
+\appendix
+\include{part_appendix/part_appendix}
+\include{part_appendix/tensor_derivation}
+\include{part_appendix/nucleation_classical_appendix}
 %\include{part_appendix/nucleation_DFT_appendix}
 %\include{part_theoretical/maxwell_analogy/Maxwell_analogy}
 %\include{part_theoretical/bubble_interactions/bubble_interactions}
@@ -243,6 +252,7 @@ part_experimental/characterisation/characterisation,
 %\include{program}
 %\include{fragments}
 %\include{appendix_Lie}
+%
 \bibliographystyle{plainnat} % apa	
 \bibliography{bib/tshorrock}
 

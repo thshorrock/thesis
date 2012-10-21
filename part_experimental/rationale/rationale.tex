@@ -1,5 +1,5 @@
 
-\chapter{Experimental Design 50\%}\label{ch:rationale}
+\chapter{Experimental Design}\label{ch:rationale}
 
 % \todo[inline]{The image here is probably my best water cavitation of water image showing rare events on the threshold of cavitation.
 % Greater snowstorms can be found for higher pressure but this illustrates the threshold fairly nicely - see emulsion chapter. This is 70db on the amplifier. 
@@ -26,19 +26,19 @@ and therefore the size, of the bubble.
 The constraints of resolution and imaging depth  already make for difficult trade-offs,
 and so decoupling the bubble size from the imaging frequency makes for a powerful enhancement to contrast imaging.
 
-The acoustic control of a bubble's size is  particularly important when a bubble contrast agent is 
-required to work extravascularly.
-%In this case the constraints on the size of such a bubble are so much more severe.
-As was discussed in  \chapref{introduction}, \todo{check location of this}
-extra-vascular bubbles cannot be much larger than  \unit{300}\nano\metre,
-even if the bubble is generated outside the vasculature by vapourising a liquid droplet. 
-If controlling the size of the bubble with the low frequency wave were not possible,
-the resonance frequencies of extra-vascular bubbles
-would be above ..\todo{get this number},
-and therefore have a maximum penetration of ...\todo{get number} in tissue.
-This would  curtail their  usefulness.
+%The acoustic control of a bubble's size is  particularly important when a bubble contrast agent is 
+%required to work extravascularly.
+%%In this case the constraints on the size of such a bubble are so much more severe.
+%As was discussed in  \chapref{introduction}, 
+%extra-vascular bubbles cannot be much larger than  \unit{300}\nano\metre,
+%even if the bubble is generated outside the vasculature by vapourising a liquid droplet. 
+%If controlling the size of the bubble with the low frequency wave were not possible,
+%the resonance frequencies of extra-vascular bubbles
+%would be above ..\todo{get this number},
+%and therefore have a maximum penetration of ...\todo{get number} in tissue.
+%This would  curtail their  usefulness.
 
-In this chapter an outline the principle experimental design decisions are outlined.
+In this chapter the  experimental procedure to test the ideas of \Chapref{mechanisms} is detailed.
 
 
 %In this chapter we outline an experiment to test whether the predicted influence of 
@@ -130,7 +130,7 @@ In this chapter an outline the principle experimental design decisions are outli
 %     \label{fig:pressure_pulses}
 %\end{figure}
 
-In this thesis two separate ultrasound transducers are used to generate the cavitating and imaging waves.
+This thesis uses two separate ultrasound transducers to generate the cavitating and imaging waves.
 This brings the advantage of flexibility:
 the characteristics of the cavitating and imaging waves are completely decoupled.
 The  frequency, pulse-duration, focal depth and duty-cycle of each pulse can be chosen and interchanged independently,
@@ -139,83 +139,84 @@ and without  compromise with regard to a crystal's bandwidth or curvature.
 %Additionally, by separating the driving and imaging waves
 %the properties of the driving or imaging wave can be easily switched.
 
-To investigate the phase-relationship between the driving and imaging pulses
-when incident upon a bubble,
-the two waves must pass simultaneously through a bubbly fluid situated at the common focus.
-This is most easily achieved by  having the two transducer's facing
-each other. %, as illustrated by the cartoon of \figref{general_idea}.
-If the bubbly mixture is both dense and homogeneous,
-so that it may be considered a continuous medium,
-then at every position within the sample a different phase relationship
-between the two waves is interrogated.
-\todo{Maybe dig out the picture here}
-Temporal alignment was achieved as follows.
-The two transducers were fired from the same trigger pulse and the time lag between the two pulse arrival times was found.
-The lag is due to the imaging transducer having a shorter focal length,
-and gives the time for which the imaging transducer needs to be delayed.
-This delay was achieved with  a second pulse generator, as shown in \figref{arrB}.
-The phase relationship at different distances between the two transducers was then found by moving the hydrophone
- along the (approximate) co-axis of the two transducers.
-The voltage-time waveforms from tracking the hydrophone across the focus are shown in \figref{phases}.
-\Figref{phase_exp_a} should help with the interpretation of \figref{phase_exp_b} 
-by showing only a few of the hydrophone traces recorded.
-Each subsequent trace from left to right gives the pressure recorded by the hydrophone for a particular distance along the co-axis.
-Quick time is the time coordinate measured in each such trace,
-while the distance along the co-axis is measured in microseconds away from the co-focus, which is set as the origin.
-The traces more to the left are when the hydrophone is on the imaging transducer's side of the focus.
-We in fact took 600 traces over 6\milli\metre\ and it becomes simpler to view the graph from above in a grey-scale for acoustic pressure.
-This is done in \figref{phase_exp_b}.  
-%Again, the traces to the left are recorded on the imaging transducer's side of the focus.
-%The origin, in both plots is taken to be the co-focus.
-%Notice that in \figref{phases} the  6\milli\metre\ over which the measurements took place have been rewritten in terms of the time of flight.
-The rewriting of all distances in terms of time of flight is convenient as the plots then become 
-independent of the (temperature dependent) speed of sound.
-%Sound then travels across the plot at 45\degree,
-%and the two incident waves meet on the plot at 90\degree.
-%Using the fact that the two incident sound fields are orthogonal to each other (in the sense of the plot),
-%makes it easier to see that phase is maintained throughout the sample,
-%and will not be averaged out by a large number of scatterers\footnote{\label{important_footnote}
-%That the phase information will not be averaged out over the large number of bubbles in a sample
-%assumes that we have a constant speed of sound in the sample.
-%For a bubbly liquid this is not true, as
-%fluctuations in bubble density will cause the speed of sound to vary.
-%A twenty megahertz wave, with a wavelength of about 75\micro\metre, may be averaged away
-%over a distance of, say,  10\micro\second\ if there is a change in the speed of sound of about
-%\eq{
-%  \Delta c = \frac{35\micro\metre}{10\micro\second} = 3.5\metre\second^{-1}.
-%}
-%This is feasible, and we therefore need to be careful not to let our densities get too large.
-%}.
+%To investigate the phase-relationship between the driving and imaging pulses
+%when incident upon a bubble,
+%the two waves must pass simultaneously through a bubbly fluid situated at the common focus.
+%This is most easily achieved by  having the two transducer's facing
+%each other. %, as illustrated by the cartoon of \figref{general_idea}.
+%If the bubbly mixture is both dense and homogeneous,
+%so that it may be considered a continuous medium,
+%then at every position within the sample a different phase relationship
+%between the two waves is interrogated.
+%\todo{Maybe dig out the picture here}
+
+%Temporal alignment was achieved as follows.
+%The two transducers were fired from the same trigger pulse and the time lag between the two pulse arrival times was found.
+%The lag is due to the imaging transducer having a shorter focal length,
+%and gives the time for which the imaging transducer needs to be delayed.
+%This delay was achieved with  a second pulse generator, as shown in \figref{arrB}.
+%The phase relationship at different distances between the two transducers was then found by moving the hydrophone
+% along the (approximate) co-axis of the two transducers.
+%The voltage-time waveforms from tracking the hydrophone across the focus are shown in \figref{phases}.
+%\Figref{phase_exp_a} should help with the interpretation of \figref{phase_exp_b} 
+%by showing only a few of the hydrophone traces recorded.
+%Each subsequent trace from left to right gives the pressure recorded by the hydrophone for a particular distance along the co-axis.
+%Quick time is the time coordinate measured in each such trace,
+%while the distance along the co-axis is measured in microseconds away from the co-focus, which is set as the origin.
+%The traces more to the left are when the hydrophone is on the imaging transducer's side of the focus.
+%We in fact took 600 traces over 6\milli\metre\ and it becomes simpler to view the graph from above in a grey-scale %for acoustic pressure.
+%This is done in \figref{phase_exp_b}.  
+%%Again, the traces to the left are recorded on the imaging transducer's side of the focus.
+%%The origin, in both plots is taken to be the co-focus.
+%%Notice that in \figref{phases} the  6\milli\metre\ over which the measurements took place have been rewritten in terms of the time of flight.
+%The rewriting of all distances in terms of time of flight is convenient as the plots then become 
+%independent of the (temperature dependent) speed of sound.
+%%Sound then travels across the plot at 45\degree,
+%%and the two incident waves meet on the plot at 90\degree.
+%%Using the fact that the two incident sound fields are orthogonal to each other (in the sense of the plot),
+%%makes it easier to see that phase is maintained throughout the sample,
+%%and will not be averaged out by a large number of scatterers\footnote{\label{important_footnote}
+%%That the phase information will not be averaged out over the large number of bubbles in a sample
+%%assumes that we have a constant speed of sound in the sample.
+%%For a bubbly liquid this is not true, as
+%%fluctuations in bubble density will cause the speed of sound to vary.
+%%A twenty megahertz wave, with a wavelength of about 75\micro\metre, may be averaged away
+%%over a distance of, say,  10\micro\second\ if there is a change in the speed of sound of about
+%%\eq{
+%%  \Delta c = \frac{35\micro\metre}{10\micro\second} = 3.5\metre\second^{-1}.
+%%}
+%%This is feasible, and we therefore need to be careful not to let our densities get too large.
+%%}.
 
 
-\begin{figure}[p]%[htp]
-  \centering
+%\begin{figure}[p]%[htp]
+%  \centering
 
-  \subfloat[Hydrophone measurements of the pressure-time waveforms at various distances along the acoustic axis within the co-focal region.]{
-    \label{fig:phase_exp_a}
-    \includegraphics[width=.8\textwidth]{15_exp.eps}
-    }\\
-  \vspace{.3in}
-  \subfloat[Gray scale representation showing many more sampling points.]{
-    \label{fig:phase_exp_b}
-    \includegraphics[width=1.0\textwidth]{exp_theory.eps} %[width=.8\textwidth ]
-    }
-  \caption{     %A sanity check.  
-    %A comparison between a simple model of the phase relationship and the corresponding experimentally obtained values.
-    The phase relationship between the waves from the two transducers.
-    The imaging transducer is to the left, facing the pumping transducer (as in \figref{arrangements}).
-    Each line \figref{phase_exp_a} represents a recording on a hydrophone placed in between the two transducers.
-    The `distance' is measured in microseconds so that the graph is independent of the speed of sound (which can be considered to be set to unity).
-    Both axes are measured with respect to an origin placed at the co-focus.}
-  \label{fig:phases}
-\end{figure}
+%  \subfloat[Hydrophone measurements of the pressure-time waveforms at various distances along the acoustic axis within the co-focal region.]{
+%    \label{fig:phase_exp_a}
+%    \includegraphics[width=.8\textwidth]{15_exp.eps}
+%    }\\
+%  \vspace{.3in}
+%  \subfloat[Gray scale representation showing many more sampling points.]{
+%    \label{fig:phase_exp_b}
+%    \includegraphics[width=1.0\textwidth]{exp_theory.eps} %[width=.8\textwidth ]
+%    }
+%  \caption{     %A sanity check.  
+%    %A comparison between a simple model of the phase relationship and the corresponding experimentally obtained values.
+%    The phase relationship between the waves from the two transducers.
+%    The imaging transducer is to the left, facing the pumping transducer (as in \figref{arrangements}).
+%    Each line \figref{phase_exp_a} represents a recording on a hydrophone placed in between the two transducers.
+%    The `distance' is measured in microseconds so that the graph is independent of the speed of sound (which can be considered to be set to unity).
+%    Both axes are measured with respect to an origin placed at the co-focus.}
+%  \label{fig:phases}
+%\end{figure}
 
 
-Finally the hydrophone needs to be accurately replaced with the sample holder.
-This was done by finding the transit time for a high frequency pulse to echo off the hydrophone.
-%The hydrophone here can be considered as negligibly thin.
-When the hydrophone is replaced with the sample holder, another pulse echo time is recorded.
-The position of the sample is then adjusted so that the co-focus found with the hydrophone lies at the centre of the  sample holder.
+%Finally the hydrophone needs to be accurately replaced with the sample holder.
+%This was done by finding the transit time for a high frequency pulse to echo off the hydrophone.
+%%The hydrophone here can be considered as negligibly thin.
+%When the hydrophone is replaced with the sample holder, another pulse echo time is recorded.
+%The position of the sample is then adjusted so that the co-focus found with the hydrophone lies at the centre of the  sample holder.
  
 
 
@@ -229,15 +230,25 @@ The position of the sample is then adjusted so that the co-focus found with the 
 %%Further from the away still, theThe first few oscillations will be due to the driving wave alone,
 %%before the  imaging wave arrives at a given phase of the driving wave.
 
+To investigate the phase-relationship between the driving and imaging pulses
+when incident upon a bubble,
+the two waves must pass simultaneously through a bubbly fluid situated at the common focus.
+%This is most easily achieved by  having the two transducer's facing
+%each other. %, as illustrated by the cartoon of \figref{general_idea}.
+%If the bubbly mixture is both dense and homogeneous,
+%so that it may be considered a continuous medium,
+%then at every position within the sample a different phase relationship
+%between the two waves is interrogated.
+%\todo{Maybe dig out the picture here}
 Alternative arrangements for the two transducers are possible.
 In principle, the two transducers could be at any angle, $\phi$, with respect to each other.
 However, having the transducers co-axial (where $\phi = 0\degree,180\degree$) is optimal because
-the sampling precision in the axial direction is vastly superior than in the orthogonal directions.
-This is because the sampling rate in the axial direction is determined by the rate at which samples can be digitalised.
-In the orthogonal direction sampling precision  is determined by the beam width of the ultrasound transducer.
+the sampling precision in the axial direction is vastly superior. % than in the orthogonal directions.
+This is because the sampling rate in the axial direction is determined by the rate at which samples can be digitalised, 
+whereas in the orthogonal direction the sampling precision  is determined by the beam width of the imaging transducer.
 Any arrangement other than co-axial will therefore deteriorate the sampling precision by a factor of $\sin(\phi)$.
 
-The two co-axial arrangements both have their advantages and dissadvantages.
+The two co-axial arrangements both have their advantages and disadvantages.
 The advantage of having the two transducers facing each other ($\phi = 180\degree$) 
 is that all phase relationships between the two pulses are explored in a single shot.
 The disadvantage is that the driving pulse is incident upon the imaging transducer even if no scattering occurs.
@@ -249,7 +260,7 @@ However, each phase relation of the two pulses needs to be carried out individua
 and it is difficult to maintain a population of micron-sized bubbles in a consistent state for any length of time.
 A further problem is that the phase relationship between the two pulses changes as a function of density;
 a high frequency pulse {\em surfing} on a compression of a lower-frequency pulse travels at a greater speed than when timed with a rarefaction.
-This effect is measurable and is the basis of {\surf}-imaging\cite{Anderson}\todo{get citations}.
+This effect is measurable and is the basis of {\surf}-imaging\cite{Anglesen2007}.
 Finally, interleaving two crystals into the same transducer generally requires bespoke transducers
 and comes at a considerable cost.
 For these reasons, the angle $\phi = 180\degree$ is chosen in this thesis.
@@ -278,25 +289,25 @@ on the imaging wave.
 \item[A bubble generated from a perflurocarbon emulsion:]\hfill \\
   It seems likely that perfluorocarbon droplets will 
   eventually be able to leave the blood and be vapourised in situ to generate a contrast agent (see \chapref{introduction}).
-  Testing two wave imaging using a bubble perfluorcarbon emulsion would
+  Testing two wave imaging using a vapourised perfluorocarbon emulsion would
   therefore represent a natural end to this research project:
   the technique tested in the domain in which it is most useful,
   a cavitating wave acting upon a sub-micron bubble.
   Perfluorocarbon emulsions do not, however, represent a natural beginning.
 
   The technology in developing such contrast agents is still young.
-  Most of the success so far has been with larger droplet sizes (greater than \unit{400}\nano\metre\todo{cite})
-  while manufacturing smaller droplet sizes, required for producing an extravacularised bubble of less than \unit{400}\nano\metre\todo{radius or diameter},
-  has remained troublesome\todo{cite} (although see \todo{cite}).
-  The pressures that have hitherto been used to generate the bubbles are above ...\todo{get this number}, far in excess of those used in diagnostic applications,
-  with cavitating pulse lengths of ...\todo{get number} cycle.
+  Most of the success so far has been with larger droplet sizes (greater than \unit{400}\nano\metre\cite{Kripfgans2000,Rapoport2007,Couture2006})
+  while manufacturing smaller droplet sizes, required for producing an extravascularised bubble of less than \unit{400}\nano\metre
+  has remained troublesome\cite{Burns2010}. %(although see \{cite}).
+  The pressures that have hitherto been used to generate the bubbles are \unit{3}\mega\pascal\ for a \unit{0.5}\mega\hertz\ wave \cite{Scad2009}, far in excess of those used in diagnostic applications,
+  with cavitating pulse lengths of \unit{10}\second.
   Such pressures require the emulsion to be prepared in exceptionally clean water
   to be sure that the bubbles generated by the driving wave are not simply from heterogeneous nucleation of the water.
   Furthermore, any surfactant used to stabilise the emulsion must be known not to also stabilise
   any bubble formed in the manufacturing process, or to itself form a nucleating centre.
-  Research is being carried out by other groups \todo{cite} to reduce the pressure required for to cavitate a perlfuorocarbon droplet by mixing different perfluorocarbons,
+  Research is being carried out by other groups \cite{Burns2010,Couture2006} to reduce the pressure required for to cavitate a perfluorocarbon droplet by mixing different perfluorocarbons.
 %  which ideally would be possible with a diagnostic transducer,
-  but this research has not yet come to fruition \todo{cite}.
+%  but this research has not yet come to fruition.
   
 
 
@@ -304,10 +315,10 @@ on the imaging wave.
 \item[Commercially available microbubbles:]\hfill \\
   The difficulties resulting from the novelty of perfluorocarbon  emulsions 
   are not present for commercial available microbubbles.
-  Microbubble contrast agents have been licensed since ,\todo{get date and bubble}
-  and \Sonovue\ (Bracco) is currently licenced for clinical use in the EU \todo{cite}.
-  Both its size distribution (...\todo{get numbers and cite}) 
-  and its resonances \todo{cite}  are well characterised.
+  Microbubble contrast agents have been licensed since 1994\cite{NYtimesAlbunex},
+  and \Sonovue\ (Bracco) is currently licenced for clinical use in the EU.
+  Both its size distribution
+  and its resonances are well characterised.
 
   However, the size distribution of commercial microbubbles causes problems in this experiment.
   Firstly, the mean radius of the bubbles is greater than a micron.
@@ -315,9 +326,9 @@ on the imaging wave.
   that is homogeneous both spatially and temporally difficult to achieve.
   Even if the bubbles are circulated, the larger bubbles are gradually lost in the experiment.
   The results of a preliminary experiment showing the size distribution of \Sonovue\ circulating 
-   through a Mastersizer is shown in \figref{sonovue_sizes},
-  and other studies show similar results\todo{cite}.
-  Since microbubbles are highly attenuating to ultrasound \todo{cite}
+   through a Mastersizer is shown in \figref{sonovue_sizes}.
+%  and other studies show similar results\todo{cite}.
+  Since microbubbles are highly attenuating to ultrasound 
   the pressure field in the sample changes as the distribution changes,
   meaning that the response becomes a complicated function of depth.
   %The large size of commercial bubbles also means that they are more fragile to larger pressures.
@@ -327,7 +338,7 @@ on the imaging wave.
 
   Secondly, commercial microbubbles have a fairly broad distribution of sizes.
   This causes problems because the phase offset between the bubble's pulsations and  cavitating wave 
-  is a function of the bubble's size (see \chapref{computations}).
+  is a function of the bubble's size (see \chapref{mechanisms}).
   The scale of this problem can be understood from \figref{phase_radial} on page \pageref{fig:phase_radial}.
   Not only would we be trying to find the excess scattering cross-section of  a bubble in the complicated region
   corresponding to large bubble radii, we would be trying to perform a weighted average over that region.
@@ -354,7 +365,7 @@ Finally, the use of microbubbles forces the experiment away from the domain wher
   It is also the method that most closely matches the ideal parameters for cavitating an extravascular contrast agent.
   With relatively short pulses (less than 10 cycles) at pressures that are achievable with diagnostic ultrasound transducers 
   (less than approximately \unit{1}\mega\pascal\ peak-negative pressure)
-  gas entrapped in stabilised microbubbles and motes can be released\todo{cite}.
+  gas entrapped in stabilised microbubbles and motes can be released\cite{Willard1953}.
   %(An example is shown if \figref{av:108:1000_ex} and is discussed in \secref{WE:motivating_ex}).
   
   The critical radius, $R$, as a function of acoustic pressure, $P$, for an air bubble in water was estimated in \chapref{nucleation}.
@@ -366,7 +377,7 @@ Finally, the use of microbubbles forces the experiment away from the domain wher
   %where $\sigma$ is the surface tension between air and water,
   %and $P$ is the applied pressure. 
   If the negative pressure is  $\unit{1}\mega\pascal$ then the diameter of the bubble is approximately $300\nano\metre$
-(\figref{} on page \pageref{}).
+(\figref{cnt:criticalRadius} on page \pageref{fig:cnt:criticalRadius}).
   This is the size that would be expected for extravascular contrast agent,
   achieved with a pressure that would be desirable for an extravascular contrast agent.
   %It therefore makes an excellent mode
@@ -378,32 +389,91 @@ Finally, the use of microbubbles forces the experiment away from the domain wher
   %It is for this reason that tap water is troublesome when cavitation within the sample is not desired - neither.
   Tap water provides a very good source of bubbles for testing the use of a cavitating wave in controlling the scattering of an imaging wave.
 }  
-This chapter uses tap water as a source of bubbles.
+This thesis uses tap water as a source of bubbles.
 The bubbles in the medium are therefore generated by heterogeneous nucleation of the water.
 At diagnostic ultrasound pressures, 
 this implies type III and type IV nucleation (see  \chapref{nucleation}).
 %Motivation for using bubbles obtained from tap water
 %rather than from other sources
 %is given in \secref{WE:why_water}.
-The characterisation of the water medium adds 
-requirements to the experimental method
+%The characterisation of the water medium adds 
+%requirements to the experimental method
 that are additional to those needed to test the influence of the cavitating wave on scattering of the imaging wave.
 A full list of the experimental objectives is given in  \secref{WE:objectives}
-and the experimental methodology designed to meet these objectives is given in \secref{WE:methodology}.
+and the experimental methodology designed to meet these objectives is given in \secref{exp:finalDesign}.
 
+
+\section{Parameters under experimental control}
+
+ The main experimental parameters that are 
+ subject to experimental control are:
+ \nlist{
+   \item
+     The relative phase between the low-frequency and imaging wave.
+   \item
+   The pressures of the two waves.
+   \item
+     The frequencies of the two waves.
+ \item
+    The pulse-length of the two waves.
+ }
+ All variables other than the pulse length were investigated computationally in  \chapref{mechanisms}
+
+
+ The first parameter is well sampled by  virtue of the experimental
+ setup.
+ The two waves pass through each-other and so in {\em every} image {\em
+   all}
+ phases between the two waves will be sampled.
+
+ Sampling the pressure of the low-frequency wave is also
+ straight-forward by choosing a wide range of driving pulses to vary the peak pressure
+ at the focus.
+ In addition, if a 2 dimensional  image is formed with the Cortex scanner,
+then the spatially varying pressure field of the low frequency wave 
+ will be imaged in  {\em every } image.
+
+ The pressure of the imaging wave 
+ cannot be controlled with the Cortex scanner.
+The imaging transducer can only be controlled with independent electronics when it is fixed.
+
+We choose the frequencies of the two waves by virtue of the chosen transducers.
+ The choice, however, is not completely free.
+ The high frequency pulse ideally should last for only a small fraction
+ of the period of the low frequency wave.
+ In addition, 
+ when the difference in frequency between the low and high frequency transducers
+ becomes small the direct transmission of sound between the transducer's
+ becomes a problem for the anti-parallel setup of the transducers.
+ Imaging frequencies of between 7.5 and 20 MHz have been tried, 
+ along with low-frequency waves of between 0.5 and 2 MHz.
+ The results presented here were used a 0.5 MHz low frequency wave and
+ a 20 MHz imaging wave, unless otherwise stated.
+
+ The pulse length of the imaging wave should be short, 
+ although when imaging is achieved with a scanner, such as the cortex,
+ then this parameter cannot be changed.
+ The pulse length of the low frequency transducer is readily set.
+ To avoid bubbles growing (by rectified diffusion), fusing (by Bjerknes
+ forces) and collapsing (by instabilities in the oscillations) the low-frequency
+ pulse should also be short.
+ However, to reduce forward transmission the  frequency output of the
+ low frequency wave should not be 
+ too broad-band.
+ 10 cycles is used in these experiments.
 
 
 
 \section{Experimental Objectives} \label{sec:WE:objectives}
 
-This thesis has five experimental objectives that aim to test the predictions made in the first parts of the thesis.
+This thesis has five experimental objectives that aim to test the predictions made in the earlier parts of the thesis.
 \nlist{
-\item Determine whether bubbles can be evacuated from dirty water with a driving wave,
-  and subsiquently detected with a higher-frequency pulse.
-\item Determine whether an evacuated bubbles can be {\em imaged by pulse echo} 
+\item Determine whether bubbles can be evacuated from tap water with a driving wave,
+  and subsequently detected with a higher-frequency pulse.
+\item Determine whether an evacuated bubbles can be {\em imaged by pulse-echo} 
   with a  higher-frequency pulse.
 \item Determine if the precise location of the bubble can be determined.
-  In particular, can the excess scatter introduced in \chapref{computations}
+  In particular, can the excess scatter introduced in \chapref{mechanisms}
   be shown to have experimental merit?
 \item Determine whether any of the characteristics of the bubble can be inferred from the scattered sound.
   In particular, can the pressure of the driving wave be used to determine the radius of the bubble
@@ -416,12 +486,14 @@ This thesis has five experimental objectives that aim to test the predictions ma
 The objectives are incremental in that the latter depend upon the former.
 The first is the most straightforward.
 The generation of bubbles in dirty water is familiar to most practicioners of ultrasound
-and the only technical difficulty is in timing the imaging wave appropriately to image the wave.
+and the only technical difficulty is in timing the imaging gate appropriately to detect the wave.
 
 The second question is much more difficult.
-For the second question we wish to show that the evacuated bubble interacts acoustically with the imaging wave.
-Sound that is radiated when the bubble is generated is no longer of interest.
-The third asks whehter the excess pressure technique of \chapref{computations} is a viable means of locating a bubble, 
+For the second question we wish to show that the evacuated bubble interacts acoustically with the imaging wave
+and that we can detect the high frequency echo.
+Sound that is radiated when the bubble is generated,
+or forward scattered from the driving wave, is no longer of interest.
+The third asks whether the excess pressure technique of \chapref{mechanisms} is a viable means of locating a bubble, 
 and thereby conclusively demonstrating the acoustic interaction of nucleated bubble with the imaging wave.
 
 The final two questions are the most challenging of all because they require
@@ -433,12 +505,13 @@ which are typically limited to being a few cycles long,
 questions three and four are not expected to yield good results.
 The range of frequencies contained in the pulses are too great to hope for narrow resonance characteristics in the population of generated bubbles.
 
+
 \section{Experimental Protocol}\label{sec:exp:protocol}
 
 The broad design of the experiments to test these objectives are now presented.
 
 In \secref{exp:prelim}, a preliminary study is discussed that 
-confirms question 1 in the affirmative.
+answers question 1 in the affirmative.
 It is found, however, that the preliminary study is not capable of determining the answer to 
 the second question, namely,
 whether the high frequency transducer actively imaging the generated bubbles
@@ -450,18 +523,18 @@ This prompts some changes in experimental design that are discussed in \secref{e
 
 \subsection{Preliminary study: The generation and detection of bubbles in dirty water}\label{sec:exp:prelim}
 
-The primary goal of the preliminary study was  to determine whether bubbles could be evacuated from motes in tap 
+The primary goal of the preliminary study is  to determine whether bubbles can be evacuated from motes in tap 
 water with a low frequency wave, 
-and whether evidence for this could be detected with a high frequency wave.
+and whether evidence for this can be detected with a high frequency transducer.
 
 For this purpose a \unit{0.5}\mega\hertz\ transducer (TMS, focal length: \unit{50}\milli\metre) was chosen to evacuate the gas from the water,
-and a \unit{20}\mega\hertz\ (Panametrics, focal length: \unit{50}\milli\metre \todo{Obtain focal length})  transducer was used for imaging.
+and a \unit{20}\mega\hertz\ (Panametrics, focal length: \unit{20}\milli\metre)  transducer was used for imaging.
 These transducers were chosen for a number of reasons:
 \nlist{
   \item It was hoped that the frequency ratio of 40 between these transducers 
     would help eliminate direct transmission from the driving wave to the imaging transducer.
   \item  \unit{0.5}\mega\hertz\ was chosen  for the driving wave because it is below the principle resonances of the bubbles that are expected to be evacuated in the fluid (\figref{}).
-The motivation for being below the principle resonance comes from \chapref{computations} where it was found that the interactions between the driving and imaging  waves become hard to interpret at resonance.
+The motivation for being below the principle resonance comes from \chapref{mechanisms} where it was found that the interactions between the driving and imaging  waves become hard to interpret at resonance.
 \item  \unit{20}\mega\hertz\ was chosen for the imaging wave because  \unit{20}\mega\hertz\ should  resonate free gas bubbles of about \unit{300}\nano\metre (\figref{}).
 This is approximately the size of bubble  that we ultimately wish to image.
 \item Both transducers are  focussed.  Firstly, this results in an imaging volume that is well located.
@@ -651,7 +724,6 @@ The electronic arrangement of the preliminary experiment is summarised in \figre
 
 \subsubsection{Results of the preliminary study}
 
-Pressures chosen \todo{Not sure what to do here}
 
 %This helped This helped to reduce the chances of 
 
@@ -662,7 +734,7 @@ Pressures chosen \todo{Not sure what to do here}
 \begin{figure}[h]
      \centering
           \includegraphics[width=0.8\textwidth]{rotterdam_02_water.png}
-     \caption{30db}
+     \caption{Water sample driven at 0.4\mega\pascal}
    \label{fig:water_cavitation_70}
 \end{figure}
 
@@ -782,7 +854,7 @@ and  \Figref{water_cavitation_85}.
 
   If the signal is just forward scatter then the experiment is simply doing passive cavitation detection
   via an overly complicated harmonic imaging setup.
-  In this case there is little relation to the computational analysis of \chapref{computations}
+  In this case there is little relation to the computational analysis of \chapref{mechanisms}
   and there is no new technology at work.
   It should also be said that if this is the case then we are also using the word cavitation in its loosest sense.
   We could not claim to be generating a bubble - the bubble probably does exist, but is just not visible at the pressures and frequencies used in the imaging setup.
@@ -808,35 +880,13 @@ and  \Figref{water_cavitation_85}.
 
 
 
-\subsection{The final experimental design} \label{sec:exp:finalDesign}
-
-To enable the excess pressure to be plotted one need
-\nlist{
-  \item the driving wave to trigger the imaging wave,
-  \item A fixed imaging transducer,
-  \item A way of rapidly turning switching the imaging transducer from pulse-receive into receive-only mode (the imaging mode)
-}
-This is achieved by removing the imaging pulse from the Cortex scanner
-and mounting it statically to the experimental chamber as shown in \figref{exp:setup:fixed}.
-
-To drive the imaging transducer a DPR500 pulser-receiver was purchaced,
-and a ...\todo{get preamplifer details} preamplifer.
-The DPR500 may be controlled via a serial connection,
-with options including the firing voltage, the gain,
-and the imaging mode.
-
-The setup is illustrated in \figref{exp:setup:electronic:final}.
-Notice that the delay of each of the wave generators is also controlled electronically.
-The purpose of this is to alter the delay of the imaging pulse after the passing of the driving wave.
-\Figref{} suggests that the bubbles may live on beyond the passing of the driving wave.
-If the lifetime of the bubbles can be determined, then their radius can be estimated 
-from the results of \chapref{nucleation}.
 
 
-The library to control the equipment was written by the author of this thesis
-and is available on github\cite{ExperimentCode}.
-The  experiment carried out can understood in detail
-from the program that called the library, \coderef{experiment}.
+
+
+%\lstinputlisting[label=samplecode,caption=A sample]{part_experimental/rationale/sourceCode/experiment1.cpp}
+
+
 %according to the 
 
 %In order to test the lifetime of such bubbles,

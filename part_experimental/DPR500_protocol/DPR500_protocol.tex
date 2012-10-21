@@ -1,5 +1,143 @@
 
-\section{Experimental Protocol}\label{sec:DPR500_protocol}
+%\section{Experimental Protocol}\label{sec:DPR500_protocol}
+
+\subsection{The final experimental design} \label{sec:exp:finalDesign}
+
+To enable the excess pressure to be plotted one needs:
+\nlist{
+  \item a fixed imaging transducer,
+  \item the driving wave to trigger the imaging wave,
+  \item a way of rapidly turning switching the imaging transducer from pulse-receive into receive-only mode (the imaging mode)
+}
+The first of these is achieved by removing the imaging pulse from the Cortex scanner
+and mounting it statically to the experimental chamber as shown in \figref{exp:setup:fixed}.
+
+Controlling the triggering and imaging mode of the two transducers 
+required a considerable change in the electronic arrangement of the experiment.
+
+
+
+
+\subsubsection{Driving wave}
+The driving wave is generated from an Agilent  33220A waveform generator
+that is controlled remotely by a LAN connection.
+It is triggered by the remote computer and produces  a sine burst of 10 cycles.
+The output of the Agilent was amplified by a  Tomco power-generator (gain of \unit{50}dB)
+which then drove the \unit{0.5}\mega\hertz\ TMS transducer used in the preliminary study.
+The gate to the Tomco was connected to the 'sync out' of the Agilent driving wave generator.
+
+
+\subsubsection{Delay before the imaging wave}
+The 'sync out' of the Agilent driving wave generator is also connected to 
+an Analogic 2045 arbitrary waveform generator.
+The role of the Analogic generator is to produce 
+a delay pulse that  triggers both the imaging wave
+and  the oscilloscope that collects the imaging radio frequency signal.
+The time recorded on the oscilloscope is genuinely a pulse-echo-time since the oscilloscope is triggered with the same pulse as the imaging wave.
+
+The Analogic is chosen because it has the fastest clock of all the pulsers / pulser delays available.
+The gitter from the analogic is  5-10\nano\second, which was an order of manitude better than the other pulsers available.
+
+
+The time delay on the Analogic generator is controlled remotely via serial connection.
+Altering the delay enables the lifetime of the bubbles to be investigated.
+\Figref{} suggests that the bubbles may live on beyond the passing of the driving wave
+and so by extending the delay the imaging properties of longer lived bubbles can be investigated.
+If the lifetime of the bubbles can be determined, then their radius can be estimated 
+from the results of \chapref{nucleation}.
+
+
+\subsubsection{Imaging wave}
+The imaging wave is generated from the custom ordered Panemetrics \unit{20}\mega\hertz\
+transducer used in the preliminary study.
+The pulse/receive electronics is controlled 
+with a \JsrUltrasonics\ \DPR500\ dual pulser-receiver
+with a \RPL2 pulser-receiver.
+The imaging voltage was \unit{300}\volt\ and the combined imaging gain 
+of the pre-amplifier and \DPR500\ is \unit{50}\deci B.
+To help reduce the contribution of the direct transmit / forward scatter of
+the driving wave, a high pass filter (-\unit{3}\deci B at \unit{7.5}\mega\hertz)
+is used.
+
+The DPR500 may be controlled via a serial connection,
+with the  firing voltage, the gain,
+and the imaging mode all available options.
+
+
+
+\begin{centering}
+\begin{figure}[h]%[htp]
+  \subfloat[]{
+    \label{fig:arrA}
+    \includegraphics[width=.45\textwidth]{arrangement01.1}}
+   \hspace{.3in}
+   \subfloat[]{
+    \label{fig:arrB}
+    \includegraphics[width=.45\textwidth]{arrangement02.1}}
+  %\hspace{.3in}
+   \caption{
+     The two driving arrangements considered.
+     The wires along which signal travels are solid.
+     The wires that carry the triggering/gating are shown dashed.
+   }
+   \label{fig:arrangements}
+\end{figure}
+\end{centering}
+
+%The second arrangement decoupled the transducers so that the output of each could be considered separately.
+%The 20\mega\hertz\ transducer has, from a previous project, an Institute-built high speed diode cascade amplifier
+%and matched preamp.
+%The author then built a  broadband  shunt-series pair amplifier outlined in \cite{Horowitz1980} with the precise circuit layout from \cite{amp}.
+%The amplifier has a flat frequency response  up to 25\mega\hertz\ and was linear in phase, as can be seen in \figref{amplifier}.
+%The gain of the amplifier built was 14\deci\bel.
+
+ %though membrane amp must be low gain to help feedback
+
+%The data acquisition block in \figref{arrangements} is as a National Instruments NI-5911 high speed digitiser.
+%The author wrote a C++ interface  to link to the National Instrument libraries for this device.
+%The signal generator used was an Analogic 2045, 
+%the pulse generator was a Tomco RF Pulse Generator while a RS pulse generator and an 
+%HP functional generator were used for the trigger and delay respectively.
+
+
+\subsubsection{Summary of arrangement}
+The full arrangement is given in \figref{exp:setup:electronic:final}.
+The library to control the equipment was written by the author of this thesis 
+and is  available on github\cite{ExperimentCode}.
+The  experiment carried out can understood in detail
+from the program that called the library.
+This is given in \coderef{experiment}.
+
+An example script that runs an experiment is shown in \coderef{}.
+%It is seen that issues addressed in \secref{} are addressed.
+%\nlist{
+%\item The excess wave is calculated
+%\item The tail of the wave
+%\item The pressure dependence is calculated ...
+%}
+The automation brings a great deal of flexability to the experimental proceedure.
+
+%\subsection{The characterisation of the nucleated bubbles}\label{sec:WE:characterisation}
+
+
+
+
+
+
+
+%An Agilent  33220A is controlled by LAN connection.  Its role is triggered by the computer to produce a sine burst of 10 cycles.  
+
+%The analogic is to provide a delayed pulse for the \DPR500.  The reason this pulser is used rather than the Thandars or the agilent is because it has a much faster clock.  The other generators are not usable because the gitter is of order 50ns  ruining the averages.  The gitter from the analogic is nearer 5-10ns.  Its output goes to trigger the scope and to the sunc of the \DPR500.  The scope is triggered from this input so that the time recorded is genuinly a pulse-echo-time.
+
+
+%The \DPR500 is controlled via serial connection.  It controls the imaging spike.
+
+%The scope is controlled by LAN. Waveforms are grabbed directly from the scope.
+
+%The setup is illustrated in \figref{}.
+%Notice that the delay of each of the wave generators is also controlled electronically.
+%The purpose of this is to alter the delay of the imaging pulse after the passing of the driving wave.
+
 
 % \todo[inline]{The image here is probably my best water cavitation of water image showing rare events on the threshold of cavitation.
 % Greater snowstorms can be found for higher pressure but this illustrates the threshold fairly nicely - see emulsion chapter. This is 70db on the amplifier. 
@@ -10,11 +148,11 @@
 
 
 
-\section{Transducers chosen}
-%A number of transducers were tried.
-We report on the use of a  \unit{0.5}\mega\hertz\ (TMS) pumping transducer and a 20\mega\hertz\ (Panametrics) imaging transducer.
- \unit{0.5}\mega\hertz\ should be sufficiently below the resonance frequency of the microbubbles for the ambient pressure condition of \secref{theidea} 
-to apply, while still being sufficiently high in frequency to elicit a response from the microbubble.
+%\subsubsection{Transducers chosen}
+%%A number of transducers were tried.
+%We report on the use of a  \unit{0.5}\mega\hertz\ (TMS) pumping transducer and a 20\mega\hertz\ (Panametrics) imaging transducer.
+% \unit{0.5}\mega\hertz\ should be sufficiently below the resonance frequency of the microbubbles for the ambient pressure condition of \secref{theidea} 
+%to apply, while still being sufficiently high in frequency to elicit a response from the microbubble.
 
 %The choice of 20\mega\hertz\ for an imaging transducer needs more discussion.
 %From \figref{frequency} we see that 20\mega\hertz\ should  resonate free gas bubbles of about 300\nano\metre,
@@ -35,39 +173,13 @@ to apply, while still being sufficiently high in frequency to elicit a response 
 %hydrophone measurements indicate that significant pressures are still obtained (see \figref{Iprofile}).
 
 
-\subsection{Introduction}
+%\subsection{Introduction}
 
 
 
-\subsection{Generation of the two pulses}
-\subsubsection{Imaging wave}
-The imaging wave is generated from a custom ordered Panemetrics \unit{20}\mega\hertz\
-transducer.
-The pulse/receive electronics is controlled 
-with a \JsrUltrasonics \DPR500 dual pulser-receiver
-with a \RPL2 pulser-receiver.
-The imaging voltage was \unit{300}\volt\ and the combined imaging gain 
-of the pre-amplifier and \DPR500 was \unit{50}dB.
-To help reduce the contribution of the direct transmit/forward scatter of
-the driving wave, a high pass filter (-\unit{3}dB at \unit{7.5}\mega\hertz)
-was used.
-
-\subsubsection{Driving wave}
-The driving wave was generated from an  Analogic 2045 arbitrary waveform generator.
-The input voltage was a sinusoid of frequency \unit{0.5}\mega\hertz\ 
-truncated to be 10 cycles in duration. 
-The output of Analogic was input into a Tomco power-generator (gain of \unit{50}dB)
-which drove a \unit{0.5}\mega\hertz\ ... transducer.
-
-\subsubsection{Controlling the timing of the two waves}
-An Agilent  33220A is controlled by LAN connection.  Its role is trigged by the computer to produce a sine burst of 10 cycles.  The gate to the tomco and the analogic is conneted to the sync out.  The output is connected to the RF in on the Tomco
-
-The analogic is to provide a delayed pulse for the \DPR500.  The reason this pulser is used rather than the Thandars or the agilent is because it has a much faster clock.  The other generators are not usable because the gitter is of order 50ns  ruining the averages.  The gitter from the analogic is nearer 5-10ns.  Its output goes to trigger the scope and to the sunc of the \DPR500.  The scope is triggered from this input so that the time recorded is genuinly a pulse-echo-time.
+%\subsection{Generation of the two pulses}
 
 
-The \DPR500 is controlled via serial connection.  It controls the imaging spike.
-
-The scope is controlled by LAN. Waveforms are grabbed directly from the scope.
 
 
 %When imaged by the high-frequency wave the phase of the low frequency
@@ -119,60 +231,11 @@ The scope is controlled by LAN. Waveforms are grabbed directly from the scope.
 %requiring a non-trivial set of filter and frequency specific amplifiers to then separate and digitise them. % with a similar number of bits.
 %This introduced complicated phase warps and destroyed the simplify of the method.  The arrangement was abandoned.
 
-\begin{centering}
-\begin{figure}[h]%[htp]
-  \subfloat[]{
-    \label{fig:arrA}
-    \includegraphics[width=.45\textwidth]{arrangement01.1}}
-   \hspace{.3in}
-   \subfloat[]{
-    \label{fig:arrB}
-    \includegraphics[width=.45\textwidth]{arrangement02.1}}
-  %\hspace{.3in}
-   \caption{
-     The two driving arrangements considered.
-     The wires along which signal travels are solid.
-     The wires that carry the triggering/gating are shown dashed.
-   }
-   \label{fig:arrangements}
-\end{figure}
-\end{centering}
 
-%The second arrangement decoupled the transducers so that the output of each could be considered separately.
-%The 20\mega\hertz\ transducer has, from a previous project, an Institute-built high speed diode cascade amplifier
-%and matched preamp.
-%The author then built a  broadband  shunt-series pair amplifier outlined in \cite{Horowitz1980} with the precise circuit layout from \cite{amp}.
-%The amplifier has a flat frequency response  up to 25\mega\hertz\ and was linear in phase, as can be seen in \figref{amplifier}.
-%The gain of the amplifier built was 14\deci\bel.
+%\subsubsection{The experimental volume}
 
- %though membrane amp must be low gain to help feedback
-
-%The data acquisition block in \figref{arrangements} is as a National Instruments NI-5911 high speed digitiser.
-%The author wrote a C++ interface  to link to the National Instrument libraries for this device.
-%The signal generator used was an Analogic 2045, 
-%the pulse generator was a Tomco RF Pulse Generator while a RS pulse generator and an 
-%HP functional generator were used for the trigger and delay respectively.
-
-
-\subsection{Summary of arrangement}
-The full arrangement is given in \figref{arrangement}.
-The code that controls the equipment is found in on github.
-An example script that runs an experiment is shown in \coderef{}.
-It is seen that issues addressed in \secref{} are addressed.
-\nlist{
-\item The excess wave is calculated
-\item The tail of the wave
-\item The pressure dependence is calculated ...
-}
-The automation brings a great deal of flexability to the experimental proceedure.
-
-%\subsection{The characterisation of the nucleated bubbles}\label{sec:WE:characterisation}
-
-
-\subsection{The experimental volume}
-
-Beamplot goes here.
-Show the pressure releationship as a function of voltage that can then be interpolated.
+%Beamplot goes here.
+%Show the pressure releationship as a function of voltage that can then be interpolated.
 
 %\subsubsection{Generation of Bubbles}
 
@@ -181,7 +244,7 @@ Show the pressure releationship as a function of voltage that can then be interp
 
 
 
-\subsection{Alignment Used}
+%\subsubsection{Alignment Used}
 
 %A better way is to retain the coaxial%
 %\footnote{This gives the greatest possible overlap of the mutual focus.} alignment of the pumping and imaging tran%sducer
@@ -217,25 +280,25 @@ Show the pressure releationship as a function of voltage that can then be interp
 
 %The two transducers were arranged to be co-focal using a membrane hydrophone attached to the aforementioned gantry%%_. % 
 %%The membrane hydrophone  enables the pressure to be measured on both faces simultaneously, 
-a%nd since the hydrophone has negligible thickness,
-the pressure measured can be assigned accurately to a single point.
-First the high frequency transducer was fixed and its focus found.
-Then the pumping transducer was moved and its focus found iteratively until it too shared the same focus as the imagi5%ng transducer.
-The accuracy attained is shown in \figref{profiles},
-where zero in each plot gives  the found focus.
+%a%nd since the hydrophone has negligible thickness,
+%the pressure measured can be assigned accurately to a single point.
+%First the high frequency transducer was fixed and its focus found.
+%Then the pumping transducer was moved and its focus found iteratively until it too shared the same focus as the imagi5%ng transducer.
+%The accuracy attained is shown in \figref{profiles},
+%where zero in each plot gives  the found focus.
 
-\begin{centering}
-\begin{figure}
-\subfloat[Imaging transducer (20\mega\hertz) ]{
-    \label{fig:Iprofile}
-    \includegraphics[width=.9\textwidth]{20mhz_profile.eps}}
-  %\hspace{.3in}
-   \caption{
-     The profile along the two lateral and axial direction for the imaging and pumping transducer measured with a membrane hydrophone
-   }
-   \label{fig:profiles}
-\end{figure}
-\end{centering}
+%\begin{centering}
+%\begin{figure}
+%\subfloat[Imaging transducer (20\mega\hertz) ]{
+%    \label{fig:Iprofile}
+%    \includegraphics[width=.9\textwidth]{20mhz_profile.eps}}
+%  %\hspace{.3in}
+%   \caption{
+%     The profile along the two lateral and axial direction for the imaging and pumping transducer measured with a membrane hydrophone
+%   }
+%   \label{fig:profiles}
+%\end{figure}
+%\end{centering}
 
 
 %When I high frequency wave - the imaging wave -
@@ -257,48 +320,9 @@ where zero in each plot gives  the found focus.
 
 
 
-\section{A motivating  example}\label{sec:WE:motivating_ex}
-
-\begin{figure}[t]%
-  \centering
-  \subfloat[1st pulse - 100]{
-    \label{fig:av:108:100_ex:first}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means1_large.tex}}
- \quad
-  \subfloat[2nd pulse - 100]{
-    \label{fig:av:108:100_ex:second}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means2_large.tex}}\\
- \subfloat[1st pulse - 12000]{
-    \label{fig:av:108:12000_ex:first}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_12000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_12000_no_imaging_av_with_sd_means1_large.tex}}
- \quad
-  \subfloat[2nd pulse - 12000]{
-    \label{fig:av:108:12000_ex:second}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_12000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_12000_no_imaging_av_with_sd_means2_large.tex}}\\
-  \subfloat[2nd pulse - 12000]{
-    \label{fig:av:108:12000_ex:sub}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_12000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_12000_no_imaging_av_with_sd_means_sub_large.tex}}\\
-  \caption{
-    The pressure received  by the imaging transducer when the driving wave is on but the imaging wave is off (receive-only).
-    The second pulse \subref{fig:av:108:100:second} is received \unit{100}\micro\second\ after the first \subref{fig:av:108:100:first}.
-    Each image is the average of 49 images, the first standard-deviation error bars are indicated.
-  }
-  \label{fig:av:108:100_ex}
-\end{figure}
-
-
-
-%\Figref{av:108:1000_ex:first} illustrates 
-
-To motivate the use of water as a the cavitating medium, 
-we illustrate a preliminary experiment that demonstrates the signal recieved by the high frequency transducer.
-\Figref{av:108:1000} shows the pressure received by the imaging transducer when the driving wave pressure is 0.108V at the focus.
-
-That a bubble is actually created is illustrated in 
-
-Need to demonstrate bubble.
-need to demonstrate nucleation threshold.
-need to demonstrate 
+%Need to demonstrate bubble.
+%need to demonstrate nucleation threshold.
+%need to demonstrate 
 
 %
 %Is it a bubble?
@@ -431,41 +455,41 @@ need to demonstrate
 %the high pressures used in the generating wave 
 
 
-The prediction of \chapref{mechanisms} requires two waves
+%The prediction of \chapref{mechanisms} requires two waves
 
-that the scattering of a bubble in response a high frequency wave
-can be modulated by the pulsations induced in the model with a second wave.
+%that the scattering of a bubble in response a high frequency wave
+%can be modulated by the pulsations induced in the model with a second wave.
 
-When the driving wave shrinks the bubble, the resonance frequency temporarily increases.
-If the new resonance frequency is closer to that of the imaging wave, then the scattering increases.
-Otherwise it decreases.
-
-
-The principle difficulty in doing this is separating the influence of the imaging wave from 
-the scatter generated from the driving wave alone.
-To do so, as was discussed in \chapref{mechanisms},
-two pulses need to be taken, one with and one without the imaging wave.
+%When the driving wave shrinks the bubble, the resonance frequency temporarily increases.
+%If the new resonance frequency is closer to that of the imaging wave, then the scattering increases.
+%Otherwise it decreases.
 
 
-This chapter analyses the results of the experiment outlined int  whether the driving  wave influences the back-scatter from an imaging wave in the predicted manner.
+%The principle difficulty in doing this is separating the influence of the imaging wave from 
+%the scatter generated from the driving wave alone.
+%To do so, as was discussed in \chapref{mechanisms},
+%two pulses need to be taken, one with and one without the imaging wave.
 
 
-To determine the influence of the high frequency wave 
-on a bubble pulsating to a dual frequency wave,
-the influence 
+%This chapter analyses the results of the experiment outlined int  whether the driving  wave influences the back-scatter from an imaging wave in the predicted manner.
 
-\Chapref{mechanisms} described a method of determining whether the scattering of a high frequency wave
-can be altered by the pulsations induced by  a lower frequency wave.
-Two pulses were required, 
-one comprising of low frequency and high frequency components,
-the other comprising of just low frequency components.
-In this way the unperturbed-forward scatter from the low frequency wave could be subtracted out, 
-leaving behind the scatter that is caused by the high frequency wave.
 
-However, using two pulses causes its own problems,
-for it is difficult to guarenee that the pulses are independant of one-another.
-A pulsating bubble can grow (rectified diffusion),
-can dissolve away or can burst into many smaller bubbles. 
+%To determine the influence of the high frequency wave 
+%on a bubble pulsating to a dual frequency wave,
+%the influence 
+
+%\Chapref{mechanisms} described a method of determining whether the scattering of a high frequency wave
+%can be altered by the pulsations induced by  a lower frequency wave.
+%Two pulses were required, 
+%one comprising of low frequency and high frequency components,
+%the other comprising of just low frequency components.
+%In this way the unperturbed-forward scatter from the low frequency wave could be subtracted out, 
+%leaving behind the scatter that is caused by the high frequency wave.
+
+%However, using two pulses causes its own problems,
+%for it is difficult to guarenee that the pulses are independant of one-another.
+%A pulsating bubble can grow (rectified diffusion),
+%can dissolve away or can burst into many smaller bubbles. 
 %Additionally,
 %even if 
 %To generate a bubble, low frequencies and high pressures are required,
@@ -492,16 +516,20 @@ can dissolve away or can burst into many smaller bubbles.
 
 \section{Discussion} \label{sec:WE:discussion}
 
+In this chapter the design rationale for the experiments of this thesis have been presented.
+
+
+\todo{Finish discussion, objectives, preliminary study, result in M-mode imaging designed to test excess pressure}
 
 
 
-This chapter gives two representative images at two different pressures for the cavitation of water.
-The issues in interpreting these images are then discussed.
-Without an interpretation, I do not believe we can say whether the images presented are novel or not, 
-even in terms of a balance of evidence.
+%This chapter gives two representative images at two different pressures for the cavitation of water.
+%The issues in interpreting these images are then discussed.
+%Without an interpretation, I do not believe we can say whether the images presented are novel or not, 
+%even in terms of a balance of evidence.
 
-The images are Hilbert transformed data from the Cortex scanner.
-I have informally called these B-mode images - but in reality I have done nothing other than  Hilbert transform the RF data along A-lines.
+%The images are Hilbert transformed data from the Cortex scanner.
+%I have informally called these B-mode images - but in reality I have done nothing other than  Hilbert transform the RF data along A-lines.
 
 
 % \todo[inline]{The following text has been taken from previous reports.
@@ -512,114 +540,32 @@ I have informally called these B-mode images - but in reality I have done nothin
 % }
 
 
- The main experimental parameters that are 
- subject to our control are:
- \nlist{
-   \item
-     The relative phase between the low-frequency and imaging wave.
-   \item
-   The pressures of the two waves.
-   \item
-%     The frequencies of the two waves.
- \item
-    The pulse-length of the two waves.
- }
- All variables other than the pulse length were investigated computationally in  \chapref{mechanisms}
-
-
- The first of these is well sampled by  virtue of the experimental
- setup.
- The two waves pass through each-other and so in {\em every} image {\em
-   all}
- phases between the two waves will be sampled.
-
- Sampling the pressure of the low-frequency wave is also
- straight-forward.
- A wide range of driving pulses are chosen to vary the peak pressure
- at the focus.
- In addition, since an 2D image is formed, 
- the spatially varying pressure field of the low frequency wave 
- will be imaged in  {\em every } image.
- The pressure of the imaging wave is much harder to control,
- for it is controlled internally by the scanner.
-Indeed, it would be helpful to turn the imaging wave off altogether.
-This cannot be achieved without modifying the scanner, however.
-he pressure ranges experimented with range from 0 through to $>1$ MPa
-peak-negative.
-
-ed for the two waves.
- Although our choice is not completely free.
- The high frequency pulse ideally should last for only a small fraction
- of the period of the low frequency wave.
- In addition, 
- when the difference in frequency between the low and high frequency transducers
- becomes small the direct transmission of sound between the transducer's
- becomes a problem for the anti-parallel setup of the transducers.
- Imaging frequencies of between 7.5 and 20 MHz have been tried, 
-long with low-frequency waves of between 0.5 and 2 MHz.
- The results presented here were used a 0.5 MHz low frequency wave and
- a 20 MHz imaging wave, unless otherwise stated.
-
- The pulse length of the imaging wave should be short, 
- although when imaging is achieved with a scanner, such as the cortex,
- then this parameter cannot be changed.
- The pulse length of the low frequency transducer is readily set.
- To avoid bubbles growing (by rectified diffusion), fusing (by Bjerknes
- forces) and collapsing (by instabilities in the oscillations) the low-frequency
- pulse should also be short.
- However, to reduce forward transmission the  frequency output of the
- low frequency wave should not be 
- too broad-band.
- 10 cycles is used in these experiments.
-
- The size of the bubbles/droplets is not simple to control.
- In general a fairly broad-range of sizes is present, even for the
- commercial agents,
- although one of the advantages of using commercially available
- contrast agents are that their size have been well studied.
- It is not possible to directly size the bubbles formed in cavitation,
- even though this is of interest.
- This is because the bubbles are too short lived.
- Finally, 
- sizing the perfluoropentane emulsion is also hard.
- This is because perfluoropentane is a transparent fluid with
- essentially the same refractive index as water,
- and so optical sizing becomes hard.
- The best that can be done so far is to bound the size distributions by
- passing the emulsion though a filter.
- For other reasons it is desirable to attach a fluorescent
- marker to the emulsion, but as a bonus this should help size the
- droplets.
+%\subsection{Cavitated Water}\label{sec:water_vapourisation}
 
 
 
-
-\subsection{Cavitated Water}\label{sec:water_vapourisation}
-
-
-
-\begin{figure}[h]
-     \centering
-          \includegraphics[width=0.8\textwidth]{emulsion_cavitation_signal.png}
-     \caption{Typical cavitation signal seen in bubbly water.
-     The two long vertical lines are the reflections of the sample
-     holder.
-     The imaging transducer is to the left,
-     the low-frequency transducer is to the right.}
-   \label{fig:cavitation}
-\end{figure}
+%\begin{figure}[h]
+%     \centering
+%          \includegraphics[width=0.8\textwidth]{emulsion_cavitation_signal.png}
+%     \caption{Typical cavitation signal seen in bubbly water.
+%     The two long vertical lines are the reflections of the sample
+%     holder.
+%     The imaging transducer is to the left,
+%     the low-frequency transducer is to the right.}
+%   \label{fig:cavitation}
+%\end{figure}
 
 
-\begin{figure}[h]
-     \centering
-          \includegraphics[width=0.8\textwidth]{pure90dbsmall41.png}
-     \caption{Typical cavitation signal seen in bubbly water.
-     The two long vertical lines are the reflections of the sample
-     holder.
-     The imaging transducer is to the left,
-     the low-frequency transducer is to the right.}
-   \label{fig:cavitation}
-\end{figure}
+%\begin{figure}[h]
+%     \centering
+%          \includegraphics[width=0.8\textwidth]{pure90dbsmall41.png}
+%     \caption{Typical cavitation signal seen in bubbly water.
+%     The two long vertical lines are the reflections of the sample
+%     holder.
+%     The imaging transducer is to the left,
+%     the low-frequency transducer is to the right.}
+%   \label{fig:cavitation}
+%\end{figure}
 
 
 
