@@ -1,5 +1,6 @@
-
-
+\newcommand{\pEE}{88\mega\pascal}
+\newcommand{\pOOE}{108\mega\pascal}
+\newcommand{\pOTT}{132\mega\pascal}
 
 \chapter{Cavitation of Water}\label{ch:water_cavitation}
 
@@ -8,34 +9,35 @@
 \section{Introduction}
 
 This chapter presents the results of the experiment designed in \chapref{rationale}.
-The experimental approach was based upon finding the excess pressure
-returned to the imaging transducer when imaging in pulse-receive mode
-over receive-only mode. 
+The experiment was designed to find the excess pressure
+received at the imaging transducer.
 A difference in excess pressure 
 \nlist{
   \item provides strong evidence of high frequency back-scatter from the generated bubbles
     (rather than just for high-frequency forward scatter generated from the driving wave),
-  \item enables the location of the scattering bubble (it there is only one)
+  \item enables the location of the scattering bubble (if there is only one)
     to be determined.
 }
+%
 The results for the excess pressure are presented in \secref{exp:EP}.
 It is found that the average excess pressure 
 does exhibit a high frequency component indicative of back-scattering the imaging wave.
-
-However, the signals are not significatantly above the level of noise
-and so the results are not entirely convincing.
- \Secref{exp:ICA} extends the analysis by finding the independent components of the 
-received signals.
-This is done via an Independent Component Analysis algorithm
-that avoids overfitting by automatically turning off components that are not necessary.
-This is achieved by using a fully Bayesian approach.
+However, the signals are not significantly above the level of noise
+and so the results are only partially convincing.
+% \Secref{exp:ICA} extends the analysis by finding the independent components of the 
+%received signals.
+%This is done via an Independent Component Analysis algorithm
+%that avoids overfitting by automatically turning off components that are not necessary.
+%This is achieved by using a fully Bayesian approach.
  
 
 \Secref{exp:modelling} then completes the objectives of \chapref{rationale}
 by attempting to characterise the bubbles generated.
-This is done by trying to infer the model's parameters from the recevived signal.
-We are fitting a model of the oscillations to the acquired data.
-Again, need to be careful not to have a model that can fit anything.
+This is done by trying to infer the model's parameters
+by fitting the acoustic Keller-Miksis equation to the received signal.
+The assumption is that the signal is generated from a single bubble.
+%We are fitting a model of the oscillations to the acquired data.
+%Again, need to be careful not to have a model that can fit anything.
 
 \subsection{The Bayesian Approach}
 Probability distributions can be used to represent our knowledge of the world.
@@ -160,45 +162,53 @@ for which the normalisation constant, the evidence, is
 
 
 
-To find the excess pressure requires the bubbles to be imaged twice in quick succession.
-For both of the pulses the driving wave is emitting a pulse.
-For one of the doublet the imaging wave is in pulse echo mode, 
-for the other it is in receive only mode.
-It is necessary to assume that the same population of bubbles
-interacts with the two driving pulses,
-so that the resultant signal signal is the same in both cases.
-To test this assumption driving doublets were imaged in receive only mode.
+To find the excess pressure requires the bubbles to be excited twice in quick succession
+by the driving wave.
+For one of driving doublets the imaging wave is in receive-only mode.
+This then records the contribution of the directly transmitted signal
+and of forward scatter.
+The imaging transducer is in pulse echo mode for the other signal of the double,
+with the high frequency pulse coincident both spatially and temporally with its respective driving wave.
+This pulse then records the directly transmitted driving wave, forward scatter,
+and the high frequency back scatter.
+By subtracting the signals of the doublet,
+only the contribution from the back scatter should remain.
+
+For the method to work the sample population of bubbles must be imaged 
+for both driving waves, so that the forward scatter is the same each time.
+To test this assumption the driving doublets were first both imaged in receive only mode.
+The resultant signals in this control study should be identical.
 
 
 
-\begin{figure}[h]%
+\begin{figure}[ht]%
   \centering
-  \subfloat[1st pulse - 0.088 volts]{
+  \subfloat[1st pulse - \pEE]{
     \input{figs/water_cav_results/voltage_0.088/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_088_gap_between_pulses_100_no_imaging_av_with_sd_means1_large.tex}
     \label{fig:exp:control:av:pressure:088:first}}
  \quad
-  \subfloat[2nd pulse - 0.088 volts]{
+  \subfloat[2nd pulse - \pEE]{
     \label{fig:exp:control:av:pressure:088:second}
     \input{figs/water_cav_results/voltage_0.088/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_088_gap_between_pulses_100_no_imaging_av_with_sd_means2_large.tex}}\\
-  \subfloat[1st pulse - 0.108 volts]{
+  \subfloat[1st pulse - \pOOE]{
     \label{fig:exp:control:av:pressure:108:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means1_large.tex}}
  \quad
-  \subfloat[2nd pulse - 0.108 volts]{
+  \subfloat[2nd pulse - \pOOE]{
     \label{fig:exp:control:av:pressure:108:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means2_large.tex}}\\
-  \subfloat[1st pulse - 0.132 volts]{
+  \subfloat[1st pulse - \pOTT]{
     \label{fig:exp:control:av:pressure:132:first}
     \input{figs/water_cav_results/voltage_0.132/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_132_gap_between_pulses_100_no_imaging_av_with_sd_means1_large.tex}}
  \quad
-  \subfloat[2nd pulse - 0.132 volts]{
+  \subfloat[2nd pulse - \pOTT]{
     \label{fig:exp:control:av:pressure:132:second}
     \input{figs/water_cav_results/voltage_0.132/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_132_gap_between_pulses_100_no_imaging_av_with_sd_means2_large.tex}}\\
   \caption{
     The pressure received  by the imaging transducer when the driving wave is on but the imaging wave is off (receive-only).
     The second pulse \subref{fig:av:108:100:second} is received \unit{100}\micro\second\ after the first \subref{fig:av:108:100:first}.
     Each image is the average of 49 images, the first standard-deviation error bars are indicated.
-Three different pressures are shown.
+Three different pressures are shown below each sub-figure.
   }
   \label{fig:exp:control:av:pressure}
 \end{figure}
@@ -216,20 +226,26 @@ which occurred \unit{100}\micro\second\ after the first.
 There are a number of important things to notice in \Figref{exp:control:av:pressure}:
 \nlist{
 \item At the higher pressures (\figref{exp:control:av:pressure:108:first}-\subref{fig:exp:control:av:pressure:132:second}) a strong and narrow response is observed over and above the more sinusoidal response found at the lower pressures  of \figref{exp:control:av:pressure:088:first} and \subref{fig:exp:control:av:pressure:088:second}.
-Qualitively \figref{exp:control:av:pressure:108:first}-\subref{fig:exp:control:av:pressure:132:second} 
-bear a strong resemblance to the simulated bubble pulsatoins of \chapref{computations}.
+Qualitatively \figref{exp:control:av:pressure:108:first}-\subref{fig:exp:control:av:pressure:132:second} 
+bear a strong resemblance to the simulated bubble pulsations of \chapref{computations}.
 The pressure dependence of these signals provide strong evidence for the generation of bubbles by the driving wave.
 \item The received pressure for the first and second pulse are not the same.
 In general the forward transmit from the second pulse is stronger than from the first.
 This further supports the interpretation of the strong peaks in \figref{exp:control:av:pressure:108:first}-\subref{fig:exp:control:av:pressure:132:second} as forward scatter from the driving wave.
-This is because the difference between the two pulses suggests a temporal lifespan of the generated bubbles of greater than the \unit{100}\micro\second\ that exist between the pulses.
-From \figref{} this temporal dependance suggests a bubble size of more than ...\todo{get radius}
+This is because the difference between the two pulses suggests a temporal lifespan of the generated bubbles of greater than the \unit{100}\micro\second\ relaxation time.
+%From \figref{} this temporal dependance suggests a bubble size of more than ...\todo{get radius}
+\item The noise in each image is fairly low.
+  While the first and second pulse at each pressure are different,
+  for each repetition of the experiment the pulses are fairly consistence.
+  The indicates that after the second pulse the bubble population 
+  relaxes back to its original state before the first pulse of the next test.
+  The passage of an acoustic wave does not seem to fundamentally alter the sample.
 }
 
 The difference in scatter between the first and second pulse represents
 both a problem and an opportunity.
-It is a problem because the excess pressure method requires the  response to the driving wave to 
-be the same between the first and second pulse.  
+It is a problem because the excess pressure method requires the  response 
+of both driving wave to be the same.
 It is, after all, to be subtracted away.
 
 
@@ -238,25 +254,25 @@ It is, after all, to be subtracted away.
 
 \begin{figure}[t]%
   \centering
-  \subfloat[1st pulse - 100]{
+  \subfloat[1st pulse - \unit{100}\micro\second]{
     \label{fig:exp:control:av:time:100:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means1_large.tex}}
  \quad
-  \subfloat[2nd pulse - 100]{
+  \subfloat[2nd pulse - \unit{100}\micro\second]{
     \label{fig:exp:control:av:time:100:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means2_large.tex}}\\
-  \subfloat[1st pulse - 150]{
+  \subfloat[1st pulse - \unit{150}\micro\second]{
     \label{fig:exp:control:av:time:150:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means1_large.tex}}
  \quad
-  \subfloat[2nd pulse - 150]{
+  \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:exp:control:av:time:150:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means2_large.tex}}\\
-  \subfloat[1st pulse - 250]{
+  \subfloat[1st pulse - \unit{250}\micro\second]{
     \label{fig:exp:control:av:time:250:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means1_large.tex}}
  \quad
-  \subfloat[2nd pulse - 250]{
+  \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:exp:control:av:time:250:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means2_large.tex}}\\
 \caption{
@@ -269,25 +285,25 @@ It is, after all, to be subtracted away.
 \begin{figure}[t]%
 \ContinuedFloat
   \centering
-  \subfloat[1st pulse - 500]{
+  \subfloat[1st pulse - \unit{500}\micro\second]{
     \label{fig:exp:control:av:time:500:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_500/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_500_no_imaging_av_with_sd_means1_large.tex}}
  \quad
-  \subfloat[2nd pulse - 500]{
+  \subfloat[2nd pulse - \unit{500}\micro\second]{
     \label{fig:exp:control:av:time:500:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_500/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_500_no_imaging_av_with_sd_means2_large.tex}}\\
- \subfloat[1st pulse - 1000]{
+ \subfloat[1st pulse - \unit{1000}\micro\second]{
     \label{fig:exp:control:av:time:1000:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_1000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_1000_no_imaging_av_with_sd_means1_large.tex}}
  \quad
-  \subfloat[2nd pulse - 1000]{
+  \subfloat[2nd pulse - \unit{1000}\micro\second]{
     \label{fig:exp:control:av:time:1000:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_1000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_1000_no_imaging_av_with_sd_means2_large.tex}}\\
- \subfloat[1st pulse - 5000]{
+ \subfloat[1st pulse - \unit{5000}\micro\second]{
     \label{fig:exp:control:av:time:5000:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_5000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_5000_no_imaging_av_with_sd_means1_large.tex}}
  \quad
-  \subfloat[2nd pulse - 5000]{
+  \subfloat[2nd pulse - \unit{5000}\micro\second]{
     \label{fig:exp:control:av:time:5000:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_5000/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_5000_no_imaging_av_with_sd_means2_large.tex}}\\
 %subfloat[1st pulse - 12000]{
@@ -301,7 +317,7 @@ It is, after all, to be subtracted away.
     (continued) The pressure received  by the imaging transducer when the driving wave is on but the imaging wave is off (receive-only).
     Each image is the average of 49 images, the first standard-deviation error bars are indicated.
     The time interval for each pair of images is indicated.
-    The driving pressure is ... in all cases.
+    The driving pressure is \pOEE\ in all cases.
   }
   \label{fig:exp:control:av:time}
 \end{figure}
@@ -312,7 +328,7 @@ provides an upper bound on the lifetime (and therefore radius)
 for the generated bubbles.
 
 In \figref{exp:control:av:time} the interval between the pulses is examined 
-for the pressure of \todo{pressure}.
+for the pressure of \pOOE.
 This pressure is chosen because it is one of the more moderate pressures 
 for which \figref{exp:control:av:pressure:108:first}-\subref{fig:exp:control:av:pressure:108:second} 
 demonstrates significant bubble interaction.
@@ -329,12 +345,12 @@ a much depleted interaction is found for both the first and second pulse.
 While dissolution of a generated bubble would account for a reduced interaction in the second pulse,
 the interaction with the first pulse should be the same in  all cases.
 \Figref{exp:control:av:time:500:first}-\subref{fig:exp:control:av:time:5000:second}
-is therefore most likely to result from a change in the bubble population of the sample.
+is therefore most likely to result from a gradual change in the fundamental bubble population of the sample.
 
-As discussed in \chapref{rationale}, for each temporal offset three experiments are carried out.
+For each temporal offset three experiments are carried out.
 First the control where the imaging transducer is in receive mode only.
-Secondly the imaging transducer coincides with the first driving pulse at the focus,
-and then finally the imaging transducer is timed to coincide with the second driving pulse.
+Secondly when the imaging transducer coincides with the first driving pulse at the focus,
+and then finally when the imaging transducer is timed to coincide with the second driving pulse.
 Each of these experiments are repeated 50 times, meaning that the driving pulse
 fires 300 times for every temporal offset.
 It seems that the bubble population remains fairly constant over the first thousand or so driving pulses,
@@ -352,11 +368,11 @@ but looses bubbles by the time the longer pulsations are investigated.
 %    \label{fig:exp:control:av:time:100:diff}
 %    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_meansSub_large.tex}}\\
  \quad
-  \subfloat[150]{
+  \subfloat[\unit{150}\micro\second]{
     \label{fig:exp:control:av:time:150:diff}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_meansSub_large.tex}}\\
  \quad
-  \subfloat[250]{
+  \subfloat[\unit{250}\micro\second]{
     \label{fig:exp:control:av:time:250:diff}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_meansSub_large.tex}}
 \caption{
@@ -371,7 +387,7 @@ The time lags of \unit{150}\micro\second\ and \unit{250}\micro\second\  between 
 look from \figref{exp:control:av:time}
 to be the most promising in this regard.
 The difference image 
-- evaluated by subtracting the received second pulse image from the first -
+- evaluated by subtracting the second received pulse image from the first -
 is plotted in \figref{exp:control:av:time:diff}.
 
 
@@ -384,18 +400,18 @@ is plotted in \figref{exp:control:av:time:diff}.
 %  \subfloat[2nd pulse - 100]{
 %    \label{fig:av:108:100_ex:second}
 %    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_100_no_imaging_av_with_sd_means2_large2.tex}}\\
-  \subfloat[1st pulse - 150]{
+  \subfloat[1st pulse - \unit{150}\micro\second]{
     \label{fig:exp:control:av:time:150:detail:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means1_large2.tex}}
  \quad
-  \subfloat[2nd pulse - 150]{
+  \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:exp:control:av:time:150:detail:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means2_large2.tex}}\\
-  \subfloat[1st pulse - 250]{
+  \subfloat[1st pulse - \unit{250}\micro\second]{
     \label{fig:exp:control:av:time:250:detail:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means1_large2.tex}}
  \quad
-  \subfloat[2nd pulse - 250]{
+  \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:exp:control:av:time:250:detail:second}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means2_large2.tex}}
 \caption{
@@ -407,20 +423,20 @@ is plotted in \figref{exp:control:av:time:diff}.
 The results are somewhat disappointing.
 The two driving pulses do not cancel as hoped.
 Rather, the strong scatter from the bubble has been accentuated.
-To understand why \figref{exp:control:av:time} is plotted in greater detail in \figref{exp:control:av:time:detail}
+To understand why, \figref{exp:control:av:time} is plotted in greater detail in \figref{exp:control:av:time:detail}
 It is seen in \figref{exp:control:av:time:detail} that the second pulse,
 although similar in shape to the first,
 is shifted in phase by a small fraction of a microsecond.
-This prevents the cancellation between the waves.
-When calculated as a fraction of the driving wave,
-the phase shift evaluates to a approximately ...  \todo{evaluate}.
-The phase shift between the two pulses is indicative 
-of the slightly different bubble environments that exist between the two pulses.
-From \eqnref{} we estimate the bubbles to be a \todo{evaluate} further away from resonance.
-
-While the phase shift makes it possible to estimate
+%This prevents the cancellation between the waves.
+%When calculated as a fraction of the driving wave,
+%the phase shift evaluates to a approximately ...  \todo{evaluate}.
+%The phase shift between the two pulses is indicative 
+%of the slightly different bubble environments that exist between the two pulses.
+%From \eqnref{} we estimate the bubbles to be a \todo{evaluate} further away from resonance.
+%
+The phase shift makes it possible to estimate
 the change in the bubble environment between adjacent pulses,
-we do not pursue this here.
+but we do not pursue this here.
 Instead, 
 we will modify our approach to excess imaging slightly.
 Rather than subtracting the second pulse from the first,
@@ -586,30 +602,30 @@ the pulse echo image that samples that second pulse.
  %  \subfloat[2nd pulse - 100]{
  %    \label{fig:av:108:100_ex:second}
  %    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_100_imaging_1st_av_with_sd_means1_large2.tex}}\\
-  \subfloat[1st pulse - 150]{
+  \subfloat[1st pulse - \unit{150}\microsecond]{
     \label{fig:1st:av:time:150:comp:control:c1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means1_large2.tex}}
  \quad
-  \subfloat[1st pulse - 150]{
+  \subfloat[1st pulse - \unit{150}\microsecond]{
     \label{fig:1st:av:time:150:comp:control:i1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_means1_large2.tex}}\\
-  \subfloat[1st pulse - 250]{
+  \subfloat[1st pulse - \unit{250}\microsecond]{
     \label{fig:1st:av:time:250:comp:control:c1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means1_large2.tex}}
  \quad
-  \subfloat[1st pulse - 250]{
+  \subfloat[1st pulse - \unit{250}\microsecond]{
     \label{fig:1st:av:time:250:comp:control:i1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_1st_av_with_sd_means1_large2.tex}}
 \caption{
     Comparison of the  receive only signal from the first pulse of the control experiment,
     with the pulse-echo signal of the first pulse.
-    All signals are averaged over 49 repetitions, and are taken for the pressure 0.108V.
+    All signals are averaged over 49 repetitions, and are taken for the pressure \pOOE.
     The delay between the two pulses is shown.
   }
   \label{fig:1st:av:time:comp:control}
 \end{figure}
 
- \figref{1st:av:time:comp:control} compares the first pulse from the control experiment (\figref{}) with the signal from when both the driving and imaging waves are on.
+ \figref{1st:av:time:comp:control} compares the first pulse from the control experiment (\figref{exp:control:av:time:detail}) with the signal from when both the driving and imaging waves are on.
 The signals for a delay of \unit{150}\micro\second\ and \unit{250}\micro\second\ are shown.
 The two pulses are very similar.
 The most notable differences are:
@@ -617,7 +633,7 @@ The most notable differences are:
   \item the doublet in the principle pulse at approximately \unit{19.2}\micro\second,
   \item the phase of the two signals.
     There is again a phase shift with the pulse-echo image occurring slightly later than the receive only trace.
-    Unlike \figref{}, however, the rest of the image, including the feature
+    Unlike \figref{exp:control:av:time:detail}, however, the rest of the image, including the feature
     at approximately \unit{18.3}\micro\second\ is very similar between the two pulses.    
   \item the signal to noise ratio of the pulse-echo image.
     The reason for an improved signal to noise ratio in pulse-receive mode over receive only mode in the \DPR500\ is not clear.
@@ -636,24 +652,24 @@ The most notable differences are:
  %    \label{fig:av:108:100_ex:second}
  %    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_100_imaging_1st_av_with_sd_meansSub3_large2_cross.tex}}\\
  \quad
-  \subfloat[1st pulse - 150]{
+  \subfloat[1st pulse - \unit{150}\micro\second]{
     \label{fig:exp:1st:av:time:150:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_meansSub3_large_cross.tex}}
  \quad
-  \subfloat[1st pulse - 150]{
+  \subfloat[1st pulse - \unit{150}\micro\second]{
     \label{fig:exp:1st:av:time:150:comp:control:cross:det}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_meansSub3_large2_cross.tex}}\\
  \quad
-  \subfloat[1st pulse - 250]{
+  \subfloat[1st pulse - \unit{250}\micro\second]{
     \label{fig:exp:1st:av:time:250:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_1st_av_with_sd_meansSub3_large_cross.tex}}
  \quad
-  \subfloat[1st pulse - 250]{
+  \subfloat[1st pulse - \unit{250}\micro\secnod]{
     \label{fig:exp:1st:av:time:250:comp:control:cross:det}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_1st_av_with_sd_meansSub3_large2_cross.tex}}
 \caption{
     The excess pressure evaluated for the first pulse.  
-    The pressure recieved when only the driving wave has was on has been subtracted from the pressure received when both the imaging and driving trasducers were transmitting.
+    The pressure received when only the driving wave has was on has been subtracted from the pressure received when both the imaging and driving transducers were transmitting.
     The phase difference between the two images has been removed in a processing step by cross-correlation.
   }
   \label{fig:exp:1st:av:time:comp:control:cross}
@@ -662,7 +678,7 @@ The most notable differences are:
 To account for the change in phase between the pulse-echo and receive only images,
 a lag is added to the receive only image in a processing step so that the images 
 overlap as best they can.  
-This is achieved by means of a Fourier transform.
+This is achieved by means of maximising the cross-correlation between the traces.
 The results are shown in \figref{exp:1st:av:time:comp:control:cross}.
 For both time lags the results are very similar.
 It is seen that the transmit features of the image (such as those around \unit{5}\micro\second) 
@@ -682,24 +698,24 @@ have been successfully removed, leaving a high frequency signal on top of a flat
  %  \subfloat[2nd pulse - 100]{
  %    \label{fig:av:108:100_ex:second}
  %    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_100_imaging_2nd_av_with_sd_means1_large2.tex}}\\
-  \subfloat[2nd pulse - 150]{
+  \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:2nd:av:time:150:comp:control:c2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means1_large2.tex}}
  \quad
-  \subfloat[2nd pulse - 150]{
+  \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:2nd:av:time:150:comp:control:i2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_means1_large2.tex}}\\
-  \subfloat[2nd pulse - 250]{
+  \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:2nd:av:time:250:comp:control:c2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means1_large2.tex}}
  \quad
-  \subfloat[2nd pulse - 250]{
+  \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:2nd:av:time:250:comp:control:i2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_means1_large2.tex}}
 \caption{
     Comparison of the  receive only signal from the first pulse of the control experiment,
     with the pulse-echo signal of the first pulse.
-    All signals are averaged over 49 repetitions, and are taken for the pressure 0.108V.
+    All signals are averaged over 49 repetitions, and are taken for the pressure \pOOE.
     The delay between the two pulses is shown.
   }
   \label{fig:2nd:av:time:comp:control}
@@ -719,19 +735,19 @@ have been successfully removed, leaving a high frequency signal on top of a flat
  %    \label{fig:av:108:100_ex:second}
  %    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_100_imaging_2nd_av_with_sd_meansSub3_large2_cross.tex}}\\
  \quad
-  \subfloat[2nd pulse - 150]{
+  \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_meansSub3_large_cross.tex}}
  \quad
-  \subfloat[2nd pulse - 150]{
+  \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:det}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_meansSub3_large2_cross.tex}}\\
  \quad
-  \subfloat[2nd pulse - 250]{
+  \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:exp:2nd:av:time:250:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_meansSub3_large_cross.tex}}
  \quad
-  \subfloat[2nd pulse - 250]{
+  \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:exp:2nd:av:time:250:comp:control:cross:det}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_meansSub3_large2_cross.tex}}
 \caption{
@@ -742,11 +758,17 @@ have been successfully removed, leaving a high frequency signal on top of a flat
   \label{fig:exp:2nd:av:time:comp:control:cross}
 \end{figure}
 
+To check results of \figref{exp:1st:av:time:comp:control:cross} we repeat the analysis 
+for when the imaging wave is coincident with the second driving wave.
+The results should be qualitatively similar, although there could be 
+differences in detail due to the different bubble environments that
+exist between the first and second pulse (as is reflected in \figref{exp:control:av:time}.
 
-In \figref{} it was found that the characteristic of the first and second pulses was different,
-and this was interpreted as being due to slightly different populations of bubbles existing for the first and second driving waves.
-The excess pressure for the second drivng pulse should therefore be similar as for the first.
-There should, however, be small differences that reflect the difference in the size and condition of the imaged bubbles.
+% it was found that the characteristic of the first and second pulses was different,
+%and this was interpreted as being due to slightly different populations of bubbles existing for the first and second driving waves.
+
+%The excess pressure for the second drivng pulse should therefore be similar as for the first.
+%There should, however, be small differences that reflect the difference in the size and condition of the imaged bubbles.
 
 The detail of the pulse echo image for the second pulse is drawn in \figref{2nd:av:time:comp:control}.
 The subtraction image (again with the phase difference removed by a cross correlation processing step)
@@ -963,6 +985,10 @@ is shown in \figref{exp:2nd:av:time:comp:control:cross}.
 % \end{figure}
 \clearpage
 \subsection{Discussion}
+Both \figref{exp:1st:av:time:comp:control:cross} and \figref{exp:2nd:av:time:comp:control:cross}
+indicate the presence of a high frequency excess pressure.
+
+
 
 
 \begin{figure}[t]%
@@ -980,8 +1006,12 @@ is shown in \figref{exp:2nd:av:time:comp:control:cross}.
     The pressure recieved when only the driving wave has was on has been subtracted from the pressure received when both the imaging and driving trasducers were transmitting.
     The phase difference between the two images has been removed in a processing step by cross-correlation.
   }
-  \label{fig:exp:2nd:av:time:comp:control:cross}
+  \label{fig:exp:av:time:comp:control:cross:full}
 \end{figure}
+
+To compare these more closely, they are
+replotted adjacent to each other in \figref{exp:av:time:comp:control:cross:full}.
+
 
 \clearpage
 
@@ -1008,27 +1038,42 @@ is shown in \figref{exp:2nd:av:time:comp:control:cross}.
     The pressure recieved when only the driving wave has was on has been subtracted from the pressure received when both the imaging and driving trasducers were transmitting.
     The phase difference between the two images has been removed in a processing step by cross-correlation.
   }
-  \label{fig:exp:2nd:av:time:comp:control:cross}
+  \label{fig:exp:av:time:comp:control:cross:long:null}
 \end{figure}
+
+As a control, 
+we also plot in \figref{exp:av:time:comp:control:cross:long:null} what should be the null result.
+In \figref{exp:av:time:comp:control:cross:long:null}
+the excess pressure from the respective receive only pulses are evaluated.
+
+By comparing \figref{fig:exp:av:time:comp:control:cross:long} and \figref{fig:exp:av:time:comp:control:cross:long:null}
+it is seen that
+\nlist{
+  \item The excess pressure plots do exhibit a greater signal strength than the null plots.
+  \item In excess pressure is not greatly above the level of noise.
+    This means that the signal features in the null plots are (while lower)
+    not dissimilar to the plots from the excess pressure.
+}
+The results are therefore suggestive,
+but are far from conclusive.
+
+The reason for the phase shift in the second pulse has not been entirely determined
+by the experiment.  It is likely that the bubble's state has altered 
+in some way from the first pulse to the second.
+There are a number of mechanisms by which this will occur,
+and lacking experimental evidence to support one other another,
+we resist the temptation to speculate.
+
 
 
 \clearpage
 
-Comparison between 15 and 20.
 
-Comparison between 15 and 20 of null result.
 
 
 %\Figref{av:108:1000_ex:first} illustrates 
 
-To motivate the use of water as a the cavitating medium, 
-we illustrate a preliminary experiment that demonstrates the signal recieved by the high frequency transducer.
-\Figref{av:108:1000} shows the pressure received by the imaging transducer when the driving wave pressure is 0.108V at the focus.
 
-However, using two pulses causes its own problems,
-for it is difficult to guarenee that the pulses are independant of one-another.
-A pulsating bubble can grow (rectified diffusion),
-can dissolve away or can burst into many smaller bubbles. 
 %That a bubble is actually created is illustrated in 
 
 

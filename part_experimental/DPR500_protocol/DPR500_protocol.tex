@@ -7,9 +7,9 @@ To enable the excess pressure to be plotted one needs:
 \nlist{
   \item a fixed imaging transducer,
   \item the driving wave to trigger the imaging wave,
-  \item a way of rapidly turning switching the imaging transducer from pulse-receive into receive-only mode (the imaging mode)
+  \item a way of rapidly switching the imaging transducer from pulse-receive into receive-only mode (the imaging mode)
 }
-The first of these is achieved by removing the imaging pulse from the Cortex scanner
+The first of these is achieved by removing the imaging transducer from the Cortex scanner
 and mounting it statically to the experimental chamber as shown in \figref{exp:setup:fixed}.
 
 Controlling the triggering and imaging mode of the two transducers 
@@ -31,20 +31,21 @@ The gate to the Tomco was connected to the 'sync out' of the Agilent driving wav
 The 'sync out' of the Agilent driving wave generator is also connected to 
 an Analogic 2045 arbitrary waveform generator.
 The role of the Analogic generator is to produce 
-a delay pulse that  triggers both the imaging wave
+a pulse doublet that  triggers both the imaging wave
 and  the oscilloscope that collects the imaging radio frequency signal.
 The time recorded on the oscilloscope is genuinely a pulse-echo-time since the oscilloscope is triggered with the same pulse as the imaging wave.
 
 The Analogic is chosen because it has the fastest clock of all the pulsers / pulser delays available.
-The gitter from the analogic is  5-10\nano\second, which was an order of manitude better than the other pulsers available.
+The gitter from the analogic is  5-10\nano\second, which was an order of magnitude better than the other pulsers available.
 
 
-The time delay on the Analogic generator is controlled remotely via serial connection.
-Altering the delay enables the lifetime of the bubbles to be investigated.
-\Figref{} suggests that the bubbles may live on beyond the passing of the driving wave
-and so by extending the delay the imaging properties of longer lived bubbles can be investigated.
-If the lifetime of the bubbles can be determined, then their radius can be estimated 
-from the results of \chapref{nucleation}.
+The time delay and the interval between the doublet
+on the Analogic generator is controlled remotely via serial connection.
+%Altering the delay enables the lifetime of the bubbles to be investigated.
+%\Figref{water_cavitation_85} suggests that the bubbles may live on beyond the passing of the driving wave
+%and so by extending the delay the imaging properties of longer lived bubbles can be investigated.
+%If the lifetime of the bubbles can be determined, then their radius can be estimated 
+%from the results of \chapref{nucleation}.
 
 
 \subsubsection{Imaging wave}
@@ -104,18 +105,18 @@ and the imaging mode all available options.
 The full arrangement is given in \figref{exp:setup:electronic:final}.
 The library to control the equipment was written by the author of this thesis 
 and is  available on github\cite{ExperimentCode}.
-The  experiment carried out can understood in detail
-from the program that called the library.
-This is given in \coderef{experiment}.
+%The  experiment carried out can understood in detail
+%from the program that called the library.
+%This is given in \coderef{experiment}.
 
-An example script that runs an experiment is shown in \coderef{}.
+%An example script that runs an experiment is shown in \coderef{}.
 %It is seen that issues addressed in \secref{} are addressed.
 %\nlist{
 %\item The excess wave is calculated
 %\item The tail of the wave
 %\item The pressure dependence is calculated ...
 %}
-The automation brings a great deal of flexability to the experimental proceedure.
+%The automation brings a great deal of flexability to the experimental proceedure.
 
 %\subsection{The characterisation of the nucleated bubbles}\label{sec:WE:characterisation}
 
@@ -514,12 +515,12 @@ The automation brings a great deal of flexability to the experimental proceedure
 
 %\section{Experimental Protocol}
 
-\section{Discussion} \label{sec:WE:discussion}
+%\section{Discussion} \label{sec:WE:discussion}
 
-In this chapter the design rationale for the experiments of this thesis have been presented.
+%In this chapter the design rationale for the experiments of this thesis have been presented.
 
 
-\todo{Finish discussion, objectives, preliminary study, result in M-mode imaging designed to test excess pressure}
+%\todo{Finish discussion, objectives, preliminary study, result in M-mode imaging designed to test excess pressure}
 
 
 
