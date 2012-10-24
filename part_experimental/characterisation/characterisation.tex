@@ -1,6 +1,6 @@
-\newcommand{\pEE}{88\mega\pascal}
-\newcommand{\pOOE}{108\mega\pascal}
-\newcommand{\pOTT}{132\mega\pascal}
+\newcommand{\pEE}{\unit{1.1}\mega\pascal}
+\newcommand{\pOOE}{\unit{1.4}\mega\pascal}
+\newcommand{\pOTT}{\unit{2.8}\mega\pascal}
 
 \chapter{Cavitation of Water}\label{ch:water_cavitation}
 
@@ -206,7 +206,7 @@ The resultant signals in this control study should be identical.
     \input{figs/water_cav_results/voltage_0.132/gap_between_pulses_100/no_imaging_av_with_sd/voltage_0_132_gap_between_pulses_100_no_imaging_av_with_sd_means2_large.tex}}\\
   \caption{
     The pressure received  by the imaging transducer when the driving wave is on but the imaging wave is off (receive-only).
-    The second pulse \subref{fig:av:108:100:second} is received \unit{100}\micro\second\ after the first \subref{fig:av:108:100:first}.
+    The second pulse \subref{fig:exp:control:av:pressure:108:second} is received \unit{100}\micro\second\ after the first \subref{fig:exp:control:av:pressure:108:first}.
     Each image is the average of 49 images, the first standard-deviation error bars are indicated.
 Three different pressures are shown below each sub-figure.
   }
@@ -227,7 +227,7 @@ There are a number of important things to notice in \Figref{exp:control:av:press
 \nlist{
 \item At the higher pressures (\figref{exp:control:av:pressure:108:first}-\subref{fig:exp:control:av:pressure:132:second}) a strong and narrow response is observed over and above the more sinusoidal response found at the lower pressures  of \figref{exp:control:av:pressure:088:first} and \subref{fig:exp:control:av:pressure:088:second}.
 Qualitatively \figref{exp:control:av:pressure:108:first}-\subref{fig:exp:control:av:pressure:132:second} 
-bear a strong resemblance to the simulated bubble pulsations of \chapref{computations}.
+bear a strong resemblance to the simulated bubble pulsations of \chapref{mechanisms}.
 The pressure dependence of these signals provide strong evidence for the generation of bubbles by the driving wave.
 \item The received pressure for the first and second pulse are not the same.
 In general the forward transmit from the second pulse is stronger than from the first.
@@ -605,14 +605,14 @@ the pulse echo image that samples that second pulse.
   \subfloat[1st pulse - \unit{150}\micro\second]{
     \label{fig:1st:av:time:150:comp:control:c1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means1_large2.tex}}
- \quad
+ \quad\hspace{3mm}
   \subfloat[1st pulse - \unit{150}\micro\second]{
     \label{fig:1st:av:time:150:comp:control:i1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_means1_large2.tex}}\\
   \subfloat[1st pulse - \unit{250}\micro\second]{
     \label{fig:1st:av:time:250:comp:control:c1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means1_large2.tex}}
- \quad
+ \quad\hspace{3mm}
   \subfloat[1st pulse - \unit{250}\micro\second]{
     \label{fig:1st:av:time:250:comp:control:i1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_1st_av_with_sd_means1_large2.tex}}
@@ -655,7 +655,7 @@ The most notable differences are:
   \subfloat[1st pulse - \unit{150}\micro\second]{
     \label{fig:exp:1st:av:time:150:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_meansSub3_large_cross.tex}}
- \quad
+ \quad\hspace{3mm}
   \subfloat[1st pulse - \unit{150}\micro\second]{
     \label{fig:exp:1st:av:time:150:comp:control:cross:det}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_meansSub3_large2_cross.tex}}\\
@@ -663,7 +663,7 @@ The most notable differences are:
   \subfloat[1st pulse - \unit{250}\micro\second]{
     \label{fig:exp:1st:av:time:250:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_1st_av_with_sd_meansSub3_large_cross.tex}}
- \quad
+ \quad\hspace{3mm}
   \subfloat[1st pulse - \unit{250}\micro\second]{
     \label{fig:exp:1st:av:time:250:comp:control:cross:det}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_1st_av_with_sd_meansSub3_large2_cross.tex}}
@@ -701,14 +701,14 @@ have been successfully removed, leaving a high frequency signal on top of a flat
   \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:2nd:av:time:150:comp:control:c2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means1_large2.tex}}
- \quad
+ \quad\hspace{3mm}
   \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:2nd:av:time:150:comp:control:i2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_means1_large2.tex}}\\
   \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:2nd:av:time:250:comp:control:c2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means1_large2.tex}}
- \quad
+ \quad\hspace{3mm}
   \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:2nd:av:time:250:comp:control:i2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_means1_large2.tex}}
@@ -738,7 +738,7 @@ have been successfully removed, leaving a high frequency signal on top of a flat
   \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_meansSub3_large_cross.tex}}
- \quad
+ \quad\hspace{3mm}
   \subfloat[2nd pulse - \unit{150}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:det}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_meansSub3_large2_cross.tex}}\\
@@ -746,7 +746,7 @@ have been successfully removed, leaving a high frequency signal on top of a flat
   \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:exp:2nd:av:time:250:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_meansSub3_large_cross.tex}}
- \quad
+ \quad\hspace{3mm}
   \subfloat[2nd pulse - \unit{250}\micro\second]{
     \label{fig:exp:2nd:av:time:250:comp:control:cross:det}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_meansSub3_large2_cross.tex}}
@@ -1002,7 +1002,7 @@ indicate the presence of a high frequency excess pressure.
   \subfloat[The second pulse when the imaging transducer is on,
   subtracted from the second pulse when the imaging pulse wave is not on - \unit{250}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:full}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_meansSub3_large_cross_full.tex}}
+    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_meansSub3_large_cross_full.tex}}
 \caption{
     An expanded view of \figref{exp:av:time:comp:control:cross:full} 
     showing the excess pressure for direct comparison.
@@ -1011,7 +1011,7 @@ indicate the presence of a high frequency excess pressure.
 \end{figure}
 
 To compare these more closely, they are
-replotted adjacent to each other in \figref{exp:av:time:comp:control:cross:full}.
+re-plotted adjacent to each other in \figref{exp:av:time:comp:control:cross:full}.
 
 
 \clearpage
@@ -1037,8 +1037,7 @@ replotted adjacent to each other in \figref{exp:av:time:comp:control:cross:full}
 %     \label{fig:exp:2nd:av:time:150:comp:control:cross:full}
 %     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_meansSub3_large_cross_full_null.tex}}
 \caption{
-    The excess pressure evaluated for the first pulse.  
-    The pressure recieved when only the driving wave has was on has been subtracted from the pressure received when both the imaging and driving trasducers were transmitting.
+  The excess pressure evaluated when the imaging wave is not on.  The two images should subtract to zero.
     The phase difference between the two images has been removed in a processing step by cross-correlation.
   }
   \label{fig:exp:av:time:comp:control:cross:long:null}
@@ -1050,7 +1049,7 @@ In \figref{exp:av:time:comp:control:cross:long:null}
 the excess pressure from the respective receive only pulses are evaluated.
 Since the imaging wave is not fired, the signals should cancel.
 
-By comparing \figref{fig:exp:av:time:comp:control:cross:long} and \figref{fig:exp:av:time:comp:control:cross:long:null}
+By comparing \figref{exp:av:time:comp:control:cross:full} and \figref{exp:av:time:comp:control:cross:long:null}
 it is seen that
 \nlist{
   \item The excess pressure plots do exhibit a greater signal strength than the null plots.
@@ -1059,7 +1058,7 @@ it is seen that
     not dissimilar to the plots from the excess pressure.
 }
 The results are therefore suggestive,
-but are not from conclusive.
+but are not  conclusive.
 
 The reason for the phase shift in the second pulse has not been entirely determined
 by the experiment.  It is likely that the bubble's state has altered 
@@ -1253,8 +1252,8 @@ An approach for doing this was provided in  Nelder and Mead's original article\c
   \subfloat[Bubble radius:  \unit{0.2028}\micro\metre]{
     \label{fig:plot_bubble_fit_108_150:third}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_c.tex}}
+\caption{Fits of single traces to a bubble model of the given initial radius.  The trace was taken at a pressure of \pOOE\ and at an interval of \unit{150}\micro\second.}
   \label{fig:plot_bubble_fit_108_150}
-\caption{Voltage 0.108, 150}
 \end{figure}
 
 
@@ -1316,18 +1315,18 @@ An approach for doing this was provided in  Nelder and Mead's original article\c
 
 \begin{figure}[t]%
   \centering
-  \subfloat[1st pulse - 1000]{
+  \subfloat[]{
     \label{fig:plot_bubble_fit_108_150_l:combo}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_l_108_150_combo.tex}}
-\caption{Voltage 0.108, 150}
+\caption{The log likelihood per data point for each of the three models of \figref{plot_bubble_fit_108_150}}
 \end{figure}
 
 
 
 We test the model on a single trace obtained at a pressure of \pOOE.
 Three runs of the minimisation were taken.  
-The initial position and the found minima are displayed in \tabref{plot_bubble_fit_108_150}
-and \tabref{plot_bubble_fit_108_150_fit} respectively,
+The initial position and the found minima are displayed in \tabref{fit_108_150}
+and \tabref{fit_108_150_fit} respectively,
 and the predicted bubble oscillations are drawn in \figref{plot_bubble_fit_108_150} 
 
 Qualitatively, the fits displayed in \figref{plot_bubble_fit_108_150} are convincing.
@@ -1340,10 +1339,10 @@ the fit.
 However, the actual fitted parameters in each plot are very different.
 This can be seen  by comparing the equilibrium bubble radii.
 This suggests that the likelihood is  not a sharply peaked distribution,
-and that it might even be multimodal.
-This would imply that the estimates for the evidence given in \tabref{plot_bubble_fit_108_150} are unreliable.
+and that it might even be multi modal.
+This would imply that the estimates for the evidence given in \tabref{fit_108_150_fit} are unreliable.
 
-%The 
+%The plot_bubble_
 %The likelihood evaluated at each iteration is displayed in \figref{plot_bubble_fit_108_150_l:combo}.
 %Although each run took differing number of interations the resultant likelihood was similar in each case.
 
@@ -1368,21 +1367,21 @@ To improve the test of the modelling we repeat the same model but this time with
 
 \begin{figure}[t]%
   \centering
-  \subfloat[1st pulse - 1000]{
-    \label{fig::plot_bubble_fit_108_150_av:first}
+  \subfloat[]{
+    \label{fig:plot_bubble_fit_108_150_av:first}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_b.tex}}
-\caption{Voltage 0.108, 150}
+\caption{Fits of the average trace.  The trace was taken at a pressure of \pOOE\ and at an interval of \unit{150}\micro\second}
 \end{figure}
 
 \begin{figure}[t]%
   \centering
-  \subfloat[1st pulse - 1000]{
+  \subfloat[Variation in log likelihood]{
     \label{fig:param_108_150_av_b_likelihood}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/param_108_150_av_b_likelihood.tex}}\\
-  \subfloat[1st pulse - 1000]{
+  \subfloat[Variation in radius]{
     \label{fig:param_108_150_av_b_rad}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/param_108_150_av_b_rad.tex}}
-\caption{Voltage 0.108, 150}
+\caption{Variation in parameters with iteration number for the fit of \figref{plot_bubble_fit_108_150_av:first}}
 \end{figure}
 
 
@@ -1438,15 +1437,15 @@ There are a number of improvements that can be made to the model.
 
 \begin{figure}[t]%
   \centering
-  \subfloat[1st pulse - 1000]{
-    \label{fig:plot_bubble_fit_108_150_filter_a:first}
+  \subfloat[]{
+    \label{fig:plot_bubble_fit_108_150_av_2_wave_a}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_2_wave_a.tex}}
-\caption{Voltage 0.108, 150 }
+\caption{Fit when the driving wave is a superposition of two pulses}
 \end{figure}
 
 
-\ctable[cap     = Parameters for \figref{plot_bubble_fit_108_150:first} (RKM),
-        caption = Parameters for \figref{plot_bubble_fit_108_150:first},
+\ctable[cap     = Parameters for \figref{plot_bubble_fit_108_150_av_2_wave_a} (RKM),
+        caption = Parameters for \figref{plot_bubble_fit_108_150_av_2_wave_a},
         label   = table:fit_108_150:first,
         pos   = h,
         %width = 0.6\textwidth,
@@ -1457,7 +1456,7 @@ There are a number of improvements that can be made to the model.
 }{\FL
     &   Parameter      &  Initial 1  & Fitted 1   &
     \ML
-    &scale factor & 3000 & 1980 & 2447 &
+    &scale factor & 3000 & 1980 & 
     \NN
     &standard-deviation &  \unit{0.07973}\volt &  \unit{0.07910}\volt &
     \NN
@@ -1481,14 +1480,14 @@ There are a number of improvements that can be made to the model.
 
 \begin{figure}[t]%
   \centering
-  \subfloat[1st pulse - 1000]{
-    \label{fig:plot_bubble_fit_108_150_filter_a:first}
+  \subfloat[]{
+    \label{fig:plot_bubble_fit_108_150_av_3_wave_a}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_3_wave_a.tex}}
-\caption{Voltage 0.108, 150 }
+\caption{Fit when the driving wave is a superposition of three pulses}
 \end{figure}
 
-\ctable[cap     = Parameters for \figref{plot_bubble_fit_108_150:first} (RKM),
-        caption = Parameters for \figref{plot_bubble_fit_108_150:first},
+\ctable[cap     = Parameters for \figref{plot_bubble_fit_108_150_av_3_wave_a} (RKM),
+        caption = Parameters for \figref{plot_bubble_fit_108_150_av_3_wave_a},
         label   = table:fit_108_150:first,
         pos   = h,
         %width = 0.6\textwidth,
@@ -1543,7 +1542,8 @@ each with their own amplitude and offset,
 %  \item offset
 %}
 with the frequencies taken as harmonics of the original \unit{0.5}\mega\hertz\ wave.
-An illustration is provided in \figref{}.
+An illustration is provided in \figref{plot_bubble_fit_108_150_av_2_wave_a} for two waves,
+and \figref{plot_bubble_fit_108_150_av_3_wave_a} for three waves.
 It is seen that the bubble is really quite sensitive to the driving wave.
 The number of parameters increases and the fit improves,
 but from the evidence value it is seen that the quality of the model decreases.
@@ -1551,18 +1551,25 @@ The reason is that the parameters space that can be explored grows faster than
 the improved fitness of the model.
 
 
+\begin{figure}[t]%
+  \centering
+  \subfloat[]{
+    \label{fig:fit:filter}
+    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_filter_a_filter.tex}}
+\caption{The filter used in the fit }
+\end{figure}
 
 
 \begin{figure}[t]%
   \centering
   \subfloat[]{
-    \label{fig:plot_bubble_fit_108_150_filter_a:first}
+    \label{fig:plot_bubble_fit_108_150_av_3_wave_filter_a}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_3_wave_filter_a.tex}}
 \caption{The resultant fit when the pressure has been Fourier filtered, \pOOE}
 \end{figure}
 
-\ctable[cap     = Parameters for \figref{plot_bubble_fit_108_150:first} (RKM),
-        caption = Parameters for \figref{plot_bubble_fit_108_150:first},
+\ctable[cap     = Parameters for \figref{plot_bubble_fit_108_150_av_3_wave_filter_a} (RKM),
+        caption = Parameters for \figref{plot_bubble_fit_108_150_av_3_wave_filter_a},
         label   = table:fit_108_150:first,
         pos   = h,
         %width = 0.6\textwidth,
@@ -1641,23 +1648,15 @@ the improved fitness of the model.
 % }
 
 
-\begin{figure}[t]%
-  \centering
-  \subfloat[]{
-    \label{fig:plot_bubble_fit_108_150_filter_a:first}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_filter_a.tex}}
-\caption{Voltage 0.108, 150 ln(evidence) = -11349.69607 }
-\end{figure}
+%\begin{figure}[t]%
+%  \centering
+%  \subfloat[]{
+%    \label{fig:plot_bubble_fit_108_150_filter_a:first}
+%    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_filter_a.tex}}
+%\caption{Voltage 0.108, 150 ln(evidence) = -11349.69607 }
+%\end{figure}
 
-\begin{figure}[t]%
-  \centering
-  \subfloat[]{
-    \label{fig:plot_bubble_fit_108_150_filter_a:first}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_filter_a_filter.tex}}
-\caption{Voltage 0.108, 150 ln(evidence) = -11349.69607 }
-\end{figure}
 
-\todo{figure captions}
 Secondly we can attempt to  model the limited bandwidth of the imaging transducer.
 We Fourier filter the model and multiply the frequency spectrum with a Gaussian.
 The free parameters of the filter are
@@ -1666,16 +1665,18 @@ The free parameters of the filter are
   \item amplitude
   \item width
 }
-The effect of this is shown in \figref{}.
-\todo{comment}
+The filter is shown in \figref{fit:filter} and the effect of the filter is shown in \figref{plot_bubble_fit_108_150_av_3_wave_filter_a}.
+Unsurprisingly filtering the pulse accentuates the higher frequency oscillations in the modelled signal.
+It does not however, 
+model the short peaks that are seen in the experimental result.
 
 %
 %\subsubsection{Multiple bubbles}
-Attempts to model improve the model have failed to capture the high frequency component of the returned signal.
+%Attempts to model improve the model have failed to capture the high frequency component of the returned signal.
 % with the modelled bubbles so far.
-If initial conditions to specifically match the high frequency components then
-we find that the peaks are much greater than are found experimentally.
-\Figref{} gives an example.
+%If initial conditions to specifically match the high frequency components then
+%we find that the peaks are much greater than are found experimentally.
+%\Figref{} gives an example.
 
 Attempts to model multiple waves did not help.
 The peaks are a small section of the imaging wave 
@@ -1699,57 +1700,58 @@ A model that treats the bubble interaction as noise results has higher probabili
 %of the image.
 
 
-\begin{figure}[t]%
-  \centering
-  \subfloat[1st pulse - 1000]{
-    \label{fig:plot_bubble_fit_108_150_filter_a:first}
-    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_3_wave_2_bubble_a.tex}}
-\caption{Voltage 0.108, 150}
-\end{figure}
+%\begin{figure}[t]%
+%  \centering
+%  \subfloat[1st pulse - 1000]{
+%    \label{fig:plot_bubble_fit_108_150_filter_a:first}
+%    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/fit_bubble/plot_bubble_fit_108_150_av_3_wave_2_bubble_a.tex}}
+%\caption{Voltage 0.108, 150}
+%\end{figure}
 
 
-\ctable[cap     = Parameters for \figref{plot_bubble_fit_108_150:first} (RKM),
-        caption = Parameters for \figref{plot_bubble_fit_108_150:first},
-        label   = table:fit_108_150:first,
-        pos   = h,
-        %width = 0.6\textwidth,
-        left
-       ]
-       {llcrccccc}
-{
-}{\FL
-    &   Parameter      &  Initial 1  & Fitted 1   &
-    \ML
-    &scale factor  & 2447 & 1868.1 &
-    \NN
-    &standard-deviation &  \unit{0.07910}\volt &\unit{0.079224}\volt &
-    \NN
-    &bubble 1 radius &  \unit{0.2959}\micro\metre& \unit{0.41858}\micro\metre &
-    \NN
-    &bubble 2 radius &  \unit{1.3}\micro\metre& \unit{0.21116}\micro\metre &
-    \NN
-    &pulse 1 amplitude& \unit{0.1334}\mega\pascal  & \unit{0.062251}\mega\pascal&
-    \NN
-    &pulse 1 offset & \unit{29.51}\micro\second &\unit{29.51}\micro\second &
-    \NN
-    &pulse 1 tempered ratio & 0.65021 & 0.65084  &
-    \NN
-    &pulse 2 amplitude& \unit{0.0070827}\mega\pascal  &\unit{0.0049383}\mega\pascal  &
-    \NN
-    &pulse 2 offset &  \unit{29.254}\micro\second &\unit{29.165}\micro\second &
-    \NN
-    &pulse 2 tempered ratio  & 0.50386 & 0.64254  &  
-    \NN
-    &pulse 3 frequency & \unit{10.0}\mega\hertz  &\unit{4.0901}\mega\hertz &
-    \NN
-    &pulse 3 amplitude& \unit{0.0001}\mega\pascal  & \unit{0.00010374}\mega\pascal &
-    \NN
-    &pulse 3 offset &  \unit{29.3}\micro\second &\unit{29.371}\micro\second &
-    \NN
-    &pulse 3 tempered ratio  & 0.5 &0.36082 &  
-    &log (evidence) &  &   -11668.88313 &
-    \LL
-}
+% \ctable[cap     = Parameters for \figref{plot_bubble_fit_108_150:first} (RKM),
+%         caption = Parameters for \figref{plot_bubble_fit_108_150:first},
+%         label   = table:fit_108_150:first,
+%         pos   = h,
+%         %width = 0.6\textwidth,
+%         left
+%        ]
+%        {llcrccccc}
+% {
+% }{\FL
+%     &   Parameter      &  Initial 1  & Fitted 1   &
+%     \ML
+%     &scale factor  & 2447 & 1868.1 &
+%     \NN
+%     &standard-deviation &  \unit{0.07910}\volt &\unit{0.079224}\volt &
+%     \NN
+%     &bubble 1 radius &  \unit{0.2959}\micro\metre& \unit{0.41858}\micro\metre &
+%     \NN
+%     &bubble 2 radius &  \unit{1.3}\micro\metre& \unit{0.21116}\micro\metre &
+%     \NN
+%     &pulse 1 amplitude& \unit{0.1334}\mega\pascal  & \unit{0.062251}\mega\pascal&
+%     \NN
+%     &pulse 1 offset & \unit{29.51}\micro\second &\unit{29.51}\micro\second &
+%     \NN
+%     &pulse 1 tempered ratio & 0.65021 & 0.65084  &
+%     \NN
+%     &pulse 2 amplitude& \unit{0.0070827}\mega\pascal  &\unit{0.0049383}\mega\pascal  &
+%     \NN
+%     &pulse 2 offset &  \unit{29.254}\micro\second &\unit{29.165}\micro\second &
+%     \NN
+%     &pulse 2 tempered ratio  & 0.50386 & 0.64254  &  
+%     \NN
+%     &pulse 3 frequency & \unit{10.0}\mega\hertz  &\unit{4.0901}\mega\hertz &
+%     \NN
+%     &pulse 3 amplitude& \unit{0.0001}\mega\pascal  & \unit{0.00010374}\mega\pascal &
+%     \NN
+%     &pulse 3 offset &  \unit{29.3}\micro\second &\unit{29.371}\micro\second &
+%     \NN
+%     &pulse 3 tempered ratio  & 0.5 &0.36082 &  
+%     \NN
+%     &log (evidence) &  &   -11668.88313 &
+%     \LL
+% }
 
 
 \section{Discussion}
@@ -1762,14 +1764,12 @@ It is worth now revisiting the objectives of \chapref{rationale}
 and discussing what has been achieved and what tasks remain.
 
 \desc{
-\item[Determine whether bubbles can be evacuated from tap water with a driving wave,
-  and subsequently detected with a higher-frequency pulse]
+\item[Determine whether bubbles can be evacuated and detected]
   This objective has been convincingly achieved.
-  Both the preliminary study of \chapref{rationale} and the spiked response of \figref{} in this chapter 
+  Both the preliminary study of \chapref{rationale} and the spiked response of \figref{exp:control:av:pressure} in this chapter 
 demonstrate the characteristics of bubble imaging modelled in \chapref{mechanisms}.
-\item[Determine whether an evacuated bubbles can be {\em imaged by pulse-echo} 
-  with a  higher-frequency pulse]
-  \Figure{} is suggestive that the nucleated bubbles are responding to the high frequency imaging wave.
+\item[Determine whether an evacuated bubbles can be {\em imaged by pulse-echo}]
+  \Figref{exp:av:time:comp:control:cross:full} is strongly suggestive that the nucleated bubbles are responding to the high frequency imaging wave.
 The response is not strong, however,
 which suggests that the generated bubbles are far from resonance.
 %
@@ -1778,15 +1778,15 @@ which suggests that the generated bubbles are far from resonance.
 %  In particular, can the pressure of the driving wave be used to determine the radius of the bubble
 %  as hoped in \chapref{nucleation}?
 %  Can  the lifetime of the bubble be measured by using the driving-imaging wave pair, which would in turn give a second estimate of the radius?
-  The excess pressure plots of \figref{} do not locate the echo of a particular bubble.
+  The excess pressure plots of \figref{exp:av:time:comp:control:cross:full} do not locate the echo of a particular bubble.
 There are two possible causes.
 The first is that there is a population of bubbles that are interacting 
 with the acoustic wave.  
 This possibility seems likely when  Apfel's\cite{Apfel1984} mote density of \unit{$10^5$}\centi\metre\rpcubed is remembered.
-Secondly, \figref{} is evaluated with average traces.
+Secondly, \figref{exp:av:time:comp:control:cross:full} is evaluated with average traces.
 Even if the returned scatter really were coming from a single bubble,
 its location would be smeared in the average.
-\item  [ Determine whether the acoustic Keller-Miksis equation derived in \chapref{measurement} improves the modelling of the returned echo]
+\item  [ Determine whether the acoustic Keller-Miksis predicts the  echo]
 As was anticipated in \chapref{rationale},
 the attempt to fit a bubble model to the returned signal was not successful.
 There are too many undetermined parameters in our experimental setup,
