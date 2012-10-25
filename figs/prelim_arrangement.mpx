@@ -80,6 +80,27 @@ string _n[];
 vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
   addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
 _n0="cmr10";
+_s("Cortex",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-3.5866)--(29.6389,-3.5866)--
+ (29.6389,8.3686)--(0,8.3686)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmr10";
+_s("Oscilloscop",_n0,1.00000,0.0000,0.0000,);
+_s("e",_n0,1.00000,48.5403,0.0000,);
+setbounds _p to (0,-3.5866)--(52.9681,-3.5866)--
+ (52.9681,8.3686)--(0,8.3686)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmr10";
 _s("Imaging",_n0,1.00000,11.6784,6.0772,);
 _s("T",_n0,1.00000,4.9813,-5.8779,);
 _s("ransducer",_n0,1.00000,11.3463,-5.8779,);

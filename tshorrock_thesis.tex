@@ -49,8 +49,6 @@
 
 %\pdfprotrudechars2 % 1 if you don't want to change line breaking
 
-% \usepackage{setspace}
-%\onehalfspacing
 
 %\DeclareFontFamily{OT1}{pzc}{}
 %\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [0.900] pzcmi7t}{}
@@ -59,31 +57,31 @@
 \newcommand{\thesis}{thesis}
 
 \includeonly{
-%misc/title,
-%misc/toc,
+misc/title,
+misc/toc,
 %misc/figure_list,
 %misc/table_list,
-% misc/decl,
-%misc/abstract,
-%misc/dedication,
-%misc/preface,
-%part_intro/part_intro,
-%part_intro/introduction/introduction,
-%part_theoretical/part_theory,
-%part_theoretical/nucleation/nucleation,
-%part_theoretical/acoustic_relativity/acoustic_relativity,
-%part_theoretical/measurement/measurement,
-%part_theoretical/bubble_interactions/bubble_interactions,
-%part_theoretical/computations/computations,
-%part_experimental/part_experimental,
+ misc/decl,
+misc/abstract,
+misc/dedication,
+misc/preface,
+part_intro/part_intro,
+part_intro/introduction/introduction,
+part_theoretical/part_theory,
+part_theoretical/nucleation/nucleation,
+part_theoretical/acoustic_relativity/acoustic_relativity,
+part_theoretical/measurement/measurement,
+part_theoretical/bubble_interactions/bubble_interactions,
+part_theoretical/computations/computations,
+part_experimental/part_experimental,
 part_experimental/rationale/rationale,
-%part_experimental/DPR500_protocol/DPR500_protocol,
-%part_experimental/characterisation/characterisation,
-%part_discussion/part_discussion,
-%part_discussion/discussion/discussion,
-%part_appendix/part_appendix,
-%part_appendix/tensor_derivation,
-%part_appendix/nucleation_classical_appendix
+part_experimental/DPR500_protocol/DPR500_protocol,
+part_experimental/characterisation/characterisation,
+part_discussion/part_discussion,
+part_discussion/discussion/discussion,
+part_appendix/part_appendix,
+part_appendix/tensor_derivation,
+part_appendix/nucleation_classical_appendix
 %
 %part_appendix/nucleation_DFT_appendix
 %
@@ -118,8 +116,11 @@ part_experimental/rationale/rationale,
 % %gc
 }
 
-
+\DisemulatePackage{setspace}
+\usepackage{setspace}
 \begin{document}
+
+%\onehalfspacing
 %\lstset{language=c++}
 
 %\renewcommand{\partpageend}{%
@@ -144,7 +145,7 @@ part_experimental/rationale/rationale,
 
 
 
-\listoftodos
+%\listoftodos
 
 \author{Tom H. Shorrock }
 
@@ -195,13 +196,14 @@ part_experimental/rationale/rationale,
 %\maketitle
 
 \include{misc/title}
+\doublespacing
 \include{misc/decl}
 \pagenumbering{roman}
 \include{misc/dedication}
 \include{misc/abstract}
 \include{misc/toc}
-\include{misc/figure_list}
-\include{misc/table_list}
+%\include{misc/figure_list}
+%\include{misc/table_list}
 \include{misc/preface}
 \pagenumbering{arabic}
 \include{part_intro/part_intro}

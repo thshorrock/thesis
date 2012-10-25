@@ -68,35 +68,47 @@ enddef;
   
 %boxjoin(a.se=b.sw; a.ne=b.nw);
 boxit.pa(btex\strut Power-amp etex);
-boxit.trig(btex\strut Trigger etex);
+boxit.trig(btex\strut delay etex);
 boxit.pre(btex\strut Pre-amp etex);
-boxit.s(btex $\begin{array}{c} \mbox{Data} \\ \mbox{Aquisition} \end{array}$ etex);boxit.g(btex\strut Signal Generator  etex);
+boxit.s(btex $\begin{array}{c} \mbox{Data} \\ \mbox{Aquisition} \end{array}$ etex);
+    boxit.g(btex\strut Signal Generator  etex);
   boxit.f(btex\strut Filter  etex);boxit.t1(btex\strut  etex);boxit.t2(btex\strut  etex);
 
-g.c   = o;
-  pa.c   = o+(0,2u);
-  pre.c = o+(2u,4u);
-  f.c   = o+(5u,4u);
-  s.c   = o+(5u,2u);
-  trig.c= o+(5u,0);
-  %t1.c  = o+(-1u,8u);
-  %t2.c  = o+(4u,8u);
-  drawboxed(pa,pre,s,g,f,trig);%t1,t2
-  draw g.n--pa.s;
-  draw pa.n--(o+(0,6u));
-  draw (o+(-2u,6u))--(o+(5u,6u));
-  draw pre.w--(xpart(o),ypart(pre.c));
-  draw pre.e--f.w;
-  draw f.s--s.n;
+boxit.cortex(btex\strut Cortex etex);
+boxit.scope(btex\strut Oscilloscope etex);
 
+
+s.c   = o;
+  pa.c   = o+(5u,5u);
+  pre.c = o+(2u,5u);
+  f.c   = o+(5u,5u);
+  trig.c   = o+(1u,3u);
+  g.c= o+(5u,3u);
+cortex.c=o+(-2u,3u);
+scope.c= o+(-5u,3u);
+
+%t1.c  = o+(-1u,8u);
+  %t2.c  = o+(4u,8u);
+  drawboxed(pa,g,trig,scope,cortex);%t1,t2
+  draw g.n--pa.s;
+  draw pa.n--(o+(5u,6u));
+%  draw (o+(-2u,6u))--(o+(5u,6u));
+%  draw pre.w--(xpart(o),ypart(pre.c));
+%  draw pre.e--f.w;
+%draw f.s--s.n;
+draw scope.e -- cortex.w;
+draw cortex.e --trig.w;
+draw cortex.n -- (o+(-2u,6u));
+draw trig.e -- g.w;
+  
   %draw trig.n -- s.s dashed evenly;
-  draw trig.w -- g.e dashed evenly;
+ % draw trig.w -- g.e dashed evenly;
   pair ip[];
-  ip1 =g.e+(xpart((s.w-g.e)/2),0);
-  ip2 = g.e+(xpart((s.w-g.e)/2),2u);
-  draw ip1--ip2 dashed evenly;
-  draw ip2--pa.e dashed evenly;
-  draw ip2--s.w dashed evenly;
+%  ip1 =g.e+(xpart((s.w-g.e)/2),0);
+%  ip2 = g.e+(xpart((s.w-g.e)/2),2u);
+%  draw ip1--ip2 dashed evenly;
+%  draw ip2--pa.e dashed evenly;
+%  draw ip2--s.w dashed evenly;
 
   %Transducer Small * sf
   sf1 = 0.5;

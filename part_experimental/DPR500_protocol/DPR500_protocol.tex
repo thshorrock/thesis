@@ -10,30 +10,30 @@ To enable the excess pressure to be plotted one needs:
   \item a way of rapidly switching the imaging transducer from pulse-receive into receive-only mode (the imaging mode)
 }
 The first of these is achieved by removing the imaging transducer from the Cortex scanner
-and mounting it statically to the experimental chamber as shown in \figref{exp:setup:fixed}.
+and fixing it statically in the sample holder. %mounting it statically to the experimental chamber as shown in \figref{exp:setup:fixed}.
 
 Controlling the triggering and imaging mode of the two transducers 
 required a considerable change in the electronic arrangement of the experiment.
 
 
 
-
-\subsubsection{Driving wave}
-The driving wave is generated from an Agilent  33220A waveform generator
-that is controlled remotely by a LAN connection.
-It is triggered by the remote computer and produces  a sine burst of 10 cycles.
-The output of the Agilent was amplified by a  Tomco power-generator (gain of \unit{50}dB)
-which then drove the \unit{0.5}\mega\hertz\ TMS transducer used in the preliminary study.
-The gate to the Tomco was connected to the 'sync out' of the Agilent driving wave generator.
-
-
-\subsubsection{Delay before the imaging wave}
-The 'sync out' of the Agilent driving wave generator is also connected to 
+\subsubsection{Delay between the two pulses}
+The delay between the pulse doublet was controlled by
+%The 'sync out' of the Agilent driving wave generator is also connected to 
 an Analogic 2045 arbitrary waveform generator.
-The role of the Analogic generator is to produce 
-a pulse doublet that  triggers both the imaging wave
-and  the oscilloscope that collects the imaging radio frequency signal.
+The Analogic generator produced a pulse doublet that  triggers both the imaging wave
+, the driving wave, and the oscilloscope.
+%and  the oscilloscope that collects the imaging radio frequency signal.
 The time recorded on the oscilloscope is genuinely a pulse-echo-time since the oscilloscope is triggered with the same pulse as the imaging wave.
+
+The trigger for the driving wave and oscilloscope is set to be higher than for the imaging wave.
+Therefore, by setting the Analogic's voltage between these values
+the driving wave can be triggered alone.
+The driving wave is triggered by detecting a falling edge,
+and so the duration of the triggering pulse controls the delay between the driving and imaging waves.
+The Analogic can therefore be programmed to determine on which pulse the high frequency image should intercept
+and the delay that occurs between the two waves, and the delay that occurs between the two pulses.
+
 
 The Analogic is chosen because it has the fastest clock of all the pulsers / pulser delays available.
 The gitter from the analogic is  5-10\nano\second, which was an order of magnitude better than the other pulsers available.
@@ -48,12 +48,25 @@ on the Analogic generator is controlled remotely via serial connection.
 %from the results of \chapref{nucleation}.
 
 
+\subsubsection{Driving wave}
+The driving wave is generated from an Agilent  33220A waveform generator
+that is controlled remotely by a LAN connection.
+It is triggered the trailing edge of the Analogic
+ and produces  a sine burst of 10 cycles.
+The output of the Agilent was amplified by a  Tomco power-generator (gain of \unit{50}dB)
+which then drove the \unit{0.5}\mega\hertz\ TMS transducer used in the preliminary study.
+The gate to the Tomco was connected to the 'sync out' of the Agilent driving wave generator.
+
+
+
 \subsubsection{Imaging wave}
 The imaging wave is generated from the custom ordered Panemetrics \unit{20}\mega\hertz\
 transducer used in the preliminary study.
 The pulse/receive electronics is controlled 
 with a \JsrUltrasonics\ \DPR500\ dual pulser-receiver
 with a \RPL2 pulser-receiver.
+%The fixed delay is controlled by a Thunar delay pulse.
+
 The imaging voltage was \unit{300}\volt\ and the combined imaging gain 
 of the pre-amplifier and \DPR500\ is \unit{50}\deci B.
 To help reduce the contribution of the direct transmit / forward scatter of
@@ -68,20 +81,11 @@ and the imaging mode all available options.
 
 \begin{centering}
 \begin{figure}[h]%[htp]
-  \subfloat[]{
-    \label{fig:arrA}
-    \includegraphics[width=.45\textwidth]{arrangement01.1}}
-   \hspace{.3in}
-   \subfloat[]{
-    \label{fig:arrB}
-    \includegraphics[width=.45\textwidth]{arrangement02.1}}
-  %\hspace{.3in}
+    \includegraphics{final_arrangement.1}
    \caption{
-     The two driving arrangements considered.
-     The wires along which signal travels are solid.
-     The wires that carry the triggering/gating are shown dashed.
+     The final experimental arrangement
    }
-   \label{fig:arrangements}
+   \label{fig:exp:setup:electronic:final}
 \end{figure}
 \end{centering}
 
