@@ -6,7 +6,7 @@
 To enable the excess pressure to be plotted one needs:
 \nlist{
   \item a fixed imaging transducer,
-  \item the driving wave to trigger the imaging wave,
+  \item a pair of driving pulses, of which one triggers the imaging wave,
   \item a way of rapidly switching the imaging transducer from pulse-receive into receive-only mode (the imaging mode)
 }
 The first of these is achieved by removing the imaging transducer from the Cortex scanner
@@ -21,12 +21,11 @@ required a considerable change in the electronic arrangement of the experiment.
 The delay between the pulse doublet was controlled by
 %The 'sync out' of the Agilent driving wave generator is also connected to 
 an Analogic 2045 arbitrary waveform generator.
-The Analogic generator produced a pulse doublet that  triggers both the imaging wave
-, the driving wave, and the oscilloscope.
+The Analogic generator produced a pulse doublet that  triggers both the imaging wave, the driving wave, and the oscilloscope.
 %and  the oscilloscope that collects the imaging radio frequency signal.
 The time recorded on the oscilloscope is genuinely a pulse-echo-time since the oscilloscope is triggered with the same pulse as the imaging wave.
 
-The trigger for the driving wave and oscilloscope is set to be higher than for the imaging wave.
+The trigger for the imaging wave and oscilloscope is set to be higher than for the driving wave.
 Therefore, by setting the Analogic's voltage between these values
 the driving wave can be triggered alone.
 The driving wave is triggered by detecting a falling edge,

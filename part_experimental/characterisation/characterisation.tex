@@ -46,7 +46,7 @@ fluctuate around its average.
 If different runs of the experiment are independent
 then the  distribution of obtained values fully describes the experiment.
 
-What is learned from a given experiment is then characterised with how the probability distributions
+What is learnt from a given experiment is then characterised with how the probability distributions
 that represent our knowledge change.
 If a hypothesis, $\H$, is that a set of experimental data, $\vx = \{x_n|n=1,\ldots,N\}$, should conform to a model with a set of parameters, $\vw = \{w_i| i=1,\ldots,I\}$,
 then our full knowledge of the system is given by the joint probability distribution
@@ -99,10 +99,10 @@ The hypothesis, $\H$,  encompasses all of the assumptions that go into the infer
 These include the choice of the model that is fitted to the data, 
 the prior probabilities assigned to the model variables and the 
 the noise model described by the likelihood function.
-These assumptions are inevitable - they reflect our uncertainty 
- prompts the experiment in the first place.
+These assumptions are inevitable - they reflect the uncertainty 
+that prompts the experiment in the first place.
 However, 
-since many different hypotheses can be dreamed up,
+since many different hypotheses can be dreamt up,
 it is important to be able to be able to evaluate how each is supported by the experimental data.
 For this, Bayes Theorem can be applied a second time:
 the probability of the hypothesis, given the data, is
@@ -126,7 +126,7 @@ A model that is highly constrained will be inflexible in the range of prediction
 whereas a model that has many free parameters will be able to predict a vast number of possible outcomes.
 The more constrained model will therefore have a smaller set of likely outcomes,
 but each of these will have a much greater probability than the many possible outcomes of the less constrained model.
-The right-hand-side of \eqnref{ModelCmp} therefore directly and quantitively embodies Occan's razor,
+The right-hand-side of \eqnref{ModelCmp} therefore directly and quantitatively  embodies Occan's razor,
 the rule of thumb that states that `simpler' models should be favoured over more complicated models.
 For a more detailed discussion of model comparison and Occan's razor see \cite{MacKay2003}.
 
@@ -602,18 +602,18 @@ the pulse echo image that samples that second pulse.
  %  \subfloat[2nd pulse - 100]{
  %    \label{fig:av:108:100_ex:second}
  %    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_100_imaging_1st_av_with_sd_means1_large2.tex}}\\
-  \subfloat[1st pulse - \unit{150}\micro\second]{
+  \subfloat[1st pulse - \unit{150}\micro\second\ (receive only)]{
     \label{fig:1st:av:time:150:comp:control:c1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means1_large2.tex}}
  \quad\hspace{3mm}
-  \subfloat[1st pulse - \unit{150}\micro\second]{
+  \subfloat[1st pulse - \unit{150}\micro\second\ (pulse-echo)]{
     \label{fig:1st:av:time:150:comp:control:i1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_means1_large2.tex}}\\
-  \subfloat[1st pulse - \unit{250}\micro\second]{
+  \subfloat[1st pulse - \unit{250}\micro\second\ (receive only)]{
     \label{fig:1st:av:time:250:comp:control:c1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means1_large2.tex}}
  \quad\hspace{3mm}
-  \subfloat[1st pulse - \unit{250}\micro\second]{
+  \subfloat[1st pulse - \unit{250}\micro\second\ (pulse-echo)]{
     \label{fig:1st:av:time:250:comp:control:i1st}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_1st_av_with_sd_means1_large2.tex}}
 \caption{
@@ -698,23 +698,23 @@ have been successfully removed, leaving a high frequency signal on top of a flat
  %  \subfloat[2nd pulse - 100]{
  %    \label{fig:av:108:100_ex:second}
  %    \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_100/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_100_imaging_2nd_av_with_sd_means1_large2.tex}}\\
-  \subfloat[2nd pulse - \unit{150}\micro\second]{
+  \subfloat[2nd pulse - \unit{150}\micro\second\ (receive only)]{
     \label{fig:2nd:av:time:150:comp:control:c2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_150_no_imaging_av_with_sd_means1_large2.tex}}
  \quad\hspace{3mm}
-  \subfloat[2nd pulse - \unit{150}\micro\second]{
+  \subfloat[2nd pulse - \unit{150}\micro\second\ (pulse-echo)]{
     \label{fig:2nd:av:time:150:comp:control:i2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_means1_large2.tex}}\\
-  \subfloat[2nd pulse - \unit{250}\micro\second]{
+  \subfloat[2nd pulse - \unit{250}\micro\second\ (receive only)]{
     \label{fig:2nd:av:time:250:comp:control:c2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/no_imaging_av_with_sd/voltage_0_108_gap_between_pulses_250_no_imaging_av_with_sd_means1_large2.tex}}
  \quad\hspace{3mm}
-  \subfloat[2nd pulse - \unit{250}\micro\second]{
+  \subfloat[2nd pulse - \unit{250}\micro\second\ (pulse-echo)]{
     \label{fig:2nd:av:time:250:comp:control:i2nd}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_means1_large2.tex}}
 \caption{
-    Comparison of the  receive only signal from the first pulse of the control experiment,
-    with the pulse-echo signal of the first pulse.
+    Comparison of the  receive only signal from the second pulse of the control experiment,
+    with the pulse-echo signal of the second pulse.
     All signals are averaged over 49 repetitions, and are taken for the pressure \pOOE.
     The delay between the two pulses is shown.
   }
@@ -1190,7 +1190,7 @@ is a Gaussian distribution of mean $\mu$ and precision  $\gamma$.
 Each data point recorded is denoted $x_t$ and the modelled point (given the parameters) the mean  $\mu_t$.
 The bubble radius, noise precision, pressure and offset and truncation ratio are all positive quantities which we model with Gamma distributions.
 However, to enforce positivity during the iterative numerical updates 
-we re-parameterise the gamma distribution of equation \eqnref{Gamma} such that $l = \ln(x)$.
+we re-parametrise the gamma distribution of equation \eqnref{Gamma} such that $l = \ln(x)$.
 If follows that
 \begin{align}
   P(l) = P(x(l))\abs{\frac{\partial x}{\partial l}} = \frac{1}{\Gamma(c)}\lr{\frac{x(l)}{s}}^c\exp\lr{-x(l)/s}.
@@ -1339,7 +1339,7 @@ the fit.
 However, the actual fitted parameters in each plot are very different.
 This can be seen  by comparing the equilibrium bubble radii.
 This suggests that the likelihood is  not a sharply peaked distribution,
-and that it might even be multi modal.
+and that it might even be multimodal.
 This would imply that the estimates for the evidence given in \tabref{fit_108_150_fit} are unreliable.
 
 %The plot_bubble_
@@ -1355,12 +1355,12 @@ This would imply that the estimates for the evidence given in \tabref{fit_108_15
 %\end{figure}
 
 
-\subsection{Average}
+\subsection{Using Averages}
 
 The noise in the first model was too great, which meant that the fits were too permissive.
 A large range of models could produce the same results.
 
-To improve the test of the modelling we repeat the same model but this time with the average of 49 alines.
+To improve the test of the modelling we repeat the same model but this time with the average of 49 A-lines.
 (so that the noise should be reduced by a factor of 7).
 
 
@@ -1782,7 +1782,7 @@ which suggests that the generated bubbles are far from resonance.
 There are two possible causes.
 The first is that there is a population of bubbles that are interacting 
 with the acoustic wave.  
-This possibility seems likely when  Apfel's\cite{Apfel1984} mote density of \unit{$10^5$}\centi\metre\rpcubed is remembered.
+This possibility seems likely when  Apfel's\cite{Apfel1984} mote density of \unit{$10^5$}\centi\metre\rpcubed\ is remembered.
 Secondly, \figref{exp:av:time:comp:control:cross:full} is evaluated with average traces.
 Even if the returned scatter really were coming from a single bubble,
 its location would be smeared in the average.

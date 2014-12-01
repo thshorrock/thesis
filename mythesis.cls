@@ -34,7 +34,7 @@
 
 %Now the report class needs to be loaded:
 
-\LoadClass[a4paper,oneside]{memoir}
+\LoadClass[a4paper,oneside,draft]{memoir}
 
 % Alter some LaTeX defaults for better treatment of figures:
     % See p.105 of "TeX Unbound" for suggested values.
