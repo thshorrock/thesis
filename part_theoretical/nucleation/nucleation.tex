@@ -321,7 +321,7 @@ The exceptionally low solubility (a few parts per million\cite{Wen1979}) of the 
 %
 
 The assumption is not without its problems.
-The small size, potentially, could  make a droplet a potential poor approximation to an `infinite thermodynamic system',
+The small size, potentially, could  make a droplet a poor approximation to an `infinite thermodynamic system',
 with the finite volume errors that this can entail.
 However, neglecting the nucleation at the interface remains a limitation of our approach.
 Techniques for lifting the restriction have been considered by others\cite{Jarvis1975, Katz1992},
@@ -409,7 +409,7 @@ Finally, the lifetimes of the expected bubbles will be calculated in \secref{nuc
 When the rarefactional pressure of the acoustic wave exceeds the atmospheric pressure it places the fluid under tension.
 The creation of a vapour bubble  relaxes this pressure but  also creates an interface.
 Creating a small bubble is energetically unfavourable because the energy required to maintain the interface dominates.
-A large bubble, on the other hand, will grow explosively when placed under tension because the volume term dominates.
+A large bubble, on the other hand, will grow explosively when placed under tension because the relaxation in pressure caused by the bubble's volume dominates.
 For a given pressure there exists, therefore, a {\em critical radius}, $\astar$, at which the bubble neither grows nor shrinks 
 but is at thermodynamic equilibrium.
 If  spherical symmetry is assumed then 
@@ -418,7 +418,7 @@ the critical radius is such that\cite{Oxtoby1992,Oxtoby1988}
 \begin{align}
   \frac{d \Omega}{d a} =0,\quad\text{at $a = \astar$} \label{eqn:nuc:astarR}
 \end{align}
-where $\Omega$ is the {\em grand potential}.
+where $\Omega$ is the {\em grand potential} and $a$ is the bubble's radius.
 
 \subsection{The capillary approximation to the critical radius}\label{sec:nuc:capillary}
 
@@ -483,7 +483,8 @@ Substituting \eqnref{LaplaceRelation} into \eqnref{DeltaG} gives the energy requ
 \begin{align}
    \Delta \Omega^\ast \equiv \given{\Delta G}{a = \astar} = \frac{16\pi\gamma^3}{3\lr{p_v^\ast- p_L}^2}.\label{eqn:DeltaGStar}
 \end{align}
-The chemical potentials have vanished from \eqnref{DeltaGStar} because  the bubble is at thermodynamic equilibrium, whence
+The chemical potentials have vanished from \eqnref{DeltaGStar} because  the bubble is at thermodynamic equilibrium, 
+whence the Grand Potential equates to the Free Energy, $G$, because
 \begin{align}
   \mu_v(p_v^\ast) = \mu_L(p_L),\label{eqn:thermoEqlbm} \quad\text{ at $a = \astar$.}
 \end{align} 
@@ -538,7 +539,7 @@ it is hoped that the predicted pressures within the (super-heated) bubble are st
 
 
 In \figref{cnt:criticalNumber}  the predicted number of molecules contained within a critical bubble are plotted.
-Again and as expected the number of perfluorocarbon molecules required to form a bubble are smaller than if the for water.
+Again and as expected the number of perfluorocarbon molecules required to form a bubble are smaller than for water.
 \Figref{cnt:criticalNumber} does, however, illustrate  the difficulty with the capillary approximation being used.
 It is highly questionable that a bubble containing tens or even hundreds of molecules behaves like its thermodynamic bulk, with a constant density until the interface.
 %The number of molecules is such that the thermodynamics starts to loose its meaning.
@@ -639,7 +640,7 @@ J = J_0\exp \lr{-\frac{\Delta \Omega}{\kB T}},% = J_0 \exp\lr{- \frac{16\pi\gamm
 \end{align}
 where $\Delta \Omega$ is the energy barrier to nucleation (in terms of the Grand Potential, $\Omega$),
 $\kB$ is Boltzmann's constant, $T$ is the temperature
-and $J_0$ is a rate  (per unit volume) obtained when $T\rightarrow \infty$ or when $\Delta G \rightarrow 0$.
+and $J_0$ is a rate  (per unit volume) obtained when $T\rightarrow \infty$ or when $\Delta \Omega \rightarrow 0$.
 
 The rate constant, $J_0$, for bubble nucleation is problematic.
 The reason is that the definition of a very small bubble is not clear conceptually.
