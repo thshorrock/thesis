@@ -22,8 +22,8 @@ where the speed of sound rather than the speed of light takes the role of the li
 This is because the pulse-echo definitions of time and space that are used in ultrasound are identical to the radar definitions used by Einstein.
 Furthermore, since all ultrasound measurements are temporal,
 a fixed and constant speed of sound is necessary before anything can said regarding distance.
-Einstein's second postulate {\em must} be assumed for ultrasound to measure anything at all
-and there is no choice but to accept the resulting discrepancies with other imaging modalities.
+Einstein's second postulate {\em must} be assumed for ultrasound to measure anything at all.
+%and there is no choice but to accept the resulting discrepancies with other imaging modalities.
 The only assumption made is an insistence upon invariance to inertial motions
 (Einstein's first postulate).
 It would be perverse for such a fundamental symmetry to be dependent on the choice of imaging modality.
@@ -152,7 +152,7 @@ must equal the pressure on the bubble wall, $p_b$,
 }
 We will consider explicit expression for $p_b$ \secref{surface_pressure} and in \secref{viscosity}.
 
-To apply these boundary conditions Keller and Miksis eliminated the spatial derivate of $\psi$ by using its definition,
+To apply these boundary conditions Keller and Miksis eliminated the spatial derivative of $\psi$ by using its definition,
 \sub{
 \begin{align}
   \dr \psi &= v, \label{eqn:VelocityPotNR}
@@ -186,7 +186,7 @@ such that\cite{LandauBook, Doran2003}
 where $e$ is the thermodynamic energy and $m$ is the proper mass.
 The second equality uses equation \eqnref{relEpsilon} from \chapref{acousticSR}.
 Spacetime vectors are sometimes referred to as 4-vectors, although this terminology will not be used here.
-The spacetime velocity, $u$, is parameterised so that $u^2 = c^2$ where $c$ is the speed of sound.
+The spacetime velocity, $u$, is parametrised so that $u^2 = c^2$ where $c$ is the speed of sound.
 The symbol $u$ has been used to avoid confusion with the radial component, $v$, of the spatial velocity (a 3-vector).
 
 
@@ -652,7 +652,7 @@ For the low incident pressure of \unit{100}\kilo\pascal\ the radial response of 
 This is as would be expected, for as \figref{R1vel} shows,  at this pressure the velocity of the bubble wall 
 is always a small fraction of the sound speed.
 
-At the higher pressure of \unit{100}\kilo\pascal\ 
+At the higher pressure of \unit{300}\kilo\pascal\ 
 the original Keller-Miksis model predicts that the bubble wall collapses at very high velocities,
 even surpassing the speed of sound on some occasions.
 It is obvious that ultrasound measurements cannot measure the speed of a bubble wall undergoing  supersonic collapse, 
@@ -666,10 +666,10 @@ At the yet higher pressure of \unit{500}\kilo\pascal\ there is a small surprise.
 As before the original Keller-Miksis model predicts that the bubble wall will collapse at speeds that cannot be measured acoustically,
 and as before the acoustically-observed-Keller-Miksis model assigns the  spatial and temporal locations according to the pulse-echo definitions.
 The surprise, 
-however, is how well it does in comparison to \Figref{R3rad}.
+however, is in \Figref{R5rad}.
 In \figref{R5rad} the predicted radial response of the bubble looks very similar with both models;
 the maximal radii are in good agreement, as are the  times at which the bubble reaches its minimal radii.
-All this despite the large differences in the predicted velocity \figref{R5rad}.
+All this despite the large differences in the predicted velocity, \figref{R5vel}.
 
 A clue as to why the radial response at some pressures looks very similar for both models (\figref{R1rad} and \figref{R5rad}),
 while at other pressures it looks very different (\figref{R3rad}) 
@@ -755,7 +755,11 @@ plotted  where the scattering cross section could not be evaluated.
       \subfloat[\unit{100}\kilo\pascal]{
            \label{fig:nxs_low1}
            \includegraphics{xs_freq_r_2_amp_0.1.1}}
-%      \label{fig:nxs_low}
+      \label{fig:nxs_low} 
+ \caption{The calculated normalised scattering cross section as a function of frequency evaluated at various pressures as measured optically (using the Keller-Miksis model) and acoustically (using the acoustically-measured-Keller-Miksis model). The bubble has an equilibrium radius of \unit{2}\micro\metre. 
+Below the graphs the frequencies at which the scattering cross section could not be evaluated is plotted.
+The small vertical axis of this plot is meaningless, it is used to help convey the density of points.
+}
  \end{figure}
 \begin{figure}[p!]
       \centering

@@ -175,7 +175,7 @@ newpath 82.62083 121.14124 moveto
 175.6518 121.14124 lineto
 82.62083 121.14124 lineto stroke
 gsave [0 1 -1 0 58.94714 13.20132 ] concat 0 0 moveto
-(wxcess) cmr10 7.97015 fshow grestore
+(excess) cmr10 7.97015 fshow grestore
 gsave [0 1 -1 0 58.94714 39.19287 ] concat 0 0 moveto
 (scattering) cmr10 7.97015 fshow grestore
 gsave [0 1 -1 0 58.94714 76.01053 ] concat 0 0 moveto
