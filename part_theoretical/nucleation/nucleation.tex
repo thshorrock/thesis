@@ -820,24 +820,27 @@ These pressures are of the same order of magnitude as the experimental values of
 
 
 \begin{figure}
+  \hspace*{-20mm}
   \subfloat[Dissolution of a \unit{1}\micro\metre\ air bubble when $\zeta=0$]{ \label{fig:nuc:dissolve_time_lum}\input{part_theoretical/nucleation/figs/chNucDissolveTimeLum.tex}}
   \subfloat[Dissolution time as a function of radius]{ \label{fig:nuc:dissolve_time}\input{part_theoretical/nucleation/figs/chNucDissolveTime.tex}}
   \caption{ Dissolve times of air bubbles.  The experimental quantities used in the model are given in \tabref{nuc:dissolveVars}.}
 \end{figure}
 
 \begin{figure}
+  \hspace*{-20mm}
   \subfloat[Dissolution of a \unit{1}\micro\metre\ \pfp\ bubble when $\zeta=0$]{\label{fig:nuc:dissolve_time_lumPFP}\input{part_theoretical/nucleation/figs/chNucDissolveTimeLumPFP.tex}}
   \subfloat[Dissolution time as a function of radius]{\label{fig:nuc:dissolve_timePFP}\input{part_theoretical/nucleation/figs/chNucDissolveTimePFP.tex}}
   \caption{ Dissolve times of \pfp\ bubbles.  The experimental quantities used in the model are given in \tabref{nuc:dissolveVars}. }
  \label{fig:nuc:dissolve_time_lum}
 \end{figure}
 
-
+%\resizebox{\columnwidth}{!}{%
 \ctable[cap=Dissolution symbols,
         caption=Symbols used in the calculation of dissolution times,
         label=table:nuc:dissolveVars,
         pos=top,
-        %width = 0.6\textwidth,,,
+        doinside=\small\hspace*{-0mm},
+        width = 0.99\textwidth,
         left
        ]
        {llllrrc}
@@ -856,6 +859,7 @@ These pressures are of the same order of magnitude as the experimental values of
    &$P_\infty$&  Ambient Pressure & $\mega\pascal$ & ${0.101325}$ &${0.101325}$ &
     \LL
   }
+%}
 
 The third and final question of this chapter regards the expected lifetime of a bubble.
 In \secref{nuc:evacuate} the critical radius was used to give a lower bound on the size of a 
@@ -2391,8 +2395,9 @@ The code to solve these equations was written by the author of this thesis and i
 
 
 \begin{figure}
- \centering
+  \hspace*{-8mm}
   \subfloat[Coexistence for water]{\input{part_theoretical/nucleation/figs/chNucCoexWater.tex}}\\
+  \hspace*{-8mm}
   \subfloat[Coexistence for \pfp]{\input{part_theoretical/nucleation/figs/chNucCoexPfp.tex}}
   \caption{Coexistence and spinodal curve for water and \pfp.
     The plot was used to obtain the temperature dependence of the parameters $d$ and $\epsilon$ 
@@ -2402,9 +2407,10 @@ The code to solve these equations was written by the author of this thesis and i
 \end{figure}
 
 \begin{figure}
- \centering
+  \hspace*{-22mm}
   \subfloat[The parameter $d$ for water]{\input{part_theoretical/nucleation/figs/chNucParamsDWater.tex}}
   \subfloat[The parameter $\epsilon$ for  water]{\input{part_theoretical/nucleation/figs/chNucParamsEWater.tex}}\\
+  \hspace*{-22mm}
   \subfloat[The parameter $d$ for \pfp]{\input{part_theoretical/nucleation/figs/chNucParamsDPfp.tex}}
   \subfloat[The parameter $\epsilon$ for \pfp]{\input{part_theoretical/nucleation/figs/chNucParamsEPfp.tex}}\\
 %  \subfloat[d pfp]{\input{\missingfigure{sigma_water}}}
