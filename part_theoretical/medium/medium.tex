@@ -1,26 +1,57 @@
 
 
-\chapter{Two models of the medium}\label{ch:medium}
+\chapter{Three models of the medium}\label{ch:medium}
 
 
 
 \section{Introduction}
+A true fluid medium predicts a non-constant speed of sound due to its self advection,
+and local perturbations in density and temperature that in turn affect the speed of sound locally.
+Both these problems become vanishingly small if the disturbance is small,
+with the disturbance propagating at a fixed speed according to the linear wave equation.
+A fluid that is only perturbed slightly is therefore conformant with the requirements of acoustic measurement.
+One expects, therefore,
+that the acoustic model and the correct model converge in this limit.
+
+We therefore have a starting point for our acoustic model: the linear fluid.
+If we were assert that ultrasound - due to the incorrect assumption of a constant sound speed - measures linear fluids
+then we have a model for acoustic measurement that is self-consistent.
+This is a step forward over what is offered by the correct model.
+%because in contrast with the correct model of the medium
+%it enables distances within the fluid medium to be defined in a consistent manner with what is acoustically measured.
+The predictive power of the linear model is expored in \secref{linearFluid}.
+
+Nonethelesss, defining acoustic model as the small perturbation limit of the correct model is unsatisfactory.
+There is nothing within the theory that states the perturbations should be small,
+and so insisting that non-negligable perturbations should be neglected in order to keep the
+theory self-consistent feels arbitrary.
+An alternative is suggested in \secref{incompressibleFluid},
+where the dynamics of the fluid are modelled correctly with the Euler Equation,
+but the equation of state is chosen in such a way as to enforce self-consistency.
+While not without problems,
+there is a more comfortable feel about this approach as we are not modifying the fundamental physics in any way,
+but rather modifying the type of fluid probed.
+
+Neither of these models are Lorentz invarient.
+In \secref{Maxwell} this is corrected with the second model is extended to this regime.
 
 
-Equations of state that are confirmed by other experimental techniques do not correctly predict the outcomes of ultrasound experiments
-due to ultrasound's incorrect reliance on a constant sound speed.
 
 
-It is at this point that the required constancy of the speed of sound poses some interpretation problems to the acoustic observer.
+%Equations of state that are confirmed by other experimental techniques do not correctly predict the outcomes of ultrasound experiments
+%due to ultrasound's incorrect reliance on a constant sound speed.
+
+
+%It is at this point that the required constancy of the speed of sound poses some interpretation problems to the acoustic observer.
 
 
 
 
-for it is well known that the sound speed in a fluid is not in general constant.
-The sound speed is a function of the medium's thermodynamic quantities such as  density, pressure, temperature and entropy,
-and these vary throughout the fluid, not least due to the propagation of the sound wave itself.
-Equations of state that are confirmed by other experimental techniques do not correctly predict the outcomes of ultrasound experiments
-due to ultrasound's incorrect reliance on a constant sound speed.
+%for it is well known that the sound speed in a fluid is not in general constant.
+%The sound speed is a function of the medium's thermodynamic quantities such as  density, pressure, temperature and entropy,
+%and these vary throughout the fluid, not least due to the propagation of the sound wave itself.
+%Equations of state that are confirmed by other experimental techniques do not correctly predict the outcomes of ultrasound experiments
+%due to ultrasound's incorrect reliance on a constant sound speed.
 
 
 
@@ -28,71 +59,71 @@ due to ultrasound's incorrect reliance on a constant sound speed.
 
 %This is a difficult square to circle.
 
-One option would be to use ultrasound for the spatio-temporal location of entities, and then ascribe the real, independently measured physical properties and physical laws to those entities.
+%One option would be to use ultrasound for the spatio-temporal location of entities, and then ascribe the real, independently measured physical properties and physical laws to those entities.
 
 
 
-One option would be to use ultrasound for the spatio-temporal location of entities, and then ascribe the real, independently measured physical properties and physical laws to those entities.
-An example would be modelling an acoustic medium as an ideal gas; the locations of echos described by \eqnref{radar} and the thermodynamic properties of the medium described by the ideal gas law.
-While this approach seems reasonable it suffers from a lack of internal consistency. 
-An ideal gas heats when compressed, and this alters the speed of sound.  
-Such physics is unmeasurable with ultrasound, even if the underlying model is correct.
+%One option would be to use ultrasound for the spatio-temporal location of entities, and then ascribe the real, independently measured physical properties and physical laws to those entities.
+%An example would be modelling an acoustic medium as an ideal gas; the locations of echos described by \eqnref{radar} and the thermodynamic properties of the medium described by the ideal gas law.
+%While this approach seems reasonable it suffers from a lack of internal consistency. 
+%An ideal gas heats when compressed, and this alters the speed of sound.  
+%Such physics is unmeasurable with ultrasound, even if the underlying model is correct.
 %On the one hand the measurement processes assumes that the sound speed is fixed, 
 %while on the other the properties of the medium imply that is not.  
-The measurements made with ultrasound will not agree with the predictions of a physically correct model due to ultrasound's reliance on assuming a constant sound speed.
+%The measurements made with ultrasound will not agree with the predictions of a physically correct model due to ultrasound's reliance on assuming a constant sound speed.
 
 
 %Put another way, 
 %such an approach implies that ultrasound measurement alone cannot measure the properties ascribed in the model.  
 
-An alternative is to focus on modelling what is measurable - thereby insisting on the internal consistency of the physics.
-Since ultrasound requires that the speed of sound be constant as part of its measurement process, 
-the approach insists that the  model of the medium be consistent with this requirement.
-The equations of state are therefore determined by what can be measured acoustically, 
-rather than driven by what has been shown to be successful in other domains of physics.
+%An alternative is to focus on modelling what is measurable - thereby insisting on the internal consistency of the physics.
+%Since ultrasound requires that the speed of sound be constant as part of its measurement process, 
+%the approach insists that the  model of the medium be consistent with this requirement.
+%The equations of state are therefore determined by what can be measured acoustically, 
+%rather than driven by what has been shown to be successful in other domains of physics.
 
-Both approaches are difficult to accept, 
-because in both we have to accept a distinction between 
-Such an approach refute 
-We show in \secref{nonlinear} that this implies that we model fluids with an the adiabatic index of unity.
-
-
-
-Consider for example the acoustic measurement of a compression of the gas in \figref{compression}.
-When the valve compresses the gas the  ideal gas is compressed, it heats up and this increases the speed of sound. 
-However, this change in sound speed is not reflected in the measurement process, and so the physical theory predicted 
-The acoustic measurement processes continues with the original sound speed and so the measured compression is incorrect.  
-The time it takes for a compression phase of the sound wave to return differs from that of the rarefaction.  
-
-
-The difficulty with this is that 
-
- to try to ensure that the underlying thermodynamic properties of the medium are
-If these thermodynamic properties are assumed to take their real, independently measured values then the implied local speed of sound will in general be different than the sound speed assumed in ultrasound.  
-Accordingly, the location where these perturbations are calculated - from their real values - differs from the location that is measured in ultrasound.  
-One would then have to maintain a mapping between what is measured acoustically, with a detailed knowledge of the medium so the real thermodynamic properties can be maintained correct.
-If such a detailed knowledge of the measured medium exists, then the need for acoustic measurement at all is deminished.
+%Both approaches are difficult to accept, 
+%because in both we have to accept a distinction between 
+%Such an approach refute 
+%We show in \secref{nonlinear} that this implies that we model fluids with an the adiabatic index of unity.
 
 
 
+%Consider for example the acoustic measurement of a compression of the gas in \figref{compression}.
+%When the valve compresses the gas the  ideal gas is compressed, it heats up and this increases the speed of sound. 
+%However, this change in sound speed is not reflected in the measurement process, and so the physical theory predicted 
+%The acoustic measurement processes continues with the original sound speed and so the measured compression is incorrect.  
+%The time it takes for a compression phase of the sound wave to return differs from that of the rarefaction.  
 
-The measured locations of these perturbations will then differ from where the fluctuation actually occured.  In short, we have a contradiction - we ascribe a   valuesare measured independently from the acoustic properties of the medium, 
-then these properties will imply 
+
+%The difficulty with this is that 
+
+% to try to ensure that the underlying thermodynamic properties of the medium are
+%If these thermodynamic properties are assumed to take their real, independently measured values then the implied local speed of sound will in general be different than the sound speed assumed in ultrasound.  
+%Accordingly, the location where these perturbations are calculated - from their real values - differs from the location that is measured in ultrasound.  
+%One would then have to maintain a mapping between what is measured acoustically, with a detailed knowledge of the medium so the real thermodynamic properties can be maintained correct.
+%If such a detailed knowledge of the measured medium exists, then the need for acoustic measurement at all is deminished.
 
 
 
-\section{A linear medium}
-A natural point to start is to assume that the physical description of the medium does not depend on the imaging modality.
-As an example, let us suppose that we are conducting an ultrasound experiment where we are propagating sound through a gas.
-Using our assumption we model the gas as ideal. 
-The pressure, $p$, density, $\rho$ and temperature, $T$, are therefore modelled by the ideal gas equation
-\eq{
-  p = \rho R T,
-}
-where $R$ is the specific gas constant.
+
+%The measured locations of these perturbations will then differ from where the fluctuation actually occured.  In short, we have a contradiction - we ascribe a   valuesare measured independently from the acoustic properties of the medium, 
+%then these properties will imply 
+
+
+
+\section{A linear medium}\label{sec:linearFluid}
+
+%A natural point to start is to assume that the physical description of the medium does not depend on the imaging modality.
+%As an example, let us suppose that we are conducting an ultrasound experiment where we are propagating sound through an ideal gas.
+%The pressure, $p$, density, $\rho$ and temperature, $T$, are therefore modelled by the ideal gas equation
+%\eq{
+%  p = \rho R T,
+%}
+%where $R$ is the specific gas constant.
 
 As a first question, let us then ask how these properties change in the medium in response to the sound wave.
-To understand the dynamics of the system we use our starting assumption a second time and model the dynamics of the gas with the  Navier-Stokes equation and continuity equation.
+To understand the dynamics of the system we use our starting assumption a second time and model the dynamics of the gas with the Euler equation and continuity equation.
 Ignoring viscous effects, we then have\todo{Use hat notation for actual quantities},
 \sub{
 \label{eqn:euclideanFluid}
@@ -118,23 +149,14 @@ We let
 }
 where the primes indicate  small perturbations from the mean.
 Equations \Eqnref{euclidianFluid} then reduce as follows
+\sub{
+  \label{eqn:fluidMech}
 \begin{align}
  \rho_0  \frac{\partial u}{\partial t} &= - \del p \label{eqn:euclidianNSLinear} \\
  \frac{\partial \rho }{\partial t} &=  - \rho_0  \del \cdot u. \label{eqn:euclidianContinuityLinear}
 \end{align}
-
-Introducing the velocity potential
-\begin{align}
- \vu \equiv \vdel \psi
-\end{align}
-implies, with equation \eqnref{euclidianNSLinear}, that perturbation in pressure is
-\begin{align}
-p-p_0 = -\rho_0 \frac{\partial \psi}{\partial t},
-\end{align}
-while equation \eqnref{euclidianContinuityLinear} becomes
-\begin{align}
-\frac{\partial \rho}{\partial t} = - \rho_0 \del^2 \psi.
-\end{align}
+}
+The sound wave is adiabatic so we have, by Taylor expantion,
 
 The relation between density and pressure depends on the equation of state.  
 If it is assumed that pressure depends only on the density, $p=p(\rho)$
@@ -142,19 +164,78 @@ then we can Taylor expand so that
 \begin{align}
 p = p(\rho_0) + (\rho-\rho_0) \frac{\partial p(\rho_0)}{\partial \rho} + \ldots.
 \end{align}
-
 Keeping only the largest terms
 \begin{align}
  \frac{\partial p}{\partial t} = \frac{\partial p(\rho_0)}{\partial \rho} \frac{\partial \rho^\prime}{\partial t}.
 \end{align}
-We can then substitute back into \eqnref{} to recover a wave equation
-\begin{align}
-\frac{\partial^2 \psi}{\partial^2 t} = c^2 \del^2 \psi,
+Inserting into \eqnref{euclidianContinuityLinear} we obtain,
+\sub{
+    \begin{align}
+ \rho_0  \frac{\partial u}{\partial t} &= - \del p \label{eqn:euclidianNSLinearTwo} \\
+ \frac{\partial p }{\partial t} &=  - \rho_0 \frac{\partial p}{\partial \rho}  \del \cdot u. \label{eqn:euclidianContinuityLinearTwo}
 \end{align}
-where the speed of sound $c$ is defined as follows,
+}
+Taking the temperal derivative of \eqnref{euclidianNSLinearTwo} and subtracting from the spatial derivative of
+\eqnref{euclidianContinuityLinearTwo}
+gives
+\sub{
+  \label{eqn:waveEuclid}
+  \eqa{
+     \vdel^2 u - \frac{1}{\frac{\partial p}{\partial \rho} }\frac{\partial^2 u}{\partial^2 t} &=  - \vdel \cross ( \vdel \cross u). 
+  \label{eqn:euclidianNSLinearThree} \\
+  \intertext{Subtracting the spatial derivative of \eqnref{euclidianNSLinearTwo} from the temperatal derivative of \eqnref{euclidianContinuityLinearThree}}
+ \del^2 p  - \frac{1}{\frac{\partial p}{\partial \rho} }\frac{\partial^2 p }{\partial^2 t}  &=  0
+  }
+  }
+Defining the sound speed to be
 \begin{align}
 c^2 \equiv \frac{\partial p(\rho_0)}{\partial \rho}
 \end{align}
+we see that \eqnref{waveEuclid} defines a pair of wave equations.
+In the case of \eqnref{euclidianNSLinearThree} there is a localised source
+term (the right hand side)
+and in the case of \eqnref{euclidianContinuityLinearThree} without.
+
+Let us now consider a particular medium, that of an ideal gas,
+
+A natural point to start is to assume that the physical description of the medium does not depend on the imaging modality.
+As an example, let us suppose that we are conducting an ultrasound experiment where we are propagating sound through an ideal gas.
+The pressure, $p$, density, $\rho$ and temperature, $T$, are therefore modelled by the ideal gas equation
+\eq{
+  p = \rho R T,
+}
+where $R$ is the specific gas constant.
+
+%\subsection{Blar}
+%Introducing the velocity potential
+%\begin{align}
+% \vu \equiv \vdel \psi
+%\end{align}
+%implies, with equation \eqnref{euclidianNSLinear}, that perturbation in pressure is
+%\begin{align}
+%p-p_0 = -\rho_0 \frac{\partial \psi}{\partial t},
+%\end{align}
+%while equation \eqnref{euclidianContinuityLinear} becomes
+%\begin{align}
+%\frac{\partial \rho}{\partial t} = - \rho_0 \del^2 \psi.
+%\end{align}
+
+%The relation between density and pressure depends on the equation of state.  
+%If it is assumed that pressure depends only on the density, $p=p(\rho)$
+%then we can Taylor expand so that
+%\begin{align}
+%p = p(\rho_0) + (\rho-\rho_0) \frac{\partial p(\rho_0)}{\partial \rho} + \ldots.
+%\end{align}
+
+
+%We can then substitute back into \eqnref{} to recover a wave equation
+%\begin{align}
+%\frac{\partial^2 \psi}{\partial^2 t} = c^2 \del^2 \psi,
+%\end{align}
+%where the speed of sound $c$ is defined as follows,
+%\begin{align}
+%c^2 \equiv \frac{\partial p(\rho_0)}{\partial \rho}
+%\end{align}
 From \eqnref{} we have
 \begin{align}
    \frac{\partial p(\rho_0)}{\partial \rho} = RT + \rho R \frac{\partial T}{\partial \rho}
@@ -203,21 +284,21 @@ but perhaps only changes the equation of state used to describe the particular f
  }
 
 It is now legitimate to ask how justifiable the linear approximation for the medium.
-On the one hand, if we consider the acoustic sources / scatterer to be localised,
-with a pressure wave focused on this region,
-then the region in which non-linear properties matter will also be localised.
-Far from the scatterer the amplitudes will be small and the propagation will occur linearly.
-The non-linear region can be considered an {\em acoustic source}, which conforms to the attribution of non-linear effects in ultrasound to the scatterer.
-This, essentially, is the argument made by Lighthill\cite{} for aeroacoustic calculations.
+%On the one hand, if we consider the acoustic sources / scatterer to be localised,
+%with a pressure wave focused on this region,
+%then the region in which non-linear properties matter will also be localised.
+%Far from the scatterer the amplitudes will be small and the propagation will occur linearly.
+%The non-linear region can be considered an {\em acoustic source}, which conforms to the attribution of non-linear effects in ultrasound to the scatterer.
+%This, essentially, is the argument made by Lighthill\cite{} for aeroacoustic calculations.
 
 
 
 
-On the other hand, the approximations used in linearising the fluid do discard certain properties that
+%On the other hand, the approximations used in linearising the fluid do discard certain properties that
 
 
 
-\section{A linear {\em fluid} with constant sound speed}
+\section{A linear {\em fluid} with constant sound speed}\label{sec:incompressibleFluid}
 
 However, there is a cause for concern.
 To recover a constant speed of sound, consistent with the ultrasound measurement process,
@@ -225,7 +306,16 @@ we had to assume small perturbations.
 What if we relax these conditions?
 
 \todo[inline]{Remember to use hat notation again
- }
+}
+
+\begin{align}
+  d p &= c^2 d\rho = \gamma p / \rho
+\end{align}
+so
+\eqa{
+  \frac{p}{p_0} &= \lr{\frac{\rho}{\rho_0}}^{\gamma}\\
+  \frac{c}{c_0} &= \lr{\frac{\rho}{\rho_0}}^{\half(\gamma-1)}\\
+}
 
 From \eqnref{} we have
 \begin{align}
@@ -274,10 +364,98 @@ or
 \begin{align}
  c = c_0  + \half (\gamma -1) u
 \end{align}
+or 
+\begin{align}
+  u/c_0 = \frac{2(c - c_0)}{c_0(\gamma -1)} =  \frac{2}{(\gamma -1}\lr{\frac{\rho}{\rho_0}^{\half(\gamma-1)}-1} 
+\end{align}
+We are interested in the limit where $\gamma\rightarrow 1$ and $c \rightarrow c_0$.
+In this limit
+\eqa{
+ u/c \rightarrow \ln\lr{\frac{\rho}{\rho_0}}
+}
+
+It follows that $\rho \rightarrow \rho_0$ and $u \rightarrow 0 $.
+
+
+
 The absolute speed of the signal, $u +c$ is then increased by
 \begin{align}
   u + c - c_0 =  \half (\gamma -1) u.
 \end{align}
+
+%The heat function is given
+%\eqa{
+%  h = c_p T = \frac{\gamma pV }{\gamma -1} = {c^2}{\gamma-1}
+%}
+%and Bernoilli's equation
+%\eqa{
+%  h + \frac{1}{2}v^2 = h_0
+%}
+%where $h_0$ is a part of the streamline where $v=0$
+
+
+%The temperature change can be determined
+%\eqa{
+%  T = T_0 \left(1 - \frac{1}{2}\left(\gamma-1\right)\frac{v^2}{c_0^2} \right)
+%}
+
+%From \eqnref{} and \eqnref{} the pressure and density can be written
+%\sub{
+%  \eqa{
+%    T &= T_0 \left[1-\half(\gamma-1)\frac{v^2}{c_0^2} \right] \\
+%    \rho &= \rho_0 \lr{T/T_0}^{1/(\gamma-1)} = \rho_0\left[1-\half(\gamma-1)\frac{v^2}{c_0^2} \right]^{\frac{1}{\gamma-1}} \\
+%    p &= p_0 \lr{\rho/\rho_0}^{\gamma} = p_0\left[1-\half(\gamma-1)\frac{v^2}{c_0^2} \right]^{\frac{\gamma}{\gamma-1}}
+%  }
+%}
+%or, equivilently, the velocity is
+%\eqa{
+%  v^2 = \frac{2\gamma}{\gamma-1}\frac{p_0}{\rho_0}\left[1-\left(\frac{\rho}{\rho_0}\right)^{\gamma-1}\right]
+%}
+
+%Taking the limit as $\gamma\rightarrow 1$ we find
+%\sub{
+%  \eqa{
+%    T &\rightarrow T_0  \\
+%    \rho  &\rightarrow  \rho_0 e^{-\frac{v^2}{2c^2}} \\
+%    p &\rightarrow p_0  e^{-\frac{v^2}{2c^2}} \\
+%    v^2 &\rightarrow -2 c^2  \ln \frac{\rho}{\rho_0} 
+%    }
+%  }
+%where we have used $c^2 = \frac{p_0}{\rho_0}xs$.
+
+The non-constancy of the speed of sound in \eqnref{} is clearly a problem.
+To make this problem go away we could, naively, just let $\gamma \rightarrow 1$.
+In doing so, we are modifying the equation of state so that $p = \rho$.
+Such  a fluid has a constant sound speed and, from \eqnref{}, is incompressible.
+
+Physically, the rationale for this approach is as follows.
+We argue that the underlying physics is independant of the system of measurement.
+We keep thermodynamic arguments,
+the invarience and conservation arguments that lead to the Euler and continuity equations.
+We argue, instead that it is the details of the medium measured that get lost
+due to the forced constraints of acoustical measurement.
+The ability to detect compressibilty in the medium,
+through its influence on the speed of sound,
+being a case in point.
+
+The approach is not without problems.
+The actual predicited speed of sound,
+when $\gamma \rightarrow 1$ is not correct.
+However, since the speed of sound is
+already put into the model by hand,
+this does not cause to much anxiety.
+
+
+To finish,
+we complete the relation to \secref{}.
+Picking up the argument from \eqnref{}
+we write the pertuabive term - which is exact for the acoustic model -
+as
+\eqa{
+  \rho \rightarrow  \rho_0\left[1-\half(\gamma-1)\frac{v^2}{c_0^2} \right]^{\frac{1}{\gamma-1}} \\
+    p &= p_0 \lr{\rho/\rho_0}^{\gamma} = p_0\left[1-\half(\gamma-1)\frac{v^2}{c_0^2} \right]^{\frac{\gamma}{\gamma-1}}
+}
+
 
 And herein lies the problem.
 Distances are defined in ultrasound assuming that the speed of sound is everywhere constant.
@@ -307,9 +485,6 @@ Comment that $c = c_0$, and further assume that fluid starts out everywhere the 
 so that incompressibility of flow implies $\rho = \rho_0$,
 and that 
 }
-
-\section{A Lorentzian {\em fluid} with constant sound speed}\label{sec:int:EM}
-
 
 
 \section{Acoustics when the measurements are made with ultrasound}\label{sec:Maxwell}
@@ -648,7 +823,7 @@ and Equation~\eqnref{NRcontinuity} is the continuity equation of an incompressib
 %The difference between  equation~\ref{eqn:NRcontinuity}
 %and the Galilean form is that the mass density, $\rho$, in the Galilean form is
 %replaced by the mass-scaled total enthalpy density, $\phi$. 
-%Replacing the mass with an energy is typical of Lorentz invariant theories.
+%Resplacing the mass with an energy is typical of Lorentz invariant theories.
 
 With  the  continuity and Euler equation that are valid for acoustic measurements now available,
 we may  apply them to the  conventional formulations of acoustics.
