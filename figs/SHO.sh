@@ -1,7 +1,7 @@
 gnuplot<<EOF
 
 set term epslatex  colour solid
-set output "c4_SHO.tex"
+set output "c4_SHO_corr.tex"
 set size 0.7
 visc = 1e-3
 st = 0.07280
@@ -26,11 +26,11 @@ set ytics add (-0.18,  -0.63)
 #set y2tics add (-0.38)
 set yrange [-2*pi:0]
 set key bottom left 
-set xrange[0.25:50]
+set xrange[0.25:120]
 set logscale x
-set samples 100000
-set xlabel "frequency (MHz)"
-set ylabel "\$\\\phi_{b}\$-\$\\\phi_d\$" 6,0
+set samples 1000000
+set xlabel "imaging frequency (MHz)"
+set ylabel "\$\\\phi_{b}\$-\$\\\phi_d\$" 
 plot beta(rad0,x)<0 ? beta(rad0,x): beta(rad0,x)-2*pi title "100nm", \
 beta(rad1,x)<0 ? beta(rad1,x): beta(rad1,x)-2*pi t "300nm", \
  beta(rad2,x)<0 ? beta(rad2,x): beta(rad2,x)-2*pi t "1000nm"
@@ -39,4 +39,4 @@ beta(rad1,x)<0 ? beta(rad1,x): beta(rad1,x)-2*pi t "300nm", \
 set term pop
 
 EOF
-epstopdf ./c4_SHO.eps
+epstopdf ./c4_SHO_corr.eps

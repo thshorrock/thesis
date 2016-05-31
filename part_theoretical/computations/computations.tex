@@ -417,11 +417,11 @@ The proposition that the imaging wave samples a particular $\phib$ becomes  true
 
 \begin{figure}
   \centering
-  \input{figs/c4_SHO.tex}
+  \input{figs/c4_SHO_corr.tex}
   \caption{The difference between $\phib$ and $\phid$ with respect to frequency for bubbles of different radii.}
   \label{fig:DeltaPhi}
 \end{figure}
-
+\todo{Extend \figref{DeltaPhi} to show 100nm bubble resonance}
 When the bubble responds linearly to the driving pressure 
 the relationship between the phase of the driving wave and the phase of the bubble can be determined analytically.
 By linearising the acoustically-measured-Keller-Miksis equation (equation \eqnref{RKM} on page~\pageref{eqn:RKM})
@@ -1665,20 +1665,20 @@ irrespective of the samples depth within the projection.
       \begin{narrow}{0cm}{-1cm}
         \subfloat[]{
      \label{fig:projection:dr_fr}
-     \input{figs/c4_project_dr_fr.tex}} 
+     \input{figs/c4_project_dr_fr_corr.tex}} 
   \subfloat[]{
     \label{fig:projection:im_fr}
-    \input{figs/c4_project_im_fr.tex}}
+    \input{figs/c4_project_im_fr_corr.tex}}
   \end{narrow}
   \begin{narrow}{-1cm}{-1cm}
 \subfloat[]{
      \label{fig:projection:dr_amp}
-     \input{figs/c4_project_dr_amp.tex}}
+     \input{figs/c4_project_dr_amp_corr.tex}}
 \subfloat[]{
      \label{fig:projection:im_amp}
-     \input{figs/c4_project_im_amp.tex}}
+     \input{figs/c4_project_im_amp_corr.tex}}
  \end{narrow}
- \caption{Projections of the data from the whole of parameter space.
+ \caption{Projections of the excess scattering from a \unit{100}\nano\metre bubble from the whole of parameter space.
       The data is ordered so that higher values of $\excessI$ are drawn above lower values.
    }
      \label{fig:projections}
@@ -1686,7 +1686,7 @@ irrespective of the samples depth within the projection.
  \end{center}
   \end{minipage}
  \end{figure}
-
+\todo{Include in the caption of \figref{projections} the size of the bubble and the units of the colour}
 The first thing to notice from  \figref{projections} are the values of the excess scattering cross section.
 For many of the samples they are huge,
 which in line with \secref{phase_amp} we interpret as implying the occurrence of phantom bubbles appear in the image.
@@ -1703,7 +1703,7 @@ The phase dependence of the driving frequency, driving pressure, and imaging pre
 no unexpected hot-spots.
 The only unexpected result is that excess scattering cross section was high for the `low' frequency of \unit{18}\mega\hertz\ (\figref{projection:im_fr}).
 From \figref{DeltaPhi} we do not expect the resonance to below \unit{40}\mega\hertz.
-From \figref{projection:im_amp} we see that such points occur only at high imaging pressures.
+From \figref{projection:im_amp} \todo{Should refer to fig 13 (no fig 14 d exists)} we see that such points occur only at high imaging pressures.
 One interpretation for \subref{fig:projection:im_fr} is that at these high pressures the bubble responds non-linearly to the imaging wave
 and perturbs the bubble out of orbit - resulting in the phantom bubbles seen in \figref{projections}.
 
@@ -1722,19 +1722,19 @@ and perturbs the bubble out of orbit - resulting in the phantom bubbles seen in 
       \begin{narrow}{0cm}{-1cm}
         \subfloat[]{
      \label{fig:projection_short:dr_fr}
-     \input{figs/c4_project_dr_fr_short.tex}} 
+     \input{figs/c4_project_dr_fr_short_corr.tex}} 
   \subfloat[]{
     \label{fig:projection_short:im_fr}
-    \input{figs/c4_project_im_fr_short.tex}}
+    \input{figs/c4_project_im_fr_short_corr.tex}}
   \end{narrow}
   \begin{narrow}{-1cm}{-1cm}
 \subfloat[]{
      \label{fig:projection_short:dr_amp}
-     \input{figs/c4_project_dr_amp_short.tex}}
+     \input{figs/c4_project_dr_amp_short_corr.tex}}
 %\subfloat[]{
  %    \label{fig:projection:im_amp}
  %    \input{figs/c4_project_im_amp_short.tex}}
-    \caption{Projections of the data from the whole of parameter space.
+    \caption{Projections of the excess scattering from a \unit{100}\nano\metre bubble when the imaging pressure is fixed at \unit{0.5}\mega\pascal.
       The data is ordered so that higher values of $\excessI$ are drawn above lower values.
    }
    \label{fig:projections_short}
@@ -1755,6 +1755,10 @@ The main difference between \figref{projections_short} and \figref{projections}
 is in the frequency response to the imaging wave.
 In \figref{projection_short:dr_amp} the scattering increases with frequency 
 as expected for a bubble with such a high resonance frequency.
+\todo{Compare with figure 3}
+Comparing with the linear model - plotted in \figref{DeltaPhi} - 
+we see that while the predicted phase change for a \unit{100}\nano\metre\ is close to \unit{80}\mega\hertz, 
+we do see the change beginning at the \unit{40}\mega\hertz\ seen in \figref{projection_short:dr_amp}. 
 
 The  driving frequency, driving pressure, and imaging pressure all increase when the bubble is expanded,
 which repeats the result from \figref{phase_radial} for a \unit{100}\nano\metre\ bubble.

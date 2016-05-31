@@ -121,10 +121,10 @@ and assumed to remain at the origin.
 From the spherical symmetry of the model only radial components of the velocity need to be considered. 
 
 Keller and Miksis retain perturbations in density only up to first order, from which it follows that variations in the sound speed, $c$, are neglected
-and that the velocity potential obeys the linear wave equation,
+and that the velocity potential obeys the linear wave equation\todo{Fix: \eqnref{WaveEqn} not of correct form},
 \begin{align}
 \label{eqn:WaveEqn}
-\lr{\dr^2 - \frac{1}{c^2}\frac{\d^2}{\d t^2}} \psi = 0.
+\lr{\frac{\d^2}{\d r^2} + \frac{2}{r}\frac{\d}{\d r} - \frac{1}{c^2}\frac{\d^2}{\d t^2}} \psi = 0.
 \end{align}
 The notation $\dr \equiv\frac{\d}{\d r}$ is used to denote the radial derivative
 while both  $\dt \equiv \frac{\d}{\d t}$ and the over dot notation will be employed to denote the differential with respect to time.
@@ -192,7 +192,7 @@ The symbol $u$ has been used to avoid confusion with the radial component, $v$, 
 
 %
 %in order for the resulting equations to be consistent with the way ultrasound assigns spatio-temporal locations to echo sources.
-The temporal and spatial projections of \eqnref{RelVPot} in the laboratory frame are
+The spatial and temporal projections of \eqnref{RelVPot} in the laboratory frame are
 \sub{
 \begin{align}
 \dr \psi &= \frac{\gamma w v}{nc} \equiv \frac{\phi v}{c} \label{eqn:VelocityPot}
@@ -473,7 +473,7 @@ The gas within the bubble may be modelled with a polytropic exponent, $\kappa$.
 The pressure within the bubble is then $p_e \lr{\frac{a}{a_e}}^{-3\kappa}$ where $p_e$ is the pressure of the gas within the bubble at equilibrium,
 and $a_e$ is the radius of the bubble at equilibrium\cite{Hoff2001}.
 The contribution of the vapour pressure has been neglected for simplicity.
-Within the bubble pressure exceeds the pressure of the fluid at the surface, $p(a,t)$, due to the contributions of the surface tension, $\sigma$.
+Within the bubble the pressure exceeds the pressure of the fluid at the surface, $p(a,t)$, due to the contributions of the surface tension, $\sigma$.
 The pressure boundary condition is then
 \begin{align}
   p_b(a) = p_e \lr{\frac{a}{a_e}}^{-3\kappa} - 2\frac{\sigma}{a}. 

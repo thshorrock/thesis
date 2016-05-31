@@ -1,6 +1,6 @@
 
-set term epslatex
-set output "c4_SHO.tex"
+set term epslatex color solid
+set output "c4_SHO_corr.tex"
 set size 0.7
 visc = 1e-3
 st = 0.07280
@@ -16,6 +16,12 @@ wr(r)   =  sqrt((1.0/(rho*r))* (3.0*kappa*pe(r) - 2.0* st / r)/m(r))
 
 beta(r,w) = atan( lambda(r) * wr(r)/ ((w*2*pi*1e6)**2 - wr(r)**2))
 
+
+set ylabel "\$\\phi_b - \\phi_d\$"
+
+set xlabel "imaging frequency (\$\\mega\\hertz\$)"
+
+
 rad0 = 100e-9
 rad1 = 300e-9
 rad2 = 1e-6
@@ -25,7 +31,7 @@ set ytics add (-0.18,  -0.63)
 #set y2tics add (-0.38)
 set yrange [-2*pi:0]
 set key bottom left 
-set xrange[0.25:50]
+set xrange[0.25:120]
 set logscale x
 set samples 100000
 plot beta(rad0,x)<0 ? beta(rad0,x): beta(rad0,x)-2*pi title "100nm", \
@@ -34,4 +40,4 @@ beta(rad1,x)<0 ? beta(rad1,x): beta(rad1,x)-2*pi t "300nm", \
 
  set output
 set term pop
-epstopdf ./c4_SHO.eps
+epstopdf ./c4_SHO_corr.eps

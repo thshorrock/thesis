@@ -63,7 +63,7 @@ This can be found from  \eqnref{fullJointDist} by splitting the joint distributi
 \end{align}
 from which it follows that 
 \begin{align}
-   P\lr{\vw|\vx,\H} =  \frac{P\lr{\vw|\vw,\H} P\lr{\vw|\H}}{P\lr{\vx|\H}}.
+   P\lr{\vw|\vx,\H} =  \frac{P\lr{\vx|\vw,\H} P\lr{\vw|\H}}{P\lr{\vx|\H}}.
   \label{eqn:BayesTheorem}
 \end{align}
 Equation \Eqnref{BayesTheorem} is Bayes Theorem.
@@ -132,6 +132,7 @@ For a more detailed discussion of model comparison and Occan's razor see \cite{M
 
 To evaluate the evidence the numerator in equation \eqnref{BayesTheorem} must be integrated over the entire parameter space,
 \begin{align}
+  \label{eqn:BEvidence}
   P\lr{\vx|\H} = \int_\vw d\vw P\lr{\vw|\vw,\H} P\lr{\vw|\H}
 \end{align}
 In general this cannot be done analytically.
@@ -155,7 +156,7 @@ The right-hand-side of equation \eqnref{BayesTheorem}  is therefore approximated
 \end{align}
 for which the normalisation constant, the evidence, is 
 \begin{align}
-   P^\ast(\vx_0) \sqrt{\frac{\lr{2\pi}^K}{\det \vA}}
+   P^\ast(\vx_0)= \sqrt{\frac{\lr{2\pi}^K}{\det \vA}}
 \end{align}
 
 \section{The excess pressure}\label{sec:exp:EP}
@@ -762,7 +763,7 @@ To check results of \figref{exp:1st:av:time:comp:control:cross} we repeat the an
 for when the imaging wave is coincident with the second driving wave.
 The results should be qualitatively similar, although there could be 
 differences in detail due to the different bubble environments that
-exist between the first and second pulse (as is reflected in \figref{exp:control:av:time}.
+exist between the first and second pulse (as is reflected in \figref{exp:control:av:time}).
 
 % it was found that the characteristic of the first and second pulses was different,
 %and this was interpreted as being due to slightly different populations of bubbles existing for the first and second driving waves.
@@ -995,12 +996,12 @@ indicate the presence of a high frequency excess pressure.
   \centering
  \quad
   \subfloat[The first pulse when the imaging transducer is on,
-  subtracted from the first pulse when the imaging  wave is not on - \unit{150}\micro\second]{
+  subtracted from the first pulse when the imaging  wave  is in receive only mode - \unit{150}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_meansSub3_large_cross_full.tex}}\\
 \quad
   \subfloat[The second pulse when the imaging transducer is on,
-  subtracted from the second pulse when the imaging pulse wave is not on - \unit{250}\micro\second]{
+  subtracted from the second pulse when the imaging wave is in receive only mode - \unit{250}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_2nd_av_with_sd_meansSub3_large_cross_full.tex}}
 \caption{
@@ -1020,7 +1021,7 @@ re-plotted adjacent to each other in \figref{exp:av:time:comp:control:cross:full
   \centering
  \quad
   \subfloat[The second pulse when the imaging transducer is off,
-  subtracted from the first pulse when the imaging  wave is not on - \unit{150}\micro\second]{
+  subtracted from the first pulse when the imaging  wave  is in receive only mode - \unit{150}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_1st_av_with_sd_meansSub3_large_cross_full_null.tex}}\\
 % \quad
@@ -1029,7 +1030,7 @@ re-plotted adjacent to each other in \figref{exp:av:time:comp:control:cross:full
 %     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_250/imaging_1st_av_with_sd/voltage_0_108_gap_between_pulses_250_imaging_1st_av_with_sd_meansSub3_large_cross_full_null.tex}}\\
  \quad
   \subfloat[The second pulse when the imaging transducer is off,
-  subtracted from the first pulse when the imaging  wave is not on - \unit{150}\micro\second]{
+  subtracted from the first pulse when the imaging  wave is  is in receive only mode - \unit{150}\micro\second]{
     \label{fig:exp:2nd:av:time:150:comp:control:cross:full}
     \input{figs/water_cav_results/voltage_0.108/gap_between_pulses_150/imaging_2nd_av_with_sd/voltage_0_108_gap_between_pulses_150_imaging_2nd_av_with_sd_meansSub3_large_cross_full_null.tex}}\\
 % \quad

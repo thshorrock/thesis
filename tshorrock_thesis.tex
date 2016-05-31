@@ -12,12 +12,14 @@
 \usepackage{epstopdf}
 \usepackage{emp,ifpdf}
 
-%\usepackage[none]{hyphenat}
+\usepackage[none]{hyphenat}
 
-%\usepackage[T1]{fontenc}
-%\usepackage{textcomp}
-%\usepackage[minionint,mathlf]{MinionPro}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[minionint,mathlf]{MinionPro}
 
+\usepackage{soul}
+%\renewcommand{\hl}{}
 
 %\usepackage[charter]{mathdesign}%incompatable with minion pro
 
@@ -59,34 +61,34 @@
 \newcommand{\thesis}{thesis}
 
 \includeonly{
-%misc/title,
-%misc/toc,
+misc/title,
+misc/toc,
 %%misc/figure_list,
 %%misc/table_list,
-%misc/decl,
-%misc/abstract,
-%misc/dedication,
-%misc/preface,
-%part_intro/part_intro,
-%part_intro/introduction/introduction,
+misc/decl,
+misc/abstract,
+misc/dedication,
+misc/preface,
+part_intro/part_intro,
+part_intro/introduction/introduction,
 part_theoretical/part_theory,
-%part_theoretical/nucleation/nucleation,
+part_theoretical/nucleation/nucleation,
 part_theoretical/observables/observables,
 part_theoretical/medium/medium,
 %part_theoretical/measurement-discussion/discussion,
 %part_theoretical/acoustic_relativity/acoustic_relativity,
-%part_theoretical/measurement/measurement,
+part_theoretical/measurement/measurement,
 %%part_theoretical/bubble_interactions/bubble_interactions,
-%part_theoretical/computations/computations,
-%part_experimental/part_experimental,
-%part_experimental/rationale/rationale,
-%part_experimental/DPR500_protocol/DPR500_protocol,
-%part_experimental/characterisation/characterisation,
-%part_discussion/part_discussion,
-%part_discussion/discussion/discussion,
-%part_appendix/part_appendix,
-%part_appendix/tensor_derivation,
-%part_appendix/nucleation_classical_appendix,
+part_theoretical/computations/computations,
+part_experimental/part_experimental,
+part_experimental/rationale/rationale,
+part_experimental/DPR500_protocol/DPR500_protocol,
+part_experimental/characterisation/characterisation,
+part_discussion/part_discussion,
+part_discussion/discussion/discussion,
+part_appendix/part_appendix,
+part_appendix/tensor_derivation,
+part_appendix/nucleation_classical_appendix,
 %%
 %part_appendix/nucleation_DFT_appendix
 %
@@ -221,7 +223,7 @@ part_theoretical/medium/medium,
 \include{part_theoretical/observables/observables}
 \include{part_theoretical/medium/medium}
 %\include{part_theoretical/measurement-discussion/discussion}
-\include{part_theoretical/acoustic_relativity/acoustic_relativity}
+%\include{part_theoretical/acoustic_relativity/acoustic_relativity}
 \include{part_theoretical/measurement/measurement}
 \include{part_theoretical/computations/computations}
 %\include{mechanisms}

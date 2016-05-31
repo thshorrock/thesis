@@ -88,13 +88,18 @@ health risks associated with the contrast agent,
 or cost.
 Ultrasound offers real-time imaging with millimetre precision
 in a safe, cost-effective and relatively uninvasive procedure.
-Its lack of functional imaging is a real loss.
+\hl{The lack of a contrast agent that is able to target a wide range of tissue types is a real loss}\todo{not true due to Doppler measuring blood flow - revise}.
+%Its lack of functional imaging is a real loss.
 
-There is a second problem that is caused by the lack of submicron bubbles.
-To attain good contrast the frequency of the ultrasound pulse should match
-the resonance frequency of the bubbles.
-This increases as the bubbles get smaller\cite{Zheng2006}.
-The lack of submicron bubbles means that there is no adequate contrast agent at the micron-scale resolutions attainable by high-frequency ultrasound imaging (20-\unit{100}\mega\hertz).
+There is a second problem that is caused by the lack of submicron bubbles.\todo{The disadvantage of imaging with high-frequency should be clarified}
+\hl{Contrast enhancement techniques such as pulse inversion rely on the strongly nonlinear 
+acoustic response of bubbles at resonance{\cite{Shen2005}}.
+The difference between the response from an inverted pulse and its original is greater for resonant bubbles than is the case for most tissue types.
+Subtracting the response of an inverted pulse from its original therefore enhances contrast.}
+%To attain good contrast the frequency of the ultrasound pulse should match
+%the resonance frequency of the bubbles.
+The resonance frequency of a bubble increases as the bubbles get smaller\cite{Zheng2006}.
+\hl{The lack of submicron bubbles means that methods are limited for obtaining adequate contrast agent at the micron-scale resolutions attainable at high-frequencies (20-{\unit{100}\mega\hertz}).}
 
 %one that is able to image tissue beyond the blood and vasculature.
 %that is capable of leaving the blood.
@@ -123,7 +128,6 @@ can be extended by ensuring that the bubble is imaged
 when it has been transitively shrunk by the driving wave.
 %timing the imaging wave to be incident upon the bubble
 %at such time when the bubble has been shrunk by the driving wave.
-
 
 
 Two broad approaches to acoustically generate a microbubble will be considered:
@@ -312,7 +316,7 @@ The two mechanisms are analysed by asking the following questions,
 }
 The motivation for the first question is the possibility 
 of selecting a driving pressure that evacuates bubbles only in a narrow band of sizes.
-The driving wave could be then further be used to tune that size for a given imaging wave.
+The driving wave could then further be used to tune that size for a given imaging wave.
 The second question relies on the possibility of manufacturing oil droplets
 within a narrow size distribution, 
 so that their resulting bubbles are sufficiently similar in size 
@@ -413,27 +417,33 @@ Ultrasound, by nature of its pulse-echo technique,
 uses the speed of sound to define the spatio-temporal locations of entities in the world.
 Since it is impossible to use pulse-echo to measure an entity that is moving away at faster than the speed of sound,
 the sound speed is a limiting velocity.
-If translational invariance is also assumed,  then acoustical measurements are  invariant to the Lorentz group.
-Ultrasound measurement must,
-therefore, 
-abide by this relativity that is
-defined in terms of the speed of sound rather than the speed of light.
-This theory is described in \chapref{acousticSR}.
+If translational invariance is also assumed,  then acoustical measurements are  invariant to the Lorentz group. \todo{EM analogy is not proved}
+%Ultrasound measurement must,
+%therefore, 
+%abide by this relativity that is
+%defined in terms of the speed of sound rather than the speed of light.
+\hl{The consequence is that what is measured by ultrasound differs from what actually occurs in the medium.
+It is therefore necessary to carefully consider what is observable in an ultrasound experiment.
+This is done in chapter~{\ref{ch:observables}}.
+To go further and model the outcome of an ultrasound experiment requires that the underlying interactions between measured entities be framed in terms of the acoustic observables.
+This is done in chapter~{\ref{ch:medium}} by considering various models for a fluid that is measured by ultrasound.
+}
+%This theory is described in \chapref{acousticSR}.
 
-There are a number of consequences to introducing an acoustic theory of relativity.
-Firstly, purely relativistic theories such as electromagnetism must also have an acoustic analogue.
-This is confirmed in \chapref{acousticSR} where the full analogue is derived.
-%However, since to the authors knowledge this is the first time that this important analogy 
-%has been given in its complete form, a small chapter is devoted to its discussion.
-%This is done in \chapref{interactions}, where a Lorentz type force law for turbulent acoustic sources is also derived.
-The result is that the spacetime vorticity takes the role of the field tensor,
-the spatial vorticity takes the role of the magnetic field and the Coriolis acceleration takes the role of the electric field.
-These analogies have been suggested before\cite{Marmanis2000,Sridhar1998,Garrido1982} but 
-to the author's knowledge this is the first time that their significance to ultrasound has been recognised.
-% full wave equations have been obtained. 
-%\Chapref{interactions} completes them.
+%There are a number of consequences to introducing an acoustic theory of relativity.
+%Firstly, purely relativistic theories such as electromagnetism must also have an acoustic analogue.
+%This is confirmed in \chapref{acousticSR} where the full analogue is derived.
+%%However, since to the authors knowledge this is the first time that this important analogy 
+%%has been given in its complete form, a small chapter is devoted to its discussion.
+%%This is done in \chapref{interactions}, where a Lorentz type force law for turbulent acoustic sources is also derived.
+%The result is that the spacetime vorticity takes the role of the field tensor,
+%the spatial vorticity takes the role of the magnetic field and the Coriolis acceleration takes the role of the electric field.
+%These analogies have been suggested before\cite{Marmanis2000,Sridhar1998,Garrido1982} but 
+%to the author's knowledge this is the first time that their significance to ultrasound has been recognised.
+%% full wave equations have been obtained. 
+%%\Chapref{interactions} completes them.
 
-\Chapref{measurement} applies this acoustical theory of relativity by deriving how the pulsations of a bubble appear when imaged with ultrasound.
+\Chapref{measurement} applies the acoustical model by deriving how the pulsations of a bubble appear when imaged with ultrasound.
 This is achieved by deriving a  Lorentz invariant version of the Keller-Miksis equation,
 with the 
 %This describes how the rapid bubble collapse is measured acoustically.
@@ -453,7 +463,7 @@ differences to the original equation being explored.
 %However, this simplicity makes clear what changes by demanding that the predicted pulsations be consistent with the ultrasound measurement process.
 %Furthermore,
 The Lorentz invariant Keller-Miksis equation is the model that is required 
-to analyse the driving wave's influence on a bubbles high frequency scattering.
+to analyse the driving wave's influence on a bubbles high frequency scattering, as it is imaged by ultrasound.
 %this simple model is sufficient for our purpose of investigating the influence of the driving wave on the scatting
 %of the imaging pulse in \chapref{mechanisms}.
 
@@ -534,7 +544,7 @@ to analyse the driving wave's influence on a bubbles high frequency scattering.
 Experiments to generate a bubble from  motes are carried out.
 %and the influence of the driving wave on the imaging pulse 
 %is evaluated for both M-mode and B-mode imaging.
-\Chapref{rationale} gives the scope and rationale of the experimental design.
+\Chapref{rationale} \todo{Check these chapter numbers are correct}gives the scope and rationale of the experimental design.
 Tap water is chosen as a convenient source of motes,
 and the protocol for the characterising the motes is detailed.
 %This protocol builds upon the results of the nucleation study of \chapref{nucleation}.
@@ -577,6 +587,34 @@ and proposes possible future research directions.
 
 
 \section{Comparison to other studies}
+
+\todo{Take the first opportunity to clarify the key differences of the dual-frequency approach here with the literature}
+\hl{The two wave, two frequency technique used in this thesis bares similarity to {\sc{Surf}} imaging that is already described in the literature{\cite{Hanson2009}}.
+  In  {\sc{Surf}} imaging a low frequency \emph{manipulation} pulse is emitted with a high frequency imaging pulse.
+  The manipulation pulse varies the local environment of the imaging wave - the local speed of sound, the volume of any entrapped gas -
+  so that the echo from the imaging wave becomes a function of local thermodynamics of the medium.
+  The local thermodynamics are explored by altering whether the imaging wave is emitted in a compression or rarefaction phase of the manipulating wave.}
+
+  %The actual imaging technique used in {\sc{Surf}} imaging is pulse inversion.  
+\hl{For the purpose of imaging two pulses are used.
+  Each pulse combines the manipulation and imaging wave, but the phase between the two components is altered.
+  %are subtracted from each other.
+  %The two pulses differ in the phase between the driving and imaging waves.
+  To form an image, the high frequency components of the two waves are subtracted from each other.
+  Therefore, the {\sc{Surf}} technique images the cumulative difference in the response of the medium to the manipulation wave.
+  The technique is  sensitive to media (such as a bubbly medium) for which the acoustic response is strongly dependant on the local pressure.}
+  
+\hl{The two wave technique used here differs from {\sc{Surf}}  in this final imaging step.
+  The purpose here is to generate and manipulate a bubble so that it is transitively in its optimal state for imaging with the high frequency wave.  
+  The purpose of {\sc{Surf}} is to maximise the difference between two pulses with different relative phases.
+  There are important differences between these goals.
+  For instance, it is found in chapter~{\ref{ch:mechanisms}} that the acoustic response is very sensitive to the phase of the imaging wave when the bubble is resonating with the manipulation wave.
+  We would therefore expect {\sc{Surf}} imaging to give good contrast when the manipulation wave and bubble size are chosen to maximise this low frequency resonance.
+  However, for the purpose of this thesis, using the driving wave in this way misses the point.
+  We want to explore the possibility of altering the bubbles size so that its high frequency scatter is \emph{increased}, not just altered.
+  The demonstration of how the driving wave may be used to aid the high frequency scatter is where the novelty in technique lies.
+}
+
 
 The goal of extending ultrasound contrast imaging beyond the blood is shared by a number of groups,
 and recently research has concentrated on the acoustic vapourisation of perfluorocarbon droplets\cite{Burns2010,Rapoport2007,Fabiilli2010,Giesecke2003,Couture2006,Sheeran2013,Doinikov2014,Shpak2013,Lin2013}.

@@ -526,6 +526,10 @@ of bubbles oscillating due the driving wave.
 This prompts some changes in experimental design that are discussed in \secref{exp:finalDesign}.
 %that bubbles could be freed from the motes within tap water and detected with a higher frequency wave.
 
+\todo{Comment on the tap water storage before the experiment}
+In all cases the water used in this study was left covered for 6 weeks to equilibrate.
+This was to avoid the temporary and unstable aeration of water caused when poured.
+
 
 \subsection{Preliminary study: The generation and detection of bubbles in dirty water}\label{sec:exp:prelim}
 
@@ -546,6 +550,12 @@ This is approximately the size of bubble  that we ultimately wish to image.
 \item Both transducers are  focussed.  Firstly, this results in an imaging volume that is well located.
 Secondly, higher driving and imaging pressures can be obtained at the focus than would be possible if the transducers were flat.
 A plot of the focal widths is provided in \figref{exp:profiles}.  
+\todo{Discuss extrapolation error}
+If the pressures are not too high then the relation between the voltage supplied to the transducer and the pressure of the focus can be inferred
+from such plots by assuming the relation is linear.
+However, at the pressures used in this thesis, 
+the acoustic saturation\cite{Karzova2012} of the medium breaks the linearity between supplied voltage and pressure and so such extrapolation is not done here.
+
 \item The \unit{20}\mega\hertz\ transducer was a spare taken from a  Cortex Skin Scanner.
 %that had been customised to obtain the radio-frequency output.
   The transducer can therefore be fixed to obtain M-mode images,
@@ -777,6 +787,7 @@ The lower plot is the same sample but when just the imaging wave is on.
 
 In the top plot of \figref{water_cavitation_70} one can see banded specks that coincide  with the passing  driving wave.  
 The temporal interval between the bands is consistent with the frequency of the driving wave.
+\todo{Add spatial scales to \figref{water_cavitation_prelim} and confirm wavelength}
 %These are cavitation signals - you cannot make out the direct transmit in the image.
 These signals are not present when the driving wave is off. % indicating that the signals are short lived (i.e. less than a few milliseconds - the time between adjacent A-lines).
 
@@ -858,7 +869,7 @@ and  \Figref{water_cavitation_85}.
   due to the greater pressures that exist there, 
   but \figref{exp:Dprofile} shows that the fall off in axial pressures is quite gradual.
   The excess pressure technique cannot be applied in this experiment to help determine the location of the bubble.
-  This is because the because the imaging transducer is moving between adjacent alines,
+  This is because the imaging transducer is moving between adjacent alines,
   and because the imaging transducer fires for every A-line.
 
   
