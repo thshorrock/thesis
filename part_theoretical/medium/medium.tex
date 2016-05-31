@@ -487,6 +487,7 @@ we know that the value of the characteristic $R_-$ is equal to the undisturbed r
 In the undisturbed region the fluid is at rest ($u=0$) and so $R_- = 0$.
 Since the Riemann invariant is constant on the entire characteristic we have
 \eqa{
+  \label{eqn:lnRho}
   u &= \mp  c_0\ln\lr{\frac{\rho}{\rho_0}}
 }
 and the signal propagates at a speed $u + c_0$.
@@ -504,7 +505,7 @@ In this model, therefore, the sound speed is everywhere constant
 but the signal can still propagate faster than the speed of sound.
 This is due to the self advection of the fluid.
 To see this explicitly, it is useful to derive the wave equation of this fluid.
-We do so by using an argument of Howe\cite{}.
+We do so by using an argument of Howe\cite{Howe1998}.
 %
 %Both models therefore predict a non-linear propagation of the wave.
 %In the ultrasound case only the self-advection term contributes,
@@ -524,12 +525,12 @@ from which the {\em total enthalpy} is defined:
 \eqa{
   w = h + \half u^2 \label{eqn:totalEnthalpyNR}
 }
-By using \eqnref{soundSpeedDiffNR} we write the continuity equation (equation \eqnref{}) in terms of pressure
+By using \eqnref{soundSpeedDiffNR} we write the continuity equation (equation \eqnref{euclidianContinuity}) in terms of pressure
 \sub{
   \label{eqn:attemptTwo:wave:tmp}
 \eqa{
-  \frac{1}{\rho c_0}\lr{\frac{\partial p}{\partial t} + \vu \cdot \vdel p} +\vdel\cdot \vu \\
-  \intertext{and use the identy $\vu \cross (\vdel \cross \vu) \equiv \vu \cdot \vdel \vu - \vdel \half ^2$
+  \frac{1}{\rho c_0}\lr{\frac{\partial p}{\partial t} + \vu \cdot \vdel p} +\vdel\cdot \vu = 0 \\
+  \intertext{and use the identy $\vu \cross (\vdel \cross \vu) \equiv \vu \cdot \vdel \vu - \vdel \half \vu^2$
     along with \eqnref{thermoNR} and \eqnref{totalEnthalpyNR} to put the momenturm equation in Crocco's form}
   \frac{\partial\vu}{\partial t} + \vdel w = \vu \cross \lr{\vdel \cross \vu }
 }
@@ -537,7 +538,7 @@ By using \eqnref{soundSpeedDiffNR} we write the continuity equation (equation \e
 Taking the temperal derivative of the first equation of \eqnref{attemptTwo:wave:tmp} and subtracting from the spatial derivative of the second yields
 \eqa{
   \label{eqn:attemptTwo:wave:tmp:two}
-  \frac{\partial}{\partial t}\lr{\frac{1}{\rho c_0}\frac{\D p}{\D t} } - \vdel^2 w = \vdel \lr{\cdot \vu \cross \lr{\vdel \cross \vu}} 
+  \frac{\partial}{\partial t}\lr{\frac{1}{\rho c_0}\frac{\D p}{\D t} } - \vdel^2 w = \vdel \cdot \lr{ \vu \cross \lr{\vdel \cross \vu}} 
 }
 where we have used the convient notation
 \eqa{
@@ -557,12 +558,14 @@ The first term of \eqnref{attemptTwo:wave:tmp:two} can be written,
 where the second equality follows by means of the state equation, \eqnref{EuclidStart}.
 
 Equation \eqnref{attemptTwo:sub:one} can be further rearranged.
-By using equation \eqnref{thermoNR} and the momentum equation, \eqnref{}, the first term can be written
+By using equation \eqnref{thermoNR} and the momentum equation, \eqnref{euclidianNS}, the first term can be written
 \eqa{
+  \label{eqn:attemptTwo:part:a}
   \frac{1}{\rho}\frac{\partial p}{\partial t} = \frac{1}{\rho}\frac{D p}{Dt} - \frac{1}{\rho} \vu \cdot \vdel p = \frac{D w}{Dt}
 }
 while the second term becomes
 \eqa{
+  \label{eqn:attemptTwo:part:b}
  \frac{\partial \vu}{\partial t} \cdot \vdel p = -\vdel p \cdot \lr{\vdel w + \vu \cross \vdel \cross \vu}.
 }
 
@@ -571,13 +574,36 @@ while the second term becomes
 %  b \cdot \del (u\cdot \hat u) = \hat u \cdot \lr{b \cdot \del u} = \hat u \cdot \lr{\del\cdot (b \wedge u) -  b \del \cdot u }
 %  =  \hat u \cdot \lr{b\cdot (\del \wedge u) -   \del b \cdot u }
 %}
-%///
-Inserting equations \eqnref{}, \eqnref{} and \eqnref{} back into equation \eqnref{} yeilds the final answer 
+%//
+Inserting equations \eqnref{attemptTwo:part:a}, \eqnref{attemptTwo:part:b} and \eqnref{attemptTwo:sub:one} back into equation \eqnref{attemptTwo:wave:tmp:two} yeilds the final answer 
 \eqa{
-  \lr{\frac{1}{c_0^2}\frac{D^2}{Dt^2} - \frac{1}{\rho} \vdel \cdot \lr{\rho \vdel} } w = \frac{1}{\rho} \vdel\lr{\rho \vu \cross \vdel \cross \vu}. \label{eqn:attemptTwo:waveEqn}
+  \lr{\frac{1}{c_0^2}\frac{D^2}{Dt^2} - \frac{1}{\rho} \vdel \cdot \lr{\rho \vdel} } w = \frac{1}{\rho} \vdel\cdot\lr{\rho \vu \cross \lr{\vdel \cross \vu}}. \label{eqn:attemptTwo:waveEqn}
 }
 The total enthalpy therefore propergates according to a self-advecting wave equation.
 The right hand side of \eqnref{attempTwo:waveEqn}, resultant from vorticity terms in the fluid, can be considered an acoustic source.
+
+From equation~\eqnref{lnRho} we have
+\eqa{
+  \rho = \rho_0 \exp\lr{\frac{\vu\cdot \hat\vu}{c_0}}
+}
+where $\hat \vu$ denotes the unit vector in the direction of $\vu$.
+When $\vu$ is small compared to the speed of sound then $\rho \rightarrow \rho_0$
+and the differential of will tend to zero.
+
+In this regime, the the continuity equation, equation~\eqnref{euclidianContinuity}, reduces to the equation of incompressible flow
+\sub{
+  \label{eqn:attemptTwo:waveEqn:incompressible}
+  \eqa{
+  \vdel \cdot \vu  &= 0,
+  \intertext{whereas equation~\eqnref{attemptTwo:waveEqn} obeys the linear wave equation}
+   \lr{\frac{1}{c_0^2}\frac{\partial^2}{\partial t^2} - \vdel^2  } &= \vdel\cdot\lr{\vu \cross \lr{\vdel \cross \vu}}.
+}
+}
+The removal of terms small compared to the speed of sound is different to the linearisation stratgy employed in \secref{linearFluid}.
+In \secref{linearFluid} $\vu$ was considered small so the source terms that relate to the square of $\vu$ were neglected.
+Equations \eqnref{attemptTwo:waveEqn:incompressible} are rather the equations valid in the incompressible limit,
+when the speed of sound becomes very large.
+  
 
 %and the speed of sound is denoted $c_0$ and matches the speed from the linear theory.  (I.e. when perturbations are small). 
 %That is,
@@ -801,9 +827,34 @@ $u$ is the velocity vector of the spacetime path, with the parametrisation chose
 That is, the units of length and time are chosen so that velocity of sound is set to unity.
 %That is, c.g.s. units have been chosen.
 
+To find the thermodynamic constraint imposed by the constant sound speed we follow the proceedure of \secref{linearFluid}
+and consider small perturbations
+\eqa{
+  \epsilon &\rightarrow \epsilon_0 + \epsilon^\prime, \\
+  p &\rightarrow p_0 + p^\prime
+}
+
+In the absence of external fields, the equations of motion are obtained by setting the 
+ divergence of the energy momentum tensor (equation \eqnref{EMtensor}) to zero and keeping only large terms we find
+%By projecting the divergence of \eqnref{EMtesnor} along the timelike and spacelike component and keeping only large terms we find
+\eqa{
+  %  u_i \d_j T^{i j} = \half\scalefactor^2 u_i A^i \d_j A^j = 0.
+  \frac{\partial \epsilon^\prime}{\partial t} &= \lr{\epsilon+p} \vdel\cdot\vv \\
+  \frac{\epsilon+p}{c^2} \frac{\partial \vv}{\partial t} &= \vdel p^\prime
+\label{eqn:LorentzianSoundSpeed:tmp}
+}
+Eliminating $\vv$ gives
+\eqa{
+  \frac{1}{c^2} \frac{\partial^2 \epsilon^\prime}{\partial^2 t} = \vdel^2 p
+}
+from which it follows, by using the relation
+\eqa{
+  \epsilon^\prime = \frac{\partial \epsilon^\prime}{\partial t} p^\prime
+}
+that
 The speed of sound, $c$,  given at constant entropy density, $\sigma$, is\cite{LandauBook,Taub1978} 
 \begin{align}
-  c^2 = \given{\frac{\d p}{\d \epsillon}}{\sigma}. \label{eqn:soundspeed}
+   \given{\frac{\d p}{\d \epsillon}}{\sigma} = 1. \label{eqn:soundspeed}
 \end{align}
 This is the same as the non-relativistic expression except that the energy density has replaced the mass density.
 %The speed of sound equals the speed of light (unity) if 
@@ -832,7 +883,7 @@ which describes an incompressible relativistic fluid.
 %While it is not the most general solution to equation \eqnref{eosDiff},
 %we shall find it to have very interesting properties.
 Equation \eqnref{eos} was first studied by Taub\cite{Taub1978}
-and is the same as equation \eqnref{} from \secref{}.
+and is the same as equation \eqnref{EuclidStart} from \secref{incompressibleFluid}.
 \todo[inline]{comment on the surprise that this is incompressible}
 %At infinity $p^\prime = p_0$ 
 %and so $\epsilon_\infty = p_\infty = \epsilon_0 \ne p_0$.
@@ -1090,6 +1141,17 @@ In the non-relativistic limit the equations reduce to Galilean invariant forms,
 }
 Equation~\eqnref{NREuler} is the incompressible version of Euler's equation written in Croc\-co's form\cite{Howe1998}
 and Equation~\eqnref{NRcontinuity} is the continuity equation of an incompressible fluid.
+They are, as expected, the same as equations~\eqnref{attemptTwo:waveEqn:incompressible}.
+
+It is worthwhile taking the higher order perturbations of \eqnref{Rcontinuity} and \eqnref{REuler}.
+Keeping terms with value $\vv / c$ recovers equation~{attemptTwo:waveEqn} while
+\eqa{
+  a&=b \\
+  \intertext{keeping terms with value $\vv^2 / c^2$ recovers the first improvement over  equation~{attemptTwo:waveEqn},}
+  b&=c.
+}
+
+
 %The difference between  equation~\ref{eqn:NRcontinuity}
 %and the Galilean form is that the mass density, $\rho$, in the Galilean form is
 %replaced by the mass-scaled total enthalpy density, $\phi$. 
@@ -1115,15 +1177,19 @@ A wave equation for the  total enthalpy results
     \label{eqn:WavevA}
   }
 }{Waves}
-For comparison, 
-had we carried out this procedure with the Galilean invariant continuity and Euler equation (not the incompressible versions) we would have obtained\cite{Howe1998},
+Equations \eqnref{WavesREG} should be compared with \eqnref{attemptTwo:waveEqn:incompressible},
+the Galilean invariant forms taken in the same limit.
+These are reproduced here given here for convenience
+%For comparison,
+%when we carried out this procedure Galilean invariant continuity and Euler equation we obtained\cite{Howe1998},
 \subl{
   \begin{align}
-    \lrsquare{  \Dt \lr{\frac{1}{c^2} \Dt} - \frac{1}{\rho}\vdel \cdot \lr{\rho \vdel}}\lr{\tfrac{1}{2} v^2 + h} &= -\frac{1}{\rho} \vdel \cdot \lr{\rho \vv \times \lr{\vdel\times \vv}} \label{eqn:WavephiREG}\\
-    \lrsquare{  \Dt \lr{\frac{1}{c^2} \Dt} - \frac{1}{\rho}\vdel \cdot \lr{\rho \vdel}}\vv  &= \frac{1}{\rho} \vdel \times \lr{\rho \vdel \times \vv}, \label{eqn:WavevvREG}
+    \lr{ \vdel^2 - \frac{1}{c^2}\frac{\partial^2}{\partial t^2}}\lr{\tfrac{1}{2} v^2 + h} &= \vdel \cdot \lr{\vv \times \lr{\vdel\times \vv}} \label{eqn:WavephiREG}\\
+    \lr{ \vdel^2 - \frac{1}{c^2}\frac{\partial^2}{\partial t^2}}\vv  &= - \vdel \times \lr{\vdel \times \vv}, \label{eqn:WavevvREG}  %attemptTwo:waveEqn
   \end{align}
 }{WavesREG}
-where  $\Dt \equiv \dt + \vv \cdot \vdel$.\todo{fix the reference }
+%where  $\Dt \equiv \dt + \vv \cdot \vdel$.
+%\todo{fix the equation number }
 The equations of \eqnref{WavesREG} express  Lighthill's analogy in terms of enthalpy and vorticity\cite{Howe1998}.
 The left hand side of both describe a non-linear wave in homoentropic potential flow \cite{Howe1998}.
 

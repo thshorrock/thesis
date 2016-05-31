@@ -1,0 +1,33 @@
+% Written by metapost version 1.999
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmr10";
+_s("particle",_n0,1.00000,0.0000,0.0000,);
+_s("sp",_n0,1.00000,36.0039,0.0000,);
+_s("eed",_n0,1.00000,45.7452,0.0000,);
+setbounds _p to (0,-1.9372)--(60.1357,-1.9372)--
+ (60.1357,6.9185)--(0,6.9185)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmr10";
+_s("distance",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,0.0000)--(35.4781,0.0000)--
+ (35.4781,6.9185)--(0,6.9185)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmr10";
+_s("pulse",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-1.9372)--(22.1946,-1.9372)--
+ (22.1946,6.9185)--(0,6.9185)--cycle;
+_p endgroup
+mpxbreak
