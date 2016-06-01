@@ -11,17 +11,19 @@ In the ultrasound literature it is generally asserted, without comment,
 that a model that describes the propagation and scattering of sound in a medium will describe the results of an ultrasound experiment.
 That is, there is an implicit assumption that the acoustic measurement process captures the physics
 that has long been verified as correct by other means. %that is known to be correct.
-This short chapter argues against this assumption.
+This chapter argues against this assumption.
 %This short chapter argues the contrary:
 %ultrasound does in general correctly measure the physics of the medium and its scatterers.
-There are constraints on what can be measured acoustically
-and this causes what is measred to differ from what actually happens.
-To model the measurements made with ultrasound a distinct acoustic model needs to be constructed.
+Ultrasound must assume certain properties of the world in order to be able to measure anything at all.
+When these assumptions do not hold, what is measured diverges from what actually happens.
+To model the measurements made with ultrasound a distinct acoustic model must therefore be constructed:
+an operational model that deals with the quantities that are measured,
+rather than the actual, correct, values of those quantities. 
 %which will be different to the known, correct model of the medium.
 In this chapter the constraints on an acoustic model are presented,
 and in \chapref{medium} the process of constructing the model is completed.
 
-It is here only noted that the destiction between what is measured and what is true is unusual in physics.
+It is here only noted that the distinction between what is measured and what is true is unusual in physics.
 Often the two concepts are conflated,
 and there are certain strands of positivism that would insist that what is measured is by definition true.
 %A broader discussion in relation to the results of the next two chapters is deferred to \chapref{digression}.
@@ -90,7 +92,7 @@ particularly for the experiments conducted in a fluid medium that are considered
 %, ultrasound experiments conducted within a fluid medium.
 For it is well known that, in general, the speed of sound in a fluid is not constant.
 A density fluctuation induces a temperature fluctuation and this in turn induces a local change to the sound speed.
-Further, the continuity equation of mass contains a self advection term that also impacts the speed at which a signal popergates.
+Further, the continuity equation of mass contains a self advection term that also impacts the speed at which a signal propagates.
 The world as measured by ultrasound must therefore be different from the world as measured by other means.
 Acoustic measurements {\em are not correct}, 
 and we cannot claim that the physical predictions derived from, say, the Euler equation,
@@ -98,7 +100,7 @@ will be observed with ultrasound.
 Any attempt to do so leads to a logical contradiction -
 a prediction of a varying speed of sound that cannot, {\em by definition}, be measured.
 We must therefore distinguish the {\em correct} physical models of the acoustic medium,
-from a model that predicts what is {\em measured} by ultrasound. 
+from an operational model that predicts what is {\em measured} by ultrasound. 
 %The two models have a mapping between them,
 %but this mapping is not trivial.
 %When modelling the outcome of an ultrasound experiment,
@@ -108,8 +110,8 @@ from a model that predicts what is {\em measured} by ultrasound.
 %the model that has been formulated and long verified to be accurate by other means.
 %Instead,
 %to model the outcome of an ultrasound experiment -
-To test what is actually measured,
-one must depart from the true model of the medium and shoehorn into the model the incorrect assumption that the sound speed is constant.
+To predict what is measured,
+the operational model must somehow shoehorn in the incorrect assumption that the sound speed is constant.
 
 %We need to therefore distinguish the acoustic measurements displayed on the screens of our ultrasound machines
 %from what actually occurs in the subject of the experiment.
@@ -131,14 +133,14 @@ From time to time we will compare the two models -
 but we will in general refrain from attempting to compute the map between the two.
 
 We wish to construct an acoustic model that is self contained.
-When an interaction occurs between two entities measured acoustically,
-we would like to explain the interaction from the acoustic measurements.
-It should not be necessary to map to back to the correct model just before the interaction,
-predict the outcome, and then map that prediction back to the acoustic model for verification.
+When an interaction occurs between two entities that are measured acoustically,
+we would like to explain the interaction from the acoustic measurements alone.
+It should not be necessary to map the interaction to the correct model to predict the outcome, 
+and then map that prediction back to the acoustic model for verification.
 In short, we need to understand the physics of the acoustic model - the symmetries and conservation laws
 that determine how interactions play out.
 
-We make two assumptions for the measurements of ultrasound.
+We make two assumptions further assumptions for the measurements of ultrasound.
 \nlist{
 \item The measurements are invarient to translations in coordinate space.
   \item The measurements are invarient to translations in time. 
@@ -146,7 +148,11 @@ We make two assumptions for the measurements of ultrasound.
 Without these properties ultrasound would be such an unreliable modality
 that it would not be worth the effort that has been invested in it.
 As is well known by Noether's theorem,
-the stated symmetries imply that our acoustic measurements must conserve momentum and energy.
+these assumed symmetries imply that our acoustic measurements must conserve momentum and energy.
+By applying these conservation laws to interactions we can start to model the outcome of interactions,
+and we can be confident that the underlying physics of the acoustic model 
+cannot be so radically different from what is known to be correct.
+
 
 
 In this thesis the acoustic medium will be a fluid,
@@ -219,13 +225,21 @@ and so we concentrate our efforts on building an acoustic model in this domain.
 \section{How the difference between the acoustic and correct models manifests itself}
 
 The acoustic notion of distance not only assumes
-that the sound propagates at a constant speed,
-but also assumes that the propergation is indefinate.
+that sound propagates at a constant speed,
+but also assumes that the propagation is indefinite.
 There is not a maximum distance,
-calculatable from the acoustic model,
+calculable from the acoustic model,
 at which the sound ceases to propagate and the coordinate system `runs out'.
-The notion of distance therefore assumes that the sound propergatation abides by a wave equation.
+The energy in sound must propagate to infinity.
+The notion of distance therefore assumes that the sound propagation abides by a wave equation.
 The constant sound speed further demands that the wave equation be linear.
+%
+%The constancy of the speed of sound rests upon the assumption that signals propagate with a linear wave equation.
+%Since the pulse-echo definition implicitly assumes that the sound wave is linear
+It follows that the sound profile of the emitting signal is expected %- from the pulse-echo definition -
+to return in exactly the same form as it was emitted.
+%All changes in the returned sound profile are therefore ascribed to the reflecting object,
+%rather than any non-linear transformation resulting from the medium
 %As will be shown the sound speed further demands that the wave equation be linear.
 
 %Ultrasound not only assumes that the acou
@@ -278,13 +292,7 @@ The constant sound speed further demands that the wave equation be linear.
 %It cannot silently transform the signal at all.
 %In short, the notion of distance implically assumes that the signals
 %propagate with a linear wave equation.
-
-%The constancy of the speed of sound rests upon the assumption that signals propagate with a linear wave equation.
-Since the pulse-echo definition implicitly assumes that the sound wave is linear
-follows that the sound profile of the emitting signal is expected %- from the pulse-echo definition -
-to return in exactly the same form as it was emitted.
-All changes in the returned sound profile are therefore ascribed to the reflecting object,
-rather than any non-linear transformation resulting from the medium.
+%.
 
 
 %One of the consequences of the pulse-echo definition of distance is that 
@@ -298,14 +306,19 @@ rather than any non-linear transformation resulting from the medium.
      \subfloat[]{
            \label{fig:nonLinearOriginal}
            \includegraphics{ch_medium_nonlinear_pulse.0}}
+         \hfill
      \subfloat[]{
            \label{fig:nonLinearSawTooth}
            \includegraphics{ch_medium_nonlinear_echo.1}}
-      \caption{A sinusoidal pulse becomes more sawtooth-like due to self advection and a non-constant sound speed}
+      \caption{A simple plane wave becomes more sawtooth-like due to self advection and a non-constant sound speed.  
+Figure \subref{fig:nonLinearOriginal} gives the sinusoid profile of the signal emitted from the transducer.
+A disturbance in particle speed is induced with distance.
+Figure \subref{fig:nonLinearSawTooth} gives an a profile of the signal that returns some time later.
+ }
       \label{fig:nonLinear}
  \end{figure}
 
-And so here we are confrunted with description that deviates from the facts.
+And so here we are confronted with description that deviates from the facts.
 In reality the non-constant sound speed and self advection of the medium distort the echo that returns from an object.
 %
 %It is well known that in general an acoustic medium does alter a sound pulse.  
@@ -314,18 +327,23 @@ In reality the non-constant sound speed and self advection of the medium distort
 %Additionally, for a fluid medium,
 %the medium undergoes a self-advection when perturbed.
 %Both of these effects distort the sound pulse, 
-A pulse that was emitted as a sinusoid pulse is sheared and returns more like a sawtooth after travelling some way in a fluid medium.
-If we consider a simple plane wave undergoing a reflection and returning. %, such as in  \figref{nonLinearPlaneReflecter},
-The returned pulse would be transformed from the sinusoid in \figref{nonLinearOriginal} to the saw tooth in \figref{nonLinearSawTooth}.
+A simple plane wave that was emitted as a sinusoid pulse (\figref{nonLinearOriginal}) is sheared and returns more like a sawtooth (\figref{nonLinearSawTooth}) after travelling some way in a fluid medium.
+%If we consider a simple plane wave undergoing a reflection and returning. %, such as in  \figref{nonLinearPlaneReflecter},
+%A  simple plain wave would return transformed from the sinusoid in \figref{nonLinearOriginal} to the saw tooth in \figref{nonLinearSawTooth}.
 
 So how would such a pressure profile be understood from an ultrasound perspective?
 %due to the non-linear propagation of the sound pulse.
 Since ultrasound is forced to interpret the propagation as linear,
-then it follows that the returned pulse must result from a moving reflecting surface.
-Ultrasound would therefore  {\em measures} a fluctuating reflecting surface.
+%the sound profile of the emitting signal is expected %- from the pulse-echo definition -
+%to return in exactly the same form as it was emitted.
+all changes in the returned sound profile must therefore be ascribed to the reflecting object. %,
+%rather than any non-linear transformation resulting from the medium.
+%The differences 
+%then it follows that the returned pulse must result from a moving reflecting surface.
+Ultrasound  therefore  {\em measures} a fluctuating reflecting surface.
 %moving in such a way so as to cause the observed shearing in the sound pulse.
 %As seen in \figref{nonLinearPlaneReflecter}, 
-The plane must be interpreted as moving in such a way so as to cause the observed shearing in the sound pulse.
+The reflector must be interpreted as moving in such a way so as to cause the observed shearing in the sound pulse.
 
 %There is an important lesson in these observations:
 %what ultrasound {\em measures} will not in general be the same as what {\em actually occurs}.
@@ -347,33 +365,39 @@ One can then seek a mapping from what is measured to what occurred if necessary.
 %Just explaining what actually happens is not enough,
 %and the creation of a mapping may not always be possible.
 
-Unfortuneatly, there is a further problem highlighted by this example.
+Unfortunately, there is a further problem highlighted by this example.
 After a certain distance,
 the varying sound speed and self advection terms have had time to exert themselves to such an extent that the profile in
 \figref{nonLinearSawTooth} becomes a true sawtooth, with a discontinuity in the density profile of the fluid.
-Thereafter, the density profile becomes multivalued and ceases to be physical.
+Thereafter, the density profile becomes multi-valued and ceases to be physical.
 As is well known,
 this is the moment at which a shock wave forms in the fluid.
-For the acoustic observer, the discuntinuity would be understood as a the reflector moving away from the transducer at the speed of sound.
+For the acoustic observer, the discontinuity would be understood as a the reflector moving away from the transducer at the speed of sound.
 %
 %With some thought, however, it becomes clear that the acoustic model has a problem even before the formation of the shock wave.
 %If we admit the possibility of a reflector being measured as moving towards the transducer in an instance,
 %then we should also admit the converse, of a reflector measured as moving with great speed away from the transducer.
 %But this is not possible. 
 %But this, again, is contry to the pulse-echo measurement technique.
-This is a problem, because an entity that moves away from the transducer at faster than the speed of sound will never return an echo.
+This is a problem, because an entity that moves away from the transducer at the speed of sound will never return an echo,
+and is therefore unmeasurable.
 We cannot admit in our model the measurement of a surface moving at faster than the speed of sound
 without logical contradiction.
 %If follows that our analysis has already broken down long before the creation of a shock wave. 
 
 This belies a more general problem.
-How do we understand the physics as measured by ultrasound between different frames of reference.
+To calculate the interactions between entities it is often convenient to change coordinate frame
+and consider the problem as measured by an observer at rest with the interaction.
+If we are to understand the physics of our operational model then acoustic measurement is no different in this requirement.
+%
+% interactions that
+But how do we understand the physics as measured by ultrasound between different frames of reference?
 We clearly cannot freely transform to an entity moving at faster than speed of sound
-to understand how the measured physics would apear in this coordinate system,
-for the simple fact that is no measured physics in this coordinate system.
-We need to understand how velocities are measured in a given coordinate system.
-To do so, we need a method of transforming between coordinate systems so that we can formulate physics from both the perspective of
-fixed transducer, and equally from an observer that moves with the fluid.
+to understand how the measured physics would appear in this coordinate system.
+The simple fact is that there is no measured physics in this coordinate system.
+%We need to understand how velocities are measured in a given coordinate system.
+We need a method of transforming between reference frames to model the perspective of two
+observers that move with respect to one another.
 
 
 
@@ -425,7 +449,9 @@ Transformations between different frames therefore have the speed of sound as a 
 
 To understand the transformation rule that must be used when changing frames in ultrasound,
 we  recall that ultrasound assumes that distances propagate with a linear wave.
-The transformation between frames must therefore respect the symmetries of the propagating signal.
+The speed of this wave is by definition the same for all reference frames,
+and it is this common description of how sound propagates that determines how distances are measured between frames. 
+%The transformation between frames must therefore respect the symmetries of the propagating signal.
 
 
 The linear wave is described by the D'Alembert operator, which in one dimension is given as follows,
@@ -436,7 +462,7 @@ The linear wave is described by the D'Alembert operator, which in one dimension 
 \end{align}
 where $x$ is the spatial coordinate, $t$ is time, and $c$ is the speed of sound.
 
-If we have two spacio-temperal frames defined so that
+If we have a second reference frame $(x^\prime, t^\prime)$ defined in terms of the first as follows
 \sub{
 \begin{align}
   x^\prime \equiv x^\prime(x,t),\\
@@ -462,27 +488,32 @@ so that
   A^{-1}\left(\frac{\partial }{\partial x^\prime} + \frac{1}{c}\frac{\partial }{\partial t^\prime}\right).
 \end{align}
 }
-We further assume that the Gallilean tranform holds for small velocities.
-That is
+
+At small velocities 
+the details of the pulse-echo measurement process should become irrelevant,
+and the mapping between frames should reduce to the Galilean transform.
+Assuming this to be so gives,
+%We further assume that the Galilean transform holds for small velocities.
+%That is
 \sub{
-\begin{align}
   \label{eqn:gallileanLimitWave}
-  x^\prime  &= x - vt & &\textnormal{as} & & \frac{\partial x}{\partial t} \rightarrow 0
+\begin{align}
+  x^\prime  &= x - vt &&\textnormal{as} && \frac{\partial x}{\partial t} \rightarrow 0,
   \intertext{or in operator form}
-  \frac{\partial }{\partial t} &= \frac{\partial }{\partial t^\prime} - v  \frac{\partial }{\partial x^\prime} & & \textnormal{when } & & \frac{\partial }{\partial t} =  0
+  \frac{\partial }{\partial t} &= \frac{\partial }{\partial t^\prime} - v  \frac{\partial }{\partial x^\prime} & & \textnormal{when } & & \frac{\partial }{\partial t} =  0.
 \end{align}
 }
-Inserting equation \eqnref{gallileanLimitWave} into \eqnref{waveTransform} yields,
+Inserting equations \eqnref{gallileanLimitWave} into \eqnref{waveTransform} yields,
 \sub{
   \label{eqn:waveTransformationStage}
 \begin{align}
   \frac{\partial }{\partial x}   &=
   A \left(\frac{\partial }{\partial x^\prime}  - \frac{v}{c}\frac{\partial }{\partial x^\prime}\right) \\
   \frac{\partial }{\partial x}  &=
-  A^{-1}\left(\frac{\partial }{\partial x^\prime}  + \frac{v}{c}\frac{\partial }{\partial x^\prime}\right).
+  A^{-1}\left(\frac{\partial }{\partial x^\prime}  + \frac{v}{c}\frac{\partial }{\partial x^\prime}\right)
 \end{align}
 }
-Equating these equations it follows that
+and by equating these equations it follows that
 \sub{
   \label{eqn:waveTransformationFnc}
 \begin{align}
@@ -491,7 +522,7 @@ Equating these equations it follows that
 \end{align}
 }
 where $\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$.
-Inserting equation \eqnref{waveTransformationFnc} into \eqnref{waveTransform} and adding and subtracting the result gives
+Inserting equation \eqnref{waveTransformationFnc} into \eqnref{waveTransform} and adding and finally subtracting the result gives
 \sub{
 \begin{align}
 \frac{\partial }{\partial x} &= \gamma\left(\frac{\partial }{\partial x^\prime} -  \frac{v}{c^2}\frac{\partial }{\partial t^\prime}\right)\\
@@ -501,6 +532,7 @@ Inserting equation \eqnref{waveTransformationFnc} into \eqnref{waveTransform} an
 which are the well known Lorentz transforms for the derivatives.
 
 We find therefore, that the linear wave equation transforms according to the Lorentz equation, where the speed of sound plays the limiting velocity.
+The sound must be measured the same in all reference frames, and is used to define distances.
 It follows that when space and time are acoustically measured,
 the models built on top of these measurements should be also be Lorentz invariant.
 
@@ -513,21 +545,21 @@ There is a conflation between the acoustic and correct models of the fluid.
 To form a model of what is measured by ultrasound (rather than what is actually occurring)
 it is necessary to use a Lorentz invariant description of the world.
 
-\subsection{Some consiquencies of a Lorentz invarient measurement process}
+\subsection{Some  consequences of a Lorentz invarient measurement process}
 
 With the transformation between two acoustic frames of reference in hand
-we can now turn to how physical interactions would be measured differently by different acoustic observers.
+we can now turn to how physical interactions would be measured  by different acoustic observers.
 We assume that mass and momentum are conserved,
 in accord to the fundamental symmetries we demand of any measurement system,
 and consider the famous argument of Lewis and Tollman\cite{LewisTollman, PauliBook, DIvernoBook}
-that examins how mass is measured in an elastic collision between two identical balls.
-Since we have already found that the measured spatio-temporal cooridates vary with the relative speed between reference frames,
+that examines how mass is measured in an elastic collision of two identical balls.
+Since we have already found that the measured spatio-temporal coordinates vary with the relative speed between reference frames,
 we admit the possibility that the measured mass also varies with the speed of the ball.
 
 
 %We consider the elastic collision between two equal particles.
-First we consider the frame where a particle of mass $m(u)$ travelling at speed $u$ collides elastically
-with a staionary particle of mass $m(0)$, resulting in a particle of combined mass $M(U)$ travelling at speed $U$.
+First we consider the frame where the ball of mass $m(u)$ travelling at speed $u$ collides elastically
+with a stationary particle of mass $m(0)$, resulting in a particle of combined mass $M(U)$ travelling at speed $U$.
 The conservation of mass and momentum yield,
 \eqa{
   m(u) + m(0) &= M(U) \\
@@ -540,17 +572,17 @@ from which it follows that
 }
 
 In the frame where the resultant particle is at rest,
-the two particles approach eachother at speed $U$.
-The two velocities relate by the well known velocity composition law,
+the two particles approach each other at speed $U$.
+Since the two frames relate by the Lorentz transform the two velocities relate by the well known velocity composition law,
 \eqa{
   u = \frac{2U}{1 + U^2/c^2}
 }
 where $c$ is the speed of sound.
-Solving for $U$ gives
+Solving for $U$,
 \eqa{
-  U = \frac{c^2}{u}\lrsquare{1 - \sqrt{1-\frac{u^2}{c^2}}}.
+  U = \frac{c^2}{u}\lrsquare{1 - \sqrt{1-\frac{u^2}{c^2}}},
 }
-Inserting this into equation \eqnref{relMass:stepOne} gives
+and inserting into equation \eqnref{relMass:stepOne} gives
 \eqa{
   \label{eqn:relMass}
   m(u) = \frac{1}{\sqrt{1-u^2/c^2}} m(0).
@@ -558,11 +590,11 @@ Inserting this into equation \eqnref{relMass:stepOne} gives
 In ultrasound the measured mass is therefore increased above the measured rest mass
 by the Lorentz factor.
 It is to be emphasised
-that the gain in mass is in the observable of acoustic measurements.
-It is not a phenominum that has somehow been missed in other imaging modalities.
+that the gain in mass   stems from the measurement process and the assumption that momentum is conserved in the measurements.
+It is a consequence of the measurement process rather than a phenomenon that has somehow been missed in other imaging modalities.
 
 Continuing,
-we note from Newton's second law and equation~\eqnref{relMass} that the rate of work
+we note from Newton's second law and equation~\eqnref{relMass} that the acoustically measured rate of work
 when moving a particle is
 \eqa{
   \frac{dE}{dt} &= \frac{d(m\vu)}{dt} \cdot \vu = \frac{m(0)}{\lr{1-u^2/c^2}^\frac{3}{2}} u \frac{du}{dt}\\
@@ -574,7 +606,7 @@ If follows that the acoustically measured energy is
   E = mc^2 + \text{const}.
 }
 By convention, we set the arbitrary constant to zero.
-The acoustically measured energy is therefore releated to the acoustically measured mass by the speed of sound.
+The acoustically measured energy is therefore related to the acoustically measured mass by the speed of sound.
 
 
 
@@ -630,14 +662,55 @@ The acoustically measured energy is therefore releated to the acoustically measu
 \subsection{Discussion}
 
 
-It is at this point that the required constancy of the speed of sound poses some interpretation problems to the acoustic observer,
-for it is well known that the sound speed in a fluid is not in general constant.
-The sound speed is a function of the medium's thermodynamic quantities such as  density, pressure, temperature and entropy,
-and these vary throughout the fluid, not least due to the propagation of the sound wave itself.
-The equations of state that would most naturally be used to characterise a medium often imply a varying sound speed inconsistent with the measurement process.
-Conversely, quantities are measurable by ultrasound only if they belong to an equation of state that is consistent with a constant speed of sound.
-The uncomfortable conclusion is that the quantities measured with ultrasound do not in general have the same value as when they are measured with other modalities.
-In ultrasound we speak of the  {\em observable} value rather than the {\em physical} value.
+What is actually measured in an ultrasound experiment is limited
+to the pulse-echo time and the pressure profiled of the returning signal.
+From these measurements all other quantities of interest have to be derived.
+To do so,
+certain assumptions have to be made.
+Most notable is that the sound speed is everywhere constant,
+but if we hope for reproducible experiments then we must also assume conservation of energy and momentum.
+
+What is measured by ultrasound will differ from what actually occurs when these assumptions do not hold.
+In such cases, 
+we can either abandon the whole exercise and simply state that ultrasound is unreliable in these conditions
+or we can be more constructive and try to model these derived quantities. 
+This thesis takes the latter approach.
+The next step would be to find a general way of mapping the acoustic model back to what actually occurred but this is not pursued here.
+
+To model the quantities that are derived in ultrasound, 
+it is necessary to adhere to the assumptions of the measurement system.
+It is found that the pulse-echo technique, the constancy of sound speed, and the assumption of translational invariance
+imply that the models of acoustic measurement must be Lorentz invariant.
+This invariance, coupled with the assumed conservation of energy and momentum,
+imply a velocity dependent inertial mass will be measured,
+and an equivalence between the acoustically measured mass and energy.
+ 
+There are obvious parallels between what has been outlined in this chapter
+and special relativity.  
+However, it is to be emphasised that the limiting speed in ultrasound is the speed of sound, not the speed of light.
+Indeed, no reference to the speed of light has been made in our argument.
+Parallels, such that they exist, result from the broadly similar definitions of space used in ultrasound and relativistic physics -
+the pulse-echo time in the first case, radar time\cite{Dolby2001} in the latter - and the demand of both measurement systems for the same basic symmetries of time and space.
+
+
+
+
+
+
+
+
+
+
+
+
+%It is at this point that the required constancy of the speed of sound poses some interpretation problems to the acoustic observer,
+%for it is well known that the sound speed in a fluid is not in general constant.
+%The sound speed is a function of the medium's thermodynamic quantities such as  density, pressure, temperature and entropy,
+%and these vary throughout the fluid, not least due to the propagation of the sound wave itself.
+%The equations of state that would most naturally be used to characterise a medium often imply a varying sound speed inconsistent with the measurement process.
+%Conversely, quantities are measurable by ultrasound only if they belong to an equation of state that is consistent with a constant speed of sound.
+%The uncomfortable conclusion is that the quantities measured with ultrasound do not in general have the same value as when they are measured with other modalities.
+%In ultrasound we speak of the  {\em observable} value rather than the {\em physical} value.
 
 
 
@@ -716,7 +789,7 @@ In ultrasound we speak of the  {\em observable} value rather than the {\em physi
 
 
 
-%The measured locations of these perturbations will then differ from where the fluctuation actually occured.  In short, we have a contradiction - we ascribe a   valuesare measured independently from the acoustic properties of the medium, 
+%The measured locations of these perturbations will then differ from where the fluctuation actually occurred.  In short, we have a contradiction - we ascribe a   valuesare measured independently from the acoustic properties of the medium, 
 %then these properties will imply 
 
 
