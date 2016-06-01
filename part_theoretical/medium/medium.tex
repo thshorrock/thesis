@@ -10,30 +10,29 @@ Physically correct models of a fluid medium predict a non-constant signal speed 
 \item the self-advection of the medium,
 \item local perturbations in density and temperature that in turn affect the speed of sound locally.
 \end{enumerate}
-These predictions are at odds with what can be measured with ultrasound, and are therefore problematic.
-One must therefore try to find a model of what is measured with ultrasound,
-recognising from the outset the distinction of what is measured and what is physically correct.
+These predictions are at odds with what can be measured with ultrasound.
+To model the outcome of an ultrasound experiment one must recognise from the outset the distinction between what is measured and what is physically correct.
 
 Both sources of variance in the signal speed become vanishingly small if the disturbance is small.
 In this case the disturbance propagates at a fixed speed according to the linear wave equation.
 A fluid that is only perturbed slightly is therefore conformant with the requirements of acoustic measurement.
 One expects, therefore,
 that the acoustic model and the correct model converge in this limit.
-If a distubance is localised, then in the far field acoustic measurement makes correct measurements.
+If a disturbance is localised, then in the far field acoustic measurement makes correct measurements.
 
-We therefore have a starting point for our acoustic model: the linear fluid.
+We therefore have a starting point for our acoustic model.
 If we were assert that ultrasound - due to the incorrect assumption of a constant sound speed - measures linear fluids
 then we have a model for acoustic measurement that is self-consistent.
 This is a step forward over what is offered by the correct model.
 %because in contrast with the correct model of the medium
 %it enables distances within the fluid medium to be defined in a consistent manner with what is acoustically measured.
-The predictive power of the linear model is expored in this first attempt of an acoustic model in \secref{linearFluid}.
+The predictive power of the linear model is explored in this first attempt of an acoustic model in \secref{linearFluid}.
 
-Nonethelesss, defining acoustic model as the small perturbation limit of the correct model is unsatisfactory.
+Nonetheless, defining acoustic model as the small perturbation limit of the correct model is unsatisfactory.
 There is nothing within the theory that states the perturbations should be small,
-and so insisting that non-negligable perturbations should be neglected in order to keep the
-theory self-consistent feels arbitrary.
-An impovement is given in the second attempt of an acoustic model in \secref{incompressibleFluid}.
+and so insisting that non-negligible perturbations should be neglected in order to keep the
+theory self-consistent is wrong.
+An improvement is given in the second attempt of an acoustic model in \secref{incompressibleFluid}.
 In this model the dynamics of the fluid are chosen to match the physically correct theory through the Euler equations and the continuity
 equation,
 but the equation of state is chosen in such a way as to enforce the constancy of the speed of sound.
@@ -44,7 +43,7 @@ There are still problems.
 While the sound speed is set to be constant,
 the self-advection of the fluid remains.
 A linear wave equation can be recovered, but only in a local frame of reference taken to be stationary with the fluid.
-In other frames the self-advection term contrubutes to a signal that can propagate at faster than the sound speed.
+In other frames the self-advection term contributes to a signal that can propagate at faster than the sound speed.
 %
 %While the equation of state can be chosen such that the speed of sound is constant,
 %the self-advection of the fluid contributes to the signal travelling at faster than the sound speed.
@@ -55,7 +54,7 @@ When spatial locations are measured with sound signals,
 the measurements of such motions are impossible.
 A model cannot simultaneously be Lorentz invariant, with the sound speed being the limiting velocity,
 and yet still admit supersonic speeds.
-A Lorentz invariant model cannot admit such priviliged frames of reference.
+A Lorentz invariant model cannot admit such privileged frames of reference.
 %This is contry to acoustic definition of space, where
 %the measurement of motions faster than the speed of sound is impossible.
 %
@@ -64,9 +63,10 @@ A Lorentz invariant model cannot admit such priviliged frames of reference.
 %
 %Neither of these models are Lorentz invarient
 
-In \secref{Maxwell} this shortcumming is corrected by using an equation of state that ensures a constant speed of sound in an Lorentz invarient framework.
+In \secref{Maxwell} this short-cumming is corrected by using an equation of state that ensures a constant speed of sound in an Lorentz invariant framework.
 It is found, appropriately given the constraints from acoustic measurement,
 that the signal propagates according to the linear wave equation with a constant speed of sound.
+This is our final model of the medium.
 
 %These models build upon eachother, so we begin w
 
@@ -155,15 +155,17 @@ that the signal propagates according to the linear wave equation with a constant
 %}
 %where $R$ is the specific gas constant.
 
-A linear medium, where only first order pertubations to density and fluid velocity are considered,
+A linear medium, where only first order perturbations to density and fluid velocity are considered,
 has the properties required for a model of acoustic measurement.
 The sound speed is constant and self-advection is ignored to this degree of approximation,
 and so medium supports a signal that propagates with a constant sound speed.
 Furthermore, a linearised medium approximates well the correct model of the medium far from a perturbation.
 
 While it is not justifiable to suggest that ultrasound measures a linearised medium,
-it is still worthwhile to see how the desired properties of acoustic measurement manifest.
-We being, therefore, with the continuity equation and Euler equation that define the conservation of mass and momentum, respectively,
+it is still worthwhile to understand how the linear wave equation is recovered,
+and how the sound speed relates to the thermodynamics of the medium.
+
+We begin, therefore, with the continuity equation and Euler equation that define the conservation of mass and momentum, respectively,
 in the fluid:
 %
 %
@@ -174,12 +176,12 @@ in the fluid:
 \label{eqn:euclideanFluid}
 \begin{align}
  \frac{\partial \rho }{\partial t} + \vu \cdot \vdel \rho + \rho \vdel \cdot \vu &= 0,\label{eqn:euclidianContinuity} \\
-\rho \left( \frac{\partial \vu}{\partial t} + \vu \cdot \vdel \vu \right) &= - \frac{1}{\rho}\vdel p,  \label{eqn:euclidianNS}
+ \frac{\partial \vu}{\partial t} + \vu \cdot \vdel \vu &= - \frac{1}{\rho}\vdel p,  \label{eqn:euclidianNS}
 \end{align}
 }
 We have used  $\vu$ to denote the velocity of the fluid, $p$ for the pressure, $\rho$ for the density, and $t$ for time.
 
-To linearise these equations, we assume that the sound wave induces only small fluctuations to the density and speed of the particles,
+To obtain a wave equation we linearise these equations, assuming that the sound wave induces only small fluctuations to the density and speed of the particles,
 %\todo[inline]{Comment that we can view this as the fluid being modelled in ultrasound differently than the real fluid.
 %We can therefore drop the hat notation.
 % }
@@ -190,19 +192,19 @@ To linearise these equations, we assume that the sound wave induces only small f
 \end{align}
 }
 where the primes indicate  small perturbations from the mean.
-Equations \Eqnref{euclidianFluid} then reduce as follows
-\sub{
-  \label{eqn:fluidMech}
-\begin{align}
- \rho_0  \frac{\partial \vu^\prime}{\partial t} &= - \vdel p \label{eqn:euclidianNSLinear} \\
- \frac{\partial \rho^\prime }{\partial t} &=  - \rho_0  \vdel \cdot \vu^\prime. \label{eqn:euclidianContinuityLinear}
-\end{align}
-}
+%Equations \Eqnref{euclidianFluid} then reduce as follows
+%\sub{
+%  \label{eqn:fluidMech}
+%\begin{align}
+% \rho_0  \frac{\partial \vu^\prime}{\partial t} &= - \vdel p \label{eqn:euclidianNSLinear} \\
+% \frac{\partial \rho^\prime }{\partial t} &=  - \rho_0  \vdel \cdot \vu^\prime. \label{eqn:euclidianContinuityLinear}
+%\end{align}
+%}
 %The sound wave is adiabatic so we have, by Taylor expantion,
 
-The relation between density and pressure depends on the equation of state.  
+%The relation between density and pressure depends on the equation of state.  
 If it is assumed that pressure depends only on the density, $p=p(\rho)$
-then by Taylor expasion we have
+then by Taylor expansion we have
 \begin{align}
 p = p(\rho_0) + (\rho-\rho_0) \frac{\partial p(\rho_0)}{\partial \rho} + \ldots,
 \end{align}
@@ -213,17 +215,18 @@ and in keeping with the approximation strategy only the largest terms are kept,
  \frac{\partial p}{\partial t} = \frac{\partial p(\rho_0)}{\partial \rho} \frac{\partial \rho^\prime}{\partial t}.
 \end{align}
 
-Before proceeding, it is useful to define the speed of sound,
+It is useful at this stage to define the speed of sound,
 \begin{align}
   \label{eqn:csquaredApprox}
-c^2 \equiv \frac{\partial p(\rho_0)}{\partial \rho}.
+c^2 \equiv \frac{\partial p(\rho_0)}{\partial \rho},
 \end{align}
-The justification for \eqnref{csquaredApprox} will be provided shortly.
+a relation that will be justified shortly. %The justification for \eqnref{csquaredApprox} will be provided shortly.
 %
 %\eqa{
 %  }
 %We have defined the temporal derivative of the pressure to be equal to the sound speed for reasons that will be justified shortly.
-Inserting equations \eqnref{taylorLargest} and \eqnref{csquaredApprox} into \eqnref{euclidianContinuityLinear} yields,
+Inserting equations \eqnref{taylorLargest} and \eqnref{csquaredApprox} into \eqnref{euclideanFluid}
+while keeping only largest terms yields,
 \sub{
     \begin{align}
  \rho_0  \frac{\partial \vu^\prime}{\partial t} &= - \vdel p \label{eqn:euclidianNSLinearTwo} \\
@@ -231,29 +234,28 @@ Inserting equations \eqnref{taylorLargest} and \eqnref{csquaredApprox} into \eqn
 \end{align}
 }
 
-Taking the temperal derivative of \eqnref{euclidianNSLinearTwo} and subtracting from the spatial derivative of
-\eqnref{euclidianContinuityLinearTwo}
-gives
+Two wave equations are recovered by first taking the temporal derivative of \eqnref{euclidianNSLinearTwo} and subtracting from the spatial derivative of
+\eqnref{euclidianContinuityLinearTwo},
 \sub{
   \label{eqn:waveEuclid}
   \eqa{
      \vdel^2 \vu^\prime - \frac{1}{c^2}\frac{\partial^2 \vu^\prime}{\partial^2 t} &= 0 % - \vdel \cross \lr{ \vdel \cross \vu}. 
   \label{eqn:euclidianNSLinearThree} \\
-  \intertext{Subtracting the spatial derivative of \eqnref{euclidianNSLinearTwo} from the temperatal derivative of \eqnref{euclidianContinuityLinearThree}}
- \vdel^2 p  - \frac{1}{ c^2 }\frac{\partial^2 p }{\partial^2 t}  &=  0,
+  \intertext{and then by subtracting the spatial derivative of \eqnref{euclidianNSLinearTwo} from the temporal derivative of \eqnref{euclidianContinuityLinearTwo},}
+ \vdel^2 p  - \frac{1}{ c^2 }\frac{\partial^2 p }{\partial^2 t}  &=  0.
   }
   }
-and we see that \eqnref{waveEuclid} defines a pair of wave equations.
-This set of wave equations provides the promised justification for equation \eqnref{csquaredApprox}
+This set of wave equations provides the promised justification for equation \eqnref{csquaredApprox} that defines the sound speed.
 %In the case of \eqnref{euclidianNSLinearThree} there is a localised source
 %term (the right hand side)
 %and in the case of \eqnref{euclidianContinuityLinearThree} without.
 
-\subsection{An example medium}
+\subsection{The relation between the speed of sound and the medium's thermodynamics}
 %Let us now consider a particular medium, that of an ideal gas,
 In the linear approximation, the wave propagates at a constant speed irrespective of the medium.
-It is nonetheless helpful for what follows to explicitly consider a description of the medium
-to understand how the equation of state influences the sound speed.
+However, it is helpful in what follows to understand how the thermodynamics of the medium influences the sound speed.
+% explicitly consider a description of the medium
+%to understand how the equation of state influences the sound speed.
 %does not depend on the imaging modality.
 As an example, we use an argument from Lighthill\ref{LighthillBook}
 and consider the sound propagating sound through an ideal gas.
@@ -295,22 +297,24 @@ where $R$ is the specific gas constant.
 %c^2 \equiv \frac{\partial p(\rho_0)}{\partial \rho}
 %\end{align}
 
-Differentiating \eqnref{idealGas} gives
+Differentiating \eqnref{idealGas} enables us to relate the sound speed to the medium's thermodynamic quantities,
 \begin{align}
   \label{eqn:linear:differential}
     \frac{\partial p(\rho_0)}{\partial \rho} = c^2 = RT + \rho R \frac{\partial T}{\partial \rho}.
 \end{align}
-If an isentropic process is assumed then the change in energy per unit mass, $E$, is 
+Equation \eqnref{linear:differential} can be put into a more convenient form if the process is assumed adiabatic
+and if the conduction of heat and dissipation of mechanical energy are ignored.
+The first of these conditions enables the  energy per unit mass, $e$,  to be related to the density,
+%If an isentropic process is assumed then the change in energy per unit mass, $E$, is 
 \begin{align}
-  dE = -pd\rho^{-1} = p \rho^{-2} d\rho
+  de = -pd\rho^{-1} = p \rho^{-2} d\rho,
 \end{align}
-If the conduction of heat and dissipation of mechanical energy are further ignored 
-then the volume of the thermodynamic system is unchanged.
-The change in energy to the specific heat at constant volume, $c_v$,  and write
+while the second implies that the volume of the thermodynamic system is unchanged.
+The  change in energy can then be related  to the specific heat at constant volume, $c_v$,  and we write
 \begin{align}
-  dE = p \rho^{-2} d\rho = c_v dT,
+  de = p \rho^{-2} d\rho = c_v dT,
 \end{align}
-which yields immediately from equation \eqnref{linear:differential},
+which with \eqnref{linear:differential} gives,
 \begin{align}
   \label{eqn:linear:diffential:two}
   c^2 = \frac{c_v + R}{c_v}RT
@@ -320,16 +324,17 @@ Using Mayer's relation between the specific heat at constant pressure $c_p$ and 
   \label{eqn:Mayer}
   c_p - c_v = R
 \end{align}
-then we can write the speed of sound in terms of the adiabatic index,
-\begin{align}
-\gamma \equiv  \frac{c_p}{c_v},
-\end{align}
-so that equation \eqnref{linear:diffential:two} becomes
+then we can write
 \begin{align}
   \label{eqn:eqnState}
   c^2 = \gamma RT = \frac{\gamma p}{\rho}.
 \end{align}
-Equation \eqnref{idealGas} has been used for the second equality.
+where  adiabatic index is defined as $\gamma \equiv  \frac{c_p}{c_v}$.
+%\begin{align}
+%\gamma \equiv  \frac{c_p}{c_v},
+%\end{align}
+%so that equation \eqnref{linear:diffential:two} becomes
+Equation \eqnref{idealGas} has been used for the second equality of \eqnref{eqnState}.
 
 
 %In this approximation regime we therefore find that the pressure propagates in the gas according to the linear wave equation.
@@ -360,14 +365,19 @@ Equation \eqnref{idealGas} has been used for the second equality.
 %On the other hand, the approximations used in linearising the fluid do discard certain properties that
 
 \subsection{Summary}
-If the continuity equation and Euler's equation are only slighly perturbed
+If the continuity equation and Euler's equation are only slightly perturbed
 then it is found that the perturbation travels linearly at a speed of sound.
 The actual speed of sound is found from the equation of state of the medium.
-
 The linearised medium therefore demonstrates the properties that we require for acoustic measurement,
 but only in the extremum.
-Next we explore an alternative approach,
-where the equation of state is chosen so that the speed of sound is always constant.
+
+The thermodynamics of the medium, as expressed in the equation of state,
+describe the speed of sound of the medium.
+This relation suggests an alternative approach,
+where the equation of state is chosen in such a way that the speed of sound is always constant.
+The constancy of the sound speed would then be a property of the medium rather than a consequence of the underlying physics.
+%The consistency condition for measurement would then be that ultrasound - due to the measurement process - is unable to distinguish 
+%a medium from the Our assumption would then be that ultrasound is unable to distinguish a given medium from this 
 
 %one that does holds generally but for a carefully selected
 %
@@ -389,11 +399,12 @@ where the equation of state is chosen so that the speed of sound is always const
 \section{Second attempt: an acoustic fluid}\label{sec:incompressibleFluid}
 
 The continuity of mass and momentum are general principles that should hold irrespective of the measurement system.
-To enforce the constancy of the sound speed this section therefore turns to an alternative appoach.
+To enforce the constancy of the sound speed this section therefore turns to an alternative approach.
 The equation of state is chosen so that the sound speed must be constant.
 The constraints of ultrasound are therefore moved to the medium, rather than the underlying physical principles.
-We therefore seek an 'acoustic fluid',
-a model of the fluid that is both measureable and conformant to the underlying symmetries that define the continuity and Euler equations.
+We therefore seek an `acoustic fluid',
+a model of the fluid that is both measurable and conforms to the underlying symmetries that define the continuity and Euler equations.
+
 
 %What if we relax these conditions?
 
@@ -404,12 +415,12 @@ a model of the fluid that is both measureable and conformant to the underlying s
 
 %\todo[inline]{Remember to use hat notation again
 %}
-To do so, we start from equations \eqnref{csquaredApprox} and \eqnref{eqnState} and write
-\begin{align}
-  d p &= c^2 d\rho \label{eqn:soundSpeedDiffNR} \\
-  c^2 &= \gamma p / \rho \label{eqn:idealGasSoundSpeed}
-\end{align}
-It follows by integrating that pertubations in pressure and sound speed are given by
+To do so, we start from equations \eqnref{csquaredApprox} and \eqnref{eqnState}
+%\begin{align}
+%  d p &= c^2 d\rho, \label{eqn:soundSpeedDiffNR} \\
+%  c^2 &= \gamma p / \rho, \label{eqn:idealGasSoundSpeed}
+%\end{align}
+and integrate so that perturbations in pressure and sound speed are given by
 \sub{
 \eqa{
   \frac{p}{p_0} &= \lr{\frac{\rho}{\rho_0}}^{\gamma},\\
@@ -417,7 +428,7 @@ It follows by integrating that pertubations in pressure and sound speed are give
 }
 }
 Here, the subscript $0$ is used to denote the pressure, density and sound speed at a reference point
-chosen to be in the acoustic far field where the purtubations become negligable and the linear approximation becomes valid.
+chosen to be in the acoustic far field where the perturbations become negligible and the linear approximation becomes valid.
 $c_0$ in this section therefore takes the same value as \secref{linearFluid}.
 
 The non-constancy of the speed of sound implied in \eqnref{idealGasSoundSpeedRatio} is the problem that we are trying to avoid.
@@ -428,7 +439,7 @@ In doing so, we are modifying the equation of state so that
   p = c^2\rho.
   }
 Such a fluid is clearly no longer an ideal gas, and so equation \eqnref{Mayer}, for example, no longer holds.
-The equation of state is nontheless valid, and equation \eqnref{EuclidStart} defines the acoustic fluid.
+The equation of state is nonetheless valid, and equation \eqnref{EuclidStart} defines the acoustic fluid.
 %Such  a fluid has a constant sound speed and, from \eqnref{}, is incompressible.
 
 
@@ -437,50 +448,56 @@ The equation of state is nontheless valid, and equation \eqnref{EuclidStart} def
 %\begin{align}
 %  d p &= c^2 d\rho
 %\end{align}
-To understand how a signal propagates in this medium we return to \eqnref{idealGasSoundSpeed},
+To understand how a signal propagates in this medium we return to \eqnref{eqnState},
 the state equation before taking the limit of $\gamma$.
-Differentiating  \eqnref{idealGasSoundSpeed} gives
+Differentiating  \eqnref{eqnState} gives
 \begin{align}
 2 c dc &= \frac{\gamma}{\rho} \left(dp - \frac{p}{\rho}d\rho\right)  \\
        &= \frac{c^2}{\rho}\left(\gamma-1\right) d\rho,
 \end{align}
 which in turn yields the following equation for $\rho$,
 \begin{align}
-d\rho = \left(\frac{2\rho dc}{c\lr{\gamma - 1}}\right) %= \frac{\rho}{\gamma - 1}\left(\frac{2dc}{c}\right). \label{eqn:dRhoNonLinear}
+\label{eqn:attemptTwo:dRho}
+d\rho = \left(\frac{2\rho dc}{c\lr{\gamma - 1}}\right). %= \frac{\rho}{\gamma - 1}\left(\frac{2dc}{c}\right). \label{eqn:dRhoNonLinear}
 \end{align}
 
-In one-dimension, the (non linearised) equations of the fluid, equations \eqnref{euclideanFluid}, then yield
+Restricting our attention to the propagation of a signal in one dimension,
+we insert \eqnref{attemptTwo:dRho} into the (non linearised) equations of the fluid, equations \eqnref{euclideanFluid}, to obtain
 \sub{
 \begin{align}
- \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + c\frac{\partial }{\partial x}\left(\frac{2c}{\gamma - 1}\right)  &= 0  \label{eqn:euclidianNSRiemann}\\
- \frac{\partial }{\partial t} \left(\frac{2c}{\gamma - 1} \right)+ u \frac{\partial u}{\partial x} \left(\frac{2c}{\gamma - 1} \right) + c\frac{\partial u}{\partial x} &= 0,\label{eqn:euclidianContinuityRiemann}
+ \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + c\frac{\partial }{\partial x}\left(\frac{2c}{\gamma - 1}\right)  &= 0,  \label{eqn:euclidianNSRiemann}\\
+ \frac{\partial }{\partial t} \left(\frac{2c}{\gamma - 1} \right)+ u \frac{\partial u}{\partial x} \left(\frac{2c}{\gamma - 1} \right) + c\frac{\partial u}{\partial x} &= 0\label{eqn:euclidianContinuityRiemann}
 \end{align}
 }
-Adding and subtracting these equations gives
+Adding and subtracting these equations gives the characteristics equations,
 \sub{
-  \label{riemannEOM}
+  \label{eqn:riemannEOM}
 \begin{align}
-\left[ \frac{\partial }{\partial t} + (u + c) \frac{\partial }{\partial x} \right]\left(u + c_0\frac{2(c-c_0)}{c_0(\gamma - 1)} \right) &= 0 \\
-\left[ \frac{\partial }{\partial t} + (u - c) \frac{\partial }{\partial x} \right]\left(u - c_0\frac{2c(c-c_0)}{c_0(\gamma - 1)} \right) &= 0 
+\left[ \frac{\partial }{\partial t} + (u + c) \frac{\partial }{\partial x} \right]\left(u + c_0\frac{2(c-c_0)}{c_0(\gamma - 1)} \right) &= 0, \\
+\left[ \frac{\partial }{\partial t} + (u - c) \frac{\partial }{\partial x} \right]\left(u - c_0\frac{2c(c-c_0)}{c_0(\gamma - 1)} \right) &= 0, 
 \end{align}
 }
-The constant $c_0$ has been introduced to the differential on the right hand side of \eqnref{dRhoNonLinear},
-as this helps regularise the braketed expression.
-From \eqnref{idealGasSoundSpeedRatio}, we have 
-\eqa{
-  \frac{2(c-c_0)}{c_0(\gamma - 1)} \rightarrow \ln\lr{\frac{\rho}{\rho_0}} & \text{as}& \gamma\rightarrow 1.
-  }
+of the two {\em Riemann invariants}, 
+\begin{align}
+R_\pm = u \pm \frac{2(c-c_0)}{c_0(\gamma - 1)}.  %\rightarrow u \pm  c_0\ln\lr{\frac{\rho}{\rho_0}}.
+\end{align}
 
-Defining the two {\em Riemann invariants} as
-\begin{align}
-R_\pm = u \pm \frac{2(c-c_0)}{c_0(\gamma - 1)}  \rightarrow u \pm  c_0\ln\lr{\frac{\rho}{\rho_0}},
-\end{align}
-we read from \eqnref{riemannEOM} that $R_\pm$ are constant along characteristics in a space-time diagram that have a gradient
+We read from \eqnref{riemannEOM} that $R_\pm$ are constant along characteristics in a space-time diagram that have a gradient
 \begin{align}
 \frac{dx}{dt}= u\pm c
 \end{align}
 In short,
 the characteristics (and therefore the signal) propagate at the speed of sound with respect to the local motion of the fluid.
+
+The constant $c_0$ has been introduced to the differential on the right hand side of \eqnref{riemannEOM},
+as this helps regularise the braketed expression.
+From \eqnref{idealGasSoundSpeedRatio}, we have 
+\begin{align}
+  \frac{2(c-c_0)}{c_0(\gamma - 1)} \rightarrow \ln\lr{\frac{\rho}{\rho_0}} && \text{as} && \gamma\rightarrow 1,
+\end{align}
+and we see that the Riemann invariants are well defined in the limit $ \gamma\rightarrow 1$.
+
+
 
 If we consider a region propagating away from the very beginning of the disturbance then
 we know that the value of the characteristic $R_-$ is equal to the undisturbed region.
@@ -503,8 +520,8 @@ and the signal propagates at a speed $u + c_0$.
 %}
 In this model, therefore, the sound speed is everywhere constant
 but the signal can still propagate faster than the speed of sound.
-This is due to the self advection of the fluid.
-To see this explicitly, it is useful to derive the wave equation of this fluid.
+This is due to the self advection of the fluid
+and to see this explicitly, it is useful to derive the wave equation of this fluid.
 We do so by using an argument of Howe\cite{Howe1998}.
 %
 %Both models therefore predict a non-linear propagation of the wave.
@@ -516,7 +533,7 @@ We do so by using an argument of Howe\cite{Howe1998}.
 \subsection{The wave equation}
 %It is helpful to consider the wave equation predicted by this model.
 %It will be useful in \secref{} to define the wave equation in terms of the 
-We begin with the well known thermdynamic relation for the enthalpy $h$ in terms of the pressure,
+We begin with the well known thermodynamic relation for the enthalpy $h$ in terms of the pressure,
 %The thermodynamic relation
 \eqa{
  dh = \frac{1}{\rho}dp, \label{eqn:thermoNR}
@@ -525,13 +542,13 @@ from which the {\em total enthalpy} is defined:
 \eqa{
   w = h + \half u^2 \label{eqn:totalEnthalpyNR}
 }
-By using \eqnref{soundSpeedDiffNR} we write the continuity equation (equation \eqnref{euclidianContinuity}) in terms of pressure
+By using \eqnref{csquaredApprox} we write the continuity equation (equation \eqnref{euclidianContinuity}) in terms of pressure
 \sub{
   \label{eqn:attemptTwo:wave:tmp}
 \eqa{
   \frac{1}{\rho c_0}\lr{\frac{\partial p}{\partial t} + \vu \cdot \vdel p} +\vdel\cdot \vu = 0 \\
-  \intertext{and use the identy $\vu \cross (\vdel \cross \vu) \equiv \vu \cdot \vdel \vu - \vdel \half \vu^2$
-    along with \eqnref{thermoNR} and \eqnref{totalEnthalpyNR} to put the momenturm equation in Crocco's form}
+  \intertext{and use the identity $\vu \cross (\vdel \cross \vu) \equiv \vu \cdot \vdel \vu - \vdel \half \vu^2$
+    along with \eqnref{thermoNR} and \eqnref{totalEnthalpyNR} to put the momentum equation in Crocco's form}
   \frac{\partial\vu}{\partial t} + \vdel w = \vu \cross \lr{\vdel \cross \vu }
 }
 }
@@ -540,7 +557,7 @@ Taking the temperal derivative of the first equation of \eqnref{attemptTwo:wave:
   \label{eqn:attemptTwo:wave:tmp:two}
   \frac{\partial}{\partial t}\lr{\frac{1}{\rho c_0}\frac{\D p}{\D t} } - \vdel^2 w = \vdel \cdot \lr{ \vu \cross \lr{\vdel \cross \vu}} 
 }
-where we have used the convient notation
+where we have used the convenient notation
 \eqa{
   \frac{D}{Dt} \equiv \frac{\partial}{\partial t} + \vu \cdot \vdel \label{eqn:materialDerivative}
 }
@@ -577,10 +594,10 @@ while the second term becomes
 %//
 Inserting equations \eqnref{attemptTwo:part:a}, \eqnref{attemptTwo:part:b} and \eqnref{attemptTwo:sub:one} back into equation \eqnref{attemptTwo:wave:tmp:two} yeilds the final answer 
 \eqa{
-  \lr{\frac{1}{c_0^2}\frac{D^2}{Dt^2} - \frac{1}{\rho} \vdel \cdot \lr{\rho \vdel} } w = \frac{1}{\rho} \vdel\cdot\lr{\rho \vu \cross \lr{\vdel \cross \vu}}. \label{eqn:attemptTwo:waveEqn}
+  \lr{\frac{1}{\rho} \vdel \cdot \lr{\rho \vdel} - \frac{1}{c_0^2}\frac{D^2}{Dt^2}  } w = -\frac{1}{\rho} \vdel\cdot\lr{\rho \vu \cross \lr{\vdel \cross \vu}}. \label{eqn:attemptTwo:waveEqn}
 }
-The total enthalpy therefore propergates according to a self-advecting wave equation.
-The right hand side of \eqnref{attempTwo:waveEqn}, resultant from vorticity terms in the fluid, can be considered an acoustic source.
+The total enthalpy therefore propagates according to a self-advecting wave equation.
+The right hand side of \eqnref{attemptTwo:waveEqn}, resultant from vorticity terms in the fluid, can be considered an acoustic source.
 
 From equation~\eqnref{lnRho} we have
 \eqa{
@@ -589,19 +606,19 @@ From equation~\eqnref{lnRho} we have
 where $\hat \vu$ denotes the unit vector in the direction of $\vu$.
 When $\vu$ is small compared to the speed of sound then $\rho \rightarrow \rho_0$
 and the differential of will tend to zero.
-
-In this regime, the the continuity equation, equation~\eqnref{euclidianContinuity}, reduces to the equation of incompressible flow
+In this regime, the continuity equation, equation~\eqnref{euclidianContinuity}, reduces to the equation of incompressible flow,
 \sub{
-  \label{eqn:attemptTwo:waveEqn:incompressible}
-  \eqa{
-  \vdel \cdot \vu  &= 0,
-  \intertext{whereas equation~\eqnref{attemptTwo:waveEqn} obeys the linear wave equation}
-   \lr{\frac{1}{c_0^2}\frac{\partial^2}{\partial t^2} - \vdel^2  } &= \vdel\cdot\lr{\vu \cross \lr{\vdel \cross \vu}}.
+\label{eqn:attemptTwo:waveEqn:incompressible:pair} 
+\begin{align}
+ \vdel \cdot \vu  &= 0, \label{eqn:attemptTwo:incompressible:continuity}\\
+  \intertext{whereas equation~\eqnref{attemptTwo:waveEqn} obeys the linear wave equation},
+  \lr{\vdel^2  - \frac{1}{c_0^2}\frac{\partial^2}{\partial t^2}  }w &= -\vdel\cdot\lr{\vu \cross \lr{\vdel \cross \vu}}. \label{eqn:attemptTwo:waveEqn:incompressible} 
+\end{align}
 }
-}
-The removal of terms small compared to the speed of sound is different to the linearisation stratgy employed in \secref{linearFluid}.
+
+The removal of terms small compared to the speed of sound is different to the linearisation strategy employed in \secref{linearFluid}.
 In \secref{linearFluid} $\vu$ was considered small so the source terms that relate to the square of $\vu$ were neglected.
-Equations \eqnref{attemptTwo:waveEqn:incompressible} are rather the equations valid in the incompressible limit,
+Equation \eqnref{attemptTwo:waveEqn:incompressible} is  valid in the incompressible limit,
 when the speed of sound becomes very large.
   
 
@@ -712,14 +729,19 @@ when the speed of sound becomes very large.
 \subsection{Summary}
 
 This second attempt at a model for the acoustic medium has assumed the continuity and Euler equations to hold
-but has defined an acoustically measureable medium as the means of ensuring that the speed of sound is constant.
+and has instead defined an acoustically measurable medium as the means of ensuring that the speed of sound is constant.
 The fluid still supports self-advection and this enables the signal to travel at faster than the speed of sound.
+This is an improvement on the linear model, 
+as we are not forced to change any underlying physics for the acoustic model.
+Rather, we only limit the ability of ultrasound to be able to distinguish the thermodynamic properties of the medium.
+This model assumes that ultrasound is only able to model the `acoustic medium'. 
 
-This is clearly not without its problems.
+
+This model is clearly not without its problems.
 Motions that are faster than the speed of sound cannot be measured,
 and so should not be predictions of acoustic measurement.
 
-A second issue is the actual predicited speed of sound.
+A second issue is the actual predicted speed of sound.
 When $\gamma \rightarrow 1$ the value is not correct.
 However, since the speed of sound is
 already put into the model by hand,
@@ -770,14 +792,23 @@ this does not cause to much anxiety.
 
 \section{Final model of acoustics when the measurements are made with ultrasound}\label{sec:Maxwell}
 
+In this section we extend the approach of \secref{incompressibleFluid} so that the model of the acoustic fluid is Lorentz invariant.
+This is required for the model to be consistent with what can be measured.
+We model the acoustic medium as an ideal fluid,
+and  Lorentz invariance is ensured by obtaining the equations of fluid motion  from the  divergence of the energy-momentum tensor.
+We again choose an equation of state that guarantees that the speed of sound is constant.
+It is emphasised from the outset that the use of the energy-momentum tensor implies no reference to the speed of light.
+As was discussed in \chapref{observables}, the relations between these quantities follow from the pulse-echo definition of space, the defined constancy of sound speed,
+and the spatial and temporal invariance assumed of any imaging modality.  
+
 %%\Poincare's relativity postulate does not eliminate the medium.
 %%Rather motion with respect to the medium may be directly measured.
 %Sound does have a medium through which it propagates.
-To demonstrate the role of the medium we formulate the acoustics of  an ideal fluid that is measured with ultrasound,
-where the motions of the fluid are  understood to be local perturbations to the bulk flow.
+%To demonstrate the role of the medium we formulate the acoustics of  an ideal fluid that is measured with ultrasound,
+%where the motions of the fluid are  understood to be local perturbations to the bulk flow.
 It is shown in \secref{MaxwellAnalogue} that the acoustics  obey a linear wave equation.
 %the same law as Maxwell's equations of electromagnetism.
-The derivation is direct but the co-variant notation makes the comparison to conventional acoustics difficult.
+The derivation is direct but the covariant notation makes the comparison to conventional acoustics difficult.
 In \secref{int:EM} the  relations are re-derived in the spirit of Lighthill's formulation of aeroacoustics.
 %In doing so the acoustic analogues to the electric and magnetic field are obtained.
 %It is then shown in \secref{int:EM} that Maxwell's relation is essentially the same as  Lighthill's theory of aeroacoustics.
@@ -788,8 +819,8 @@ In \secref{int:EM} the  relations are re-derived in the spirit of Lighthill's fo
 %Ultrasound is not capable of  measuring variations in the speed of sound.
 %Second order fluctuations in the density  can therefore play no role when ultrasound is used to describe the world.
 %It is instructive to see this argument borne out in the equations that describe an acoustically measured fluid.
-A model that is to be compared to ultrasound measurements must be  Lorentz invariant.
-This condition is  automatically fulfilled  when the equations of fluid motion are obtained from the  divergence of the energy-momentum tensor of an ideal fluid.
+%A model that is to be compared to ultrasound measurements must be  Lorentz invariant.
+%This condition is  automatically fulfilled  when the equations of fluid motion are obtained from the  divergence of the energy-momentum tensor of an ideal fluid.
 %The condition that the sound speed takes the role  of the speed of light
 %is enforced by simply equating these two speeds.
 %This further requires that the energy density of the fluid, as measured acoustically, be a function of the pressure only (barotropic),
@@ -799,7 +830,7 @@ This condition is  automatically fulfilled  when the equations of fluid motion a
 %The complete analogy between an incompressible relativistic fluid and electromagnetism was first published in French by Garrido\cite{Garrido1982} in 1982.
 %The results were unknown to the author of this thesis, who derived the results of the following section independently.
 There is a degree of similarity between the wave equation derived in \secref{MaxwellAnalogue} and electromagnetism.
-We show in \secref{} that the comparison is only cosmetic,
+We show that the comparison is only cosmetic, \todo{EM analogy not proved}
 but due to the longstanding interest in analogies between electromagnetism and acoustics we
 choose our symbols to bring out the analogy as much as possible.
 An analogy along the same lines was first published in French by Garrido\cite{Garrido1982} in 1982.
@@ -835,7 +866,8 @@ and consider small perturbations
 }
 
 In the absence of external fields, the equations of motion are obtained by setting the 
- divergence of the energy momentum tensor (equation \eqnref{EMtensor}) to zero and keeping only large terms we find
+ divergence of the energy momentum tensor (equation \eqnref{EMtensor}) to zero.
+Keeping only large terms we find
 %By projecting the divergence of \eqnref{EMtesnor} along the timelike and spacelike component and keeping only large terms we find
 \eqa{
   %  u_i \d_j T^{i j} = \half\scalefactor^2 u_i A^i \d_j A^j = 0.
@@ -843,16 +875,20 @@ In the absence of external fields, the equations of motion are obtained by setti
   \frac{\epsilon+p}{c^2} \frac{\partial \vv}{\partial t} &= \vdel p^\prime
 \label{eqn:LorentzianSoundSpeed:tmp}
 }
-Eliminating $\vv$ gives
+By eliminating $\vv$, % gives
+%\eqa{
+%  \frac{1}{c^2} \frac{\partial^2 \epsilon^\prime}{\partial^2 t} = \vdel^2 p
+%}
+%from which it follows, by using the relation
+and using the relation, expressed at constant entropy density, $\sigma$,
 \eqa{
-  \frac{1}{c^2} \frac{\partial^2 \epsilon^\prime}{\partial^2 t} = \vdel^2 p
+  \epsilon^\prime = \given{\frac{\d \epsillon}{\d p}}{\sigma}p^\prime
 }
-from which it follows, by using the relation
-\eqa{
-  \epsilon^\prime = \frac{\partial \epsilon^\prime}{\partial t} p^\prime
-}
-that
-The speed of sound, $c$,  given at constant entropy density, $\sigma$, is\cite{LandauBook,Taub1978} 
+we find
+\begin{align}
+ \frac{1}{c^2} \given{\frac{\d \epsillon}{\d p}}{\sigma}^2\frac{\partial^2 p^\prime}{\partial^2 t} = \vdel^2 p,
+\end{align}
+It follows that\cite{LandauBook,Taub1978} % the speed of sound, $c$,  given at constant entropy density, $\sigma$, is\cite{LandauBook,Taub1978} 
 \begin{align}
    \given{\frac{\d p}{\d \epsillon}}{\sigma} = 1. \label{eqn:soundspeed}
 \end{align}
@@ -875,16 +911,21 @@ This is the same as the non-relativistic expression except that the energy densi
 %\end{align}
 %at constant entropy density.
 
-In this chapter we shall consider the equation of state
+Using \eqnref{EuclidStart} from \secref{incompressibleFluid} as inspiration, 
+we consider shall in this chapter consider the equation of state 
 \eqal{
   \epsilon(p) = p,
 }{eos}
 which describes an incompressible relativistic fluid.
 %While it is not the most general solution to equation \eqnref{eosDiff},
 %we shall find it to have very interesting properties.
-Equation \eqnref{eos} was first studied by Taub\cite{Taub1978}
-and is the same as equation \eqnref{EuclidStart} from \secref{incompressibleFluid}.
-\todo[inline]{comment on the surprise that this is incompressible}
+Equation \eqnref{eos} was first studied by Taub\cite{Taub1978}.
+The reason this equation of state is said to describe an incompressible relativistic fluid
+is because in the limit Galilean limit the fluid is incompressible.
+This is in accordance to what was found with \eqnref{attemptTwo:incompressible:continuity} in \secref{incompressibleFluid}.
+
+%and is the same as equation \eqnref{EuclidStart} from \secref{incompressibleFluid}.
+%\todo[inline]{comment on the surprise that this is incompressible}
 %At infinity $p^\prime = p_0$ 
 %and so $\epsilon_\infty = p_\infty = \epsilon_0 \ne p_0$.
 
@@ -946,7 +987,9 @@ The internal energy density, $\epsilon$, is equal to the sum of the rest mass an
 \label{eqn:relEpsilon}
 \end{align}
 where $m$ is the particle mass at rest.
-\todo[inline]{comment on the rest mass}
+Equation \eqnref{relEpsilon} includes the rest mass as part of the internal energy density.  
+This is expected due to the considerations of \chapref{observables}.
+
 From the isentropic thermodynamic relation $m de = - p d\lr{\frac{1}{n}}$
 it follows that 
 \begin{align}
@@ -1039,8 +1082,8 @@ and
 %Equation \Eqnref{Maxwell} has the same form as Maxwell's equation
 The analogy is not complete, however, due to equation \eqnref{eomTime}.
 Equation \eqnref{eomTime} has specified the Lorenz gauge,
-but it has specified it definitevly.
-There is no gauge invariance in this model and thus a central piller of electromagnetism is missing.
+but it has specified it definitely.
+There is no gauge invariance in this model and thus a central pillar of electromagnetism is missing\todo{EM analogy is not proved - revise}.
 %We do not explore this observation further here.
 
 It is well known that Maxwell's relations are invariant to a gauge transformations of the form
@@ -1076,8 +1119,8 @@ is to project the vorticity tensor, $F$, into the laboratory  frame\cite{Hestene
 The directness of this method, however, comes at the cost of it bearing little  resemblance to conventional acoustics.
 
 To demonstrate the similarities and the differences between  the ultrasonic and the Galilean  formulations of acoustics
-we re-derive Maxwell's relations using a relativistic version of Lighthill's formulation of aeroacoustics\cite{Lighthill1952}.
-The analogues to the electric and magnetic field  become clear in this process.
+we re-derive our equations of motion using a Lorentz invariant version of Lighthill's formulation of aeroacoustics\cite{Lighthill1952}.
+The formulation in terms of observables  become clear in this process.
 To aid the comparison, in this section we revert to S.I. units and so the speed of sound will again be denoted $c$.
 
 
@@ -1099,7 +1142,7 @@ $\phi / c$ and $\vA$ are the temporal and spatial components of the vector poten
 \vA &\equiv \tfrac{1}{c^2} \phi \vv,  %A \wedge \g.
  \end{align}
 where $\vv$ is the velocity  of the fluid as measured in the laboratory frame and 
- $\gamma = (1-\vv^2/c^2)^{-1}$, as in \eqnref{gamma}.
+ $\gamma = (1-\vv^2/c^2)^{-1}$. %, as in \eqnref{gamma}.
 
 The potential $\phi$ may be  interpreted as the relativistic  total enthalpy multiplied by the particle mass.
 To see this we first introduce the non-relativistic enthalpy, $h$, which is defined by
@@ -1141,15 +1184,15 @@ In the non-relativistic limit the equations reduce to Galilean invariant forms,
 }
 Equation~\eqnref{NREuler} is the incompressible version of Euler's equation written in Croc\-co's form\cite{Howe1998}
 and Equation~\eqnref{NRcontinuity} is the continuity equation of an incompressible fluid.
-They are, as expected, the same as equations~\eqnref{attemptTwo:waveEqn:incompressible}.
+They are, as expected, the same as equations~\eqnref{attemptTwo:waveEqn:incompressible:pair}.
 
-It is worthwhile taking the higher order perturbations of \eqnref{Rcontinuity} and \eqnref{REuler}.
-Keeping terms with value $\vv / c$ recovers equation~{attemptTwo:waveEqn} while
-\eqa{
-  a&=b \\
-  \intertext{keeping terms with value $\vv^2 / c^2$ recovers the first improvement over  equation~{attemptTwo:waveEqn},}
-  b&=c.
-}
+%It is worthwhile taking the higher order perturbations of \eqnref{Rcontinuity} and \eqnref{REuler}.
+%Keeping terms with value $\vv / c$ recovers equation~{attemptTwo:waveEqn} while
+%\eqa{
+%  a&=b \\
+%  \intertext{keeping terms with value $\vv^2 / c^2$ recovers the first improvement over  equation~{attemptTwo:waveEqn},}
+%  b&=c.
+%}
 
 
 %The difference between  equation~\ref{eqn:NRcontinuity}
@@ -1268,7 +1311,7 @@ so that
     \label{eqn:WavevAMax}
   }
 }{WavesMax}
-The equations of \eqnref{WavesMax} are the same as  Maxwell's equations of electromagnetism when written in terms of the potentials in the Lorenz gauge\cite{Doran2003}
+The equations of \eqnref{WavesMax} have the same form as  Maxwell's equations of electromagnetism when written in terms of the potentials in the Lorenz gauge\cite{Doran2003}
 (equation \eqnref{Rcontinuity}).
 The vector $\vE$ is known as the Lamb vector and is proportional to the Coriolis acceleration;
  it would take the role of the electric field in the analogy.
@@ -1296,48 +1339,62 @@ The acoustic interpretation of these equations are as follows:
 
 
 
-\subsection{Discussion}\label{sec:discussion}
-
-In the physics community there is a widespread misconception that
-relativistic corrections only become important  when predicting  motions that are close to the speed of light.
-This is  due, perhaps, to the explicit reference to light made in Einstein's postulates of special relativity,
-or due to Einstein's elimination of the \aether.
-There is an impression that the postulated properties of light, its  constancy of speed and lack of medium,
-are unique
-and 
-enable light alone to be used to define  distances.
+\section{Discussion}\label{sec:discussion}
 
 
+In this chapter we have considered how to construct a model for the medium that is consistent with measurement process.
+In \secref{linearFluid} we considered a linear medium, because any model of the medium should correspond to a linear medium in the acoustic far field.
+In \secref{incompressibleFluid} we removed the restriction that the acoustic perturbation had to be small
+by defining an `acoustic medium' that satisfied the constancy of the speed of sound required by acoustic measurement.
+However, due to self-advection, such a restriction was not sufficient to prevent signals propagating at faster than the speed of sound.
+To overcome this hurdle the acoustic medium had to be formulated in a Lorentz invariant manner.  
+This was completed in \secref{Maxwell}.
+The result is a fully specified model that is conforms to the restrictions of acoustic measurement.
+We therefore consider the model of \secref{Maxwell} to operationally describe the fluid measured by ultrasound,
+that will predict physical interactions that will be measured.
 
 
-In this chapter it has been demonstrated that
- when distances are measured by acoustic pulse-echo, % sound is used to measure distance %- as it is in sonar-based technologies -
- relativistic corrections must be used to correctly predict motions that  are close to the speed of sound.
-Ultrasound, as well as other sonar-based technologies, is  a relativistic subject
-where  the  speed of sound takes the role of the speed of light.
-%Furthermore, it has been demonstrated that  when distances are measured with ultrasound, % distances are measured by acoustic pulse-echo,
-%the generation and propagation of sound in an ideal homentropic fluid
-%obeys  Maxwell's equations, the  physical law that describes the generation and propagation of light.
-%This  fundamentally relativistic theory is completely unaltered when the speed of sound takes the role of the speed of light.
 
-%The implication is that relativistic theories {\em in general} are not dependant upon the speed of light.
-%That, in principle, {\em any} propagating signal could be used to make the measurement,
-%and therefore that  {\em all} relativistic theories have an acoustic analogue.
-%%Instead, this report demonstrates that the Lorentz transformations of special relativity  are a consequence of the measurement process alone.
-%%the determination of distance from the to-fro propagation time of a signal.
-%This is because to measure distances from the to-fro propagation time of a signal, 
-%a constant propagation speed must be assumed.
-%Moreover, the constancy of the speed can never be experimentally refuted: you cannot use light signals to measure fluctuations in the speed of light;
-%you cannot use sound signals to measure fluctuations in the speed of sound;
-%how a signal  actually traverses its medium can never be determined without knowing beforehand the world that is to be measured.
-%The Lorentz transformations arise from the difference between the assumed speed of sound that is required to measure distance,
-%and the effective speed of the sound that is altered by motion of the  medium.
-%It is  wrong to say that motion faster than the speed of light is impossible,
-%just as it wrong  to say that motion faster than the speed of sound is impossible.
-%All that can be said is that motions that are faster than the  propagating signal cannot be measured.
+%In the physics community there is a widespread misconception that
+%relativistic corrections only become important  when predicting  motions that are close to the speed of light.
+%This is  due, perhaps, to the explicit reference to light made in Einstein's postulates of special relativity,
+%or due to Einstein's elimination of the \aether.
+%There is an impression that the postulated properties of light, its  constancy of speed and lack of medium,
+%are unique
+%and 
+%enable light alone to be used to define  distances.
 
-%represent a similarly limited view of the world with
-%the limitations manifesting themselves in the linearity of the equations.
+
+
+
+%In this chapter it has been demonstrated that
+% when distances are measured by acoustic pulse-echo, % sound is used to measure distance %- as it is in sonar-based technologies -
+% relativistic corrections must be used to correctly predict motions that  are close to the speed of sound.
+%Ultrasound, as well as other sonar-based technologies, is  a relativistic subject
+%where  the  speed of sound takes the role of the speed of light.
+%%Furthermore, it has been demonstrated that  when distances are measured with ultrasound, % distances are measured by acoustic pulse-echo,
+%%the generation and propagation of sound in an ideal homentropic fluid
+%%obeys  Maxwell's equations, the  physical law that describes the generation and propagation of light.
+%%This  fundamentally relativistic theory is completely unaltered when the speed of sound takes the role of the speed of light.
+
+%%The implication is that relativistic theories {\em in general} are not dependant upon the speed of light.
+%%That, in principle, {\em any} propagating signal could be used to make the measurement,
+%%and therefore that  {\em all} relativistic theories have an acoustic analogue.
+%%%Instead, this report demonstrates that the Lorentz transformations of special relativity  are a consequence of the measurement process alone.
+%%%the determination of distance from the to-fro propagation time of a signal.
+%%This is because to measure distances from the to-fro propagation time of a signal, 
+%%a constant propagation speed must be assumed.
+%%Moreover, the constancy of the speed can never be experimentally refuted: you cannot use light signals to measure fluctuations in the speed of light;
+%%you cannot use sound signals to measure fluctuations in the speed of sound;
+%%how a signal  actually traverses its medium can never be determined without knowing beforehand the world that is to be measured.
+%%The Lorentz transformations arise from the difference between the assumed speed of sound that is required to measure distance,
+%%and the effective speed of the sound that is altered by motion of the  medium.
+%%It is  wrong to say that motion faster than the speed of light is impossible,
+%%just as it wrong  to say that motion faster than the speed of sound is impossible.
+%%All that can be said is that motions that are faster than the  propagating signal cannot be measured.
+
+%%represent a similarly limited view of the world with
+%%the limitations manifesting themselves in the linearity of the equations.
 
 
 
@@ -1366,25 +1423,25 @@ where  the  speed of sound takes the role of the speed of light.
 %must be assumed  to have a constant speed in order to measure distances with local temporal measurements.
 %It is impossible to use sound, for example,  to  measure local variations in the speed of sound - even if such variations `really occur'.
 
-The \aether\ does have a role in the relativity theory used in this report:
-sound does have a propagating medium.
-However, the \aether\ is relativistic in the sense that it does not define a state of absolute rest. \todo{Have a think about this}
-%The speed of an object may be defined with respect to the bulk flow of the medium
-%but the actual speed of the bulk flow is not determined.
-%
-%The acoustics of a  barotropic ideal fluid  medium was explicitly considered.
-%When the flow of the medium with respect to the transducer  is measured acoustically
-%it was shown that the energy momentum tensor may be written entirely as a function of the  potential flow.
-%It was then demonstrated that the acoustics of the medium obey Maxwell's relations.
-Moreover, it was shown that gauge invariance in Maxwell's relations may be interpreted as an invariance to the  potential flow of the medium.
-This global gauge invariance is the same condition as the requirement that the \aether\ be invariant to uniform motions.
-The relativity theory used in this report is therefore that of \Poincare, rather than Einstein.
-Indeed, as was noted in the introduction,
-the central argument of this report,
-that the constancy of the speed of light and the resulting Lorentz transformations
-result entirely from the method of measurement, 
-was suggested by \Poincare in 1906\cite{Poincare1906}.
-Unfortunately, however, \Poincare's contribution to the theory of relativity has been largely ignored by the wider community.
+%The \aether\ does have a role in the relativity theory used in this report:
+%sound does have a propagating medium.
+%However, the \aether\ is relativistic in the sense that it does not define a state of absolute rest. \todo{Have a think about this}
+%%The speed of an object may be defined with respect to the bulk flow of the medium
+%%but the actual speed of the bulk flow is not determined.
+%%
+%%The acoustics of a  barotropic ideal fluid  medium was explicitly considered.
+%%When the flow of the medium with respect to the transducer  is measured acoustically
+%%it was shown that the energy momentum tensor may be written entirely as a function of the  potential flow.
+%%It was then demonstrated that the acoustics of the medium obey Maxwell's relations.
+%Moreover, it was shown that gauge invariance in Maxwell's relations may be interpreted as an invariance to the  potential flow of the medium.
+%This global gauge invariance is the same condition as the requirement that the \aether\ be invariant to uniform motions.
+%The relativity theory used in this report is therefore that of \Poincare, rather than Einstein.
+%Indeed, as was noted in the introduction,
+%the central argument of this report,
+%that the constancy of the speed of light and the resulting Lorentz transformations
+%result entirely from the method of measurement, 
+%was suggested by \Poincare in 1906\cite{Poincare1906}.
+%Unfortunately, however, \Poincare's contribution to the theory of relativity has been largely ignored by the wider community.
 
 
 %In {\em Science and Hypothesis}\cite{Poincare1902} \Poincare declared that ``Experiment is the sole source of truth''
@@ -1542,41 +1599,41 @@ Unfortunately, however, \Poincare's contribution to the theory of relativity has
 %it merely prejudices one set of instruments over all others.
 
 
-\subsubsection{On the absence of non-linear propagation} \label{sec:NonlinearProp}
+%\subsubsection{On the absence of non-linear propagation} \label{sec:NonlinearProp}
 
-In this report we have demonstrated that when time and space are measured acoustically
-the propagation of sound is linear.
-However, this is at odds with the  understanding in medical ultrasound that the non-linear propagation of an acoustic pulse
-is not only measurable but also important.
-Our task is to explain how the non-linearity found in other measurement systems  manifests itself in acoustic measurements.
-To do so it is useful to frame the discussion around the linear equations of
-\eqnref{Waves},
- which are appropriate when distances are measured acoustically,
-and their non-linear Galilean forms of \eqnref{WavesREG}.
+%In this report we have demonstrated that when time and space are measured acoustically
+%the propagation of sound is linear.
+%However, this is at odds with the  understanding in medical ultrasound that the non-linear propagation of an acoustic pulse
+%is not only measurable but also important.
+%Our task is to explain how the non-linearity found in other measurement systems  manifests itself in acoustic measurements.
+%To do so it is useful to frame the discussion around the linear equations of
+%\eqnref{Waves},
+% which are appropriate when distances are measured acoustically,
+%and their non-linear Galilean forms of \eqnref{WavesREG}.
 
-The first point to note is that the non-linearity of the Galilean formulation of sound is entirely a matter of {\em  convention}.
-It would in fact be more appropriate to rewrite equations \eqnref{WavesREG} as linear wave equations with everything else interpreted as acoustic sources and currents.
-Then the sound is defined as the part of an acoustic disturbance that can propagate energy away to infinity;
-the rest of the disturbance being a `local' source.
-This is, in fact, the usual final step of Lighthill's analogy.
-The reason it is rarely performed when the analogy is written in terms of the total enthalpy and vorticity is because
-the acoustic source terms become horribly complicated.
-The split of source and wave in \eqnref{WavesREG} is convenient  interpretatively, but is nevertheless rather ad-hoc,
-for it mixes local terms with those that can propagate indefinitely.
+%The first point to note is that the non-linearity of the Galilean formulation of sound is entirely a matter of {\em  convention}.
+%It would in fact be more appropriate to rewrite equations \eqnref{WavesREG} as linear wave equations with everything else interpreted as acoustic sources and currents.
+%Then the sound is defined as the part of an acoustic disturbance that can propagate energy away to infinity;
+%the rest of the disturbance being a `local' source.
+%This is, in fact, the usual final step of Lighthill's analogy.
+%The reason it is rarely performed when the analogy is written in terms of the total enthalpy and vorticity is because
+%the acoustic source terms become horribly complicated.
+%The split of source and wave in \eqnref{WavesREG} is convenient  interpretatively, but is nevertheless rather ad-hoc,
+%for it mixes local terms with those that can propagate indefinitely.
 
-The influence of non-linear propagation on what can be measured acoustically is found by comparing the right hand sides of equations \eqnref{Waves} and equations \eqnref{WavesREG}.
-It is seen that the only major difference between the two is the term 
-\eqa{
-- \frac{1}{c^2}\dt \lr{ \vv \times \lr{\vdel \times \vA}} \nonumber
-}
- on the right-hand-side of \eqnref{WavevA}.
-This term is part of the non-linear operator in equation~\ref{eqn:WavevvREG}.
-It is, if you like, a ghost of the non-linear operator $\Dt$ on what can be measured acoustically.
-When measured with ultrasound it is interpreted  as part of the current.
-We note that an attempt to re-incorporate the ghost  term back into some `acoustically measured non-linear operator' would be ill-conceived 
-for it would mean that the acoustic current is no longer conserved:
-the term %$- \frac{1}{c^2} \dt \lr{ \vv \times \lr{\vdel \times \vA}}$ 
-most certainly is part of the current.
+%The influence of non-linear propagation on what can be measured acoustically is found by comparing the right hand sides of equations \eqnref{Waves} and equations \eqnref{WavesREG}.
+%It is seen that the only major difference between the two is the term 
+%\eqa{
+%- \frac{1}{c^2}\dt \lr{ \vv \times \lr{\vdel \times \vA}} \nonumber
+%}
+% on the right-hand-side of \eqnref{WavevA}.
+%This term is part of the non-linear operator in equation~\ref{eqn:WavevvREG}.
+%It is, if you like, a ghost of the non-linear operator $\Dt$ on what can be measured acoustically.
+%When measured with ultrasound it is interpreted  as part of the current.
+%We note that an attempt to re-incorporate the ghost  term back into some `acoustically measured non-linear operator' would be ill-conceived 
+%for it would mean that the acoustic current is no longer conserved:
+%the term %$- \frac{1}{c^2} \dt \lr{ \vv \times \lr{\vdel \times \vA}}$ 
+%most certainly is part of the current.
 
 
 
@@ -1854,16 +1911,17 @@ most certainly is part of the current.
 %%\subsection{Particles with Spin}
 
 
-\subsubsection{Other similar studies}
+\subsection{Other similar studies}
 
 %The  similarities between acoustics and electromagnetism have long been recognised.
-By using a relativistic version of Lighthill's formulation of aeroacoustics it was demonstrated 
-that the acoustic analogue to the electric field is the Lamb vector (proportional to the Coriolis acceleration),
+By using a relativistic version of Lighthill's formulation of aeroacoustics it is demonstrated 
+that there exists a cosmetic similarity between sound as measured acoustically and electromagnetism. 
+We found the acoustic analogue to the electric field is the Lamb vector (proportional to the Coriolis acceleration),
 and that the acoustic analogue to the magnetic field is the vorticity.
 %The spacetime vorticity tensor takes the role of the field tensor.
 An analogy in this form has been presented before by both Marmanis\cite{Marmanis2000} and Sridhar\cite{Marmanis2000,Sridhar1998}.
 However, both these attempts were constructed from Galilean fluid mechanics and so the analogy was only partial.
-A complete  analogy, using a relativistic incompressible fluid, was first published by Garrido\cite{Garrido1982} long before the studies of Marmanis and Sridhar.  
+A more complete  analogy, using a relativistic incompressible fluid, was first published by Garrido\cite{Garrido1982} long before the studies of Marmanis and Sridhar.  
 Unfortunately, this article was missed by the wider community, 
 and has only come to the attention of the author since completing this thesis.
 %Nonetheless, the importance of the analogy to ultrasound physics is new.
@@ -1876,13 +1934,14 @@ and has only come to the attention of the author since completing this thesis.
 %may take the role of the speed of light in a relativistic theory.
 
 
-
+While the results presented in this chapter make no relation to the speed of light, 
+it is worth noting that the formulation carries over unaltered when the speed of sound equals the speed of light.
 Relativistic fluids where the sound speed equals the speed of light have been studied many times before
 as theoretical curiosities\cite{Taub1978,Pekeris1976, Pekeris1977}.
 For example, Pekeris found that Hick's spherical vortex conserves angular momentum if and only if
 the sound speed equals the speed of light\cite{Pekeris1977}.
 The importance of such fluids, however, has not to the author's knowledge been recognised.
-Such fluids represent {\em what can be measured} when distances are obtained by echo-location.
+Such fluids map directly to represent {\em what can be measured} when distances are obtained by echo-location.
 %Acoustics as measured with ultrasound is therefore {\em identical} to electromagnetism as measured with light.
 % With hindsight this correspondence is not too surprising.
 % For both acoustics as measured with ultrasound and electromagnetism as measured with light 
@@ -1904,8 +1963,8 @@ Analogue gravity does not consider the measurement process and  operates within 
 the Lorentz invariant acoustic metric
  and the Galilean invariant spacetime  metric.
 The correspondence of analogue gravity with relativity theory is therefore partial.
-The acoustic analogue to special relativity presented here is complete,
-the only difference is that the speed of sound takes the role of the speed of light.
+%The acoustic analogue to special relativity presented here is complete,
+%the only difference is that the speed of sound takes the role of the speed of light.
 
 
 %While the motivations behind the two approaches is similar, in particular the demand that acoustics must be obey a Lorentz invariant metric,
@@ -2078,3 +2137,5 @@ the only difference is that the speed of sound takes the role of the speed of li
 %%% mode: latex
 %%% TeX-master: "../../tshorrock_thesis"
 %%% End: 
+
+% LocalWords:  extremum Crocco's
