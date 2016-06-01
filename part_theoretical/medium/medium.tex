@@ -257,7 +257,7 @@ However, it is helpful in what follows to understand how the thermodynamics of t
 % explicitly consider a description of the medium
 %to understand how the equation of state influences the sound speed.
 %does not depend on the imaging modality.
-As an example, we use an argument from Lighthill\ref{LighthillBook}
+As an example, we use an argument from Lighthill\cite{LighthillBook}
 and consider the sound propagating sound through an ideal gas.
 The pressure, $p$, density, $\rho$ and temperature, $T$, are therefore modelled by the ideal gas equation
 \eqa{
@@ -549,7 +549,7 @@ By using \eqnref{csquaredApprox} we write the continuity equation (equation \eqn
   \frac{1}{\rho c_0}\lr{\frac{\partial p}{\partial t} + \vu \cdot \vdel p} +\vdel\cdot \vu = 0 \\
   \intertext{and use the identity $\vu \cross (\vdel \cross \vu) \equiv \vu \cdot \vdel \vu - \vdel \half \vu^2$
     along with \eqnref{thermoNR} and \eqnref{totalEnthalpyNR} to put the momentum equation in Crocco's form}
-  \frac{\partial\vu}{\partial t} + \vdel w = \vu \cross \lr{\vdel \cross \vu }
+  \frac{\partial\vu}{\partial t} + \vdel w = \vu \cross \lr{\vdel \cross \vu } \label{eqn:attemptTwo:wave:CroccoTmp}
 }
 }
 Taking the temperal derivative of the first equation of \eqnref{attemptTwo:wave:tmp} and subtracting from the spatial derivative of the second yields
@@ -594,7 +594,7 @@ while the second term becomes
 %//
 Inserting equations \eqnref{attemptTwo:part:a}, \eqnref{attemptTwo:part:b} and \eqnref{attemptTwo:sub:one} back into equation \eqnref{attemptTwo:wave:tmp:two} yeilds the final answer 
 \eqa{
-  \lr{\frac{1}{\rho} \vdel \cdot \lr{\rho \vdel} - \frac{1}{c_0^2}\frac{D^2}{Dt^2}  } w = -\frac{1}{\rho} \vdel\cdot\lr{\rho \vu \cross \lr{\vdel \cross \vu}}. \label{eqn:attemptTwo:waveEqn}
+  \lr{\frac{1}{\rho} \vdel \cdot \lr{\rho \vdel} - \frac{1}{c_0^2}\frac{D^2}{Dt^2}  } w = \frac{1}{\rho} \vdel\cdot\lr{\rho \vu \cross \lr{\vdel \cross \vu}}. \label{eqn:attemptTwo:waveEqn}
 }
 The total enthalpy therefore propagates according to a self-advecting wave equation.
 The right hand side of \eqnref{attemptTwo:waveEqn}, resultant from vorticity terms in the fluid, can be considered an acoustic source.
@@ -611,8 +611,8 @@ In this regime, the continuity equation, equation~\eqnref{euclidianContinuity}, 
 \label{eqn:attemptTwo:waveEqn:incompressible:pair} 
 \begin{align}
  \vdel \cdot \vu  &= 0, \label{eqn:attemptTwo:incompressible:continuity}\\
-  \intertext{whereas equation~\eqnref{attemptTwo:waveEqn} obeys the linear wave equation},
-  \lr{\vdel^2  - \frac{1}{c_0^2}\frac{\partial^2}{\partial t^2}  }w &= -\vdel\cdot\lr{\vu \cross \lr{\vdel \cross \vu}}. \label{eqn:attemptTwo:waveEqn:incompressible} 
+  \intertext{whereas equation~\eqnref{attemptTwo:waveEqn} obeys the linear wave equation,}
+  \lr{\vdel^2  - \frac{1}{c_0^2}\frac{\partial^2}{\partial t^2}  }w &= \vdel\cdot\lr{\vu \cross \lr{\vdel \cross \vu}}. \label{eqn:attemptTwo:waveEqn:incompressible} 
 \end{align}
 }
 
@@ -1184,7 +1184,7 @@ In the non-relativistic limit the equations reduce to Galilean invariant forms,
 }
 Equation~\eqnref{NREuler} is the incompressible version of Euler's equation written in Croc\-co's form\cite{Howe1998}
 and Equation~\eqnref{NRcontinuity} is the continuity equation of an incompressible fluid.
-They are, as expected, the same as equations~\eqnref{attemptTwo:waveEqn:incompressible:pair}.
+They are, as expected, the same as equations~\eqnref{attemptTwo:waveEqn:incompressible} and eqnref{attemptTwo:wave:CroccoTmp}.
 
 %It is worthwhile taking the higher order perturbations of \eqnref{Rcontinuity} and \eqnref{REuler}.
 %Keeping terms with value $\vv / c$ recovers equation~{attemptTwo:waveEqn} while
