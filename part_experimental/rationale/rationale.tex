@@ -509,8 +509,10 @@ The voltage-time waveforms from tracking the hydrophone across the focus are sho
 600 traces over \unit{6}\milli\metre\ were taken and these are plotted in \figref{phase_exp_b}.  
 The `distance' along the co-axis is measured in microseconds so that the graph is independent of the speed of sound (which can be considered to be set to unity).
 
-It is seen from \figref{phases} that the entire phase space is sampled every microsecond.  This is half the period of the low frequency wave,
+It is seen from \figref{phases} that the entire phase space is sampled every microsecond of distance.  This is half the period of the low frequency wave,
 which follows from the two waves moving towards each other. 
+However, the separation between a $2\pi$ difference in phase in the echo will again be \unit{2}\micro\second.
+An echo that samples the peak pressure of the driving wave will remain with the peak pressure on its return.%     echo will again match the period of the low frequency wave.
 
 %\Figref{phase_exp_a} should help with the interpretation of \figref{phase_exp_b} 
 %by showing only a few of the hydrophone traces recorded.
@@ -824,11 +826,14 @@ This was to protect the hydrophone from possible cavitation damage.
  \subfloat[Water sample driven at \dbThirty.  Both the imaging and driving wave are on in the top image.
 Only the imaging wave is on in the lower image]
 {\label{fig:water_cavitation_70}
- \includegraphics[width=0.8\textwidth]{rotterdam_02_water.png}}\\
+ \includegraphics[width=0.8\textwidth]{rotterdam_02_water_caption.png}}\\
  \subfloat[Water sample driven at \dbFifteen.  Both the imaging and the driving waves are on]
 {\label{fig:water_cavitation_85}
- \includegraphics[width=0.8\textwidth]{C3water8500003.png}}
-\caption{The Hilbert transform of the imaging radio-frequency data, recovered when the imaging transducer is swung on a pendulum.  Please refer to the sub-caption as to whether the pulsing wave was on or not.}
+ \includegraphics[width=0.8\textwidth]{C3water8500003_caption.png}}
+\caption{The Hilbert transform of the imaging radio-frequency data, recovered when the imaging transducer is swung on a pendulum. 
+The banding is seen at \unit{2}\micro\second\ intervals,
+in accordance with the period of the driving wave.
+ Please refer to the sub-caption as to whether the pulsing wave was on or not.}
 \label{fig:water_cavitation_prelim}
 \end{figure}
 
