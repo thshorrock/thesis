@@ -1,0 +1,450 @@
+
+
+\subsection{An acoustic Michelson-Morely  experiment.}
+
+\todo[inline]{Simplify for just change in reference.}
+
+
+The discussion so far has been somewhat abstract.
+It is not clear to what degree the motion of the bulk matters.
+To make it concrete it is useful to discuss a simple pulse-echo experiment and  compare the two viewpoints
+- the Galilean%
+\footnote{Formally the `Galilean' measurements are the distances and times that are  measured with light signals in accordance to Einstein's method\cite{Einstein1905}.
+In ultrasound experiments, however, the Galilean approximation is entirely appropriate.}
+ world that is {\em seen}, with the world that is measured with ultrasound. % - on a simple pulse echo experiment.
+%To do so, an acoustic version of the  Michelson-Morely experiment is considered.
+%For this we %
+%
+% apply the acoustic definitions of time and space, equation~\ref{eqn:radar}, to a simple example.
+%This is described in \secref{MMsetup}.
+
+%The analysis of the experiment is done in two parts.
+%The first, in \secref{MMGalilean}, is the from the perspective of a `Galilean' observer that {\em looks} at the setup,
+%measuring distances with a ruler and times with a single oscilloscope.
+%Formally the `Galilean' measurements are the distances and times that are  measured with light signals in accordance to Einstein's method.
+%In ultrasound experiments, however, the Galilean approximation is entirely appropriate.
+%This is the usual viewpoint from which ultrasound experiment are described.
+
+%The second perspective, in \secref{MMLorentzian}, is taken by considering only  acoustical measurements - the pulse echo times $\tm$ and $\tp$ -
+%and using the definitions of equation~\ref{eqn:radar} to determine measured spatial and temporal locations of distant entities.
+%This is the viewpoint from which ultrasound experimental data is usually collected.
+
+%\subsubsection{The experiment}
+
+
+
+
+% Since acoustic waves propagate so much more slowly than light,
+% an acoustic Michelson-Morely type experiment need not be an interferometry experiment.
+% Rather the time it takes for a short pulse to propagate and return can be measured directly.
+
+
+% The (hypothetical) apparatus  that is to be used in this discussion is illustrated in \figref{MMapparatus}.
+% The transducer is capable of generating and receiving an acoustic pulse.
+% The central acoustic reflector can be opened or closed 
+% The  acoustic source/reciever
+
+% The acoustic source and acoustic receiver are two separate devices that are mounted onto a rail 
+% on which both the source and receiver may be translated.
+% Both the source and receiver are directional in that they emit and receive in the forward direction only.
+% The sound emitted is a short burst.
+% Both the source and receiver are facing  an acoustic reflector that is placed in the parallel to the rail on which the source and receiver  translate.
+% The shortest distance between the reflector and the rail denoted $l$.
+% The whole setup may be rotated, and it is placed in an ideal fluid to propagate the sound.
+
+ \begin{figure}[t]
+      \centering
+     \subfloat[Apparatus when bulk medium is stationary.]{
+           \label{fig:setupA}
+           \includegraphics{Michelson.0}}
+\hspace{2cm}
+     \subfloat[Apparatus when the laminar flow of the bulk medium is $v$]{
+           \label{fig:setupB}
+           \includegraphics{Michelson.1}}
+      % \subfloat[\unit{100}\kilo\pascal]{
+      %      \label{fig:R1vel}
+      %      \includegraphics{velocity_r2_f2_a0.1.3}}
+\label{fig:setups}
+      \caption{A pulse-echo experiment when there is, and is not, a relative laminar flow past the apparatus.}
+ \end{figure}
+The first case to be considered is illustrated in \figref{setupA}.
+This apparatus is appropriate when the equipment is stationary with respect to the bulk flow of the medium.
+It is  analogous to  Michelson and Morely's famous experiment:
+a piezoelectric transducer  replaces both the light source and the receiver while a medium that partially reflects sound  replaces the semi-silvered mirror.
+The distance between $A$ and $B$ is denoted $l$ and is the same  as the distance between $A$ and $C$.
+In the following the time it takes for the sound to propagate from $A$ to $B$ and back again is compared with the to-fro times between $A$ and $C$.
+
+
+If the apparatus of \figref{setupA} were not stationary with respect to the bulk flow of the medium then the experiment would fail.
+This is because the sound would not travel from  $A$ to $B$ and return;
+the motion of the medium would drag the sound pulse with it.
+The setup illustrated in \figref{setupB} gives spirit of the Michelson-Morely experiment for the case when the apparatus is not stationary with respect to the bulk flow.
+In this case there are two separate partially reflecting surfaces.
+%$t_{AB}$ is the time that it takes sound to propagate from $A$ to $B$.
+The time it takes the sound to propagate from $A$ to $B$ to $A^\prime$ is now compared with the time it takes the sound 
+to go from $A$ to $C$ to $A^\prime$.
+
+When the to-fro times along the two arms are the same, irrespective of the flow  of the bulk medium,  the result is described as {\em null}.
+This is in accordance to the description of the Michelson-Morely result.
+
+\subsubsection{A Galilean interpretation}\label{sec:MMGalilean}
+
+ \begin{figure}[t]
+      \centering
+     \subfloat[Observer that is stationary with respect to the medium.]{
+           \label{fig:StatGA}
+           \includegraphics{Michelson.2}}
+\hspace{2cm}
+     \subfloat[Observer moves at speed $v$ with respect to the medium]{
+           \label{fig:MovingGA}
+           \includegraphics{Michelson.3}}
+      % \subfloat[\unit{100}\kilo\pascal]{
+      %      \label{fig:R1vel}
+      %      \includegraphics{velocity_r2_f2_a0.1.3}}
+\label{fig:GalileanA}
+      \caption{Observed motion of apparatus for the setup of \figref{setupA}.}
+ \end{figure}
+
+First we consider the case of the apparatus being stationary with respect to the bulk flow (\figref{setupA}).
+If the propagation of the sound pulse were observed by a Galilean observer that is also stationary with respect to the flow
+then \she would observe the sound travelling according to \figref{StatGA}.
+The time, $t_{AB}$,  it takes for the sound to propagate from $A$ to $B$ is the same as the time, $t_{BA}$, it takes the sound to propagate from $B$ to $A$.
+It is given by $l/c$, where  $c$ is the speed of sound of the medium.
+This time interval is the same for the to and fro paths between $A$ and $C$,
+\begin{align}
+  t_{AB}=t_{BA}=t_{AC}=t_{CA}=l/c\label{eqn:setupA:stationary:Tab}.
+\end{align}
+
+An observer for whom  both the medium and apparatus flow past at a speed, $v$, will measure the same time intervals 
+but will witness an altogether more complicated experiment.
+The acoustic paths that will be observed are illustrated in \figref{MovingGA}.
+When the sound travels between $A$ and $B$ the observer will record that the sound travels at an effective speed of
+\begin{align}
+\label{eqn:ceffone}
+c_\eff(v) = \sqrt{c^2 +v^2}.
+\end{align}
+This is due to  the  contribution of the  laminar flow.
+Additionally, the measured distance between $A$ and $B$ will be greater by  $\sqrt{l^2+v^2t_{AB}^2}$.
+The increased distance and increased speed cancel so that 
+\begin{align}
+  \label{eqn:setupA:moving:Tab}
+  t_{AB} = t_{BA} = \frac{\sqrt{l^2+v^2t_{AB}^2}}{\sqrt{c^2 +v^2}} = \frac{l}{c},
+\end{align}
+as before.
+
+%When the medium and apparatus are moving with respect to the observer, 
+The bulk flow will also contribute to the effective speed of the pulse from $A$ to $C$  ($c_\eff = c+v$) 
+and hinder  the return from $C$ to $A$ ($c_\eff = c-v$).
+However, this is again exactly compensated by changes in the total distance that the moving observer measures.
+As is illustrated in \figref{MovingGA}, the total distance from $A$ to $C$ is $l+vt$. % when the pulse passes $A$, the position $C$ is seen to be moving away at a speed of $v$ - the speed of the bulk flow - 
+%and so effective distance between $A$ and $C$ is $l+vt$.  
+When the sound travels from $C$ to $A$ the total  distance is $l-vt$. % because the sound pulse is now travelling the opposite direction.
+%%
+%
+%the travelling from  $A$ to $C$ is also viewed by this observer as having further to travel: a distance of $l+vt$.
+%The return journey is looks shrunk for this observer, a distance of $l-v$.
+Therefore the measured times are
+\begin{align}
+  \label{eqn:setupA:moving:Tac}
+  t_{AC} =  \frac{l+vt_{AC}}{c+v}= t_{CA} =  \frac{l-vt_{CA}}{c-v}= \frac{l}{c}.
+\end{align}
+
+Next, we must check that these timings still hold when the apparatus is moving with respect to the medium (\figref{setupB}).
+%The analysis  proceeds similarly to before.
+The equivalence of \figref{setupB} and \figref{MovingGA} demonstrates this.
+An observer that is stationary with respect to the apparatus (and moving with a speed, $v$, with respect to the medium) will record,
+\begin{align}
+  \label{eqn:setupB:moving:Tab}
+  t_{AB} = t_{BA^\prime} =  \frac{\sqrt{l^2+v^2t_{AB}^2}}{\sqrt{c^2 +v^2}} = \frac{l}{c},
+\end{align}
+and 
+\begin{align}
+  \label{eqn:setupB:moving:Tac}
+  t_{AC} =  \frac{l+vt_{AC}}{c+v}= t_{CA^\prime} =  \frac{l-vt_{CA^\prime}}{c-v}= \frac{l}{c}.
+\end{align}
+Equations~\ref{eqn:setupB:moving:Tab} and \ref{eqn:setupB:moving:Tac}  are exactly the same results as equations~\ref{eqn:setupA:moving:Tab} and \ref{eqn:setupA:moving:Tac},
+respectively.
+If the observer is instead stationary with respect to medium then it is easy to see that equations~\ref{eqn:setupA:stationary:Tab}  are repeated.
+
+In summary, we find that the time it takes the sound to propagate from $A$ to $B$ and back again is
+identical to the time it takes the sound to propagate from $A$ to $C$ and back,
+irrespective of the speed of the observer with respect to the medium.
+The acoustic Michelson-Morely experiment should yield a  {\em null} result.
+%A {\em null} result  the acoustic Michelson-Morely experiment is correct.
+
+\subsubsection{An acoustic interpretation}\label{sec:MMLorentzian}
+
+Unlike the Galilean observer, the ultrasound physicist cannot directly measure the propagation of sound.
+The sound path of a pulse-echo experiment must be inferred afterwards from the measurements and the  definitions of equation~\ref{eqn:radar}.
+In order to  predict a  sound path the ultrasound physicist must have further {\em a priori}  knowledge,
+which we assume here to be the dimensions  of the apparatus.
+
+%When distances are measured acoustically  it is difficult to interpret measurements that are not stationary with respect to the medium. %previous experiment is  difficult to interpret.
+%This is because the effective sound speed (such as is  used in equation~\ref{eqn:ceffone})
+%is contradictory to the acoustic definition of time and space given in equation~\ref{eqn:radar}.
+
+Let us again consider the experiment of \figref{setupA},
+where all the apparatus is stationary with respect to the bulk flow of the fluid.
+The sound path illustrated in  \figref{StatGA} is the simplest through the apparatus and we assume
+that this path is predicted.
+%
+%In order to {\em test} the predicted sound paths the ultrasound physicist must have further {\em a priori}  knowledge,
+%which we assume to be the dimensions  of \her apparatus. % as obtained from the manufacturer's specification, for example.
+To test this prediction the ultrasound  physicist measures the to-fro times between $A$ and $B$ and between
+$A$ and  $C$.
+Both of these times  are equal to $2l/c$ (equation~\ref{eqn:setupA:stationary:Tab}),
+which is  consistent with the known lengths, $l$.
+The predicted sound paths are to this extent confirmed.
+
+
+Let us now suppose that the  same setup is measured by a transducer that moves uniformly at a speed, $v$, with respect to the medium and apparatus.
+Again with knowledge of the apparatus, we assume that the ultrasound physicist  predicts the simplest path.
+This is the path illustrated in \figref{MovingGA} and is the same path that is measured by the  moving Galilean observer.
+%Note that while the ultrasound physicist would measure the fluid flowing past the transducer,
+%they do not have to consider themselves in motion with respect to the bulk flow.
+%Instead, they can  consider themselves to be stationary with the bulk flow 
+%and the measured fluid motion as nothing more than a local disturbance.  
+%
+%
+A difference from the Galilean case arises,
+however,
+because the predicted path is subject to the rules of the measurement system
+and, for the ultrasound physicist,  sound always propagates at a  constant speed, $c$.
+For the propagation time between $A$ and $B$ the ultrasound physicist therefore predicts (c.f. equation~\ref{eqn:setupA:moving:Tab})
+\begin{align}
+  \label{eqn:setupA:moving:Tab:acoustic}
+  t_{AB} = t_{BA} =  \frac{\sqrt{l^2+v^2t_{BA}^2}}{c} \implies t_{AB} =  t_{BA} =\frac{1}{\sqrt{1-v^2/c^2}} \frac{l}{c}.
+\end{align}
+%In this case $t_{AB}$ is larger than before but only by a small amount.
+For the sound pulse between $A$ and $C$  they  predict
+\sub{
+\begin{align}
+ t_{AC} =  \frac{l+vt_{AC}}{c}\implies t_{AC} = \frac{l}{c-v}
+\end{align}
+and 
+\begin{align}
+ t_{CA} =  \frac{l-vt_{CA}}{c} \implies t_{CA} = \frac{l}{c+v}
+\end{align}
+}
+rather than  equation~\ref{eqn:setupA:moving:Tac}.
+Therefore the total to-fro time between $A$ and $C$  is   predicted   to be
+\begin{align}
+\label{eqn:setupA:moving:Tac:acoustic}
+t_{AC}+t_{CA^\prime} = \frac{1}{{1-v^2/c^2}} \frac{2l}{c}.
+\end{align}
+
+These predictions are of course wrong.
+Equation~\ref{eqn:setupA:moving:Tab:acoustic} and \ref{eqn:setupA:moving:Tac:acoustic} do not agree with the
+experimentally measured intervals.
+The reassignment $c_\eff \rightarrow c$ made by the ultrasound physicist 
+has resulted in predicting time intervals for the sound to traverse between $A$ and $B$ and between $A$ and $C$ that are too large
+by a factor of $\gamma$ and $\gamma^2$ respectively,
+%Unfortunately, both the inferred times for $t_{AB} + t_{AB}$ and $t_{AC}+t_{CA}$ given in \eqnref{} and \ref{} are wrong.
+%They are, as comparison with \eqnref{} and \ref{} demonstrates, too large by a factor of $\gamma$ and $\gamma^2$ respectively,
+where 
+\begin{align}
+  \gamma = \frac{1}{\sqrt{1-v^2/c^2}}
+  \label{eqn:gamma}
+\end{align}
+is the Lorentz factor.
+Moreover, the to-fro time between $A$ and $B$ is not predicted to equal  the to-fro time between $A$ and $C$,
+in contradiction to the  experimental result.
+This predicament faced by the ultrasound physicist  is, of course, the same as that which faced Lorentz, \Poincare and Einstein at the beginning  of the twentieth century.
+
+
+
+The error is clear to the Galilean observer:
+the ultrasound physicist has been forced by the measurement process to  set the effective speed of sound to equal $c$.
+To solve the problem the ultrasound physicist  must  compensate for the wrong sound speed by rescaling the temporal and spatial units  used when modelling.
+
+The ultrasound physicist, who cannot measure variations in the sound speed,
+must work a little harder to come to this conclusion.
+The first explanation that they might try  is to doubt the apparatus.
+%The first and most simple explanation for the wrong prediction is to doubt the apparatus.
+If the distance between $A$ and $C$  was actually a factor of  $\gamma^2$ shorter than the manufacture claimed then the predicted time for that path would match the 
+experimentally measured value.
+Likewise, all would be well if the distance between $A$ and $B$  was shorter by a factor of $\gamma$.
+However, this explanation can be shown to be incorrect by  counting  the number of cycles of the sound wave that propagate through each arm of the apparatus.
+This can be done straight-forwardly with ultrasound,
+the  pulse length is simply increased until the received signal starts to interfere with the emitted signal.
+%The pulse length is simply increased until the  received signal starts to interfere with the  emitted signal.
+The experimental result would be that  $n = 2l/\lr{cT}$ cycles fit both  between  $A$ and $B$ and between $A$ and $C$, where $T$ is the period of the sound wave.
+This result implies that the distance between $A$ and $C$ is not simply shorter than between $A$ and $B$, % by a factor of $\gamma$,
+for then the number of cycles along each path would be different.
+Rather, it implies that {\em all} distances are shorter in the $A$-$C$ direction, including the wavelength of the sound wave.
+That is, parallel to the motion the {\em   unit of distance} is contracted  by a factor of $\gamma$.
+
+
+If the ultrasound physicist incorporates the  number of pulses into  equation~\ref{eqn:setupA:moving:Tab:acoustic}
+then they would predict that the  period between $A$ and $B$ is
+\begin{align}
+ T_\us= \gamma \frac{l/n}{c} = \gamma T,
+\end{align}
+where $T_\us$ distinguishes the predicted period from the experimentally measured period $T$.
+That is to say, the {\em  unit of time} used in the model must be scaled  by a factor of $\gamma$ in order to agree with experiment.
+%This result can occur  if the  frequency of the ultrasound pulse is shifted by the factor of $\gamma$.
+%However, this interpretation does not make sense physically because the frequency of the pulse is a function of the piezoelectric crystal in the transducer.
+%The only alternative explanation is that the {\em  unit of time} itself is scaled  by the factor of $\gamma$.
+
+%The first of these interpretations does not make sense physically because the frequency of the pulse is a function of the transducer piezoelectric crystal.
+
+
+
+
+% The first thing to be done is send  the apparatus back to the manufacture with an angry note.
+% Clearly the arms have been made too short. 
+% It should have taken $\gamma l/c$ to traverse between $A$ and $B$ whereas in fact it took only a time of $l/c$.
+% (The calculation and the results are included in the note).
+% However, no refund will be given.
+% It will be pointed out that 
+% for 
+% It will be pointed out that returned signal 
+
+
+
+
+
+
+
+% The ultrasound physicist, therefore,  needs to re-write equation~\ref{eqn:setupA:moving:Tab:acoustic} as
+% \begin{align}
+%  t_{AB}^\ast+t_{BA}^\ast  &= 2\frac{\sqrt{l^2+v^2t_{AB}^2}}{c},\label{eqn:setupA:moving:Tab:acoustic:rescaled}
+% \end{align}
+% where $t^\ast$ are the {\em inferred} temporal intervals of the physicist using acoustic measurements.
+% By comparing \eqnref{setupA:moving:Tab:acoustic:rescaled} with \eqnref{setupA:moving:Tab} it is clear that
+% \begin{align}
+%  t_{AB}^\ast+t_{BA}^\ast = \gamma^{-1}\lr{t_{AB}+t_{BA}}.\label{eqn:LorentzTime}
+% \end{align}
+% %When the effective speed of sound  is different to  the speed of sound of the medium
+% %the acoustic observer has no choice but to re-scale their base unit of time.
+% That is, when an acoustic observer is in motion with respect to the medium 
+% the temporal interval must be smaller by the Lorentz factor:
+% There must be fewer ticks to their clock than for a Galilean observer.
+% %There have been  must revert to a {\em local-time} that is not the same as the time measured by a Galilean observer.
+
+% %The interpretation of the pulse echo between $A$ and $C$ is more straightforward.
+% For  ultrasound measurements to match equation~\ref{eqn:setupA:moving:Tac} 
+% an {\em inferred} distance  must also be introduced: %If the time for the sound to travel between $A$ and $C$, 
+% %In this case the observer knows that the total distance that the sound must travel is $l +vt + l - vt = 2l$.
+% %Therefore 
+% %\begin{align}
+% %  t_{AC}+t_{CA} = \frac{2l}{c},
+% %\end{align}
+% %in agreement with \eqnref{}.
+% %Unfortunately the acoustic observer as already had to concede that since they are in motion with respect to the medium,
+% %the local-time is the unit of time that agrees with the  experiment.
+% %To compensate for this in \eqnref{}
+% %the unit of distance must be scaled by the same factor so that
+% %is to become
+% \begin{align}
+%   t_{AC}^\ast+t_{CA}^\ast = \frac{2l^\ast}{c},
+% \end{align}
+% where 
+% \begin{align}
+% l^\ast = \gamma^{-1} l.\label{eqn:LorentzSpace}
+% \end{align}
+
+As before, the equivalence of \figref{setupB} and \figref{MovingGA} guarantee that the same conclusion 
+would be drawn when the apparatus is not stationary with respect to the bulk flow.
+
+The comparison between the Galilean and experimental observer can be summarised as follows:
+when modelling an ultrasound experiment 
+%where the acoustic source is not stationary with respect to the medium,
+the  unit of distance used in the model must be
+contracted by the Lorentz factor in order to agree with experimental results,
+and likewise the unit of time must be reduced by the Lorentz factor.
+These are the results of \Poincare's special relativity.
+%The   contraction in length is postulated by \Poincare's special relativity.
+\Poincare's postulated contraction in length is the manifestation of the dependence of the sound speed upon
+the flow of the medium.
+It  exists because  the speed of a  signal that is used to measure distances must be assumed to be a constant,
+not because the speed is constant but because distances cannot be measured otherwise.
+
+
+
+%To finish this section we note that flow of the medium can be chosen arbitrarily.
+%
+%
+% ask what changes  to our reasoning must be made if the flow in the acoustic medium is not uniform.
+%In this case the notion of a  bulk flow of the medium is not well defined and we have no rule with which to define the 'stationary' frame of reference.
+%We consider what happens if the stationary frame is arbitrarily assigned.
+%To do so, we reconsider the above example for the case that the ob
+%and so there is no stationary frame may be assigned 
+%
+% the laminar flow considered here is local, 
+%and is different from the far-away bulk flow of the medium.%
+%
+%That is, what if the flow carrying the 
+
+
+% \subsection{Calibrating time in an ultrasound experiment}
+
+% %Equations~\ref{eqn:LorentzTime} and \ref{eqn:LorentzSpace} are the Lorentz transformations of space and time that result from \Poincare's special relativity.
+
+% When an ultrasound transducer moves with respect to the bulk flow the oscilloscope should be re-calibrated to the local time.
+% Failure to do repeats the mistakes of the past and results in physical predications that err with experiment.
+% %The mistakes of the past are repeated when this is not done.
+% %When ultrasound physicists fail to re-calibrate their oscilloscopes to a local time 
+% %when their transducer's move with respect to the bulk flow they are destined to repeat the mistakes of the past.
+
+
+%It may be noted at this point that ultrasound physicists are not in the habit of 
+%re-calibrating their oscilloscopes to a local time.
+%Firstly we note 
+%Finally, it may be noted that when ultrasound measurements the 
+%time axis (measured on the oscilloscope) is rarely re-calibrated to the local time
+%of a transducer moving with respect to the bulk fluid.
+%All that can be said to this is that where this is true,
+%the physicist is destined to predict the wrong physics in 
+%by repeating of the mistakes of the past.
+%However, in practice, 
+%the need for such re-calibrations is rare - 
+%for in general the transducer is chosen to be at rest with respect 
+%to the bulk flow of the medium.
+
+%\subsection{Comparison between acoustic relativity with \Poincare's relativity}\label{sec:comparison}
+
+
+
+\section{Discussion}
+\todo[inline]{Comment that in this thesis focus on modelling ultrasound rather than what is real.
+We ignore non-linear propagation - partly for reasons in the next chapter..
+Far from the acoustic sources the effect diminishes. }
+
+model what is seen in ultrasound rather than what is real
+
+The measurement rules of equations~\ref{eqn:radarTime} and \ref{eqn:radarDistance} enable two properties of the world as measured by ultrasound to be stated immediately.
+The first is that an entity that moves away from the transducer at a speed that is faster than the speed of sound (with respect to the bulk flow of the medium) 
+cannot be measured.  
+This is not because such motions are impossible but because the sound will never catch  up with the entity and so there will never be an echo to record.
+
+The second is that ultrasound is not capable of  measuring variations in the speed of sound.
+%In order to measure distances (and therefore speeds) the speed of sound must be known {\em a priori}.
+%Fluctuations in the sound speed  cannot be known without further {\em a priori} knowledge of the medium. 
+Since the sound speed must be known before any distance can be measured,
+changes in the sound speed  cannot be measured. 
+Changes may only be determined  with additional {\em a priori} knowledge of the structure of the medium. 
+In acoustics, when distances and times are measured with light,
+fluctuations in a medium's density result in fluctuations in the speed of sound,
+and since sound is itself a fluctuation in density, 
+non-linear sound speeds result in compressible mediums.
+But these fluctuations cannot be measured with ultrasound,
+and it follows that the acoustic medium must be incompressible (in the relativistic sense\cite{Pekeris1976, Pekeris1977, Taub1978})
+and that  sound must propagate according to a linear wave equation. % when the acoustic definitions of time and space are used.
+In \secref{Maxwell} it is demonstrated that this linear relation is identical to Maxwell's relation of electromagnetism.
+
+The ultrasound literature does not comply with these remarks.
+Currently, when modelling an ultrasound experiment, a fluid medium is always described by a Galilean invariant theory such as Euler's equation or the Naiver-Stokes equation.
+The resulting model is then capable of predicting motions that are faster than the speed of sound
+and predicts that  a sound pulse  propagates according to  a non-linear wave equation.
+Both of these predictions are impossible when the world is measured with sound.
+%Such a description is only meaningful only when distances and times are to be defined with light, 
+%which travels at such a tremendous speed that the Galilean approximation is appropriate.%
+%
+%This is appropriate only if distances and times are to be defined with light, which travels at such a tremendous speed that the Galilean approximation is appropriate.
+%If distances and times are to be defined with sound, as is done by the ultrasound scanner,
+%then the Galilean description of the world is meaningless, in the sense that it predicts  results that are impossible to verify.
+The ultrasound literature fails to recognise the distinction between  two equally valid descriptions of the world -
+the world that is seen
+and the world that is heard.
+Curiously, ultrasound physics repeats the   fallacy that  the world must be seen to be believed.
